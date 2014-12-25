@@ -7,5 +7,5 @@ hopefuly pouchdb backed bitcoin mining in browser over webrtc should seal the de
 
 btw. workflow for this is     
 `lein cljsbuild auto app` from app directory
-and `gulp watch` from parent dir with chrome devtools(workspaces, source maps)
+and `gulp watch` from parent dir with chrome devtools(workspaces, source maps)     
 Copyright (c) 2014 Nikola Mandic
