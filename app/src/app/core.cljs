@@ -5,7 +5,10 @@
 [servant.worker :as worker])
 (:require-macros [cljs.core.async.macros :as m :refer [go]]
 [servant.macros :refer [defservantfn]]) )
-
+(defn foo [] 
+(println "asdasd")
+)
+(set! (.-onload js/window) foo)
 
  (.log js/console "this runs in the browser")
 
@@ -15,6 +18,8 @@
   (def channel-1 (servant/servant-thread servant-channel servant/standard-message some-random-fn 5 6))
 (enable-console-print!)
 (. js/console (log (THREE/Scene. )))
+(def ^:dynamic peerParams (js-obj "host" "localhost" "port" 8000 "key" "peerjs" "debug" true))
+(def peerjs (js/Peer. "1" peerParams ))
  (go
 (println
 "The value from the first call is "
