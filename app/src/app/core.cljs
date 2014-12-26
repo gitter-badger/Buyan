@@ -15,9 +15,11 @@
   (.log js/console "this runs in the browser")
 
   (def worker-count 2)
-  (def worker-script "hamiyoca/miner.js")
+  (def worker-script "wrkr.js")
   (def servant-channel (servant/spawn-servants worker-count worker-script))
-  (def channel-1 (servant/servant-thread servant-channel servant/standard-message some-random-fn 5 6))
+
+  (def channel-1 (servant/servant-thread servant-channel servant/standard-message "none" "newjob" "some root" ))
+  (set! (.-type channel-1) "workerch")
   (enable-console-print!)
   (. js/console (log (THREE/Scene. )))
   (def ^:dynamic peerParams (js-obj "host" "localhost" "port" 8000 "key" "peerjs" "debug" true))
@@ -28,8 +30,6 @@
   (def peerjs (js/Peer. id peerParams ))
 
   (defn onOpen [ conn]
-
-
     (println "connection opened trying to send data trough")
     (.log js/console conn)
     (.send conn "asd")
@@ -106,21 +106,29 @@
                                                                (println "new state")
                                                                (.log js/console state)
                                                                )
-                                 (== (.-type ch2) "readch") (
+                                 (== (.-type ch2) "readch") (do (
                                                               println "recieved from peer " vrecieved
                                                               ;(.send (.-conn ch2) "asds")
+                                                              )
+                                                              
                                                               )
                                  (== (.-type ch2) "writech") (do
                                                              ; println vrecieved
                                                              (println "sending to peer " vrecieved)
                                                               (.send (.-conn ch2 ) vrecieved)
                                                               )
+                                 (== (.-type ch2) "workerch") (do
+                                                             ; println vrecieved
+                                                             (println "recieved from worker " vrecieved)
+                                                             ; (.send (.-conn ch2 ) vrecieved)
+                                                              )
+                                 
                                  )
                            
                                (recur (do)))
                                )
                       )
-                    (lp [connectionch])
+                    (lp [connectionch channel-1])
                     )
   (println "Hello wor 32 d rdaldad!")
   ;(def myWorker (js/Worker. "hamiyoca/miner.js"))
