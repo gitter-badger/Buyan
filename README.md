@@ -1,5 +1,5 @@
 # Buyan - CensorshipFreeCommentingPlatform         
-![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/250px-Ivan_Bilibin_126.gif)      
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/250px-Ivan_Bilibin_126.gif) ![](https://github.com/NikolaMandic/Buyan/blob/master/a8d3d362bb2a50296a5d813f3c686e50.gif)      
 # background
 project started after comments censored my tweet regarding Nazi( Stepinac) that is celebrated as a saint by latin heretic cartel in which I reflected on reports of his hands being red from orthodox blood that he litterally killed with a knife with his own two hands      
 
@@ -15,7 +15,6 @@ protocol
 
 Buyan after
 https://www.youtube.com/watch?v=4QtkDMXA0u8
- mascot then needs to be singing squirrel...
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/Ivanbilibin.jpg)
 
 Copyright (c) 2014 Nikola Mandic
