@@ -6,7 +6,6 @@
                  [org.clojure/clojurescript "0.0-2371"]
                  [servant "0.1.3"]
                  ]
-:profiles {:dev {:plugins [[com.cemerick/austin "0.1.5"]]}}
   :plugins [[lein-cljsbuild "1.0.4-SNAPSHOT"]]
 
   :source-paths ["src"]

@@ -6,6 +6,7 @@
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
                    [servant.macros :refer [defservantfn]]) )
 
+
 (enable-console-print!)
 (def peers [])
 (defn foo [] 
@@ -32,6 +33,7 @@
   (defn onOpen [ conn]
     (println "connection opened trying to send data trough")
     (.log js/console conn)
+    (set! (.-connType conn) "saltan")
     (.send conn "asd")
     (go
       (>! connectionch conn)
@@ -49,6 +51,7 @@
     )
   (defn onConnection [conn]
     (println "connection is opened now try to send something")
+    (set! (.-connType conn) "tsaritsa")
     ;(.send conn "second sends something")
     (go
       (>! connectionch conn)
@@ -59,15 +62,15 @@
   (defn channelsFromConnection [conn]
     (def readc (chan 10))
     (def writec (chan 10))
-    (set! (.-conn writec) conn)
-    (set! (.-conn readc) conn)
-
-    (set! (.-writec  conn) writec)
-    (set! (.-readc  conn) readc)
+    (set! (.-writec readc) writec)
     (set! (.-type readc) "readch")
     (set! (.-type writec) "writech")
+    (set! (.-writec  conn) writec)
+    (set! (.-readc  conn) readc)
 
-    (set! (.-writec readc) writec)
+    (set! (.-conn readc) conn)
+
+    (set! (.-conn writec) conn)
     (.on conn "data" (partial onData readc))
     [readc writec]
     )
@@ -82,7 +85,9 @@
   (println id)
   ;(if (== id "2")
   ; (println "id = 2"))
-
+  (def intercomMeta (js-obj 
+   "id" 1
+   ))
   (do
                     (println "about to connect from heere")
                     (def peer (connectTo "2"))
@@ -90,31 +95,56 @@
                   
 
                     (defn lp [statea] 
-                       
+                       (def gconn 1)
                           (def state statea)
                       (go (loop [state2 statea]
                                ;(>! (nth peer 1) "sending some data trough channel")
+                                 (println "new iteration with state")
+                                                                
+                                                               (.log js/console state)
                                (def v (alts! state ))
                                (def vrecieved (nth v 0))
                                (def ch2 (nth v 1))
 
                                (cond 
                                  (== (nth v 1) connectionch) (do
+                                                        (def gconn vrecieved)
+
                                                                (println "got new connection" vrecieved)
-                                                               (def state (into [] (concat state  (channelsFromConnection vrecieved) )))
-                                                               ; (concat [1 2] [3 4] [5 6])) 
+                                                               (def peerChannels  (channelsFromConnection vrecieved) )
+                                                               (def state (into [] (concat state  peerChannels )))
+                                                               
                                                                (println "new state")
+                                                                
                                                                (.log js/console state)
+
+                                                               (if (== (.-connType vrecieved) "saltan")
+                                                                  (do 
+                                                                    (println "saltan here")
+                                                                      (>! (nth peerChannels 1) (js-obj "type" "versionSaltan" "data" (.-id intercomMeta)))
+                                                                    )
+                                                                  (do 
+                                                                  
+                                                                    (println "tsaritsa here")
+                                                                    )
+                                                                )
                                                                )
-                                 (== (.-type ch2) "readch") (do (
-                                                              println "recieved from peer " vrecieved
-                                                              ;(.send (.-conn ch2) "asds")
+                                 (== (.-type ch2) "readch") (do 
+                                                              (println "recieved from peer " vrecieved)
+                                                              (if (== (.-type vrecieved) "versionSaltan") 
+                                                                (do
+                                                                (println (.-data vrecieved))
+                                                                  (>! (.-writec  ch2) (js-obj "type" "versionTsaritsa" "data" (.-id intercomMeta)))
+                                                                )
                                                               )
+                                                              
                                                               
                                                               )
                                  (== (.-type ch2) "writech") (do
                                                              ; println vrecieved
                                                              (println "sending to peer " vrecieved)
+                                                             (.log js/console (.-conn ch2))
+                                                          
                                                               (.send (.-conn ch2 ) vrecieved)
                                                               )
                                  (== (.-type ch2) "workerch") (do
