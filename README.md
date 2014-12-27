@@ -9,3 +9,10 @@ btw. workflow for this is
 `lein cljsbuild auto app` from app directory
 and `gulp watch` from parent dir with chrome devtools(workspaces, source maps)     
 Copyright (c) 2014 Nikola Mandic
+
+
+https://www.youtube.com/watch?v=4QtkDMXA0u8
+
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/250px-Ivan_Bilibin_126.gif)
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/cdraw.png)
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/Ivanbilibin.jpg)
