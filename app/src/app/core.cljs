@@ -87,6 +87,7 @@
   ; (println "id = 2"))
   (def intercomMeta (js-obj 
    "id" 1
+   "knownPeers" []
    ))
   (do
                     (println "about to connect from heere")
@@ -113,7 +114,7 @@
                                                                (println "got new connection" vrecieved)
                                                                (def peerChannels  (channelsFromConnection vrecieved) )
                                                                (def state (into [] (concat state  peerChannels )))
-                                                               
+                                                               (set! (.-knownPeers intercomMeta) (conj (.-knownPeers intercomMeta)  (.-peer vrecieved)) )
                                                                (println "new state")
                                                                 
                                                                (.log js/console state)
@@ -134,7 +135,14 @@
                                                               (if (== (.-type vrecieved) "versionSaltan") 
                                                                 (do
                                                                 (println (.-data vrecieved))
+                                                                  (.log js/console "-------------------------")
+                                                                  (.log js/console (.-knownPeers intercomMeta))
+                                                                  (def filtrd (filter   ( fn [v]  (!= v v) )  (.-knownPeers intercomMeta)))
+                                                                  (set! (.-knownPeers intercomMeta) filtrd)
+                                                                  (.log js/console (into-array filtrd))
+                                                                  (.log js/console (.-knownPeers intercomMeta))
                                                                   (>! (.-writec  ch2) (js-obj "type" "versionTsaritsa" "data" (.-id intercomMeta)))
+                                                                  (>! (.-writec  ch2) (.stringify js/JSON (js-obj "type" "peerinfo" "data" (into-array (.-knownPeers intercomMeta) ))))
                                                                 )
                                                               )
                                                               
