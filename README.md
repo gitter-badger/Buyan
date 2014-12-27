@@ -13,8 +13,9 @@ protocol
 
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/cdraw.png)
 
-Copyright (c) 2014 Nikola Mandic
-
-
+Buyan after
 https://www.youtube.com/watch?v=4QtkDMXA0u8
+ mascot then needs to be singing squirrel...
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/Ivanbilibin.jpg)
+
+Copyright (c) 2014 Nikola Mandic
