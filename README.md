@@ -1,7 +1,7 @@
 # Buyan - CensorshipFreeCommentingPlatform         
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/250px-Ivan_Bilibin_126.gif) ![](https://github.com/NikolaMandic/Buyan/blob/master/a8d3d362bb2a50296a5d813f3c686e50.gif)      
 # background
-project started after comments censored my tweet regarding Nazi( Stepinac) that is celebrated as a saint by latin heretic cartel in which I reflected on reports of his hands being red from orthodox blood that he litterally killed with a knife with his own two hands. Blog post introducing Buyan blog.nikola.link/#buyan       
+project started after comments censored my tweet regarding Nazi( Stepinac) that is celebrated as a saint by latin heretic cartel in which I reflected on reports of his hands being red from orthodox blood that he litterally killed with a knife with his own two hands. Blog post introducing Buyan http://blog.nikola.link/#buyan       
 
 now on freenode also #buyan      
 
