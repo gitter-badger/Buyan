@@ -1,4 +1,5 @@
-# CensorshipFreeCommentingPlatform
+# Buyan - CensorshipFreeCommentingPlatform         
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/250px-Ivan_Bilibin_126.gif)      
 # background
 project started after comments censored my tweet regarding Nazi( Stepinac) that is celebrated as a saint by latin heretic cartel in which I reflected on reports of his hands being red from orthodox blood that he litterally killed with a knife with his own two hands      
 
@@ -8,4 +9,13 @@ hopefuly pouchdb backed bitcoin mining in browser over webrtc should seal the de
 btw. workflow for this is     
 `lein cljsbuild auto app` from app directory
 and `gulp watch` from parent dir with chrome devtools(workspaces, source maps)     
+protocol
+
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/cdraw.png)
+
+Buyan after
+https://www.youtube.com/watch?v=4QtkDMXA0u8
+ mascot then needs to be singing squirrel...
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/Ivanbilibin.jpg)
+
 Copyright (c) 2014 Nikola Mandic
