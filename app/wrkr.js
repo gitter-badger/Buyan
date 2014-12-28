@@ -35,7 +35,7 @@ function compute_hash(merkleRoot){
    
     setTimeout(function(){
       //{'root':event.data, 'nonce': 101}
-        postMessage(JSON.stringify({root: "somehash",nonce: "somenonce"}));
+        postMessage(JSON.stringify({root: "somehash: "+ merkleRoot,nonce: "somenonce "+ merkleRoot}));
     },1000);
 
   
