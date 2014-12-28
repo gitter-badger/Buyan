@@ -1,6 +1,7 @@
 (ns app.main
   (:require
     [app.intercom :as i]
+    [app.logger :as l]
     [cljs.core.async :refer [chan close! timeout put!]]
     [servant.core :as servant]
     [servant.worker :as worker])
@@ -39,26 +40,26 @@
   (.on (js/$ js/document) "transaction" (partial pub transactionch))
 
   (defn onOpen [ conn]
-    (println "connection opened trying to send data trough")
-    (.log js/console conn)
+    (l/og :conn  "connection opened trying to send data trough")
+    (l/og :conn  conn)
     (set! (.-connType conn) "saltan")
     (.send conn "asd")
     (go
       (>! connectionch conn)
       )
 
-    (println "conn: " conn)
+    (l/og :conn "conn: " conn)
     )
 
   (defn onData [read data]
-    (println "data recieved" data)
+    (l/og :conn "data recieved" data)
     (go
       (>! read data)
       )
 
     )
   (defn onConnection [conn]
-    (println "connection is opened now try to send something")
+    (l/og :conn "connection is opened now try to send something")
     (set! (.-connType conn) "tsaritsa")
     ;(.send conn "second sends something")
     (go
@@ -99,7 +100,7 @@
    "knownPeers" []
    ))
   (do
-                    (println "about to connect from heere")
+                    (l/og :conn "about to connect from heere")
                     (def peer (connectTo "2"))
                     ;(.log js/console (nth peer 1))
                   
@@ -109,9 +110,9 @@
                           (def state statea)
                       (go (loop [state2 statea]
                                ;(>! (nth peer 1) "sending some data trough channel")
-                                 (println "new iteration with state")
+                                 (l/og :mloop "new iteration with state")
                                                                 
-                                                               (.log js/console state)
+                                                               (l/og :mloop state)
                                (def v (alts! state ))
                                (def vrecieved (nth v 0))
                                (def ch2 (nth v 1))
@@ -120,39 +121,39 @@
                                  (== (nth v 1) connectionch) (do
                                                         (def gconn vrecieved)
 
-                                                               (println "got new connection" vrecieved)
+                                                               (l/og :mloop "got new connection" vrecieved)
                                                                (def peerChannels  (channelsFromConnection vrecieved) )
                                                                (def state (into [] (concat state  peerChannels )))
                                                                (set! (.-knownPeers intercomMeta) (conj (.-knownPeers intercomMeta)  (.-peer vrecieved)) )
-                                                               (println "new state")
+                                                               (l/og :mloop  "new state")
                                                                (i/onMessage "version" "message")
                                                                 
-                                                               (.log js/console state)
+                                                               (l/og :mloop  state)
 
                                                                (if (== (.-connType vrecieved) "saltan")
                                                                   (do 
-                                                                    (println "saltan here")
+                                                                    (l/og :mloop  "saltan here")
                                                                       (>! (nth peerChannels 1) (js-obj "type" "versionSaltan" "data" (.-id intercomMeta)))
                                                                     )
                                                                   (do 
                                                                   
-                                                                    (println "tsaritsa here")
+                                                                    (l/og :mloop  "tsaritsa here")
                                                                     )
                                                                 )
                                                                )
                                  (== (.-type ch2) "readch") (do 
-                                                              (println "recieved from peer " vrecieved)
+                                                              (l/og :mloop  "recieved from peer " vrecieved)
                                                               (if (== (.-type vrecieved) "versionSaltan") 
                                                                 (do
-                                                                (println (.-data vrecieved))
-                                                                  (.log js/console "-------------------------")
-                                                                  (.log js/console (.-knownPeers intercomMeta))
+                                                                (l/og :mloop  (.-data vrecieved))
+                                                                  (l/og :mloop  "-------------------------")
+                                                                  (l/og :mloop  (.-knownPeers intercomMeta))
                                                                   (def conn (.-peer (.-conn ch2)))
-                                                                  (.log js/console (.-conn ch2))
+                                                                  (l/og :mloop  (.-conn ch2))
                                                                   (def filtrd (remove    #{conn}     (.-knownPeers intercomMeta)))
                                                                   (set! (.-knownPeers intercomMeta) filtrd)
-                                                                  (.log js/console (into-array filtrd))
-                                                                  (.log js/console (.-knownPeers intercomMeta))
+                                                                  (l/og :mloop  (into-array filtrd))
+                                                                  (l/og :mloop  (.-knownPeers intercomMeta))
                                                                   (>! (.-writec  ch2) (js-obj "type" "versionTsaritsa" "data" (.-id intercomMeta)))
                                                                   (>! (.-writec  ch2) (.stringify js/JSON (js-obj "type" "peerinfo" "data" (into-array (.-knownPeers intercomMeta) ))))
                                                                 )
@@ -162,19 +163,19 @@
                                                               )
                                  (== (.-type ch2) "writech") (do
                                                              ; println vrecieved
-                                                             (println "sending to peer " vrecieved)
-                                                             (.log js/console (.-conn ch2))
+                                                             (l/og :mloop  "sending to peer " vrecieved)
+                                                             (l/og :mloop  (.-conn ch2))
                                                           
                                                               (.send (.-conn ch2 ) vrecieved)
                                                               )
                                  (== (.-type ch2) "workerch") (do 
                                                              ; println vrecieved
-                                                             (println "recieved from worker " vrecieved)
+                                                             (l/og :mloop  "recieved from worker " vrecieved)
                                                              ; (.send (.-conn ch2 ) vrecieved)
                                                               )
                                  (== (.-type transactionch) "transactionch") (do
                                                              ; println vrecieved
-                                                             (println "recieved new transaction " vrecieved)
+                                                             (l/og :mloop  "recieved new transaction " vrecieved)
                                                              (>! channel-1 vrecieved)
                                                              ; (.send (.-conn ch2 ) vrecieved)
                                                               )
@@ -185,7 +186,7 @@
                       )
                     (lp [connectionch channel-1 transactionch])
                     )
-  (println "Hello wor 32 d rdaldad!")
+  (l/og :main  "Hello wor 32 d rdaldad!")
   ;(def myWorker (js/Worker. "hamiyoca/miner.js"))
   ;(def ^:dynamic o (js-obj "foo" 1 "bar" 2))
   ;(. myWorker (postMessage o))
