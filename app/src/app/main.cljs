@@ -1,5 +1,6 @@
-(ns app.core
+(ns app.main
   (:require
+    [app.intercom :as i]
     [cljs.core.async :refer [chan close! timeout put!]]
     [servant.core :as servant]
     [servant.worker :as worker])
@@ -12,7 +13,7 @@
 (defn foo [] 
   (println "window loaded")
 
-
+ 
   (.log js/console "this runs in the browser")
 
   (def worker-count 2)
@@ -124,6 +125,7 @@
                                                                (def state (into [] (concat state  peerChannels )))
                                                                (set! (.-knownPeers intercomMeta) (conj (.-knownPeers intercomMeta)  (.-peer vrecieved)) )
                                                                (println "new state")
+                                                               (i/onMessage "version" "message")
                                                                 
                                                                (.log js/console state)
 
