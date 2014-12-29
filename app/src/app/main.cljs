@@ -2,6 +2,7 @@
   (:require
     [app.intercom :as i]
     [app.logger :as l]
+    [app.blockchain :as blockchain]
     [cljs.core.async :refer [chan close! timeout put!]]
     [servant.core :as servant]
     [servant.worker :as worker])
@@ -14,7 +15,7 @@
 (defn foo [] 
   (println "window loaded")
 
- 
+  (blockchain/sha256 "Nikola")
   (.log js/console "this runs in the browser")
 
   (def worker-count 2)
@@ -37,6 +38,7 @@
   (def transactionch (chan))
   (set! (.-type transactionch) "transactionch")
   (defn pub [ch event message] (go (>! ch message)))  
+
   (.on (js/$ js/document) "transaction" (partial pub transactionch))
 
   (defn onOpen [ conn]
