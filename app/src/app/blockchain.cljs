@@ -20,9 +20,9 @@
     )
 (defn shaCallb [digest] (do
 (l/og :blockchain "%s"  "about to do hash2")
-
-      (l/og :blockchain   (arraybtostring digest))
-  
+    (def h (arraybtostring digest))
+      (l/og :blockchain  h )
+   (addTransactionToMemPool h)
   ))
 (defn sha256 [x] 
     ;(l/og :blockchain "%s" "sha256")
