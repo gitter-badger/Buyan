@@ -14,12 +14,19 @@
 (defn makeTransaction [] (js-obj "" 1))
 (defn addTransactionToBlock [] (js-obj "" 1))
 (defn encode [x] (.encode (js/TextEncoder. "utf-8") x))
-(defn shaCallb [digest]
-    (l/og :blockchain "%s" "blockchain")
-  )
+    (defn arraybtostring [buff]
+      (js/arrayBToString buff)
+      
+    )
+(defn shaCallb [digest] (do
+(l/og :blockchain "%s"  "about to do hash2")
+
+      (l/og :blockchain   (arraybtostring digest))
+  
+  ))
 (defn sha256 [x] 
-    (l/og :blockchain "%s" "sha256")
-    (l/og :blockchain "%s" (encode "sha256"))
+    ;(l/og :blockchain "%s" "sha256")
+    ;(l/og :blockchain "%s" (encode "sha256"))
  (.then (js/crypto.subtle.digest (js-obj "name" "SHA-256") (encode x) )
   shaCallb
  )
