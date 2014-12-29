@@ -1,6 +1,12 @@
 (ns app.blockchain
 (:require
-    [app.logger :as l]))
+    [app.logger :as l]
+    [cljs.core.async :refer [chan close! timeout put!]]
+    
+    )
+  (:require-macros [cljs.core.async.macros :as m :refer [go]]
+                   )
+    )
 (enable-console-print!)
 (def memPool (array))
 (defn addTransactionToMemPool [x] 
@@ -10,6 +16,7 @@
 
  (l/og :blockchain "new memPool after remove " memPool)
 )
+
 (defn makeBlock [] (js-obj "" 1))
 (defn makeTransaction [] (js-obj "" 1))
 (defn addTransactionToBlock [] (js-obj "" 1))
@@ -23,7 +30,9 @@
     (def h (arraybtostring digest))
       (l/og :blockchain  h )
    (addTransactionToMemPool h)
-  ))
+   (go
+   (>! app.main.cryptoCh h )
+  )))
 (defn sha256 [x] 
     ;(l/og :blockchain "%s" "sha256")
     ;(l/og :blockchain "%s" (encode "sha256"))
