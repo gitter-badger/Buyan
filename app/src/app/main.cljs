@@ -37,6 +37,8 @@
   (def dbase (js/PouchDB. "dbname"))  
   (def transactionch (chan))
   (set! (.-type transactionch) "transactionch")
+     (def cryptoCh (chan))
+(set! (.-type cryptoCh) "cryptoch")
   (defn pub [ch event message] (go (>! ch message)))  
 
   (.on (js/$ js/document) "transaction" (partial pub transactionch))
@@ -101,6 +103,7 @@
    "id" 1
    "knownPeers" []
    ))
+
   (do
                     (l/og :conn "about to connect from heere")
                     (def peer (connectTo "2"))
@@ -110,6 +113,7 @@
                     (defn lp [statea] 
                        (def gconn 1)
                           (def state statea)
+                           
                       (go (loop [state2 statea]
                                ;(>! (nth peer 1) "sending some data trough channel")
                                  (l/og :mloop "new iteration with state")
@@ -175,9 +179,18 @@
                                                              (l/og :mloop  "recieved from worker " vrecieved)
                                                              ; (.send (.-conn ch2 ) vrecieved)
                                                               )
-                                 (== (.-type transactionch) "transactionch") (do
+                                 (== (.-type ch2) "cryptoch") (do 
+                                                             ; println vrecieved
+                                                             (l/og :mloop  "recieved from crypto " vrecieved)
+                                                             ; (.send (.-conn ch2 ) vrecieved)
+                                                              )
+                                 (== (.-type ch2) "transactionch") (do
                                                              ; println vrecieved
                                                              (l/og :mloop  "recieved new transaction " vrecieved)
+                                                             ;put it in mempool
+                                                             ;send mempool to mining
+                                                             ;this might change
+                                                             (blockchain/sha256 vrecieved)
                                                              (>! channel-1 vrecieved)
                                                              ; (.send (.-conn ch2 ) vrecieved)
                                                               )
@@ -186,7 +199,8 @@
                                (recur (do)))
                                )
                       )
-                    (lp [connectionch channel-1 transactionch])
+                     
+                    (lp [connectionch channel-1 transactionch cryptoCh])
                     )
   (l/og :main  "Hello wor 32 d rdaldad!")
   ;(def myWorker (js/Worker. "hamiyoca/miner.js"))
