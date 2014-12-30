@@ -17,23 +17,35 @@
 
   ;(blockchain/sha256 "Nikola")
   (.log js/console "this runs in the browser")
-
+  ;now to define how much threads will mine
   (def worker-count 2)
+  ;mining script path
   (def worker-script "wrkr.js")
+  ;this channel is for servant to know at which thread pool to dispatch
   (def servant-channel (servant/spawn-servants worker-count worker-script))
 
+  ;channel that will receive results from mining
   (def hashmine (chan))
+  ;setting type on the channel object so it is possible to distinguish it from other channels
   (set! (.-type hashmine) "workerch")
-  (enable-console-print!)
+  ;instantiate tree js graphic lib
   (. js/console (log (THREE/Scene. )))
+  ;data for peer connection 
   (def ^:dynamic peerParams (js-obj "host" "localhost" "port" 8000 "key" "peerjs" "debug" true))
+  ;promt user for id that will be used as his peer id
   (def id ( js/prompt "enter id"))
-  (println id)
+  (l/og :main "user id %s "id)
+
   (def start (chan))
+  ;channel to anounce new connectinos
   (def connectionch (chan))
+  ;peerjs object
   (def peerjs (js/Peer. id peerParams ))
+  
   (def onDatabaseChange (chan))
   (set! (.-type onDatabaseChange) "databaseChange")
+  
+  ;database instance
   (def dbase (js/PouchDB. "dbname"))
   (.enable (.-debug js/PouchDB) "*")
   (defn saveBlock [dbase blockR] 
@@ -42,6 +54,7 @@
 
     (.put dbase (js-obj "_id" (.-merkleRoot blockR) "val" blockR))
   )
+  ;initial function for db
   (defn initDBase [dbase]
    
     (let [c (chan)]
@@ -68,14 +81,21 @@
 )  )
   )    
  (initDBase dbase)
+
+ ;channel to recieve new transaction
   (def transactionch (chan))
   (set! (.-type transactionch) "transactionch")
-     (def cryptoCh (chan))
-(set! (.-type cryptoCh) "cryptoch")
-  (defn pub [ch event message] (go (>! ch message)))  
+  
+  ;channel to recieve results from crypto functions
+  (def cryptoCh (chan))
+  (set! (.-type cryptoCh) "cryptoch")
 
+  ;pub sub; send events to channel
+  (defn pub [ch event message] (go (>! ch message)))  
+  ;listen on global document for transactions and publish them to channel transactionch
   (.on (js/$ js/document) "transaction" (partial pub transactionch))
 
+  ;when this user connects to someone just send connection to channel
   (defn onOpen [ conn]
     (l/og :conn  "connection opened trying to send data trough")
     (l/og :conn  conn)
@@ -87,7 +107,7 @@
 
     (l/og :conn "conn: " conn)
     )
-
+  ;when peerjs sends data just send message to channel
   (defn onData [read data]
     (l/og :conn "data recieved" data)
     (go
@@ -95,6 +115,7 @@
       )
 
     )
+   ;when someone connects to this user send that new connection to channel
   (defn onConnection [conn]
     (l/og :conn "connection is opened now try to send something")
     (set! (.-connType conn) "tsaritsa")
@@ -105,6 +126,7 @@
     )
 
   (.on peerjs "connection" onConnection )
+  ;make two channels for connection. one for reading from conn, one for writing to it
   (defn channelsFromConnection [conn]
     (def readc (chan 10))
     (def writec (chan 10))
@@ -132,11 +154,13 @@
   (println id)
   ;(if (== id "2")
   ; (println "id = 2"))
+  ;keeps track of protocol and peers
   (def intercomMeta (js-obj 
    "id" 1
    "knownPeers" []
    ))
 
+;dispatch to thread pool for mining
 (defn mine [rootHash]
 (def chann (servant/servant-thread servant-channel servant/standard-message "none" "newjob" rootHash ))
 (go
@@ -146,6 +170,7 @@
  (>! hashmine (.parse js/JSON v) )
 )
 )
+;now that channels are setup
   (do
                     (l/og :conn "about to connect from heere")
                     (def peer (connectTo "2"))
@@ -155,29 +180,34 @@
                     (defn lp [statea] 
                        (def gconn 1)
                           (def state statea)
-                           
+                      ;listen on messages and send them where they need to be sent
                       (go (loop [state2 statea]
                                ;(>! (nth peer 1) "sending some data trough channel")
                                  (l/og :mloop "new iteration with state")
                                                                 
                                                                (l/og :mloop state)
+                               ;listen on channels from vector
                                (def v (alts! state ))
+                               ;get value
                                (def vrecieved (nth v 0))
+                               ;get channel that received value
                                (def ch2 (nth v 1))
 
                                (cond 
+                               ;channel that gets new connections
                                  (== (nth v 1) connectionch) (do
                                                         (def gconn vrecieved)
 
                                                                (l/og :mloop "got new connection" vrecieved)
                                                                (def peerChannels  (channelsFromConnection vrecieved) )
+                                                               ;add channels for reading and writing to this new connection to the vector of channels we listen
                                                                (def state (into [] (concat state  peerChannels )))
                                                                (set! (.-knownPeers intercomMeta) (conj (.-knownPeers intercomMeta)  (.-peer vrecieved)) )
                                                                (l/og :mloop  "new state")
                                                                (i/onMessage "version" "message")
                                                                 
                                                                (l/og :mloop  state)
-
+                                                               ;if this user initiated connection he will send version first
                                                                (if (== (.-connType vrecieved) "saltan")
                                                                   (do 
                                                                     (l/og :mloop  "saltan here")
@@ -189,6 +219,7 @@
                                                                     )
                                                                 )
                                                                )
+                                  ;channel from some peer that recieves data from peer
                                  (== (.-type ch2) "readch") (do 
                                                               (l/og :mloop  "recieved from peer " vrecieved)
                                                               (if (== (.-type vrecieved) "versionSaltan") 
@@ -198,6 +229,7 @@
                                                                   (l/og :mloop  (.-knownPeers intercomMeta))
                                                                   (def conn (.-peer (.-conn ch2)))
                                                                   (l/og :mloop  (.-conn ch2))
+                                                                  ;filter out from knownPeers that user that is about to recieve knownPeers list
                                                                   (def filtrd (remove    #{conn}     (.-knownPeers intercomMeta)))
                                                                   (set! (.-knownPeers intercomMeta) filtrd)
                                                                   (l/og :mloop  (into-array filtrd))
@@ -209,6 +241,7 @@
                                                               
                                                               
                                                               )
+                                 ;channel from some peer that recieves data to be sent to that peer(wrapper for peerjs send to peer)
                                  (== (.-type ch2) "writech") (do
                                                              ; println vrecieved
                                                              (l/og :mloop  "sending to peer " vrecieved)
@@ -216,11 +249,13 @@
                                                           
                                                               (.send (.-conn ch2 ) vrecieved)
                                                               )
+                                  ;recieves work from miners
                                  (== (.-type ch2) "workerch") (do 
                                                              ; println vrecieved
                                                              (l/og :mloop  "recieved from worker " vrecieved)
                                                              ; (.send (.-conn ch2 ) vrecieved)
                                                               )
+                                 ;recieves results from browser crypto functions
                                  (== (.-type ch2) "cryptoch") (do 
                                                              ; println vrecieved
                                                              (l/og :mloop  "recieved from crypto " vrecieved)
@@ -233,9 +268,11 @@
                                                               )
                                                              )
                                                              (if (> (count blockchain/memPool) 5)
+                                                             
                                                              (l/og :mloop "calculating hash of transactions(not merkle root now) %s" (blockchain/merkleRoot blockchain/memPool)))
                                                              ; (.send (.-conn ch2 ) vrecieved)
                                                               )
+                                 ; recieves transactions
                                  (== (.-type ch2) "transactionch") (do
                                                              ; println vrecieved
                                                              (l/og :mloop  "recieved new transaction " vrecieved)
@@ -251,7 +288,7 @@
                                (recur (do)))
                                )
                       )
-                     
+                     ;what channels are listened on
                     (lp [connectionch hashmine transactionch cryptoCh])
                     )
   (l/og :main  "Hello wor 32 d rdaldad!")
