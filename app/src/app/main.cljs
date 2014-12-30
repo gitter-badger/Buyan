@@ -15,7 +15,7 @@
 (defn foo [] 
   (println "window loaded")
 
-  (blockchain/sha256 "Nikola")
+  ;(blockchain/sha256 "Nikola")
   (.log js/console "this runs in the browser")
 
   (def worker-count 2)
@@ -182,6 +182,9 @@
                                  (== (.-type ch2) "cryptoch") (do 
                                                              ; println vrecieved
                                                              (l/og :mloop  "recieved from crypto " vrecieved)
+                                                             (l/og :mloop "mempoll = " blockchain/memPool)
+                                                             (if (> (count blockchain/memPool) 5)
+                                                             (l/og :mloop "calculating hash of transactions(not merkle root now)" (blockchain/merkleRoot blockchain/memPool)))
                                                              ; (.send (.-conn ch2 ) vrecieved)
                                                               )
                                  (== (.-type ch2) "transactionch") (do
