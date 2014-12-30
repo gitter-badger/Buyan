@@ -22,8 +22,8 @@
   (def worker-script "wrkr.js")
   (def servant-channel (servant/spawn-servants worker-count worker-script))
 
-  (def channel-1 (servant/servant-thread servant-channel servant/standard-message "none" "newjob" "some root" ))
-  (set! (.-type channel-1) "workerch")
+  (def hashmine (chan))
+  (set! (.-type hashmine) "workerch")
   (enable-console-print!)
   (. js/console (log (THREE/Scene. )))
   (def ^:dynamic peerParams (js-obj "host" "localhost" "port" 8000 "key" "peerjs" "debug" true))
@@ -104,6 +104,15 @@
    "knownPeers" []
    ))
 
+(defn mine [rootHash]
+(def chann (servant/servant-thread servant-channel servant/standard-message "none" "newjob" rootHash ))
+(go
+
+(def v (<! chann))
+(l/og :mloop "recieved from mining" v)
+ (>! hashmine (.parse js/JSON v) )
+)
+)
   (do
                     (l/og :conn "about to connect from heere")
                     (def peer (connectTo "2"))
@@ -184,8 +193,11 @@
                                                              (l/og :mloop  "recieved from crypto " vrecieved)
                                                              (l/og :mloop "mempoll = " blockchain/memPool)
                                                              (l/og :mloop (aget vrecieved "type"))
-                                                             (if (== (aget vrecieved "type") "fmr")
+                                                             (if (== (aget vrecieved "type") "fmr") (do
                                                               (l/og :mloop "merkle root " vrecieved )
+                                                             
+                                                             (mine (aget vrecieved "value"))
+                                                              )
                                                              )
                                                              (if (> (count blockchain/memPool) 5)
                                                              (l/og :mloop "calculating hash of transactions(not merkle root now) %s" (blockchain/merkleRoot blockchain/memPool)))
@@ -198,7 +210,7 @@
                                                              ;send mempool to mining
                                                              ;this might change
                                                              (blockchain/sha256 vrecieved)
-                                                             (>! channel-1 vrecieved)
+                                                             ;(>! channel-1 vrecieved)
                                                              ; (.send (.-conn ch2 ) vrecieved)
                                                               )
                                  )
@@ -207,7 +219,7 @@
                                )
                       )
                      
-                    (lp [connectionch channel-1 transactionch cryptoCh])
+                    (lp [connectionch hashmine transactionch cryptoCh])
                     )
   (l/og :main  "Hello wor 32 d rdaldad!")
   ;(def myWorker (js/Worker. "hamiyoca/miner.js"))
