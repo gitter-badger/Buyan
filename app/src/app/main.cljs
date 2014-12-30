@@ -183,8 +183,12 @@
                                                              ; println vrecieved
                                                              (l/og :mloop  "recieved from crypto " vrecieved)
                                                              (l/og :mloop "mempoll = " blockchain/memPool)
+                                                             (l/og :mloop (aget vrecieved "type"))
+                                                             (if (== (aget vrecieved "type") "fmr")
+                                                              (l/og :mloop "merkle root " vrecieved )
+                                                             )
                                                              (if (> (count blockchain/memPool) 5)
-                                                             (l/og :mloop "calculating hash of transactions(not merkle root now)" (blockchain/merkleRoot blockchain/memPool)))
+                                                             (l/og :mloop "calculating hash of transactions(not merkle root now) %s" (blockchain/merkleRoot blockchain/memPool)))
                                                              ; (.send (.-conn ch2 ) vrecieved)
                                                               )
                                  (== (.-type ch2) "transactionch") (do
