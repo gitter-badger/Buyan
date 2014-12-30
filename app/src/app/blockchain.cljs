@@ -68,6 +68,7 @@
     (defn log2 [n]
     (/ (Math/log n) (Math/log 2)))
 (defn merkleRoot [transactions]  
+
   ;note this is fake merkle root but does the trick it hashes chain of transactions 
   ;for now it will be here due to simplicity and bcz I could not find math functions in clojurescript easily
   ;merkleRoot is more efficient at getting any transaction in block because you need to supply only path to the root to verify
