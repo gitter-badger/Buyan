@@ -60,33 +60,30 @@
     (/ (Math/log n) (Math/log 2)))
 (defn merkleRoot [transactions]  
   ;note this is fake merkle root but does the trick 
-
+  (def lastt (js/Object.))
+  (go
   (def originl (.-length transactions))
   (def tx (.shift transactions))
   (def next (.shift transactions))
   (sha256c (partial resultToCh shaC) (+ tx next))
-  (loop [cnt (.-length transactions)   next (.shift  transactions ) txs   transactions ]
+  (loop [  next (.shift  transactions ) cnt (.-length transactions)  txs   transactions ]
   (l/og :blockchain "count  %s" cnt)
-  (go
+
     (def tx (<! shaC))
-    )
   (sha256c (partial resultToCh shaC) (+ tx next))
   (if (== 0 cnt)
-  0
-  (recur (.-length txs)  (.shift txs)   txs )))
+ (go
+ ;(def lastt 1)
+ ;(l/og :blockchain "got last" lastt)
+; lastt
+ )
+  (recur  (.shift txs) (.-length txs)   txs )))
+  
+(def fromC (<! shaC))
+(l/og :blockchain "from ch " fromC)
+  (set! (.-type fromC) "fmr")
 
-;  (loop [cnt (/ originl 2)   ]
-;  (l/og :blockchain "countt %s " cnt )
-;  (go
-;    (def tx (<! shaC))
-;    (def next (<! shaC))
-;  );
+ (>! app.main.cryptoCh (js-obj "value" fromC "type" "fmr")) 
 
-;  (sha256c (partial resultToCh shaC) (+ tx next))
-;  (if (== 1 cnt)
-;  0
-;  (recur (/ cnt 2) )))
-
-
+    )
 )
-; 2^
