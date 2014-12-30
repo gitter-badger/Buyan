@@ -17,7 +17,16 @@
  (l/og :blockchain "new memPool after remove " memPool)
 )
 
-(defn makeBlock [] (js-obj "" 1))
+(defn makeBlock [version previous fmroot timestamp bits nonce txcount] 
+  (js-obj 
+    "version" 1
+    "previous" previous
+    "merkleRoot" fmroot
+    "timestamp" timestamp
+    "bits" bits
+    "nonce" nonce
+    "txcount" txcount       
+))
 (defn makeTransaction [] (js-obj "" 1))
 (defn addTransactionToBlock [] (js-obj "" 1))
 (defn encode [x] (.encode (js/TextEncoder. "utf-8") x))

@@ -34,7 +34,40 @@
   (def peerjs (js/Peer. id peerParams ))
   (def onDatabaseChange (chan))
   (set! (.-type onDatabaseChange) "databaseChange")
-  (def dbase (js/PouchDB. "dbname"))  
+  (def dbase (js/PouchDB. "dbname"))
+  (.enable (.-debug js/PouchDB) "*")
+  (defn saveBlock [dbase blockR] 
+    (l/og :dbase "saving " blockR)
+    (.put dbase (js-obj "_id" "last" "val" blockR))
+
+    (.put dbase (js-obj "_id" (.-merkleRoot blockR) "val" blockR))
+  )
+  (defn initDBase [dbase]
+   
+    (let [c (chan)]
+    (go 
+     (.then (.get dbase "last") #(put! c %) #(put! c %))
+   
+    (def lastone (<! c))
+
+   (l/og :db "about to init")
+    (l/og :db "last one from database " lastone)
+    (if (== (.-status lastone) 404)(do 
+      (l/og :db "nothing in database")
+       (def blockR (app.blockchain.makeBlock "0" "0" "0" (.getTime ( js/Date.)) 0 "0" 0))
+       
+       (saveBlock dbase blockR)
+      )
+      (do
+        (l/og :db "last one from database " lastone)
+
+      )
+    )
+    ;(if last)
+    ;(.put dbase (js-obj "_id" "height" "val" 1))
+)  )
+  )    
+ (initDBase dbase)
   (def transactionch (chan))
   (set! (.-type transactionch) "transactionch")
      (def cryptoCh (chan))
