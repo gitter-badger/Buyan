@@ -2,6 +2,7 @@
   (:require
     [app.intercom :as i]
     [app.logger :as l]
+    [app.database :as db]
     [app.blockchain :as blockchain]
     [cljs.core.async :refer [chan close! timeout put!]]
     [servant.core :as servant]
@@ -11,6 +12,8 @@
 
 
 (enable-console-print!)
+
+
 (def peers [])
 (defn foo [] 
   (println "window loaded")
@@ -48,6 +51,7 @@
   ;database instance
   (def dbase (js/PouchDB. "dbname"))
   (.enable (.-debug js/PouchDB) "*")
+
   (defn saveBlock [dbase blockR] 
     (l/og :dbase "saving " blockR)
     (.put dbase (js-obj "_id" "last" "val" blockR))
@@ -67,7 +71,8 @@
     (l/og :db "last one from database " lastone)
     (if (== (.-status lastone) 404)(do 
       (l/og :db "nothing in database")
-       (def blockR (app.blockchain.makeBlock "0" "0" "0" (.getTime ( js/Date.)) 0 "0" 0))
+      ;args to make blockheader version previous fmroot timestamp bits nonce txcount
+       (def blockR (app.blockchain.makeBlockHeader "0" "0" "0" (.getTime ( js/Date.)) 0 "0" 0))
        
        (saveBlock dbase blockR)
       )
@@ -81,7 +86,19 @@
 )  )
   )    
  (initDBase dbase)
-
+ (defn makeBlock [work]
+ (go
+  (def txs (<! (db/g "txs")))
+  (def lastt (<! (db/g "last")))
+  (def stringified (.stringify js/JSON (.-val lastt)))
+  (l/og :blockchain "stringified" stringified)
+  (def blockHash (<! (blockchain/s256 stringified)))
+    (def blockR (app.blockchain.makeBlockHeader "0" "0" "0" (.getTime ( js/Date.)) 0 "0" 0))
+)
+ )
+; (go
+; (l/og :db "last entry with new func" (<! (gdb "last")) )
+; )
  ;channel to recieve new transaction
   (def transactionch (chan))
   (set! (.-type transactionch) "transactionch")
@@ -163,6 +180,7 @@
 ;dispatch to thread pool for mining
 (defn mine [rootHash]
 (def chann (servant/servant-thread servant-channel servant/standard-message "none" "newjob" rootHash ))
+
 (go
 
 (def v (<! chann))
@@ -253,6 +271,11 @@
                                  (== (.-type ch2) "workerch") (do 
                                                              ; println vrecieved
                                                              (l/og :mloop  "recieved from worker " vrecieved)
+                                                             (def blockk (makeBlock vrecieved))
+                                                             (l/og :blockchain "just made new block " blockk)
+                                                             ;(blockchain/addToChain blockk)
+                                                             ;TODO anounce to peers
+
                                                              ; (.send (.-conn ch2 ) vrecieved)
                                                               )
                                  ;recieves results from browser crypto functions
@@ -263,12 +286,11 @@
                                                              (l/og :mloop (aget vrecieved "type"))
                                                              (if (== (aget vrecieved "type") "fmr") (do
                                                               (l/og :mloop "merkle root " vrecieved )
-                                                             
-                                                             (mine (aget vrecieved "value"))
+                                                              (mine (aget vrecieved "value"))
                                                               )
                                                              )
-                                                             (if (> (count blockchain/memPool) 5)
-                                                             
+                                                             (if (> (count blockchain/memPool) 3)
+
                                                              (l/og :mloop "calculating hash of transactions(not merkle root now) %s" (blockchain/merkleRoot blockchain/memPool)))
                                                              ; (.send (.-conn ch2 ) vrecieved)
                                                               )
@@ -313,3 +335,4 @@
 ; (println (alts!  peers ))
    ; (println "Killing webworkers")
                               ; (servant/kill-servants servant-channel worker-count)
+                           

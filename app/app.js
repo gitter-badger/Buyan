@@ -8,9 +8,10 @@ goog.addDependency("../cljs/core/async/impl/ioc_helpers.js", ['cljs.core.async.i
 goog.addDependency("../cljs/core/async/impl/timers.js", ['cljs.core.async.impl.timers'], ['cljs.core.async.impl.channels', 'cljs.core.async.impl.dispatch', 'cljs.core', 'cljs.core.async.impl.protocols']);
 goog.addDependency("../cljs/core/async.js", ['cljs.core.async'], ['cljs.core.async.impl.channels', 'cljs.core.async.impl.dispatch', 'cljs.core', 'cljs.core.async.impl.buffers', 'cljs.core.async.impl.protocols', 'cljs.core.async.impl.ioc_helpers', 'cljs.core.async.impl.timers']);
 goog.addDependency("../app/logger.js", ['app.logger'], ['cljs.core']);
-goog.addDependency("../app/blockchain.js", ['app.blockchain'], ['cljs.core', 'cljs.core.async', 'app.logger']);
+goog.addDependency("../app/database.js", ['app.database'], ['cljs.core', 'cljs.core.async', 'app.logger']);
+goog.addDependency("../app/blockchain.js", ['app.blockchain'], ['app.database', 'cljs.core', 'cljs.core.async', 'app.logger']);
 goog.addDependency("../cljs/reader.js", ['cljs.reader'], ['goog.string', 'cljs.core', 'goog.string.StringBuffer']);
 goog.addDependency("../servant/worker.js", ['servant.worker'], ['cljs.core', 'cljs.core.async', 'cljs.reader']);
 goog.addDependency("../app/intercom.js", ['app.intercom'], ['cljs.core', 'app.logger']);
 goog.addDependency("../servant/core.js", ['servant.core'], ['servant.worker', 'cljs.core', 'cljs.core.async']);
-goog.addDependency("../app/main.js", ['app.main'], ['servant.worker', 'app.intercom', 'cljs.core', 'cljs.core.async', 'servant.core', 'app.blockchain', 'app.logger']);
+goog.addDependency("../app/main.js", ['app.main'], ['app.database', 'servant.worker', 'app.intercom', 'cljs.core', 'cljs.core.async', 'servant.core', 'app.blockchain', 'app.logger']);
