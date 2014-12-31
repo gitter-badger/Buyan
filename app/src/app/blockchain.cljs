@@ -1,6 +1,7 @@
 (ns app.blockchain
 (:require
     [app.logger :as l]
+    [app.database :as db]
     [cljs.core.async :refer [chan close! timeout put!]]
     
     )
@@ -9,6 +10,7 @@
     )
 (enable-console-print!)
 (def memPool (array))
+
 (defn addTransactionToMemPool [x] 
 (.push memPool x)
 (l/og :blockchain "new memPool after adding " memPool))
@@ -17,7 +19,7 @@
  (l/og :blockchain "new memPool after remove " memPool)
 )
 
-(defn makeBlock [version previous fmroot timestamp bits nonce txcount] 
+(defn makeBlockHeader [version previous fmroot timestamp bits nonce txcount] 
   (js-obj 
     "version" 1
     "previous" previous
@@ -27,6 +29,7 @@
     "nonce" nonce
     "txcount" txcount       
 ))
+
 (defn makeTransaction [] (js-obj "" 1))
 (defn addTransactionToBlock [] (js-obj "" 1))
 (defn encode [x] (.encode (js/TextEncoder. "utf-8") x))
@@ -62,18 +65,31 @@
   c
  )
 )
+  (defn s256 [ k]
+     (l/og :blockchain "about to sha256 " k)
+     (go
+      (let [c (chan)]
+       (.then (js/crypto.subtle.digest (js-obj "name" "SHA-256") (encode k) ) #(put! c %))
+        
+        
+        (def r (arraybtostring (<! c)))
+(l/og :blockchain (+ "got from sha256 " k) r)
+        r
+      )
+      )
+  )
 (defn popA [a]
  (.splice a 0 1)
 )
     (defn log2 [n]
     (/ (Math/log n) (Math/log 2)))
-(defn merkleRoot [transactions]  
-
+(defn merkleRoot [transactions]    
   ;note this is fake merkle root but does the trick it hashes chain of transactions 
   ;for now it will be here due to simplicity and bcz I could not find math functions in clojurescript easily
   ;merkleRoot is more efficient at getting any transaction in block because you need to supply only path to the root to verify
   ;while here it varies depending whether transaction searched is last one or first one
-  (def lastt (js/Object.))
+  ;will save mempool here so we can retrieve them later when merkle root is ready and when block structure is to be made
+  (db/p "txs" transactions)
   (go
   (def originl (.-length transactions))
   (def tx (.shift transactions))
@@ -96,7 +112,7 @@
 (l/og :blockchain "from ch " fromC)
   (set! (.-type fromC) "fmr")
 
- (>! app.main.cryptoCh (js-obj "value" fromC "type" "fmr")) 
+ (>! app.main.cryptoCh (js-obj "value" fromC "type" "fmr"))
 
     )
 )
