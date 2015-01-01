@@ -14,7 +14,8 @@ and `gulp watch` from parent dir with chrome devtools(workspaces, source maps)
 protocol
 
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/cdraw.png)
-![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/getblock.png)
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/getblock.png)      
+protocol     
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/protocol.png)
 Buyan after
 https://www.youtube.com/watch?v=4QtkDMXA0u8
