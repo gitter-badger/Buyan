@@ -308,7 +308,7 @@
                                            (if (> (count blockchain/memPool) 3)
 
                                              (l/og :mloop "calculating hash of transactions(not merkle root now) %s" (blockchain/merkleRoot blockchain/memPool)))
-                                           ; (.send (.-conn ch2 ) vrecieved)
+                                           
                                            )
             ; recieves transactions
             (== (.-type ch2) "transactionch") (do
