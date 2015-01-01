@@ -10,7 +10,8 @@
     )
 (enable-console-print!)
 (def memPool (array))
-
+(def blockhainInfo (js-obj))
+(set! (.-dificulty blockhainInfo) 5)
 (defn addTransactionToMemPool [x] 
 (.push memPool x)
 (l/og :blockchain "new memPool after adding " memPool))
@@ -102,9 +103,7 @@
   (sha256c (partial resultToCh shaC) (+ tx next))
   (if (== 0 cnt)
  (go
- ;(def lastt 1)
- ;(l/og :blockchain "got last" lastt)
-; lastt
+
  )
   (recur  (.shift txs) (.-length txs)   txs )))
   
@@ -116,3 +115,6 @@
 
     )
 )
+ ;(def lastt 1)
+ ;(l/og :blockchain "got last" lastt)
+; lastt

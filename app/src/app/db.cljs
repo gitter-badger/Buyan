@@ -17,8 +17,9 @@
         
         (def r (<! c))
 (l/og :db (+ "got from db " k) r)
-        r
+       ; (<! c)
       )
+      r
       )
   )
   ;(def g (partial getDB dbase))
