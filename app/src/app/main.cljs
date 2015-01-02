@@ -12,7 +12,7 @@
 
 
 (enable-console-print!)
-
+;(new PouchDB('dbname')).allDocs({include_docs:true,limit: 10},function(e,r){console.log(r);});
 
 (def peers [])
 (defn foo [] 
@@ -219,7 +219,7 @@
           ;(>! (nth peer 1) "sending some data trough channel")
           (l/og :mloop "new iteration with state")
 
-          (l/og :mloop state)
+          (l/og :mloop "state " state)
           ;listen on channels from vector
           (def v (alts! state ))
           ;get value
@@ -262,8 +262,11 @@
             (== (.-type ch2) "workerch") (do 
                                            ; println vrecieved
                                            (l/og :mloop  "recieved from worker " vrecieved)
-                                           (def blockk (makeBlock vrecieved))
+                                           (def blockk (<! (makeBlock vrecieved)))
+
+                                           (saveBlock dbase blockk)
                                            (l/og :blockchain "just made new block " blockk)
+                                           ;(<! (makeBlock vrecieved)
                                            ;(blockchain/addToChain blockk)
                                            ;TODO anounce to peers
 
