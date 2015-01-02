@@ -125,7 +125,7 @@
       (l/og :db "newly made block " blockk)
       blockk
       )
-    )
+    ) 
   ; (go
   ; (l/og :db "last entry with new func" (<! (gdb "last")) )
   ; )
@@ -262,9 +262,12 @@
             ;channel from some peer that recieves data from peer
             (== (.-type ch2) "readch") (do 
                                          (l/og :mloop  "recieved from peer " vrecieved)
+                                         (if (== (.-type vrecieved) "json") 
+                                         (def vrecieved (.parse js/JSON (.-data vrecieved)))
+                                         )
                                          (set! (.-peer vrecieved) (.-writec ch2))
                                          (i/onMessage (.-writec ch2) (.-type vrecieved) (.-data vrecieved))
-
+ 
 
                                          )
             ;channel from some peer that recieves data to be sent to that peer(wrapper for peerjs send to peer)
