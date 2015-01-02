@@ -16,7 +16,9 @@
 ;(defprotocol versionExchange)
 (def inputch (chan))
 (def outputch (chan))
-
+(defn makeInv [typ message]
+  (.stringify js/JSON (js-obj "type" "inv" "data" (js-obj "type" typ "vector" message)))
+)
 (def statech (chan))
 (defn sendmsg [peer type msg]
 

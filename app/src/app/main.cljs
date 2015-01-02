@@ -97,6 +97,20 @@
       blockHash
     )
   )
+  
+  (defn broadcastNewBlock [ blockk]
+  (l/og :intercom "broadsacting new block" blockk)
+
+  (l/og :intercom "broadsacting new block to "  (.-knownPeersChannels intercomMeta))
+  (go
+  
+    (doseq [peer  (.-knownPeersChannels intercomMeta)] 
+  (l/og :intercom (+ "broadsacting new block to peer " peer " ")  blockk)
+  (def vectoR (array))
+  (.push vectoR blockk )
+    (>! peer (i/makeInv "block" vectoR)))
+    )
+  )
   (defn makeBlock [work]
     (go
       (def txs (<! (db/g "txs")))
@@ -191,6 +205,7 @@
 (def intercomMeta (js-obj 
                     "id" 1
                     "knownPeers" []
+                    "knownPeersChannels" []
                     ))
 
 ;dispatch to thread pool for mining
@@ -237,6 +252,8 @@
                                           ;add channels for reading and writing to this new connection to the vector of channels we listen
                                           (def state (into [] (concat state  peerChannels )))
                                           (set! (.-knownPeers intercomMeta) (conj (.-knownPeers intercomMeta)  (.-peer vrecieved)) )
+                                           (l/og :mloop "adding w channel to kpeers " (nth peerChannels 1))
+                                          (set! (.-knownPeersChannels intercomMeta) (conj (.-knownPeersChannels intercomMeta)  (nth peerChannels 1)) )
                                           (l/og :mloop  "new state")
                                           (i/onMessage (nth peerChannels 1) "conn" vrecieved)
 
@@ -254,7 +271,7 @@
             (== (.-type ch2) "writech") (do
                                           ; println vrecieved
                                           (l/og :mloop  "sending to peer " vrecieved)
-                                          (l/og :mloop  (.-conn ch2))
+                                          (l/og :mloop  "connection being sent to " (.-conn ch2))
 
                                           (.send (.-conn ch2 ) vrecieved)
                                           )
@@ -269,6 +286,7 @@
                                            ;(<! (makeBlock vrecieved)
                                            ;(blockchain/addToChain blockk)
                                            ;TODO anounce to peers
+                                           (broadcastNewBlock blockk)
 
                                            ; (.send (.-conn ch2 ) vrecieved)
                                            )
