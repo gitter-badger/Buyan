@@ -133,7 +133,7 @@
     (l/og :conn  "connection opened trying to send data trough")
     (l/og :conn  conn)
     (set! (.-connType conn) "saltan")
-    (.send conn "asd")
+    ;(.send conn "asd")
     (go
       (>! connectionch conn)
       )
@@ -238,40 +238,15 @@
                                           (def state (into [] (concat state  peerChannels )))
                                           (set! (.-knownPeers intercomMeta) (conj (.-knownPeers intercomMeta)  (.-peer vrecieved)) )
                                           (l/og :mloop  "new state")
-                                          (i/onMessage "version" "message")
+                                          (i/onMessage (nth peerChannels 1) "conn" vrecieved)
 
-                                          (l/og :mloop  state)
-                                          ;if this user initiated connection he will send version first
-                                          (if (== (.-connType vrecieved) "saltan")
-                                            (do 
-                                              (l/og :mloop  "saltan here")
-                                              (>! (nth peerChannels 1) (js-obj "type" "versionSaltan" "data" (.-id intercomMeta)))
-                                              )
-                                            (do 
 
-                                              (l/og :mloop  "tsaritsa here")
-                                              )
-                                            )
                                           )
             ;channel from some peer that recieves data from peer
             (== (.-type ch2) "readch") (do 
                                          (l/og :mloop  "recieved from peer " vrecieved)
-                                         (if (== (.-type vrecieved) "versionSaltan") 
-                                           (do
-                                             (l/og :mloop  (.-data vrecieved))
-                                             (l/og :mloop  "-------------------------")
-                                             (l/og :mloop  (.-knownPeers intercomMeta))
-                                             (def conn (.-peer (.-conn ch2)))
-                                             (l/og :mloop  (.-conn ch2))
-                                             ;filter out from knownPeers that user that is about to recieve knownPeers list
-                                             (def filtrd (remove    #{conn}     (.-knownPeers intercomMeta)))
-                                             (set! (.-knownPeers intercomMeta) filtrd)
-                                             (l/og :mloop  (into-array filtrd))
-                                             (l/og :mloop  (.-knownPeers intercomMeta))
-                                             (>! (.-writec  ch2) (js-obj "type" "versionTsaritsa" "data" (.-id intercomMeta)))
-                                             (>! (.-writec  ch2) (.stringify js/JSON (js-obj "type" "peerinfo" "data" (into-array (.-knownPeers intercomMeta) ))))
-                                             )
-                                           )
+                                         (set! (.-peer vrecieved) (.-writec ch2))
+                                         (i/onMessage (.-writec ch2) (.-type vrecieved) (.-data vrecieved))
 
 
                                          )
@@ -351,4 +326,32 @@
 ; (println (alts!  peers ))
 ; (println "Killing webworkers")
 ; (servant/kill-servants servant-channel worker-count)
-
+;
+;                                         (if (== (.-type vrecieved) "versionSaltan") 
+;                                           (do
+;                                             (l/og :mloop  (.-data vrecieved))
+;                                             (l/og :mloop  "-------------------------")
+;                                             (l/og :mloop  (.-knownPeers intercomMeta))
+;                                             (def conn (.-peer (.-conn ch2)))
+;                                             (l/og :mloop  (.-conn ch2))
+;                                             ;filter out from knownPeers that user that is about to recieve knownPeers list
+;                                             (def filtrd (remove    #{conn}     (.-knownPeers intercomMeta)))
+;                                             (set! (.-knownPeers intercomMeta) filtrd)
+;                                             (l/og :mloop  (into-array filtrd))
+;                                             (l/og :mloop  (.-knownPeers intercomMeta))
+;                                             (>! (.-writec  ch2) (js-obj "type" "versionTsaritsa" "data" (.-id intercomMeta)))
+;                                             (>! (.-writec  ch2) (.stringify js/JSON (js-obj "type" "peerinfo" "data" (into-array (.-knownPeers intercomMeta) ))))
+;                                             )
+;                                           )
+;                                          (l/og :mloop  state)
+;                                          ;if this user initiated connection he will send version first
+;                                          (if (== (.-connType vrecieved) "saltan")
+;                                            (do 
+;                                              (l/og :mloop  "saltan here")
+;                                              (>! (nth peerChannels 1) (js-obj "type" "versionSaltan" "data" (.-id intercomMeta)))
+;                                              )
+;                                            (do 
+;
+;                                              (l/og :mloop  "tsaritsa here")
+;                                              )
+;                                            )
