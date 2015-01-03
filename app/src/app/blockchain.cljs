@@ -100,32 +100,52 @@
 ;         if it is then check if the length of the new blockchain is bigger than what we have            
 ;             if it is bigger make new chain since it will be bigger      
 ;             if it is not bigger drop message and send data that we have since we have bigger chain      
-;      if it is unknown      
+;         if it is unknown      
 ;           send request for more data      
 ;             
 
-
+(defn addToChain [schain]
+  (l/og :inv "about to add to chain")
+  (go
+    (doseq [i schain]
+      (l/og :inv "itterating current step " i)
+      (if (<! (blockKnown? (prevblk (first blocks))))
+        (l/og :inv "block is known " i)
+        (do
+          (l/og :inv "block is not known " i)
+          (saveBlock i)
+        )
+      )
+    )
+    (db/update "last" (last schain))
+  )
+)
 (defn handleInvBlock [blocks]
   "function to handle inv block"
   (l/og :blockchain "now about to handle inv block message " blocks)
-  handlehandle
+(go
  
-  (if (blockKnown? (prevblk (first blocks)))
+  (if (<! (blockKnown? (prevblk (first blocks))))
   ;block known
   (do
     ;is blockchains length bigger
+    (l/og :inv "block is known ")
     (if (< (<! (blockchain/blockchainHeight)) 
            (+ 
-              (heightFromBlock (first blocks)) 
-              (- (.-length blocks) 1)
+              (heightFromBlock (prevblk (first blocks))) 
+              (.-length blocks) 
            )
         )
       (do
         ;validate
         ;now add to chain
+        (l/og :inv "now adding to chain")
+        (addToChain blocks)
+
       )
       (do
         ;drop inv
+        (l/og :inv "about to drop inv")
       )
     )
 
@@ -135,11 +155,10 @@
   ;now request previous 
   (do
     
-
   )
   ;
   )
-
+)
 )
 (defn blockchainHeight [x]
 (go
