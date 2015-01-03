@@ -2929,13 +2929,15 @@ function first tries to find field hash to query and then uses parameter if fiel
         false))))
   res))
 (defn heightFromBlock [blockk]
- (.-heightFromRoot (.-header blokk)))</pre></td></tr><tr><td class="docs"><p>this is the pseudo code <br />
-   is the previous block of first block in array known?
-      if it is then check if the length of the new blockchain is bigger than what we have
-          if it is bigger make new chain since it will be bigger
-          if it is not bigger drop message and send data that we have since we have bigger chain
-      if it is unknown
-          send request for more data</p>
+ (.-heightFromRoot (.-header blokk)))</pre></td></tr><tr><td class="docs"><p>this is the pseudo code    </p>
+
+<pre><code> is the previous block of first block in array known?      
+    if it is then check if the length of the new blockchain is bigger than what we have            
+        if it is bigger make new chain since it will be bigger      
+        if it is not bigger drop message and send data that we have since we have bigger chain      
+ if it is unknown      
+      send request for more data
+</code></pre>
 </td><td class="codes"></td></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(defn handleInvBlock [blocks]
   &quot;function to handle inv block&quot;
