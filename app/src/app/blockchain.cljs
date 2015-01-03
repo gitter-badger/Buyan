@@ -93,8 +93,8 @@
  (.-heightFromRoot (.-header blokk))
 )
 
-;
-; this is the pseudo code
+
+;this is the pseudo code    
 ;    is the previous block of first block in array known?
 ;       if it is then check if the length of the new blockchain is bigger than what we have
 ;           if it is bigger make new chain since it will be bigger
