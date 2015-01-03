@@ -2929,16 +2929,28 @@ function first tries to find field hash to query and then uses parameter if fiel
         false))))
   res))
 (defn heightFromBlock [blockk]
- (.-heightFromRoot (.-header blokk)))</pre></td></tr><tr><td class="docs"><p>check if first block is a known one</p>
+ (.-heightFromRoot (.-header blokk)))</pre></td></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(defn handleInvBlock [blocks]
   &quot;function to handle inv block&quot;
   (l/og :blockchain &quot;now about to handle inv block message &quot; blocks)
-  (if (blockKnown? (first blocks))
+  handlehandle
+  (if (blockKnown? (prevblk (first blocks)))
   ;block known
   (do
-    ;is blockchains length bigger)
+    ;is blockchains length bigger
+    (if (&lt; (&lt;! (blockchain/blockchainHeight)) 
+           (+ 
+              (heightFromBlock (first blocks)) 
+              (- (.-length blocks) 1)))
+      (do
+        ;validate
+        ;now add to chain)
+      (do
+        ;drop inv)))
   ;block unknown
-  (do)))
+  ;now request previous 
+  (do)
+  ;))
 (defn blockchainHeight [x]
 (go
   (def hght (&lt;!(db/g &quot;height&quot;)) )

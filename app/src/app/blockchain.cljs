@@ -97,8 +97,8 @@
 ; this is the pseudo code
 ;    is the previous block of first block in array known?
 ;       if it is then check if the length of the new blockchain is bigger than what we have
-;           if it is bigger make new chain
-;           if it is not bigger drop message and send inv
+;           if it is bigger make new chain since it will be bigger
+;           if it is not bigger drop message and send data that we have since we have bigger chain
 ;       if it is unknown
 ;           send request for more data
 ;             
@@ -133,7 +133,7 @@
   ;block unknown
   ;now request previous 
   (do
-
+    
 
   )
   ;
