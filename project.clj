@@ -2,6 +2,8 @@
   :description "FIXME: write this!"
   :url "http://example.com/FIXME"
 
+  :dev-dependencies [[lein-marginalia "0.8.0"]
+                ]
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/clojurescript "0.0-2371"]]
   :profiles {:dev {:plugins [[com.cemerick/austin "0.1.5"]]}}
