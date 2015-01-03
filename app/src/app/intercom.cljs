@@ -12,7 +12,9 @@
 (def intercomState "start")
 (def state (atom {}))
 ;maybe put some dsl in future here that would be agreed in blockchain
-;but for now state machine    
+;but for now state machine   
+
+;every time message arives it is inserte here
 (def inputch (chan))
 (def outputch (chan))
 (defn makeInv [typ message]
@@ -22,12 +24,20 @@
    (js-obj "type" "json" "data" (.stringify js/JSON (js-obj "type" "inv" "data" (js-obj "type" typ "vector" message))))
 )
 (def statech (chan))
+;this one will send message to peer
 (defn sendmsg [peer type msg]
 
   (l/og :intercom  (+ "sending " type) msg)
 (go
   (>! peer (js-obj "type" type "msg" msg))
 ))
+
+;switches state of the state machine     
+;for protocol check out 
+;![](../protocol.png)
+
+
+
 (defn tostate [statename]
 
   (l/og :intercom  "changing state to: " statename)

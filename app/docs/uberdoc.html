@@ -3035,16 +3035,16 @@ lastt</p>
         r
        ; (&lt;! c))))
   (defn g [ k]
-     (l/og :db &quot;getting from db &quot; k)
+     (l/og :dbget &quot;getting from db &quot; k)
      (go
       (let [c (chan)]
         (.then (.get app.main.dbase k) #(put! c %) #(put! c false))
         (def r  (&lt;! c))
-(l/og :db (+ &quot;got from db &quot; k) r)
+(l/og :dbget (+ &quot;got from db &quot; k) r)
         (if r (.-val r) r )
        ; (&lt;! c))))</pre></td></tr><tr><td class="docs"><p>(def g (partial getDB dbase))</p>
 </td><td class="codes"><pre class="brush: clojure">  (defn p [ key v]
-    (l/og :db  &quot;putting from db &quot; [key v])
+    (l/og :dbput  &quot;putting from db &quot; [key v])
     (.put app.main.dbase (js-obj &quot;_id&quot; key &quot;val&quot; v)))</pre></td></tr><tr><td class="docs"><p>(def p (partial putDB ))</p>
 </td><td class="codes"></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr><tr><td class="docs"><div class="docs-header"><a class="anchor" href="#app.intercom" name="app.intercom"><h1 class="project-name">app.intercom</h1><a class="toc-link" href="#toc">toc</a></a></div></td><td class="codes" /></tr><tr><td class="docs">
 </td><td class="codes"><pre class="brush: clojure">(ns app.intercom
@@ -3056,7 +3056,8 @@ lastt</p>
 (enable-console-print!)
 (def intercomState &quot;start&quot;)
 (def state (atom {}))</pre></td></tr><tr><td class="docs"><p>maybe put some dsl in future here that would be agreed in blockchain
-but for now state machine    </p>
+but for now state machine   </p>
+</td><td class="codes"></td></tr><tr><td class="docs"><p>every time message arives it is inserte here</p>
 </td><td class="codes"><pre class="brush: clojure">(def inputch (chan))
 (def outputch (chan))
 (defn makeInv [typ message]
@@ -3064,12 +3065,15 @@ but for now state machine    </p>
   ;(def v (.stringify js/JSON (js-obj &quot;type&quot; &quot;inv&quot; &quot;data&quot; (js-obj &quot;type&quot; typ &quot;vector&quot; message))))
   ;(set! (.-type v) &quot;json&quot;)
    (js-obj &quot;type&quot; &quot;json&quot; &quot;data&quot; (.stringify js/JSON (js-obj &quot;type&quot; &quot;inv&quot; &quot;data&quot; (js-obj &quot;type&quot; typ &quot;vector&quot; message)))))
-(def statech (chan))
-(defn sendmsg [peer type msg]
+(def statech (chan))</pre></td></tr><tr><td class="docs"><p>this one will send message to peer</p>
+</td><td class="codes"><pre class="brush: clojure">(defn sendmsg [peer type msg]
   (l/og :intercom  (+ &quot;sending &quot; type) msg)
 (go
-  (&gt;! peer (js-obj &quot;type&quot; type &quot;msg&quot; msg))))
-(defn tostate [statename]
+  (&gt;! peer (js-obj &quot;type&quot; type &quot;msg&quot; msg))))</pre></td></tr><tr><td class="docs"><p>switches state of the state machine <br />
+for protocol check out 
+<img src="../protocol.png" alt="" /></p>
+</td><td class="codes"></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn tostate [statename]
   (l/og :intercom  &quot;changing state to: &quot; statename)
 (go
   (&gt;! statech statename)))
@@ -3281,17 +3285,8 @@ keeps track of protocol and peers</p>
   (go
     (def v (&lt;! chann))
     (l/og :mloop &quot;recieved from mining&quot; v)
-    (&gt;! hashmine (.parse js/JSON v) )))
-(defn foo [] 
-  &quot;main program entry point.    
-  It checks database to initialise it.
-  enters loop waiting for messages and reacts to them&quot;
-;now that channels are setup
-(do
-  (l/og :conn &quot;about to connect from heere&quot;)
-  (def peer (connectTo &quot;2&quot;))
-  ;(.log js/console (nth peer 1))
-  (defn lp [statea] 
+    (&gt;! hashmine (.parse js/JSON v) )))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">  (defn lp [statea] 
     (def gconn 1)
     (def state statea)
     ;listen on messages and send them where they need to be sent
@@ -3365,6 +3360,15 @@ keeps track of protocol and peers</p>
                                                 ;(&gt;! channel-1 vrecieved)
                                                 ; (.send (.-conn ch2 ) vrecieved)))
 (recur (do)))))
+(defn foo [] 
+  &quot;main program entry point.    
+  It checks database to initialise it.
+  enters loop waiting for messages and reacts to them&quot;
+;now that channels are setup
+(do
+  (l/og :conn &quot;about to connect from heere&quot;)
+  (def peer (connectTo &quot;2&quot;))
+  ;(.log js/console (nth peer 1))
 ;what channels are listened on
 (lp [connectionch hashmine transactionch cryptoCh]))
 (l/og :main  &quot;Hello wor 32 d rdaldad!&quot;)

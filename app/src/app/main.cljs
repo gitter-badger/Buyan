@@ -236,17 +236,6 @@
     (>! hashmine (.parse js/JSON v) )
     )
   )
-(defn foo [] 
-  "main program entry point.    
-  It checks database to initialise it.
-  enters loop waiting for messages and reacts to them"
-
-;now that channels are setup
-(do
-  (l/og :conn "about to connect from heere")
-  (def peer (connectTo "2"))
-  ;(.log js/console (nth peer 1))
-
 
   (defn lp [statea] 
     (def gconn 1)
@@ -348,6 +337,19 @@
 (recur (do)))
 )
 )
+(defn foo [] 
+  "main program entry point.    
+  It checks database to initialise it.
+  enters loop waiting for messages and reacts to them"
+
+;now that channels are setup
+(do
+  (l/og :conn "about to connect from heere")
+  (def peer (connectTo "2"))
+  ;(.log js/console (nth peer 1))
+
+
+
 ;what channels are listened on
 (lp [connectionch hashmine transactionch cryptoCh])
 )
