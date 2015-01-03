@@ -93,22 +93,50 @@
  (.-heightFromRoot (.-header blokk))
 )
 
-;check if first block is a known one
+;
+; this is the pseudo code
+;    is the previous block of first block in array known?
+;       if it is then check if the length of the new blockchain is bigger than what we have
+;           if it is bigger make new chain
+;           if it is not bigger drop message and send inv
+;       if it is unknown
+;           send request for more data
+;             
+
+
 (defn handleInvBlock [blocks]
   "function to handle inv block"
   (l/og :blockchain "now about to handle inv block message " blocks)
-  
+  handlehandle
  
-  (if (blockKnown? (first blocks))
+  (if (blockKnown? (prevblk (first blocks)))
   ;block known
   (do
     ;is blockchains length bigger
+    (if (< (<! (blockchain/blockchainHeight)) 
+           (+ 
+              (heightFromBlock (first blocks)) 
+              (- (.-length blocks) 1)
+           )
+        )
+      (do
+        ;validate
+        ;now add to chain
+      )
+      (do
+        ;drop inv
+      )
+    )
+
 
   )
   ;block unknown
+  ;now request previous 
   (do
-    
+
+
   )
+  ;
   )
 
 )
