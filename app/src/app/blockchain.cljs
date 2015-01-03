@@ -80,7 +80,7 @@
     ))
     (do
       (if (== (.-hash (<! (db/g  blockk) )) (.-hash block))
-        trueHomeHomeHomeHome
+        true
         false
       )
     )
@@ -92,10 +92,13 @@
 (defn heightFromBlock [blockk]
  (.-heightFromRoot (.-header blokk))
 )
+
+;check if first block is a known one
 (defn handleInvBlock [blocks]
+  "function to handle inv block"
   (l/og :blockchain "now about to handle inv block message " blocks)
   
-  ;check if first block is a known one
+ 
   (if (blockKnown? (first blocks))
   ;block known
   (do
@@ -173,12 +176,16 @@
 )
     (defn log2 [n]
     (/ (Math/log n) (Math/log 2)))
-(defn merkleRoot [transactions]    
+
   ;note this is fake merkle root but does the trick it hashes chain of transactions 
   ;for now it will be here due to simplicity and bcz I could not find math functions in clojurescript easily
   ;merkleRoot is more efficient at getting any transaction in block because you need to supply only path to the root to verify
   ;while here it varies depending whether transaction searched is last one or first one
   ;will save mempool here so we can retrieve them later when merkle root is ready and when block structure is to be made
+
+(defn merkleRoot [transactions]    
+
+
   (db/update "txs" #(do transactions))
   (go
   (def originl (.-length transactions))

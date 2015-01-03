@@ -2925,14 +2925,14 @@ function first tries to find field hash to query and then uses parameter if fiel
       false))
     (do
       (if (== (.-hash (&lt;! (db/g  blockk) )) (.-hash block))
-        trueHomeHomeHomeHome
+        true
         false))))
   res))
 (defn heightFromBlock [blockk]
- (.-heightFromRoot (.-header blokk)))
-(defn handleInvBlock [blocks]
+ (.-heightFromRoot (.-header blokk)))</pre></td></tr><tr><td class="docs"><p>check if first block is a known one</p>
+</td><td class="codes"><pre class="brush: clojure">(defn handleInvBlock [blocks]
+  &quot;function to handle inv block&quot;
   (l/og :blockchain &quot;now about to handle inv block message &quot; blocks)
-  ;check if first block is a known one
   (if (blockKnown? (first blocks))
   ;block known
   (do
@@ -2983,13 +2983,13 @@ function first tries to find field hash to query and then uses parameter if fiel
 (defn popA [a]
  (.splice a 0 1))
     (defn log2 [n]
-    (/ (Math/log n) (Math/log 2)))
-(defn merkleRoot [transactions]    
-  ;note this is fake merkle root but does the trick it hashes chain of transactions 
-  ;for now it will be here due to simplicity and bcz I could not find math functions in clojurescript easily
-  ;merkleRoot is more efficient at getting any transaction in block because you need to supply only path to the root to verify
-  ;while here it varies depending whether transaction searched is last one or first one
-  ;will save mempool here so we can retrieve them later when merkle root is ready and when block structure is to be made
+    (/ (Math/log n) (Math/log 2)))</pre></td></tr><tr><td class="docs"><p>note this is fake merkle root but does the trick it hashes chain of transactions 
+for now it will be here due to simplicity and bcz I could not find math functions in clojurescript easily
+merkleRoot is more efficient at getting any transaction in block because you need to supply only path to the root to verify
+while here it varies depending whether transaction searched is last one or first one
+will save mempool here so we can retrieve them later when merkle root is ready and when block structure is to be made</p>
+</td><td class="codes"></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(defn merkleRoot [transactions]    
   (db/update &quot;txs&quot; #(do transactions))
   (go
   (def originl (.-length transactions))
@@ -3056,11 +3056,11 @@ lastt</p>
 (enable-console-print!)
 (def intercomState &quot;start&quot;)
 (def state (atom {}))</pre></td></tr><tr><td class="docs"><p>maybe put some dsl in future here that would be agreed in blockchain
-but for now state machine
-(defprotocol versionExchange)</p>
+but for now state machine    </p>
 </td><td class="codes"><pre class="brush: clojure">(def inputch (chan))
 (def outputch (chan))
 (defn makeInv [typ message]
+  ;&quot;this function will make inv message &quot;     
   ;(def v (.stringify js/JSON (js-obj &quot;type&quot; &quot;inv&quot; &quot;data&quot; (js-obj &quot;type&quot; typ &quot;vector&quot; message))))
   ;(set! (.-type v) &quot;json&quot;)
    (js-obj &quot;type&quot; &quot;json&quot; &quot;data&quot; (.stringify js/JSON (js-obj &quot;type&quot; &quot;inv&quot; &quot;data&quot; (js-obj &quot;type&quot; typ &quot;vector&quot; message)))))
@@ -3145,50 +3145,9 @@ but for now state machine
     [servant.worker :as worker])
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
                    [servant.macros :refer [defservantfn]]) )</pre></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(enable-console-print!)</pre></td></tr><tr><td class="docs"><p>(new PouchDB('dbname')).allDocs({include_docs:true,limit: 10},function(e,r){console.log(r);});</p>
-</td><td class="codes"></td></tr><tr><td class="docs">
-</td><td class="codes"><pre class="brush: clojure">(def peers [])
-(defn foo [] 
-  (println &quot;window loaded&quot;)
-  ;(blockchain/sha256 &quot;Nikola&quot;)
-  (.log js/console &quot;this runs in the browser&quot;)
-  ;now to define how much threads will mine
-  (def worker-count 2)
-  ;mining script path
-  (def worker-script &quot;wrkr.js&quot;)
-  ;this channel is for servant to know at which thread pool to dispatch
-  (def servant-channel (servant/spawn-servants worker-count worker-script))
-  ;channel that will receive results from mining
-  (def hashmine (chan))
-  ;setting type on the channel object so it is possible to distinguish it from other channels
-  (set! (.-type hashmine) &quot;workerch&quot;)
-  ;instantiate tree js graphic lib
-  (. js/console (log (THREE/Scene. )))
-  ;data for peer connection 
-  (def ^:dynamic peerParams (js-obj &quot;host&quot; &quot;localhost&quot; &quot;port&quot; 8000 &quot;key&quot; &quot;peerjs&quot; &quot;debug&quot; true))
-  ;promt user for id that will be used as his peer id
-  (def id ( js/prompt &quot;enter id&quot;))
-  (l/og :main &quot;user id %s &quot;id)
-  (def start (chan))
-  ;channel to anounce new connectinos
-  (def connectionch (chan))
-  ;peerjs object
-  (def peerjs (js/Peer. id peerParams ))
-  (def onDatabaseChange (chan))
-  (set! (.-type onDatabaseChange) &quot;databaseChange&quot;)
-  ;database instance
-  (def dbase (js/PouchDB. &quot;dbname&quot;))
-  (.enable (.-debug js/PouchDB) &quot;*&quot;)
-  (defn saveBlock [dbase blockR] 
-  (go
-    (l/og :dbase &quot;saving &quot; blockR)
-    (set! (.-heightFromRoot (.-header blockR)) (&lt;! (blockchain/blockchainHeight 1)))
-    (db/update &quot;last&quot; #(js-obj &quot;_id&quot; &quot;last&quot; &quot;val&quot; blockR))
-    ;todo save other info also
-    ;(.put dbase (js-obj &quot;_id&quot; (.-hash blockR) &quot;val&quot; blockR))
-    (.put dbase (js-obj &quot;_id&quot; (.-hash blockR) &quot;val&quot; blockR))))
-  ;initial function for db
-  (defn initDBase [dbase]
+</td><td class="codes"><pre class="brush: clojure">(enable-console-print!)</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(def peers [])</pre></td></tr><tr><td class="docs"><p>initial function for db</p>
+</td><td class="codes"><pre class="brush: clojure">  (defn initDBase [dbase]
     (let [c (chan)]
       (go 
         ;(.then (.get dbase &quot;last&quot;) #(put! c %) #(put! c %))
@@ -3209,17 +3168,42 @@ but for now state machine
                                          ;(db/p   (&lt;! (blockchain/s256 stringified)) [])
                                          (saveBlock dbase blck)))
         ;(if last)
-        ;(.put dbase (js-obj &quot;_id&quot; &quot;height&quot; &quot;val&quot; 1)))  ))    
-  (initDBase dbase)
-  ;(blockchain/blockKnown (js-obj &quot;hash&quot; &quot;asdsad&quot;))
-  ;(blockchain/blockKnown (js-obj &quot;hash&quot; &quot;last&quot;))
-  (defn bHash [block]
+        ;(.put dbase (js-obj &quot;_id&quot; &quot;height&quot; &quot;val&quot; 1)))  ))    </pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">  (println &quot;window loaded&quot;)</pre></td></tr><tr><td class="docs"><p>(blockchain/sha256 "Nikola")</p>
+</td><td class="codes"><pre class="brush: clojure">  (.log js/console &quot;this runs in the browser&quot;)</pre></td></tr><tr><td class="docs"><p>now to define how much threads will mine</p>
+</td><td class="codes"><pre class="brush: clojure">  (def worker-count 2)</pre></td></tr><tr><td class="docs"><p>mining script path</p>
+</td><td class="codes"><pre class="brush: clojure">  (def worker-script &quot;wrkr.js&quot;)</pre></td></tr><tr><td class="docs"><p>this channel is for servant to know at which thread pool to dispatch</p>
+</td><td class="codes"><pre class="brush: clojure">  (def servant-channel (servant/spawn-servants worker-count worker-script))</pre></td></tr><tr><td class="docs"><p>channel that will receive results from mining</p>
+</td><td class="codes"><pre class="brush: clojure">  (def hashmine (chan))</pre></td></tr><tr><td class="docs"><p>setting type on the channel object so it is possible to distinguish it from other channels</p>
+</td><td class="codes"><pre class="brush: clojure">  (set! (.-type hashmine) &quot;workerch&quot;)</pre></td></tr><tr><td class="docs"><p>instantiate tree js graphic lib</p>
+</td><td class="codes"><pre class="brush: clojure">  (. js/console (log (THREE/Scene. )))</pre></td></tr><tr><td class="docs"><p>data for peer connection </p>
+</td><td class="codes"><pre class="brush: clojure">  (def ^:dynamic peerParams (js-obj &quot;host&quot; &quot;localhost&quot; &quot;port&quot; 8000 &quot;key&quot; &quot;peerjs&quot; &quot;debug&quot; true))</pre></td></tr><tr><td class="docs"><p>promt user for id that will be used as his peer id</p>
+</td><td class="codes"><pre class="brush: clojure">  (def id ( js/prompt &quot;enter id&quot;))
+  (l/og :main &quot;user id %s &quot;id)</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">  (def start (chan))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">  (def connectionch (chan))</pre></td></tr><tr><td class="docs"><p>peerjs object</p>
+</td><td class="codes"><pre class="brush: clojure">  (def peerjs (js/Peer. id peerParams ))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">  (def onDatabaseChange (chan))
+  (set! (.-type onDatabaseChange) &quot;databaseChange&quot;)</pre></td></tr><tr><td class="docs"><p>database instance</p>
+</td><td class="codes"><pre class="brush: clojure">  (def dbase (js/PouchDB. &quot;dbname&quot;))
+  (.enable (.-debug js/PouchDB) &quot;*&quot;)</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">  (defn saveBlock [dbase blockR] 
+  (go
+    (l/og :dbase &quot;saving &quot; blockR)
+    (set! (.-heightFromRoot (.-header blockR)) (&lt;! (blockchain/blockchainHeight 1)))
+    (db/update &quot;last&quot; #(js-obj &quot;_id&quot; &quot;last&quot; &quot;val&quot; blockR))
+    ;todo save other info also
+    ;(.put dbase (js-obj &quot;_id&quot; (.-hash blockR) &quot;val&quot; blockR))
+    (.put dbase (js-obj &quot;_id&quot; (.-hash blockR) &quot;val&quot; blockR))))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">  (initDBase dbase)</pre></td></tr><tr><td class="docs"><p>(blockchain/blockKnown (js-obj "hash" "asdsad"))
+(blockchain/blockKnown (js-obj "hash" "last"))</p>
+</td><td class="codes"><pre class="brush: clojure">  (defn bHash [block]
     (go
       (def stringified (.stringify js/JSON (.-val lastt)))
       (l/og :blockchain &quot;stringified&quot; stringified)
       (def blockHash (&lt;! (blockchain/s256 stringified)))
-      blockHash))
-  (defn broadcastNewBlock [ blockk]
+      blockHash))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">  (defn broadcastNewBlock [ blockk]
   (l/og :intercom &quot;broadsacting new block&quot; blockk)
   (l/og :intercom &quot;broadsacting new block to &quot;  (.-knownPeersChannels intercomMeta))
   (go
@@ -3242,44 +3226,33 @@ but for now state machine
       (l/og :db &quot;transactions when saving block &quot; transactions)
       (def blockk (js-obj &quot;header&quot; blockHeader &quot;hash&quot; (&lt;! (bHash blockHeader)) &quot;transactions&quot; transactions))
       (l/og :db &quot;newly made block &quot; blockk)
-      blockk)) 
-  ; (go
-  ; (l/og :db &quot;last entry with new func&quot; (&lt;! (gdb &quot;last&quot;)) )
-  ; )
-  ;channel to recieve new transaction
-  (def transactionch (chan))
-  (set! (.-type transactionch) &quot;transactionch&quot;)
-  ;channel to recieve results from crypto functions
-  (def cryptoCh (chan))
-  (set! (.-type cryptoCh) &quot;cryptoch&quot;)
-  ;pub sub; send events to channel
-  (defn pub [ch event message] (go (&gt;! ch message)))  
-  ;listen on global document for transactions and publish them to channel transactionch
-  (.on (js/$ js/document) &quot;transaction&quot; (partial pub transactionch))
-  ;when this user connects to someone just send connection to channel
-  (defn onOpen [ conn]
+      blockk)) </pre></td></tr><tr><td class="docs"><p>channel to recieve new transaction</p>
+</td><td class="codes"><pre class="brush: clojure">  (def transactionch (chan))
+  (set! (.-type transactionch) &quot;transactionch&quot;)</pre></td></tr><tr><td class="docs"><p>channel to recieve results from crypto functions</p>
+</td><td class="codes"><pre class="brush: clojure">  (def cryptoCh (chan))
+  (set! (.-type cryptoCh) &quot;cryptoch&quot;)</pre></td></tr><tr><td class="docs"><p>pub sub; send events to channel</p>
+</td><td class="codes"><pre class="brush: clojure">  (defn pub [ch event message] (go (&gt;! ch message)))  </pre></td></tr><tr><td class="docs"><p>listen on global document for transactions and publish them to channel transactionch</p>
+</td><td class="codes"><pre class="brush: clojure">  (.on (js/$ js/document) &quot;transaction&quot; (partial pub transactionch))</pre></td></tr><tr><td class="docs"><p>when this user connects to someone just send connection to channel</p>
+</td><td class="codes"><pre class="brush: clojure">  (defn onOpen [ conn]
     (l/og :conn  &quot;connection opened trying to send data trough&quot;)
     (l/og :conn  conn)
     (set! (.-connType conn) &quot;saltan&quot;)
     ;(.send conn &quot;asd&quot;)
     (go
       (&gt;! connectionch conn))
-    (l/og :conn &quot;conn: &quot; conn))
-;when peerjs sends data just send message to channel
-(defn onData [read data]
+    (l/og :conn &quot;conn: &quot; conn))</pre></td></tr><tr><td class="docs"><p>when peerjs sends data just send message to channel</p>
+</td><td class="codes"><pre class="brush: clojure">(defn onData [read data]
   (l/og :conn &quot;data recieved&quot; data)
   (go
-    (&gt;! read data)))
-;when someone connects to this user send that new connection to channel
-(defn onConnection [conn]
+    (&gt;! read data)))</pre></td></tr><tr><td class="docs"><p>when someone connects to this user send that new connection to channel</p>
+</td><td class="codes"><pre class="brush: clojure">(defn onConnection [conn]
   (l/og :conn &quot;connection is opened now try to send something&quot;)
   (set! (.-connType conn) &quot;tsaritsa&quot;)
   ;(.send conn &quot;second sends something&quot;)
   (go
-    (&gt;! connectionch conn)))
-(.on peerjs &quot;connection&quot; onConnection )
-;make two channels for connection. one for reading from conn, one for writing to it
-(defn channelsFromConnection [conn]
+    (&gt;! connectionch conn)))</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(.on peerjs &quot;connection&quot; onConnection )</pre></td></tr><tr><td class="docs"><p>make two channels for connection. one for reading from conn, one for writing to it</p>
+</td><td class="codes"><pre class="brush: clojure">(defn channelsFromConnection [conn]
   (def readc (chan 10))
   (def writec (chan 10))
   (set! (.-writec readc) writec)
@@ -3295,22 +3268,24 @@ but for now state machine
   (let [conn (.connect peerjs id)]
     (.on conn &quot;open&quot; (partial onOpen conn))
     ;(channelsFromConnection conn)))
-(def empty-string )
-(println id)
-;(if (== id &quot;2&quot;)
-; (println &quot;id = 2&quot;))
-;keeps track of protocol and peers
-(def intercomMeta (js-obj 
+(def empty-string )</pre></td></tr><tr><td class="docs">
+</td><td class="codes"><pre class="brush: clojure">(println id)</pre></td></tr><tr><td class="docs"><p>(if (== id "2")
+(println "id = 2"))
+keeps track of protocol and peers</p>
+</td><td class="codes"><pre class="brush: clojure">(def intercomMeta (js-obj 
                     &quot;id&quot; 1
                     &quot;knownPeers&quot; []
-                    &quot;knownPeersChannels&quot; []))
-;dispatch to thread pool for mining
-(defn mine [rootHash]
+                    &quot;knownPeersChannels&quot; []))</pre></td></tr><tr><td class="docs"><p>dispatch to thread pool for mining</p>
+</td><td class="codes"><pre class="brush: clojure">(defn mine [rootHash]
   (def chann (servant/servant-thread servant-channel servant/standard-message &quot;none&quot; &quot;newjob&quot; rootHash ))
   (go
     (def v (&lt;! chann))
     (l/og :mloop &quot;recieved from mining&quot; v)
     (&gt;! hashmine (.parse js/JSON v) )))
+(defn foo [] 
+  &quot;main program entry point.    
+  It checks database to initialise it.
+  enters loop waiting for messages and reacts to them&quot;
 ;now that channels are setup
 (do
   (l/og :conn &quot;about to connect from heere&quot;)
@@ -3435,6 +3410,8 @@ but for now state machine
                                          )
                                        )
 </code></pre>
+
+<p><code>(new PouchDB('dbname')).allDocs({include_docs:true,limit: 10},function(e,r){console.log(r)})</code></p>
 </td><td class="codes"></td></tr><tr><td class="spacer docs">&nbsp;</td><td class="codes" /></tr></table><div class="footer">Generated by <a href="https://github.com/gdeer81/marginalia">Marginalia</a>.&nbsp;&nbsp;Syntax highlighting provided by Alex Gorbatchev's <a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a><div id="floating-toc"><ul><li class="floating-toc-li" id="floating-toc_app.blockchain">app.blockchain</li><li class="floating-toc-li" id="floating-toc_app.database">app.database</li><li class="floating-toc-li" id="floating-toc_app.intercom">app.intercom</li><li class="floating-toc-li" id="floating-toc_app.logger">app.logger</li><li class="floating-toc-li" id="floating-toc_app.main">app.main</li></ul></div></div><script type="text/javascript">SyntaxHighlighter.defaults['gutter'] = false;
 SyntaxHighlighter.all();
 

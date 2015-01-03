@@ -12,56 +12,9 @@
 
 
 (enable-console-print!)
-;(new PouchDB('dbname')).allDocs({include_docs:true,limit: 10},function(e,r){console.log(r);});
 
 (def peers [])
-(defn foo [] 
-  (println "window loaded")
 
-  ;(blockchain/sha256 "Nikola")
-  (.log js/console "this runs in the browser")
-  ;now to define how much threads will mine
-  (def worker-count 2)
-  ;mining script path
-  (def worker-script "wrkr.js")
-  ;this channel is for servant to know at which thread pool to dispatch
-  (def servant-channel (servant/spawn-servants worker-count worker-script))
-
-  ;channel that will receive results from mining
-  (def hashmine (chan))
-  ;setting type on the channel object so it is possible to distinguish it from other channels
-  (set! (.-type hashmine) "workerch")
-  ;instantiate tree js graphic lib
-  (. js/console (log (THREE/Scene. )))
-  ;data for peer connection 
-  (def ^:dynamic peerParams (js-obj "host" "localhost" "port" 8000 "key" "peerjs" "debug" true))
-  ;promt user for id that will be used as his peer id
-  (def id ( js/prompt "enter id"))
-  (l/og :main "user id %s "id)
-
-  (def start (chan))
-  ;channel to anounce new connectinos
-  (def connectionch (chan))
-  ;peerjs object
-  (def peerjs (js/Peer. id peerParams ))
-
-  (def onDatabaseChange (chan))
-  (set! (.-type onDatabaseChange) "databaseChange")
-  
-  ;database instance
-  (def dbase (js/PouchDB. "dbname"))
-  (.enable (.-debug js/PouchDB) "*")
-
-  (defn saveBlock [dbase blockR] 
-  (go
-    (l/og :dbase "saving " blockR)
-    (set! (.-heightFromRoot (.-header blockR)) (<! (blockchain/blockchainHeight 1)))
-    (db/update "last" #(js-obj "_id" "last" "val" blockR))
-    ;todo save other info also
-    ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
-    (.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
-    
-    ))
   ;initial function for db
   (defn initDBase [dbase]
 
@@ -96,6 +49,54 @@
         ;(.put dbase (js-obj "_id" "height" "val" 1))
         )  )
     )    
+
+  (println "window loaded")
+
+  ;(blockchain/sha256 "Nikola")
+  (.log js/console "this runs in the browser")
+  ;now to define how much threads will mine
+  (def worker-count 2)
+  ;mining script path
+  (def worker-script "wrkr.js")
+  ;this channel is for servant to know at which thread pool to dispatch
+  (def servant-channel (servant/spawn-servants worker-count worker-script))
+
+  ;channel that will receive results from mining
+  (def hashmine (chan))
+  ;setting type on the channel object so it is possible to distinguish it from other channels
+  (set! (.-type hashmine) "workerch")
+  ;instantiate tree js graphic lib
+  (. js/console (log (THREE/Scene. )))
+  ;data for peer connection 
+  (def ^:dynamic peerParams (js-obj "host" "localhost" "port" 8000 "key" "peerjs" "debug" true))
+  ;promt user for id that will be used as his peer id
+  (def id ( js/prompt "enter id"))
+  (l/og :main "user id %s "id)
+
+  (def start (chan))
+  ; channel to anounce new connectinos
+  (def connectionch (chan))
+  ;peerjs object
+  (def peerjs (js/Peer. id peerParams ))
+
+  (def onDatabaseChange (chan))
+  (set! (.-type onDatabaseChange) "databaseChange")
+  
+  ;database instance
+  (def dbase (js/PouchDB. "dbname"))
+  (.enable (.-debug js/PouchDB) "*")
+
+  (defn saveBlock [dbase blockR] 
+  (go
+    (l/og :dbase "saving " blockR)
+    (set! (.-heightFromRoot (.-header blockR)) (<! (blockchain/blockchainHeight 1)))
+    (db/update "last" #(js-obj "_id" "last" "val" blockR))
+    ;todo save other info also
+    ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
+    (.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
+    
+    ))
+
   (initDBase dbase)
   ;(blockchain/blockKnown (js-obj "hash" "asdsad"))
   ;(blockchain/blockKnown (js-obj "hash" "last"))
@@ -235,6 +236,11 @@
     (>! hashmine (.parse js/JSON v) )
     )
   )
+(defn foo [] 
+  "main program entry point.    
+  It checks database to initialise it.
+  enters loop waiting for messages and reacts to them"
+
 ;now that channels are setup
 (do
   (l/og :conn "about to connect from heere")
@@ -252,6 +258,7 @@
 
           (l/og :mloop "state " state)
           ;listen on channels from vector
+          
           (def v (alts! state ))
           ;get value
           (def vrecieved (nth v 0))
@@ -394,4 +401,6 @@
 ;
 ;                                              (l/og :mloop  "tsaritsa here")
 ;                                              )
-;                                            )
+;                                            ) 
+; `(new PouchDB('dbname')).allDocs({include_docs:true,limit: 10},function(e,r){console.log(r)})`
+
