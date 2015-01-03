@@ -47,7 +47,7 @@
 
   (def onDatabaseChange (chan))
   (set! (.-type onDatabaseChange) "databaseChange")
-
+  
   ;database instance
   (def dbase (js/PouchDB. "dbname"))
   (.enable (.-debug js/PouchDB) "*")
@@ -89,6 +89,8 @@
         )  )
     )    
   (initDBase dbase)
+  (blockchain/blockKnown (js-obj "hash" "asdsad"))
+  (blockchain/blockKnown (js-obj "hash" "last"))
   (defn bHash [block]
     (go
       (def stringified (.stringify js/JSON (.-val lastt)))

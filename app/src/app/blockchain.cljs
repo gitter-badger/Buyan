@@ -36,8 +36,68 @@
 (defn encode [x] (.encode (js/TextEncoder. "utf-8") x))
     (defn arraybtostring [buff]
       (js/arrayBToString buff)
-      
     )
+;get previous block
+(defn prevblk [blockk]
+  (.-previous (.-header blokk))
+ )
+;blockk parameter can be either block with field hash
+;or the hash 
+;function first tries to find field hash to query and then uses parameter if field is not there
+(defn blockKnown [blockk]
+  (go
+  (l/og :blockchain "block known? " blockk)
+  (def res (if (.-hash blockk)
+    (do
+    (if (<! (db/g (.-hash blockk) ))
+      true
+      false
+    ))
+    (do
+      (if (<! (db/g blockk))
+        true
+        false
+      )
+    )
+  ))
+  res
+  )
+
+)
+(defn last? [blockk]
+
+(go
+  (l/og :blockchain "block known? " blockk)
+  (def lastt(<! (db/g "last")))
+  
+  (def res (if (.-hash blockk)
+    (do
+    (if (== (.-hash (<! (db/g (.-hash blockk)) )) (.-hash block))
+      true
+      false
+    ))
+    (do
+      (if (== (.-hash (<! (db/g  blockk) )) (.-hash block))
+        true
+        false
+      )
+    )
+  ))
+  res
+  )
+
+)
+(defn blockchainHeight [x]
+  (def hght (<!(db/g "height")) )
+  (if x 
+   (do
+     (def nhght (+ hght x))
+     (db/p "height" nhght)
+     nhght
+   )
+   hght
+  )
+)
 (defn shaCallb [digest] (do
 (l/og :blockchain "%s"  "about to do hash2")
     (def h (arraybtostring digest))

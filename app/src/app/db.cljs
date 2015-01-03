@@ -13,7 +13,7 @@
      (go
       (let [c (chan)]
       
-        (.then (.get app.main.dbase k) #(put! c %) #(put! c %))
+        (.then (.get app.main.dbase k) #(put! c %) #(put! c false))
         
         (def r (<! c))
 (l/og :db (+ "got from db " k) r)
