@@ -20,7 +20,8 @@ protocol
 protocol     
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/protocol.png)       
 Buyan after
-https://www.youtube.com/watch?v=4QtkDMXA0u8
+https://www.youtube.com/watch?v=4QtkDMXA0u8      
+with subtitles here https://www.youtube.com/watch?v=b3TQevs14CE      
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/Ivanbilibin.jpg)
 
 Copyright (c) 2014 Nikola Mandic
