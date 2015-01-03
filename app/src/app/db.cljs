@@ -7,7 +7,31 @@
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
                    )
     )
+  (defn update [ k f]
+     (l/og :db "getting from db " k)
+     (go
+      (let [c (chan)]
+        (defn sf [err v]
+        (l/og :height "about to update " v)
+        
+        (l/og :height "rev " (.-_rev v))
+           (.put app.main.dbase (js-obj "val" (f (.-val v))) k (.-_rev v) #(do))
+        )
+         (.get app.main.dbase k sf)
+        ;#(.put app.main.dbase (js-obj "_id" key "val" (f  false) )))
+        
+        
+       ; 
+       ; (.put app.main.dbase (js-obj "_id" key "val" (f (.-val r)) "_rev" (.-rev r)))
+        (def r  (<! (g k)))
 
+(l/og :db (+ "got from db " k) r)
+        r
+       ; (<! c)
+      )
+
+      )
+  )
   (defn g [ k]
      (l/og :db "getting from db " k)
      (go
@@ -15,11 +39,12 @@
       
         (.then (.get app.main.dbase k) #(put! c %) #(put! c false))
         
-        (def r (<! c))
+        (def r  (<! c))
 (l/og :db (+ "got from db " k) r)
+        (if r (.-val r) r )
        ; (<! c)
       )
-      r
+
       )
   )
   ;(def g (partial getDB dbase))

@@ -23,6 +23,7 @@
 (defn makeBlockHeader [version previous fmroot timestamp bits nonce txcount] 
   (js-obj 
     "version" 1
+    "heightFromRoot" 0
     "previous" previous
     "merkleRoot" fmroot
     "timestamp" timestamp
@@ -64,12 +65,13 @@
   )
 
 )
+;is this block last in blockchain
 (defn last? [blockk]
 
 (go
   (l/og :blockchain "block known? " blockk)
   (def lastt(<! (db/g "last")))
-  
+
   (def res (if (.-hash blockk)
     (do
     (if (== (.-hash (<! (db/g (.-hash blockk)) )) (.-hash block))
@@ -78,7 +80,7 @@
     ))
     (do
       (if (== (.-hash (<! (db/g  blockk) )) (.-hash block))
-        true
+        trueHomeHomeHomeHome
         false
       )
     )
@@ -87,16 +89,43 @@
   )
 
 )
+(defn heightFromBlock [blockk]
+ (.-heightFromRoot (.-header blokk))
+)
+(defn handleInvBlock [blocks]
+  (l/og :blockchain "now about to handle inv block message " blocks)
+  
+  ;check if first block is a known one
+  (if (blockKnown? (first blocks))
+  ;block known
+  (do
+    ;is blockchains length bigger
+
+  )
+  ;block unknown
+  (do
+    
+  )
+  )
+
+)
 (defn blockchainHeight [x]
+(go
   (def hght (<!(db/g "height")) )
+  (l/og :blockchain "blockchain height " hght)
   (if x 
-   (do
-     (def nhght (+ hght x))
-     (db/p "height" nhght)
-     nhght
-   )
+       
+    (<!(db/update "height" (fn [v] 
+    (l/og :height "prev height " v)
+    (l/og :height "to add  " x)
+        (l/og :height "after addition  " (+ v x))
+    (+ v x)
+
+    )))
+   
    hght
   )
+)
 )
 (defn shaCallb [digest] (do
 (l/og :blockchain "%s"  "about to do hash2")

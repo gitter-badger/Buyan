@@ -53,44 +53,50 @@
   (.enable (.-debug js/PouchDB) "*")
 
   (defn saveBlock [dbase blockR] 
+  (go
     (l/og :dbase "saving " blockR)
+    (set! (.-heightFromRoot (.-header blockR)) (<! (blockchain/blockchainHeight 1)))
     (.put dbase (js-obj "_id" "last" "val" blockR))
     ;todo save other info also
     (.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
-    )
+    ))
   ;initial function for db
   (defn initDBase [dbase]
 
     (let [c (chan)]
       (go 
-        (.then (.get dbase "last") #(put! c %) #(put! c %))
+        ;(.then (.get dbase "last") #(put! c %) #(put! c %))
 
-        (def lastone (<! c))
+        (def lastone (<! (db/g "last")))
 
         (l/og :db "about to init")
         (l/og :db "last one from database " lastone)
-        (if (== (.-status lastone) 404)(do 
+        (if  lastone 
+          (do
+            (l/og :db "last one from database is " lastone)
+
+            )
+        (do 
                                          (l/og :db "nothing in database")
+                                         (db/p "height" 0)
                                          (def blck (<! (makeBlock (js-obj "root" "0" "nonce" "0"))))
                                          ;args to make blockheader version previous fmroot timestamp bits nonce txcount
                                          ;(def blockR (app.blockchain.makeBlockHeader "0" "0" "0" (.getTime ( js/Date.)) 0 "0" 0))
                                          ;(def stringified (.stringify js/JSON blockR))
                                          ;(l/og :blockchain "stringified initial" stringified)
                                          ;(db/p   (<! (blockchain/s256 stringified)) [])
+                                         
                                          (saveBlock dbase blck)
                                          )
-          (do
-            (l/og :db "last one from database " lastone)
 
-            )
           )
         ;(if last)
         ;(.put dbase (js-obj "_id" "height" "val" 1))
         )  )
     )    
   (initDBase dbase)
-  (blockchain/blockKnown (js-obj "hash" "asdsad"))
-  (blockchain/blockKnown (js-obj "hash" "last"))
+  ;(blockchain/blockKnown (js-obj "hash" "asdsad"))
+  ;(blockchain/blockKnown (js-obj "hash" "last"))
   (defn bHash [block]
     (go
       (def stringified (.stringify js/JSON (.-val lastt)))
@@ -117,8 +123,14 @@
     (go
       (def txs (<! (db/g "txs")))
       (def lastt (<! (db/g "last")))
-
+      
       (def transactions (<! (db/g "txs")))
+      
+      (if lastt (do) (do 
+        (def lastt (js-obj))
+        (def transactions (array))
+    
+      ))
       ;version previous fmroot timestamp bits nonce txcount
       (def blockHeader (app.blockchain.makeBlockHeader "0" (.-hash lastt) (.-root work) (.getTime ( js/Date.)) (.-dificulty blockchain/blockhainInfo) (.-nonce work) (.-lenght transactions )))
       (l/og :db "block header " blockHeader)
