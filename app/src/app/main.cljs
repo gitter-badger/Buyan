@@ -56,9 +56,11 @@
   (go
     (l/og :dbase "saving " blockR)
     (set! (.-heightFromRoot (.-header blockR)) (<! (blockchain/blockchainHeight 1)))
-    (.put dbase (js-obj "_id" "last" "val" blockR))
+    (db/update "last" #(js-obj "_id" "last" "val" blockR))
     ;todo save other info also
+    ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
     (.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
+    
     ))
   ;initial function for db
   (defn initDBase [dbase]

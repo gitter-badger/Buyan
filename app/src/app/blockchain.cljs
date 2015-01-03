@@ -179,7 +179,7 @@
   ;merkleRoot is more efficient at getting any transaction in block because you need to supply only path to the root to verify
   ;while here it varies depending whether transaction searched is last one or first one
   ;will save mempool here so we can retrieve them later when merkle root is ready and when block structure is to be made
-  (db/p "txs" transactions)
+  (db/update "txs" #(do transactions))
   (go
   (def originl (.-length transactions))
   (def tx (.shift transactions))

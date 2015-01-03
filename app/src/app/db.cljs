@@ -8,14 +8,19 @@
                    )
     )
   (defn update [ k f]
-     (l/og :db "getting from db " k)
+     (l/og :dbupdate "getting from db " k)
      (go
       (let [c (chan)]
         (defn sf [err v]
-        (l/og :height "about to update " v)
-        
-        (l/og :height "rev " (.-_rev v))
-           (.put app.main.dbase (js-obj "val" (f (.-val v))) k (.-_rev v) #(do))
+        (l/og :dbupdate "about to update " v)
+         (l/og :dbupdate "about to update err " err)
+
+            (if v
+            (do         (l/og :dbupdate "rev " (.-_rev v))
+               (.put app.main.dbase (js-obj "val" (f (.-val v))) k (.-_rev v) #(do)))
+               (.put app.main.dbase (js-obj "val" (f  v)) k  #(do))
+                
+            )
         )
          (.get app.main.dbase k sf)
         ;#(.put app.main.dbase (js-obj "_id" key "val" (f  false) )))
