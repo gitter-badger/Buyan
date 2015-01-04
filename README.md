@@ -11,14 +11,17 @@ hopefuly pouchdb backed blockchain mining in browser over webrtc should seal the
 btw. workflow for this is     
 `lein cljsbuild auto app` from app directory
 and `gulp watch` from parent dir with chrome devtools(workspaces, source maps)     
+doc that will be up to date from time to time are here 
+http://blog.nikola.link/buyan.html     
 protocol
 
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/cdraw.png)
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/getblock.png)      
 protocol     
-![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/protocol.png)
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/protocol.png)       
 Buyan after
-https://www.youtube.com/watch?v=4QtkDMXA0u8
+https://www.youtube.com/watch?v=4QtkDMXA0u8      
+with subtitles here https://www.youtube.com/watch?v=b3TQevs14CE      
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/Ivanbilibin.jpg)
 
 Copyright (c) 2014 Nikola Mandic
