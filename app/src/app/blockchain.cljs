@@ -128,19 +128,23 @@
 )
 (defn handleInvBlock [blocks]
   "function to handle inv block"
-(go
+(go 
  
   (l/og :inv "now about to handle inv block message " blocks)
   (if (<! (blockKnown? (prevblk (aget (.-vector blocks) 0))))
   ;block known
   (do
+    (def bchainHeight (<! (blockchainHeight)))
+    (def newHeight (+ 
+              (heightFromBlock (<! (db/g (prevblk (aget (.-vector blocks) 0)))))
+              (.-length (.-vector blocks)) 
+           ))
+    (l/og :inv "blockchainHeight " bchainHeight)
+    (l/og :inv "newHeight " newHeight)
     ;is blockchains length bigger
     (l/og :inv "block is known ")
-    (if (< (<! (blockchainHeight)) 
-           (+ 
-              (heightFromBlock (<! (db/g (prevblk (aget (.-vector blocks) 0)))))
-              (.-length blocks) 
-           )
+    (if (<  bchainHeight
+           newHeight
         )
       (do
         ;validate

@@ -53,8 +53,21 @@
       )
   )
   ;(def g (partial getDB dbase))
-  (defn p [ key v]
+  (defn ps [ key v]
+  (go
+  (def c (chan))
     (l/og :dbput  "putting from db " [key v])
-    (.put app.main.dbase (js-obj "_id" key "val" v))
+     (.put app.main.dbase (js-obj "_id" key "val" v) #(put! c 1))
+    
+    (<! c)
+    (l/og :dbput "just done put s ")
+    1
+    )
   )
-  ;(def p (partial putDB ))
+    (defn p [ key v]
+  
+    (l/og :dbput  "putting from db " [key v])
+    (.put app.main.dbase (js-obj "_id" key "val" v)) 
+     
+  )
+  ;(def p (partial putDB )) 

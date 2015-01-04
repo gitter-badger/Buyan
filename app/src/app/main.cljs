@@ -85,30 +85,30 @@
   ;database instance
   (def dbase (js/PouchDB. "dbname"))
   (.enable (.-debug js/PouchDB) "*")
-
+ 
   (defn saveBlock [dbase blockR] 
   (go
-    (l/og :dbase "saving " blockR)
+    (l/og :saveBlock "saving " blockR)
     (set! (.-heightFromRoot (.-header blockR)) (<! (blockchain/blockchainHeight 1)))
     (db/update "last" #(js-obj "_id" "last" "val" blockR))
     ;todo save other info also
     ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
-    (.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
-    
+    ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
+     (<! (db/ps (.-hash blockR) blockR))
     ))
-
+ 
   (initDBase dbase)
   ;(blockchain/blockKnown (js-obj "hash" "asdsad"))
   ;(blockchain/blockKnown (js-obj "hash" "last"))
-  (defn bHash [block]
+  (defn bHash [blockHeader]
     (go
-      (def stringified (.stringify js/JSON (.-val lastt)))
+      (def stringified (.stringify js/JSON blockHeader))
       (l/og :blockchain "stringified" stringified)
       (def blockHash (<! (blockchain/s256 stringified)))
       blockHash
     )
   )
-  
+   
   (defn broadcastNewBlock [ blockk]
   (l/og :intercom "broadsacting new block" blockk)
 
@@ -121,7 +121,7 @@
   (.push vectoR blockk )
     (>! peer (i/makeInv "block" vectoR)))
     )
-  )
+  ) 
   (defn makeBlock [work]
     (go
       (def txs (<! (db/g "txs")))
@@ -136,14 +136,14 @@
         (def lastt (js-obj "hash" 0))
         (def transactions (array))
     
-      ))
+      )) 
       (l/og :makeBlock "last " lastt)
       ;version previous fmroot timestamp bits nonce txcount
       (def blockHeader (app.blockchain.makeBlockHeader "0" (.-hash lastt) (.-root work) (.getTime ( js/Date.)) (.-dificulty blockchain/blockhainInfo) (.-nonce work) (.-lenght transactions )))
-      (l/og :db "block header " blockHeader)
-      (l/og :db "transactions when saving block " transactions)
+      (l/og :makeBlock "block header " blockHeader)
+      (l/og :makeBlock "transactions when saving block " transactions)
       (def blockk (js-obj "header" blockHeader "hash" (<! (bHash blockHeader)) "transactions" transactions))
-      (l/og :db "newly made block " blockk)
+      (l/og :makeBlock "newly made block " blockk)
       blockk
       )
     ) 
@@ -299,13 +299,20 @@
                                            ; println vrecieved
                                            (l/og :mloop  "recieved from worker " vrecieved)
                                            (def blockk (<! (makeBlock vrecieved)))
-
-                                           (saveBlock dbase blockk)
-                                           (l/og :blockchain "just made new block " blockk)
+                          
+                                           
+                                           ;(l/og :blockchain "just made new block " blockk)
                                            ;(<! (makeBlock vrecieved)
                                            ;(blockchain/addToChain blockk)
                                            ;TODO anounce to peers
-                                           (broadcastNewBlock blockk)
+                                           (l/og :inv "hash to get " (.-hash blockk))
+                                           (<! (saveBlock dbase blockk))
+                                           (def gotFromHash (<! (db/g (.-hash blockk))))
+                                           ;(def gotFromHash )
+                                           ;(<! (saveBlock dbase blockk))
+                                           ;(l/og :inv "got from hash " gotFromHash)
+                                           
+                                           (broadcastNewBlock gotFromHash) 
 
                                            ; (.send (.-conn ch2 ) vrecieved)
                                            )
