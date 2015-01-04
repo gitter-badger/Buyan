@@ -2,6 +2,8 @@
 (:require
     [app.logger :as l]
     [app.database :as db]
+
+    [app.blockchain :as blockchain]
     [cljs.core.async :refer [chan close! timeout put!]]
     
     )
@@ -68,8 +70,12 @@
                   (cond
                     (typeof? v "conn")(do
                       (if (== (.-connType (.-data v)) "saltan")
-                      (sendmsg (.-peer v) "version" "0"))
-                      (tostate "version")
+                      (do
+                      (sendmsg (.-peer v) "version" "0")
+(tostate "grind"))
+(tostate "version")
+                      )
+                      
                       
 
                     )
@@ -84,22 +90,25 @@
                     )
                   )
             )
-            (is? state "grind") 
+            (is? state "grind")  
                 (do
-                  
+                   
                   (cond
                     (typeof? v "conn")(do
                       (sendmsg (.-peer v) "version" "0")
                       (tostate "version")
                     )
                     (typeof? v "inv")(do
-                      (sendmsg (.-peer v) "inv" "0")
+                    (l/og :inv "got inv here ")
+                      (blockchain/handleInvBlock (.-data v))
+                      ;(sendmsg (.-peer v) "inv" "0")
                       (tostate "grind")
                     )
+                       
                     (typeof? v "getdata")(do
                       (sendmsg (.-peer v) "getdata" "0")
                       (tostate "grind")
-                    )
+                    ) 
                     (typeof? v "gettx")(do
                       (sendmsg (.-peer v) "gettx" "0")
                       (tostate "grind")
@@ -113,6 +122,9 @@
                       (sendmsg (.-peer v) "data" "0")
                       (tostate "grind")
                     )
+                    true
+                      (tostate "grind")
+                    
                   )
                 )
         )

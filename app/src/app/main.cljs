@@ -125,15 +125,19 @@
   (defn makeBlock [work]
     (go
       (def txs (<! (db/g "txs")))
-      (def lastt (<! (db/g "last")))
+      (def lastt2 (<! (db/g "last")))
       
       (def transactions (<! (db/g "txs")))
       
-      (if lastt (do) (do 
-        (def lastt (js-obj))
+      (if lastt2 (do
+  (def lastt (.-val lastt2))
+      
+      ) (do 
+        (def lastt (js-obj "hash" 0))
         (def transactions (array))
     
       ))
+      (l/og :makeBlock "last " lastt)
       ;version previous fmroot timestamp bits nonce txcount
       (def blockHeader (app.blockchain.makeBlockHeader "0" (.-hash lastt) (.-root work) (.getTime ( js/Date.)) (.-dificulty blockchain/blockhainInfo) (.-nonce work) (.-lenght transactions )))
       (l/og :db "block header " blockHeader)
@@ -336,7 +340,7 @@
 
 (recur (do)))
 )
-)
+) 
 (defn foo [] 
   "main program entry point.    
   It checks database to initialise it.

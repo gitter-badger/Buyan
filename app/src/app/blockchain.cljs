@@ -3,7 +3,7 @@
     [app.logger :as l]
     [app.database :as db]
     [cljs.core.async :refer [chan close! timeout put!]]
-    
+     
     )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
                    )
@@ -40,14 +40,15 @@
     )
 ;get previous block
 (defn prevblk [blockk]
-  (.-previous (.-header blokk))
+  (l/og :prevblk "about to get prev blk " blockk)
+  (.-previous (.-header blockk))
  )
 ;blockk parameter can be either block with field hash
 ;or the hash 
 ;function first tries to find field hash to query and then uses parameter if field is not there
-(defn blockKnown [blockk]
+(defn blockKnown? [blockk]
   (go
-  (l/og :blockchain "block known? " blockk)
+  (l/og :blockknown "block known? " blockk)
   (def res (if (.-hash blockk)
     (do
     (if (<! (db/g (.-hash blockk) ))
@@ -90,7 +91,8 @@
 
 )
 (defn heightFromBlock [blockk]
- (.-heightFromRoot (.-header blokk))
+(l/og :heightFromBlock "getting height from block " blockk)
+ (.-heightFromRoot (.-header blockk))
 )
 
 
@@ -105,16 +107,20 @@
 ;             
 
 (defn addToChain [schain]
-  (l/og :inv "about to add to chain")
   (go
-    (doseq [i schain]
+  (l/og :inv "about to add to chain")
+
+    (loop [i 0]
       (l/og :inv "itterating current step " i)
-      (if (<! (blockKnown? (prevblk (first blocks))))
+      (if (<! (blockKnown? (prevblk (aget schain i))))
         (l/og :inv "block is known " i)
         (do
           (l/og :inv "block is not known " i)
           (saveBlock i)
         )
+      )
+      (if (< i (.-length schain))
+        (recur (+ i 1))
       )
     )
     (db/update "last" (last schain))
@@ -122,17 +128,17 @@
 )
 (defn handleInvBlock [blocks]
   "function to handle inv block"
-  (l/og :blockchain "now about to handle inv block message " blocks)
 (go
  
-  (if (<! (blockKnown? (prevblk (first blocks))))
+  (l/og :inv "now about to handle inv block message " blocks)
+  (if (<! (blockKnown? (prevblk (aget (.-vector blocks) 0))))
   ;block known
   (do
     ;is blockchains length bigger
     (l/og :inv "block is known ")
-    (if (< (<! (blockchain/blockchainHeight)) 
+    (if (< (<! (blockchainHeight)) 
            (+ 
-              (heightFromBlock (prevblk (first blocks))) 
+              (heightFromBlock (<! (db/g (prevblk (aget (.-vector blocks) 0)))))
               (.-length blocks) 
            )
         )
@@ -154,7 +160,7 @@
   ;block unknown
   ;now request previous 
   (do
-    
+      (l/og :inv "request previous" blocks)
   )
   ;
   )
@@ -163,7 +169,7 @@
 (defn blockchainHeight [x]
 (go
   (def hght (<!(db/g "height")) )
-  (l/og :blockchain "blockchain height " hght)
+  (l/og :blockchainHeight "blockchain height " hght)
   (if x 
        
     (<!(db/update "height" (fn [v] 
@@ -204,7 +210,7 @@
     ;(l/og :blockchain "%s" (encode "sha256"))
  (.then (js/crypto.subtle.digest (js-obj "name" "SHA-256") (encode x) )
   c
- )
+ ) 
 )
   (defn s256 [ k]
      (l/og :blockchain "about to sha256 " k)
