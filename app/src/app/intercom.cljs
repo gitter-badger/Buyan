@@ -39,10 +39,10 @@
 ;![](../protocol.png)
 
 
-(defn getData [peer hash]
+(defn getBlocks [peer hash]
 
-  (l/og :getData "getting data from peer " peer)
-  (l/og :getData "getting data from hash " hash)
+  (l/og :getBlocks "getting data from peer " peer)
+  (l/og :getBlocks "getting data from hash " hash)
 
 )
 (defn tostate [statename]

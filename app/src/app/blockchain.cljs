@@ -165,7 +165,7 @@
   ;now request previous 
   (do
       (l/og :inv "request previous" blocks)
-      (i/getData (.-peer fullMessage) (.-hash (<! (db/g "last"))))
+      (i/getBlocks (.-peer fullMessage) (.-hash (<! (db/g "last"))))
   )
   ;
   )
