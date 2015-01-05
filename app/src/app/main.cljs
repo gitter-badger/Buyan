@@ -313,7 +313,7 @@
                                            ;(l/og :inv "got from hash " gotFromHash)
                                            
                                            (broadcastNewBlock gotFromHash) 
-
+ 
                                            ; (.send (.-conn ch2 ) vrecieved)
                                            )
             ;recieves results from browser crypto functions

@@ -137,7 +137,8 @@
     (def bchainHeight (<! (blockchainHeight)))
     (def newHeight (+ 
               (heightFromBlock (<! (db/g (prevblk (aget (.-vector blocks) 0)))))
-              (.-length (.-vector blocks)) 
+              (.-length (.-vector blocks))
+              1 
            ))
     (l/og :inv "blockchainHeight " bchainHeight)
     (l/og :inv "newHeight " newHeight)
@@ -151,7 +152,6 @@
         ;now add to chain
         (l/og :inv "now adding to chain")
         (addToChain blocks)
-
       )
       (do
         ;drop inv
@@ -159,7 +159,7 @@
       )
     )
 
-
+ 
   )
   ;block unknown
   ;now request previous 
