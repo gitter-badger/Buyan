@@ -126,7 +126,7 @@
     (db/update "last" (last schain))
   )
 )
-(defn handleInvBlock [blocks]
+(defn handleInvBlock [blocks fullMessage]
   "function to handle inv block"
 (go 
  
@@ -165,6 +165,7 @@
   ;now request previous 
   (do
       (l/og :inv "request previous" blocks)
+      (i/getData (.-peer fullMessage) (.-hash (<! (db/g "last"))))
   )
   ;
   )

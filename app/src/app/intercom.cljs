@@ -39,7 +39,12 @@
 ;![](../protocol.png)
 
 
+(defn getData [peer hash]
 
+  (l/og :getData "getting data from peer " peer)
+  (l/og :getData "getting data from hash " hash)
+
+)
 (defn tostate [statename]
 
   (l/og :intercom  "changing state to: " statename)
@@ -100,14 +105,14 @@
                     )
                     (typeof? v "inv")(do
                     (l/og :inv "got inv here ")
-                      (blockchain/handleInvBlock (.-data v))
+                      (blockchain/handleInvBlock (.-data v) v)
                       ;(sendmsg (.-peer v) "inv" "0")
                       (tostate "grind")
                     )
                        
                     (typeof? v "getdata")(do
                       (sendmsg (.-peer v) "getdata" "0")
-                      (tostate "grind")
+                      (tostate "grind"handleInvBlock)
                     ) 
                     (typeof? v "gettx")(do
                       (sendmsg (.-peer v) "gettx" "0")
