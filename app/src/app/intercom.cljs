@@ -38,12 +38,33 @@
 ;for protocol check out 
 ;![](../protocol.png)
 
-
+(defn makeGetBlock [hash]
+(go
+(def gtBlock (js-obj "count" 0 "blocks" (array) hash_stop 0))
+  (def heightForBlock (<! (blockchain/blockchainHeight 1)))
+  (loop [cnt heightForBlock blocksPushed 0]
+    (l/og :makeGetBlock (+ "new loop " cnt " ") blocksPushed)
+    (def blockg (<! (db/g (+ "b" cnt))))
+    (l/og :makeGetBlock "curr block " )
+    (set! (.-count gtBlock ) cnt)
+    (.push (.-blocks gtBlock) blockg) 
+    
+    (if (< 0 cnt)
+    (recur (if (< blocksPushed 10) 
+        (- cnt 1)
+        (quot cnt 2)
+      ) (+ blocksPushed 1)
+    ))
+  )
+  gtBlock
+  )
+) 
 (defn getBlocks [peer hash]
-
+(go
   (l/og :getBlocks "getting data from peer " peer)
   (l/og :getBlocks "getting data from hash " hash)
-
+  (l/og :getBlocks "make Get Blck" (<! (makeGetBlock hash)))
+)
 )
 (defn tostate [statename]
 
