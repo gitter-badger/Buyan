@@ -1,3 +1,4 @@
+'use strict'
 function arrayBToString(digest){
     	function _arrayBufferToBase64( buffer ) {
 						var ret = "",

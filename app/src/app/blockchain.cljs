@@ -3,7 +3,7 @@
     [app.logger :as l]
     [app.database :as db]
     
-    [app.intercom :as i]
+   ; [app.intercom :as i]
     [cljs.core.async :refer [chan close! timeout put!]]
      
     )

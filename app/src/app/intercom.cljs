@@ -41,7 +41,7 @@
 (defn makeGetBlock [hash]
 (go
 (def gtBlock (js-obj "count" 0 "blocks" (array) hash_stop 0))
-  (def heightForBlock (<! (blockchain/blockchainHeight 1)))
+  (def heightForBlock (<! (app.blockchain/blockchainHeight 1)))
   (loop [cnt heightForBlock blocksPushed 0]
     (l/og :makeGetBlock (+ "new loop " cnt " ") blocksPushed)
     (def blockg (<! (db/g (+ "b" cnt))))
