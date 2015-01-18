@@ -9,7 +9,9 @@ this repo speciffically will be try to make an app from another angle and is mea
 hopefuly pouchdb backed blockchain mining in browser over webrtc should seal the deal with this repo
 
 btw. workflow for this is     
-`lein cljsbuild auto app` from app directory
+`lein cljsbuild auto app` from app directory     
+this will run docker     
+docker run -it -p 8000:8000 peerjs  peerjs --port 8000 --key peerjs    
 and `gulp watch` from parent dir with chrome devtools(workspaces, source maps)     
 doc that will be up to date from time to time are here 
 http://blog.nikola.link/buyan.html     
