@@ -9,3 +9,16 @@
     )
   (:require-macros [cljs.core.async.macros :as m :refer [go]])
   )
+
+(defn takeInv [typ message]
+      )
+(defn takeData [typ message]
+      )
+
+(defn takeGetVersion [typ message]
+      )
+(defn takeVersion [typ message]
+      )
+
+(defn takeConn [typ message]
+      )

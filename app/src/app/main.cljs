@@ -70,7 +70,7 @@
 ;data for peer connection
 (def ^:dynamic peerParams (js-obj "host" "localhost" "port" 8000 "key" "peerjs" "debug" true))
 ;promt user for id that will be used as his peer id
-(def id (js/prompt "enter id"))
+;(def id (js/prompt "enter id"))
 (l/og :main "user id %s " id)
 
 (def start (chan))
