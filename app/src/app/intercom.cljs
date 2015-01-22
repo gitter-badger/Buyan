@@ -40,15 +40,21 @@
 
 (defn makeGetBlock [hash]
 (go
-(def gtBlock (js-obj "count" 0 "blocks" (array) hash_stop 0))
+  (def gtBlock (js-obj "count" 0 "blocks" (array) hash_stop 0))
+  ;get block height
   (def heightForBlock (<! (app.blockchain/blockchainHeight 1)))
+  
   (loop [cnt heightForBlock blocksPushed 0]
     (l/og :makeGetBlock (+ "new loop " cnt " ") blocksPushed)
+    ;get block with the cnt number
     (def blockg (<! (db/g (+ "b" cnt))))
+
     (l/og :makeGetBlock "curr block " )
+    ;
     (set! (.-count gtBlock ) cnt)
     (.push (.-blocks gtBlock) blockg) 
-    
+    ;for first 10 step is 1 
+    ; for others step is *2
     (if (< 0 cnt)
     (recur (if (< blocksPushed 10) 
         (- cnt 1)
@@ -56,6 +62,7 @@
       ) (+ blocksPushed 1)
     ))
   )
+  ;return
   gtBlock
   )
 ) 

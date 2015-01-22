@@ -84,7 +84,7 @@
   
   ;database instance
   (def dbase (js/PouchDB. "dbname"))
-  (.enable (.-debug js/PouchDB) "*")
+  ;(.enable (.-debug js/PouchDB) "*")
   
   (defn saveBlock [dbase blockR] 
   (go

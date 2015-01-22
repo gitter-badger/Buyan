@@ -1,0 +1,9 @@
+{
+  "name": "hello-world",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.1",
+    "modernizr": "~2.8.1",
+    "peerjs": "~0.3.14"
+  }
+}
