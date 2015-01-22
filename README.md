@@ -13,6 +13,10 @@ btw. workflow for this is
 this will run docker     
 docker run -it -p 8000:8000 peerjs  peerjs --port 8000 --key peerjs    
 and `gulp watch` from parent dir with chrome devtools(workspaces, source maps)     
+also intelij cursive clojure for editing(on save lein compiles gulp watch delivers to browser and devtools 
+are being window on top intelij so it is instant debugging output
+with js console and clojurescript repl devtools extension
+)      
 doc that will be up to date from time to time are here 
 http://blog.nikola.link/buyan.html     
 protocol
