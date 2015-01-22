@@ -1,1 +1,1 @@
- (ns intercomTake)
+s (ns intercomTake)
