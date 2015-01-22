@@ -19,6 +19,7 @@ protocol
 
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/cdraw.png)
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/getblock.png)      
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/syncChain.png)      
 protocol     
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/protocol.png)       
 Buyan after
