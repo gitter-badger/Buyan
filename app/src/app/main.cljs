@@ -18,16 +18,10 @@
 ;initial function for db
 
 
-(println "window loaded")
 
-;(blockchain/sha256 "Nikola")
-(.log js/console "this runs in the browser")
-;now to define how much threads will mine
-(def worker-count 2)
-;mining script path
-(def worker-script "wrkr.js")
-;this channel is for servant to know at which thread pool to dispatch
-(def servant-channel (servant/spawn-servants worker-count worker-script))
+
+
+
 
 ;channel that will receive results from mining
 (def hashmine (chan))
@@ -35,8 +29,6 @@
 (set! (.-type hashmine) "workerch")
 ;instantiate tree js graphic lib
 (. js/console (log (THREE/Scene.)))
-;data for peer connection
-(def ^:dynamic peerParams (js-obj "host" "localhost" "port" 8000 "key" "peerjs" "debug" true))
 ;promt user for id that will be used as his peer id
 ;(def id (js/prompt "enter id"))
 (l/og :main "user id %s " id)
@@ -51,11 +43,11 @@
 (set! (.-type onDatabaseChange) "databaseChange")
 
 ;database instance
-(def dbase (js/PouchDB. "dbname"))
+
 ;(.enable (.-debug js/PouchDB) "*")
 
 
-(initDBase dbase)
+
 
 
 
@@ -87,7 +79,7 @@
 ;(if (== id "2")
 ; (println "id = 2"))
 ;keeps track of protocol and peers
-
+(initDBase dbase)
 
 
 

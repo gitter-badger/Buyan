@@ -24,7 +24,7 @@ with js console and clojurescript repl devtools extension
 doc that will be up to date from time to time are here 
 http://blog.nikola.link/buyan.html     
 protocol
-
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/gr7dex10.gif)      
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/cdraw.png)
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/getblock.png)      
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/syncChain.png)      
