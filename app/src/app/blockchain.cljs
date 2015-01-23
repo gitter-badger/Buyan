@@ -97,6 +97,43 @@
       (.-heightFromRoot (.-header blockk))
       )
 
+(defn makeBlock [work]
+      (go
+        (def txs (<! (db/g "txs")))
+        (def lastt2 (<! (db/g "last")))
+
+        (def transactions (<! (db/g "txs")))
+
+        (if lastt2 (do
+                     (def lastt (.-val lastt2))
+
+                     ) (do
+                         (def lastt (js-obj "hash" 0))
+                         (def transactions (array))
+
+                         ))
+        (l/og :makeBlock "last " lastt)
+        ;version previous fmroot timestamp bits nonce txcount
+        (def blockHeader (app.blockchain.makeBlockHeader "0" (.-hash lastt) (.-root work) (.getTime (js/Date.)) (.-dificulty blockchain/blockhainInfo) (.-nonce work) (.-lenght transactions)))
+        (l/og :makeBlock "block header " blockHeader)
+        (l/og :makeBlock "transactions when saving block " transactions)
+        (def blockk (js-obj "header" blockHeader "hash" (<! (bHash blockHeader)) "transactions" transactions))
+        (l/og :makeBlock "newly made block " blockk)
+        blockk
+        )
+      )
+(defn saveBlock [dbase blockR]
+      (go
+        (l/og :saveBlock "saving " blockR)
+        (def heightForBlock (<! (blockchain/blockchainHeight 1)))
+        (set! (.-heightFromRoot (.-header blockR)) heightForBlock)
+        (db/update "last" #(js-obj "_id" "last" "val" blockR))
+        ;todo save other info also
+        ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
+        ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
+        (<! (db/ps (.-hash blockR) blockR))
+        (<! (db/ps (+ "b" heightForBlock) blockR))
+        ))
 
 ;this is the pseudo code    
 ;
@@ -128,50 +165,7 @@
         (db/update "last" (last schain))
         )
       )
-(defn handleInvBlock [blocks fullMessage]
-      "function to handle inv block"
-      (go
 
-        (l/og :inv "now about to handle inv block message " blocks)
-        (if (<! (blockKnown? (prevblk (aget (.-vector blocks) 0))))
-          ;block known
-          (do
-            (def bchainHeight (<! (blockchainHeight)))
-            (def newHeight (+
-                             (heightFromBlock (<! (db/g (prevblk (aget (.-vector blocks) 0)))))
-                             (.-length (.-vector blocks))
-                             1
-                             ))
-            (l/og :inv "blockchainHeight " bchainHeight)
-            (l/og :inv "newHeight " newHeight)
-            ;is blockchains length bigger
-            (l/og :inv "block is known ")
-            (if (< bchainHeight
-                   newHeight
-                   )
-              (do
-                ;validate
-                ;now add to chain
-                (l/og :inv "now adding to chain")
-                (addToChain blocks)
-                )
-              (do
-                ;drop inv
-                (l/og :inv "about to drop inv")
-                )
-              )
-
-            )
-          ;block unknown
-          ;now request previous
-          (do
-            (l/og :inv "request previous" blocks)
-            (i/getBlocks (.-peer fullMessage) (.-hash (<! (db/g "last"))))
-            )
-          ;
-          )
-        )
-      )
 (defn blockchainHeight [x]
       (go
         (def hght (<! (db/g "height")))

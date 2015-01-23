@@ -1,6 +1,10 @@
 (ns app.intercom
   (:require
     [app.logger :as l]
+
+    [app.intercomMake :as im]
+
+    [app.intercomTake :as it]
     [app.database :as db]
 
     [app.blockchain :as blockchain]
@@ -9,6 +13,7 @@
     )
   (:require-macros [cljs.core.async.macros :as m :refer [go]])
   )
+
 (enable-console-print!)
 (def intercomState "start")
 (def state (atom {}))
@@ -18,13 +23,10 @@
 ;every time message arives it is inserte here
 (def inputch (chan))
 (def outputch (chan))
-(defn makeInv [typ message]
-      ;"this function will make inv message "
-      ;(def v (.stringify js/JSON (js-obj "type" "inv" "data" (js-obj "type" typ "vector" message))))
-      ;(set! (.-type v) "json")
-      (js-obj "type" "json" "data" (.stringify js/JSON (js-obj "type" "inv" "data" (js-obj "type" typ "vector" message))))
-      )
 (def statech (chan))
+
+
+
 ;this one will send message to peer
 (defn sendmsg [peer type msg]
 
@@ -33,45 +35,22 @@
         (>! peer (js-obj "type" type "msg" msg))
         ))
 
+;
+(defn onMessage [wch type data]
+      (l/og :intercom (+ type " message in intercom") data)
+      (go
+        (>! inputch (js-obj "type" type "data" data "peer" wch))
+        ;(>! inputch data)
+        )
+      )
+
+
 ;switches state of the state machine     
 ;for protocol check out 
 ;![](../protocol.png)
 
-(defn makeGetBlock [hash]
-      (go
-        (def gtBlock (js-obj "count" 0 "blocks" (array) hash_stop 0))
-        ;get block height
-        (def heightForBlock (<! (app.blockchain/blockchainHeight 1)))
 
-        (loop [cnt heightForBlock blocksPushed 0]
-              (l/og :makeGetBlock (+ "new loop " cnt " ") blocksPushed)
-              ;get block with the cnt number
-              (def blockg (<! (db/g (+ "b" cnt))))
 
-              (l/og :makeGetBlock "curr block ")
-              ;
-              (set! (.-count gtBlock) cnt)
-              (.push (.-blocks gtBlock) blockg)
-              ;for first 10 step is 1
-              ; for others step is *2
-              (if (< 0 cnt)
-                (recur (if (< blocksPushed 10)
-                         (- cnt 1)
-                         (quot cnt 2)
-                         ) (+ blocksPushed 1)
-                       ))
-              )
-        ;return
-        gtBlock
-        )
-      )
-(defn getBlocks [peer hash]
-      (go
-        (l/og :getBlocks "getting data from peer " peer)
-        (l/og :getBlocks "getting data from hash " hash)
-        (l/og :getBlocks "make Get Blck" (<! (makeGetBlock hash)))
-        )
-      )
 (defn tostate [statename]
 
       (l/og :intercom "changing state to: " statename)
@@ -130,13 +109,14 @@
                                    )
               (typeof? v "inv") (do
                                   (l/og :inv "got inv here ")
-                                  (blockchain/handleInvBlock (.-data v) v)
+                                  (it/handleInvBlock (.-data v) v)
                                   ;(sendmsg (.-peer v) "inv" "0")
                                   (tostate "grind")
                                   )
 
               (typeof? v "getdata") (do
-                                      (sendmsg (.-peer v) "getdata" "0")
+                                      ;(it/makeGetData (.-data v) v)
+                                      ;(sendmsg (.-peer v) "getdata" "0")
                                       (tostate "grind" handleInvBlock)
                                       )
               (typeof? v "gettx") (do
@@ -161,10 +141,3 @@
         (recur (<! statech))
         ))
 
-(defn onMessage [wch type data]
-      (l/og :intercom (+ type " message in intercom") data)
-      (go
-        (>! inputch (js-obj "type" type "data" data "peer" wch))
-        ;(>! inputch data)
-        )
-      )

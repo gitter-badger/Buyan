@@ -16,39 +16,7 @@
 (def peers [])
 
 ;initial function for db
-(defn initDBase [dbase]
 
-      (let [c (chan)]
-           (go
-             ;(.then (.get dbase "last") #(put! c %) #(put! c %))
-
-             (def lastone (<! (db/g "last")))
-
-             (l/og :db "about to init")
-             (l/og :db "last one from database " lastone)
-             (if lastone
-               (do
-                 (l/og :db "last one from database is " lastone)
-
-                 )
-               (do
-                 (l/og :db "nothing in database")
-                 (db/p "height" 0)
-                 (def blck (<! (makeBlock (js-obj "root" "0" "nonce" "0"))))
-                 ;args to make blockheader version previous fmroot timestamp bits nonce txcount
-                 ;(def blockR (app.blockchain.makeBlockHeader "0" "0" "0" (.getTime ( js/Date.)) 0 "0" 0))
-                 ;(def stringified (.stringify js/JSON blockR))
-                 ;(l/og :blockchain "stringified initial" stringified)
-                 ;(db/p   (<! (blockchain/s256 stringified)) [])
-
-                 (saveBlock dbase blck)
-                 )
-
-               )
-             ;(if last)
-             ;(.put dbase (js-obj "_id" "height" "val" 1))
-             ))
-      )
 
 (println "window loaded")
 
@@ -86,69 +54,12 @@
 (def dbase (js/PouchDB. "dbname"))
 ;(.enable (.-debug js/PouchDB) "*")
 
-(defn saveBlock [dbase blockR]
-      (go
-        (l/og :saveBlock "saving " blockR)
-        (def heightForBlock (<! (blockchain/blockchainHeight 1)))
-        (set! (.-heightFromRoot (.-header blockR)) heightForBlock)
-        (db/update "last" #(js-obj "_id" "last" "val" blockR))
-        ;todo save other info also
-        ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
-        ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
-        (<! (db/ps (.-hash blockR) blockR))
-        (<! (db/ps (+ "b" heightForBlock) blockR))
-        ))
 
 (initDBase dbase)
-;(blockchain/blockKnown (js-obj "hash" "asdsad"))
-;(blockchain/blockKnown (js-obj "hash" "last"))
-(defn bHash [blockHeader]
-      (go
-        (def stringified (.stringify js/JSON blockHeader))
-        (l/og :blockchain "stringified" stringified)
-        (def blockHash (<! (blockchain/s256 stringified)))
-        blockHash
-        )
-      )
 
-(defn broadcastNewBlock [blockk]
-      (l/og :intercom "broadsacting new block" blockk)
 
-      (l/og :intercom "broadsacting new block to " (.-knownPeersChannels intercomMeta))
-      (go
 
-        (doseq [peer (.-knownPeersChannels intercomMeta)]
-               (l/og :intercom (+ "broadsacting new block to peer " peer " ") blockk)
-               (def vectoR (array))
-               (.push vectoR blockk)
-               (>! peer (i/makeInv "block" vectoR)))
-        )
-      )
-(defn makeBlock [work]
-      (go
-        (def txs (<! (db/g "txs")))
-        (def lastt2 (<! (db/g "last")))
 
-        (def transactions (<! (db/g "txs")))
-
-        (if lastt2 (do
-                     (def lastt (.-val lastt2))
-
-                     ) (do
-                         (def lastt (js-obj "hash" 0))
-                         (def transactions (array))
-
-                         ))
-        (l/og :makeBlock "last " lastt)
-        ;version previous fmroot timestamp bits nonce txcount
-        (def blockHeader (app.blockchain.makeBlockHeader "0" (.-hash lastt) (.-root work) (.getTime (js/Date.)) (.-dificulty blockchain/blockhainInfo) (.-nonce work) (.-lenght transactions)))
-        (l/og :makeBlock "block header " blockHeader)
-        (l/og :makeBlock "transactions when saving block " transactions)
-        (def blockk (js-obj "header" blockHeader "hash" (<! (bHash blockHeader)) "transactions" transactions))
-        (l/og :makeBlock "newly made block " blockk)
-        blockk
-        )
-      )
 ; (go
 ; (l/og :db "last entry with new func" (<! (gdb "last")) )
 ; )
@@ -160,194 +71,27 @@
 (def cryptoCh (chan))
 (set! (.-type cryptoCh) "cryptoch")
 
-;pub sub; send events to channel
-(defn pub [ch event message] (go (>! ch message)))
 ;listen on global document for transactions and publish them to channel transactionch
 (.on (js/$ js/document) "transaction" (partial pub transactionch))
 
-;when this user connects to someone just send connection to channel
-(defn onOpen [conn]
-      (l/og :conn "connection opened trying to send data trough")
-      (l/og :conn conn)
-      (set! (.-connType conn) "saltan")
-      ;(.send conn "asd")
-      (go
-        (>! connectionch conn)
-        )
 
-      (l/og :conn "conn: " conn)
-      )
-;when peerjs sends data just send message to channel
-(defn onData [read data]
-      (l/og :conn "data recieved" data)
-      (go
-        (>! read data)
-        )
-
-      )
 ;when someone connects to this user send that new connection to channel
-(defn onConnection [conn]
-      (l/og :conn "connection is opened now try to send something")
-      (set! (.-connType conn) "tsaritsa")
-      ;(.send conn "second sends something")
-      (go
-        (>! connectionch conn)
-        )
-      )
+
 
 (.on peerjs "connection" onConnection)
 ;make two channels for connection. one for reading from conn, one for writing to it
-(defn channelsFromConnection [conn]
-      (def readc (chan 10))
-      (def writec (chan 10))
-      (set! (.-writec readc) writec)
-      (set! (.-type readc) "readch")
-      (set! (.-type writec) "writech")
-      (set! (.-writec conn) writec)
-      (set! (.-readc conn) readc)
 
-      (set! (.-conn readc) conn)
-
-      (set! (.-conn writec) conn)
-      (.on conn "data" (partial onData readc))
-      [readc writec]
-      )
-(defn connectTo [id]
-      (let [conn (.connect peerjs id)]
-           (.on conn "open" (partial onOpen conn))
-
-           ;(channelsFromConnection conn)
-
-           ))
 (def empty-string "")
 
 (println id)
 ;(if (== id "2")
 ; (println "id = 2"))
 ;keeps track of protocol and peers
-(def intercomMeta (js-obj
-                    "id" 1
-                    "knownPeers" []
-                    "knownPeersChannels" []
-                    ))
-
-;dispatch to thread pool for mining
-(defn mine [rootHash]
-      (def chann (servant/servant-thread servant-channel servant/standard-message "none" "newjob" rootHash))
-
-      (go
-
-        (def v (<! chann))
-        (l/og :mloop "recieved from mining" v)
-        (>! hashmine (.parse js/JSON v))
-        )
-      )
-
-(defn lp [statea]
-      (def gconn 1)
-      (def state statea)
-      ;listen on messages and send them where they need to be sent
-      (go (loop [state2 statea]
-                ;(>! (nth peer 1) "sending some data trough channel")
-                (l/og :mloop "new iteration with state")
-
-                (l/og :mloop "state " state)
-                ;listen on channels from vector
-
-                (def v (alts! state))
-                ;get value
-                (def vrecieved (nth v 0))
-                ;get channel that received value
-                (def ch2 (nth v 1))
-
-                (cond
-                  ;channel that gets new connections
-                  (== (nth v 1) connectionch) (do
-                                                (def gconn vrecieved)
-
-                                                (l/og :mloop "got new connection" vrecieved)
-                                                (def peerChannels (channelsFromConnection vrecieved))
-                                                ;add channels for reading and writing to this new connection to the vector of channels we listen
-                                                (def state (into [] (concat state peerChannels)))
-                                                (set! (.-knownPeers intercomMeta) (conj (.-knownPeers intercomMeta) (.-peer vrecieved)))
-                                                (l/og :mloop "adding w channel to kpeers " (nth peerChannels 1))
-                                                (set! (.-knownPeersChannels intercomMeta) (conj (.-knownPeersChannels intercomMeta) (nth peerChannels 1)))
-                                                (l/og :mloop "new state")
-                                                (i/onMessage (nth peerChannels 1) "conn" vrecieved)
-
-                                                )
-                  ;channel from some peer that recieves data from peer
-                  (== (.-type ch2) "readch") (do
-                                               (l/og :mloop "recieved from peer " vrecieved)
-                                               (if (== (.-type vrecieved) "json")
-                                                 (def vrecieved (.parse js/JSON (.-data vrecieved)))
-                                                 )
-                                               (set! (.-peer vrecieved) (.-writec ch2))
-                                               (i/onMessage (.-writec ch2) (.-type vrecieved) (.-data vrecieved))
-
-                                               )
-                  ;channel from some peer that recieves data to be sent to that peer(wrapper for peerjs send to peer)
-                  (== (.-type ch2) "writech") (do
-                                                ; println vrecieved
-                                                (l/og :mloop "sending to peer " vrecieved)
-                                                (l/og :mloop "connection being sent to " (.-conn ch2))
-
-                                                (.send (.-conn ch2) vrecieved)
-                                                )
-                  ;recieves work from miners
-                  (== (.-type ch2) "workerch") (do
-                                                 ; println vrecieved
-                                                 (l/og :mloop "recieved from worker " vrecieved)
-                                                 (def blockk (<! (makeBlock vrecieved)))
 
 
-                                                 ;(l/og :blockchain "just made new block " blockk)
-                                                 ;(<! (makeBlock vrecieved)
-                                                 ;(blockchain/addToChain blockk)
-                                                 ;TODO anounce to peers
-                                                 (l/og :inv "hash to get " (.-hash blockk))
-                                                 (<! (saveBlock dbase blockk))
-                                                 (def gotFromHash (<! (db/g (.-hash blockk))))
-                                                 ;(def gotFromHash )
-                                                 ;(<! (saveBlock dbase blockk))
-                                                 ;(l/og :inv "got from hash " gotFromHash)
 
-                                                 (broadcastNewBlock gotFromHash)
 
-                                                 ; (.send (.-conn ch2 ) vrecieved)
-                                                 )
-                  ;recieves results from browser crypto functions
-                  (== (.-type ch2) "cryptoch") (do
-                                                 ; println vrecieved
-                                                 (l/og :mloop "recieved from crypto " vrecieved)
-                                                 (l/og :mloop "mempoll = " blockchain/memPool)
-                                                 (l/og :mloop (aget vrecieved "type"))
-                                                 (if (== (aget vrecieved "type") "fmr") (do
-                                                                                          (l/og :mloop "merkle root " vrecieved)
-                                                                                          (mine (aget vrecieved "value"))
-                                                                                          )
-                                                                                        )
-                                                 (if (> (count blockchain/memPool) 3)
 
-                                                   (l/og :mloop "calculating hash of transactions(not merkle root now) %s" (blockchain/merkleRoot blockchain/memPool)))
-
-                                                 )
-                  ; recieves transactions
-                  (== (.-type ch2) "transactionch") (do
-                                                      ; println vrecieved
-                                                      (l/og :mloop "recieved new transaction " vrecieved)
-                                                      ;put it in mempool
-                                                      ;send mempool to mining
-                                                      ;this might change
-                                                      (blockchain/sha256 vrecieved)
-                                                      ;(>! channel-1 vrecieved)
-                                                      ; (.send (.-conn ch2 ) vrecieved)
-                                                      )
-                  )
-
-                (recur (do)))
-          )
-      )
 (defn foo []
       "main program entry point.
       It checks database to initialise it.
@@ -371,49 +115,3 @@
 
       )
 (set! (.-onload js/window) foo)
-; (let [v (alts!  peers )]
-;    (println "recieved some data" v)
-;    (.send (.-conn (nth v 1)) (nth v 0))
-; )
-
-;(println
-;"The value from the first call is "
-;(<! channel-1))             ;(conj state (<! connectionch))
-
-;(println "peers" )
-;(.log js/console 
-;      peers)
-; (println (alts!  peers ))
-; (println "Killing webworkers")
-; (servant/kill-servants servant-channel worker-count)
-;
-;                                         (if (== (.-type vrecieved) "versionSaltan") 
-;                                           (do
-;                                             (l/og :mloop  (.-data vrecieved))
-;                                             (l/og :mloop  "-------------------------")
-;                                             (l/og :mloop  (.-knownPeers intercomMeta))
-;                                             (def conn (.-peer (.-conn ch2)))
-;                                             (l/og :mloop  (.-conn ch2))
-;                                             ;filter out from knownPeers that user that is about to recieve knownPeers list
-;                                             (def filtrd (remove    #{conn}     (.-knownPeers intercomMeta)))
-;                                             (set! (.-knownPeers intercomMeta) filtrd)
-;                                             (l/og :mloop  (into-array filtrd))
-;                                             (l/og :mloop  (.-knownPeers intercomMeta))
-;                                             (>! (.-writec  ch2) (js-obj "type" "versionTsaritsa" "data" (.-id intercomMeta)))
-;                                             (>! (.-writec  ch2) (.stringify js/JSON (js-obj "type" "peerinfo" "data" (into-array (.-knownPeers intercomMeta) ))))
-;                                             )
-;                                           )
-;                                          (l/og :mloop  state)
-;                                          ;if this user initiated connection he will send version first
-;                                          (if (== (.-connType vrecieved) "saltan")
-;                                            (do 
-;                                              (l/og :mloop  "saltan here")
-;                                              (>! (nth peerChannels 1) (js-obj "type" "versionSaltan" "data" (.-id intercomMeta)))
-;                                              )
-;                                            (do 
-;
-;                                              (l/og :mloop  "tsaritsa here")
-;                                              )
-;                                            ) 
-; `(new PouchDB('dbname')).allDocs({include_docs:true,limit: 10},function(e,r){console.log(r)})`
-

@@ -7,6 +7,41 @@
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
                    )
   )
+
+
+(defn initDBase [dbase]
+
+      (let [c (chan)]
+           (go
+             ;(.then (.get dbase "last") #(put! c %) #(put! c %))
+
+             (def lastone (<! (db/g "last")))
+
+             (l/og :db "about to init")
+             (l/og :db "last one from database " lastone)
+             (if lastone
+               (do
+                 (l/og :db "last one from database is " lastone)
+
+                 )
+               (do
+                 (l/og :db "nothing in database")
+                 (db/p "height" 0)
+                 (def blck (<! (makeBlock (js-obj "root" "0" "nonce" "0"))))
+                 ;args to make blockheader version previous fmroot timestamp bits nonce txcount
+                 ;(def blockR (app.blockchain.makeBlockHeader "0" "0" "0" (.getTime ( js/Date.)) 0 "0" 0))
+                 ;(def stringified (.stringify js/JSON blockR))
+                 ;(l/og :blockchain "stringified initial" stringified)
+                 ;(db/p   (<! (blockchain/s256 stringified)) [])
+
+                 (saveBlock dbase blck)
+                 )
+
+               )
+             ;(if last)
+             ;(.put dbase (js-obj "_id" "height" "val" 1))
+             ))
+      )
 (defn update [k f]
       (l/og :dbupdate "getting from db " k)
       (go
