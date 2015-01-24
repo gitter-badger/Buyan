@@ -44,3 +44,12 @@
 ;                                            )
 ; `(new PouchDB('dbname')).allDocs({include_docs:true,limit: 10},function(e,r){console.log(r)})`
 
+      ;(def myWorker (js/Worker. "hamiyoca/miner.js"))
+      ;(def ^:dynamic o (js-obj "foo" 1 "bar" 2))
+      ;(. myWorker (postMessage o))
+
+;(if (== id "2")
+; (println "id = 2"))
+; (go
+; (l/og :db "last entry with new func" (<! (gdb "last")) )
+; )

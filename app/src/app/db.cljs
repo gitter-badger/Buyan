@@ -1,14 +1,17 @@
 (ns app.database
   (:require
     [app.logger :as l]
+
     [cljs.core.async :refer [chan close! timeout put!]]
 
     )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
                    )
+
   )
 
-
+(def onDatabaseChange (chan))
+(set! (.-type onDatabaseChange) "databaseChange")
 (defn initDBase [dbase]
 
       (let [c (chan)]

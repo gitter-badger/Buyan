@@ -1,9 +1,8 @@
 (ns app.main
   (:require
-    [app.intercom :as i]
+    ; [app.intercom :as i]
     [app.logger :as l]
-    [app.database :as db]
-    [app.blockchain :as blockchain]
+
     [cljs.core.async :refer [chan close! timeout put!]]
     [servant.core :as servant]
     [servant.worker :as worker])
@@ -13,7 +12,6 @@
 
 (enable-console-print!)
 
-(def peers [])
 
 ;initial function for db
 
@@ -23,10 +21,7 @@
 
 
 
-;channel that will receive results from mining
-(def hashmine (chan))
-;setting type on the channel object so it is possible to distinguish it from other channels
-(set! (.-type hashmine) "workerch")
+
 ;instantiate tree js graphic lib
 (. js/console (log (THREE/Scene.)))
 ;promt user for id that will be used as his peer id
@@ -36,11 +31,6 @@
 (def start (chan))
 ; channel to anounce new connectinos
 (def connectionch (chan))
-;peerjs object
-(def peerjs (js/Peer. id peerParams))
-
-(def onDatabaseChange (chan))
-(set! (.-type onDatabaseChange) "databaseChange")
 
 ;database instance
 
@@ -52,9 +42,7 @@
 
 
 
-; (go
-; (l/og :db "last entry with new func" (<! (gdb "last")) )
-; )
+
 ;channel to recieve new transaction
 (def transactionch (chan))
 (set! (.-type transactionch) "transactionch")
@@ -64,46 +52,72 @@
 (set! (.-type cryptoCh) "cryptoch")
 
 ;listen on global document for transactions and publish them to channel transactionch
-(.on (js/$ js/document) "transaction" (partial pub transactionch))
+;(.on (js/$ js/document) "transaction" (partial pub transactionch))
 
 
 ;when someone connects to this user send that new connection to channel
 
 
-(.on peerjs "connection" onConnection)
+
 ;make two channels for connection. one for reading from conn, one for writing to it
 
 (def empty-string "")
 
-(println id)
-;(if (== id "2")
-; (println "id = 2"))
+;(println id)
 ;keeps track of protocol and peers
-(initDBase dbase)
+;(initDBase dbase)
 
 
 
 
-(defn foo []
+(defn entryy []
       "main program entry point.
       It checks database to initialise it.
       enters loop waiting for messages and reacts to them"
 
       ;now that channels are setup
-      (do
-        (l/og :conn "about to connect from heere")
-        (def peer (connectTo "2"))
-        ;(.log js/console (nth peer 1))
 
-
-
-        ;what channels are listened on
-        (lp [connectionch hashmine transactionch cryptoCh])
-        )
       (l/og :main "Hello wor 32 d rdaldad!")
-      ;(def myWorker (js/Worker. "hamiyoca/miner.js"))
-      ;(def ^:dynamic o (js-obj "foo" 1 "bar" 2))
-      ;(. myWorker (postMessage o))
+      (l/og :conn "about to connect from heere")
+      ;(.log js/console (nth peer 1))
+      (def proxychan (chan))
+      (println "asdasdd")
+      (def subs (js-obj))
+      (defn sub [typ fun]
+            (l/og :main "sub %s " typ)
+            (aset subs typ fun)
+            ;(set! subs ( subs typ fun))
+            (l/og :main "sub " (get subs typ) )
+            )
+      (defn pub [typ msg]
+
+            (l/og :main "pub " typ )
+            (go
+            (>! proxychan (js-obj "typ" typ "msg" msg))
+            (l/og :main "pub "  msg)
+            ;(l/og :main "sub " subs)
+            ))
+      (defn f [x]
+            (println "fja")
+
+            (println "x")
+            )
+      (sub "s1" f)
+      (pub "s1" "asd")
+      (go (loop []
+                (def m (<! proxychan))
+
+
+                (l/og :main "got m from proxychan "  m)
+                (def typ (aget m "typ") )
+                ((aget subs typ) (aget m "msg"))
+
+                                (recur )
+
+                       ;what channels are listened on
+                       ;(mainLoop [connectionch hashmine transactionch cryptoCh])
+
+      ))
 
       )
-(set! (.-onload js/window) foo)
+(set! (.-onload js/window) entryy)

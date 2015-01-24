@@ -1,6 +1,7 @@
 (ns app.logger)
 (enable-console-print!)
 (def tagsOn [
+             :all
              :inv
              :intercom
              :blockchainHeight

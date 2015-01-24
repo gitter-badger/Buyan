@@ -2,16 +2,18 @@
   (:require
     [app.logger :as l]
 
-    [app.intercomMake :as im]
+    [intercomMake :as im]
 
-    [app.intercomTake :as it]
-    [app.database :as db]
+    [intercomTake :as it]
 
     [app.blockchain :as blockchain]
+
+
     [cljs.core.async :refer [chan close! timeout put!]]
 
     )
-  (:require-macros [cljs.core.async.macros :as m :refer [go]])
+  (:require-macros [cljs.core.async.macros :as m :refer [go]]
+                   )
   )
 
 (enable-console-print!)
@@ -65,79 +67,81 @@
       )
 
 (l/og :intercom "about loop in intercom")
-(go
-  ;(>! statech "start")
-  (loop [state "start"]
-        (l/og :intercom "starting loop in intercom")
-        (def v (<! inputch))
+(defn lp []
+      (go
+        ;(>! statech "start")
+        (loop [state "start"]
+              (l/og :intercom "starting loop in intercom")
+              (def v (<! inputch))
 
-        ;this is state machine of protocol described in docs 
-        ;this should be temporary here 
-        (cond
-          (is? state "start")
-          (do
-            (l/og :intercom "state " "start")
-            (l/og :intercom "got " v)
-            (cond
-              (typeof? v "conn") (do
-                                   (if (== (.-connType (.-data v)) "saltan")
-                                     (do
-                                       (sendmsg (.-peer v) "version" "0")
-                                       (tostate "grind"))
-                                     (tostate "version")
-                                     )
+              ;this is state machine of protocol described in docs
+              ;this should be temporary here
+              (cond
+                (is? state "start")
+                (do
+                  (l/og :intercom "state " "start")
+                  (l/og :intercom "got " v)
+                  (cond
+                    (typeof? v "conn") (do
+                                         (if (== (.-connType (.-data v)) "saltan")
+                                           (do
+                                             (sendmsg (.-peer v) "version" "0")
+                                             (tostate "grind"))
+                                           (tostate "version")
+                                           )
 
-                                   )
-              )
-            )
-          (is? state "version")
-          (do
-            (cond
-              (typeof? v "version") (do
-                                      (sendmsg (.-peer v) "version" "0")
-                                      (tostate "grind")
-                                      )
-              )
-            )
-          (is? state "grind")
-          (do
+                                         )
+                    )
+                  )
+                (is? state "version")
+                (do
+                  (cond
+                    (typeof? v "version") (do
+                                            (sendmsg (.-peer v) "version" "0")
+                                            (tostate "grind")
+                                            )
+                    )
+                  )
+                (is? state "grind")
+                (do
 
-            (cond
-              (typeof? v "conn") (do
-                                   (sendmsg (.-peer v) "version" "0")
-                                   (tostate "version")
-                                   )
-              (typeof? v "inv") (do
-                                  (l/og :inv "got inv here ")
-                                  (it/handleInvBlock (.-data v) v)
-                                  ;(sendmsg (.-peer v) "inv" "0")
-                                  (tostate "grind")
-                                  )
+                  (cond
+                    (typeof? v "conn") (do
+                                         (sendmsg (.-peer v) "version" "0")
+                                         (tostate "version")
+                                         )
+                    (typeof? v "inv") (do
+                                        (l/og :inv "got inv here ")
+                                        (it/handleInvBlock (.-data v) v)
+                                        ;(sendmsg (.-peer v) "inv" "0")
+                                        (tostate "grind")
+                                        )
 
-              (typeof? v "getdata") (do
-                                      ;(it/makeGetData (.-data v) v)
-                                      ;(sendmsg (.-peer v) "getdata" "0")
-                                      (tostate "grind" handleInvBlock)
-                                      )
-              (typeof? v "gettx") (do
-                                    (sendmsg (.-peer v) "gettx" "0")
-                                    (tostate "grind")
-                                    )
-              (typeof? v "tx") (do
-                                 (sendmsg (.-peer v) "tx" "0")
-                                 (tostate "grind")
-                                 )
+                    (typeof? v "getdata") (do
+                                            ;(it/makeGetData (.-data v) v)
+                                            ;(sendmsg (.-peer v) "getdata" "0")
+                                            (tostate "grind" handleInvBlock)
+                                            )
+                    (typeof? v "gettx") (do
+                                          (sendmsg (.-peer v) "gettx" "0")
+                                          (tostate "grind")
+                                          )
+                    (typeof? v "tx") (do
+                                       (sendmsg (.-peer v) "tx" "0")
+                                       (tostate "grind")
+                                       )
 
-              (typeof? v "data") (do
-                                   (sendmsg (.-peer v) "data" "0")
-                                   (tostate "grind")
-                                   )
-              true
-              (tostate "grind")
+                    (typeof? v "data") (do
+                                         (sendmsg (.-peer v) "data" "0")
+                                         (tostate "grind")
+                                         )
+                    true
+                    (tostate "grind")
 
-              )
-            )
-          )
-        (recur (<! statech))
-        ))
+                    )
+                  )
+                )
+              (recur (<! statech))
+              ))
 
+      )

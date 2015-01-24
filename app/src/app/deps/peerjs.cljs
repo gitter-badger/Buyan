@@ -1,4 +1,9 @@
- (ns peerjs)
+(ns peerjs)
 
- ;data for peer connection
- (def ^:dynamic peerParams (js-obj "host" "localhost" "port" 8000 "key" "peerjs" "debug" true))
+;data for peer connection
+(def ^:dynamic peerParams (js-obj "host" "localhost" "port" 8000 "key" "peerjs" "debug" true))
+(.on peerjs "connection" onConnection)
+
+;(def peer (connectTo "2"))
+;peerjs object
+(def peerjs (js/Peer. id peerParams))
