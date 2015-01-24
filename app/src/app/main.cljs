@@ -2,7 +2,7 @@
   (:require
     ; [app.intercom :as i]
     [app.logger :as l]
-
+    [pubsub :refer [pub sub]]
     [cljs.core.async :refer [chan close! timeout put!]]
     [servant.core :as servant]
     [servant.worker :as worker])
@@ -80,23 +80,7 @@
       (l/og :main "Hello wor 32 d rdaldad!")
       (l/og :conn "about to connect from heere")
       ;(.log js/console (nth peer 1))
-      (def proxychan (chan))
-      (println "asdasdd")
-      (def subs (js-obj))
-      (defn sub [typ fun]
-            (l/og :main "sub %s " typ)
-            (aset subs typ fun)
-            ;(set! subs ( subs typ fun))
-            (l/og :main "sub " (get subs typ) )
-            )
-      (defn pub [typ msg]
-
-            (l/og :main "pub " typ )
-            (go
-            (>! proxychan (js-obj "typ" typ "msg" msg))
-            (l/og :main "pub "  msg)
-            ;(l/og :main "sub " subs)
-            ))
+      
       (defn f [x]
             (println "fja")
 
@@ -104,20 +88,8 @@
             )
       (sub "s1" f)
       (pub "s1" "asd")
-      (go (loop []
-                (def m (<! proxychan))
-
-
-                (l/og :main "got m from proxychan "  m)
-                (def typ (aget m "typ") )
-                ((aget subs typ) (aget m "msg"))
-
-                                (recur )
-
-                       ;what channels are listened on
-                       ;(mainLoop [connectionch hashmine transactionch cryptoCh])
-
-      ))
-
+      (pubsub/initpubsub)
+      ;what channels are listened on
+      ;(mainLoop [connectionch hashmine transactionch cryptoCh])
       )
 (set! (.-onload js/window) entryy)
