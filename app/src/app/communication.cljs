@@ -1,8 +1,21 @@
-(ns communication)
+(ns communications
+
+  (:require
+        [app.intercom :as i]
+        [app.logger :as l]
+
+
+    [pubsub :refer [pub sub]]
+    [cljs.core.async :refer [chan close! timeout put!]]
+   )
+  (:require-macros [cljs.core.async.macros :as m :refer [go]]
+                   [servant.macros :refer [defservantfn]])
+  )
 (def intercomMeta (js-obj
                     "id" 1
                     "knownPeers" []
                     "knownPeersChannels" []
+                    "p2pchans" []
                     ))
 
 
@@ -37,18 +50,22 @@
       (l/og :conn conn)
       (set! (.-connType conn) "saltan")
       ;(.send conn "asd")
-      (go
-        (>! connectionch conn)
-        )
+      (pub "saltanConnection" conn)
+      ;
+      ;
+      ;(go
+      ;  (>! connectionch conn)
+      ;  )
 
       (l/og :conn "conn: " conn)
       )
 ;when peerjs sends data just send message to channel
 (defn onData [read data]
       (l/og :conn "data recieved" data)
-      (go
-        (>! read data)
-        )
+      (pub "peerdata" data)
+      ;(go
+      ;  (>! read data)
+      ;  )
 
       )
 (defn channelsFromConnection [conn]
@@ -70,43 +87,32 @@
       (l/og :conn "connection is opened now try to send something")
       (set! (.-connType conn) "tsaritsa")
       ;(.send conn "second sends something")
-      (go
-        (>! connectionch conn)
-        )
+      (pub "tsaritsaConnection" conn)
+      ;(go
+      ;  (>! connectionch conn)
+      ;  )
       )
-(defn mainLoop [statea]
-      (def gconn 1)
-      (def state statea)
+
+
+;this loop enables p2p communication
+(defn startP2PCommLoop []
       ;listen on messages and send them where they need to be sent
-      (go (loop [state2 statea]
+      (go (loop []
                 ;(>! (nth peer 1) "sending some data trough channel")
-                (l/og :mloop "new iteration with state")
+                (l/og :p2pCommLoop "new iteration with state")
 
-                (l/og :mloop "state " state)
+                (l/og :p2pCommLoop "state " state)
+
                 ;listen on channels from vector
+                (def v (alts! (aget intercomMeta "p2pchans")))
 
-                (def v (alts! state))
                 ;get value
                 (def vrecieved (nth v 0))
                 ;get channel that received value
                 (def ch2 (nth v 1))
 
                 (cond
-                  ;channel that gets new connections
-                  (== (nth v 1) connectionch) (do
-                                                (def gconn vrecieved)
 
-                                                (l/og :mloop "got new connection" vrecieved)
-                                                (def peerChannels (channelsFromConnection vrecieved))
-                                                ;add channels for reading and writing to this new connection to the vector of channels we listen
-                                                (def state (into [] (concat state peerChannels)))
-                                                (set! (.-knownPeers intercomMeta) (conj (.-knownPeers intercomMeta) (.-peer vrecieved)))
-                                                (l/og :mloop "adding w channel to kpeers " (nth peerChannels 1))
-                                                (set! (.-knownPeersChannels intercomMeta) (conj (.-knownPeersChannels intercomMeta) (nth peerChannels 1)))
-                                                (l/og :mloop "new state")
-                                                (i/onMessage (nth peerChannels 1) "conn" vrecieved)
-
-                                                )
                   ;channel from some peer that recieves data from peer
                   (== (.-type ch2) "readch") (do
                                                (l/og :mloop "recieved from peer " vrecieved)
@@ -126,57 +132,93 @@
                                                 (.send (.-conn ch2) vrecieved)
                                                 )
                   ;recieves work from miners
-                  (== (.-type ch2) "workerch") (do
-                                                 ; println vrecieved
-                                                 (l/og :mloop "recieved from worker " vrecieved)
-                                                 (def blockk (<! (makeBlock vrecieved)))
 
-
-                                                 ;(l/og :blockchain "just made new block " blockk)
-                                                 ;(<! (makeBlock vrecieved)
-                                                 ;(blockchain/addToChain blockk)
-                                                 ;TODO anounce to peers
-                                                 (l/og :inv "hash to get " (.-hash blockk))
-                                                 (<! (saveBlock dbase blockk))
-                                                 (def gotFromHash (<! (db/g (.-hash blockk))))
-                                                 ;(def gotFromHash )
-                                                 ;(<! (saveBlock dbase blockk))
-                                                 ;(l/og :inv "got from hash " gotFromHash)
-
-                                                 (broadcastNewBlock gotFromHash)
-
-                                                 ; (.send (.-conn ch2 ) vrecieved)
-                                                 )
-                  ;recieves results from browser crypto functions
-                  (== (.-type ch2) "cryptoch") (do
-                                                 ; println vrecieved
-                                                 (l/og :mloop "recieved from crypto " vrecieved)
-                                                 (l/og :mloop "mempoll = " blockchain/memPool)
-                                                 (l/og :mloop (aget vrecieved "type"))
-                                                 (if (== (aget vrecieved "type") "fmr") (do
-                                                                                          (l/og :mloop "merkle root " vrecieved)
-                                                                                          (mine (aget vrecieved "value"))
-                                                                                          )
-                                                                                        )
-                                                 (if (> (count blockchain/memPool) 3)
-
-                                                   (l/og :mloop "calculating hash of transactions(not merkle root now) %s" (blockchain/merkleRoot blockchain/memPool)))
-
-                                                 )
                   ; recieves transactions
-                  (== (.-type ch2) "transactionch") (do
-                                                      ; println vrecieved
-                                                      (l/og :mloop "recieved new transaction " vrecieved)
-                                                      ;put it in mempool
-                                                      ;send mempool to mining
-                                                      ;this might change
-                                                      (blockchain/sha256 vrecieved)
-                                                      ;(>! channel-1 vrecieved)
-                                                      ; (.send (.-conn ch2 ) vrecieved)
-                                                      )
+
                   )
 
-                (recur (do)))
+                (recur ))
           )
       )
+(defn onNewConnection [message]
+      (def gconn message)
 
+      (l/og :mloop "got new connection" message)
+      ;make async channels that we can use for reading and writing to send data to peers
+      ;instead of using peerjs functions just send to async channel and p2p loop will read and send
+      (def peerChannels (channelsFromConnection message))
+
+
+      ;store peer ids in known peers array of intercom meta object
+      (set! (.-knownPeers intercomMeta) (conj (.-knownPeers intercomMeta) (.-peer message)))
+
+
+      (l/og :mloop "adding w channel to kpeers " (nth peerChannels 1))
+
+      ;these are channels which one can use to send stuff to peers
+      ;(nth peerChannels 1) is write chan
+      ;(nth peerChannels 0) is read chan
+      ;we put them in p2p2chans array of intercom meta to enable p2p loop with channels
+      (set! (.-p2pchans intercomMeta) (concat (.-p2pchans intercomMeta)  peerChannels))
+
+      ;this array to enable easier broadcast
+      ;so we put write channels here to send stuff to those channels once we want to broadcast stuff
+      (set! (.-knownPeersChannels intercomMeta) (conj (.-knownPeersChannels intercomMeta) (nth peerChannels 1)))
+
+      (l/og :mloop "new state")
+      ;(i/onMessage (nth peerChannels 1) "conn" vrecieved)
+
+      ; (i/startIntercomLoop)
+      )
+(defn onBlockMined [message]
+      ; println vrecieved
+      (l/og :mloop "recieved from worker " vrecieved)
+      (def blockk (<! (makeBlock vrecieved)))
+
+
+      ;(l/og :blockchain "just made new block " blockk)
+      ;(<! (makeBlock vrecieved)
+      ;(blockchain/addToChain blockk)
+      ;TODO anounce to peers
+      (l/og :inv "hash to get " (.-hash blockk))
+      (<! (saveBlock dbase blockk))
+      (def gotFromHash (<! (db/g (.-hash blockk))))
+      ;(def gotFromHash )
+      ;(<! (saveBlock dbase blockk))
+      ;(l/og :inv "got from hash " gotFromHash)
+
+      (broadcastNewBlock gotFromHash)
+      )
+(defn onTransaction [message]
+      ; println vrecieved
+      (l/og :mloop "recieved new transaction " vrecieved)
+      ;put it in mempool
+      ;send mempool to mining
+      ;this might change
+      (blockchain/sha256 vrecieved)
+      ;(>! channel-1 vrecieved)
+      ; (.send (.-conn ch2 ) vrecieved)
+      )
+
+(defn onCrypto [message]
+      ; println vrecieved
+      (l/og :mloop "recieved from crypto " message)
+      (l/og :mloop "mempoll = " blockchain/memPool)
+      (l/og :mloop (aget message "type"))
+      (if (== (aget vrecieved "type") "fmr") (do
+                                               (l/og :mloop "merkle root " message)
+                                               (mine (aget message "value"))
+                                               )
+                                             )
+      (if (> (count blockchain/memPool) 3)
+
+        (l/og :mloop "calculating hash of transactions(not merkle root now) %s" (blockchain/merkleRoot blockchain/memPool)))
+
+      )
+
+(defn setupComm []
+(sub "blockMined" onBlockMined)
+(sub "crypto" onCrypto)
+(sub "transaction" onTransaction)
+(sub "newConnection" onNewConnection)
+)

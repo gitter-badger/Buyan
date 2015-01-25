@@ -14,7 +14,7 @@
              :makeGetBlock
              :getBlocks
              ])
-(defn og [type format data]
+(defn og [type format &data]
       (if (or (some #{type} tagsOn) (some #{:all} tagsOn))
         (.log js/console (+ type " " format) data)
 

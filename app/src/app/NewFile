@@ -53,3 +53,7 @@
 ; (go
 ; (l/og :db "last entry with new func" (<! (gdb "last")) )
 ; )
+
+
+;add channels for reading and writing to this new connection to the vector of channels we listen
+      ;(def state (into [] (concat state peerChannels)))

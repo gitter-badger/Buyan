@@ -1,13 +1,15 @@
 (ns app.main
   (:require
     [app.intercom :as i]
+    [communications :as comm]
     [app.logger :as l]
     [pubsub :refer [pub sub]]
     [cljs.core.async :refer [chan close! timeout put!]]
     [servant.core :as servant]
     [servant.worker :as worker])
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
-                   [servant.macros :refer [defservantfn]]))
+                   [servant.macros :refer [defservantfn]])
+  )
 
 
 (enable-console-print!)
@@ -77,7 +79,11 @@
 
       ;start submodules
       (pubsub/initpubsub)
-      (i/startIntercomLoop)
+      (comm/setupComm)
+      ;intercom is protocol state machine
+      ;this loop is for enabling p2p communcication
+      (comm/startP2PCommLoop)
+
       ;what channels are listened on
       ;(mainLoop [connectionch hashmine transactionch cryptoCh])
       )

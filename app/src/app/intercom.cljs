@@ -67,13 +67,13 @@
       (== state qstate)
       )
 
-(l/og :intercom "about loop in intercom")
-(defn startIntercomLoop []
+
+(defn startIntercomLoop [peerchannel]
       (go
         ;(>! statech "start")
         (loop [state "start"]
               (l/og :intercom "starting loop in intercom")
-              (def v (<! inputch))
+              (def v (<! peerchannel))
 
               (l/og :intercom "state " state)
               (l/og :intercom "message " v)
