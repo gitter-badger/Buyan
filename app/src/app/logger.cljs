@@ -19,4 +19,5 @@
         (.log js/console (+ type " " format) data)
 
         ))
- 
+;database instance
+;(.enable (.-debug js/PouchDB) "*")

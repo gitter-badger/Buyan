@@ -9,7 +9,8 @@
 (def peers [])
 
 
-
+; channel to anounce new connectinos
+(def connectionch (chan))
 (defn broadcastNewBlock [blockk]
       (l/og :intercom "broadsacting new block" blockk)
 

@@ -3,6 +3,7 @@
     [app.logger :as l]
     [app.database :as db]
 
+    [pubsub :refer [pub sub]]
     [app.blockchain :as blockchain]
 
     )
@@ -53,20 +54,62 @@
           )
         )
       )
-(defn takeData [typ message]
+(defn takeData [message]
+      (go
+        (l/og :getBlocks "take data " message)
+        (do
+          (l/og :inv "got inv here ")
+          (it/handleInvBlock (.-data v) v)
+          ;(sendmsg (.-peer v) "inv" "0")
+          (tostate "grind")
+          )(do
+             ;(it/makeGetData (.-data v) v)
+             ;(sendmsg (.-peer v) "getdata" "0")
+             (tostate "grind" handleInvBlock)
+             )
+        )
       )
 
-(defn takeGetVersion [typ message]
+(defn takeGetVersion [message]
+      (go
+        (do
+          (sendmsg (.-peer v) "version" "0")
+          (tostate "grind")
+          )
+        (l/og :getBlocks "take get version " message)
+        )
       )
-(defn takeVersion [typ message]
+(defn takeVersion [message]
+      (go
+        (l/og :getBlocks "take version " message)
+        (do
+          (if (== (.-connType (.-data message)) "saltan")
+            (do
+              (sendmsg (.-peer message) "version" "0")
+              (tostate "grind"))
+            (tostate "version")
+            )
+
+          )
+
+        )
       )
 
-(defn takeConn [typ message]
+(defn takeConn [message]
+
+      (go
+        (do
+          (sendmsg (.-peer v) "version" "0")
+          (tostate "version")
+          )
+        (l/og :getBlocks "take conn " message)
+        )
       )
-(defn getBlocks [peer hash]
+(defn takeGetBlocks [peer hash]
       (go
         (l/og :getBlocks "getting data from peer " peer)
         (l/og :getBlocks "getting data from hash " hash)
         (l/og :getBlocks "make Get Blck" (<! (makeGetBlock hash)))
         )
       )
+

@@ -6,6 +6,7 @@
 
     [intercomTake :as it]
 
+    [pubsub :refer [pub sub]]
     [app.blockchain :as blockchain]
 
 
@@ -67,77 +68,49 @@
       )
 
 (l/og :intercom "about loop in intercom")
-(defn lp []
+(defn startIntercomLoop []
       (go
         ;(>! statech "start")
         (loop [state "start"]
               (l/og :intercom "starting loop in intercom")
               (def v (<! inputch))
 
+              (l/og :intercom "state " state)
+              (l/og :intercom "message " v)
               ;this is state machine of protocol described in docs
               ;this should be temporary here
               (cond
+
+
                 (is? state "start")
                 (do
-                  (l/og :intercom "state " "start")
-                  (l/og :intercom "got " v)
                   (cond
-                    (typeof? v "conn") (do
-                                         (if (== (.-connType (.-data v)) "saltan")
-                                           (do
-                                             (sendmsg (.-peer v) "version" "0")
-                                             (tostate "grind"))
-                                           (tostate "version")
-                                           )
-
-                                         )
+                    (typeof? v "conn") (tostate (it/takeConn  v))
+                    true (tostate "grind")
                     )
                   )
+
+
                 (is? state "version")
                 (do
                   (cond
-                    (typeof? v "version") (do
-                                            (sendmsg (.-peer v) "version" "0")
-                                            (tostate "grind")
-                                            )
+                    (typeof? v "version") (tostate (it/takeVersion  v))
+                    true (tostate "grind")
                     )
                   )
+
+
                 (is? state "grind")
                 (do
 
                   (cond
-                    (typeof? v "conn") (do
-                                         (sendmsg (.-peer v) "version" "0")
-                                         (tostate "version")
-                                         )
-                    (typeof? v "inv") (do
-                                        (l/og :inv "got inv here ")
-                                        (it/handleInvBlock (.-data v) v)
-                                        ;(sendmsg (.-peer v) "inv" "0")
-                                        (tostate "grind")
-                                        )
-
-                    (typeof? v "getdata") (do
-                                            ;(it/makeGetData (.-data v) v)
-                                            ;(sendmsg (.-peer v) "getdata" "0")
-                                            (tostate "grind" handleInvBlock)
-                                            )
-                    (typeof? v "gettx") (do
-                                          (sendmsg (.-peer v) "gettx" "0")
-                                          (tostate "grind")
-                                          )
-                    (typeof? v "tx") (do
-                                       (sendmsg (.-peer v) "tx" "0")
-                                       (tostate "grind")
-                                       )
-
-                    (typeof? v "data") (do
-                                         (sendmsg (.-peer v) "data" "0")
-                                         (tostate "grind")
-                                         )
-                    true
-                    (tostate "grind")
-
+                    (typeof? v "conn") (tostate (it/takeConn  v))
+                    (typeof? v "inv") (tostate (it/takeInv  v))
+                    (typeof? v "getdata") (tostate (it/takeGetData  v))
+                    (typeof? v "gettx") (tostate (it/takeGetTx  v))
+                    (typeof? v "tx") (tostate (it/takeTx v))
+                    (typeof? v "data") (tostate (it/takeData v))
+                    true (tostate "grind")
                     )
                   )
                 )

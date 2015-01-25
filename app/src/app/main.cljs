@@ -1,6 +1,6 @@
 (ns app.main
   (:require
-    ; [app.intercom :as i]
+    [app.intercom :as i]
     [app.logger :as l]
     [pubsub :refer [pub sub]]
     [cljs.core.async :refer [chan close! timeout put!]]
@@ -17,24 +17,14 @@
 
 
 
-
-
-
-
-
-;instantiate tree js graphic lib
-(. js/console (log (THREE/Scene.)))
 ;promt user for id that will be used as his peer id
 ;(def id (js/prompt "enter id"))
-(l/og :main "user id %s " id)
+;(l/og :main "user id %s " id)
 
 (def start (chan))
-; channel to anounce new connectinos
-(def connectionch (chan))
 
-;database instance
 
-;(.enable (.-debug js/PouchDB) "*")
+
 
 
 
@@ -67,6 +57,9 @@
 ;keeps track of protocol and peers
 ;(initDBase dbase)
 
+;(defn f [x] (println "fja") (println "x"))
+;(sub "s1" f)
+;(pub "s1" "asd")
 
 
 
@@ -80,15 +73,11 @@
       (l/og :main "Hello wor 32 d rdaldad!")
       (l/og :conn "about to connect from heere")
       ;(.log js/console (nth peer 1))
-      
-      (defn f [x]
-            (println "fja")
 
-            (println "x")
-            )
-      (sub "s1" f)
-      (pub "s1" "asd")
+
+      ;start submodules
       (pubsub/initpubsub)
+      (i/startIntercomLoop)
       ;what channels are listened on
       ;(mainLoop [connectionch hashmine transactionch cryptoCh])
       )
