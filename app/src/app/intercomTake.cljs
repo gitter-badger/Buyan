@@ -95,11 +95,11 @@
         )
       )
 
-(defn takeConn [message]
+(defn takeConn [conn]
 
       (go
         (do
-          (sendmsg (.-peer v) "version" "0")
+          (sendmsg (.-peer conn) "version" "0")
           (tostate "version")
           )
         (l/og :getBlocks "take conn " message)

@@ -120,15 +120,16 @@
 ;this loop enables p2p communication
 (defn startP2PCommLoop []
       ;listen on messages and send them where they need to be sent
-      (go (loop [state [connectionch]]
+      (def stated [connectionch])
+      (go (loop []
                 ;(>! (nth peer 1) "sending some data trough channel")
                 (l/og :p2pCommLoop "new iteration with state")
 
-                (l/og :p2pCommLoop "state " state)
+                (l/og :p2pCommLoop "state " stated)
 
                 ;listen on channels from vector
-                (def v (alts! state))
-
+                (def v (alts! stated))
+                (l/og :p2ploop "got from state" v)
                 ;get value
                 (def vrecieved (nth v 0))
                 ;get channel that received value
@@ -136,7 +137,7 @@
 
                 (cond
 
-                  (== (nth v 1) connectionch) (def state (into [] (concat state (onNewConnection vrecieved))))
+                  (== (nth v 1) connectionch) (def stated (into [] (concat stated (onNewConnection vrecieved))))
                   ;channel from some peer that recieves data from peer
                   (== (.-type ch2) "readch") (do
                                                (l/og :p2ploop "recieved from peer " vrecieved)
@@ -161,7 +162,7 @@
 
                   ; recieves transactions)
                   )
-                (recur [connectionch ] ))))
+                (recur  ))))
 (defn onNewConnection [message]
       (def gconn message)
 
