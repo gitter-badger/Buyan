@@ -28,4 +28,4 @@ goog.addDependency("../cljs/reader.js", ['cljs.reader'], ['goog.string', 'cljs.c
 goog.addDependency("../intercomMakeUtil.js", ['intercomMakeUtil'], ['cljs.core']);
 goog.addDependency("../servant/worker.js", ['servant.worker'], ['cljs.core', 'cljs.core.async', 'cljs.reader']);
 goog.addDependency("../servant/core.js", ['servant.core'], ['servant.worker', 'cljs.core', 'cljs.core.async']);
-goog.addDependency("../app/main.js", ['app.main'], ['pubsub', 'app.database', 'servant.worker', 'app.intercom', 'cljs.core', 'cljs.core.async', 'communications', 'servant.core', 'app.logger']);
+goog.addDependency("../app/main.js", ['app.main'], ['pubsub', 'app.database', 'servant.worker', 'peerjs', 'app.intercom', 'cljs.core', 'cljs.core.async', 'communications', 'servant.core', 'app.logger']);

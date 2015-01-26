@@ -3,7 +3,7 @@
   (:require
         [app.intercom :as i]
         [app.logger :as l]
-        [peerjs :as p]
+        [peerjs :refer [peerjs]]
 
 
     [pubsub :refer [pub sub]]
@@ -165,7 +165,7 @@
 (defn onNewConnection [message]
       (def gconn message)
 
-      (setIntercomState conn "start")
+      (setIntercomState message "start")
       (l/og :mloop "got new connection" message)
       ;make async channels that we can use for reading and writing to send data to peers
       ;instead of using peerjs functions just send to async channel and p2p loop will read and send

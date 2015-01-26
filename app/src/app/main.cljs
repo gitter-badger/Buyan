@@ -3,6 +3,7 @@
     [app.intercom :as i]
     [communications :as comm]
     [app.logger :as l]
+    [peerjs :refer [peerjs peerParams]]
     [app.database :refer [g p ps]]
     [pubsub :refer [pub sub]]
     [cljs.core.async :refer [chan close! timeout put!]]
@@ -55,6 +56,8 @@
 ;(defn f [x] (println "fja") (println "x"))
 ;(sub "s1" f)
 ;(pub "s1" "asd")
+
+;this here is for debugging
 (.enable (.-debug js/PouchDB) "*")
 (defn setID [ev id ]
       (println id)
@@ -63,7 +66,7 @@
         (.log js/console  (<! (g "lid")))
 
         )
-      ;(def peerjs (js/Peer. (first id )  p/peerParams))
+
       ;(.on peerjs "connection" onConnection)
       )
 (.on (js/$ js/document) "setid"  setID)
@@ -79,8 +82,10 @@
       (l/og :conn "about to connect from heere")
       ;(.log js/console (nth peer 1))
       (go
-         (.log js/console (<! ( g "lid")))
-         (.val  (js/$ "#id") (<! (g "lid")))
+        (def id (<! ( g "lid")))
+         (.log js/console id)
+         (.val  (js/$ "#id") id)
+         (def peerjs (js/Peer. id   peerParams))
         )
       ;start submodules
       (pubsub/initpubsub)
