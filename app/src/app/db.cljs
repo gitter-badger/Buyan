@@ -2,6 +2,7 @@
   (:require
     [app.logger :as l]
 
+    [app.pouchDB :refer [dbase]]
     [cljs.core.async :refer [chan close! timeout put!]]
 
     )
@@ -80,7 +81,7 @@
       (go
         (let [c (chan)]
 
-             (.then (.get app.main.dbase k) #(put! c %) #(put! c false))
+             (.then (.get dbase k) #(put! c %) #(put! c false))
 
              (def r (<! c))
              (l/og :dbget (+ "got from db " k) r)
@@ -95,7 +96,7 @@
       (go
         (def c (chan))
         (l/og :dbput "putting from db " [key v])
-        (.put app.main.dbase (js-obj "_id" key "val" v) #(put! c 1))
+        (.put dbase (js-obj "_id" key "val" v) #(put! c 1))
 
         (<! c)
         (l/og :dbput "just done put s ")
@@ -105,7 +106,7 @@
 (defn p [key v]
 
       (l/og :dbput "putting from db " [key v])
-      (.put app.main.dbase (js-obj "_id" key "val" v))
+      (.put dbase (js-obj "_id" key "val" v))
 
       )
 ;(def p (partial putDB ))

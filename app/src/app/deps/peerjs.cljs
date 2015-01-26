@@ -5,7 +5,3 @@
 
 ;(def peer (connectTo "2"))
 ;peerjs object
-(defn setID [ev id ]
-      (def peerjs (js/Peer. (nth id 2)  p/peerParams))
-      (.on peerjs "connection" onConnection)
-      )

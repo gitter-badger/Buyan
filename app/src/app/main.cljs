@@ -3,6 +3,7 @@
     [app.intercom :as i]
     [communications :as comm]
     [app.logger :as l]
+    [app.database :refer [g p ps]]
     [pubsub :refer [pub sub]]
     [cljs.core.async :refer [chan close! timeout put!]]
     [servant.core :as servant]
@@ -38,7 +39,7 @@
 ;(.on (js/$ js/document) "transaction" (partial pub transactionch))
 (.on (js/$ js/document) "connectTo"  comm/connectTo)
 
-(.on (js/$ js/document) "setID"  peerjs/setID)
+
 ;when someone connects to this user send that new connection to channel
 
 
@@ -54,8 +55,18 @@
 ;(defn f [x] (println "fja") (println "x"))
 ;(sub "s1" f)
 ;(pub "s1" "asd")
+(.enable (.-debug js/PouchDB) "*")
+(defn setID [ev id ]
+      (println id)
+      (go
+        (p "lid" id)
+        (.log js/console  (<! (g "lid")))
 
-
+        )
+      ;(def peerjs (js/Peer. (first id )  p/peerParams))
+      ;(.on peerjs "connection" onConnection)
+      )
+(.on (js/$ js/document) "setid"  setID)
 
 (defn entryy []
       "main program entry point.
@@ -67,8 +78,10 @@
       (l/og :main "Hello wor 32 d rdaldad!")
       (l/og :conn "about to connect from heere")
       ;(.log js/console (nth peer 1))
-
-
+      (go
+         (.log js/console (<! ( g "lid")))
+         (.val  (js/$ "#id") (<! (g "lid")))
+        )
       ;start submodules
       (pubsub/initpubsub)
       ;register all pubsub subscriptions
