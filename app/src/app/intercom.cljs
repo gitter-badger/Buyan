@@ -68,53 +68,54 @@
       )
 
 
-(defn startIntercomLoop [peerchannel]
+(defn intercomstatemachine [state message]
       (go
         ;(>! statech "start")
-        (loop [state "start"]
-              (l/og :intercom "starting loop in intercom")
-              (def v (<! peerchannel))
 
-              (l/og :intercom "state " state)
-              (l/og :intercom "message " v)
-              ;this is state machine of protocol described in docs
-              ;this should be temporary here
-              (cond
+        (l/og :intercom "starting loop in intercom")
+        (l/og :intercom "state in intercom " state)
+        (l/og :intercom "message in intercom " message)
+        (def v (.-data message))
 
-
-                (is? state "start")
-                (do
-                  (cond
-                    (typeof? v "conn") (tostate (it/takeConn  v))
-                    true (tostate "grind")
-                    )
-                  )
+        (l/og :intercom "state " state)
+        (l/og :intercom "message " v)
+        ;this is state machine of protocol described in docs
+        ;this should be temporary here
+        (cond
 
 
-                (is? state "version")
-                (do
-                  (cond
-                    (typeof? v "version") (tostate (it/takeVersion  v))
-                    true (tostate "grind")
-                    )
-                  )
+          (is? state "start")
+          (do
+            (cond
+              (typeof? v "conn") (tostate (it/takeConn v))
+              true (tostate "grind")
+              )
+            )
 
 
-                (is? state "grind")
-                (do
+          (is? state "version")
+          (do
+            (cond
+              (typeof? v "version") (tostate (it/takeVersion v))
+              true (tostate "grind")
+              )
+            )
 
-                  (cond
-                    (typeof? v "conn") (tostate (it/takeConn  v))
-                    (typeof? v "inv") (tostate (it/takeInv  v))
-                    (typeof? v "getdata") (tostate (it/takeGetData  v))
-                    (typeof? v "gettx") (tostate (it/takeGetTx  v))
-                    (typeof? v "tx") (tostate (it/takeTx v))
-                    (typeof? v "data") (tostate (it/takeData v))
-                    true (tostate "grind")
-                    )
-                  )
-                )
-              (recur (<! statech))
-              ))
 
-      )
+          (is? state "grind")
+          (do
+
+            (cond
+              (typeof? v "conn") (tostate (it/takeConn v))
+              (typeof? v "inv") (tostate (it/takeInv v))
+              (typeof? v "getdata") (tostate (it/takeGetData v))
+              (typeof? v "gettx") (tostate (it/takeGetTx v))
+              (typeof? v "tx") (tostate (it/takeTx v))
+              (typeof? v "data") (tostate (it/takeData v))
+              true (tostate "grind")
+              )
+            )
+          )
+
+        ))
+

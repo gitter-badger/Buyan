@@ -26,15 +26,6 @@
 (def start (chan))
 
 
-
-
-
-
-
-
-
-
-
 ;channel to recieve new transaction
 (def transactionch (chan))
 (set! (.-type transactionch) "transactionch")
@@ -45,7 +36,7 @@
 
 ;listen on global document for transactions and publish them to channel transactionch
 ;(.on (js/$ js/document) "transaction" (partial pub transactionch))
-
+(.on (js/$ js/document) "connectTo"  comm/connectTo)
 
 ;when someone connects to this user send that new connection to channel
 
@@ -79,10 +70,12 @@
 
       ;start submodules
       (pubsub/initpubsub)
+      ;register all pubsub subscriptions
       (comm/setupComm)
-      ;intercom is protocol state machine
-      ;this loop is for enabling p2p communcication
       (comm/startP2PCommLoop)
+
+
+      ;intercom is protocol state machine
 
       ;what channels are listened on
       ;(mainLoop [connectionch hashmine transactionch cryptoCh])

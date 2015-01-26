@@ -6,4 +6,4 @@
 
 ;(def peer (connectTo "2"))
 ;peerjs object
-(def peerjs (js/Peer. id peerParams))
+

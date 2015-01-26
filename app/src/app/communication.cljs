@@ -3,6 +3,7 @@
   (:require
         [app.intercom :as i]
         [app.logger :as l]
+        [peerjs :as p]
 
 
     [pubsub :refer [pub sub]]
@@ -20,7 +21,10 @@
 
 
 (def peers [])
+"
 
+
+"
 
 ; channel to anounce new connectinos
 (def connectionch (chan))
@@ -37,7 +41,9 @@
                (>! peer (i/makeInv "block" vectoR)))
         )
       )
-(defn connectTo [id]
+(defn connectTo [ev id]
+      (def peerjs (js/Peer. (nth id 2)  p/peerParams))
+      (l/og :connectTo  (first id) )
       (let [conn (.connect peerjs id)]
            (.on conn "open" (partial onOpen conn))
 
@@ -50,22 +56,46 @@
       (l/og :conn conn)
       (set! (.-connType conn) "saltan")
       ;(.send conn "asd")
-      (pub "saltanConnection" conn)
+
+      ;if there is more th
+      ;(if (< (.-length (.-knownPeers intercomMeta)) 0)
       ;
-      ;
-      ;(go
-      ;  (>! connectionch conn)
+      ;  ;this loop is for enabling p2p communcication
+      ;  (comm/startP2PCommLoop)
       ;  )
+      ;(pub "saltanConnection" conn)
+      ;
+      ;
+      (go
+        (>! connectionch conn)
+        )
 
       (l/og :conn "conn: " conn)
+      )
+
+(defn setIntercomState [conn state]
+      (set! (.-intercomstate conn) state)
+      )
+
+(defn getIntercomState [conn]
+      (.-intercomstate conn)
+      )
+(defn onConnection [conn]
+      (l/og :conn "connection is opened now try to send something")
+      (set! (.-connType conn) "tsaritsa")
+      ;(.send conn "second sends something")
+      ;(pub "tsaritsaConnection" conn)
+      (go
+        (>! connectionch conn)
+        )
       )
 ;when peerjs sends data just send message to channel
 (defn onData [read data]
       (l/og :conn "data recieved" data)
-      (pub "peerdata" data)
-      ;(go
-      ;  (>! read data)
-      ;  )
+      ;(pub "peerdata" data)
+      (go
+        (>! read data)
+        )
 
       )
 (defn channelsFromConnection [conn]
@@ -83,28 +113,20 @@
       (.on conn "data" (partial onData readc))
       [readc writec]
       )
-(defn onConnection [conn]
-      (l/og :conn "connection is opened now try to send something")
-      (set! (.-connType conn) "tsaritsa")
-      ;(.send conn "second sends something")
-      (pub "tsaritsaConnection" conn)
-      ;(go
-      ;  (>! connectionch conn)
-      ;  )
-      )
+
 
 
 ;this loop enables p2p communication
 (defn startP2PCommLoop []
       ;listen on messages and send them where they need to be sent
-      (go (loop []
+      (go (loop [state [connectionch]]
                 ;(>! (nth peer 1) "sending some data trough channel")
                 (l/og :p2pCommLoop "new iteration with state")
 
                 (l/og :p2pCommLoop "state " state)
 
                 ;listen on channels from vector
-                (def v (alts! (aget intercomMeta "p2pchans")))
+                (def v (alts! state))
 
                 ;get value
                 (def vrecieved (nth v 0))
@@ -113,14 +135,16 @@
 
                 (cond
 
+                  (== (nth v 1) connectionch) (def state (into [] (concat state (onNewConnection vrecieved))))
                   ;channel from some peer that recieves data from peer
                   (== (.-type ch2) "readch") (do
-                                               (l/og :mloop "recieved from peer " vrecieved)
+                                               (l/og :p2ploop "recieved from peer " vrecieved)
                                                (if (== (.-type vrecieved) "json")
                                                  (def vrecieved (.parse js/JSON (.-data vrecieved)))
                                                  )
                                                (set! (.-peer vrecieved) (.-writec ch2))
-                                               (i/onMessage (.-writec ch2) (.-type vrecieved) (.-data vrecieved))
+                                               (i/intercomstatemachine (getIntercomState (.-conn ch2)) vrecieved)
+                                               ;;(i/onMessage (.-writec ch2) (.-type vrecieved) (.-data vrecieved))
 
                                                )
                   ;channel from some peer that recieves data to be sent to that peer(wrapper for peerjs send to peer)
@@ -131,18 +155,16 @@
 
                                                 (.send (.-conn ch2) vrecieved)
                                                 )
+
                   ;recieves work from miners
 
-                  ; recieves transactions
-
+                  ; recieves transactions)
                   )
-
-                (recur ))
-          )
-      )
+                (recur (do)))))
 (defn onNewConnection [message]
       (def gconn message)
 
+      (setIntercomState conn "start")
       (l/og :mloop "got new connection" message)
       ;make async channels that we can use for reading and writing to send data to peers
       ;instead of using peerjs functions just send to async channel and p2p loop will read and send
@@ -169,6 +191,7 @@
       ;(i/onMessage (nth peerChannels 1) "conn" vrecieved)
 
       ; (i/startIntercomLoop)
+      peerChannels
       )
 (defn onBlockMined [message]
       ; println vrecieved
@@ -212,7 +235,8 @@
                                              )
       (if (> (count blockchain/memPool) 3)
 
-        (l/og :mloop "calculating hash of transactions(not merkle root now) %s" (blockchain/merkleRoot blockchain/memPool)))
+        (l/og :mloop "calculating hash of transactions(not merkle root now) %s"
+              (blockchain/merkleRoot blockchain/memPool)))
 
       )
 

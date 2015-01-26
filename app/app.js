@@ -22,7 +22,7 @@ goog.addDependency("../intercomTakeUtil.js", ['intercomTakeUtil'], ['cljs.core']
 goog.addDependency("../pubsub.js", ['pubsub'], ['cljs.core', 'cljs.core.async']);
 goog.addDependency("../intercomTake.js", ['intercomTake'], ['pubsub', 'app.database', 'cljs.core', 'app.blockchain', 'app.logger']);
 goog.addDependency("../app/intercom.js", ['app.intercom'], ['intercomMake', 'pubsub', 'cljs.core', 'cljs.core.async', 'app.blockchain', 'intercomTake', 'app.logger']);
-goog.addDependency("../communications.js", ['communications'], ['pubsub', 'app.intercom', 'cljs.core', 'cljs.core.async', 'app.logger']);
+goog.addDependency("../communications.js", ['communications'], ['pubsub', 'peerjs', 'app.intercom', 'cljs.core', 'cljs.core.async', 'app.logger']);
 goog.addDependency("../crypto.js", ['crypto'], ['cljs.core', 'cljs.core.async']);
 goog.addDependency("../cljs/reader.js", ['cljs.reader'], ['goog.string', 'cljs.core', 'goog.string.StringBuffer']);
 goog.addDependency("../intercomMakeUtil.js", ['intercomMakeUtil'], ['cljs.core']);
