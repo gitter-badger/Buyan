@@ -41,8 +41,9 @@
                (>! peer (i/makeInv "block" vectoR)))
         )
       )
+
 (defn connectTo [ev id]
-      (def peerjs (js/Peer. (nth id 2)  p/peerParams))
+
       (l/og :connectTo  (first id) )
       (let [conn (.connect peerjs id)]
            (.on conn "open" (partial onOpen conn))

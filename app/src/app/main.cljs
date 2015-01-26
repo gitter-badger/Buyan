@@ -38,6 +38,7 @@
 ;(.on (js/$ js/document) "transaction" (partial pub transactionch))
 (.on (js/$ js/document) "connectTo"  comm/connectTo)
 
+(.on (js/$ js/document) "setID"  peerjs/setID)
 ;when someone connects to this user send that new connection to channel
 
 
