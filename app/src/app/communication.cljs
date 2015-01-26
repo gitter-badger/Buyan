@@ -161,7 +161,7 @@
 
                   ; recieves transactions)
                   )
-                (recur (do)))))
+                (recur [connectionch ] ))))
 (defn onNewConnection [message]
       (def gconn message)
 
