@@ -23,8 +23,9 @@
 (defn makeVersion [typ message]
 
       )
-(defn makeConn [typ message]
-
+(defn makeConn [conn]
+      (l/og :makeConn "make conn " conn)
+      (js-obj "type" "conn" "data" conn)
       )
 (defn makeGetBlock [hash]
       (go

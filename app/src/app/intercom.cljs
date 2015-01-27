@@ -78,40 +78,31 @@
         (def v (.-data message))
 
         (l/og :intercom "state " state)
-        (l/og :intercom "message " v)
+        (l/og :intercom "message " message)
         ;this is state machine of protocol described in docs
         ;this should be temporary here
         (cond
 
 
           (is? state "start")
-          (do
-            (cond
-              (typeof? v "conn") (tostate (it/takeConn v))
-              true (tostate "grind")
-              )
-            )
+               (tostate (<! (it/takeConn message)))
+
 
 
           (is? state "version")
-          (do
-            (cond
-              (typeof? v "version") (tostate (it/takeVersion v))
-              true (tostate "grind")
-              )
-            )
+                (typeof? message "version") (tostate (it/takeVersion message))
 
 
           (is? state "grind")
           (do
 
             (cond
-              (typeof? v "conn") (tostate (it/takeConn v))
-              (typeof? v "inv") (tostate (it/takeInv v))
-              (typeof? v "getdata") (tostate (it/takeGetData v))
-              (typeof? v "gettx") (tostate (it/takeGetTx v))
-              (typeof? v "tx") (tostate (it/takeTx v))
-              (typeof? v "data") (tostate (it/takeData v))
+              (typeof? message "conn") (tostate (it/takeConn message))
+              (typeof? message "inv") (tostate (it/takeInv message))
+              (typeof? message "getdata") (tostate (it/takeGetData message))
+              (typeof? message "gettx") (tostate (it/takeGetTx message))
+              (typeof? message "tx") (tostate (it/takeTx message))
+              (typeof? message "data") (tostate (it/takeData message))
               true (tostate "grind")
               )
             )

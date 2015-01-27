@@ -99,10 +99,12 @@
 
       (go
         (do
-          (sendmsg (.-peer conn) "version" "0")
-          (tostate "version")
+          (l/og :takeConn "take conn " message)
+          (sendmsg (.-peer (.-data conn) ) "version" "0")
+          ;(tostate "version")
           )
-        (l/og :getBlocks "take conn " message)
+        ;(l/og :getBlocks "take conn " message)
+        "version"
         )
       )
 (defn takeGetBlocks [peer hash]

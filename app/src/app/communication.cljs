@@ -2,6 +2,7 @@
 
   (:require
         [app.intercom :as i]
+        [intercomMake :as im]
         [app.logger :as l]
         [peerjs :refer [peerjs]]
 
@@ -137,7 +138,8 @@
 
                 (cond
 
-                  (== (nth v 1) connectionch) (def stated (into [] (concat stated (onNewConnection vrecieved))))
+                  (== (nth v 1) connectionch) (do (def stated (into [] (concat stated (onNewConnection vrecieved))))
+                                                  (i/intercomstatemachine (getIntercomState vrecieved) (im/makeConn vrecieved)))
                   ;channel from some peer that recieves data from peer
                   (== (.-type ch2) "readch") (do
                                                (l/og :p2ploop "recieved from peer " vrecieved)
