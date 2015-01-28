@@ -3,6 +3,7 @@
     [app.logger :as l]
     [app.database :as db]
 
+    [communications :refer [sendmsg]]
     [app.blockchain :as blockchain]
 
     )

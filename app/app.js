@@ -17,12 +17,12 @@ goog.addDependency("../app/blockchain.js", ['app.blockchain'], ['cljs.core', 'cl
 goog.addDependency("../servantWorkers.js", ['servantWorkers'], ['cljs.core']);
 goog.addDependency("../app/pouchDB.js", ['app.pouchDB'], ['cljs.core']);
 goog.addDependency("../app/database.js", ['app.database'], ['app.pouchDB', 'cljs.core', 'cljs.core.async', 'app.logger']);
-goog.addDependency("../intercomMake.js", ['intercomMake'], ['app.database', 'cljs.core', 'app.blockchain', 'app.logger']);
-goog.addDependency("../intercomTakeUtil.js", ['intercomTakeUtil'], ['cljs.core']);
 goog.addDependency("../pubsub.js", ['pubsub'], ['cljs.core', 'cljs.core.async']);
-goog.addDependency("../intercomTake.js", ['intercomTake'], ['pubsub', 'app.database', 'cljs.core', 'app.blockchain', 'app.logger']);
-goog.addDependency("../app/intercom.js", ['app.intercom'], ['intercomMake', 'pubsub', 'cljs.core', 'cljs.core.async', 'app.blockchain', 'intercomTake', 'app.logger']);
+goog.addDependency("../intercomTake.js", ['intercomTake'], ['pubsub', 'app.database', 'cljs.core', 'cljs.core.async', 'communications', 'app.blockchain', 'app.logger']);
+goog.addDependency("../app/intercom.js", ['app.intercom'], ['intercomMake', 'pubsub', 'cljs.core', 'cljs.core.async', 'communications', 'app.blockchain', 'intercomTake', 'app.logger']);
 goog.addDependency("../communications.js", ['communications'], ['intercomMake', 'pubsub', 'peerjs', 'app.intercom', 'cljs.core', 'cljs.core.async', 'app.logger']);
+goog.addDependency("../intercomMake.js", ['intercomMake'], ['app.database', 'cljs.core', 'communications', 'app.blockchain', 'app.logger']);
+goog.addDependency("../intercomTakeUtil.js", ['intercomTakeUtil'], ['cljs.core']);
 goog.addDependency("../crypto.js", ['crypto'], ['cljs.core', 'cljs.core.async']);
 goog.addDependency("../cljs/reader.js", ['cljs.reader'], ['goog.string', 'cljs.core', 'goog.string.StringBuffer']);
 goog.addDependency("../intercomMakeUtil.js", ['intercomMakeUtil'], ['cljs.core']);

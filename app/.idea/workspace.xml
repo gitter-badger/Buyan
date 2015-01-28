@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c274c2a-d200-4ea2-b16e-0fe36fc9d08d" name="Default" comment="" />
+    <list default="true" id="8c274c2a-d200-4ea2-b16e-0fe36fc9d08d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="app.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,8 +30,18 @@
       <file leaf-file-name="intercomTake.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/intercomTake.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.107143" vertical-offset="899" max-vertical-offset="1845">
-              <caret line="90" column="13" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
+            <state vertical-scroll-proportion="-55.714287" vertical-offset="0" max-vertical-offset="1875">
+              <caret line="104" column="29" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="intercomMakeUtil.cljs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/intercomMakeUtil.cljs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
+              <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -45,31 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="intercomTakeUtil.cljs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/intercomTakeUtil.cljs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db.cljs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/db.cljs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.392857" vertical-offset="850" max-vertical-offset="1755">
-              <caret line="91" column="9" selection-start-line="91" selection-start-column="9" selection-end-line="91" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.cljs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cljs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/main.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.607143" vertical-offset="700" max-vertical-offset="1605">
-              <caret line="87" column="35" selection-start-line="87" selection-start-column="35" selection-end-line="87" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.68508285" vertical-offset="700" max-vertical-offset="1605">
+              <caret line="88" column="51" selection-start-line="88" selection-start-column="51" selection-end-line="88" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -78,8 +70,8 @@
       <file leaf-file-name="intercomMake.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/intercomMake.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
-              <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -88,18 +80,38 @@
       <file leaf-file-name="intercom.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/intercom.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="837" max-vertical-offset="1770">
-              <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+            <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="1860">
+              <caret line="7" column="48" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="communication.cljs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="communication.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/communication.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3325967" vertical-offset="1814" max-vertical-offset="3855">
-              <caret line="141" column="128" selection-start-line="141" selection-start-column="128" selection-end-line="141" selection-end-column="128" />
+            <state vertical-scroll-proportion="-47.67857" vertical-offset="0" max-vertical-offset="3975">
+              <caret line="89" column="18" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pouchDB.cljs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/deps/pouchDB.cljs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="servantWorkers.cljs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/deps/servantWorkers.cljs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+              <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -110,16 +122,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
               <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="crypto.cljs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/crypto.cljs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="627" max-vertical-offset="1560">
-              <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -147,13 +149,13 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/app/deps/pouchDB.cljs" />
         <option value="$PROJECT_DIR$/src/app/db.cljs" />
-        <option value="$PROJECT_DIR$/src/app/main.cljs" />
         <option value="$PROJECT_DIR$/src/app/logger.cljs" />
         <option value="$PROJECT_DIR$/src/app/deps/peerjs.cljs" />
-        <option value="$PROJECT_DIR$/src/app/intercom.cljs" />
-        <option value="$PROJECT_DIR$/src/app/communication.cljs" />
-        <option value="$PROJECT_DIR$/src/app/intercomTake.cljs" />
         <option value="$PROJECT_DIR$/src/app/intercomMake.cljs" />
+        <option value="$PROJECT_DIR$/src/app/intercomTake.cljs" />
+        <option value="$PROJECT_DIR$/src/app/communication.cljs" />
+        <option value="$PROJECT_DIR$/src/app/intercom.cljs" />
+        <option value="$PROJECT_DIR$/src/app/main.cljs" />
       </list>
     </option>
   </component>
@@ -766,14 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/deps/servantWorkers.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
-          <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/display/plainText.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
@@ -790,26 +784,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/deps/pouchDB.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/blockchain.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.60714287" vertical-offset="28" max-vertical-offset="2970">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/intercomMakeUtil.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="933">
-          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -846,6 +824,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/intercomMakeUtil.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="933">
+          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/intercomMake.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/intercomTake.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-55.714287" vertical-offset="0" max-vertical-offset="1875">
+          <caret line="104" column="29" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/deps/servantWorkers.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+          <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/deps/pouchDB.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/deps/peerjs.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
@@ -854,42 +872,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.607143" vertical-offset="700" max-vertical-offset="1605">
-          <caret line="87" column="35" selection-start-line="87" selection-start-column="35" selection-end-line="87" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/intercomTake.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.107143" vertical-offset="899" max-vertical-offset="1845">
-          <caret line="90" column="13" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/intercomMake.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
-          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/intercom.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="837" max-vertical-offset="1770">
-          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+        <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="1860">
+          <caret line="7" column="48" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/communication.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3325967" vertical-offset="1814" max-vertical-offset="3855">
-          <caret line="141" column="128" selection-start-line="141" selection-start-column="128" selection-end-line="141" selection-end-column="128" />
+        <state vertical-scroll-proportion="-47.67857" vertical-offset="0" max-vertical-offset="3975">
+          <caret line="89" column="18" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.68508285" vertical-offset="700" max-vertical-offset="1605">
+          <caret line="88" column="51" selection-start-line="88" selection-start-column="51" selection-end-line="88" selection-end-column="51" />
           <folding />
         </state>
       </provider>

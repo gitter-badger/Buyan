@@ -86,7 +86,7 @@
          (.log js/console id)
          (.val  (js/$ "#id") id)
          (def peerjs (js/Peer. id   peerParams))
-        )
+         (.on peerjs "connection" comm/onConnection))
       ;start submodules
       (pubsub/initpubsub)
       ;register all pubsub subscriptions

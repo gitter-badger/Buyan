@@ -1,15 +1,15 @@
 (ns communications
 
   (:require
-        [app.intercom :as i]
-        [intercomMake :as im]
-        [app.logger :as l]
-        [peerjs :refer [peerjs]]
+    [app.intercom :refer [intercomstatemachine setIntercomState getIntercomState]]
+    [intercomMake :as im]
+    [app.logger :as l]
+    [peerjs :refer [peerjs]]
 
 
     [pubsub :refer [pub sub]]
     [cljs.core.async :refer [chan close! timeout put!]]
-   )
+    )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
                    [servant.macros :refer [defservantfn]])
   )
@@ -45,13 +45,24 @@
 
 (defn connectTo [ev id]
 
-      (l/og :connectTo  (first id) )
+      (l/og :connectTo (first id))
       (let [conn (.connect peerjs id)]
            (.on conn "open" (partial onOpen conn))
 
            ;(channelsFromConnection conn)
 
            ))
+
+;this one will send message to peer
+(defn sendmsg [peer type msg]
+
+      (l/og :sendmsg (+ "sending " type) msg)
+
+      (l/og :sendmsg "peer " peer)
+      (go
+        (>! peer (js-obj "type" type "msg" msg))
+        ))
+
 ;when this user connects to someone just send connection to channel
 (defn onOpen [conn]
       (l/og :conn "connection opened trying to send data trough")
@@ -75,13 +86,7 @@
       (l/og :conn "conn: " conn)
       )
 
-(defn setIntercomState [conn state]
-      (set! (.-intercomstate conn) state)
-      )
 
-(defn getIntercomState [conn]
-      (.-intercomstate conn)
-      )
 (defn onConnection [conn]
       (l/og :conn "connection is opened now try to send something")
       (set! (.-connType conn) "tsaritsa")
@@ -139,7 +144,10 @@
                 (cond
 
                   (== (nth v 1) connectionch) (do (def stated (into [] (concat stated (onNewConnection vrecieved))))
-                                                  (i/intercomstatemachine (getIntercomState vrecieved) (im/makeConn vrecieved)))
+                                                  (def stat (getIntercomState vrecieved))
+
+                                                  (l/og :p2ploop "intercom state" stat)
+                                                  (intercomstatemachine vrecieved (im/makeConn vrecieved)))
                   ;channel from some peer that recieves data from peer
                   (== (.-type ch2) "readch") (do
                                                (l/og :p2ploop "recieved from peer " vrecieved)
@@ -147,7 +155,7 @@
                                                  (def vrecieved (.parse js/JSON (.-data vrecieved)))
                                                  )
                                                (set! (.-peer vrecieved) (.-writec ch2))
-                                               (i/intercomstatemachine (getIntercomState (.-conn ch2)) vrecieved)
+                                               (i/intercomstatemachine  (.-conn ch2) vrecieved)
                                                ;;(i/onMessage (.-writec ch2) (.-type vrecieved) (.-data vrecieved))
 
                                                )
@@ -164,7 +172,7 @@
 
                   ; recieves transactions)
                   )
-                (recur  ))))
+                (recur))))
 (defn onNewConnection [message]
       (def gconn message)
 
@@ -185,7 +193,7 @@
       ;(nth peerChannels 1) is write chan
       ;(nth peerChannels 0) is read chan
       ;we put them in p2p2chans array of intercom meta to enable p2p loop with channels
-      (set! (.-p2pchans intercomMeta) (concat (.-p2pchans intercomMeta)  peerChannels))
+      (set! (.-p2pchans intercomMeta) (concat (.-p2pchans intercomMeta) peerChannels))
 
       ;this array to enable easier broadcast
       ;so we put write channels here to send stuff to those channels once we want to broadcast stuff
@@ -245,8 +253,8 @@
       )
 
 (defn setupComm []
-(sub "blockMined" onBlockMined)
-(sub "crypto" onCrypto)
-(sub "transaction" onTransaction)
-(sub "newConnection" onNewConnection)
-)
+      (sub "blockMined" onBlockMined)
+      (sub "crypto" onCrypto)
+      (sub "transaction" onTransaction)
+      (sub "newConnection" onNewConnection)
+      )

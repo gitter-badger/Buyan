@@ -3,11 +3,13 @@
     [app.logger :as l]
     [app.database :as db]
 
+    [communications :refer [sendmsg]]
     [pubsub :refer [pub sub]]
     [app.blockchain :as blockchain]
-
+    [cljs.core.async :refer [chan close! timeout put!]]
     )
-
+  (:require-macros [cljs.core.async.macros :as m :refer [go]]
+                   [servant.macros :refer [defservantfn]])
   )
 
 (defn handleInvBlock [blocks fullMessage]
@@ -99,8 +101,8 @@
 
       (go
         (do
-          (l/og :takeConn "take conn " message)
-          (sendmsg (.-peer (.-data conn) ) "version" "0")
+          (l/og :takeConn "take conn " conn)
+          (sendmsg (.-writec (.-data conn) ) "version" "0")
           ;(tostate "version")
           )
         ;(l/og :getBlocks "take conn " message)

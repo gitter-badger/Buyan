@@ -5,6 +5,7 @@
     [intercomMake :as im]
 
     [intercomTake :as it]
+    [communications :refer [sendmsg onConnection]]
 
     [pubsub :refer [pub sub]]
     [app.blockchain :as blockchain]
@@ -30,13 +31,6 @@
 
 
 
-;this one will send message to peer
-(defn sendmsg [peer type msg]
-
-      (l/og :intercom (+ "sending " type) msg)
-      (go
-        (>! peer (js-obj "type" type "msg" msg))
-        ))
 
 ;
 (defn onMessage [wch type data]
@@ -52,9 +46,16 @@
 ;for protocol check out 
 ;![](../protocol.png)
 
+(defn setIntercomState [conn state]
+      (set! (.-intercomstate conn) state)
+      )
 
+(defn getIntercomState [conn]
+      (l/og :getIntercomState "intercom state" conn)
+      (aget conn "intercomstate")
+      )
 
-(defn tostate [statename]
+(defn tostateu [conn statename]
 
       (l/og :intercom "changing state to: " statename)
       (go
@@ -68,8 +69,10 @@
       )
 
 
-(defn intercomstatemachine [state message]
+(defn intercomstatemachine [conn message]
       (go
+        (def tostate (partial tostateu conn))
+        (def state (getIntercomState conn))
         ;(>! statech "start")
 
         (l/og :intercom "starting loop in intercom")
@@ -85,12 +88,15 @@
 
 
           (is? state "start")
-               (tostate (<! (it/takeConn message)))
-
+          (do
+            (def newstate (<! (it/takeConn message)))
+            (l/og :intercom "start -> " newstate)
+            (tostate newstate)
+               )
 
 
           (is? state "version")
-                (typeof? message "version") (tostate (it/takeVersion message))
+               (do  ( cond (typeof? message "version") (tostate (it/takeVersion message))))
 
 
           (is? state "grind")
