@@ -21,8 +21,9 @@
 (defn makeGetVersion [typ message]
 
       )
-(defn makeVersion [typ message]
+(defn makeVersion [message]
 
+      (js-obj "type" "version" "data" message)
       )
 (defn makeConn [conn]
       (l/og :makeConn "make conn " conn)

@@ -62,7 +62,14 @@
       (go
         (>! peer (js-obj "type" type "msg" msg))
         ))
+(defn sendm [peer payload]
 
+      (l/og :sendm "sending "  payload)
+
+      (l/og :sendm "peer " peer)
+      (go
+        (>! peer payload)
+        ))
 ;when this user connects to someone just send connection to channel
 (defn onOpen [conn]
       (l/og :conn "connection opened trying to send data trough")
@@ -155,7 +162,7 @@
                                                  (def vrecieved (.parse js/JSON (.-data vrecieved)))
                                                  )
                                                (set! (.-peer vrecieved) (.-writec ch2))
-                                               (i/intercomstatemachine  (.-conn ch2) vrecieved)
+                                               (intercomstatemachine  (.-conn ch2) vrecieved)
                                                ;;(i/onMessage (.-writec ch2) (.-type vrecieved) (.-data vrecieved))
 
                                                )

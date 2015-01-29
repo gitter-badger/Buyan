@@ -5,7 +5,7 @@
     [intercomMake :as im]
 
     [intercomTake :as it]
-    [communications :refer [sendmsg onConnection]]
+    [communications :refer [sendmsg sendm onConnection]]
 
     [pubsub :refer [pub sub]]
     [app.blockchain :as blockchain]
@@ -58,9 +58,8 @@
 (defn tostateu [conn statename]
 
       (l/og :intercom "changing state to: " statename)
-      (go
-        (>! statech statename)
-        ))
+      (aset conn "intercomstate" statename)
+      )
 (defn typeof? [message type]
       (== (.-type message) type)
       )
@@ -96,7 +95,7 @@
 
 
           (is? state "version")
-               (do  ( cond (typeof? message "version") (tostate (it/takeVersion message))))
+               (do  ( cond (typeof? message "version") (tostate (<! it/takeVersion message))))
 
 
           (is? state "grind")

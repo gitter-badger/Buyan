@@ -2,8 +2,9 @@
   (:require
     [app.logger :as l]
     [app.database :as db]
+    [intercomMake :as im]
 
-    [communications :refer [sendmsg]]
+    [communications :refer [sendmsg sendm]]
     [pubsub :refer [pub sub]]
     [app.blockchain :as blockchain]
     [cljs.core.async :refer [chan close! timeout put!]]
@@ -84,16 +85,16 @@
 (defn takeVersion [message]
       (go
         (l/og :getBlocks "take version " message)
-        (do
-          (if (== (.-connType (.-data message)) "saltan")
-            (do
-              (sendmsg (.-peer message) "version" "0")
-              (tostate "grind"))
-            (tostate "version")
-            )
-
-          )
-
+        ;(do
+        ;  (if (== (.-connType (.-data message)) "saltan")
+        ;    (do
+        ;      (sendm (.-peer message) (im/makeVersion "0"))
+        ;      (tostate "grind"))
+        ;    (tostate "version")
+        ;    )
+        ;
+        ;  )
+        "grind"
         )
       )
 
@@ -102,11 +103,12 @@
       (go
         (do
           (l/og :takeConn "take conn " conn)
-          (sendmsg (.-writec (.-data conn) ) "version" "0")
+          (sendm (.-writec (.-data conn) ) (im/makeVersion "0"))
           ;(tostate "version")
           )
         ;(l/og :getBlocks "take conn " message)
-        "version"
+        (if (== (.-connType conn) "saltan") "grind" "version")
+        ;"version"
         )
       )
 (defn takeGetBlocks [peer hash]
