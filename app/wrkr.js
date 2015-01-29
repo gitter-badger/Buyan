@@ -61,13 +61,14 @@ function compute_hash(merkleRoot){
       });
 
    }
+      if(run==true){
+       setTimeout(function(){
+         //{'root':event.data, 'nonce': 101}
+         console.log(JSON.stringify({root: "somehash: "+ merkleRoot,nonce: "somenonce "+ nonce}));
+           postMessage(JSON.stringify({root: "somehash: "+ merkleRoot,nonce: "somenonce "+ nonce}));
+       },0);
    })();
-   if(run==true){
-    setTimeout(function(){
-      //{'root':event.data, 'nonce': 101}
-      console.log(JSON.stringify({root: "somehash: "+ merkleRoot,nonce: "somenonce "+ nonce}));
-        postMessage(JSON.stringify({root: "somehash: "+ merkleRoot,nonce: "somenonce "+ nonce}));
-    },0);
+
   }
   
 }
