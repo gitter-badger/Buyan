@@ -49,16 +49,19 @@ var not_found=false;
 function compute_hash(merkleRoot){
   found=false;
   nonce=generateNonce(true);
-   while(run && !found){
+  (function itteration(){
+   if(run && !found){
     nonce=generateNonce(false);
     crypto.subtle.digest({name: "SHA-256"}, encode(merkleRoot+nonce))
       .then(function (digest) {
 
          found=checkH(digest,difficulty);
+         itteration();
         return ;
       });
 
    }
+   })();
    if(run==true){
     setTimeout(function(){
       //{'root':event.data, 'nonce': 101}
