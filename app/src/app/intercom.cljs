@@ -95,7 +95,7 @@
 
 
           (is? state "version")
-               (do  ( cond (typeof? message "version") (tostate (<! it/takeVersion message))))
+               (do  ( cond (typeof? message "version") (tostate (<! (it/takeVersion message) ))))
 
 
           (is? state "grind")

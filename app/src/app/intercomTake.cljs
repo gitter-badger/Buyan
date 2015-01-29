@@ -105,9 +105,10 @@
           (l/og :takeConn "take conn " conn)
           (sendm (.-writec (.-data conn) ) (im/makeVersion "0"))
           ;(tostate "version")
+          (l/og :takeConn "conn type " (.-connType conn))
+          (if (== (.-connType (.-data conn) ) "saltan") "grind" "version")
           )
-        ;(l/og :getBlocks "take conn " message)
-        (if (== (.-connType conn) "saltan") "grind" "version")
+
         ;"version"
         )
       )
