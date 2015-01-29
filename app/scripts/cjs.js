@@ -15,3 +15,15 @@ function arrayBToString(digest){
 					var str = _arrayBufferToBase64(new Uint8Array(digest));
 					return str
 }
+function compare(buf1, difficulty) {
+  var a = new Uint8Array(buf1);
+
+
+  for (var i = 0; (i < a.byteLength && i < difficulty); i++) {
+    if (a[i] !== 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
