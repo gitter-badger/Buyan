@@ -103,7 +103,9 @@ function checkH(buf1, difficulty) {
       if(run==true){
        setTimeout(function(){
          //{'root':event.data, 'nonce': 101}
-         console.log(JSON.stringify({root: "somehash: "+ merkleRoot,nonce: "somenonce "+ nonce}));
+         console.log(JSON.stringify({root: "somehash: "+ merkleRoot,
+         nonce: "somenonce "+ nonce,
+         newhash:found}));
          //  postMessage(JSON.stringify({root: "somehash: "+ merkleRoot,nonce: "somenonce "+ nonce}));
        },0);
        }
