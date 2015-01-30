@@ -46,15 +46,54 @@ var nonce="nonce";
 var difficulty=1;
 var run = true;
 var not_found=false;
-function compute_hash(merkleRoot){
-  found=false;
-  nonce=generateNonce(true);
+
+
+
+var nonce=false;
+var merkleRoot="root";
+var difficulty=1;
+var run = true;
+var found=false;
+function arrayBToString(digest){
+function _arrayBufferToBase64( buffer ) {
+  var ret = "",
+  i = 0,
+  len = buffer.length;
+  while (i < len) {
+  var a = buffer[i];
+  var h = (a < 10 ? "0" : "") + a.toString(16);
+  ret += h;
+  i++;
+}
+return ret;
+}
+var str = _arrayBufferToBase64(new Uint8Array(digest));
+return str
+}
+function encode(str) {
+  return new TextEncoder("utf-8").encode(str);
+}
+
+function decode(buf) {
+  return new TextDecoder("utf-8").decode(buf);
+}
+function checkH(buf1, difficulty) {
+  var a = new Uint8Array(buf1);
+
+
+  for (var i = 0; (i < a.byteLength && i < difficulty); i++) {
+    if (a[i] !== 0) {
+      return false;
+    }
+  }
+
+  return arrayBToString(a);
+}
   (function itteration(){
    if(run && !found){
-    nonce=generateNonce(false);
+    nonce=nonce+1;
     crypto.subtle.digest({name: "SHA-256"}, encode(merkleRoot+nonce))
       .then(function (digest) {
-
          found=checkH(digest,difficulty);
          itteration();
         return ;
@@ -65,13 +104,10 @@ function compute_hash(merkleRoot){
        setTimeout(function(){
          //{'root':event.data, 'nonce': 101}
          console.log(JSON.stringify({root: "somehash: "+ merkleRoot,nonce: "somenonce "+ nonce}));
-           postMessage(JSON.stringify({root: "somehash: "+ merkleRoot,nonce: "somenonce "+ nonce}));
+         //  postMessage(JSON.stringify({root: "somehash: "+ merkleRoot,nonce: "somenonce "+ nonce}));
        },0);
+       }
    })();
-
-  }
-  
-}
 onmessage = function(event) {
    console.log("recieved work ",event.data.args);
    switch(event.data.args[0]) {
