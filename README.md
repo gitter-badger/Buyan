@@ -3,7 +3,7 @@
 ![](https://github.com/NikolaMandic/Buyan/blob/master/a8d3d362bb2a50296a5d813f3c686e50.gif)
 official mascot
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/250px-Ivan_Bilibin_126.gif)       
-![](http://i.imgur.com/G8XSYgF.gifv)      
+![](http://i.imgur.com/G8XSYgF.webm)      
 official song so that mascot has something to dance to     
 http://www.infinitelooper.com/?v=AIkO9E_Wyc0&p=n     
 # background
