@@ -17,13 +17,13 @@ goog.addDependency("../app/blockchain.js", ['app.blockchain'], ['cljs.core', 'cl
 goog.addDependency("../servantWorkers.js", ['servantWorkers'], ['cljs.core']);
 goog.addDependency("../app/pouchDB.js", ['app.pouchDB'], ['cljs.core']);
 goog.addDependency("../app/database.js", ['app.database'], ['app.pouchDB', 'cljs.core', 'cljs.core.async', 'app.logger']);
-goog.addDependency("../pubsub.js", ['pubsub'], ['cljs.core', 'cljs.core.async']);
+goog.addDependency("../pubsub.js", ['pubsub'], ['cljs.core', 'cljs.core.async', 'app.logger']);
 goog.addDependency("../intercomTake.js", ['intercomTake'], ['intercomMake', 'pubsub', 'app.database', 'cljs.core', 'cljs.core.async', 'communications', 'app.blockchain', 'app.logger']);
 goog.addDependency("../app/intercom.js", ['app.intercom'], ['intercomMake', 'pubsub', 'cljs.core', 'cljs.core.async', 'communications', 'app.blockchain', 'intercomTake', 'app.logger']);
-goog.addDependency("../communications.js", ['communications'], ['intercomMake', 'pubsub', 'peerjs', 'app.intercom', 'cljs.core', 'cljs.core.async', 'app.logger']);
+goog.addDependency("../app/crypto.js", ['app.crypto'], ['pubsub', 'cljs.core', 'cljs.core.async', 'app.blockchain', 'app.logger']);
+goog.addDependency("../communications.js", ['communications'], ['intercomMake', 'pubsub', 'peerjs', 'app.intercom', 'cljs.core', 'cljs.core.async', 'app.blockchain', 'app.crypto', 'app.logger']);
 goog.addDependency("../intercomMake.js", ['intercomMake'], ['app.database', 'cljs.core', 'communications', 'app.blockchain', 'app.logger']);
 goog.addDependency("../intercomTakeUtil.js", ['intercomTakeUtil'], ['cljs.core']);
-goog.addDependency("../crypto.js", ['crypto'], ['cljs.core', 'cljs.core.async']);
 goog.addDependency("../cljs/reader.js", ['cljs.reader'], ['goog.string', 'cljs.core', 'goog.string.StringBuffer']);
 goog.addDependency("../intercomMakeUtil.js", ['intercomMakeUtil'], ['cljs.core']);
 goog.addDependency("../servant/worker.js", ['servant.worker'], ['cljs.core', 'cljs.core.async', 'cljs.reader']);

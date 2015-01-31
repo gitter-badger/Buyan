@@ -1,8 +1,11 @@
-(ns crypto
+(ns app.crypto
 
   (:require
 
+    [app.blockchain :refer [addTransactionToMemPool]]
 
+    [app.logger :as l]
+    [pubsub :refer [pub sub]]
     [cljs.core.async :refer [chan close! timeout put!]])
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
                    )
@@ -30,7 +33,6 @@
 
 (defn merkleRoot [transactions]
 
-
       (db/update "txs" #(do transactions))
       (go
         (def originl (.-length transactions))
@@ -38,7 +40,7 @@
         (def next (.shift transactions))
         (sha256c (partial resultToCh shaC) (+ tx next))
         (loop [next (.shift transactions) cnt (.-length transactions) txs transactions]
-              (l/og :blockchain "count  %s" cnt)
+              (l/og :merkleRoot "count  %s" cnt)
 
               (def tx (<! shaC))
               (sha256c (partial resultToCh shaC) (+ tx next))
@@ -49,7 +51,7 @@
                 (recur (.shift txs) (.-length txs) txs)))
 
         (def fromC (<! shaC))
-        (l/og :blockchain "from ch " fromC)
+        (l/og :merkleRoot "from ch " fromC)
         (set! (.-type fromC) "fmr")
 
         (>! app.main.cryptoCh (js-obj "value" fromC "type" "fmr"))
@@ -63,7 +65,7 @@
       (go (>! chan m))
       )
 (defn sha256 [x]
-      ;(l/og :blockchain "%s" "sha256")
+      (l/og :sha256 "sha256 %s" x)
       ;(l/og :blockchain "%s" (encode "sha256"))
       (.then (js/crypto.subtle.digest (js-obj "name" "SHA-256") (encode x))
              shaCallb
@@ -84,16 +86,19 @@
 
 
              (def r (arraybtostring (<! c)))
-             (l/og :blockchain (+ "got from sha256 " k) r)
+             (l/og :s256 (+ "got from sha256 " k) r)
              r
              )
         )
       )
 (defn shaCallb [digest] (do
-                          (l/og :blockchain "%s" "about to do hash2")
+                          (l/og :shaCallB "%s" "about to do hash2")
                           (def h (arraybtostring digest))
-                          (l/og :blockchain h)
+                          (l/og :shaCallBh)
                           (addTransactionToMemPool h)
-                          (go
-                            (>! app.main.cryptoCh h)
-                            )))
+                          (pub "crypto" h)
+                          ;(go
+                          ;  (>! app.main.cryptoCh h)
+                          ;  )
+
+                          ))

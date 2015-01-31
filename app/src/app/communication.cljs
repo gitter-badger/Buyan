@@ -3,8 +3,11 @@
   (:require
     [app.intercom :refer [intercomstatemachine setIntercomState getIntercomState]]
     [intercomMake :as im]
+    [app.crypto :as crypto]
     [app.logger :as l]
+    [app.blockchain :as blockchain]
     [peerjs :refer [peerjs]]
+    [app.crypto :refer [sha256]]
 
 
     [pubsub :refer [pub sub]]
@@ -233,11 +236,11 @@
       )
 (defn onTransaction [message]
       ; println vrecieved
-      (l/og :mloop "recieved new transaction " vrecieved)
+      (l/og :onTransaction "recieved new transaction " message)
       ;put it in mempool
       ;send mempool to mining
       ;this might change
-      (blockchain/sha256 vrecieved)
+      (sha256 message)
       ;(>! channel-1 vrecieved)
       ; (.send (.-conn ch2 ) vrecieved)
       )
@@ -254,11 +257,12 @@
                                              )
       (if (> (count blockchain/memPool) 3)
 
-        (l/og :mloop "calculating hash of transactions(not merkle root now) %s"
-              (blockchain/merkleRoot blockchain/memPool)))
+        (l/og :mloop "calculating hash of transactions(not merkle root n	are open minded tolerant or conservative ow) %s"
+              (crypto/merkleRoot blockchain/memPool)))
 
       )
 
+;this function sets up in parts internal message passing mechanism between modules
 (defn setupComm []
       (sub "blockMined" onBlockMined)
       (sub "crypto" onCrypto)
