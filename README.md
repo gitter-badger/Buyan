@@ -33,7 +33,8 @@ protocol
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/cdraw.png)
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/getblock.png)      
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/syncChain.png)      
-![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/broadcast.png)      
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/broadcast.png)
+![](http://i.imgur.com/G8XSYgF.gifv)      
 protocol     
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/protocol.png)       
 Buyan after

@@ -20,7 +20,7 @@ goog.addDependency("../app/database.js", ['app.database'], ['app.pouchDB', 'cljs
 goog.addDependency("../pubsub.js", ['pubsub'], ['cljs.core', 'cljs.core.async', 'app.logger']);
 goog.addDependency("../intercomTake.js", ['intercomTake'], ['intercomMake', 'pubsub', 'app.database', 'cljs.core', 'cljs.core.async', 'communications', 'app.blockchain', 'app.logger']);
 goog.addDependency("../app/intercom.js", ['app.intercom'], ['intercomMake', 'pubsub', 'cljs.core', 'cljs.core.async', 'communications', 'app.blockchain', 'intercomTake', 'app.logger']);
-goog.addDependency("../app/crypto.js", ['app.crypto'], ['pubsub', 'cljs.core', 'cljs.core.async', 'app.blockchain', 'app.logger']);
+goog.addDependency("../app/crypto.js", ['app.crypto'], ['pubsub', 'app.database', 'cljs.core', 'cljs.core.async', 'app.blockchain', 'app.logger']);
 goog.addDependency("../communications.js", ['communications'], ['intercomMake', 'pubsub', 'peerjs', 'app.intercom', 'cljs.core', 'cljs.core.async', 'app.blockchain', 'app.crypto', 'app.logger']);
 goog.addDependency("../intercomMake.js", ['intercomMake'], ['app.database', 'cljs.core', 'communications', 'app.blockchain', 'app.logger']);
 goog.addDependency("../intercomTakeUtil.js", ['intercomTakeUtil'], ['cljs.core']);

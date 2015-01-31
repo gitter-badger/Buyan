@@ -3,7 +3,7 @@
   (:require
 
     [app.blockchain :refer [addTransactionToMemPool]]
-
+    [app.database :as db]
     [app.logger :as l]
     [pubsub :refer [pub sub]]
     [cljs.core.async :refer [chan close! timeout put!]])

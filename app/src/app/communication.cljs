@@ -256,9 +256,12 @@
                                                )
                                              )
       (if (> (count blockchain/memPool) 3)
+        ;;
+        (def fmroot (crypto/merkleRoot blockchain/memPool))
 
-        (l/og :mloop "calculating hash of transactions(not merkle root n	are open minded tolerant or conservative ow) %s"
-              (crypto/merkleRoot blockchain/memPool)))
+      (l/og :mloop "calculating hash of transactions(not merkle root) %s"
+              fmroot)
+        )
 
       )
 
