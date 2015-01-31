@@ -37,7 +37,7 @@
 (set! (.-type cryptoCh) "cryptoch")
 
 ;listen on global document for transactions and publish them to channel transactionch
-;(.on (js/$ js/document) "transaction" (partial pub transactionch))
+(.on (js/$ js/document) "transaction" ( fn [a1 a2 ] (pub "transaction" a2)) )
 (.on (js/$ js/document) "connectTo"  comm/connectTo)
 
 
