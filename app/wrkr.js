@@ -89,35 +89,36 @@ function checkH(buf1, difficulty) {
 
   return arrayBToString(a);
 }
-  (function itteration(){
-   if(run && !found){
-    nonce=nonce+1;
-    crypto.subtle.digest({name: "SHA-256"}, encode(merkleRoot+nonce))
-      .then(function (digest) {
-         found=checkH(digest,difficulty);
-         itteration();
-        return ;
-      });
 
-   }
-      if(run==true){
-       setTimeout(function(){
-         //{'root':event.data, 'nonce': 101}
-         console.log(JSON.stringify({root: "somehash: "+ merkleRoot,
-         nonce: "somenonce "+ nonce,
-         newhash:found}));
-         //  postMessage(JSON.stringify({root: "somehash: "+ merkleRoot,nonce: "somenonce "+ nonce}));
-       },0);
-       }
-   })();
 onmessage = function(event) {
    console.log("recieved work ",event.data.args);
    switch(event.data.args[0]) {
     case "newjob":
-        hash=event.data.args[1];
+        merkleRoot =event.data.args[1];
         run=true;
-        nonce="";
-        compute_hash(hash)
+        nonce=false;
+        //compute_hash(hash)
+          (function itteration(){
+           if(run && !found){
+            nonce=nonce+1;
+            crypto.subtle.digest({name: "SHA-256"}, encode(merkleRoot+nonce))
+              .then(function (digest) {
+                 found=checkH(digest,difficulty);
+                 itteration();
+                return ;
+              });
+
+           }
+              if(run==true){
+               setTimeout(function(){
+                 //{'root':event.data, 'nonce': 101}
+                 console.log(JSON.stringify({root: "somehash: "+ merkleRoot,
+                 nonce: "somenonce "+ nonce,
+                 newhash:found}));
+                 //  postMessage(JSON.stringify({root: "somehash: "+ merkleRoot,nonce: "somenonce "+ nonce}));
+               },0);
+               }
+           })();
         break;
     case "stop":
         run=false;
