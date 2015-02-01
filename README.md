@@ -1,8 +1,8 @@
 # Buyan - CensorshipFreeCommentingPlatform         
-![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/gr7dex10.gif)
-![](https://github.com/NikolaMandic/Buyan/blob/master/a8d3d362bb2a50296a5d813f3c686e50.gif)
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/media/gr7dex10.gif)
+![](https://github.com/NikolaMandic/Buyan/blob/master/media/a8d3d362bb2a50296a5d813f3c686e50.gif)
 official mascot
-![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/250px-Ivan_Bilibin_126.gif)       
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/media/250px-Ivan_Bilibin_126.gif)       
 official mascot in higher quality     
 http://i.imgur.com/G8XSYgF.webm      
 official song so that mascot has something to dance to     
@@ -33,15 +33,15 @@ doc that will be up to date from time to time are here
 http://blog.nikola.link/buyan.html     
 protocol      
    
-![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/cdraw.png)
-![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/getblock.png)      
-![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/syncChain.png)      
-![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/broadcast.png)
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/media/cdraw.png)
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/media/getblock.png)      
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/media/syncChain.png)      
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/media/broadcast.png)
 protocol     
-![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/protocol.png)       
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/media/protocol.png)       
 Buyan after
 https://www.youtube.com/watch?v=4QtkDMXA0u8      
 with subtitles here https://www.youtube.com/watch?v=b3TQevs14CE      
-![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/Ivanbilibin.jpg)
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/media/Ivanbilibin.jpg)
 
 Copyright (c) 2014 Nikola Mandic

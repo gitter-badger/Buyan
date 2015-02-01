@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c274c2a-d200-4ea2-b16e-0fe36fc9d08d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../misc/iMacros.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../erlang-solutions_1.0_all.deb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../erlang_solutions.asc" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../250px-Ivan_Bilibin_126.gif" afterPath="$PROJECT_DIR$/../media/250px-Ivan_Bilibin_126.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../G8XSYgF.webm" afterPath="$PROJECT_DIR$/../media/G8XSYgF.webm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Ivanbilibin.jpg" afterPath="$PROJECT_DIR$/../media/Ivanbilibin.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../a8d3d362bb2a50296a5d813f3c686e50.gif" afterPath="$PROJECT_DIR$/../media/a8d3d362bb2a50296a5d813f3c686e50.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../broadcast.png" afterPath="$PROJECT_DIR$/../media/broadcast.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../cdraw.png" afterPath="$PROJECT_DIR$/../media/cdraw.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../ezgif-4178351327.gif" afterPath="$PROJECT_DIR$/../media/ezgif-4178351327.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../getblock.png" afterPath="$PROJECT_DIR$/../media/getblock.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../gr7dex10.gif" afterPath="$PROJECT_DIR$/../media/gr7dex10.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../helvetiker_regular.typeface.js" afterPath="$PROJECT_DIR$/../media/helvetiker_regular.typeface.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../protocol" afterPath="$PROJECT_DIR$/../misc/protocol" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../protocol.png" afterPath="$PROJECT_DIR$/../media/protocol.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../syncChain.png" afterPath="$PROJECT_DIR$/../media/syncChain.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../README.md" afterPath="$PROJECT_DIR$/../README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/crypto.cljs" afterPath="$PROJECT_DIR$/src/app/crypto.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,8 +50,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5706522" vertical-offset="0" max-vertical-offset="920">
-              <caret line="35" column="62" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
+            <state vertical-scroll-proportion="0.097826086" vertical-offset="0" max-vertical-offset="920">
+              <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -175,8 +157,8 @@
         <option value="$PROJECT_DIR$/wrkr.js" />
         <option value="$PROJECT_DIR$/src/app/crypto.cljs" />
         <option value="$PROJECT_DIR$/src/app/intercomTake.cljs" />
-        <option value="$PROJECT_DIR$/../README.md" />
         <option value="$PROJECT_DIR$/../iMacros.txt" />
+        <option value="$PROJECT_DIR$/../README.md" />
       </list>
     </option>
   </component>
@@ -1037,8 +1019,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5706522" vertical-offset="0" max-vertical-offset="920">
-          <caret line="35" column="62" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.097826086" vertical-offset="0" max-vertical-offset="920">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
           <folding />
         </state>
       </provider>
