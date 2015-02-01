@@ -97,6 +97,7 @@ onmessage = function(event) {
         merkleRoot =event.data.args[1];
         run=true;
         nonce=false;
+        found=false;
         //compute_hash(hash)
           (function itteration(){
            if(run && !found){
@@ -109,13 +110,14 @@ onmessage = function(event) {
               });
 
            }
-              if(run==true){
+              if(run==true && found){
                setTimeout(function(){
                  //{'root':event.data, 'nonce': 101}
-                 console.log(JSON.stringify({root: "somehash: "+ merkleRoot,
-                 nonce: "somenonce "+ nonce,
-                 newhash:found}));
-                 //  postMessage(JSON.stringify({root: "somehash: "+ merkleRoot,nonce: "somenonce "+ nonce}));
+                 var messag=JSON.stringify({root: "somehash: "+ merkleRoot,
+                                             nonce: "somenonce "+ nonce,
+                                             newhash:found});
+                 console.log(messag);
+                 postMessage(messag);
                },0);
                }
            })();

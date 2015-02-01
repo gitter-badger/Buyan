@@ -32,9 +32,9 @@
 
       (go
 
-        (l/og :mine "about to wait for mining to end " chan)
+        (l/og :mine "about to wait for mining to end " )
         (def v (<! chann))
         (l/og :mine "recieved from mining" v)
-        (pub "hashmine" (.parse js/JSON v))
+        (pub "blockMined" (.parse js/JSON v))
         )
       )

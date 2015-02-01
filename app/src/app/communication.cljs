@@ -4,6 +4,7 @@
     [app.intercom :refer [intercomstatemachine setIntercomState getIntercomState]]
     [intercomMake :as im]
     [app.crypto :as crypto]
+    [app.database :as db]
     [app.logger :as l]
     [app.blockchain :as blockchain]
     [peerjs :refer [peerjs]]
@@ -219,23 +220,24 @@
       )
 (defn onBlockMined [message]
       ; println vrecieved
-      (l/og :mloop "recieved from worker " vrecieved)
-      (def blockk (<! (makeBlock vrecieved)))
+      (go
+      (l/og :onBlockMined "recieved from worker " message)
+      (def blockk (<! (blockchain/makeBlock message)))
 
 
-      ;(l/og :blockchain "just made new block " blockk)
+      (l/og :onBlockMined  "just made new block " blockk)
       ;(<! (makeBlock vrecieved)
       ;(blockchain/addToChain blockk)
       ;TODO anounce to peers
-      (l/og :inv "hash to get " (.-hash blockk))
-      (<! (saveBlock dbase blockk))
+      (l/og :message "hash to get " (.-hash blockk))
+      (<! (blockchain/saveBlock app.pouchDB.dbase blockk))
       (def gotFromHash (<! (db/g (.-hash blockk))))
       ;(def gotFromHash )
       ;(<! (saveBlock dbase blockk))
-      ;(l/og :inv "got from hash " gotFromHash)
+      (l/og :inv "got from hash " gotFromHash)
 
       (broadcastNewBlock gotFromHash)
-      )
+      ))
 (defn onTransaction [message]
       ; println vrecieved
       (l/og :onTransaction "recieved new transaction " message)

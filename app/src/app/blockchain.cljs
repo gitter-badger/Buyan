@@ -2,7 +2,9 @@
   (:require
     [app.logger :as l]
 
-    ; [app.intercom :as i]
+    [app.crypto :as crypto]
+     [app.database :as db]
+     [app.intercom :as i]
     [cljs.core.async :refer [chan close! timeout put!]]
 
     )
@@ -93,6 +95,7 @@
       )
 
 (defn makeBlock [work]
+      (l/og :makeBlock "about to make block " work)
       (go
         (def txs (<! (db/g "txs")))
         (def lastt2 (<! (db/g "last")))
@@ -109,10 +112,10 @@
                          ))
         (l/og :makeBlock "last " lastt)
         ;version previous fmroot timestamp bits nonce txcount
-        (def blockHeader (app.blockchain.makeBlockHeader "0" (.-hash lastt) (.-root work) (.getTime (js/Date.)) (.-dificulty blockchain/blockhainInfo) (.-nonce work) (.-lenght transactions)))
+        (def blockHeader (makeBlockHeader "0" (.-hash lastt) (.-root work) (.getTime (js/Date.)) (.-dificulty blockhainInfo) (.-nonce work) (.-lenght transactions)))
         (l/og :makeBlock "block header " blockHeader)
         (l/og :makeBlock "transactions when saving block " transactions)
-        (def blockk (js-obj "header" blockHeader "hash" (<! (bHash blockHeader)) "transactions" transactions))
+        (def blockk (js-obj "header" blockHeader "hash" (<! (crypto/bHash blockHeader)) "transactions" transactions))
         (l/og :makeBlock "newly made block " blockk)
         blockk
         )
@@ -120,7 +123,7 @@
 (defn saveBlock [dbase blockR]
       (go
         (l/og :saveBlock "saving " blockR)
-        (def heightForBlock (<! (blockchain/blockchainHeight 1)))
+        (def heightForBlock (<! (blockchainHeight 1)))
         (set! (.-heightFromRoot (.-header blockR)) heightForBlock)
         (db/update "last" #(js-obj "_id" "last" "val" blockR))
         ;todo save other info also
