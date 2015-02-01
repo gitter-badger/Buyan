@@ -19,16 +19,24 @@ now on freenode also #buyan
 this repo speciffically will be try to make an app from another angle and is meant to maybe merge with other repo later on    
 hopefuly pouchdb backed blockchain mining in browser over webrtc should seal the deal with this repo
 
-btw. workflow for this is     
+workflow for this is     
+to enable clojurescpript autorebuild      
 `lein cljsbuild auto app` from app directory     
+to build docker image     
+`cd dockerPeerJS`       
+`docker built -t peerjs .`       
 this will run docker     
-docker run -it -p 8000:8000 peerjs  peerjs --port 8000 --key peerjs    
-and `gulp watch` from parent dir with chrome devtools(workspaces, source maps)     
+`docker run -it -p 8000:8000 peerjs  peerjs --port 8000 --key peerjs`    
+also install npm bower gulp
+`npm install`     
+`npm install -g gulp`     
+`bower install`     
+`gulp watch` from parent dir with chrome devtools(workspaces, source maps)     
 also intelij cursive clojure for editing(on save lein compiles gulp watch delivers to browser and devtools 
 are being window on top intelij so it is instant debugging output
-with js console and clojurescript repl devtools extension,
-iMacros for debugging
-)      
+with js console and clojurescript repl devtools extension,)       
+iMacros for debugging(one can be found in misc directory)      
+
 doc that will be up to date from time to time are here 
 http://blog.nikola.link/buyan.html     
 protocol      
