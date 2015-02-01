@@ -2,8 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c274c2a-d200-4ea2-b16e-0fe36fc9d08d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/communication.cljs" afterPath="$PROJECT_DIR$/src/app/communication.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/intercomTake.cljs" afterPath="$PROJECT_DIR$/src/app/intercomTake.cljs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../misc/iMacros.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../erlang-solutions_1.0_all.deb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../erlang_solutions.asc" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../250px-Ivan_Bilibin_126.gif" afterPath="$PROJECT_DIR$/../media/250px-Ivan_Bilibin_126.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../G8XSYgF.webm" afterPath="$PROJECT_DIR$/../media/G8XSYgF.webm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../Ivanbilibin.jpg" afterPath="$PROJECT_DIR$/../media/Ivanbilibin.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../a8d3d362bb2a50296a5d813f3c686e50.gif" afterPath="$PROJECT_DIR$/../media/a8d3d362bb2a50296a5d813f3c686e50.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../broadcast.png" afterPath="$PROJECT_DIR$/../media/broadcast.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../cdraw.png" afterPath="$PROJECT_DIR$/../media/cdraw.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../ezgif-4178351327.gif" afterPath="$PROJECT_DIR$/../media/ezgif-4178351327.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../getblock.png" afterPath="$PROJECT_DIR$/../media/getblock.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../gr7dex10.gif" afterPath="$PROJECT_DIR$/../media/gr7dex10.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../helvetiker_regular.typeface.js" afterPath="$PROJECT_DIR$/../media/helvetiker_regular.typeface.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../protocol" afterPath="$PROJECT_DIR$/../misc/protocol" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../protocol.png" afterPath="$PROJECT_DIR$/../media/protocol.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../syncChain.png" afterPath="$PROJECT_DIR$/../media/syncChain.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../README.md" afterPath="$PROJECT_DIR$/../README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/crypto.cljs" afterPath="$PROJECT_DIR$/src/app/crypto.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="app.iws" />
@@ -32,18 +48,38 @@
       <file leaf-file-name="blockchain.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/blockchain.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.75" vertical-offset="404" max-vertical-offset="3015">
-              <caret line="47" column="16" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="16" />
+            <state vertical-scroll-proportion="-10.75" vertical-offset="314" max-vertical-offset="3015">
+              <caret line="41" column="20" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="intercomTake.cljs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="intercomTake.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/intercomTake.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26629835" vertical-offset="59" max-vertical-offset="1935">
-              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+            <state vertical-scroll-proportion="-18.75" vertical-offset="0" max-vertical-offset="1950">
+              <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5706522" vertical-offset="0" max-vertical-offset="920">
+              <caret line="35" column="62" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="iMacros.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../misc/iMacros.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+              <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -52,8 +88,8 @@
       <file leaf-file-name="crypto.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/crypto.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.035714" vertical-offset="0" max-vertical-offset="1695">
-              <caret line="15" column="11" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="11" />
+            <state vertical-scroll-proportion="-10.178572" vertical-offset="0" max-vertical-offset="1695">
+              <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -69,31 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pouchDB.cljs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/deps/pouchDB.cljs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
-              <caret line="0" column="15" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="intercomMake.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/intercomMake.cljs">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="960">
               <caret line="11" column="13" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mining.cljs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/mining.cljs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
-              <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -112,8 +128,8 @@
       <file leaf-file-name="wrkr.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wrkr.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1087" max-vertical-offset="2100">
-              <caret line="125" column="18" selection-start-line="125" selection-start-column="18" selection-end-line="125" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1030" max-vertical-offset="2100">
+              <caret line="107" column="30" selection-start-line="107" selection-start-column="30" selection-end-line="107" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -149,17 +165,18 @@
         <option value="$PROJECT_DIR$/src/app/intercomMake.cljs" />
         <option value="$PROJECT_DIR$/scripts/cjs.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/../README.md" />
         <option value="$PROJECT_DIR$/src/app/pubsub.cljs" />
         <option value="$PROJECT_DIR$/src/app/db.cljs" />
-        <option value="$PROJECT_DIR$/src/app/crypto.cljs" />
         <option value="$PROJECT_DIR$/src/app/main.cljs" />
-        <option value="$PROJECT_DIR$/wrkr.js" />
         <option value="$PROJECT_DIR$/src/app/mining.cljs" />
         <option value="$PROJECT_DIR$/src/app/blockchain.cljs" />
         <option value="$PROJECT_DIR$/src/app/communication.cljs" />
         <option value="$PROJECT_DIR$/src/app/intercom.cljs" />
+        <option value="$PROJECT_DIR$/wrkr.js" />
+        <option value="$PROJECT_DIR$/src/app/crypto.cljs" />
         <option value="$PROJECT_DIR$/src/app/intercomTake.cljs" />
+        <option value="$PROJECT_DIR$/../README.md" />
+        <option value="$PROJECT_DIR$/../iMacros.txt" />
       </list>
     </option>
   </component>
@@ -242,6 +259,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="hello_world" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Buyan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="misc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Buyan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="media" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -372,6 +417,12 @@
     <property name="SearchEverywhereHistoryKey" value="hashmine&#9;null&#9;null&#10;document&#9;FILE&#9;file:///home/user/Buyan/node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-gifsicle/node_modules/gifsicle/node_modules/bin-wrapper/node_modules/download/node_modules/decompress-unzip/node_modules/adm-zip/test/assets/attributes_test/asd/New Text Document.txt&#10;transaction&#9;null&#9;null&#10;transact&#9;null&#9;null&#10;arrayBToString&#9;null&#9;null&#10;setIntercomState&#9;null&#9;null&#10;intercomstate&#9;null&#9;null" />
     <property name="LayoutCode.rearrangeEntriesPlain text" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../misc" />
+      <recent name="$PROJECT_DIR$/../media" />
+    </key>
   </component>
   <component name="RunManager" selected="Clojure Application.main">
     <configuration default="false" name="REPL for hello-world" type="ClojureREPL" factoryName="Local" temporary="true">
@@ -630,7 +681,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12916666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13229166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24010417" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -720,7 +771,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../protocol">
+    <entry file="file://$PROJECT_DIR$/../misc/protocol">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
           <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
@@ -848,14 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
-          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/intercomTakeUtil.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
@@ -904,14 +947,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wrkr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1087" max-vertical-offset="2100">
-          <caret line="125" column="18" selection-start-line="125" selection-start-column="18" selection-end-line="125" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/mining.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
@@ -924,14 +959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
           <caret line="0" column="15" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/crypto.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.035714" vertical-offset="0" max-vertical-offset="1695">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -952,6 +979,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/communication.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.285714" vertical-offset="0" max-vertical-offset="4275">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrkr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1030" max-vertical-offset="2100">
+          <caret line="107" column="30" selection-start-line="107" selection-start-column="30" selection-end-line="107" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/crypto.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.178572" vertical-offset="0" max-vertical-offset="1695">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/intercom.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-22.678572" vertical-offset="940" max-vertical-offset="1845">
@@ -962,24 +1013,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/blockchain.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.75" vertical-offset="404" max-vertical-offset="3015">
-          <caret line="47" column="16" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/communication.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.285714" vertical-offset="0" max-vertical-offset="4275">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="34" />
+        <state vertical-scroll-proportion="-10.75" vertical-offset="314" max-vertical-offset="3015">
+          <caret line="41" column="20" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/intercomTake.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26629835" vertical-offset="59" max-vertical-offset="1935">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+        <state vertical-scroll-proportion="-18.75" vertical-offset="0" max-vertical-offset="1950">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../misc/iMacros.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5706522" vertical-offset="0" max-vertical-offset="920">
+          <caret line="35" column="62" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
           <folding />
         </state>
       </provider>

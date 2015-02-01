@@ -17,7 +17,7 @@
       (go
         (def stringified (.stringify js/JSON blockHeader))
         (l/og :blockchain "stringified" stringified)
-        (def blockHash (<! (blockchain/s256 stringified)))
+        (def blockHash (<! (s256 stringified)))
         blockHash
         )
       )
