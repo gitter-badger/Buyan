@@ -13,12 +13,12 @@
                    [servant.macros :refer [defservantfn]])
   )
 
-(defn handleInvBlock [blocks fullMessage]
+(defn takeInv [blocks fullMessage]
       "function to handle inv block"
       (go
 
         (l/og :inv "now about to handle inv block message " blocks)
-        (if (<! (blockKnown? (prevblk (aget (.-vector blocks) 0))))
+        (if (<! (blockchain/blockKnown? (prevblk (aget (.-vector blocks) 0))))
           ;block known
           (do
             (def bchainHeight (<! (blockchainHeight)))
@@ -38,7 +38,7 @@
                 ;validate
                 ;now add to chain
                 (l/og :inv "now adding to chain")
-                (addToChain blocks)
+                (blockchain/addToChain blocks)
                 )
               (do
                 ;drop inv
@@ -57,6 +57,7 @@
           )
         )
       )
+
 (defn takeData [message]
       (go
         (l/og :getBlocks "take data " message)

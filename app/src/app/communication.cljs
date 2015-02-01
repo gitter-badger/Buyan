@@ -45,7 +45,7 @@
                (l/og :intercom (+ "broadsacting new block to peer " peer " ") blockk)
                (def vectoR (array))
                (.push vectoR blockk)
-               (>! peer (i/makeInv "block" vectoR)))
+               (>! peer (im/makeInv "block" vectoR)))
         )
       )
 
