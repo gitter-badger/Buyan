@@ -2,7 +2,7 @@
   (:require
     [app.logger :as l]
 
-    [intercomMake :as im]
+    [app.intercomMake :as im]
 
     [intercomTake :as it]
     [communications :refer [sendmsg sendm onConnection]]

@@ -2,7 +2,7 @@
 
   (:require
     [app.intercom :refer [intercomstatemachine setIntercomState getIntercomState]]
-    [intercomMake :as im]
+    [app.intercomMake :as im]
     [app.crypto :as crypto]
     [app.database :as db]
     [app.logger :as l]

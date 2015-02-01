@@ -2,7 +2,7 @@
   (:require
     [app.logger :as l]
     [app.database :as db]
-    [intercomMake :as im]
+    [app.intercomMake :as im]
 
     [communications :refer [sendmsg sendm]]
     [pubsub :refer [pub sub]]
@@ -51,7 +51,10 @@
           ;now request previous
           (do
             (l/og :inv "request previous" blocks)
-            (i/getBlocks (.-peer fullMessage) (.-hash (<! (db/g "last"))))
+
+            (def lblock (.-hash (<! (db/g "last"))))
+            (l/og :inv "last block " lblock)
+            (>! (.-peer fullMessage) ( im/makeGetBlock lblock))
             )
           ;
           )

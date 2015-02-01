@@ -1,4 +1,4 @@
-(ns intercomMake
+(ns app.intercomMake
   (:require
     [app.logger :as l]
     [app.database :as db]
