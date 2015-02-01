@@ -7,6 +7,7 @@
     [app.logger :as l]
     [pubsub :refer [pub sub]]
     [cljs.core.async :refer [chan close! timeout put!]])
+
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
                    )
   )
@@ -35,6 +36,7 @@
 
       (db/update "txs" #(do transactions))
       (go
+        (def shaC (chan))
         (def originl (.-length transactions))
         (def tx (.shift transactions))
         (def next (.shift transactions))
@@ -54,7 +56,9 @@
         (l/og :merkleRoot "from ch " fromC)
         (set! (.-type fromC) "fmr")
 
-        (>! app.main.cryptoCh (js-obj "value" fromC "type" "fmr"))
+
+        (js-obj "value" fromC "type" "fmr")
+
 
         )
       )

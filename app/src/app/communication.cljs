@@ -9,6 +9,8 @@
     [peerjs :refer [peerjs]]
     [app.crypto :refer [sha256]]
 
+    [app.mining :refer [mine]]
+
 
     [pubsub :refer [pub sub]]
     [cljs.core.async :refer [chan close! timeout put!]]
@@ -247,21 +249,23 @@
 
 (defn onCrypto [message]
       ; println vrecieved
-      (l/og :mloop "recieved from crypto " message)
-      (l/og :mloop "mempoll = " blockchain/memPool)
-      (l/og :mloop (aget message "type"))
+      (l/og :onCrypto "recieved from crypto " message)
+      (l/og :onCrypto "mempoll = " blockchain/memPool)
+      (l/og :onCrypto (aget message "type"))
       (if (== (aget vrecieved "type") "fmr") (do
-                                               (l/og :mloop "merkle root " message)
+                                               (l/og :onCrypto "merkle root " message)
                                                (mine (aget message "value"))
                                                )
                                              )
       (if (> (count blockchain/memPool) 3)
-        ;;
-        (def fmroot (crypto/merkleRoot blockchain/memPool))
+        ;fake merkle root(it works just it is not merkle root)
+        (go
+        (def fmroot (<! (crypto/merkleRoot blockchain/memPool)))
 
-      (l/og :mloop "calculating hash of transactions(not merkle root) %s"
+        (l/og :onCrypto "calculating hash of transactions %s"
               fmroot)
-        )
+        (mine fmroot)
+        ))
 
       )
 

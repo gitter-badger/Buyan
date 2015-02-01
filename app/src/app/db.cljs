@@ -56,12 +56,12 @@
 
                    (if v
                      (do (l/og :dbupdate "rev " (.-_rev v))
-                         (.put app.main.dbase (js-obj "val" (f (.-val v))) k (.-_rev v) #(do)))
-                     (.put app.main.dbase (js-obj "val" (f v)) k #(do))
+                         (.put dbase (js-obj "val" (f (.-val v))) k (.-_rev v) #(do)))
+                     (.put dbase (js-obj "val" (f v)) k #(do))
 
                      )
                    )
-             (.get app.main.dbase k sf)
+             (.get dbase k sf)
              ;#(.put app.main.dbase (js-obj "_id" key "val" (f  false) )))
 
 

@@ -7,8 +7,7 @@
     [app.database :refer [g p ps]]
     [pubsub :refer [pub sub]]
     [cljs.core.async :refer [chan close! timeout put!]]
-    [servant.core :as servant]
-    [servant.worker :as worker])
+)
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
                    [servant.macros :refer [defservantfn]])
   )
