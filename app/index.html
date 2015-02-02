@@ -57,7 +57,7 @@
             <input id="idt"   type="text"  size="30"/>
             <button  onclick="$(document).trigger('connectTo',$('#idt').val())"> connect </button>
 
-            <button  onclick="(new PouchDB('dbname')).allDocs();"> flushDB </button>
+            <button  onclick="PouchDB.destroy('dbname', function(err, info) { });"> flushDB </button>
             <button  onclick="(new PouchDB('dbname')).allDocs({include_docs: true}, function(err, response) { console.log(response)});"> dumpDB </button>
 
             <br/>

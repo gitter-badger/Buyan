@@ -17,20 +17,21 @@
       "function to handle inv block"
       (go
         (def blocks (.-data fullMessage))
-        (l/og :inv "now about to handle inv block message " blocks)
+        (l/og :takeInv "now about to handle inv block message " blocks)
         (if (<! (blockchain/blockKnown? (blockchain/prevblk (aget (.-vector blocks) 0))))
           ;block known
           (do
+            (l/og :inv "block is known ")
             (def bchainHeight (<! (blockchainHeight)))
             (def newHeight (+
                              (heightFromBlock (<! (db/g (blockchain/prevblk (aget (.-vector blocks) 0)))))
                              (.-length (.-vector blocks))
                              1
                              ))
+
             (l/og :inv "blockchainHeight " bchainHeight)
             (l/og :inv "newHeight " newHeight)
             ;is blockchains length bigger
-            (l/og :inv "block is known ")
             (if (< bchainHeight
                    newHeight
                    )

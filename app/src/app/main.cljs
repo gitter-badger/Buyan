@@ -64,6 +64,11 @@
         (p "lid" id)
         (.log js/console  (<! (g "lid")))
 
+
+          (def peerjs (js/Peer. id   peerParams))
+
+          (.on peerjs "connection" comm/onConnection)
+
         )
 
       ;(.on peerjs "connection" onConnection)
@@ -82,10 +87,20 @@
       ;(.log js/console (nth peer 1))
       (go
         (def id (<! ( g "lid")))
+        (if id (do
+
+
+                 (def peerjs (js/Peer. id   peerParams))
+
+                 (.on peerjs "connection" comm/onConnection)
+                 )
+
+               (do
+                 (initDBase)
          (.log js/console id)
-         (.val  (js/$ "#id") id)
-         (def peerjs (js/Peer. id   peerParams))
-         (.on peerjs "connection" comm/onConnection))
+         (.val  (js/$ "#id") id)))
+
+
       ;start submodules
       (pubsub/initpubsub)
       ;register all pubsub subscriptions
