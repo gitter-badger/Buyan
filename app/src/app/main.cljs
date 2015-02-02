@@ -19,7 +19,7 @@
 ;initial function for db
 
 
-
+;
 ;promt user for id that will be used as his peer id
 ;(def id (js/prompt "enter id"))
 ;(l/og :main "user id %s " id)

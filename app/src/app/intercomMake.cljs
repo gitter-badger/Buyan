@@ -6,7 +6,11 @@
     [communications :refer [sendmsg]]
     [app.blockchain :as blockchain]
 
+    [cljs.core.async :refer [chan close! timeout put!]]
+
     )
+  (:require-macros [cljs.core.async.macros :as m :refer [go]]
+                   )
 
   )
 (defn makeInv [typ message]
@@ -30,6 +34,8 @@
       (js-obj "type" "conn" "data" conn)
       )
 (defn makeGetBlock [hash]
+
+      (l/og :makeGetBlock "about to make block " hash)
       (go
         (def gtBlock (js-obj "count" 0 "blocks" (array) hash_stop 0))
         ;get block height

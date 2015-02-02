@@ -175,8 +175,8 @@
                   ;channel from some peer that recieves data to be sent to that peer(wrapper for peerjs send to peer)
                   (== (.-type ch2) "writech") (do
                                                 ; println vrecieved
-                                                (l/og :mloop "sending to peer " vrecieved)
-                                                (l/og :mloop "connection being sent to " (.-conn ch2))
+                                                (l/og :p2ploop "sending to peer " vrecieved)
+                                                (l/og :p2ploop "connection being sent to " (.-conn ch2))
 
                                                 (.send (.-conn ch2) vrecieved)
                                                 )

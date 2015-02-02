@@ -70,6 +70,7 @@
              (def r (<! (g k)))
 
              (l/og :db (+ "got from db " k) r)
+             (if r (.-val r) r)
              r
              ; (<! c)
              )
@@ -88,7 +89,6 @@
              (if r (.-val r) r)
              ; (<! c)
              )
-
         )
       )
 ;(def g (partial getDB dbase))
