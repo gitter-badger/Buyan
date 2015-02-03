@@ -86,19 +86,19 @@
       (l/og :conn "about to connect from heere")
       ;(.log js/console (nth peer 1))
       (go
-        (def id (<! ( g "lid")))
+        (def id (<! (g "lid")))
+        (l/og :entryy "got id %s " id)
         (if id (do
 
-
+                 (.log js/console id)
+                 (.val  (js/$ "#id") id)
                  (def peerjs (js/Peer. id   peerParams))
 
                  (.on peerjs "connection" comm/onConnection)
                  )
-
                (do
                  (initDBase)
-         (.log js/console id)
-         (.val  (js/$ "#id") id)))
+              ))
 
 
       ;start submodules
@@ -107,10 +107,9 @@
       (comm/setupComm)
       (comm/startP2PCommLoop)
 
-
+        ))
       ;intercom is protocol state machine
 
       ;what channels are listened on
-      ;(mainLoop [connectionch hashmine transactionch cryptoCh])
-      )
+      ;(mainLoop [connectionch hashmine transactionch cryptoCh]))
 (set! (.-onload js/window) entryy)
