@@ -100,7 +100,7 @@
                  (.on peerjs "connection" comm/onConnection)
                  )
                (do
-                 (await initDBase)
+                 (await ( initDBase))
               ))
 
 
