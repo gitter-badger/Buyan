@@ -113,7 +113,8 @@
                  (l/og :initDBase "saving " blck)
 
                  (set! (.-heightFromRoot (.-header blck)) 0)
-                 (p "last" #(blck))
+                 ;(p "last" #(blck))
+                 (<! (ps "last" blck))
                  ;todo save other info also
                  ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
                  ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
