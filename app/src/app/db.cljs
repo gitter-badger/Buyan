@@ -1,7 +1,8 @@
 (ns app.database
   (:require
     [app.logger :as l]
-
+    [app.crypto :as crypto]
+    [app.blockchain :refer [makeBlockHeader]]
     [app.pouchDB :refer [dbase]]
     [cljs.core.async :refer [chan close! timeout put!]]
 
@@ -13,39 +14,7 @@
 
 (def onDatabaseChange (chan))
 (set! (.-type onDatabaseChange) "databaseChange")
-(defn initDBase [dbase]
 
-      (let [c (chan)]
-           (go
-             ;(.then (.get dbase "last") #(put! c %) #(put! c %))
-
-             (def lastone (<! (db/g "last")))
-
-             (l/og :db "about to init")
-             (l/og :db "last one from database " lastone)
-             (if lastone
-               (do
-                 (l/og :db "last one from database is " lastone)
-
-                 )
-               (do
-                 (l/og :db "nothing in database")
-                 (db/p "height" 0)
-                 (def blck (<! (makeBlock (js-obj "root" "0" "nonce" "0"))))
-                 ;args to make blockheader version previous fmroot timestamp bits nonce txcount
-                 ;(def blockR (app.blockchain.makeBlockHeader "0" "0" "0" (.getTime ( js/Date.)) 0 "0" 0))
-                 ;(def stringified (.stringify js/JSON blockR))
-                 ;(l/og :blockchain "stringified initial" stringified)
-                 ;(db/p   (<! (blockchain/s256 stringified)) [])
-
-                 (saveBlock dbase blck)
-                 )
-
-               )
-             ;(if last)
-             ;(.put dbase (js-obj "_id" "height" "val" 1))
-             ))
-      )
 (defn update [k f]
       (l/og :dbupdate "getting from db " k)
       (go
@@ -110,3 +79,51 @@
 
       )
 ;(def p (partial putDB ))
+(defn initDBase [dbase]
+
+      (let [c (chan)]
+           (go
+             ;(.then (.get dbase "last") #(put! c %) #(put! c %))
+
+             (def lastone (<! (g "last")))
+
+             (l/og :initDBase "about to init")
+             (l/og :initDBase "last one from database " lastone)
+             (if lastone
+               (do
+                 (l/og :initDBase "last one from database is " lastone)
+
+                 )
+               (do
+                 (l/og :initDBase "nothing in database")
+                 (<! (ps "height" 0))
+                 (def blck (js-obj "header"
+                                   (makeBlockHeader 0 0 0 0 0 0 0)
+
+                                   "hash" (<! (crypto/bHash 0)) "transactions" []))
+                 ;args to make blockheader version previous fmroot timestamp bits nonce txcount
+                 ;(def blockR (app.blockchain.makeBlockHeader "0" "0" "0" (.getTime ( js/Date.)) 0 "0" 0))
+                 ;(def stringified (.stringify js/JSON blockR))
+                 ;(l/og :blockchain "stringified initial" stringified)
+                 ;(db/p   (<! (blockchain/s256 stringified)) [])
+
+                 ;(saveBlock dbase blck)
+
+
+                 (l/og :initDBase "saving " blck)
+
+                 (set! (.-heightFromRoot (.-header blck)) 0)
+                 (p "last" #(blck))
+                 ;todo save other info also
+                 ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
+                 ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
+                 (<! (ps (.-hash blck) blck))
+                 (<! (ps (+ "b" 0) blck))
+                 )
+
+
+               )
+             ;(if last)
+             ;(.put dbase (js-obj "_id" "height" "val" 1))
+             ))
+      )

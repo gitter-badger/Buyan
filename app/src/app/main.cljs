@@ -4,11 +4,13 @@
     [communications :as comm]
     [app.logger :as l]
     [peerjs :refer [peerjs peerParams]]
-    [app.database :refer [g p ps]]
+    [app.database :refer [g p ps initDBase]]
     [pubsub :refer [pub sub]]
+
     [cljs.core.async :refer [chan close! timeout put!]]
 )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
+                   [app.util :as a :refer [await]]
                    [servant.macros :refer [defservantfn]])
   )
 
@@ -75,6 +77,7 @@
       )
 (.on (js/$ js/document) "setid"  setID)
 
+
 (defn entryy []
       "main program entry point.
       It checks database to initialise it.
@@ -97,7 +100,7 @@
                  (.on peerjs "connection" comm/onConnection)
                  )
                (do
-                 (initDBase)
+                 (await initDBase)
               ))
 
 

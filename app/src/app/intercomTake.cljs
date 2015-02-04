@@ -52,7 +52,6 @@
           ;now request previous
           (do
             (l/og :inv "request previous" blocks)
-
             (def lblock (.-hash (.-val (<! (db/g "last")))))
             (l/og :inv "last block " lblock)
             (>! (.-peer fullMessage) (<! ( im/makeGetBlock lblock)))
