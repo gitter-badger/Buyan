@@ -2,13 +2,14 @@
 
   (:require
 
-    [app.blockchain :refer [addTransactionToMemPool]]
     [app.database :as db]
     [app.logger :as l]
     [pubsub :refer [pub sub]]
+
     [cljs.core.async :refer [chan close! timeout put!]])
 
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
+                   [app.util :as a :refer [await]]
                    )
   )
 ;(blockchain/blockKnown (js-obj "hash" "asdsad"))
@@ -34,10 +35,23 @@
 
 (defn merkleRoot [transactions]
 
-      (db/update "txs" #(do transactions))
+      (l/og :merkleRoot "transactions " transactions)
+
       (go
+
+        (l/og :merkleRoot "transactions2 " transactions)
+
+        (def tr transactions)
+        (def a (fn [x]
+                   (.log js/console "OLD : " x)
+                   (.log js/console "NEW : " tr)
+                   tr))
+        ;(defn  utx[] (db/update "txs" a))
+        (<! (db/update "txs" a))
         (def shaC (chan))
         (def originl (.-length transactions))
+
+        (l/og :merkleRoot "transactions length " originl)
         (def tx (.shift transactions))
         (def next (.shift transactions))
         (sha256c (partial resultToCh shaC) (+ tx next))
@@ -98,8 +112,8 @@
 (defn shaCallb [digest] (do
                           (l/og :shaCallB "%s" "about to do hash2")
                           (def h (arraybtostring digest))
-                          (l/og :shaCallBh)
-                          (addTransactionToMemPool h)
+                          (l/og :shaCallB h)
+
                           (pub "crypto" h)
                           ;(go
                           ;  (>! app.main.cryptoCh h)

@@ -3,7 +3,7 @@
     [app.intercom :as i]
     [communications :as comm]
     [app.logger :as l]
-    [peerjs :refer [peerjs peerParams]]
+    [peerjs :refer [ peerParams]]
     [app.database :refer [g p ps initDBase]]
     [pubsub :refer [pub sub]]
 
@@ -39,7 +39,17 @@
 
 ;listen on global document for transactions and publish them to channel transactionch
 (.on (js/$ js/document) "transaction" ( fn [a1 a2 ] (pub "transaction" a2)) )
-(.on (js/$ js/document) "connectTo"  comm/connectTo)
+
+(defn connectTo [ev id]
+
+      (l/og :connectTo (first id))
+      (let [conn (.connect peerjs id)]
+           (.on conn "open" (partial comm/onOpen conn))
+
+           ;(channelsFromConnection conn)
+
+           ))
+(.on (js/$ js/document) "connectTo"  connectTo)
 
 
 ;when someone connects to this user send that new connection to channel

@@ -4,7 +4,6 @@
     [app.database :as db]
 
     [communications :refer [sendmsg]]
-    [app.blockchain :as blockchain]
 
     [cljs.core.async :refer [chan close! timeout put!]]
 

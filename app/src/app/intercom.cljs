@@ -8,7 +8,6 @@
     [communications :refer [sendmsg sendm onConnection]]
 
     [pubsub :refer [pub sub]]
-    [app.blockchain :as blockchain]
 
 
     [cljs.core.async :refer [chan close! timeout put!]]

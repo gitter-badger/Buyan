@@ -49,15 +49,7 @@
         )
       )
 
-(defn connectTo [ev id]
 
-      (l/og :connectTo (first id))
-      (let [conn (.connect peerjs id)]
-           (.on conn "open" (partial onOpen conn))
-
-           ;(channelsFromConnection conn)
-
-           ))
 
 ;this one will send message to peer
 (defn sendmsg [peer type msg]
@@ -253,6 +245,7 @@
       ; println vrecieved
       (l/og :onCrypto "recieved from crypto " message)
       (l/og :onCrypto "mempoll = " blockchain/memPool)
+      (blockchain/addTransactionToMemPool message)
       (l/og :onCrypto (aget message "type"))
       (if (== (aget vrecieved "type") "fmr") (do
                                                (l/og :onCrypto "merkle root " message)

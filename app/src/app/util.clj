@@ -4,12 +4,16 @@
 ;(defn pub [ch event message] (go (>! ch message)))
 (defmacro await [fja]
 
-          (macroexpand (list 'go
-            '(.log js/console "asdas")
-            '(def c (chan))
-            ;;needs fix
-            fja
-            '(>! c 1)
-            '(<! c)
+            `(<! (quote ~fja))
+          )
 
-          )))
+;
+;(macroexpand (list 'go
+;                   '(.log js/console "asdas")
+;                   '(def c (chan))
+;                   ;;needs fix
+;
+;                   '(>! c (<! fja))
+;                   '(<! c)
+;
+;                   ))

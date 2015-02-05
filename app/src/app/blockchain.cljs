@@ -12,6 +12,7 @@
                    )
   )
 (enable-console-print!)
+
 (def memPool (array))
 (def blockhainInfo (js-obj))
 (set! (.-dificulty blockhainInfo) 5)
@@ -97,22 +98,22 @@
 (defn makeBlock [work]
       (l/og :makeBlock "about to make block " work)
       (go
-        (def txs (<! (db/g "txs")))
+        ;(def txs (<! (db/g "txs")))
         (def lastt2 (<! (db/g "last")))
 
         (def transactions (<! (db/g "txs")))
 
-        (if lastt2 (do
-                     (def lastt (.-val lastt2))
+        (if  lastt2 (do
+                     (def lastv (.-val lastt2))
 
                      ) (do
-                         (def lastt (js-obj "hash" 0))
+                         (def lastv (js-obj "hash" 0))
                          (def transactions (array))
 
                          ))
-        (l/og :makeBlock "last " lastt)
+        (l/og :makeBlock "last " lastv)
         ;version previous fmroot timestamp bits nonce txcount
-        (def blockHeader (makeBlockHeader "0" (.-hash lastt) (.-root work) (.getTime (js/Date.)) (.-dificulty blockhainInfo) (.-nonce work) (.-lenght transactions)))
+        (def blockHeader (makeBlockHeader "0" (.-hash lastv) (.-root work) (.getTime (js/Date.)) (.-dificulty blockhainInfo) (.-nonce work) (.-lenght transactions)))
         (l/og :makeBlock "block header " blockHeader)
         (l/og :makeBlock "transactions when saving block " transactions)
         (def blockk (js-obj "header" blockHeader "hash" (<! (crypto/bHash blockHeader)) "transactions" transactions))
