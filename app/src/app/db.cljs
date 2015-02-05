@@ -126,6 +126,6 @@
                )
              ;(if last)
              ;(.put dbase (js-obj "_id" "height" "val" 1))
-             ))
-      1
+             )1)
+
       )

@@ -23,13 +23,13 @@
           (do
             (l/og :inv "block is known ")
             (def bchainHeight (<! (blockchainHeight)))
+            (l/og :inv "blockchainHeight " bchainHeight)
             (def newHeight (+
                              (heightFromBlock (<! (db/g (blockchain/prevblk (aget (.-vector blocks) 0)))))
                              (.-length (.-vector blocks))
                              1
                              ))
 
-            (l/og :inv "blockchainHeight " bchainHeight)
             (l/og :inv "newHeight " newHeight)
             ;is blockchains length bigger
             (if (< bchainHeight
@@ -52,7 +52,7 @@
           ;now request previous
           (do
             (l/og :inv "request previous" blocks)
-            (def lblock (.-hash (.-val (<! (db/g "last")))))
+            (def lblock (.-hash  (<! (db/g "last"))))
             (l/og :inv "last block " lblock)
             (>! (.-peer fullMessage) (<! ( im/makeGetBlock lblock)))
             )

@@ -48,6 +48,7 @@
 ;function first tries to find field hash to query and then uses parameter if field is not there
 (defn blockKnown? [blockk]
       (go
+        (if blockk (do
         (l/og :blockknown "block known? " blockk)
         (def res (if (.-hash blockk)
                    (do
@@ -63,7 +64,8 @@
                      )
                    ))
         res
-        )
+        ) false
+                   ))
 
       )
 ;is this block last in blockchain
@@ -101,16 +103,17 @@
         ;(def txs (<! (db/g "txs")))
         (def lastt2 (<! (db/g "last")))
 
+        (l/og :makeBlock "last " lastt2)
         (def transactions (<! (db/g "txs")))
-
-        (if  lastt2 (do
-                     (def lastv (.-val lastt2))
-
-                     ) (do
-                         (def lastv (js-obj "hash" 0))
-                         (def transactions (array))
-
-                         ))
+        (def lastv  lastt2)
+        ;(if  lastt2 (do
+        ;             (def lastv (.-val lastt2))
+        ;
+        ;             ) (do
+        ;                 (def lastv (js-obj "hash" 0))
+        ;                 (def transactions (array))
+        ;
+        ;                 ))
         (l/og :makeBlock "last " lastv)
         ;version previous fmroot timestamp bits nonce txcount
         (def blockHeader (makeBlockHeader "0" (.-hash lastv) (.-root work) (.getTime (js/Date.)) (.-dificulty blockhainInfo) (.-nonce work) (.-lenght transactions)))
