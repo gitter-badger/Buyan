@@ -247,7 +247,7 @@
       (l/og :onCrypto "mempoll = " blockchain/memPool)
       (blockchain/addTransactionToMemPool message)
       (l/og :onCrypto (aget message "type"))
-      (if (== (aget vrecieved "type") "fmr") (do
+      (if (== (aget message "type") "fmr") (do
                                                (l/og :onCrypto "merkle root " message)
                                                (mine (aget message "value"))
                                                )

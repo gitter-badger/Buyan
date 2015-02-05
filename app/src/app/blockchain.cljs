@@ -129,9 +129,11 @@
         (l/og :saveBlock "saving " blockR)
         (def heightForBlock (<! (blockchainHeight 1)))
         (set! (.-heightFromRoot (.-header blockR)) heightForBlock)
-        (db/update "last" #(js-obj "_id" "last" "val" blockR))
+        ;(db/update "last" #(js-obj "_id" "last" "val" blockR))
+        (db/update "last" #(blockR))
+
         ;todo save other info also
-        ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
+        ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR)) 
         ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
         (<! (db/ps (.-hash blockR) blockR))
         (<! (db/ps (+ "b" heightForBlock) blockR))

@@ -5,7 +5,7 @@
     [app.logger :as l]
     [peerjs :refer [ peerParams]]
     [app.database :refer [g p ps initDBase]]
-    [pubsub :refer [pub sub]]
+    [pubsub :refer [pub sub get set init]]
 
     [cljs.core.async :refer [chan close! timeout put!]]
 )
@@ -41,13 +41,16 @@
 (.on (js/$ js/document) "transaction" ( fn [a1 a2 ] (pub "transaction" a2)) )
 
 (defn connectTo [ev id]
-
+(go
       (l/og :connectTo (first id))
-      (let [conn (.connect peerjs id)]
+      (l/og :connectTo (<! ( get)) )
+
+      (l/og :connectTo (<! ( get)) )
+      (let [conn (.connect (<! ( get)) id)]
            (.on conn "open" (partial comm/onOpen conn))
 
            ;(channelsFromConnection conn)
-
+           )
            ))
 (.on (js/$ js/document) "connectTo"  connectTo)
 
@@ -78,7 +81,7 @@
 
 
           (def peerjs (js/Peer. id   peerParams))
-
+          (init peerjs)
           (.on peerjs "connection" comm/onConnection)
 
         )
@@ -106,7 +109,7 @@
                  (.log js/console id)
                  (.val  (js/$ "#id") id)
                  (def peerjs (js/Peer. id   peerParams))
-
+                  (init peerjs)
                  (.on peerjs "connection" comm/onConnection)
                  )
                (do
