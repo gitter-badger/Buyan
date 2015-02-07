@@ -6,7 +6,11 @@
                  [org.clojure/clojurescript "0.0-2371"]
                  [servant "0.1.3"]
                  ]
-  :plugins [[lein-marginalia "0.8.0"] [lein-cljsbuild "1.0.4-SNAPSHOT"]]
+  :plugins [
+            [lein-marginalia "0.8.0"]
+            [lein-cljsbuild "1.0.4-SNAPSHOT"]
+            [com.cemerick/clojurescript.test "0.3.3"]
+            ]
 
   :source-paths ["src"]
 

@@ -2,8 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c274c2a-d200-4ea2-b16e-0fe36fc9d08d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/blockchain.cljs" afterPath="$PROJECT_DIR$/src/app/blockchain.cljs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/crypto.cljs" afterPath="$PROJECT_DIR$/src/app/crypto.cljs" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.gulpfile.js.swo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.gulpfile.js.swp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.jshintrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.yo-rc.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/coffee-compiler.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/compiler.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/keypress.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/keypress.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/meteor/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/meteor/export.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/meteor/package.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/meteor/publish.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/meteor/runtests.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/meteor/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/test/run_tests.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/test/run_tests.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Keypress/test/tests.coffee" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../PointerLockControls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../gulpfile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../hello_world.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../hello_world.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/cljs/core.cljs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/cljs/core.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/cljs/core.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/goog/array/array.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/goog/asserts/asserts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/goog/base.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/goog/debug/error.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/goog/deps.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/goog/dom/nodetype.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/goog/object/object.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/goog/string/string.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/goog/string/stringbuffer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/hello_world/core.cljs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/hello_world/core.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../out/hello_world/core.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../project.clj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../src/hello_world/core.cljs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../target/classes/.bowerrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../target/classes/META-INF/maven/hello-world/hello-world/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../target/classes/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../target/classes/hello_world/core.cljs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../target/classes/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../target/classes/spec/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../target/stale/extract-native.dependencies" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../test/.bowerrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../test/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../test/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../test/spec/test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../three.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../typeface.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.clj" afterPath="$PROJECT_DIR$/project.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="app.iws" />
@@ -42,8 +99,8 @@
       <file leaf-file-name="intercomTake.cljs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/intercomTake.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3858521" vertical-offset="0" max-vertical-offset="1995">
-              <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.6698821" vertical-offset="860" max-vertical-offset="1995">
+              <caret line="99" column="10" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -226,24 +283,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Buyan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Buyan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hello_world" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -796,14 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../typeface.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13185">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../node_modules/gulp-imagemin/node_modules/imagemin/node_modules/imagemin-gifsicle/node_modules/gifsicle/node_modules/bin-wrapper/node_modules/download/node_modules/decompress-unzip/node_modules/adm-zip/test/assets/attributes_test/asd/New Text Document.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="933">
@@ -904,14 +935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
           <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../src/hello_world/core.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="933">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1038,8 +1061,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/intercomTake.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3858521" vertical-offset="0" max-vertical-offset="1995">
-          <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.6698821" vertical-offset="860" max-vertical-offset="1995">
+          <caret line="99" column="10" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
           <folding />
         </state>
       </provider>
