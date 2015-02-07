@@ -130,10 +130,11 @@
         (def heightForBlock (<! (blockchainHeight 1)))
         (set! (.-heightFromRoot (.-header blockR)) heightForBlock)
         ;(db/update "last" #(js-obj "_id" "last" "val" blockR))
-        (db/update "last" #(blockR))
+        (defn a [] blockR)
+        (db/update "last" a )
 
         ;todo save other info also
-        ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR)) 
+        ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
         ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
         (<! (db/ps (.-hash blockR) blockR))
         (<! (db/ps (+ "b" heightForBlock) blockR))

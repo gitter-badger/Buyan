@@ -3,6 +3,7 @@
     [app.intercom :as i]
     [communications :as comm]
     [app.logger :as l]
+    [app.pouchDB :refer [dbase]]
     [peerjs :refer [ peerParams]]
     [app.database :refer [g p ps initDBase]]
     [pubsub :refer [pub sub get set init]]

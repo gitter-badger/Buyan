@@ -27,4 +27,4 @@ goog.addDependency("../app/intercom.js", ['app.intercom'], ['pubsub', 'cljs.core
 goog.addDependency("../app/blockchain.js", ['app.blockchain'], ['app.database', 'app.intercom', 'cljs.core', 'cljs.core.async', 'app.crypto', 'app.logger']);
 goog.addDependency("../servantWorkers.js", ['servantWorkers'], ['cljs.core']);
 goog.addDependency("../intercomMakeUtil.js", ['intercomMakeUtil'], ['cljs.core']);
-goog.addDependency("../app/main.js", ['app.main'], ['pubsub', 'app.database', 'peerjs', 'app.intercom', 'cljs.core', 'cljs.core.async', 'communications', 'app.logger']);
+goog.addDependency("../app/main.js", ['app.main'], ['pubsub', 'app.database', 'app.pouchDB', 'peerjs', 'app.intercom', 'cljs.core', 'cljs.core.async', 'communications', 'app.logger']);

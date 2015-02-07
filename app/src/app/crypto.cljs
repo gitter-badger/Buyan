@@ -46,7 +46,7 @@
                    (.log js/console "OLD : " x)
                    (.log js/console "NEW : " tr)
                    tr))
-        ;(defn  utx[] (db/update "txs" a))
+        (defn  utx[] (db/update "txs" a))
         (<! (db/update "txs" a))
         (def shaC (chan))
         (def originl (.-length transactions))
