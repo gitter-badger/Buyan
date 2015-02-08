@@ -1,8 +1,8 @@
-(ns app.intercom
+(ns intercom
   (:require
-    [app.logger :as l]
+    [logger :as l]
 
-    [app.intercomMake :as im]
+    [intercomMake :as im]
 
     [intercomTake :as it]
 

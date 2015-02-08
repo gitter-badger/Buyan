@@ -1,6 +1,6 @@
-(ns app.intercomMake
+(ns intercomMake
   (:require
-    [app.logger :as l]
+    [logger :as l]
     [database :as db]
 
 

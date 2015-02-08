@@ -24,7 +24,7 @@
                         :compiler {
                                    :output-to "app.js"
                                    :output-dir "out"
-                                   ;:optimizations :whitespace
+                                   ; :optimizations :none
                                    :source-maps true
                                    }}]
               :test-commands {"unit-tests" ["slimerjs" :runner

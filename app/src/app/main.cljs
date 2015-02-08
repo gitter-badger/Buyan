@@ -1,11 +1,12 @@
 (ns app.main
   (:require
-    [app.intercom :as i]
-    [app.communications :as comm]
-    [app.logger :as l]
-    [app.pouchDB :refer [dbase]]
+    [intercom :as i]
+    [communications :as comm]
+    [logger :as l]
+    [pouchDB :refer [dbase]]
+    [crypto ]
     [peerjs :refer [ peerParams]]
-    [app.blockchain :refer [makeBlockHeader]]
+    [blockchain :refer [makeBlockHeader]]
     [database :refer [g p ps ]]
     [pubsub :refer [pub sub get set init]]
 

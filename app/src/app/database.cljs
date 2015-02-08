@@ -1,9 +1,9 @@
 (ns database
   (:require
-    [app.logger :as l]
-    [app.crypto :as crypto]
+    [logger :as l]
+    [crypto ]
 
-    [app.pouchDB :refer [dbase]]
+    [pouchDB :refer [dbase]]
     [cljs.core.async :refer [chan close! timeout put!]]
 
     )

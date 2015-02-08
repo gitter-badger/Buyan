@@ -1,12 +1,12 @@
 (ns intercomTake
   (:require
-    [app.logger :as l]
-    [app.database :as db]
-    [app.intercomMake :as im]
+    [logger :as l]
+    [database :as db]
+    [intercomMake :as im]
 
 
     [pubsub :refer [pub sub]]
-    [app.blockchain :as blockchain]
+    [blockchain :as blockchain]
     [cljs.core.async :refer [chan close! timeout put!]]
     )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]

@@ -1,4 +1,4 @@
-(ns app.logger)
+(ns logger)
 (enable-console-print!)
 (def tagsOn [
              :all

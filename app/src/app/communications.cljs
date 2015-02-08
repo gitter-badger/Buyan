@@ -1,16 +1,15 @@
 (ns communications
 
   (:require
-    [app.intercom :as i]
-    [app.intercomMake :as im]
-    [app.crypto :as crypto]
+    [intercom :as i]
+    [intercomMake :as im]
     [database :as db]
-    [app.logger :as l]
-    [app.blockchain :as b]
+    [logger :as l]
+    [blockchain :as b]
     [peerjs :refer [peerjs]]
-    [app.crypto :refer [sha256]]
+    [crypto :refer [sha256]]
 
-    [app.mining :refer [mine]]
+    [mining :refer [mine]]
 
 
     [pubsub :refer [pub sub]]

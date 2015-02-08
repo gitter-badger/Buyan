@@ -1,8 +1,8 @@
-(ns app.mining
+(ns mining
 
 ( :require
 
-  [app.logger :as l]
+  [logger :as l]
   [pubsub :refer [pub sub]]
   [cljs.core.async :refer [chan close! timeout put!]]
   [servant.core :as servant]

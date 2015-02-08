@@ -1,8 +1,8 @@
 (ns blockchain
   (:require
-    [app.logger :as l]
+    [logger :as l]
 
-    [app.crypto :as crypto]
+    [crypto ]
      [database :as db]
     [cljs.core.async :refer [chan close! timeout put!]]
 

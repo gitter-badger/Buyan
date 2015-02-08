@@ -3,7 +3,7 @@
   (:require
 
     [database :as db]
-    [app.logger :as l]
+    [logger :as l]
     [pubsub :refer [pub sub]]
 
     [cljs.core.async :refer [chan close! timeout put!]])
