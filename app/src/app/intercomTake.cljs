@@ -97,7 +97,7 @@
         ;      (tostate "grind"))
         ;    (tostate "version")
         ;    )
-        ; 
+        ;
         ;  )
         "grind"
         )
