@@ -1,12 +1,15 @@
 
  (ns testt
-   (:require [cemerick.cljs.test ])
+   (:require [cemerick.cljs.test :as t]
+             [pubsub :as pubsub]
+)
      (:require-macros [cemerick.cljs.test
                        :as tt
                        :refer (is deftest with-test run-tests testing test-var)] )
    )
 
  (deftest somewhat-less-wat
+          ;(.log js/console js/PouchDB)
           (is (= "{}[]" (+ {} []))))
 
  (deftest javascript-allows-div0

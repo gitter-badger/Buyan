@@ -1,9 +1,8 @@
 (ns app.intercomMake
   (:require
     [app.logger :as l]
-    [app.database :as db]
+    [database :as db]
 
-    [communications :refer [sendmsg]]
 
     [cljs.core.async :refer [chan close! timeout put!]]
 

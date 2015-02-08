@@ -2,7 +2,7 @@
 
   (:require
 
-    [app.database :as db]
+    [database :as db]
     [app.logger :as l]
     [pubsub :refer [pub sub]]
 

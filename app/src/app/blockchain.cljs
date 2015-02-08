@@ -1,10 +1,9 @@
-(ns app.blockchain
+(ns blockchain
   (:require
     [app.logger :as l]
 
     [app.crypto :as crypto]
-     [app.database :as db]
-     [app.intercom :as i]
+     [database :as db]
     [cljs.core.async :refer [chan close! timeout put!]]
 
     )

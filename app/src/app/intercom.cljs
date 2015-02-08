@@ -5,7 +5,6 @@
     [app.intercomMake :as im]
 
     [intercomTake :as it]
-    [communications :refer [sendmsg sendm onConnection]]
 
     [pubsub :refer [pub sub]]
 

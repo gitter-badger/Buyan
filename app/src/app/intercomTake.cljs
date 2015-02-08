@@ -4,7 +4,7 @@
     [app.database :as db]
     [app.intercomMake :as im]
 
-    [communications :refer [sendmsg sendm]]
+
     [pubsub :refer [pub sub]]
     [app.blockchain :as blockchain]
     [cljs.core.async :refer [chan close! timeout put!]]
@@ -12,7 +12,14 @@
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
                    [servant.macros :refer [defservantfn]])
   )
+(defn sendm [peer payload]
 
+      (l/og :sendm "sending "  payload)
+
+      (l/og :sendm "peer " peer)
+      (go
+        (>! peer payload)
+        ))
 (defn takeInv [fullMessage]
       "function to handle inv block"
       (go
