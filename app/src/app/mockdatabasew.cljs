@@ -1,0 +1,3 @@
+(ns mw)
+(def mdbase ()
+  )

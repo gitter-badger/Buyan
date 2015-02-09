@@ -1,0 +1,380 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install' ]
+2 info using npm@1.3.10
+3 info using node@v0.10.25
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/home/user/Buyan',
+5 verbose install   [ 'peerjs',
+5 verbose install     'apache-server-configs',
+5 verbose install     'connect',
+5 verbose install     'connect-livereload',
+5 verbose install     'del',
+5 verbose install     'gulp',
+5 verbose install     'gulp-autoprefixer',
+5 verbose install     'gulp-cache',
+5 verbose install     'gulp-csso',
+5 verbose install     'gulp-filter',
+5 verbose install     'gulp-flatten',
+5 verbose install     'gulp-if',
+5 verbose install     'gulp-imagemin',
+5 verbose install     'gulp-jshint',
+5 verbose install     'gulp-livereload',
+5 verbose install     'gulp-load-plugins',
+5 verbose install     'gulp-minify-html',
+5 verbose install     'gulp-plumber',
+5 verbose install     'gulp-replace',
+5 verbose install     'gulp-ruby-sass',
+5 verbose install     'gulp-size',
+5 verbose install     'gulp-uglify',
+5 verbose install     'gulp-useref',
+5 verbose install     'jshint-stylish',
+5 verbose install     'lazypipe',
+5 verbose install     'localforage',
+5 verbose install     'main-bower-files',
+5 verbose install     'opn',
+5 verbose install     'phantomjs',
+5 verbose install     'serve-index',
+5 verbose install     'serve-static',
+5 verbose install     'wiredep' ] ]
+6 info preinstall @
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'gulp-useref@^1.0.2', null ]
+9 verbose cache add name=undefined spec="gulp-useref@^1.0.2" args=["gulp-useref@^1.0.2",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'gulp-useref@^1.0.2',
+10 verbose parsed url   path: 'gulp-useref@^1.0.2',
+10 verbose parsed url   href: 'gulp-useref@^1.0.2' }
+11 verbose cache add name="gulp-useref" spec="^1.0.2" args=["gulp-useref","^1.0.2"]
+12 verbose parsed url { protocol: null,
+12 verbose parsed url   slashes: null,
+12 verbose parsed url   auth: null,
+12 verbose parsed url   host: null,
+12 verbose parsed url   port: null,
+12 verbose parsed url   hostname: null,
+12 verbose parsed url   hash: null,
+12 verbose parsed url   search: null,
+12 verbose parsed url   query: null,
+12 verbose parsed url   pathname: '^1.0.2',
+12 verbose parsed url   path: '^1.0.2',
+12 verbose parsed url   href: '^1.0.2' }
+13 verbose addNamed [ 'gulp-useref', '^1.0.2' ]
+14 verbose addNamed [ null, '>=1.0.2-0 <2.0.0-0' ]
+15 verbose already installed skipping gulp-uglify@^1.0.1 /home/user/Buyan
+16 verbose already installed skipping localforage@^1.2.2 /home/user/Buyan
+17 verbose already installed skipping jshint-stylish@^1.0.0 /home/user/Buyan
+18 verbose already installed skipping lazypipe@^0.2.1 /home/user/Buyan
+19 silly lockFile 906496ab-gulp-useref-1-0-2 gulp-useref@^1.0.2
+20 verbose lock gulp-useref@^1.0.2 /home/user/.npm/906496ab-gulp-useref-1-0-2.lock
+21 verbose already installed skipping main-bower-files@^2.1.0 /home/user/Buyan
+22 silly addNameRange { name: 'gulp-useref',
+22 silly addNameRange   range: '>=1.0.2-0 <2.0.0-0',
+22 silly addNameRange   hasData: false }
+23 verbose already installed skipping opn@^1.0.0 /home/user/Buyan
+24 verbose cache add [ 'phantomjs@^1.9.15', null ]
+25 verbose cache add name=undefined spec="phantomjs@^1.9.15" args=["phantomjs@^1.9.15",null]
+26 verbose parsed url { protocol: null,
+26 verbose parsed url   slashes: null,
+26 verbose parsed url   auth: null,
+26 verbose parsed url   host: null,
+26 verbose parsed url   port: null,
+26 verbose parsed url   hostname: null,
+26 verbose parsed url   hash: null,
+26 verbose parsed url   search: null,
+26 verbose parsed url   query: null,
+26 verbose parsed url   pathname: 'phantomjs@^1.9.15',
+26 verbose parsed url   path: 'phantomjs@^1.9.15',
+26 verbose parsed url   href: 'phantomjs@^1.9.15' }
+27 verbose cache add name="phantomjs" spec="^1.9.15" args=["phantomjs","^1.9.15"]
+28 verbose parsed url { protocol: null,
+28 verbose parsed url   slashes: null,
+28 verbose parsed url   auth: null,
+28 verbose parsed url   host: null,
+28 verbose parsed url   port: null,
+28 verbose parsed url   hostname: null,
+28 verbose parsed url   hash: null,
+28 verbose parsed url   search: null,
+28 verbose parsed url   query: null,
+28 verbose parsed url   pathname: '^1.9.15',
+28 verbose parsed url   path: '^1.9.15',
+28 verbose parsed url   href: '^1.9.15' }
+29 verbose addNamed [ 'phantomjs', '^1.9.15' ]
+30 verbose addNamed [ null, '>=1.9.15-0 <2.0.0-0' ]
+31 silly lockFile 4dfc9af4-phantomjs-1-9-15 phantomjs@^1.9.15
+32 verbose lock phantomjs@^1.9.15 /home/user/.npm/4dfc9af4-phantomjs-1-9-15.lock
+33 verbose already installed skipping serve-index@^1.1.4 /home/user/Buyan
+34 silly addNameRange { name: 'phantomjs',
+34 silly addNameRange   range: '>=1.9.15-0 <2.0.0-0',
+34 silly addNameRange   hasData: false }
+35 verbose already installed skipping serve-static@^1.4.0 /home/user/Buyan
+36 verbose url raw gulp-useref
+37 verbose url resolving [ 'https://registry.npmjs.org/', './gulp-useref' ]
+38 verbose url resolved https://registry.npmjs.org/gulp-useref
+39 info trying registry request attempt 1 at 09:07:50
+40 verbose etag "9AO5QC04S69WPOFOO3D2BU6MP"
+41 http GET https://registry.npmjs.org/gulp-useref
+42 verbose already installed skipping wiredep@^2.0.0 /home/user/Buyan
+43 verbose cache add [ 'peerjs@git+https://github.com/peers/peerjs', null ]
+44 verbose cache add name=undefined spec="peerjs@git+https://github.com/peers/peerjs" args=["peerjs@git+https://github.com/peers/peerjs",null]
+45 verbose parsed url { protocol: null,
+45 verbose parsed url   slashes: null,
+45 verbose parsed url   auth: null,
+45 verbose parsed url   host: null,
+45 verbose parsed url   port: null,
+45 verbose parsed url   hostname: null,
+45 verbose parsed url   hash: null,
+45 verbose parsed url   search: null,
+45 verbose parsed url   query: null,
+45 verbose parsed url   pathname: 'peerjs@git+https://github.com/peers/peerjs',
+45 verbose parsed url   path: 'peerjs@git+https://github.com/peers/peerjs',
+45 verbose parsed url   href: 'peerjs@git+https://github.com/peers/peerjs' }
+46 verbose cache add name="peerjs" spec="git+https://github.com/peers/peerjs" args=["peerjs","git+https://github.com/peers/peerjs"]
+47 verbose parsed url { protocol: 'git+https:',
+47 verbose parsed url   slashes: true,
+47 verbose parsed url   auth: null,
+47 verbose parsed url   host: 'github.com',
+47 verbose parsed url   port: null,
+47 verbose parsed url   hostname: 'github.com',
+47 verbose parsed url   hash: null,
+47 verbose parsed url   search: null,
+47 verbose parsed url   query: null,
+47 verbose parsed url   pathname: '/peers/peerjs',
+47 verbose parsed url   path: '/peers/peerjs',
+47 verbose parsed url   href: 'git+https://github.com/peers/peerjs' }
+48 silly lockFile 1dd2bb86-it-https-github-com-peers-peerjs git+https://github.com/peers/peerjs
+49 verbose lock git+https://github.com/peers/peerjs /home/user/.npm/1dd2bb86-it-https-github-com-peers-peerjs.lock
+50 verbose already installed skipping del@^0.1.0 /home/user/Buyan
+51 verbose already installed skipping apache-server-configs@^2.7.1 /home/user/Buyan
+52 verbose cache add [ 'gulp@^3.6.0', null ]
+53 verbose cache add name=undefined spec="gulp@^3.6.0" args=["gulp@^3.6.0",null]
+54 verbose parsed url { protocol: null,
+54 verbose parsed url   slashes: null,
+54 verbose parsed url   auth: null,
+54 verbose parsed url   host: null,
+54 verbose parsed url   port: null,
+54 verbose parsed url   hostname: null,
+54 verbose parsed url   hash: null,
+54 verbose parsed url   search: null,
+54 verbose parsed url   query: null,
+54 verbose parsed url   pathname: 'gulp@^3.6.0',
+54 verbose parsed url   path: 'gulp@^3.6.0',
+54 verbose parsed url   href: 'gulp@^3.6.0' }
+55 verbose cache add name="gulp" spec="^3.6.0" args=["gulp","^3.6.0"]
+56 verbose parsed url { protocol: null,
+56 verbose parsed url   slashes: null,
+56 verbose parsed url   auth: null,
+56 verbose parsed url   host: null,
+56 verbose parsed url   port: null,
+56 verbose parsed url   hostname: null,
+56 verbose parsed url   hash: null,
+56 verbose parsed url   search: null,
+56 verbose parsed url   query: null,
+56 verbose parsed url   pathname: '^3.6.0',
+56 verbose parsed url   path: '^3.6.0',
+56 verbose parsed url   href: '^3.6.0' }
+57 verbose addNamed [ 'gulp', '^3.6.0' ]
+58 verbose addNamed [ null, '>=3.6.0-0 <4.0.0-0' ]
+59 silly lockFile 75cdcb5c-gulp-3-6-0 gulp@^3.6.0
+60 verbose lock gulp@^3.6.0 /home/user/.npm/75cdcb5c-gulp-3-6-0.lock
+61 verbose already installed skipping connect@^3.0.1 /home/user/Buyan
+62 verbose already installed skipping gulp-autoprefixer@^1.0.1 /home/user/Buyan
+63 verbose already installed skipping connect-livereload@^0.5.0 /home/user/Buyan
+64 verbose cache add [ 'gulp-cache@^0.2.2', null ]
+65 verbose cache add name=undefined spec="gulp-cache@^0.2.2" args=["gulp-cache@^0.2.2",null]
+66 verbose parsed url { protocol: null,
+66 verbose parsed url   slashes: null,
+66 verbose parsed url   auth: null,
+66 verbose parsed url   host: null,
+66 verbose parsed url   port: null,
+66 verbose parsed url   hostname: null,
+66 verbose parsed url   hash: null,
+66 verbose parsed url   search: null,
+66 verbose parsed url   query: null,
+66 verbose parsed url   pathname: 'gulp-cache@^0.2.2',
+66 verbose parsed url   path: 'gulp-cache@^0.2.2',
+66 verbose parsed url   href: 'gulp-cache@^0.2.2' }
+67 verbose cache add name="gulp-cache" spec="^0.2.2" args=["gulp-cache","^0.2.2"]
+68 verbose parsed url { protocol: null,
+68 verbose parsed url   slashes: null,
+68 verbose parsed url   auth: null,
+68 verbose parsed url   host: null,
+68 verbose parsed url   port: null,
+68 verbose parsed url   hostname: null,
+68 verbose parsed url   hash: null,
+68 verbose parsed url   search: null,
+68 verbose parsed url   query: null,
+68 verbose parsed url   pathname: '^0.2.2',
+68 verbose parsed url   path: '^0.2.2',
+68 verbose parsed url   href: '^0.2.2' }
+69 verbose addNamed [ 'gulp-cache', '^0.2.2' ]
+70 verbose addNamed [ null, '>=0.2.2-0 <0.3.0-0' ]
+71 silly lockFile 0ef37593-gulp-cache-0-2-2 gulp-cache@^0.2.2
+72 verbose lock gulp-cache@^0.2.2 /home/user/.npm/0ef37593-gulp-cache-0-2-2.lock
+73 verbose already installed skipping gulp-csso@^0.2.6 /home/user/Buyan
+74 verbose already installed skipping gulp-filter@^1.0.2 /home/user/Buyan
+75 verbose already installed skipping gulp-flatten@^0.0.4 /home/user/Buyan
+76 verbose url raw phantomjs
+77 verbose url resolving [ 'https://registry.npmjs.org/', './phantomjs' ]
+78 verbose url resolved https://registry.npmjs.org/phantomjs
+79 info trying registry request attempt 1 at 09:07:50
+80 verbose etag "327UE9QWMPYUO7QBME4O6T4OU"
+81 http GET https://registry.npmjs.org/phantomjs
+82 silly addNameRange { name: 'gulp', range: '>=3.6.0-0 <4.0.0-0', hasData: false }
+83 verbose already installed skipping gulp-if@^1.2.1 /home/user/Buyan
+84 verbose already installed skipping gulp-imagemin@^1.2.1 /home/user/Buyan
+85 verbose already installed skipping gulp-jshint@^1.5.3 /home/user/Buyan
+86 verbose cache add [ 'gulp-livereload@^2.0.0', null ]
+87 verbose cache add name=undefined spec="gulp-livereload@^2.0.0" args=["gulp-livereload@^2.0.0",null]
+88 verbose parsed url { protocol: null,
+88 verbose parsed url   slashes: null,
+88 verbose parsed url   auth: null,
+88 verbose parsed url   host: null,
+88 verbose parsed url   port: null,
+88 verbose parsed url   hostname: null,
+88 verbose parsed url   hash: null,
+88 verbose parsed url   search: null,
+88 verbose parsed url   query: null,
+88 verbose parsed url   pathname: 'gulp-livereload@^2.0.0',
+88 verbose parsed url   path: 'gulp-livereload@^2.0.0',
+88 verbose parsed url   href: 'gulp-livereload@^2.0.0' }
+89 verbose cache add name="gulp-livereload" spec="^2.0.0" args=["gulp-livereload","^2.0.0"]
+90 verbose parsed url { protocol: null,
+90 verbose parsed url   slashes: null,
+90 verbose parsed url   auth: null,
+90 verbose parsed url   host: null,
+90 verbose parsed url   port: null,
+90 verbose parsed url   hostname: null,
+90 verbose parsed url   hash: null,
+90 verbose parsed url   search: null,
+90 verbose parsed url   query: null,
+90 verbose parsed url   pathname: '^2.0.0',
+90 verbose parsed url   path: '^2.0.0',
+90 verbose parsed url   href: '^2.0.0' }
+91 verbose addNamed [ 'gulp-livereload', '^2.0.0' ]
+92 verbose addNamed [ null, '>=2.0.0-0 <3.0.0-0' ]
+93 silly lockFile 557a020b-gulp-livereload-2-0-0 gulp-livereload@^2.0.0
+94 verbose lock gulp-livereload@^2.0.0 /home/user/.npm/557a020b-gulp-livereload-2-0-0.lock
+95 verbose already installed skipping gulp-load-plugins@^0.7.1 /home/user/Buyan
+96 verbose cache add [ 'gulp-minify-html@^0.1.6', null ]
+97 verbose cache add name=undefined spec="gulp-minify-html@^0.1.6" args=["gulp-minify-html@^0.1.6",null]
+98 verbose parsed url { protocol: null,
+98 verbose parsed url   slashes: null,
+98 verbose parsed url   auth: null,
+98 verbose parsed url   host: null,
+98 verbose parsed url   port: null,
+98 verbose parsed url   hostname: null,
+98 verbose parsed url   hash: null,
+98 verbose parsed url   search: null,
+98 verbose parsed url   query: null,
+98 verbose parsed url   pathname: 'gulp-minify-html@^0.1.6',
+98 verbose parsed url   path: 'gulp-minify-html@^0.1.6',
+98 verbose parsed url   href: 'gulp-minify-html@^0.1.6' }
+99 verbose cache add name="gulp-minify-html" spec="^0.1.6" args=["gulp-minify-html","^0.1.6"]
+100 verbose parsed url { protocol: null,
+100 verbose parsed url   slashes: null,
+100 verbose parsed url   auth: null,
+100 verbose parsed url   host: null,
+100 verbose parsed url   port: null,
+100 verbose parsed url   hostname: null,
+100 verbose parsed url   hash: null,
+100 verbose parsed url   search: null,
+100 verbose parsed url   query: null,
+100 verbose parsed url   pathname: '^0.1.6',
+100 verbose parsed url   path: '^0.1.6',
+100 verbose parsed url   href: '^0.1.6' }
+101 verbose addNamed [ 'gulp-minify-html', '^0.1.6' ]
+102 verbose addNamed [ null, '>=0.1.6-0 <0.2.0-0' ]
+103 silly lockFile 3d451d7f-gulp-minify-html-0-1-6 gulp-minify-html@^0.1.6
+104 verbose lock gulp-minify-html@^0.1.6 /home/user/.npm/3d451d7f-gulp-minify-html-0-1-6.lock
+105 verbose already installed skipping gulp-plumber@^0.6.3 /home/user/Buyan
+106 verbose already installed skipping gulp-replace@^0.4.0 /home/user/Buyan
+107 verbose already installed skipping gulp-ruby-sass@^0.7.1 /home/user/Buyan
+108 verbose already installed skipping gulp-size@^1.1.0 /home/user/Buyan
+109 silly addNameRange { name: 'gulp-cache',
+109 silly addNameRange   range: '>=0.2.2-0 <0.3.0-0',
+109 silly addNameRange   hasData: false }
+110 silly addNameRange { name: 'gulp-livereload',
+110 silly addNameRange   range: '>=2.0.0-0 <3.0.0-0',
+110 silly addNameRange   hasData: false }
+111 silly addNameRange { name: 'gulp-minify-html',
+111 silly addNameRange   range: '>=0.1.6-0 <0.2.0-0',
+111 silly addNameRange   hasData: false }
+112 verbose addRemoteGit [ 'https://github.com/peers/peerjs', 'master' ]
+113 verbose url raw gulp
+114 verbose url resolving [ 'https://registry.npmjs.org/', './gulp' ]
+115 verbose url resolved https://registry.npmjs.org/gulp
+116 info trying registry request attempt 1 at 09:07:50
+117 verbose etag "EJKSUU2HDXU4OUIQA1GN3OS9N"
+118 http GET https://registry.npmjs.org/gulp
+119 verbose url raw gulp-cache
+120 verbose url resolving [ 'https://registry.npmjs.org/', './gulp-cache' ]
+121 verbose url resolved https://registry.npmjs.org/gulp-cache
+122 info trying registry request attempt 1 at 09:07:50
+123 verbose etag "7UHWG7TMKQDH3BKSBBIQDO5JK"
+124 http GET https://registry.npmjs.org/gulp-cache
+125 verbose url raw gulp-livereload
+126 verbose url resolving [ 'https://registry.npmjs.org/', './gulp-livereload' ]
+127 verbose url resolved https://registry.npmjs.org/gulp-livereload
+128 info trying registry request attempt 1 at 09:07:50
+129 verbose etag "8QP3QX6RCCXTV7NCPD36KFH72"
+130 http GET https://registry.npmjs.org/gulp-livereload
+131 verbose url raw gulp-minify-html
+132 verbose url resolving [ 'https://registry.npmjs.org/', './gulp-minify-html' ]
+133 verbose url resolved https://registry.npmjs.org/gulp-minify-html
+134 info trying registry request attempt 1 at 09:07:50
+135 verbose etag "D9NEAARFR9M1RCRHI5DOELJW1"
+136 http GET https://registry.npmjs.org/gulp-minify-html
+137 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+138 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+139 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+140 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+141 verbose git remote.origin.url https://github.com/peers/peerjs
+142 info trying registry request attempt 2 at 09:08:20
+143 verbose etag "9AO5QC04S69WPOFOO3D2BU6MP"
+144 http GET https://registry.npmjs.org/gulp-useref
+145 info trying registry request attempt 2 at 09:08:20
+146 verbose etag "327UE9QWMPYUO7QBME4O6T4OU"
+147 http GET https://registry.npmjs.org/phantomjs
+148 info trying registry request attempt 2 at 09:08:20
+149 verbose etag "EJKSUU2HDXU4OUIQA1GN3OS9N"
+150 http GET https://registry.npmjs.org/gulp
+151 info trying registry request attempt 2 at 09:08:20
+152 verbose etag "7UHWG7TMKQDH3BKSBBIQDO5JK"
+153 http GET https://registry.npmjs.org/gulp-cache
+154 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+155 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+156 error git fetch -a origin (https://github.com/peers/peerjs) fatal: unable to access 'https://github.com/peers/peerjs/': Could not resolve host: github.com
+157 info trying registry request attempt 2 at 09:08:40
+158 verbose etag "8QP3QX6RCCXTV7NCPD36KFH72"
+159 http GET https://registry.npmjs.org/gulp-livereload
+160 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+161 info trying registry request attempt 2 at 09:08:40
+162 verbose etag "D9NEAARFR9M1RCRHI5DOELJW1"
+163 http GET https://registry.npmjs.org/gulp-minify-html
+164 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+165 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
+166 silly lockFile 59e43895-https-github-com-peers-peerjs https://github.com/peers/peerjs
+167 error Error: Command failed: fatal: unable to access 'https://github.com/peers/peerjs/': Could not resolve host: github.com
+167 error
+167 error     at ChildProcess.exithandler (child_process.js:637:15)
+167 error     at ChildProcess.EventEmitter.emit (events.js:98:17)
+167 error     at maybeClose (child_process.js:743:16)
+167 error     at Process.ChildProcess._handle.onexit (child_process.js:810:5)
+168 error If you need help, you may report this log at:
+168 error     <http://github.com/isaacs/npm/issues>
+168 error or email it to:
+168 error     <npm-@googlegroups.com>
+169 error System Linux 3.13.0-37-generic
+170 error command "/usr/bin/nodejs" "/usr/bin/npm" "install"
+171 error cwd /home/user/Buyan
+172 error node -v v0.10.25
+173 error npm -v 1.3.10
+174 error code 128
+175 verbose exit [ 1, true ]
