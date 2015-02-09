@@ -9,7 +9,7 @@
     [blockchain :refer [makeBlockHeader]]
     [database :refer [g p ps ]]
     [pubsub :refer [pub sub get set init]]
-
+     [reagent.core :as reagent :refer [atom]]
     [cljs.core.async :refer [chan close! timeout put!]]
 )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
@@ -143,6 +143,45 @@
 (.on (js/$ js/document) "setid"  setID)
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(def timer (atom (js/Date.)))
+(def time-color (atom "#f34"))
+
+(defn update-time [time]
+      ;; Update the time every 1/10 second to be accurate...
+      (js/setTimeout #(reset! time (js/Date.)) 100))
+
+(defn greeting [message]
+      [:h1 message])
+
+(defn clock []
+      (update-time timer)
+      (let [time-str (-> @timer .toTimeString (clojure.string/split " ") first)]
+           [:div.example-clock
+            {:style {:color @time-color}}
+            time-str]))
+
+(defn color-input []
+      [:div.color-input
+       "Time color: "
+       [:input {:type "text"
+                :value @time-color
+                :on-change #(reset! time-color (-> % .-target .-value))}]])
+
+(defn simple-example []
+      [:div
+       [greeting "Hello world, it is now"]
+       [clock]
+       [color-input]])
+
+(defn ^:export run []
+      (reagent/render-component (fn [] [simple-example])
+                                (.-body js/document)))
+
+
+
+
 (defn entryy []
       "main program entry point.
       It checks database to initialise it.
@@ -161,23 +200,24 @@
                  (.log js/console id)
                  (.val  (js/$ "#id") id)
                  (def peerjs (js/Peer. id   peerParams))
-                  (init peerjs)
+                 (init peerjs)
                  (.on peerjs "connection" comm/onConnection)
                  )
                (do
                  (<! ( initDBase))
-              ))
+                 ))
 
 
-      ;start submodules
-      (pubsub/initpubsub)
-      ;register all pubsub subscriptions
-      (comm/setupComm)
-      (comm/startP2PCommLoop)
+        ;start submodules
+        (pubsub/initpubsub)
+        ;register all pubsub subscriptions
+        (comm/setupComm)
+        (comm/startP2PCommLoop)
+        (run)
 
         ))
-      ;intercom is protocol state machine
+;intercom is protocol state machine
 
-      ;what channels are listened on
-      ;(mainLoop [connectionch hashmine transactionch cryptoCh]))
+;what channels are listened on
+;(mainLoop [connectionch hashmine transactionch cryptoCh]))
 (set! (.-onload js/window) entryy)
