@@ -180,7 +180,7 @@
         ;register all pubsub subscriptions
         (comm/setupComm)
         (comm/startP2PCommLoop)
-        ;(ht/run )
+        (ht/run "Taras Bulba" "zaparozie r0x" "i4c32d4308e1fe.jpg" "- zaparozie")
 
         ))
 ;intercom is protocol state machine

@@ -9,6 +9,7 @@
     "pouchdb": "~3.3.0",
     "react": "~0.12.2",
     "terminal.js": "Gottox/terminal.js#~1.0.1",
-    "bootstrap-material-design": "~0.2.2"
+    "bootstrap-material-design": "~0.2.2",
+    "leaf-css-framework": "kkortes/leaf"
   }
 }
