@@ -16,7 +16,50 @@
 
  (defn greeting [message]
        [:h1 message])
+(defn proFile [name desc pic]
+      [:div
+       {:style {:width "200px" :height "200px"}
+        }
+[:ul.unstyled
+[:li
+ [:a.list-item
+ [:div.pull-left
+[:div.circle
+ [:img {:src pic :style {:width "40px" :height "40px"}}]
+ ]
 
+  ]
+ [:div.text
+  [:div desc]
+  [:br]
+  [:span.small name]
+  ]
+
+ ]
+ ]]
+       ]
+      )
+ ;
+ ;[:div.inputs
+ ; {:style {:margin "50px"}}
+ ; [:div.list-group
+ ;  [:div.list-group-item
+ ;   [:div.row-picture
+ ;    [:img.circle
+ ;     { :src pic
+ ;      }
+ ;     ]
+ ;    ]
+ ;   [:div.row-content
+ ;    [:h4.list-group-item-heading
+ ;     name]
+ ;    [:p.list-group-item-text
+ ;     desc
+ ;
+ ;     ]
+ ;    ]
+ ;   ]
+ ;  ]]
  (defn clock []
        (update-time timer)
        (let [time-str (-> @timer .toTimeString (clojure.string/split " ") first)]
@@ -31,12 +74,14 @@
                  :value @time-color
                  :on-change #(reset! time-color (-> % .-target .-value))}]])
 
- (defn simple-example []
-       [:div
-        [greeting "Hello world, it is now"]
-        [clock]
-        [color-input]])
+ ;
+ ;[:div
+ ; [greeting "Hello world, it is now"]
+ ; [clock]
+ ; [color-input]]
+ (defn simple-example [name desc pic]
+       [proFile name desc pic])
 
- (defn  run []
-       (reagent/render-component (fn [] [simple-example])
+ (defn  run [name desc pic]
+       (reagent/render-component (fn [] [proFile name desc pic])
                                  (.-body js/document)))
