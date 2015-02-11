@@ -16,7 +16,7 @@
 
  (defn greeting [message]
        [:h1 message])
-(defn proFile [name desc pic]
+(defn proFile [name desc pic extra]
       [:div
        {:style {:width "200px"}
         }
@@ -30,10 +30,12 @@
 
   ]
  [:div.text
-  [:div desc]
+  [:div desc
   [:br]
-  [:span.small name]
-  ]
+  [:span.small name
+   [:span.text-grey extra]
+   ]
+  ]]
 
  ]
  ]]
@@ -79,9 +81,9 @@
  ; [greeting "Hello world, it is now"]
  ; [clock]
  ; [color-input]]
- (defn simple-example [name desc pic]
-       [proFile name desc pic])
+ (defn simple-example [name desc pic extra]
+       [proFile name desc pic extra])
 
- (defn  run [name desc pic]
-       (reagent/render-component (fn [] [proFile name desc pic])
+ (defn  run [name desc pic extra ]
+       (reagent/render-component (fn [] [proFile name desc pic extra])
                                  (.-body js/document)))
