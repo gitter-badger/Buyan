@@ -139,7 +139,7 @@
                 <entry file="file://$PROJECT_DIR$/src/app/display/html.cljs">
                   <provider selected="true" editor-type-id="text-editor">
                     <state vertical-scroll-proportion="0.27130044" vertical-offset="179" max-vertical-offset="1380">
-                      <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+                      <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
                       <folding />
                     </state>
                   </provider>
@@ -1030,7 +1030,7 @@
     <entry file="file://$PROJECT_DIR$/src/app/display/html.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27130044" vertical-offset="179" max-vertical-offset="1380">
-          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
           <folding />
         </state>
       </provider>

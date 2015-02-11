@@ -18,7 +18,7 @@
        [:h1 message])
 (defn proFile [name desc pic]
       [:div
-       {:style {:width "200px" :height "200px"}
+       {:style {:width "200px"}
         }
 [:ul.unstyled
 [:li

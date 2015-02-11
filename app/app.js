@@ -37435,11 +37435,11 @@ html.greeting = function greeting(message) {
   return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "h1", "h1", -1896887462), message], null);
 };
 html.proFile = function proFile(name, desc, pic) {
-  return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "style", "style", -496642736), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "width", "width", -384071477), "200px", new cljs.core.Keyword(null, "height", "height", 1025178622), "200px"], null)], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, 
-  [new cljs.core.Keyword(null, "ul.unstyled", "ul.unstyled", -1948620308), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "li", "li", 723558921), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "a.list-item", "a.list-item", -1757304900), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.pull-left", "div.pull-left", 
-  727555294), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.circle", "div.circle", 2134211799), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "img", "img", 1442687358), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "src", "src", -1651076051), pic, new cljs.core.Keyword(null, "style", "style", -496642736), new cljs.core.PersistentArrayMap(null, 
-  2, [new cljs.core.Keyword(null, "width", "width", -384071477), "40px", new cljs.core.Keyword(null, "height", "height", 1025178622), "40px"], null)], null)], null)], null)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.text", "div.text", 645060726), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632), desc], null), new cljs.core.PersistentVector(null, 
-  1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "br", "br", 934104792)], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "span.small", "span.small", 1761756015), name], null)], null)], null)], null)], null)], null);
+  return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "style", "style", -496642736), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "width", "width", -384071477), "200px"], null)], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "ul.unstyled", 
+  "ul.unstyled", -1948620308), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "li", "li", 723558921), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "a.list-item", "a.list-item", -1757304900), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.pull-left", "div.pull-left", 727555294), new cljs.core.PersistentVector(null, 
+  2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.circle", "div.circle", 2134211799), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "img", "img", 1442687358), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "src", "src", -1651076051), pic, new cljs.core.Keyword(null, "style", "style", -496642736), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "width", "width", 
+  -384071477), "40px", new cljs.core.Keyword(null, "height", "height", 1025178622), "40px"], null)], null)], null)], null)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.text", "div.text", 645060726), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632), desc], null), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, 
+  [new cljs.core.Keyword(null, "br", "br", 934104792)], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "span.small", "span.small", 1761756015), name], null)], null)], null)], null)], null)], null);
 };
 html.clock = function clock() {
   html.update_time.call(null, html.timer);
@@ -37448,8 +37448,8 @@ html.clock = function clock() {
 };
 html.color_input = function color_input() {
   return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.color-input", "div.color-input", -879914246), "Time color: ", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "input", "input", 556931961), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "type", "type", 1174270348), "text", new cljs.core.Keyword(null, "value", "value", 305978217), cljs.core.deref.call(null, 
-  html.time_color), new cljs.core.Keyword(null, "on-change", "on-change", -732046149), function(p1__17946_SHARP_) {
-    return cljs.core.reset_BANG_.call(null, html.time_color, p1__17946_SHARP_.target.value);
+  html.time_color), new cljs.core.Keyword(null, "on-change", "on-change", -732046149), function(p1__18001_SHARP_) {
+    return cljs.core.reset_BANG_.call(null, html.time_color, p1__18001_SHARP_.target.value);
   }], null)], null)], null);
 };
 html.simple_example = function simple_example(name, desc, pic) {
@@ -44059,6 +44059,239 @@ app.crypto.shaCallb = function shaCallb(digest) {
   logger.og.call(null, new cljs.core.Keyword(null, "shaCallB", "shaCallB", 117825821), app.crypto.h);
   return pubsub.pub.call(null, "crypto", app.crypto.h);
 };
+goog.provide("mockdatabase");
+goog.require("cljs.core");
+mockdatabase.mdbase = function() {
+  var obj10399 = {};
+  return obj10399;
+}();
+mockdatabase.g = function g(kie) {
+  return mockdatabase.mdbase[kie];
+};
+mockdatabase.p = function p(kie, v) {
+  return mockdatabase.mdbase[kie] = v;
+};
+mockdatabase.ps = function ps(kie, v) {
+  return mockdatabase.mdbase[kie] = v;
+};
+mockdatabase.update = function update(kie, v) {
+  return mockdatabase.mdbase[kie] = v;
+};
+goog.provide("mockdatabasew");
+goog.require("cljs.core");
+goog.require("pubsub");
+goog.require("cljs.core.async");
+goog.require("cljs.core.async");
+goog.require("pubsub");
+goog.require("mockdatabase");
+goog.require("mockdatabase");
+goog.require("logger");
+goog.require("logger");
+mockdatabasew.mdbase = cljs.core.List.EMPTY;
+mockdatabasew.g = function g(k) {
+  var c__5740__auto__ = cljs.core.async.chan.call(null, 1);
+  cljs.core.async.impl.dispatch.run.call(null, function(c__5740__auto__) {
+    return function() {
+      var f__5741__auto__ = function() {
+        var switch__5727__auto__ = function(c__5740__auto__) {
+          return function(state_17960) {
+            var state_val_17961 = state_17960[1];
+            if (state_val_17961 === 2) {
+              var inst_17958 = state_17960[2];
+              var state_17960__$1 = state_17960;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_17960__$1, inst_17958);
+            } else {
+              if (state_val_17961 === 1) {
+                var inst_17956 = mockdatabase.g.call(null, k);
+                var state_17960__$1 = state_17960;
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_17960__$1, 2, inst_17956);
+              } else {
+                return null;
+              }
+            }
+          };
+        }(c__5740__auto__);
+        return function(switch__5727__auto__, c__5740__auto__) {
+          return function() {
+            var state_machine__5728__auto__ = null;
+            var state_machine__5728__auto____0 = function() {
+              var statearr_17963 = [null, null, null, null, null];
+              statearr_17963[0] = state_machine__5728__auto__;
+              statearr_17963[1] = 1;
+              return statearr_17963;
+            };
+            var state_machine__5728__auto____1 = function(state_17960) {
+              while (true) {
+                var result__5729__auto__ = switch__5727__auto__.call(null, state_17960);
+                if (cljs.core.keyword_identical_QMARK_.call(null, result__5729__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
+                  continue;
+                } else {
+                  return result__5729__auto__;
+                }
+                break;
+              }
+            };
+            state_machine__5728__auto__ = function(state_17960) {
+              switch(arguments.length) {
+                case 0:
+                  return state_machine__5728__auto____0.call(this);
+                case 1:
+                  return state_machine__5728__auto____1.call(this, state_17960);
+              }
+              throw new Error("Invalid arity: " + arguments.length);
+            };
+            state_machine__5728__auto__.cljs$core$IFn$_invoke$arity$0 = state_machine__5728__auto____0;
+            state_machine__5728__auto__.cljs$core$IFn$_invoke$arity$1 = state_machine__5728__auto____1;
+            return state_machine__5728__auto__;
+          }();
+        }(switch__5727__auto__, c__5740__auto__);
+      }();
+      var state__5742__auto__ = function() {
+        var statearr_17964 = f__5741__auto__.call(null);
+        statearr_17964[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__5740__auto__;
+        return statearr_17964;
+      }();
+      return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__5742__auto__);
+    };
+  }(c__5740__auto__));
+  return c__5740__auto__;
+};
+mockdatabasew.update = function update(k, v) {
+  var c__5740__auto__ = cljs.core.async.chan.call(null, 1);
+  cljs.core.async.impl.dispatch.run.call(null, function(c__5740__auto__) {
+    return function() {
+      var f__5741__auto__ = function() {
+        var switch__5727__auto__ = function(c__5740__auto__) {
+          return function(state_17978) {
+            var state_val_17979 = state_17978[1];
+            if (state_val_17979 === 2) {
+              var inst_17976 = state_17978[2];
+              var state_17978__$1 = state_17978;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_17978__$1, inst_17976);
+            } else {
+              if (state_val_17979 === 1) {
+                var inst_17974 = mockdatabase.update.call(null, k, v);
+                var state_17978__$1 = state_17978;
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_17978__$1, 2, inst_17974);
+              } else {
+                return null;
+              }
+            }
+          };
+        }(c__5740__auto__);
+        return function(switch__5727__auto__, c__5740__auto__) {
+          return function() {
+            var state_machine__5728__auto__ = null;
+            var state_machine__5728__auto____0 = function() {
+              var statearr_17981 = [null, null, null, null, null];
+              statearr_17981[0] = state_machine__5728__auto__;
+              statearr_17981[1] = 1;
+              return statearr_17981;
+            };
+            var state_machine__5728__auto____1 = function(state_17978) {
+              while (true) {
+                var result__5729__auto__ = switch__5727__auto__.call(null, state_17978);
+                if (cljs.core.keyword_identical_QMARK_.call(null, result__5729__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
+                  continue;
+                } else {
+                  return result__5729__auto__;
+                }
+                break;
+              }
+            };
+            state_machine__5728__auto__ = function(state_17978) {
+              switch(arguments.length) {
+                case 0:
+                  return state_machine__5728__auto____0.call(this);
+                case 1:
+                  return state_machine__5728__auto____1.call(this, state_17978);
+              }
+              throw new Error("Invalid arity: " + arguments.length);
+            };
+            state_machine__5728__auto__.cljs$core$IFn$_invoke$arity$0 = state_machine__5728__auto____0;
+            state_machine__5728__auto__.cljs$core$IFn$_invoke$arity$1 = state_machine__5728__auto____1;
+            return state_machine__5728__auto__;
+          }();
+        }(switch__5727__auto__, c__5740__auto__);
+      }();
+      var state__5742__auto__ = function() {
+        var statearr_17982 = f__5741__auto__.call(null);
+        statearr_17982[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__5740__auto__;
+        return statearr_17982;
+      }();
+      return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__5742__auto__);
+    };
+  }(c__5740__auto__));
+  return c__5740__auto__;
+};
+mockdatabasew.p = function p(k, v) {
+  var c__5740__auto__ = cljs.core.async.chan.call(null, 1);
+  cljs.core.async.impl.dispatch.run.call(null, function(c__5740__auto__) {
+    return function() {
+      var f__5741__auto__ = function() {
+        var switch__5727__auto__ = function(c__5740__auto__) {
+          return function(state_17996) {
+            var state_val_17997 = state_17996[1];
+            if (state_val_17997 === 2) {
+              var inst_17994 = state_17996[2];
+              var state_17996__$1 = state_17996;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_17996__$1, inst_17994);
+            } else {
+              if (state_val_17997 === 1) {
+                var inst_17992 = mockdatabase.p.call(null, k, v);
+                var state_17996__$1 = state_17996;
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_17996__$1, 2, inst_17992);
+              } else {
+                return null;
+              }
+            }
+          };
+        }(c__5740__auto__);
+        return function(switch__5727__auto__, c__5740__auto__) {
+          return function() {
+            var state_machine__5728__auto__ = null;
+            var state_machine__5728__auto____0 = function() {
+              var statearr_17999 = [null, null, null, null, null];
+              statearr_17999[0] = state_machine__5728__auto__;
+              statearr_17999[1] = 1;
+              return statearr_17999;
+            };
+            var state_machine__5728__auto____1 = function(state_17996) {
+              while (true) {
+                var result__5729__auto__ = switch__5727__auto__.call(null, state_17996);
+                if (cljs.core.keyword_identical_QMARK_.call(null, result__5729__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
+                  continue;
+                } else {
+                  return result__5729__auto__;
+                }
+                break;
+              }
+            };
+            state_machine__5728__auto__ = function(state_17996) {
+              switch(arguments.length) {
+                case 0:
+                  return state_machine__5728__auto____0.call(this);
+                case 1:
+                  return state_machine__5728__auto____1.call(this, state_17996);
+              }
+              throw new Error("Invalid arity: " + arguments.length);
+            };
+            state_machine__5728__auto__.cljs$core$IFn$_invoke$arity$0 = state_machine__5728__auto____0;
+            state_machine__5728__auto__.cljs$core$IFn$_invoke$arity$1 = state_machine__5728__auto____1;
+            return state_machine__5728__auto__;
+          }();
+        }(switch__5727__auto__, c__5740__auto__);
+      }();
+      var state__5742__auto__ = function() {
+        var statearr_18000 = f__5741__auto__.call(null);
+        statearr_18000[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__5740__auto__;
+        return statearr_18000;
+      }();
+      return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__5742__auto__);
+    };
+  }(c__5740__auto__));
+  return c__5740__auto__;
+};
 goog.provide("intercomMakeUtil");
 goog.require("cljs.core");
 goog.provide("app.main");
@@ -44601,24 +44834,3 @@ app.main.entryy = function entryy() {
   return c__5740__auto__;
 };
 window.onload = app.main.entryy;
-goog.provide("mockdatabase");
-goog.require("cljs.core");
-mockdatabase.mdbase = function() {
-  var obj10399 = {};
-  return obj10399;
-}();
-mockdatabase.g = function g(kie) {
-  return mockdatabase.mdbase[kie];
-};
-mockdatabase.p = function p(kie, v) {
-  return mockdatabase.mdbase[kie] = v;
-};
-mockdatabase.ps = function ps(kie, v) {
-  return mockdatabase.mdbase[kie] = v;
-};
-mockdatabase.update = function update(kie, v) {
-  return mockdatabase.mdbase[kie] = v;
-};
-goog.provide("mw");
-goog.require("cljs.core");
-mw.mdbase = cljs.core.List.EMPTY;
