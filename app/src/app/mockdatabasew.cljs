@@ -13,16 +13,16 @@
   )
 (defn g[k]
   (go
-  (<! (m/g k))
+   (m/g k)
     )
   )
 (defn update[k v]
   (go
-    (<! (m/update k v))
+     (m/update k v)
     )
   )
 (defn p[k v]
   (go
-    (<! (m/p k v))
+     (m/p k v)
     )
   )

@@ -1,7 +1,7 @@
 
  (ns testt
    (:require [cemerick.cljs.test :as t]
-             [pubsub :as pubsub]
+             ;[pubsub :as pubsub]
 )
      (:require-macros [cemerick.cljs.test
                        :as tt
@@ -79,7 +79,6 @@
   )
 (deftest blocksyncHigherBaseHasBlockInDB
 
-  
   )
 (deftest blocksyncHigherBaseDoesNotHaveBlockInDB
   
