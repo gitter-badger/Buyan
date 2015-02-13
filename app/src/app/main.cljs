@@ -13,6 +13,18 @@
 (enable-console-print!)
 
 
+<<<<<<< HEAD
+=======
+;initial function for db
+
+
+;
+;promt user for id that will be used as his peer id
+;(def id (js/prompt "enter id"))
+;(l/og :main "user id %s " id)
+
+(def start (chan))
+>>>>>>> 58c0351e16738b5aa3397015782f8900d832c865
 
 
 ;listen on global document for transactions and publish them to channel transactionch
@@ -41,7 +53,34 @@
 
       (l/og :conn "about to connect from heere")
       ;(.log js/console (nth peer 1))
+<<<<<<< HEAD
 )
+=======
+      (go
+        (def id (<! (g "lid")))
+        (l/og :entryy "got id %s " id)
+        (if id (do
+
+                 (.log js/console id)
+                 (.val  (js/$ "#id") id)
+                 (def peerjs (js/Peer. id   peerParams))
+                 (init peerjs)
+                 (.on peerjs "connection" comm/onConnection)
+                 )
+               (do
+                 ;  (<! ( initDBase))
+                 ))
+
+
+        ;start submodules
+        (pubsub/initpubsub)
+        ;register all pubsub subscriptions
+        (comm/setupComm)
+        (comm/startP2PCommLoop)
+        (ht/run "Taras Bulba" "zaparozie r0x" "i4c32d4308e1fe.jpg" "- zaparozie")
+
+        ))
+>>>>>>> 58c0351e16738b5aa3397015782f8900d832c865
 ;intercom is protocol state machine
 
 ;what channels are listened on

@@ -13,6 +13,7 @@
      [reagent.core :as reagent :refer [atom]]
     [cljs.core.async :refer [chan close! timeout put!]]
              
+             ;[pubsub :as pubsub]
 )
      (:require-macros [cemerick.cljs.test
                        :as tt
@@ -90,7 +91,6 @@
   )
 (deftest blocksyncHigherBaseHasBlockInDB
 
-  
   )
 (deftest blocksyncHigherBaseDoesNotHaveBlockInDB
   
