@@ -8,7 +8,9 @@
     [blockchain :as b]
     [peerjs :refer [peerjs]]
     [crypto :refer [sha256]]
+    [communications :as comm]
 
+    [peerjs :refer [ peerParams]]
     [mining :refer [mine]]
 
 
@@ -29,6 +31,68 @@
 (def peers [])
 
 
+;channel to recieve new transaction
+(def transactionch (chan))
+(set! (.-type transactionch) "transactionch")
+
+;channel to recieve results from crypto functions
+(def cryptoCh (chan))
+(set! (.-type cryptoCh) "cryptoch")
+
+(defn setID [ev id ]
+      (println id)
+      (go
+        (p "lid" id)
+        (.log js/console  (<! (g "lid")))
+
+
+          (def peerjs (js/Peer. id   peerParams))
+          (init peerjs)
+          (.on peerjs "connection" comm/onConnection)
+
+        )
+
+      ;(.on peerjs "connection" onConnection)
+      )
+
+;(println id)
+;keeps track of protocol and peers
+;(initDBase dbase)
+
+;(defn f [x] (println "fja") (println "x"))
+;(sub "s1" f)
+;(pub "s1" "asd")
+
+;this here is for debugging
+;(.enable (.-debug js/PouchDB) "*")
+(def start (chan))
+
+(defn initial []
+        (go
+        (def id (<! (g "lid")))
+        (l/og :entryy "got id %s " id)
+        (if id (do
+
+                 (.log js/console id)
+                 (.val  (js/$ "#id") id)
+                 (def peerjs (js/Peer. id   peerParams))
+                 (init peerjs)
+                 (.on peerjs "connection" comm/onConnection)
+                 )
+               (do
+                 (<! ( initDBase))
+                 ))
+
+
+        ;start submodules
+        (pubsub/initpubsub)
+        ;register all pubsub subscriptions
+        (comm/setupComm)
+        (comm/startP2PCommLoop)
+        (ht/run "Taras Bulba" "zaparozie r0x" "i4c32d4308e1fe.jpg" "- zaparozie")
+
+        )
+  )
 ; channel to anounce new connectinos
 (def connectionch (chan))
 (defn broadcastNewBlock [blockk]

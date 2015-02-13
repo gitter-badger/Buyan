@@ -7,6 +7,7 @@
                    [servant.macros :refer [defservantfn]]))
 (def proxychan (chan))
 (def proxychan2 (chan 1))
+(def sendReceiveCh (chan 1))
 (defn get [] (go
 
                   (def a (<! proxychan2))
@@ -45,3 +46,24 @@
                 (aget m "msg"))
               (recur )))
       )
+(defn makeMsg [typ m]
+  (js-obj typ m)
+  )
+(defn receive [typ]
+
+      (l/og :receive "about to recieve %s" typ)
+      (go
+        (loop []
+              (def m (<! sendReceiveCh))
+              (>! m sendReceiveCh)
+
+              (if ((== (aget m "typ") typ) or )
+                (aget m "msg")
+              (recur ))))
+  )
+(defn send [typ m]
+  (go
+
+        (>! (makeMsg typ m)  sendReceiveCh)
+   )
+  )

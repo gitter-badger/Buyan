@@ -27,7 +27,7 @@
                                    ; :optimizations :none
                                    :source-maps true
                                    }}]
-              :test-commands {"unit-tests" ["slimerjs" :runner
+              :test-commands {"unit-tests" ["phantomjs" :runner
                                             "this.literal_js_was_evaluated=true"
                                             "bower_components/jquery/dist/jquery.js"
                                             "bower_components/modernizr/modernizr.js"

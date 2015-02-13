@@ -1,7 +1,18 @@
 
  (ns testt
    (:require [cemerick.cljs.test :as t]
-             [pubsub :as pubsub]
+    [intercom :as i]
+    [communications :as comm]
+    [logger :as l]
+    [crypto ]
+    [html :as ht]
+    [peerjs :refer [ peerParams]]
+    [blockchain :refer [makeBlockHeader]]
+    [database :refer [g p ps ]]
+    [pubsub :refer [pub sub get set init]]
+     [reagent.core :as reagent :refer [atom]]
+    [cljs.core.async :refer [chan close! timeout put!]]
+             
 )
      (:require-macros [cemerick.cljs.test
                        :as tt
