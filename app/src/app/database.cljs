@@ -10,7 +10,12 @@
                    )
 
   )
-
+(defn cleandb[]
+  (m/cleandb)
+  )
+(defn dumpdb[]
+  (m/dumpdb)
+  )
 (def onDatabaseChange (chan))
 (set! (.-type onDatabaseChange) "databaseChange")
 
@@ -35,7 +40,7 @@
       )
 (defn ps[k v]
       (go
-        ;(m/p k v)
+        (<! (m/p k v))
         )
       )
 

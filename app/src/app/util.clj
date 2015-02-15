@@ -4,9 +4,12 @@
 ;(defn pub [ch event message] (go (>! ch message)))
 (defmacro await [&fja]
 
-           ; `(<! (quote ~fja))
+            ;`(<! (quote ~fja))
           )
+(defmacro receiv [&fja]
 
+            ;`(<! (quote ~fja))
+          )
 ;
 ;(macroexpand (list 'go
 ;                   '(.log js/console "asdas")

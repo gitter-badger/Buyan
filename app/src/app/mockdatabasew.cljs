@@ -1,5 +1,5 @@
 (ns mockdatabasew
-  
+
   (:require
     [logger :as l]
     [mockdatabase :as m]
@@ -9,7 +9,14 @@
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
                    )
   )
-(def mdbase ()
+(def mdbase (js-obj)
+  )
+(defn cleandb[]
+  (l/og :cleandb "cleandb " mdbase)
+  (set! mdbase (js-obj))
+  )
+(defn dumpdb[]
+  (l/og :dumpdb "dbase " mdbase)
   )
 (defn g[k]
   (go

@@ -3,6 +3,7 @@
 
     [logger :as l]
     [pubsub :as ps]
+    [router ]
     [cljs.core.async :refer [chan close! timeout put!]]
 )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
@@ -24,11 +25,21 @@
    ;                                     ) )
 
 ;(.on (js/$ js/document) "connectTo"  connectTo)
-
-
+(defn dumpdb []
+  (ps/s "dumpdb" "")
+  )
+(.on (js/$ js/document) "dumpdb"  dumpdb)
+(defn cleandb []
+  (ps/s "cleandb" "")
+  )
+(.on (js/$ js/document) "cleandb"  cleadb)
 ;when someone connects to this user send that new connection to channel
 
+(defn replScratchFunction[]
 
+  (dumpdb)
+  (cleandb)
+  )
 
 ;make two channels for connection. one for reading from conn, one for writing to it
 
@@ -38,7 +49,7 @@
 ;(.on (js/$ js/document) "setid"  setID)
 (defn pri [x]
   (println x)
-  2
+  3
   )
 (defn entryy []
       "main program entry point.
@@ -46,12 +57,13 @@
       enters loop waiting for messages and reacts to them"
 
       ;now that channels are setup
-  (go
-    (ps/s "msg1" "text")
-    (ps/s "msg2" "text")
-    (def a (<! (ps/rr "asd" pri "msg1" pri)))
-    (l/og :main "received" a)
-  )
+  (router/route)
+;;   (go
+;;     (ps/s "msg1" "text")
+;;     (ps/s "msg2" "text")
+;;     (def a (<! (ps/rr "asd" pri "msg1" pri)))
+;;     (l/og :main "received" a)
+;;   )
 )
 
 ;intercom is protocol state machine

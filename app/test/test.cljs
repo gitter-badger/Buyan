@@ -4,11 +4,11 @@
     [intercom :as i]
     [communications :as comm]
     [logger :as l]
-    [crypto ]
+    [crypto :as cr]
     [html :as ht]
     [peerjs :refer [ peerParams]]
     [blockchain :refer [makeBlockHeader]]
-    [database :refer [g p ps ]]
+    [database :refer [g p ps ] :as db]
     [pubsub :refer [pub sub get set init]]
      [reagent.core :as reagent :refer [atom]]
     [cljs.core.async :refer [chan close! timeout put!]]
@@ -22,7 +22,9 @@
 (deftest initdbase
   ;check for root in database
   ;;clean db
+  (db/cleandb)
   ;;initdb
+  (db/initDBase)
   ;;get root
   ;;check if root
   )
@@ -36,9 +38,12 @@
   ;;check if block returned properly
   )
 (deftest saveblock
+
   ;check for root in database
   ;;clean db
+  (db/cleandb)
   ;;initdb
+
   ;;make block
   ;;save block
   ;;check block
@@ -88,6 +93,10 @@
   )
 (deftest sendblocks
   ;; send from last known block
+  )
+(deftest dumpDatabase
+  ;; send from last known block
+  (db/dumpdb)
   )
 (deftest blocksyncHigherBaseHasBlockInDB
 
