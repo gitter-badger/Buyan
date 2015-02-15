@@ -10,6 +10,8 @@
 
   )
 (def dbase (js-obj))
+
+
 ;PouchDB.destroy('dbname', function(err, info) { });
 ;
 ;(defn initDBase [dbase]

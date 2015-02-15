@@ -4,7 +4,7 @@
 ;(defn pub [ch event message] (go (>! ch message)))
 (defmacro await [&fja]
 
-            `(<! (quote ~fja))
+           ; `(<! (quote ~fja))
           )
 
 ;

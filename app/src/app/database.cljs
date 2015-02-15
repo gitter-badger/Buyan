@@ -1,7 +1,6 @@
 (ns database
   (:require
     [logger :as l]
-    [crypto ]
 
     [mockdatabasew :as m]
     [cljs.core.async :refer [chan close! timeout put!]]
@@ -12,7 +11,33 @@
 
   )
 
+(def onDatabaseChange (chan))
+(set! (.-type onDatabaseChange) "databaseChange")
 
+(defn update [k f]
+      (l/og :dbupdate "getting from db " k)
+  )
+;(def p (partial putDB ))
+(defn g[k]
+      (go
+        (m/g k)
+        )
+      )
+(defn update[k v]
+      (go
+        (m/update k v)
+        )
+      )
+(defn p[k v]
+      (go
+        (m/p k v)
+        )
+      )
+(defn ps[k v]
+      (go
+        ;(m/p k v)
+        )
+      )
 
 ;initial function for db
 
@@ -34,8 +59,10 @@
                (do
                  (l/og :initDBase "nothing in database")
                  (<! (ps "height" 0))
+                 ; (makeBlockHeader 0 0 0 0 0 0 0)
                  (def blck (js-obj "header"
-                                   (makeBlockHeader 0 0 0 0 0 0 0)
+                                  0
+
 
                                    "hash" (<! (crypto/bHash 0)) "transactions" []))
                  ;args to make blockheader version previous fmroot timestamp bits nonce txcount
@@ -73,10 +100,10 @@
 
 (defn connectTo [ev id]
 (go
-      (l/og :connectTo (first id))
-      (l/og :connectTo (<! ( get)) )
+      (l/og :connectTo "" (first id))
+      (l/og :connectTo "" (<! ( get)) )
 
-      (l/og :connectTo (<! ( get)) )
+      (l/og :connectTo "" (<! ( get)) )
       (let [conn (.connect (<! ( get)) id)]
            (.on conn "open" (partial comm/onOpen conn))
 
@@ -85,25 +112,3 @@
            ))
 
 
-(def onDatabaseChange (chan))
-(set! (.-type onDatabaseChange) "databaseChange")
-
-(defn update [k f]
-      (l/og :dbupdate "getting from db " k)
-  )
-;(def p (partial putDB ))
-(defn g[k]
-      (go
-        (m/g k)
-        )
-      )
-(defn update[k v]
-      (go
-        (m/update k v)
-        )
-      )
-(defn p[k v]
-      (go
-        (m/p k v)
-        )
-      )

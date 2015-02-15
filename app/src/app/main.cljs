@@ -2,7 +2,7 @@
   (:require
 
     [logger :as l]
-    [pubsub :refer [pub sub get set init] :as ps]
+    [pubsub :as ps]
     [cljs.core.async :refer [chan close! timeout put!]]
 )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
@@ -19,9 +19,11 @@
 
 
 ;listen on global document for transactions and publish them to channel transactionch
-(.on (js/$ js/document) "transaction" ( fn [a1 a2 ] (pub "transaction" a2)) )
+;(.on (js/$ js/document) "transaction" ( fn [a1 a2 ]
+                                        ;(pub "transaction" a2)
+   ;                                     ) )
 
-(.on (js/$ js/document) "connectTo"  connectTo)
+;(.on (js/$ js/document) "connectTo"  connectTo)
 
 
 ;when someone connects to this user send that new connection to channel
@@ -33,10 +35,10 @@
 (def empty-string "")
 
 
-(.on (js/$ js/document) "setid"  setID)
+;(.on (js/$ js/document) "setid"  setID)
 (defn pri [x]
   (println x)
-  1
+  2
   )
 (defn entryy []
       "main program entry point.

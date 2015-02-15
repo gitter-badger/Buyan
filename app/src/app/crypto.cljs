@@ -1,10 +1,10 @@
-(ns app.crypto
+(ns crypt0
 
   (:require
 
-    [database :as db]
+    ;[database :as db]
     [logger :as l]
-    [pubsub :refer [pub sub]]
+   ; [pubsub :as ps]
 
     [cljs.core.async :refer [chan close! timeout put!]])
 
@@ -12,6 +12,59 @@
                    [app.util :as a :refer [await]]
                    )
   )
+
+(defn arraybtostring [buff]
+      (js/arrayBToString buff)
+
+)
+(defn encode [x] (.encode (js/TextEncoder. "utf-8") x))
+(def shaC (chan))
+(defn resultToCh [chan digest]
+      (def m (arraybtostring digest))
+      (l/og :blockchain "to channel: %s" m)
+      (go (>! chan m))
+      )
+
+(defn shaCallb [digest] (do
+                          (l/og :shaCallB "%s" "about to do hash2")
+                          (def h (arraybtostring digest))
+                          (l/og :shaCallB "" h)
+
+                          (ps/pub "crypto" h)
+                          ;(go
+                          ;  (>! app.main.cryptoCh h)
+                          ;  )
+
+                          ))
+(defn sha256 [x]
+      (l/og :sha256 "sha256 %s" x)
+      ;(l/og :blockchain "%s" (encode "sha256"))
+      (.then (js/crypto.subtle.digest (js-obj "name" "SHA-256") (encode x))
+             shaCallb
+             )
+      )
+(defn sha256c [c x]
+      ;(l/og :blockchain "%s" "sha256")
+      ;(l/og :blockchain "%s" (encode "sha256"))
+      (.then (js/crypto.subtle.digest (js-obj "name" "SHA-256") (encode x))
+             c
+             )
+      )
+(defn s256 [k]
+      (l/og :blockchain "about to sha256 " k)
+      (go
+        (let [c (chan)]
+             (.then (js/crypto.subtle.digest (js-obj "name" "SHA-256") (encode k)) #(put! c %))
+
+
+             (def r (arraybtostring (<! c)))
+             (l/og :s256 (+ "got from sha256 " k) r)
+             r
+             )
+        )
+      )
+
+
 ;(blockchain/blockKnown (js-obj "hash" "asdsad"))
 ;(blockchain/blockKnown (js-obj "hash" "last"))
 (defn bHash [blockHeader]
@@ -23,10 +76,6 @@
         )
       )
 
-(defn arraybtostring [buff]
-      (js/arrayBToString buff)
-      )
-(defn encode [x] (.encode (js/TextEncoder. "utf-8") x))
 ;note this is fake merkle root but does the trick it hashes chain of transactions
 ;for now it will be here due to simplicity and bcz I could not find math functions in clojurescript easily
 ;merkleRoot is more efficient at getting any transaction in block because you need to supply only path to the root to verify
@@ -76,47 +125,3 @@
 
         )
       )
-(def shaC (chan))
-(defn resultToCh [chan digest]
-      (def m (arraybtostring digest))
-      (l/og :blockchain "to channel: %s" m)
-      (go (>! chan m))
-      )
-(defn sha256 [x]
-      (l/og :sha256 "sha256 %s" x)
-      ;(l/og :blockchain "%s" (encode "sha256"))
-      (.then (js/crypto.subtle.digest (js-obj "name" "SHA-256") (encode x))
-             shaCallb
-             )
-      )
-(defn sha256c [c x]
-      ;(l/og :blockchain "%s" "sha256")
-      ;(l/og :blockchain "%s" (encode "sha256"))
-      (.then (js/crypto.subtle.digest (js-obj "name" "SHA-256") (encode x))
-             c
-             )
-      )
-(defn s256 [k]
-      (l/og :blockchain "about to sha256 " k)
-      (go
-        (let [c (chan)]
-             (.then (js/crypto.subtle.digest (js-obj "name" "SHA-256") (encode k)) #(put! c %))
-
-
-             (def r (arraybtostring (<! c)))
-             (l/og :s256 (+ "got from sha256 " k) r)
-             r
-             )
-        )
-      )
-(defn shaCallb [digest] (do
-                          (l/og :shaCallB "%s" "about to do hash2")
-                          (def h (arraybtostring digest))
-                          (l/og :shaCallB h)
-
-                          (pub "crypto" h)
-                          ;(go
-                          ;  (>! app.main.cryptoCh h)
-                          ;  )
-
-                          ))

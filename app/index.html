@@ -100,8 +100,8 @@
             <input id="idt"   type="text"  size="30"/>
             <button  onclick="$(document).trigger('connectTo',$('#idt').val())"> connect </button>
 
-            <button  onclick="PouchDB.destroy('dbname', function(err, info) { });"> flushDB </button>
-            <button  onclick="(new PouchDB('dbname')).allDocs({include_docs: true}, function(err, response) { console.log(response)});"> dumpDB </button>
+            <button  onclick="$(document).trigger('flushdb',0); "> flushDB </button>
+            <button  onclick="$(document).trigger('dumpdb',0);"> dumpDB </button>
 </div>
             <br/>
 <button  onclick="$(document).trigger('transaction',new Date().getTime())"> transact </button>
