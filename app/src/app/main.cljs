@@ -34,8 +34,8 @@
 
 
 (.on (js/$ js/document) "setid"  setID)
-(defn pri []
-  (println "pri")
+(defn pri [x]
+  (println x)
   1
   )
 (defn entryy []

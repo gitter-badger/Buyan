@@ -108,7 +108,7 @@
                   (do
                     ;;yay we found one now execute the function associated with it
                     (l/og :receive "found " (nth typ cnt ))
-                  ((nth  typ (+ cnt 1)))
+                  ((nth  typ (+ cnt 1)) (aget  mtemp "msg"))
                   )
 
                   (recur (+ cnt 2))
