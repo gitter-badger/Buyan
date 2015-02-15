@@ -12,7 +12,7 @@
     [pubsub :refer [pub sub get set init]]
      [reagent.core :as reagent :refer [atom]]
     [cljs.core.async :refer [chan close! timeout put!]]
-             
+
              ;[pubsub :as pubsub]
 )
      (:require-macros [cemerick.cljs.test
@@ -44,7 +44,7 @@
   ;;check block
   )
 (deftest blockheight
-  ;;add block 
+  ;;add block
   ;;check height
   )
 (deftest sha256
@@ -52,7 +52,7 @@
   ;;check hash
   )
 (deftest transaction-making
-  ;;feed input 
+  ;;feed input
   ;;make transaction
   )
 (deftest merkleroot
@@ -93,10 +93,10 @@
 
   )
 (deftest blocksyncHigherBaseDoesNotHaveBlockInDB
-  
+
   )
 (deftest blocksyncForkBase
-  
+
   )
  (deftest somewhat-less-wat
           ;(.log js/console js/PouchDB)

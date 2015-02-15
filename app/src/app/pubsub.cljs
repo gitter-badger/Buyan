@@ -7,7 +7,7 @@
                    [servant.macros :refer [defservantfn]]))
 (def proxychan (chan))
 (def proxychan2 (chan 1))
-(def sendReceiveCh (chan 1))
+(def sendReceiveCh (chan 1000))
 (defn get [] (go
 
                   (def a (<! proxychan2))
@@ -37,33 +37,39 @@
       (l/og :pub "pubing " (+ typ " " msg))
       (go (>! proxychan (js-obj "typ" typ "msg" msg)))
       )
+
+(defn makeMsg [typ m]
+  (js-obj "typ" typ "msg" m)
+  )
 (defn initpubsub []
       (go
-        (loop []
-              (def m (<! proxychan))
-              (l/og :sub "about to deliver subbed %s" m)
-              ((aget subs (aget m "typ"))
-                (aget m "msg"))
-              (recur )))
+        ;(>!  sendReceiveCh (makeMsg "maker" 0))
+     )
       )
-(defn makeMsg [typ m]
-  (js-obj typ m)
-  )
-(defn receive [typ]
+(defn r [typ]
 
-      (l/og :receive "about to recieve %s" typ)
-      (go
-        (loop []
-              (def m (<! sendReceiveCh))
-              (>! m sendReceiveCh)
-
-              (if ((== (aget m "typ") typ) or )
-                (aget m "msg")
-              (recur ))))
-  )
-(defn send [typ m]
   (go
+    (l/og :receive "about to recieve %s" typ)
+    (>!  sendReceiveCh (js-obj "typ" 0))
+   ; (l/og :receive "returned message no for the loop " m)
+    (loop []
+      (l/og :receive "about to recieve in loop")
+      (def mtemp (<! sendReceiveCh))
+      (l/og :receive "now looking at " mtemp)
+      (if (== (aget mtemp "typ") typ)
+        (aget mtemp "msg")
 
-        (>! (makeMsg typ m)  sendReceiveCh)
+        (if (== (aget mtemp "typ") 0)
+          0
+          (recur )
+        )
+      )
+    )
+   )
+  )
+(defn s [typ m]
+  (go
+        (l/og :send typ m)
+        (>! sendReceiveCh (makeMsg typ m) )
    )
   )

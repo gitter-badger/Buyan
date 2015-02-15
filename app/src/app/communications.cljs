@@ -6,11 +6,10 @@
     [database :as db]
     [logger :as l]
     [blockchain :as b]
-    [peerjs :refer [peerjs]]
     [crypto :refer [sha256]]
-    [communications :as comm]
+   ; [communications :as comm]
 
-    [peerjs :refer [ peerParams]]
+    [peerjs :refer [peerjs peerParams]]
     [mining :refer [mine]]
 
 

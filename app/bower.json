@@ -10,6 +10,8 @@
     "react": "~0.12.2",
     "terminal.js": "Gottox/terminal.js#~1.0.1",
     "bootstrap-material-design": "~0.2.2",
-    "leaf-css-framework": "kkortes/leaf"
+    "leaf-css-framework": "kkortes/leaf",
+    "eventEmitter": "4.x",
+    "eventie": ">=1.0.4 <2"
   }
 }

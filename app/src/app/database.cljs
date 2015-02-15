@@ -90,6 +90,7 @@
 
 (defn update [k f]
       (l/og :dbupdate "getting from db " k)
+  )
 ;(def p (partial putDB ))
 (defn g[k]
       (go
