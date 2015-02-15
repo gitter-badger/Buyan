@@ -67,6 +67,59 @@
     )
    )
   )
+
+
+(defn rr [& typ]
+
+  (go
+    (l/og :receive "about to recieve " typ)
+
+    (l/og :receive "about to recieve " (/ (count typ) 2))
+
+    (>!  sendReceiveCh (js-obj "typ" 0))
+   ;;loop until all messages have been checked
+   ;;similar to the way erlang process checks its mailbox
+    (loop []
+      (l/og :receive "about to recieve in loop")
+      (def mtemp (<! sendReceiveCh))
+      (if (== (aget mtemp "typ") 0)
+        (do
+          ;;if we looked at all return 0
+          (l/og :receive "got null")
+          0
+        )
+
+
+        (do
+          (l/og :receive "now looking at " mtemp)
+          ;; out of all messages we are waitin for
+          ;; check if the one extracted from "mailbox" is among them
+          ;;
+          (def result (loop [cnt 0]
+
+            (if (< cnt  (count typ) )
+              (do
+                (l/og :receive "checking " cnt)
+                (l/og :receive "got " mtemp)
+
+                (l/og :receive "looking for " (nth typ cnt ))
+
+                (if (== (aget mtemp "typ") (nth typ cnt ))
+                  (do
+                    ;;yay we found one now execute the function associated with it
+                    (l/og :receive "found " (nth typ cnt ))
+                  ((nth  typ (+ cnt 1)))
+                  )
+
+                  (recur (+ cnt 2))
+                )
+              )
+            )
+          ))
+        )
+      )
+   ))
+    )
 (defn s [typ m]
   (go
         (l/og :send typ m)

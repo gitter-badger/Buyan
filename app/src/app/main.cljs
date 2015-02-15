@@ -34,7 +34,10 @@
 
 
 (.on (js/$ js/document) "setid"  setID)
-
+(defn pri []
+  (println "pri")
+  1
+  )
 (defn entryy []
       "main program entry point.
       It checks database to initialise it.
@@ -44,7 +47,7 @@
   (go
     (ps/s "msg1" "text")
     (ps/s "msg2" "text")
-    (def a (<! (ps/r "msg1" "text")))
+    (def a (<! (ps/rr "asd" pri "msg1" pri)))
     (l/og :main "received" a)
   )
 )

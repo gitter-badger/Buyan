@@ -1,6 +1,14 @@
 (ns pouchDB)
 ;(def dbase (js/PouchDB. "dbname"))
 
+(def flushdb[]
+  ;PouchDB.destroy('dbname', function(err, info) { });
+  )
+
+(def dumpdb[]
+  ;(new PouchDB('dbname')).allDocs({include_docs: true}, function(err, response) { console.log(response)});
+
+  )
 (def dbase (js-obj))
 ;PouchDB.destroy('dbname', function(err, info) { });
 ;

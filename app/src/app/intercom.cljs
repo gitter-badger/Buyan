@@ -2,9 +2,9 @@
   (:require
     [logger :as l]
 
-    [intercomMake :as im]
+   ; [intercomMake :as im]
 
-    [intercomTake :as it]
+    ;[intercomTake :as it]
 
     [pubsub :refer [pub sub]]
 
@@ -20,7 +20,7 @@
 (def intercomState "start")
 (def state (atom {}))
 ;maybe put some dsl in future here that would be agreed in blockchain
-;but for now state machine   
+;but for now state machine
 
 ;every time message arives it is inserte here
 (def inputch (chan))
@@ -40,8 +40,8 @@
       )
 
 
-;switches state of the state machine     
-;for protocol check out 
+;switches state of the state machine
+;for protocol check out
 ;![](../protocol.png)
 
 (defn setIntercomState [conn state]

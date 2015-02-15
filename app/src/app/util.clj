@@ -2,7 +2,7 @@
 
 ;pub sub; send events to channel
 ;(defn pub [ch event message] (go (>! ch message)))
-(defmacro await [fja]
+(defmacro await [&fja]
 
             `(<! (quote ~fja))
           )
