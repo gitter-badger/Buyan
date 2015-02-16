@@ -24,7 +24,8 @@
   ;;clean db
   (db/cleandb)
   ;;initdb
-  (db/initDBase)
+  (db/initDBase 1 )
+  (db/dumpdb)
   ;;get root
   ;;check if root
   )
