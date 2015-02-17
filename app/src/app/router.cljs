@@ -6,7 +6,7 @@
     [database :as db]
     [logger :as l]
     [blockchain :as b]
-    [crypto :refer [sha256]]
+    [crypt0 :refer [sha256] :as crypto]
     [peerjs :refer [peerjs peerParams]]
     [mining :refer [mine]]
 
@@ -29,10 +29,26 @@
       (def a (<! (pubsub/rrs
                   "dumpdb" #(db/dumpdb)
                   "cleandb" #(db/cleandb)
-                  "hello" #(a)
+                  "hash" #(crypto/s256)
                   )))
       (l/og :route "received" a)
 
         (recur)))
+
+  )
+(defn routea [a]
+
+  (go
+
+
+      (def a (<! (pubsub/rrsa
+                  a
+                  "dumpdb" #(db/dumpdb)
+                  "cleandb" #(db/cleandb)
+                  "hash" #(crypto/s256)
+                  )))
+      (l/og :route "received" a)
+
+        (recur))
 
   )

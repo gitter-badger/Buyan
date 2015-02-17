@@ -38,7 +38,7 @@
 (defn replScratchFunction[]
  (ps/si "dumpdb")
   (go
-   (<! (ps/si "hello" "a"))
+   (<! (ps/sia "hash" "s"))
   )
    (dumpdb)
   (cleandb)
@@ -63,10 +63,12 @@
   (router/route)
   (go
 
+
+
   ;  (ps/s "msg1" "text")
   ;  (ps/s "msg2" "text")
    ;(def a (<! (ps/rr "asd" pri "msg1" pri)))
-    (l/og :main "received" a)
+    (l/og :main "received" (<! (ps/sia "hash" "s")))
   )
 )
 
