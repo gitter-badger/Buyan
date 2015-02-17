@@ -19,6 +19,7 @@
       (if (or (some #{type} tagsOn) (some #{:all} tagsOn))
         (.log js/console (+ type " " format) data)
 
-        ))
+        )
+  data)
 ;database instance
 ;(.enable (.-debug js/PouchDB) "*")

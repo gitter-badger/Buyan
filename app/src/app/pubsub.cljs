@@ -8,6 +8,7 @@
 (def proxychan (chan))
 (def proxychan2 (chan 1))
 (def sendReceiveCh (chan 1000))
+(def receiveCH (chan 1000))
 (defn get [] (go
 
                   (def a (<! proxychan2))
@@ -162,11 +163,13 @@
                   (do
                     ;;yay we found one now execute the function associated with it
                     (l/og :receive "found " (nth typ cnt ))
-                  ((nth  typ (+ cnt 1)) (aget  mtemp "msg"))
+                    (def ret ((nth  typ (+ cnt 1)) (aget  mtemp "msg")))
+                    (l/og :receive "return " ret)
+                    (>! receiveCH ret)
                   )
                   (do
 
-   ; (>!  sendReceiveCh mtemp)
+                  ;(>!  sendReceiveCh mtemp)
                   (recur (+ cnt 2)))
                 )
               )
@@ -174,11 +177,21 @@
           ))
         )
       )
-   ))
+   (recur)))
     )
 (defn s [typ m]
   (go
         (l/og :send typ m)
         (>! sendReceiveCh (makeMsg typ m) )
+       ; (<! receiveCH)
+   )
+  )
+(defn si [typ m]
+  (go
+        (l/og :send typ m)
+        (>! sendReceiveCh (makeMsg typ m) )
+      (def n  (<! receiveCH))
+        (l/og :send "recieved" n)
+
    )
   )

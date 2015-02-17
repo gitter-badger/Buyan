@@ -4,7 +4,7 @@
     [intercom :as i]
     [communications :as comm]
     [logger :as l]
-    [crypto :as cr]
+    [crypt0 :as cr]
     [html :as ht]
     [peerjs :refer [ peerParams]]
     [blockchain :refer [makeBlockHeader]]

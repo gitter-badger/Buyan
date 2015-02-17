@@ -51,7 +51,10 @@
 ;promt user for id that will be used as his peer id
 ;(def id (js/prompt "enter id"))
 ;(l/og :main "user id %s " id)
-
+(defn initDBase [x]
+  (l/og :initdbwraper "wrapper"  x)
+  (m/initDBase x)
+  )
 (defn connectTo [ev id]
 (go
       (l/og :connectTo "" (first id))

@@ -17,7 +17,7 @@
             ]
 
   :source-paths ["src" "test"]
-:editor.clojurescript [(:lt.objs.editor.file/on-save :client.refresh-connection)]
+
   :cljsbuild {
               :builds [{:id "app"
                         :source-paths ["src" "test"]

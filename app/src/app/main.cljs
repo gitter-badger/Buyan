@@ -36,8 +36,11 @@
 ;when someone connects to this user send that new connection to channel
 
 (defn replScratchFunction[]
-
-  (dumpdb)
+ (ps/si "dumpdb")
+  (go
+   (<! (ps/si "hello" "a"))
+  )
+   (dumpdb)
   (cleandb)
   )
 
@@ -58,12 +61,13 @@
 
       ;now that channels are setup
   (router/route)
-;;   (go
-;;     (ps/s "msg1" "text")
-;;     (ps/s "msg2" "text")
-;;     (def a (<! (ps/rr "asd" pri "msg1" pri)))
-;;     (l/og :main "received" a)
-;;   )
+  (go
+
+  ;  (ps/s "msg1" "text")
+  ;  (ps/s "msg2" "text")
+   ;(def a (<! (ps/rr "asd" pri "msg1" pri)))
+    (l/og :main "received" a)
+  )
 )
 
 ;intercom is protocol state machine

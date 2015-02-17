@@ -18,17 +18,21 @@
                    [servant.macros :refer [defservantfn]])
   )
 
+(defn a[x ]
+  (js-obj "a" 1)
+  )
 (defn route []
-  (go (loop []
 
+  (go
 
+(loop []
       (def a (<! (pubsub/rrs
                   "dumpdb" #(db/dumpdb)
                   "cleandb" #(db/cleandb)
-
+                  "hello" #(a)
                   )))
       (l/og :route "received" a)
 
-  ))
+        (recur)))
 
   )
