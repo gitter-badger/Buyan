@@ -36,19 +36,3 @@
         (recur)))
 
   )
-(defn routea [a]
-
-  (go
-
-
-      (def a (<! (pubsub/rrsa
-                  a
-                  "dumpdb" #(db/dumpdb)
-                  "cleandb" #(db/cleandb)
-                  "hash" #(crypto/s256)
-                  )))
-      (l/og :route "received" a)
-
-        (recur))
-
-  )

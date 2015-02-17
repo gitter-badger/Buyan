@@ -2,12 +2,12 @@
   (:require
 
     [logger :as l]
-    [pubsub :as ps]
+    [pubsub :as ps :refer [sia]]
     [router ]
     [cljs.core.async :refer [chan close! timeout put!]]
 )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
-                   [app.util :as a :refer [await]]
+                   [app.util :as a :refer [await sweet]]
                    [servant.macros :refer [defservantfn]])
   )
 
@@ -68,7 +68,7 @@
   ;  (ps/s "msg1" "text")
   ;  (ps/s "msg2" "text")
    ;(def a (<! (ps/rr "asd" pri "msg1" pri)))
-    (l/og :main "received" (<! (ps/sia "hash" "s")))
+    (l/og :main "received" (sweet "hash" "s"))
   )
 )
 

@@ -10,6 +10,12 @@
 
             ;`(<! (quote ~fja))
           )
+(defmacro sweet [where wat]
+    (macroexpand (list '<!
+                       (list
+                        'ps/sia
+                        where wat)))
+  )
 ;
 ;(macroexpand (list 'go
 ;                   '(.log js/console "asdas")
