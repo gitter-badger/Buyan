@@ -255,7 +255,22 @@
 
    )
   )
+(defn routea [a]
 
+  (go
+
+
+       (pubsub/rrsa
+                  a
+                  "dumpdb" #(db/dumpdb)
+                  "cleandb" #(db/cleandb)
+                  "hash" #(crypto/s256)
+                  ))
+      (l/og :route "received" a)
+
+
+
+  )
 (defn sia [typ m]
   (go
         (l/og :send typ m)
