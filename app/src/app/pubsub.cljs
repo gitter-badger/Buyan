@@ -222,7 +222,7 @@
                   (do
                     ;;yay we found one now execute the function associated with it
                     (l/og :receive "found " (nth typ cnt ))
-                    (def ret (<! ((nth  typ (+ cnt 1)) (aget  mtemp "msg"))))
+                    (def ret (<! (apply (nth  typ (+ cnt 1)) (aget  mtemp "msg"))))
                     (l/og :receive "return " ret)
                     (>! ch ret)
                   )
@@ -257,7 +257,7 @@
    )
   )
 
-(defn sia [typ m]
+(defn sia [typ &m]
   (go
         (l/og :send typ m)
    (def pchannel (chan))

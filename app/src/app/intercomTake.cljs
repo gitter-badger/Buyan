@@ -3,9 +3,9 @@
     [logger :as l]
     [database :as db]
     [intercomMake :as im]
+    [blockchain :as blockchain]
 
  [pubsub :as ps :refer [sia]]
-    [blockchain :as blockchain]
     [cljs.core.async :refer [chan close! timeout put!]]
     )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
@@ -28,7 +28,7 @@
           ;block known
           (do
             (l/og :inv "block is known ")
-            (def bchainHeight (<! (blockchain/blockchainHeight)))
+            (def bchainHeight (sweet "blockchainHeight" ))
             (l/og :inv "blockchainHeight " bchainHeight)
             (def newHeight (+
                              (heightFromBlock (<! (db/g (blockchain/prevblk (aget (.-vector blocks) 0)))))
