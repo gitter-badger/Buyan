@@ -4,8 +4,7 @@
     [database :as db]
     [intercomMake :as im]
 
-
-    [pubsub :refer [pub sub]]
+ [pubsub :as ps :refer [sia]]
     [blockchain :as blockchain]
     [cljs.core.async :refer [chan close! timeout put!]]
     )
