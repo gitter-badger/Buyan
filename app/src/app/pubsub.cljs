@@ -1,6 +1,7 @@
 (ns pubsub
   (:require
     [cljs.core.async :refer [chan close! timeout put!]]
+
     [logger :as l]
     )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
@@ -255,28 +256,13 @@
 
    )
   )
-(defn routea [a]
 
-  (go
-
-
-       (pubsub/rrsa
-                  a
-                  "dumpdb" #(db/dumpdb)
-                  "cleandb" #(db/cleandb)
-                  "hash" #(crypto/s256)
-                  ))
-      (l/og :route "received" a)
-
-
-
-  )
 (defn sia [typ m]
   (go
         (l/og :send typ m)
    (def pchannel (chan))
         (>! sendReceiveCh (makeMsg typ m ) )
-   (routea pchannel )
+   (routing.routea pchannel )
       (def n  (<! pchannel))
         (l/og :send "recieved" n)
 

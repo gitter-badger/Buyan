@@ -60,7 +60,7 @@
       enters loop waiting for messages and reacts to them"
 
       ;now that channels are setup
-  (router/route)
+ ; (router/route)
   (go
 
 

@@ -1,9 +1,9 @@
 (ns database
   (:require
-    [logger :as l]
 
  [pubsub :as ps :refer [sia]]
     [mockdatabasew :as m]
+    [logger :as l]
     [cljs.core.async :refer [chan close! timeout put!]]
 
              ;[pubsub :as pubsub]
