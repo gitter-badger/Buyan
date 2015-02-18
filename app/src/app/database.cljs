@@ -2,6 +2,7 @@
   (:require
     [logger :as l]
 
+ [pubsub :as ps :refer [sia]]
     [mockdatabasew :as m]
     [cljs.core.async :refer [chan close! timeout put!]]
 

@@ -5,6 +5,7 @@
      [database :as db]
     [cljs.core.async :refer [chan close! timeout put!]]
 
+ [pubsub :as ps :refer [sia]]
     )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
                    )

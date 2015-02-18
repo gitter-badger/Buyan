@@ -3,6 +3,7 @@
     [logger :as l]
     [database :as db]
 
+ [pubsub :as ps :refer [sia]]
 
     [cljs.core.async :refer [chan close! timeout put!]]
 

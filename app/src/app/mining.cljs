@@ -7,6 +7,7 @@
   [cljs.core.async :refer [chan close! timeout put!]]
   [servant.core :as servant]
   [servant.worker :as worker]
+ [pubsub :as ps :refer [sia]]
   )
   (:require-macros
                   [cljs.core.async.macros :as m :refer [go]]
