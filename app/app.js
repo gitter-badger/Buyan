@@ -32916,34 +32916,34 @@ pubsub.get = function get() {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_8995) {
-            var state_val_8996 = state_8995[1];
-            if (state_val_8996 === 3) {
-              var inst_8992 = state_8995[2];
-              var inst_8993 = logger.og.call(null, new cljs.core.Keyword(null, "getpubsub", "getpubsub", -56419473), "peerjs", pubsub.a);
-              var state_8995__$1 = function() {
-                var statearr_8997 = state_8995;
-                statearr_8997[5] = inst_8993;
-                statearr_8997[6] = inst_8992;
-                return statearr_8997;
+          return function(state_17720) {
+            var state_val_17721 = state_17720[1];
+            if (state_val_17721 === 3) {
+              var inst_17717 = state_17720[2];
+              var inst_17718 = logger.og.call(null, new cljs.core.Keyword(null, "getpubsub", "getpubsub", -56419473), "peerjs", pubsub.a);
+              var state_17720__$1 = function() {
+                var statearr_17722 = state_17720;
+                statearr_17722[5] = inst_17717;
+                statearr_17722[6] = inst_17718;
+                return statearr_17722;
               }();
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_8995__$1, pubsub.a);
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_17720__$1, pubsub.a);
             } else {
-              if (state_val_8996 === 2) {
-                var inst_8988 = state_8995[2];
-                var inst_8989 = pubsub.a = inst_8988;
-                var inst_8990 = logger.og.call(null, new cljs.core.Keyword(null, "getpubsub", "getpubsub", -56419473), "peerjs", pubsub.a);
-                var state_8995__$1 = function() {
-                  var statearr_8998 = state_8995;
-                  statearr_8998[7] = inst_8990;
-                  statearr_8998[8] = inst_8989;
-                  return statearr_8998;
+              if (state_val_17721 === 2) {
+                var inst_17713 = state_17720[2];
+                var inst_17714 = pubsub.a = inst_17713;
+                var inst_17715 = logger.og.call(null, new cljs.core.Keyword(null, "getpubsub", "getpubsub", -56419473), "peerjs", pubsub.a);
+                var state_17720__$1 = function() {
+                  var statearr_17723 = state_17720;
+                  statearr_17723[7] = inst_17714;
+                  statearr_17723[8] = inst_17715;
+                  return statearr_17723;
                 }();
-                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_8995__$1, 3, pubsub.proxychan2, pubsub.a);
+                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_17720__$1, 3, pubsub.proxychan2, pubsub.a);
               } else {
-                if (state_val_8996 === 1) {
-                  var state_8995__$1 = state_8995;
-                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_8995__$1, 2, pubsub.proxychan2);
+                if (state_val_17721 === 1) {
+                  var state_17720__$1 = state_17720;
+                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_17720__$1, 2, pubsub.proxychan2);
                 } else {
                   return null;
                 }
@@ -32955,14 +32955,14 @@ pubsub.get = function get() {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_9000 = [null, null, null, null, null, null, null, null, null];
-              statearr_9000[0] = state_machine__6220__auto__;
-              statearr_9000[1] = 1;
-              return statearr_9000;
+              var statearr_17725 = [null, null, null, null, null, null, null, null, null];
+              statearr_17725[0] = state_machine__6220__auto__;
+              statearr_17725[1] = 1;
+              return statearr_17725;
             };
-            var state_machine__6220__auto____1 = function(state_8995) {
+            var state_machine__6220__auto____1 = function(state_17720) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_8995);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_17720);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -32971,12 +32971,12 @@ pubsub.get = function get() {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_8995) {
+            state_machine__6220__auto__ = function(state_17720) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_8995);
+                  return state_machine__6220__auto____1.call(this, state_17720);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -32987,9 +32987,9 @@ pubsub.get = function get() {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_9001 = f__6233__auto__.call(null);
-        statearr_9001[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_9001;
+        var statearr_17726 = f__6233__auto__.call(null);
+        statearr_17726[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_17726;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -33002,21 +33002,21 @@ pubsub.init = function init(what) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_9016) {
-            var state_val_9017 = state_9016[1];
-            if (state_val_9017 === 2) {
-              var inst_9014 = state_9016[2];
-              var state_9016__$1 = state_9016;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_9016__$1, inst_9014);
+          return function(state_17741) {
+            var state_val_17742 = state_17741[1];
+            if (state_val_17742 === 2) {
+              var inst_17739 = state_17741[2];
+              var state_17741__$1 = state_17741;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_17741__$1, inst_17739);
             } else {
-              if (state_val_9017 === 1) {
-                var inst_9012 = logger.og.call(null, new cljs.core.Keyword(null, "initpubsub", "initpubsub", -596274170), "peerjs", what);
-                var state_9016__$1 = function() {
-                  var statearr_9018 = state_9016;
-                  statearr_9018[5] = inst_9012;
-                  return statearr_9018;
+              if (state_val_17742 === 1) {
+                var inst_17737 = logger.og.call(null, new cljs.core.Keyword(null, "initpubsub", "initpubsub", -596274170), "peerjs", what);
+                var state_17741__$1 = function() {
+                  var statearr_17743 = state_17741;
+                  statearr_17743[5] = inst_17737;
+                  return statearr_17743;
                 }();
-                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_9016__$1, 2, pubsub.proxychan2, what);
+                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_17741__$1, 2, pubsub.proxychan2, what);
               } else {
                 return null;
               }
@@ -33027,14 +33027,14 @@ pubsub.init = function init(what) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_9020 = [null, null, null, null, null, null];
-              statearr_9020[0] = state_machine__6220__auto__;
-              statearr_9020[1] = 1;
-              return statearr_9020;
+              var statearr_17745 = [null, null, null, null, null, null];
+              statearr_17745[0] = state_machine__6220__auto__;
+              statearr_17745[1] = 1;
+              return statearr_17745;
             };
-            var state_machine__6220__auto____1 = function(state_9016) {
+            var state_machine__6220__auto____1 = function(state_17741) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_9016);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_17741);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -33043,12 +33043,12 @@ pubsub.init = function init(what) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_9016) {
+            state_machine__6220__auto__ = function(state_17741) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_9016);
+                  return state_machine__6220__auto____1.call(this, state_17741);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -33059,9 +33059,9 @@ pubsub.init = function init(what) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_9021 = f__6233__auto__.call(null);
-        statearr_9021[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_9021;
+        var statearr_17746 = f__6233__auto__.call(null);
+        statearr_17746[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_17746;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -33074,25 +33074,25 @@ pubsub.set = function set(what) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_9038) {
-            var state_val_9039 = state_9038[1];
-            if (state_val_9039 === 3) {
-              var inst_9036 = state_9038[2];
-              var state_9038__$1 = state_9038;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_9038__$1, inst_9036);
+          return function(state_17763) {
+            var state_val_17764 = state_17763[1];
+            if (state_val_17764 === 3) {
+              var inst_17761 = state_17763[2];
+              var state_17763__$1 = state_17763;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_17763__$1, inst_17761);
             } else {
-              if (state_val_9039 === 2) {
-                var inst_9034 = state_9038[2];
-                var state_9038__$1 = function() {
-                  var statearr_9040 = state_9038;
-                  statearr_9040[5] = inst_9034;
-                  return statearr_9040;
+              if (state_val_17764 === 2) {
+                var inst_17759 = state_17763[2];
+                var state_17763__$1 = function() {
+                  var statearr_17765 = state_17763;
+                  statearr_17765[5] = inst_17759;
+                  return statearr_17765;
                 }();
-                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_9038__$1, 3, pubsub.proxychan2, what);
+                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_17763__$1, 3, pubsub.proxychan2, what);
               } else {
-                if (state_val_9039 === 1) {
-                  var state_9038__$1 = state_9038;
-                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_9038__$1, 2, pubsub.proxychan2);
+                if (state_val_17764 === 1) {
+                  var state_17763__$1 = state_17763;
+                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_17763__$1, 2, pubsub.proxychan2);
                 } else {
                   return null;
                 }
@@ -33104,14 +33104,14 @@ pubsub.set = function set(what) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_9042 = [null, null, null, null, null, null];
-              statearr_9042[0] = state_machine__6220__auto__;
-              statearr_9042[1] = 1;
-              return statearr_9042;
+              var statearr_17767 = [null, null, null, null, null, null];
+              statearr_17767[0] = state_machine__6220__auto__;
+              statearr_17767[1] = 1;
+              return statearr_17767;
             };
-            var state_machine__6220__auto____1 = function(state_9038) {
+            var state_machine__6220__auto____1 = function(state_17763) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_9038);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_17763);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -33120,12 +33120,12 @@ pubsub.set = function set(what) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_9038) {
+            state_machine__6220__auto__ = function(state_17763) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_9038);
+                  return state_machine__6220__auto____1.call(this, state_17763);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -33136,9 +33136,9 @@ pubsub.set = function set(what) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_9043 = f__6233__auto__.call(null);
-        statearr_9043[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_9043;
+        var statearr_17768 = f__6233__auto__.call(null);
+        statearr_17768[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_17768;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -33146,8 +33146,8 @@ pubsub.set = function set(what) {
   return c__6232__auto__;
 };
 pubsub.subs = function() {
-  var obj9045 = {};
-  return obj9045;
+  var obj17770 = {};
+  return obj17770;
 }();
 pubsub.sub = function sub(typ, fun) {
   return pubsub.subs[typ] = fun;
@@ -33159,17 +33159,17 @@ pubsub.pub = function pub(typ, msg) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_9063) {
-            var state_val_9064 = state_9063[1];
-            if (state_val_9064 === 2) {
-              var inst_9061 = state_9063[2];
-              var state_9063__$1 = state_9063;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_9063__$1, inst_9061);
+          return function(state_17788) {
+            var state_val_17789 = state_17788[1];
+            if (state_val_17789 === 2) {
+              var inst_17786 = state_17788[2];
+              var state_17788__$1 = state_17788;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_17788__$1, inst_17786);
             } else {
-              if (state_val_9064 === 1) {
-                var inst_9059 = {"typ":typ, "msg":msg};
-                var state_9063__$1 = state_9063;
-                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_9063__$1, 2, pubsub.proxychan, inst_9059);
+              if (state_val_17789 === 1) {
+                var inst_17784 = {"typ":typ, "msg":msg};
+                var state_17788__$1 = state_17788;
+                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_17788__$1, 2, pubsub.proxychan, inst_17784);
               } else {
                 return null;
               }
@@ -33180,14 +33180,14 @@ pubsub.pub = function pub(typ, msg) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_9066 = [null, null, null, null, null];
-              statearr_9066[0] = state_machine__6220__auto__;
-              statearr_9066[1] = 1;
-              return statearr_9066;
+              var statearr_17791 = [null, null, null, null, null];
+              statearr_17791[0] = state_machine__6220__auto__;
+              statearr_17791[1] = 1;
+              return statearr_17791;
             };
-            var state_machine__6220__auto____1 = function(state_9063) {
+            var state_machine__6220__auto____1 = function(state_17788) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_9063);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_17788);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -33196,12 +33196,12 @@ pubsub.pub = function pub(typ, msg) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_9063) {
+            state_machine__6220__auto__ = function(state_17788) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_9063);
+                  return state_machine__6220__auto____1.call(this, state_17788);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -33212,9 +33212,9 @@ pubsub.pub = function pub(typ, msg) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_9067 = f__6233__auto__.call(null);
-        statearr_9067[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_9067;
+        var statearr_17792 = f__6233__auto__.call(null);
+        statearr_17792[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_17792;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -33222,8 +33222,8 @@ pubsub.pub = function pub(typ, msg) {
   return c__6232__auto__;
 };
 pubsub.makeMsg = function makeMsg(typ, m, pchannel) {
-  var obj9071 = {"typ":typ, "msg":m};
-  return obj9071;
+  var obj17796 = {"typ":typ, "msg":m};
+  return obj17796;
 };
 pubsub.initpubsub = function initpubsub() {
   var c__6232__auto__ = cljs.core.async.chan.call(null, 1);
@@ -33231,11 +33231,11 @@ pubsub.initpubsub = function initpubsub() {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_9079) {
-            var state_val_9080 = state_9079[1];
-            if (state_val_9080 === 1) {
-              var state_9079__$1 = state_9079;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_9079__$1, null);
+          return function(state_17804) {
+            var state_val_17805 = state_17804[1];
+            if (state_val_17805 === 1) {
+              var state_17804__$1 = state_17804;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_17804__$1, null);
             } else {
               return null;
             }
@@ -33245,14 +33245,14 @@ pubsub.initpubsub = function initpubsub() {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_9082 = [null, null, null, null, null];
-              statearr_9082[0] = state_machine__6220__auto__;
-              statearr_9082[1] = 1;
-              return statearr_9082;
+              var statearr_17807 = [null, null, null, null, null];
+              statearr_17807[0] = state_machine__6220__auto__;
+              statearr_17807[1] = 1;
+              return statearr_17807;
             };
-            var state_machine__6220__auto____1 = function(state_9079) {
+            var state_machine__6220__auto____1 = function(state_17804) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_9079);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_17804);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -33261,12 +33261,12 @@ pubsub.initpubsub = function initpubsub() {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_9079) {
+            state_machine__6220__auto__ = function(state_17804) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_9079);
+                  return state_machine__6220__auto____1.call(this, state_17804);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -33277,9 +33277,9 @@ pubsub.initpubsub = function initpubsub() {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_9083 = f__6233__auto__.call(null);
-        statearr_9083[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_9083;
+        var statearr_17808 = f__6233__auto__.call(null);
+        statearr_17808[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_17808;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -33292,114 +33292,114 @@ pubsub.r = function r(typ) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_9161) {
-            var state_val_9162 = state_9161[1];
-            if (state_val_9162 === 7) {
-              var inst_9149 = pubsub.mtemp["typ"];
-              var inst_9150 = inst_9149 === 0;
-              var state_9161__$1 = state_9161;
-              if (cljs.core.truth_(inst_9150)) {
-                var statearr_9163_9180 = state_9161__$1;
-                statearr_9163_9180[1] = 9;
+          return function(state_17886) {
+            var state_val_17887 = state_17886[1];
+            if (state_val_17887 === 7) {
+              var inst_17874 = pubsub.mtemp["typ"];
+              var inst_17875 = inst_17874 === 0;
+              var state_17886__$1 = state_17886;
+              if (cljs.core.truth_(inst_17875)) {
+                var statearr_17888_17905 = state_17886__$1;
+                statearr_17888_17905[1] = 9;
               } else {
-                var statearr_9164_9181 = state_9161__$1;
-                statearr_9164_9181[1] = 10;
+                var statearr_17889_17906 = state_17886__$1;
+                statearr_17889_17906[1] = 10;
               }
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             } else {
-              if (state_val_9162 === 1) {
-                var inst_9132 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve %s", typ);
-                var inst_9135 = {"typ":0};
-                var state_9161__$1 = function() {
-                  var statearr_9165 = state_9161;
-                  statearr_9165[5] = inst_9132;
-                  return statearr_9165;
+              if (state_val_17887 === 1) {
+                var inst_17857 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve %s", typ);
+                var inst_17860 = {"typ":0};
+                var state_17886__$1 = function() {
+                  var statearr_17890 = state_17886;
+                  statearr_17890[5] = inst_17857;
+                  return statearr_17890;
                 }();
-                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_9161__$1, 2, pubsub.sendReceiveCh, inst_9135);
+                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_17886__$1, 2, pubsub.sendReceiveCh, inst_17860);
               } else {
-                if (state_val_9162 === 4) {
-                  var inst_9159 = state_9161[2];
-                  var state_9161__$1 = state_9161;
-                  return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_9161__$1, inst_9159);
+                if (state_val_17887 === 4) {
+                  var inst_17884 = state_17886[2];
+                  var state_17886__$1 = state_17886;
+                  return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_17886__$1, inst_17884);
                 } else {
-                  if (state_val_9162 === 6) {
-                    var inst_9147 = pubsub.mtemp["msg"];
-                    var state_9161__$1 = state_9161;
-                    var statearr_9166_9182 = state_9161__$1;
-                    statearr_9166_9182[2] = inst_9147;
-                    statearr_9166_9182[1] = 8;
+                  if (state_val_17887 === 6) {
+                    var inst_17872 = pubsub.mtemp["msg"];
+                    var state_17886__$1 = state_17886;
+                    var statearr_17891_17907 = state_17886__$1;
+                    statearr_17891_17907[2] = inst_17872;
+                    statearr_17891_17907[1] = 8;
                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                   } else {
-                    if (state_val_9162 === 3) {
-                      var inst_9139 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve in loop");
-                      var state_9161__$1 = function() {
-                        var statearr_9167 = state_9161;
-                        statearr_9167[6] = inst_9139;
-                        return statearr_9167;
+                    if (state_val_17887 === 3) {
+                      var inst_17864 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve in loop");
+                      var state_17886__$1 = function() {
+                        var statearr_17892 = state_17886;
+                        statearr_17892[6] = inst_17864;
+                        return statearr_17892;
                       }();
-                      return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_9161__$1, 5, pubsub.sendReceiveCh);
+                      return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_17886__$1, 5, pubsub.sendReceiveCh);
                     } else {
-                      if (state_val_9162 === 2) {
-                        var inst_9137 = state_9161[2];
-                        var state_9161__$1 = function() {
-                          var statearr_9168 = state_9161;
-                          statearr_9168[7] = inst_9137;
-                          return statearr_9168;
+                      if (state_val_17887 === 2) {
+                        var inst_17862 = state_17886[2];
+                        var state_17886__$1 = function() {
+                          var statearr_17893 = state_17886;
+                          statearr_17893[7] = inst_17862;
+                          return statearr_17893;
                         }();
-                        var statearr_9169_9183 = state_9161__$1;
-                        statearr_9169_9183[2] = null;
-                        statearr_9169_9183[1] = 3;
+                        var statearr_17894_17908 = state_17886__$1;
+                        statearr_17894_17908[2] = null;
+                        statearr_17894_17908[1] = 3;
                         return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                       } else {
-                        if (state_val_9162 === 11) {
-                          var inst_9155 = state_9161[2];
-                          var state_9161__$1 = state_9161;
-                          var statearr_9170_9184 = state_9161__$1;
-                          statearr_9170_9184[2] = inst_9155;
-                          statearr_9170_9184[1] = 8;
+                        if (state_val_17887 === 11) {
+                          var inst_17880 = state_17886[2];
+                          var state_17886__$1 = state_17886;
+                          var statearr_17895_17909 = state_17886__$1;
+                          statearr_17895_17909[2] = inst_17880;
+                          statearr_17895_17909[1] = 8;
                           return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                         } else {
-                          if (state_val_9162 === 9) {
-                            var state_9161__$1 = state_9161;
-                            var statearr_9171_9185 = state_9161__$1;
-                            statearr_9171_9185[2] = 0;
-                            statearr_9171_9185[1] = 11;
+                          if (state_val_17887 === 9) {
+                            var state_17886__$1 = state_17886;
+                            var statearr_17896_17910 = state_17886__$1;
+                            statearr_17896_17910[2] = 0;
+                            statearr_17896_17910[1] = 11;
                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                           } else {
-                            if (state_val_9162 === 5) {
-                              var inst_9141 = state_9161[2];
-                              var inst_9142 = pubsub.mtemp = inst_9141;
-                              var inst_9143 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "now looking at ", pubsub.mtemp);
-                              var inst_9144 = pubsub.mtemp["typ"];
-                              var inst_9145 = inst_9144 === typ;
-                              var state_9161__$1 = function() {
-                                var statearr_9172 = state_9161;
-                                statearr_9172[8] = inst_9143;
-                                statearr_9172[9] = inst_9142;
-                                return statearr_9172;
+                            if (state_val_17887 === 5) {
+                              var inst_17866 = state_17886[2];
+                              var inst_17867 = pubsub.mtemp = inst_17866;
+                              var inst_17868 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "now looking at ", pubsub.mtemp);
+                              var inst_17869 = pubsub.mtemp["typ"];
+                              var inst_17870 = inst_17869 === typ;
+                              var state_17886__$1 = function() {
+                                var statearr_17897 = state_17886;
+                                statearr_17897[8] = inst_17868;
+                                statearr_17897[9] = inst_17867;
+                                return statearr_17897;
                               }();
-                              if (cljs.core.truth_(inst_9145)) {
-                                var statearr_9173_9186 = state_9161__$1;
-                                statearr_9173_9186[1] = 6;
+                              if (cljs.core.truth_(inst_17870)) {
+                                var statearr_17898_17911 = state_17886__$1;
+                                statearr_17898_17911[1] = 6;
                               } else {
-                                var statearr_9174_9187 = state_9161__$1;
-                                statearr_9174_9187[1] = 7;
+                                var statearr_17899_17912 = state_17886__$1;
+                                statearr_17899_17912[1] = 7;
                               }
                               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                             } else {
-                              if (state_val_9162 === 10) {
-                                var state_9161__$1 = state_9161;
-                                var statearr_9175_9188 = state_9161__$1;
-                                statearr_9175_9188[2] = null;
-                                statearr_9175_9188[1] = 3;
+                              if (state_val_17887 === 10) {
+                                var state_17886__$1 = state_17886;
+                                var statearr_17900_17913 = state_17886__$1;
+                                statearr_17900_17913[2] = null;
+                                statearr_17900_17913[1] = 3;
                                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                               } else {
-                                if (state_val_9162 === 8) {
-                                  var inst_9157 = state_9161[2];
-                                  var state_9161__$1 = state_9161;
-                                  var statearr_9176_9189 = state_9161__$1;
-                                  statearr_9176_9189[2] = inst_9157;
-                                  statearr_9176_9189[1] = 4;
+                                if (state_val_17887 === 8) {
+                                  var inst_17882 = state_17886[2];
+                                  var state_17886__$1 = state_17886;
+                                  var statearr_17901_17914 = state_17886__$1;
+                                  statearr_17901_17914[2] = inst_17882;
+                                  statearr_17901_17914[1] = 4;
                                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                 } else {
                                   return null;
@@ -33420,14 +33420,14 @@ pubsub.r = function r(typ) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_9178 = [null, null, null, null, null, null, null, null, null, null];
-              statearr_9178[0] = state_machine__6220__auto__;
-              statearr_9178[1] = 1;
-              return statearr_9178;
+              var statearr_17903 = [null, null, null, null, null, null, null, null, null, null];
+              statearr_17903[0] = state_machine__6220__auto__;
+              statearr_17903[1] = 1;
+              return statearr_17903;
             };
-            var state_machine__6220__auto____1 = function(state_9161) {
+            var state_machine__6220__auto____1 = function(state_17886) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_9161);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_17886);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -33436,12 +33436,12 @@ pubsub.r = function r(typ) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_9161) {
+            state_machine__6220__auto__ = function(state_17886) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_9161);
+                  return state_machine__6220__auto____1.call(this, state_17886);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -33452,9 +33452,9 @@ pubsub.r = function r(typ) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_9179 = f__6233__auto__.call(null);
-        statearr_9179[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_9179;
+        var statearr_17904 = f__6233__auto__.call(null);
+        statearr_17904[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_17904;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -33468,207 +33468,207 @@ pubsub.rr = function() {
       return function() {
         var f__6233__auto__ = function() {
           var switch__6219__auto__ = function(c__6232__auto__) {
-            return function(state_9334) {
-              var state_val_9335 = state_9334[1];
-              if (state_val_9335 === 7) {
-                var inst_9296 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "now looking at ", pubsub.mtemp);
-                var inst_9297 = 0;
-                var state_9334__$1 = function() {
-                  var statearr_9336 = state_9334;
-                  statearr_9336[5] = inst_9297;
-                  statearr_9336[6] = inst_9296;
-                  return statearr_9336;
+            return function(state_18059) {
+              var state_val_18060 = state_18059[1];
+              if (state_val_18060 === 7) {
+                var inst_18021 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "now looking at ", pubsub.mtemp);
+                var inst_18022 = 0;
+                var state_18059__$1 = function() {
+                  var statearr_18061 = state_18059;
+                  statearr_18061[5] = inst_18022;
+                  statearr_18061[6] = inst_18021;
+                  return statearr_18061;
                 }();
-                var statearr_9337_9364 = state_9334__$1;
-                statearr_9337_9364[2] = null;
-                statearr_9337_9364[1] = 9;
+                var statearr_18062_18089 = state_18059__$1;
+                statearr_18062_18089[2] = null;
+                statearr_18062_18089[1] = 9;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               } else {
-                if (state_val_9335 === 1) {
-                  var inst_9277 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve ", typ);
-                  var inst_9278 = cljs.core.count.call(null, typ);
-                  var inst_9279 = inst_9278 / 2;
-                  var inst_9280 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve ", inst_9279);
-                  var inst_9283 = {"typ":0};
-                  var state_9334__$1 = function() {
-                    var statearr_9338 = state_9334;
-                    statearr_9338[7] = inst_9277;
-                    statearr_9338[8] = inst_9280;
-                    return statearr_9338;
+                if (state_val_18060 === 1) {
+                  var inst_18002 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve ", typ);
+                  var inst_18003 = cljs.core.count.call(null, typ);
+                  var inst_18004 = inst_18003 / 2;
+                  var inst_18005 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve ", inst_18004);
+                  var inst_18008 = {"typ":0};
+                  var state_18059__$1 = function() {
+                    var statearr_18063 = state_18059;
+                    statearr_18063[7] = inst_18005;
+                    statearr_18063[8] = inst_18002;
+                    return statearr_18063;
                   }();
-                  return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_9334__$1, 2, pubsub.sendReceiveCh, inst_9283);
+                  return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_18059__$1, 2, pubsub.sendReceiveCh, inst_18008);
                 } else {
-                  if (state_val_9335 === 4) {
-                    var inst_9332 = state_9334[2];
-                    var state_9334__$1 = state_9334;
-                    return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_9334__$1, inst_9332);
+                  if (state_val_18060 === 4) {
+                    var inst_18057 = state_18059[2];
+                    var state_18059__$1 = state_18059;
+                    return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_18059__$1, inst_18057);
                   } else {
-                    if (state_val_9335 === 15) {
-                      var inst_9297 = state_9334[5];
-                      var inst_9319 = inst_9297 + 2;
-                      var inst_9297__$1 = inst_9319;
-                      var state_9334__$1 = function() {
-                        var statearr_9339 = state_9334;
-                        statearr_9339[5] = inst_9297__$1;
-                        return statearr_9339;
+                    if (state_val_18060 === 15) {
+                      var inst_18022 = state_18059[5];
+                      var inst_18044 = inst_18022 + 2;
+                      var inst_18022__$1 = inst_18044;
+                      var state_18059__$1 = function() {
+                        var statearr_18064 = state_18059;
+                        statearr_18064[5] = inst_18022__$1;
+                        return statearr_18064;
                       }();
-                      var statearr_9340_9365 = state_9334__$1;
-                      statearr_9340_9365[2] = null;
-                      statearr_9340_9365[1] = 9;
+                      var statearr_18065_18090 = state_18059__$1;
+                      statearr_18065_18090[2] = null;
+                      statearr_18065_18090[1] = 9;
                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                     } else {
-                      if (state_val_9335 === 13) {
-                        var inst_9325 = state_9334[2];
-                        var state_9334__$1 = state_9334;
-                        var statearr_9341_9366 = state_9334__$1;
-                        statearr_9341_9366[2] = inst_9325;
-                        statearr_9341_9366[1] = 10;
+                      if (state_val_18060 === 13) {
+                        var inst_18050 = state_18059[2];
+                        var state_18059__$1 = state_18059;
+                        var statearr_18066_18091 = state_18059__$1;
+                        statearr_18066_18091[2] = inst_18050;
+                        statearr_18066_18091[1] = 10;
                         return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                       } else {
-                        if (state_val_9335 === 6) {
-                          var inst_9294 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "got null");
-                          var state_9334__$1 = function() {
-                            var statearr_9342 = state_9334;
-                            statearr_9342[9] = inst_9294;
-                            return statearr_9342;
+                        if (state_val_18060 === 6) {
+                          var inst_18019 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "got null");
+                          var state_18059__$1 = function() {
+                            var statearr_18067 = state_18059;
+                            statearr_18067[9] = inst_18019;
+                            return statearr_18067;
                           }();
-                          var statearr_9343_9367 = state_9334__$1;
-                          statearr_9343_9367[2] = 0;
-                          statearr_9343_9367[1] = 8;
+                          var statearr_18068_18092 = state_18059__$1;
+                          statearr_18068_18092[2] = 0;
+                          statearr_18068_18092[1] = 8;
                           return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                         } else {
-                          if (state_val_9335 === 17) {
-                            var inst_9317 = state_9334[2];
-                            var state_9334__$1 = state_9334;
-                            var statearr_9344_9368 = state_9334__$1;
-                            statearr_9344_9368[2] = inst_9317;
-                            statearr_9344_9368[1] = 16;
+                          if (state_val_18060 === 17) {
+                            var inst_18042 = state_18059[2];
+                            var state_18059__$1 = state_18059;
+                            var statearr_18069_18093 = state_18059__$1;
+                            statearr_18069_18093[2] = inst_18042;
+                            statearr_18069_18093[1] = 16;
                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                           } else {
-                            if (state_val_9335 === 3) {
-                              var inst_9287 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve in loop");
-                              var state_9334__$1 = function() {
-                                var statearr_9345 = state_9334;
-                                statearr_9345[10] = inst_9287;
-                                return statearr_9345;
+                            if (state_val_18060 === 3) {
+                              var inst_18012 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve in loop");
+                              var state_18059__$1 = function() {
+                                var statearr_18070 = state_18059;
+                                statearr_18070[10] = inst_18012;
+                                return statearr_18070;
                               }();
-                              return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_9334__$1, 5, pubsub.sendReceiveCh);
+                              return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_18059__$1, 5, pubsub.sendReceiveCh);
                             } else {
-                              if (state_val_9335 === 12) {
-                                var state_9334__$1 = state_9334;
-                                var statearr_9346_9369 = state_9334__$1;
-                                statearr_9346_9369[2] = null;
-                                statearr_9346_9369[1] = 13;
+                              if (state_val_18060 === 12) {
+                                var state_18059__$1 = state_18059;
+                                var statearr_18071_18094 = state_18059__$1;
+                                statearr_18071_18094[2] = null;
+                                statearr_18071_18094[1] = 13;
                                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                               } else {
-                                if (state_val_9335 === 2) {
-                                  var inst_9285 = state_9334[2];
-                                  var state_9334__$1 = function() {
-                                    var statearr_9347 = state_9334;
-                                    statearr_9347[11] = inst_9285;
-                                    return statearr_9347;
+                                if (state_val_18060 === 2) {
+                                  var inst_18010 = state_18059[2];
+                                  var state_18059__$1 = function() {
+                                    var statearr_18072 = state_18059;
+                                    statearr_18072[11] = inst_18010;
+                                    return statearr_18072;
                                   }();
-                                  var statearr_9348_9370 = state_9334__$1;
-                                  statearr_9348_9370[2] = null;
-                                  statearr_9348_9370[1] = 3;
+                                  var statearr_18073_18095 = state_18059__$1;
+                                  statearr_18073_18095[2] = null;
+                                  statearr_18073_18095[1] = 3;
                                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                 } else {
-                                  if (state_val_9335 === 11) {
-                                    var inst_9297 = state_9334[5];
-                                    var inst_9302 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "checking ", inst_9297);
-                                    var inst_9303 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "got ", pubsub.mtemp);
-                                    var inst_9304 = cljs.core.nth.call(null, typ, inst_9297);
-                                    var inst_9305 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "looking for ", inst_9304);
-                                    var inst_9306 = pubsub.mtemp["typ"];
-                                    var inst_9307 = cljs.core.nth.call(null, typ, inst_9297);
-                                    var inst_9308 = inst_9306 === inst_9307;
-                                    var state_9334__$1 = function() {
-                                      var statearr_9349 = state_9334;
-                                      statearr_9349[12] = inst_9305;
-                                      statearr_9349[13] = inst_9303;
-                                      statearr_9349[14] = inst_9302;
-                                      return statearr_9349;
+                                  if (state_val_18060 === 11) {
+                                    var inst_18022 = state_18059[5];
+                                    var inst_18027 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "checking ", inst_18022);
+                                    var inst_18028 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "got ", pubsub.mtemp);
+                                    var inst_18029 = cljs.core.nth.call(null, typ, inst_18022);
+                                    var inst_18030 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "looking for ", inst_18029);
+                                    var inst_18031 = pubsub.mtemp["typ"];
+                                    var inst_18032 = cljs.core.nth.call(null, typ, inst_18022);
+                                    var inst_18033 = inst_18031 === inst_18032;
+                                    var state_18059__$1 = function() {
+                                      var statearr_18074 = state_18059;
+                                      statearr_18074[12] = inst_18030;
+                                      statearr_18074[13] = inst_18027;
+                                      statearr_18074[14] = inst_18028;
+                                      return statearr_18074;
                                     }();
-                                    if (cljs.core.truth_(inst_9308)) {
-                                      var statearr_9350_9371 = state_9334__$1;
-                                      statearr_9350_9371[1] = 14;
+                                    if (cljs.core.truth_(inst_18033)) {
+                                      var statearr_18075_18096 = state_18059__$1;
+                                      statearr_18075_18096[1] = 14;
                                     } else {
-                                      var statearr_9351_9372 = state_9334__$1;
-                                      statearr_9351_9372[1] = 15;
+                                      var statearr_18076_18097 = state_18059__$1;
+                                      statearr_18076_18097[1] = 15;
                                     }
                                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                   } else {
-                                    if (state_val_9335 === 9) {
-                                      var inst_9297 = state_9334[5];
-                                      var inst_9299 = cljs.core.count.call(null, typ);
-                                      var inst_9300 = inst_9297 < inst_9299;
-                                      var state_9334__$1 = state_9334;
-                                      if (cljs.core.truth_(inst_9300)) {
-                                        var statearr_9352_9373 = state_9334__$1;
-                                        statearr_9352_9373[1] = 11;
+                                    if (state_val_18060 === 9) {
+                                      var inst_18022 = state_18059[5];
+                                      var inst_18024 = cljs.core.count.call(null, typ);
+                                      var inst_18025 = inst_18022 < inst_18024;
+                                      var state_18059__$1 = state_18059;
+                                      if (cljs.core.truth_(inst_18025)) {
+                                        var statearr_18077_18098 = state_18059__$1;
+                                        statearr_18077_18098[1] = 11;
                                       } else {
-                                        var statearr_9353_9374 = state_9334__$1;
-                                        statearr_9353_9374[1] = 12;
+                                        var statearr_18078_18099 = state_18059__$1;
+                                        statearr_18078_18099[1] = 12;
                                       }
                                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                     } else {
-                                      if (state_val_9335 === 5) {
-                                        var inst_9289 = state_9334[2];
-                                        var inst_9290 = pubsub.mtemp = inst_9289;
-                                        var inst_9291 = pubsub.mtemp["typ"];
-                                        var inst_9292 = inst_9291 === 0;
-                                        var state_9334__$1 = function() {
-                                          var statearr_9354 = state_9334;
-                                          statearr_9354[15] = inst_9290;
-                                          return statearr_9354;
+                                      if (state_val_18060 === 5) {
+                                        var inst_18014 = state_18059[2];
+                                        var inst_18015 = pubsub.mtemp = inst_18014;
+                                        var inst_18016 = pubsub.mtemp["typ"];
+                                        var inst_18017 = inst_18016 === 0;
+                                        var state_18059__$1 = function() {
+                                          var statearr_18079 = state_18059;
+                                          statearr_18079[15] = inst_18015;
+                                          return statearr_18079;
                                         }();
-                                        if (cljs.core.truth_(inst_9292)) {
-                                          var statearr_9355_9375 = state_9334__$1;
-                                          statearr_9355_9375[1] = 6;
+                                        if (cljs.core.truth_(inst_18017)) {
+                                          var statearr_18080_18100 = state_18059__$1;
+                                          statearr_18080_18100[1] = 6;
                                         } else {
-                                          var statearr_9356_9376 = state_9334__$1;
-                                          statearr_9356_9376[1] = 7;
+                                          var statearr_18081_18101 = state_18059__$1;
+                                          statearr_18081_18101[1] = 7;
                                         }
                                         return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                       } else {
-                                        if (state_val_9335 === 14) {
-                                          var inst_9297 = state_9334[5];
-                                          var inst_9310 = cljs.core.nth.call(null, typ, inst_9297);
-                                          var inst_9311 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "found ", inst_9310);
-                                          var inst_9312 = inst_9297 + 1;
-                                          var inst_9313 = cljs.core.nth.call(null, typ, inst_9312);
-                                          var inst_9314 = pubsub.mtemp["msg"];
-                                          var inst_9315 = inst_9313.call(null, inst_9314);
-                                          var state_9334__$1 = function() {
-                                            var statearr_9357 = state_9334;
-                                            statearr_9357[16] = inst_9311;
-                                            return statearr_9357;
+                                        if (state_val_18060 === 14) {
+                                          var inst_18022 = state_18059[5];
+                                          var inst_18035 = cljs.core.nth.call(null, typ, inst_18022);
+                                          var inst_18036 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "found ", inst_18035);
+                                          var inst_18037 = inst_18022 + 1;
+                                          var inst_18038 = cljs.core.nth.call(null, typ, inst_18037);
+                                          var inst_18039 = pubsub.mtemp["msg"];
+                                          var inst_18040 = inst_18038.call(null, inst_18039);
+                                          var state_18059__$1 = function() {
+                                            var statearr_18082 = state_18059;
+                                            statearr_18082[16] = inst_18036;
+                                            return statearr_18082;
                                           }();
-                                          return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_9334__$1, 17, inst_9315);
+                                          return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_18059__$1, 17, inst_18040);
                                         } else {
-                                          if (state_val_9335 === 16) {
-                                            var inst_9322 = state_9334[2];
-                                            var state_9334__$1 = state_9334;
-                                            var statearr_9358_9377 = state_9334__$1;
-                                            statearr_9358_9377[2] = inst_9322;
-                                            statearr_9358_9377[1] = 13;
+                                          if (state_val_18060 === 16) {
+                                            var inst_18047 = state_18059[2];
+                                            var state_18059__$1 = state_18059;
+                                            var statearr_18083_18102 = state_18059__$1;
+                                            statearr_18083_18102[2] = inst_18047;
+                                            statearr_18083_18102[1] = 13;
                                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                           } else {
-                                            if (state_val_9335 === 10) {
-                                              var inst_9327 = state_9334[2];
-                                              var inst_9328 = pubsub.result = inst_9327;
-                                              var state_9334__$1 = state_9334;
-                                              var statearr_9359_9378 = state_9334__$1;
-                                              statearr_9359_9378[2] = inst_9328;
-                                              statearr_9359_9378[1] = 8;
+                                            if (state_val_18060 === 10) {
+                                              var inst_18052 = state_18059[2];
+                                              var inst_18053 = pubsub.result = inst_18052;
+                                              var state_18059__$1 = state_18059;
+                                              var statearr_18084_18103 = state_18059__$1;
+                                              statearr_18084_18103[2] = inst_18053;
+                                              statearr_18084_18103[1] = 8;
                                               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                             } else {
-                                              if (state_val_9335 === 8) {
-                                                var inst_9330 = state_9334[2];
-                                                var state_9334__$1 = state_9334;
-                                                var statearr_9360_9379 = state_9334__$1;
-                                                statearr_9360_9379[2] = inst_9330;
-                                                statearr_9360_9379[1] = 4;
+                                              if (state_val_18060 === 8) {
+                                                var inst_18055 = state_18059[2];
+                                                var state_18059__$1 = state_18059;
+                                                var statearr_18085_18104 = state_18059__$1;
+                                                statearr_18085_18104[2] = inst_18055;
+                                                statearr_18085_18104[1] = 4;
                                                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                               } else {
                                                 return null;
@@ -33695,14 +33695,14 @@ pubsub.rr = function() {
             return function() {
               var state_machine__6220__auto__ = null;
               var state_machine__6220__auto____0 = function() {
-                var statearr_9362 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
-                statearr_9362[0] = state_machine__6220__auto__;
-                statearr_9362[1] = 1;
-                return statearr_9362;
+                var statearr_18087 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+                statearr_18087[0] = state_machine__6220__auto__;
+                statearr_18087[1] = 1;
+                return statearr_18087;
               };
-              var state_machine__6220__auto____1 = function(state_9334) {
+              var state_machine__6220__auto____1 = function(state_18059) {
                 while (true) {
-                  var result__6221__auto__ = switch__6219__auto__.call(null, state_9334);
+                  var result__6221__auto__ = switch__6219__auto__.call(null, state_18059);
                   if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                     continue;
                   } else {
@@ -33711,12 +33711,12 @@ pubsub.rr = function() {
                   break;
                 }
               };
-              state_machine__6220__auto__ = function(state_9334) {
+              state_machine__6220__auto__ = function(state_18059) {
                 switch(arguments.length) {
                   case 0:
                     return state_machine__6220__auto____0.call(this);
                   case 1:
-                    return state_machine__6220__auto____1.call(this, state_9334);
+                    return state_machine__6220__auto____1.call(this, state_18059);
                 }
                 throw new Error("Invalid arity: " + arguments.length);
               };
@@ -33727,9 +33727,9 @@ pubsub.rr = function() {
           }(switch__6219__auto__, c__6232__auto__);
         }();
         var state__6234__auto__ = function() {
-          var statearr_9363 = f__6233__auto__.call(null);
-          statearr_9363[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-          return statearr_9363;
+          var statearr_18088 = f__6233__auto__.call(null);
+          statearr_18088[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+          return statearr_18088;
         }();
         return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
       };
@@ -33744,8 +33744,8 @@ pubsub.rr = function() {
     return rr__delegate.call(this, typ);
   };
   rr.cljs$lang$maxFixedArity = 0;
-  rr.cljs$lang$applyTo = function(arglist__9380) {
-    var typ = cljs.core.seq(arglist__9380);
+  rr.cljs$lang$applyTo = function(arglist__18105) {
+    var typ = cljs.core.seq(arglist__18105);
     return rr__delegate(typ);
   };
   rr.cljs$core$IFn$_invoke$arity$variadic = rr__delegate;
@@ -33758,204 +33758,204 @@ pubsub.rrs = function() {
       return function() {
         var f__6233__auto__ = function() {
           var switch__6219__auto__ = function(c__6232__auto__) {
-            return function(state_9521) {
-              var state_val_9522 = state_9521[1];
-              if (state_val_9522 === 7) {
-                var inst_9516 = state_9521[2];
-                var state_9521__$1 = function() {
-                  var statearr_9523 = state_9521;
-                  statearr_9523[5] = inst_9516;
-                  return statearr_9523;
+            return function(state_18246) {
+              var state_val_18247 = state_18246[1];
+              if (state_val_18247 === 7) {
+                var inst_18241 = state_18246[2];
+                var state_18246__$1 = function() {
+                  var statearr_18248 = state_18246;
+                  statearr_18248[5] = inst_18241;
+                  return statearr_18248;
                 }();
-                var statearr_9524_9551 = state_9521__$1;
-                statearr_9524_9551[2] = null;
-                statearr_9524_9551[1] = 2;
+                var statearr_18249_18276 = state_18246__$1;
+                statearr_18249_18276[2] = null;
+                statearr_18249_18276[1] = 2;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               } else {
-                if (state_val_9522 === 1) {
-                  var inst_9466 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve ", typ);
-                  var inst_9467 = cljs.core.count.call(null, typ);
-                  var inst_9468 = inst_9467 / 2;
-                  var inst_9469 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve ", inst_9468);
-                  var state_9521__$1 = function() {
-                    var statearr_9525 = state_9521;
-                    statearr_9525[6] = inst_9469;
-                    statearr_9525[7] = inst_9466;
-                    return statearr_9525;
+                if (state_val_18247 === 1) {
+                  var inst_18191 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve ", typ);
+                  var inst_18192 = cljs.core.count.call(null, typ);
+                  var inst_18193 = inst_18192 / 2;
+                  var inst_18194 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve ", inst_18193);
+                  var state_18246__$1 = function() {
+                    var statearr_18250 = state_18246;
+                    statearr_18250[6] = inst_18194;
+                    statearr_18250[7] = inst_18191;
+                    return statearr_18250;
                   }();
-                  var statearr_9526_9552 = state_9521__$1;
-                  statearr_9526_9552[2] = null;
-                  statearr_9526_9552[1] = 2;
+                  var statearr_18251_18277 = state_18246__$1;
+                  statearr_18251_18277[2] = null;
+                  statearr_18251_18277[1] = 2;
                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                 } else {
-                  if (state_val_9522 === 4) {
-                    var inst_9473 = state_9521[2];
-                    var inst_9474 = pubsub.mtemp = inst_9473;
-                    var inst_9475 = pubsub.mtemp["typ"];
-                    var inst_9476 = inst_9475 === 0;
-                    var state_9521__$1 = function() {
-                      var statearr_9527 = state_9521;
-                      statearr_9527[8] = inst_9474;
-                      return statearr_9527;
+                  if (state_val_18247 === 4) {
+                    var inst_18198 = state_18246[2];
+                    var inst_18199 = pubsub.mtemp = inst_18198;
+                    var inst_18200 = pubsub.mtemp["typ"];
+                    var inst_18201 = inst_18200 === 0;
+                    var state_18246__$1 = function() {
+                      var statearr_18252 = state_18246;
+                      statearr_18252[8] = inst_18199;
+                      return statearr_18252;
                     }();
-                    if (cljs.core.truth_(inst_9476)) {
-                      var statearr_9528_9553 = state_9521__$1;
-                      statearr_9528_9553[1] = 5;
+                    if (cljs.core.truth_(inst_18201)) {
+                      var statearr_18253_18278 = state_18246__$1;
+                      statearr_18253_18278[1] = 5;
                     } else {
-                      var statearr_9529_9554 = state_9521__$1;
-                      statearr_9529_9554[1] = 6;
+                      var statearr_18254_18279 = state_18246__$1;
+                      statearr_18254_18279[1] = 6;
                     }
                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                   } else {
-                    if (state_val_9522 === 15) {
-                      var inst_9508 = state_9521[2];
-                      var state_9521__$1 = state_9521;
-                      var statearr_9530_9555 = state_9521__$1;
-                      statearr_9530_9555[2] = inst_9508;
-                      statearr_9530_9555[1] = 12;
+                    if (state_val_18247 === 15) {
+                      var inst_18233 = state_18246[2];
+                      var state_18246__$1 = state_18246;
+                      var statearr_18255_18280 = state_18246__$1;
+                      statearr_18255_18280[2] = inst_18233;
+                      statearr_18255_18280[1] = 12;
                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                     } else {
-                      if (state_val_9522 === 13) {
-                        var inst_9481 = state_9521[9];
-                        var inst_9494 = cljs.core.nth.call(null, typ, inst_9481);
-                        var inst_9495 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "found ", inst_9494);
-                        var inst_9496 = inst_9481 + 1;
-                        var inst_9497 = cljs.core.nth.call(null, typ, inst_9496);
-                        var inst_9498 = pubsub.mtemp["msg"];
-                        var inst_9499 = inst_9497.call(null, inst_9498);
-                        var inst_9500 = pubsub.ret = inst_9499;
-                        var inst_9501 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "return ", pubsub.ret);
-                        var state_9521__$1 = function() {
-                          var statearr_9531 = state_9521;
-                          statearr_9531[10] = inst_9501;
-                          statearr_9531[11] = inst_9500;
-                          statearr_9531[12] = inst_9495;
-                          return statearr_9531;
+                      if (state_val_18247 === 13) {
+                        var inst_18206 = state_18246[9];
+                        var inst_18219 = cljs.core.nth.call(null, typ, inst_18206);
+                        var inst_18220 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "found ", inst_18219);
+                        var inst_18221 = inst_18206 + 1;
+                        var inst_18222 = cljs.core.nth.call(null, typ, inst_18221);
+                        var inst_18223 = pubsub.mtemp["msg"];
+                        var inst_18224 = inst_18222.call(null, inst_18223);
+                        var inst_18225 = pubsub.ret = inst_18224;
+                        var inst_18226 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "return ", pubsub.ret);
+                        var state_18246__$1 = function() {
+                          var statearr_18256 = state_18246;
+                          statearr_18256[10] = inst_18220;
+                          statearr_18256[11] = inst_18225;
+                          statearr_18256[12] = inst_18226;
+                          return statearr_18256;
                         }();
-                        return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_9521__$1, 16, pubsub.receiveCH, pubsub.ret);
+                        return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_18246__$1, 16, pubsub.receiveCH, pubsub.ret);
                       } else {
-                        if (state_val_9522 === 6) {
-                          var inst_9480 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "now looking at ", pubsub.mtemp);
-                          var inst_9481 = 0;
-                          var state_9521__$1 = function() {
-                            var statearr_9532 = state_9521;
-                            statearr_9532[9] = inst_9481;
-                            statearr_9532[13] = inst_9480;
-                            return statearr_9532;
+                        if (state_val_18247 === 6) {
+                          var inst_18205 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "now looking at ", pubsub.mtemp);
+                          var inst_18206 = 0;
+                          var state_18246__$1 = function() {
+                            var statearr_18257 = state_18246;
+                            statearr_18257[13] = inst_18205;
+                            statearr_18257[9] = inst_18206;
+                            return statearr_18257;
                           }();
-                          var statearr_9533_9556 = state_9521__$1;
-                          statearr_9533_9556[2] = null;
-                          statearr_9533_9556[1] = 8;
+                          var statearr_18258_18281 = state_18246__$1;
+                          statearr_18258_18281[2] = null;
+                          statearr_18258_18281[1] = 8;
                           return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                         } else {
-                          if (state_val_9522 === 3) {
-                            var inst_9519 = state_9521[2];
-                            var state_9521__$1 = state_9521;
-                            return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_9521__$1, inst_9519);
+                          if (state_val_18247 === 3) {
+                            var inst_18244 = state_18246[2];
+                            var state_18246__$1 = state_18246;
+                            return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_18246__$1, inst_18244);
                           } else {
-                            if (state_val_9522 === 12) {
-                              var inst_9511 = state_9521[2];
-                              var state_9521__$1 = state_9521;
-                              var statearr_9534_9557 = state_9521__$1;
-                              statearr_9534_9557[2] = inst_9511;
-                              statearr_9534_9557[1] = 9;
+                            if (state_val_18247 === 12) {
+                              var inst_18236 = state_18246[2];
+                              var state_18246__$1 = state_18246;
+                              var statearr_18259_18282 = state_18246__$1;
+                              statearr_18259_18282[2] = inst_18236;
+                              statearr_18259_18282[1] = 9;
                               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                             } else {
-                              if (state_val_9522 === 2) {
-                                var inst_9471 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve in loop");
-                                var state_9521__$1 = function() {
-                                  var statearr_9535 = state_9521;
-                                  statearr_9535[14] = inst_9471;
-                                  return statearr_9535;
+                              if (state_val_18247 === 2) {
+                                var inst_18196 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve in loop");
+                                var state_18246__$1 = function() {
+                                  var statearr_18260 = state_18246;
+                                  statearr_18260[14] = inst_18196;
+                                  return statearr_18260;
                                 }();
-                                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_9521__$1, 4, pubsub.sendReceiveCh);
+                                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_18246__$1, 4, pubsub.sendReceiveCh);
                               } else {
-                                if (state_val_9522 === 11) {
-                                  var state_9521__$1 = state_9521;
-                                  var statearr_9536_9558 = state_9521__$1;
-                                  statearr_9536_9558[2] = null;
-                                  statearr_9536_9558[1] = 12;
+                                if (state_val_18247 === 11) {
+                                  var state_18246__$1 = state_18246;
+                                  var statearr_18261_18283 = state_18246__$1;
+                                  statearr_18261_18283[2] = null;
+                                  statearr_18261_18283[1] = 12;
                                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                 } else {
-                                  if (state_val_9522 === 9) {
-                                    var inst_9513 = state_9521[2];
-                                    var inst_9514 = pubsub.result = inst_9513;
-                                    var state_9521__$1 = state_9521;
-                                    var statearr_9537_9559 = state_9521__$1;
-                                    statearr_9537_9559[2] = inst_9514;
-                                    statearr_9537_9559[1] = 7;
+                                  if (state_val_18247 === 9) {
+                                    var inst_18238 = state_18246[2];
+                                    var inst_18239 = pubsub.result = inst_18238;
+                                    var state_18246__$1 = state_18246;
+                                    var statearr_18262_18284 = state_18246__$1;
+                                    statearr_18262_18284[2] = inst_18239;
+                                    statearr_18262_18284[1] = 7;
                                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                   } else {
-                                    if (state_val_9522 === 5) {
-                                      var inst_9478 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "got null");
-                                      var state_9521__$1 = function() {
-                                        var statearr_9538 = state_9521;
-                                        statearr_9538[15] = inst_9478;
-                                        return statearr_9538;
+                                    if (state_val_18247 === 5) {
+                                      var inst_18203 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "got null");
+                                      var state_18246__$1 = function() {
+                                        var statearr_18263 = state_18246;
+                                        statearr_18263[15] = inst_18203;
+                                        return statearr_18263;
                                       }();
-                                      var statearr_9539_9560 = state_9521__$1;
-                                      statearr_9539_9560[2] = 0;
-                                      statearr_9539_9560[1] = 7;
+                                      var statearr_18264_18285 = state_18246__$1;
+                                      statearr_18264_18285[2] = 0;
+                                      statearr_18264_18285[1] = 7;
                                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                     } else {
-                                      if (state_val_9522 === 14) {
-                                        var inst_9481 = state_9521[9];
-                                        var inst_9505 = inst_9481 + 2;
-                                        var inst_9481__$1 = inst_9505;
-                                        var state_9521__$1 = function() {
-                                          var statearr_9540 = state_9521;
-                                          statearr_9540[9] = inst_9481__$1;
-                                          return statearr_9540;
+                                      if (state_val_18247 === 14) {
+                                        var inst_18206 = state_18246[9];
+                                        var inst_18230 = inst_18206 + 2;
+                                        var inst_18206__$1 = inst_18230;
+                                        var state_18246__$1 = function() {
+                                          var statearr_18265 = state_18246;
+                                          statearr_18265[9] = inst_18206__$1;
+                                          return statearr_18265;
                                         }();
-                                        var statearr_9541_9561 = state_9521__$1;
-                                        statearr_9541_9561[2] = null;
-                                        statearr_9541_9561[1] = 8;
+                                        var statearr_18266_18286 = state_18246__$1;
+                                        statearr_18266_18286[2] = null;
+                                        statearr_18266_18286[1] = 8;
                                         return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                       } else {
-                                        if (state_val_9522 === 16) {
-                                          var inst_9503 = state_9521[2];
-                                          var state_9521__$1 = state_9521;
-                                          var statearr_9542_9562 = state_9521__$1;
-                                          statearr_9542_9562[2] = inst_9503;
-                                          statearr_9542_9562[1] = 15;
+                                        if (state_val_18247 === 16) {
+                                          var inst_18228 = state_18246[2];
+                                          var state_18246__$1 = state_18246;
+                                          var statearr_18267_18287 = state_18246__$1;
+                                          statearr_18267_18287[2] = inst_18228;
+                                          statearr_18267_18287[1] = 15;
                                           return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                         } else {
-                                          if (state_val_9522 === 10) {
-                                            var inst_9481 = state_9521[9];
-                                            var inst_9486 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "checking ", inst_9481);
-                                            var inst_9487 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "got ", pubsub.mtemp);
-                                            var inst_9488 = cljs.core.nth.call(null, typ, inst_9481);
-                                            var inst_9489 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "looking for ", inst_9488);
-                                            var inst_9490 = pubsub.mtemp["typ"];
-                                            var inst_9491 = cljs.core.nth.call(null, typ, inst_9481);
-                                            var inst_9492 = inst_9490 === inst_9491;
-                                            var state_9521__$1 = function() {
-                                              var statearr_9543 = state_9521;
-                                              statearr_9543[16] = inst_9486;
-                                              statearr_9543[17] = inst_9489;
-                                              statearr_9543[18] = inst_9487;
-                                              return statearr_9543;
+                                          if (state_val_18247 === 10) {
+                                            var inst_18206 = state_18246[9];
+                                            var inst_18211 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "checking ", inst_18206);
+                                            var inst_18212 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "got ", pubsub.mtemp);
+                                            var inst_18213 = cljs.core.nth.call(null, typ, inst_18206);
+                                            var inst_18214 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "looking for ", inst_18213);
+                                            var inst_18215 = pubsub.mtemp["typ"];
+                                            var inst_18216 = cljs.core.nth.call(null, typ, inst_18206);
+                                            var inst_18217 = inst_18215 === inst_18216;
+                                            var state_18246__$1 = function() {
+                                              var statearr_18268 = state_18246;
+                                              statearr_18268[16] = inst_18211;
+                                              statearr_18268[17] = inst_18212;
+                                              statearr_18268[18] = inst_18214;
+                                              return statearr_18268;
                                             }();
-                                            if (cljs.core.truth_(inst_9492)) {
-                                              var statearr_9544_9563 = state_9521__$1;
-                                              statearr_9544_9563[1] = 13;
+                                            if (cljs.core.truth_(inst_18217)) {
+                                              var statearr_18269_18288 = state_18246__$1;
+                                              statearr_18269_18288[1] = 13;
                                             } else {
-                                              var statearr_9545_9564 = state_9521__$1;
-                                              statearr_9545_9564[1] = 14;
+                                              var statearr_18270_18289 = state_18246__$1;
+                                              statearr_18270_18289[1] = 14;
                                             }
                                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                           } else {
-                                            if (state_val_9522 === 8) {
-                                              var inst_9481 = state_9521[9];
-                                              var inst_9483 = cljs.core.count.call(null, typ);
-                                              var inst_9484 = inst_9481 < inst_9483;
-                                              var state_9521__$1 = state_9521;
-                                              if (cljs.core.truth_(inst_9484)) {
-                                                var statearr_9546_9565 = state_9521__$1;
-                                                statearr_9546_9565[1] = 10;
+                                            if (state_val_18247 === 8) {
+                                              var inst_18206 = state_18246[9];
+                                              var inst_18208 = cljs.core.count.call(null, typ);
+                                              var inst_18209 = inst_18206 < inst_18208;
+                                              var state_18246__$1 = state_18246;
+                                              if (cljs.core.truth_(inst_18209)) {
+                                                var statearr_18271_18290 = state_18246__$1;
+                                                statearr_18271_18290[1] = 10;
                                               } else {
-                                                var statearr_9547_9566 = state_9521__$1;
-                                                statearr_9547_9566[1] = 11;
+                                                var statearr_18272_18291 = state_18246__$1;
+                                                statearr_18272_18291[1] = 11;
                                               }
                                               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                             } else {
@@ -33982,14 +33982,14 @@ pubsub.rrs = function() {
             return function() {
               var state_machine__6220__auto__ = null;
               var state_machine__6220__auto____0 = function() {
-                var statearr_9549 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
-                statearr_9549[0] = state_machine__6220__auto__;
-                statearr_9549[1] = 1;
-                return statearr_9549;
+                var statearr_18274 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+                statearr_18274[0] = state_machine__6220__auto__;
+                statearr_18274[1] = 1;
+                return statearr_18274;
               };
-              var state_machine__6220__auto____1 = function(state_9521) {
+              var state_machine__6220__auto____1 = function(state_18246) {
                 while (true) {
-                  var result__6221__auto__ = switch__6219__auto__.call(null, state_9521);
+                  var result__6221__auto__ = switch__6219__auto__.call(null, state_18246);
                   if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                     continue;
                   } else {
@@ -33998,12 +33998,12 @@ pubsub.rrs = function() {
                   break;
                 }
               };
-              state_machine__6220__auto__ = function(state_9521) {
+              state_machine__6220__auto__ = function(state_18246) {
                 switch(arguments.length) {
                   case 0:
                     return state_machine__6220__auto____0.call(this);
                   case 1:
-                    return state_machine__6220__auto____1.call(this, state_9521);
+                    return state_machine__6220__auto____1.call(this, state_18246);
                 }
                 throw new Error("Invalid arity: " + arguments.length);
               };
@@ -34014,9 +34014,9 @@ pubsub.rrs = function() {
           }(switch__6219__auto__, c__6232__auto__);
         }();
         var state__6234__auto__ = function() {
-          var statearr_9550 = f__6233__auto__.call(null);
-          statearr_9550[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-          return statearr_9550;
+          var statearr_18275 = f__6233__auto__.call(null);
+          statearr_18275[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+          return statearr_18275;
         }();
         return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
       };
@@ -34031,8 +34031,8 @@ pubsub.rrs = function() {
     return rrs__delegate.call(this, typ);
   };
   rrs.cljs$lang$maxFixedArity = 0;
-  rrs.cljs$lang$applyTo = function(arglist__9567) {
-    var typ = cljs.core.seq(arglist__9567);
+  rrs.cljs$lang$applyTo = function(arglist__18292) {
+    var typ = cljs.core.seq(arglist__18292);
     return rrs__delegate(typ);
   };
   rrs.cljs$core$IFn$_invoke$arity$variadic = rrs__delegate;
@@ -34045,212 +34045,212 @@ pubsub.rrsa = function() {
       return function() {
         var f__6233__auto__ = function() {
           var switch__6219__auto__ = function(c__6232__auto__) {
-            return function(state_9713) {
-              var state_val_9714 = state_9713[1];
-              if (state_val_9714 === 7) {
-                var inst_9708 = state_9713[2];
-                var state_9713__$1 = function() {
-                  var statearr_9715 = state_9713;
-                  statearr_9715[5] = inst_9708;
-                  return statearr_9715;
+            return function(state_18438) {
+              var state_val_18439 = state_18438[1];
+              if (state_val_18439 === 7) {
+                var inst_18433 = state_18438[2];
+                var state_18438__$1 = function() {
+                  var statearr_18440 = state_18438;
+                  statearr_18440[5] = inst_18433;
+                  return statearr_18440;
                 }();
-                var statearr_9716_9744 = state_9713__$1;
-                statearr_9716_9744[2] = null;
-                statearr_9716_9744[1] = 2;
+                var statearr_18441_18469 = state_18438__$1;
+                statearr_18441_18469[2] = null;
+                statearr_18441_18469[1] = 2;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               } else {
-                if (state_val_9714 === 1) {
-                  var inst_9656 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve ", typ);
-                  var inst_9657 = cljs.core.count.call(null, typ);
-                  var inst_9658 = inst_9657 / 2;
-                  var inst_9659 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve ", inst_9658);
-                  var state_9713__$1 = function() {
-                    var statearr_9717 = state_9713;
-                    statearr_9717[6] = inst_9656;
-                    statearr_9717[7] = inst_9659;
-                    return statearr_9717;
+                if (state_val_18439 === 1) {
+                  var inst_18381 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve ", typ);
+                  var inst_18382 = cljs.core.count.call(null, typ);
+                  var inst_18383 = inst_18382 / 2;
+                  var inst_18384 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve ", inst_18383);
+                  var state_18438__$1 = function() {
+                    var statearr_18442 = state_18438;
+                    statearr_18442[6] = inst_18381;
+                    statearr_18442[7] = inst_18384;
+                    return statearr_18442;
                   }();
-                  var statearr_9718_9745 = state_9713__$1;
-                  statearr_9718_9745[2] = null;
-                  statearr_9718_9745[1] = 2;
+                  var statearr_18443_18470 = state_18438__$1;
+                  statearr_18443_18470[2] = null;
+                  statearr_18443_18470[1] = 2;
                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                 } else {
-                  if (state_val_9714 === 4) {
-                    var inst_9663 = state_9713[2];
-                    var inst_9664 = pubsub.mtemp = inst_9663;
-                    var inst_9665 = pubsub.mtemp["typ"];
-                    var inst_9666 = inst_9665 === 0;
-                    var state_9713__$1 = function() {
-                      var statearr_9719 = state_9713;
-                      statearr_9719[8] = inst_9664;
-                      return statearr_9719;
+                  if (state_val_18439 === 4) {
+                    var inst_18388 = state_18438[2];
+                    var inst_18389 = pubsub.mtemp = inst_18388;
+                    var inst_18390 = pubsub.mtemp["typ"];
+                    var inst_18391 = inst_18390 === 0;
+                    var state_18438__$1 = function() {
+                      var statearr_18444 = state_18438;
+                      statearr_18444[8] = inst_18389;
+                      return statearr_18444;
                     }();
-                    if (cljs.core.truth_(inst_9666)) {
-                      var statearr_9720_9746 = state_9713__$1;
-                      statearr_9720_9746[1] = 5;
+                    if (cljs.core.truth_(inst_18391)) {
+                      var statearr_18445_18471 = state_18438__$1;
+                      statearr_18445_18471[1] = 5;
                     } else {
-                      var statearr_9721_9747 = state_9713__$1;
-                      statearr_9721_9747[1] = 6;
+                      var statearr_18446_18472 = state_18438__$1;
+                      statearr_18446_18472[1] = 6;
                     }
                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                   } else {
-                    if (state_val_9714 === 15) {
-                      var inst_9700 = state_9713[2];
-                      var state_9713__$1 = state_9713;
-                      var statearr_9722_9748 = state_9713__$1;
-                      statearr_9722_9748[2] = inst_9700;
-                      statearr_9722_9748[1] = 12;
+                    if (state_val_18439 === 15) {
+                      var inst_18425 = state_18438[2];
+                      var state_18438__$1 = state_18438;
+                      var statearr_18447_18473 = state_18438__$1;
+                      statearr_18447_18473[2] = inst_18425;
+                      statearr_18447_18473[1] = 12;
                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                     } else {
-                      if (state_val_9714 === 13) {
-                        var inst_9671 = state_9713[9];
-                        var inst_9684 = cljs.core.nth.call(null, typ, inst_9671);
-                        var inst_9685 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "found ", inst_9684);
-                        var inst_9686 = inst_9671 + 1;
-                        var inst_9687 = cljs.core.nth.call(null, typ, inst_9686);
-                        var inst_9688 = pubsub.mtemp["msg"];
-                        var inst_9689 = cljs.core.apply.call(null, inst_9687, inst_9688);
-                        var state_9713__$1 = function() {
-                          var statearr_9723 = state_9713;
-                          statearr_9723[10] = inst_9685;
-                          return statearr_9723;
+                      if (state_val_18439 === 13) {
+                        var inst_18396 = state_18438[9];
+                        var inst_18409 = cljs.core.nth.call(null, typ, inst_18396);
+                        var inst_18410 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "found ", inst_18409);
+                        var inst_18411 = inst_18396 + 1;
+                        var inst_18412 = cljs.core.nth.call(null, typ, inst_18411);
+                        var inst_18413 = pubsub.mtemp["msg"];
+                        var inst_18414 = cljs.core.apply.call(null, inst_18412, inst_18413);
+                        var state_18438__$1 = function() {
+                          var statearr_18448 = state_18438;
+                          statearr_18448[10] = inst_18410;
+                          return statearr_18448;
                         }();
-                        return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_9713__$1, 16, inst_9689);
+                        return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_18438__$1, 16, inst_18414);
                       } else {
-                        if (state_val_9714 === 6) {
-                          var inst_9670 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "now looking at ", pubsub.mtemp);
-                          var inst_9671 = 0;
-                          var state_9713__$1 = function() {
-                            var statearr_9724 = state_9713;
-                            statearr_9724[9] = inst_9671;
-                            statearr_9724[11] = inst_9670;
-                            return statearr_9724;
+                        if (state_val_18439 === 6) {
+                          var inst_18395 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "now looking at ", pubsub.mtemp);
+                          var inst_18396 = 0;
+                          var state_18438__$1 = function() {
+                            var statearr_18449 = state_18438;
+                            statearr_18449[9] = inst_18396;
+                            statearr_18449[11] = inst_18395;
+                            return statearr_18449;
                           }();
-                          var statearr_9725_9749 = state_9713__$1;
-                          statearr_9725_9749[2] = null;
-                          statearr_9725_9749[1] = 8;
+                          var statearr_18450_18474 = state_18438__$1;
+                          statearr_18450_18474[2] = null;
+                          statearr_18450_18474[1] = 8;
                           return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                         } else {
-                          if (state_val_9714 === 17) {
-                            var inst_9695 = state_9713[2];
-                            var state_9713__$1 = state_9713;
-                            var statearr_9726_9750 = state_9713__$1;
-                            statearr_9726_9750[2] = inst_9695;
-                            statearr_9726_9750[1] = 15;
+                          if (state_val_18439 === 17) {
+                            var inst_18420 = state_18438[2];
+                            var state_18438__$1 = state_18438;
+                            var statearr_18451_18475 = state_18438__$1;
+                            statearr_18451_18475[2] = inst_18420;
+                            statearr_18451_18475[1] = 15;
                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                           } else {
-                            if (state_val_9714 === 3) {
-                              var inst_9711 = state_9713[2];
-                              var state_9713__$1 = state_9713;
-                              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_9713__$1, inst_9711);
+                            if (state_val_18439 === 3) {
+                              var inst_18436 = state_18438[2];
+                              var state_18438__$1 = state_18438;
+                              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_18438__$1, inst_18436);
                             } else {
-                              if (state_val_9714 === 12) {
-                                var inst_9703 = state_9713[2];
-                                var state_9713__$1 = state_9713;
-                                var statearr_9727_9751 = state_9713__$1;
-                                statearr_9727_9751[2] = inst_9703;
-                                statearr_9727_9751[1] = 9;
+                              if (state_val_18439 === 12) {
+                                var inst_18428 = state_18438[2];
+                                var state_18438__$1 = state_18438;
+                                var statearr_18452_18476 = state_18438__$1;
+                                statearr_18452_18476[2] = inst_18428;
+                                statearr_18452_18476[1] = 9;
                                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                               } else {
-                                if (state_val_9714 === 2) {
-                                  var inst_9661 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve in loop");
-                                  var state_9713__$1 = function() {
-                                    var statearr_9728 = state_9713;
-                                    statearr_9728[12] = inst_9661;
-                                    return statearr_9728;
+                                if (state_val_18439 === 2) {
+                                  var inst_18386 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "about to recieve in loop");
+                                  var state_18438__$1 = function() {
+                                    var statearr_18453 = state_18438;
+                                    statearr_18453[12] = inst_18386;
+                                    return statearr_18453;
                                   }();
-                                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_9713__$1, 4, pubsub.sendReceiveCh);
+                                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_18438__$1, 4, pubsub.sendReceiveCh);
                                 } else {
-                                  if (state_val_9714 === 11) {
-                                    var state_9713__$1 = state_9713;
-                                    var statearr_9729_9752 = state_9713__$1;
-                                    statearr_9729_9752[2] = null;
-                                    statearr_9729_9752[1] = 12;
+                                  if (state_val_18439 === 11) {
+                                    var state_18438__$1 = state_18438;
+                                    var statearr_18454_18477 = state_18438__$1;
+                                    statearr_18454_18477[2] = null;
+                                    statearr_18454_18477[1] = 12;
                                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                   } else {
-                                    if (state_val_9714 === 9) {
-                                      var inst_9705 = state_9713[2];
-                                      var inst_9706 = pubsub.result = inst_9705;
-                                      var state_9713__$1 = state_9713;
-                                      var statearr_9730_9753 = state_9713__$1;
-                                      statearr_9730_9753[2] = inst_9706;
-                                      statearr_9730_9753[1] = 7;
+                                    if (state_val_18439 === 9) {
+                                      var inst_18430 = state_18438[2];
+                                      var inst_18431 = pubsub.result = inst_18430;
+                                      var state_18438__$1 = state_18438;
+                                      var statearr_18455_18478 = state_18438__$1;
+                                      statearr_18455_18478[2] = inst_18431;
+                                      statearr_18455_18478[1] = 7;
                                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                     } else {
-                                      if (state_val_9714 === 5) {
-                                        var inst_9668 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "got null");
-                                        var state_9713__$1 = function() {
-                                          var statearr_9731 = state_9713;
-                                          statearr_9731[13] = inst_9668;
-                                          return statearr_9731;
+                                      if (state_val_18439 === 5) {
+                                        var inst_18393 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "got null");
+                                        var state_18438__$1 = function() {
+                                          var statearr_18456 = state_18438;
+                                          statearr_18456[13] = inst_18393;
+                                          return statearr_18456;
                                         }();
-                                        var statearr_9732_9754 = state_9713__$1;
-                                        statearr_9732_9754[2] = 0;
-                                        statearr_9732_9754[1] = 7;
+                                        var statearr_18457_18479 = state_18438__$1;
+                                        statearr_18457_18479[2] = 0;
+                                        statearr_18457_18479[1] = 7;
                                         return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                       } else {
-                                        if (state_val_9714 === 14) {
-                                          var inst_9671 = state_9713[9];
-                                          var inst_9697 = inst_9671 + 2;
-                                          var inst_9671__$1 = inst_9697;
-                                          var state_9713__$1 = function() {
-                                            var statearr_9733 = state_9713;
-                                            statearr_9733[9] = inst_9671__$1;
-                                            return statearr_9733;
+                                        if (state_val_18439 === 14) {
+                                          var inst_18396 = state_18438[9];
+                                          var inst_18422 = inst_18396 + 2;
+                                          var inst_18396__$1 = inst_18422;
+                                          var state_18438__$1 = function() {
+                                            var statearr_18458 = state_18438;
+                                            statearr_18458[9] = inst_18396__$1;
+                                            return statearr_18458;
                                           }();
-                                          var statearr_9734_9755 = state_9713__$1;
-                                          statearr_9734_9755[2] = null;
-                                          statearr_9734_9755[1] = 8;
+                                          var statearr_18459_18480 = state_18438__$1;
+                                          statearr_18459_18480[2] = null;
+                                          statearr_18459_18480[1] = 8;
                                           return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                         } else {
-                                          if (state_val_9714 === 16) {
-                                            var inst_9691 = state_9713[2];
-                                            var inst_9692 = pubsub.ret = inst_9691;
-                                            var inst_9693 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "return ", pubsub.ret);
-                                            var state_9713__$1 = function() {
-                                              var statearr_9735 = state_9713;
-                                              statearr_9735[14] = inst_9693;
-                                              statearr_9735[15] = inst_9692;
-                                              return statearr_9735;
+                                          if (state_val_18439 === 16) {
+                                            var inst_18416 = state_18438[2];
+                                            var inst_18417 = pubsub.ret = inst_18416;
+                                            var inst_18418 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "return ", pubsub.ret);
+                                            var state_18438__$1 = function() {
+                                              var statearr_18460 = state_18438;
+                                              statearr_18460[14] = inst_18417;
+                                              statearr_18460[15] = inst_18418;
+                                              return statearr_18460;
                                             }();
-                                            return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_9713__$1, 17, ch, pubsub.ret);
+                                            return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_18438__$1, 17, ch, pubsub.ret);
                                           } else {
-                                            if (state_val_9714 === 10) {
-                                              var inst_9671 = state_9713[9];
-                                              var inst_9676 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "checking ", inst_9671);
-                                              var inst_9677 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "got ", pubsub.mtemp);
-                                              var inst_9678 = cljs.core.nth.call(null, typ, inst_9671);
-                                              var inst_9679 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "looking for ", inst_9678);
-                                              var inst_9680 = pubsub.mtemp["typ"];
-                                              var inst_9681 = cljs.core.nth.call(null, typ, inst_9671);
-                                              var inst_9682 = inst_9680 === inst_9681;
-                                              var state_9713__$1 = function() {
-                                                var statearr_9736 = state_9713;
-                                                statearr_9736[16] = inst_9679;
-                                                statearr_9736[17] = inst_9676;
-                                                statearr_9736[18] = inst_9677;
-                                                return statearr_9736;
+                                            if (state_val_18439 === 10) {
+                                              var inst_18396 = state_18438[9];
+                                              var inst_18401 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "checking ", inst_18396);
+                                              var inst_18402 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "got ", pubsub.mtemp);
+                                              var inst_18403 = cljs.core.nth.call(null, typ, inst_18396);
+                                              var inst_18404 = logger.og.call(null, new cljs.core.Keyword(null, "receive", "receive", 1830053389), "looking for ", inst_18403);
+                                              var inst_18405 = pubsub.mtemp["typ"];
+                                              var inst_18406 = cljs.core.nth.call(null, typ, inst_18396);
+                                              var inst_18407 = inst_18405 === inst_18406;
+                                              var state_18438__$1 = function() {
+                                                var statearr_18461 = state_18438;
+                                                statearr_18461[16] = inst_18402;
+                                                statearr_18461[17] = inst_18401;
+                                                statearr_18461[18] = inst_18404;
+                                                return statearr_18461;
                                               }();
-                                              if (cljs.core.truth_(inst_9682)) {
-                                                var statearr_9737_9756 = state_9713__$1;
-                                                statearr_9737_9756[1] = 13;
+                                              if (cljs.core.truth_(inst_18407)) {
+                                                var statearr_18462_18481 = state_18438__$1;
+                                                statearr_18462_18481[1] = 13;
                                               } else {
-                                                var statearr_9738_9757 = state_9713__$1;
-                                                statearr_9738_9757[1] = 14;
+                                                var statearr_18463_18482 = state_18438__$1;
+                                                statearr_18463_18482[1] = 14;
                                               }
                                               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                             } else {
-                                              if (state_val_9714 === 8) {
-                                                var inst_9671 = state_9713[9];
-                                                var inst_9673 = cljs.core.count.call(null, typ);
-                                                var inst_9674 = inst_9671 < inst_9673;
-                                                var state_9713__$1 = state_9713;
-                                                if (cljs.core.truth_(inst_9674)) {
-                                                  var statearr_9739_9758 = state_9713__$1;
-                                                  statearr_9739_9758[1] = 10;
+                                              if (state_val_18439 === 8) {
+                                                var inst_18396 = state_18438[9];
+                                                var inst_18398 = cljs.core.count.call(null, typ);
+                                                var inst_18399 = inst_18396 < inst_18398;
+                                                var state_18438__$1 = state_18438;
+                                                if (cljs.core.truth_(inst_18399)) {
+                                                  var statearr_18464_18483 = state_18438__$1;
+                                                  statearr_18464_18483[1] = 10;
                                                 } else {
-                                                  var statearr_9740_9759 = state_9713__$1;
-                                                  statearr_9740_9759[1] = 11;
+                                                  var statearr_18465_18484 = state_18438__$1;
+                                                  statearr_18465_18484[1] = 11;
                                                 }
                                                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                               } else {
@@ -34278,14 +34278,14 @@ pubsub.rrsa = function() {
             return function() {
               var state_machine__6220__auto__ = null;
               var state_machine__6220__auto____0 = function() {
-                var statearr_9742 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
-                statearr_9742[0] = state_machine__6220__auto__;
-                statearr_9742[1] = 1;
-                return statearr_9742;
+                var statearr_18467 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+                statearr_18467[0] = state_machine__6220__auto__;
+                statearr_18467[1] = 1;
+                return statearr_18467;
               };
-              var state_machine__6220__auto____1 = function(state_9713) {
+              var state_machine__6220__auto____1 = function(state_18438) {
                 while (true) {
-                  var result__6221__auto__ = switch__6219__auto__.call(null, state_9713);
+                  var result__6221__auto__ = switch__6219__auto__.call(null, state_18438);
                   if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                     continue;
                   } else {
@@ -34294,12 +34294,12 @@ pubsub.rrsa = function() {
                   break;
                 }
               };
-              state_machine__6220__auto__ = function(state_9713) {
+              state_machine__6220__auto__ = function(state_18438) {
                 switch(arguments.length) {
                   case 0:
                     return state_machine__6220__auto____0.call(this);
                   case 1:
-                    return state_machine__6220__auto____1.call(this, state_9713);
+                    return state_machine__6220__auto____1.call(this, state_18438);
                 }
                 throw new Error("Invalid arity: " + arguments.length);
               };
@@ -34310,9 +34310,9 @@ pubsub.rrsa = function() {
           }(switch__6219__auto__, c__6232__auto__);
         }();
         var state__6234__auto__ = function() {
-          var statearr_9743 = f__6233__auto__.call(null);
-          statearr_9743[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-          return statearr_9743;
+          var statearr_18468 = f__6233__auto__.call(null);
+          statearr_18468[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+          return statearr_18468;
         }();
         return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
       };
@@ -34327,9 +34327,9 @@ pubsub.rrsa = function() {
     return rrsa__delegate.call(this, ch, typ);
   };
   rrsa.cljs$lang$maxFixedArity = 1;
-  rrsa.cljs$lang$applyTo = function(arglist__9760) {
-    var ch = cljs.core.first(arglist__9760);
-    var typ = cljs.core.rest(arglist__9760);
+  rrsa.cljs$lang$applyTo = function(arglist__18485) {
+    var ch = cljs.core.first(arglist__18485);
+    var typ = cljs.core.rest(arglist__18485);
     return rrsa__delegate(ch, typ);
   };
   rrsa.cljs$core$IFn$_invoke$arity$variadic = rrsa__delegate;
@@ -34341,22 +34341,22 @@ pubsub.s = function s(typ, m) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_9777) {
-            var state_val_9778 = state_9777[1];
-            if (state_val_9778 === 2) {
-              var inst_9775 = state_9777[2];
-              var state_9777__$1 = state_9777;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_9777__$1, inst_9775);
+          return function(state_18502) {
+            var state_val_18503 = state_18502[1];
+            if (state_val_18503 === 2) {
+              var inst_18500 = state_18502[2];
+              var state_18502__$1 = state_18502;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_18502__$1, inst_18500);
             } else {
-              if (state_val_9778 === 1) {
-                var inst_9772 = logger.og.call(null, new cljs.core.Keyword(null, "send", "send", -652151114), typ, m);
-                var inst_9773 = pubsub.makeMsg.call(null, typ, m);
-                var state_9777__$1 = function() {
-                  var statearr_9779 = state_9777;
-                  statearr_9779[5] = inst_9772;
-                  return statearr_9779;
+              if (state_val_18503 === 1) {
+                var inst_18497 = logger.og.call(null, new cljs.core.Keyword(null, "send", "send", -652151114), typ, m);
+                var inst_18498 = pubsub.makeMsg.call(null, typ, m);
+                var state_18502__$1 = function() {
+                  var statearr_18504 = state_18502;
+                  statearr_18504[5] = inst_18497;
+                  return statearr_18504;
                 }();
-                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_9777__$1, 2, pubsub.sendReceiveCh, inst_9773);
+                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_18502__$1, 2, pubsub.sendReceiveCh, inst_18498);
               } else {
                 return null;
               }
@@ -34367,14 +34367,14 @@ pubsub.s = function s(typ, m) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_9781 = [null, null, null, null, null, null];
-              statearr_9781[0] = state_machine__6220__auto__;
-              statearr_9781[1] = 1;
-              return statearr_9781;
+              var statearr_18506 = [null, null, null, null, null, null];
+              statearr_18506[0] = state_machine__6220__auto__;
+              statearr_18506[1] = 1;
+              return statearr_18506;
             };
-            var state_machine__6220__auto____1 = function(state_9777) {
+            var state_machine__6220__auto____1 = function(state_18502) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_9777);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_18502);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -34383,12 +34383,12 @@ pubsub.s = function s(typ, m) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_9777) {
+            state_machine__6220__auto__ = function(state_18502) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_9777);
+                  return state_machine__6220__auto____1.call(this, state_18502);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -34399,9 +34399,9 @@ pubsub.s = function s(typ, m) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_9782 = f__6233__auto__.call(null);
-        statearr_9782[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_9782;
+        var statearr_18507 = f__6233__auto__.call(null);
+        statearr_18507[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_18507;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -34414,40 +34414,40 @@ pubsub.si = function si(typ, m) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_9813) {
-            var state_val_9814 = state_9813[1];
-            if (state_val_9814 === 3) {
-              var inst_9809 = state_9813[2];
-              var inst_9810 = pubsub.n = inst_9809;
-              var inst_9811 = logger.og.call(null, new cljs.core.Keyword(null, "send", "send", -652151114), "recieved", pubsub.n);
-              var state_9813__$1 = function() {
-                var statearr_9815 = state_9813;
-                statearr_9815[5] = inst_9810;
-                return statearr_9815;
+          return function(state_18538) {
+            var state_val_18539 = state_18538[1];
+            if (state_val_18539 === 3) {
+              var inst_18534 = state_18538[2];
+              var inst_18535 = pubsub.n = inst_18534;
+              var inst_18536 = logger.og.call(null, new cljs.core.Keyword(null, "send", "send", -652151114), "recieved", pubsub.n);
+              var state_18538__$1 = function() {
+                var statearr_18540 = state_18538;
+                statearr_18540[5] = inst_18535;
+                return statearr_18540;
               }();
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_9813__$1, inst_9811);
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_18538__$1, inst_18536);
             } else {
-              if (state_val_9814 === 2) {
-                var inst_9807 = state_9813[2];
-                var state_9813__$1 = function() {
-                  var statearr_9816 = state_9813;
-                  statearr_9816[6] = inst_9807;
-                  return statearr_9816;
+              if (state_val_18539 === 2) {
+                var inst_18532 = state_18538[2];
+                var state_18538__$1 = function() {
+                  var statearr_18541 = state_18538;
+                  statearr_18541[6] = inst_18532;
+                  return statearr_18541;
                 }();
-                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_9813__$1, 3, pubsub.pchannel);
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_18538__$1, 3, pubsub.pchannel);
               } else {
-                if (state_val_9814 === 1) {
-                  var inst_9802 = logger.og.call(null, new cljs.core.Keyword(null, "send", "send", -652151114), typ, m);
-                  var inst_9803 = cljs.core.async.chan.call(null);
-                  var inst_9804 = pubsub.pchannel = inst_9803;
-                  var inst_9805 = pubsub.makeMsg.call(null, typ, m, pubsub.pchannel);
-                  var state_9813__$1 = function() {
-                    var statearr_9817 = state_9813;
-                    statearr_9817[7] = inst_9802;
-                    statearr_9817[8] = inst_9804;
-                    return statearr_9817;
+                if (state_val_18539 === 1) {
+                  var inst_18527 = logger.og.call(null, new cljs.core.Keyword(null, "send", "send", -652151114), typ, m);
+                  var inst_18528 = cljs.core.async.chan.call(null);
+                  var inst_18529 = pubsub.pchannel = inst_18528;
+                  var inst_18530 = pubsub.makeMsg.call(null, typ, m, pubsub.pchannel);
+                  var state_18538__$1 = function() {
+                    var statearr_18542 = state_18538;
+                    statearr_18542[7] = inst_18529;
+                    statearr_18542[8] = inst_18527;
+                    return statearr_18542;
                   }();
-                  return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_9813__$1, 2, pubsub.sendReceiveCh, inst_9805);
+                  return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_18538__$1, 2, pubsub.sendReceiveCh, inst_18530);
                 } else {
                   return null;
                 }
@@ -34459,14 +34459,14 @@ pubsub.si = function si(typ, m) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_9819 = [null, null, null, null, null, null, null, null, null];
-              statearr_9819[0] = state_machine__6220__auto__;
-              statearr_9819[1] = 1;
-              return statearr_9819;
+              var statearr_18544 = [null, null, null, null, null, null, null, null, null];
+              statearr_18544[0] = state_machine__6220__auto__;
+              statearr_18544[1] = 1;
+              return statearr_18544;
             };
-            var state_machine__6220__auto____1 = function(state_9813) {
+            var state_machine__6220__auto____1 = function(state_18538) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_9813);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_18538);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -34475,12 +34475,12 @@ pubsub.si = function si(typ, m) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_9813) {
+            state_machine__6220__auto__ = function(state_18538) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_9813);
+                  return state_machine__6220__auto____1.call(this, state_18538);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -34491,9 +34491,9 @@ pubsub.si = function si(typ, m) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_9820 = f__6233__auto__.call(null);
-        statearr_9820[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_9820;
+        var statearr_18545 = f__6233__auto__.call(null);
+        statearr_18545[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_18545;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -34506,42 +34506,42 @@ pubsub.sia = function sia(typ, _AMPERSAND_m) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_9853) {
-            var state_val_9854 = state_9853[1];
-            if (state_val_9854 === 3) {
-              var inst_9849 = state_9853[2];
-              var inst_9850 = pubsub.n = inst_9849;
-              var inst_9851 = logger.og.call(null, new cljs.core.Keyword(null, "send", "send", -652151114), "recieved", pubsub.n);
-              var state_9853__$1 = function() {
-                var statearr_9855 = state_9853;
-                statearr_9855[5] = inst_9850;
-                return statearr_9855;
+          return function(state_18578) {
+            var state_val_18579 = state_18578[1];
+            if (state_val_18579 === 3) {
+              var inst_18574 = state_18578[2];
+              var inst_18575 = pubsub.n = inst_18574;
+              var inst_18576 = logger.og.call(null, new cljs.core.Keyword(null, "send", "send", -652151114), "recieved", pubsub.n);
+              var state_18578__$1 = function() {
+                var statearr_18580 = state_18578;
+                statearr_18580[5] = inst_18575;
+                return statearr_18580;
               }();
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_9853__$1, inst_9851);
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_18578__$1, inst_18576);
             } else {
-              if (state_val_9854 === 2) {
-                var inst_9846 = state_9853[2];
-                var inst_9847 = routing.routea.call(null, pubsub.pchannel);
-                var state_9853__$1 = function() {
-                  var statearr_9856 = state_9853;
-                  statearr_9856[6] = inst_9847;
-                  statearr_9856[7] = inst_9846;
-                  return statearr_9856;
+              if (state_val_18579 === 2) {
+                var inst_18571 = state_18578[2];
+                var inst_18572 = routing.routea.call(null, pubsub.pchannel);
+                var state_18578__$1 = function() {
+                  var statearr_18581 = state_18578;
+                  statearr_18581[6] = inst_18571;
+                  statearr_18581[7] = inst_18572;
+                  return statearr_18581;
                 }();
-                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_9853__$1, 3, pubsub.pchannel);
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_18578__$1, 3, pubsub.pchannel);
               } else {
-                if (state_val_9854 === 1) {
-                  var inst_9841 = logger.og.call(null, new cljs.core.Keyword(null, "send", "send", -652151114), typ, pubsub.m);
-                  var inst_9842 = cljs.core.async.chan.call(null);
-                  var inst_9843 = pubsub.pchannel = inst_9842;
-                  var inst_9844 = pubsub.makeMsg.call(null, typ, pubsub.m);
-                  var state_9853__$1 = function() {
-                    var statearr_9857 = state_9853;
-                    statearr_9857[8] = inst_9841;
-                    statearr_9857[9] = inst_9843;
-                    return statearr_9857;
+                if (state_val_18579 === 1) {
+                  var inst_18566 = logger.og.call(null, new cljs.core.Keyword(null, "send", "send", -652151114), typ, pubsub.m);
+                  var inst_18567 = cljs.core.async.chan.call(null);
+                  var inst_18568 = pubsub.pchannel = inst_18567;
+                  var inst_18569 = pubsub.makeMsg.call(null, typ, pubsub.m);
+                  var state_18578__$1 = function() {
+                    var statearr_18582 = state_18578;
+                    statearr_18582[8] = inst_18566;
+                    statearr_18582[9] = inst_18568;
+                    return statearr_18582;
                   }();
-                  return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_9853__$1, 2, pubsub.sendReceiveCh, inst_9844);
+                  return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_18578__$1, 2, pubsub.sendReceiveCh, inst_18569);
                 } else {
                   return null;
                 }
@@ -34553,14 +34553,14 @@ pubsub.sia = function sia(typ, _AMPERSAND_m) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_9859 = [null, null, null, null, null, null, null, null, null, null];
-              statearr_9859[0] = state_machine__6220__auto__;
-              statearr_9859[1] = 1;
-              return statearr_9859;
+              var statearr_18584 = [null, null, null, null, null, null, null, null, null, null];
+              statearr_18584[0] = state_machine__6220__auto__;
+              statearr_18584[1] = 1;
+              return statearr_18584;
             };
-            var state_machine__6220__auto____1 = function(state_9853) {
+            var state_machine__6220__auto____1 = function(state_18578) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_9853);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_18578);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -34569,12 +34569,12 @@ pubsub.sia = function sia(typ, _AMPERSAND_m) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_9853) {
+            state_machine__6220__auto__ = function(state_18578) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_9853);
+                  return state_machine__6220__auto____1.call(this, state_18578);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -34585,9 +34585,9 @@ pubsub.sia = function sia(typ, _AMPERSAND_m) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_9860 = f__6233__auto__.call(null);
-        statearr_9860[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_9860;
+        var statearr_18585 = f__6233__auto__.call(null);
+        statearr_18585[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_18585;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -34615,17 +34615,17 @@ intercom.onMessage = function onMessage(wch, type, data) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_8644) {
-            var state_val_8645 = state_8644[1];
-            if (state_val_8645 === 2) {
-              var inst_8642 = state_8644[2];
-              var state_8644__$1 = state_8644;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_8644__$1, inst_8642);
+          return function(state_17369) {
+            var state_val_17370 = state_17369[1];
+            if (state_val_17370 === 2) {
+              var inst_17367 = state_17369[2];
+              var state_17369__$1 = state_17369;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_17369__$1, inst_17367);
             } else {
-              if (state_val_8645 === 1) {
-                var inst_8640 = {"type":type, "data":data, "peer":wch};
-                var state_8644__$1 = state_8644;
-                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_8644__$1, 2, intercom.inputch, inst_8640);
+              if (state_val_17370 === 1) {
+                var inst_17365 = {"type":type, "data":data, "peer":wch};
+                var state_17369__$1 = state_17369;
+                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_17369__$1, 2, intercom.inputch, inst_17365);
               } else {
                 return null;
               }
@@ -34636,14 +34636,14 @@ intercom.onMessage = function onMessage(wch, type, data) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_8647 = [null, null, null, null, null];
-              statearr_8647[0] = state_machine__6220__auto__;
-              statearr_8647[1] = 1;
-              return statearr_8647;
+              var statearr_17372 = [null, null, null, null, null];
+              statearr_17372[0] = state_machine__6220__auto__;
+              statearr_17372[1] = 1;
+              return statearr_17372;
             };
-            var state_machine__6220__auto____1 = function(state_8644) {
+            var state_machine__6220__auto____1 = function(state_17369) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_8644);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_17369);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -34652,12 +34652,12 @@ intercom.onMessage = function onMessage(wch, type, data) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_8644) {
+            state_machine__6220__auto__ = function(state_17369) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_8644);
+                  return state_machine__6220__auto____1.call(this, state_17369);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -34668,9 +34668,9 @@ intercom.onMessage = function onMessage(wch, type, data) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_8648 = f__6233__auto__.call(null);
-        statearr_8648[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_8648;
+        var statearr_17373 = f__6233__auto__.call(null);
+        statearr_17373[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_17373;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -34700,357 +34700,357 @@ intercom.intercomstatemachine = function intercomstatemachine(conn, message) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_8878) {
-            var state_val_8879 = state_8878[1];
-            if (state_val_8879 === 7) {
-              var inst_8821 = intercom.is_QMARK_.call(null, intercom.state, "grind");
-              var state_8878__$1 = state_8878;
-              if (inst_8821) {
-                var statearr_8880_8929 = state_8878__$1;
-                statearr_8880_8929[1] = 13;
+          return function(state_17603) {
+            var state_val_17604 = state_17603[1];
+            if (state_val_17604 === 7) {
+              var inst_17546 = intercom.is_QMARK_.call(null, intercom.state, "grind");
+              var state_17603__$1 = state_17603;
+              if (inst_17546) {
+                var statearr_17605_17654 = state_17603__$1;
+                statearr_17605_17654[1] = 13;
               } else {
-                var statearr_8881_8930 = state_8878__$1;
-                statearr_8881_8930[1] = 14;
+                var statearr_17606_17655 = state_17603__$1;
+                statearr_17606_17655[1] = 14;
               }
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             } else {
-              if (state_val_8879 === 20) {
-                var inst_8833 = intercom.typeof_QMARK_.call(null, message, "getdata");
-                var state_8878__$1 = state_8878;
-                if (inst_8833) {
-                  var statearr_8882_8931 = state_8878__$1;
-                  statearr_8882_8931[1] = 22;
+              if (state_val_17604 === 20) {
+                var inst_17558 = intercom.typeof_QMARK_.call(null, message, "getdata");
+                var state_17603__$1 = state_17603;
+                if (inst_17558) {
+                  var statearr_17607_17656 = state_17603__$1;
+                  statearr_17607_17656[1] = 22;
                 } else {
-                  var statearr_8883_8932 = state_8878__$1;
-                  statearr_8883_8932[1] = 23;
+                  var statearr_17608_17657 = state_17603__$1;
+                  statearr_17608_17657[1] = 23;
                 }
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               } else {
-                if (state_val_8879 === 27) {
-                  var inst_8863 = state_8878[2];
-                  var state_8878__$1 = state_8878;
-                  var statearr_8884_8933 = state_8878__$1;
-                  statearr_8884_8933[2] = inst_8863;
-                  statearr_8884_8933[1] = 24;
+                if (state_val_17604 === 27) {
+                  var inst_17588 = state_17603[2];
+                  var state_17603__$1 = state_17603;
+                  var statearr_17609_17658 = state_17603__$1;
+                  statearr_17609_17658[2] = inst_17588;
+                  statearr_17609_17658[1] = 24;
                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                 } else {
-                  if (state_val_8879 === 1) {
-                    var inst_8789 = cljs.core.partial.call(null, intercom.tostateu, conn);
-                    var inst_8790 = intercom.tostate = inst_8789;
-                    var inst_8791 = intercom.getIntercomState.call(null, conn);
-                    var inst_8792 = intercom.state = inst_8791;
-                    var inst_8793 = logger.og.call(null, new cljs.core.Keyword(null, "intercom", "intercom", -1489804996), "starting loop in intercom");
-                    var inst_8794 = logger.og.call(null, new cljs.core.Keyword(null, "intercom", "intercom", -1489804996), "state in intercom ", intercom.state);
-                    var inst_8795 = logger.og.call(null, new cljs.core.Keyword(null, "intercom", "intercom", -1489804996), "message in intercom ", message);
-                    var inst_8796 = message.data;
-                    var inst_8797 = intercom.v = inst_8796;
-                    var inst_8798 = logger.og.call(null, new cljs.core.Keyword(null, "intercom", "intercom", -1489804996), "state ", intercom.state);
-                    var inst_8799 = logger.og.call(null, new cljs.core.Keyword(null, "intercom", "intercom", -1489804996), "message ", message);
-                    var inst_8800 = intercom.is_QMARK_.call(null, intercom.state, "start");
-                    var state_8878__$1 = function() {
-                      var statearr_8885 = state_8878;
-                      statearr_8885[5] = inst_8798;
-                      statearr_8885[6] = inst_8790;
-                      statearr_8885[7] = inst_8792;
-                      statearr_8885[8] = inst_8793;
-                      statearr_8885[9] = inst_8794;
-                      statearr_8885[10] = inst_8797;
-                      statearr_8885[11] = inst_8795;
-                      statearr_8885[12] = inst_8799;
-                      return statearr_8885;
+                  if (state_val_17604 === 1) {
+                    var inst_17514 = cljs.core.partial.call(null, intercom.tostateu, conn);
+                    var inst_17515 = intercom.tostate = inst_17514;
+                    var inst_17516 = intercom.getIntercomState.call(null, conn);
+                    var inst_17517 = intercom.state = inst_17516;
+                    var inst_17518 = logger.og.call(null, new cljs.core.Keyword(null, "intercom", "intercom", -1489804996), "starting loop in intercom");
+                    var inst_17519 = logger.og.call(null, new cljs.core.Keyword(null, "intercom", "intercom", -1489804996), "state in intercom ", intercom.state);
+                    var inst_17520 = logger.og.call(null, new cljs.core.Keyword(null, "intercom", "intercom", -1489804996), "message in intercom ", message);
+                    var inst_17521 = message.data;
+                    var inst_17522 = intercom.v = inst_17521;
+                    var inst_17523 = logger.og.call(null, new cljs.core.Keyword(null, "intercom", "intercom", -1489804996), "state ", intercom.state);
+                    var inst_17524 = logger.og.call(null, new cljs.core.Keyword(null, "intercom", "intercom", -1489804996), "message ", message);
+                    var inst_17525 = intercom.is_QMARK_.call(null, intercom.state, "start");
+                    var state_17603__$1 = function() {
+                      var statearr_17610 = state_17603;
+                      statearr_17610[5] = inst_17523;
+                      statearr_17610[6] = inst_17518;
+                      statearr_17610[7] = inst_17520;
+                      statearr_17610[8] = inst_17517;
+                      statearr_17610[9] = inst_17524;
+                      statearr_17610[10] = inst_17522;
+                      statearr_17610[11] = inst_17515;
+                      statearr_17610[12] = inst_17519;
+                      return statearr_17610;
                     }();
-                    if (inst_8800) {
-                      var statearr_8886_8934 = state_8878__$1;
-                      statearr_8886_8934[1] = 2;
+                    if (inst_17525) {
+                      var statearr_17611_17659 = state_17603__$1;
+                      statearr_17611_17659[1] = 2;
                     } else {
-                      var statearr_8887_8935 = state_8878__$1;
-                      statearr_8887_8935[1] = 3;
+                      var statearr_17612_17660 = state_17603__$1;
+                      statearr_17612_17660[1] = 3;
                     }
                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                   } else {
-                    if (state_val_8879 === 24) {
-                      var inst_8865 = state_8878[2];
-                      var state_8878__$1 = state_8878;
-                      var statearr_8888_8936 = state_8878__$1;
-                      statearr_8888_8936[2] = inst_8865;
-                      statearr_8888_8936[1] = 21;
+                    if (state_val_17604 === 24) {
+                      var inst_17590 = state_17603[2];
+                      var state_17603__$1 = state_17603;
+                      var statearr_17613_17661 = state_17603__$1;
+                      statearr_17613_17661[2] = inst_17590;
+                      statearr_17613_17661[1] = 21;
                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                     } else {
-                      if (state_val_8879 === 4) {
-                        var inst_8876 = state_8878[2];
-                        var state_8878__$1 = state_8878;
-                        return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_8878__$1, inst_8876);
+                      if (state_val_17604 === 4) {
+                        var inst_17601 = state_17603[2];
+                        var state_17603__$1 = state_17603;
+                        return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_17603__$1, inst_17601);
                       } else {
-                        if (state_val_8879 === 15) {
-                          var inst_8872 = state_8878[2];
-                          var state_8878__$1 = state_8878;
-                          var statearr_8889_8937 = state_8878__$1;
-                          statearr_8889_8937[2] = inst_8872;
-                          statearr_8889_8937[1] = 8;
+                        if (state_val_17604 === 15) {
+                          var inst_17597 = state_17603[2];
+                          var state_17603__$1 = state_17603;
+                          var statearr_17614_17662 = state_17603__$1;
+                          statearr_17614_17662[2] = inst_17597;
+                          statearr_17614_17662[1] = 8;
                           return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                         } else {
-                          if (state_val_8879 === 21) {
-                            var inst_8867 = state_8878[2];
-                            var state_8878__$1 = state_8878;
-                            var statearr_8890_8938 = state_8878__$1;
-                            statearr_8890_8938[2] = inst_8867;
-                            statearr_8890_8938[1] = 18;
+                          if (state_val_17604 === 21) {
+                            var inst_17592 = state_17603[2];
+                            var state_17603__$1 = state_17603;
+                            var statearr_17615_17663 = state_17603__$1;
+                            statearr_17615_17663[2] = inst_17592;
+                            statearr_17615_17663[1] = 18;
                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                           } else {
-                            if (state_val_8879 === 31) {
-                              var inst_8850 = it.takeData.call(null, message);
-                              var inst_8851 = intercom.tostate.call(null, inst_8850);
-                              var state_8878__$1 = state_8878;
-                              var statearr_8891_8939 = state_8878__$1;
-                              statearr_8891_8939[2] = inst_8851;
-                              statearr_8891_8939[1] = 33;
+                            if (state_val_17604 === 31) {
+                              var inst_17575 = it.takeData.call(null, message);
+                              var inst_17576 = intercom.tostate.call(null, inst_17575);
+                              var state_17603__$1 = state_17603;
+                              var statearr_17616_17664 = state_17603__$1;
+                              statearr_17616_17664[2] = inst_17576;
+                              statearr_17616_17664[1] = 33;
                               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                             } else {
-                              if (state_val_8879 === 32) {
-                                var state_8878__$1 = state_8878;
-                                var statearr_8892_8940 = state_8878__$1;
-                                statearr_8892_8940[1] = 34;
+                              if (state_val_17604 === 32) {
+                                var state_17603__$1 = state_17603;
+                                var statearr_17617_17665 = state_17603__$1;
+                                statearr_17617_17665[1] = 34;
                                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                               } else {
-                                if (state_val_8879 === 33) {
-                                  var inst_8859 = state_8878[2];
-                                  var state_8878__$1 = state_8878;
-                                  var statearr_8894_8941 = state_8878__$1;
-                                  statearr_8894_8941[2] = inst_8859;
-                                  statearr_8894_8941[1] = 30;
+                                if (state_val_17604 === 33) {
+                                  var inst_17584 = state_17603[2];
+                                  var state_17603__$1 = state_17603;
+                                  var statearr_17619_17666 = state_17603__$1;
+                                  statearr_17619_17666[2] = inst_17584;
+                                  statearr_17619_17666[1] = 30;
                                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                 } else {
-                                  if (state_val_8879 === 13) {
-                                    var inst_8823 = intercom.typeof_QMARK_.call(null, message, "conn");
-                                    var state_8878__$1 = state_8878;
-                                    if (inst_8823) {
-                                      var statearr_8895_8942 = state_8878__$1;
-                                      statearr_8895_8942[1] = 16;
+                                  if (state_val_17604 === 13) {
+                                    var inst_17548 = intercom.typeof_QMARK_.call(null, message, "conn");
+                                    var state_17603__$1 = state_17603;
+                                    if (inst_17548) {
+                                      var statearr_17620_17667 = state_17603__$1;
+                                      statearr_17620_17667[1] = 16;
                                     } else {
-                                      var statearr_8896_8943 = state_8878__$1;
-                                      statearr_8896_8943[1] = 17;
+                                      var statearr_17621_17668 = state_17603__$1;
+                                      statearr_17621_17668[1] = 17;
                                     }
                                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                   } else {
-                                    if (state_val_8879 === 22) {
-                                      var inst_8835 = it.takeGetData.call(null, message);
-                                      var inst_8836 = intercom.tostate.call(null, inst_8835);
-                                      var state_8878__$1 = state_8878;
-                                      var statearr_8897_8944 = state_8878__$1;
-                                      statearr_8897_8944[2] = inst_8836;
-                                      statearr_8897_8944[1] = 24;
+                                    if (state_val_17604 === 22) {
+                                      var inst_17560 = it.takeGetData.call(null, message);
+                                      var inst_17561 = intercom.tostate.call(null, inst_17560);
+                                      var state_17603__$1 = state_17603;
+                                      var statearr_17622_17669 = state_17603__$1;
+                                      statearr_17622_17669[2] = inst_17561;
+                                      statearr_17622_17669[1] = 24;
                                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                     } else {
-                                      if (state_val_8879 === 36) {
-                                        var inst_8857 = state_8878[2];
-                                        var state_8878__$1 = state_8878;
-                                        var statearr_8898_8945 = state_8878__$1;
-                                        statearr_8898_8945[2] = inst_8857;
-                                        statearr_8898_8945[1] = 33;
+                                      if (state_val_17604 === 36) {
+                                        var inst_17582 = state_17603[2];
+                                        var state_17603__$1 = state_17603;
+                                        var statearr_17623_17670 = state_17603__$1;
+                                        statearr_17623_17670[2] = inst_17582;
+                                        statearr_17623_17670[1] = 33;
                                         return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                       } else {
-                                        if (state_val_8879 === 29) {
-                                          var inst_8848 = intercom.typeof_QMARK_.call(null, message, "data");
-                                          var state_8878__$1 = state_8878;
-                                          if (inst_8848) {
-                                            var statearr_8899_8946 = state_8878__$1;
-                                            statearr_8899_8946[1] = 31;
+                                        if (state_val_17604 === 29) {
+                                          var inst_17573 = intercom.typeof_QMARK_.call(null, message, "data");
+                                          var state_17603__$1 = state_17603;
+                                          if (inst_17573) {
+                                            var statearr_17624_17671 = state_17603__$1;
+                                            statearr_17624_17671[1] = 31;
                                           } else {
-                                            var statearr_8900_8947 = state_8878__$1;
-                                            statearr_8900_8947[1] = 32;
+                                            var statearr_17625_17672 = state_17603__$1;
+                                            statearr_17625_17672[1] = 32;
                                           }
                                           return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                         } else {
-                                          if (state_val_8879 === 6) {
-                                            var inst_8811 = intercom.typeof_QMARK_.call(null, message, "version");
-                                            var state_8878__$1 = state_8878;
-                                            if (inst_8811) {
-                                              var statearr_8901_8948 = state_8878__$1;
-                                              statearr_8901_8948[1] = 9;
+                                          if (state_val_17604 === 6) {
+                                            var inst_17536 = intercom.typeof_QMARK_.call(null, message, "version");
+                                            var state_17603__$1 = state_17603;
+                                            if (inst_17536) {
+                                              var statearr_17626_17673 = state_17603__$1;
+                                              statearr_17626_17673[1] = 9;
                                             } else {
-                                              var statearr_8902_8949 = state_8878__$1;
-                                              statearr_8902_8949[1] = 10;
+                                              var statearr_17627_17674 = state_17603__$1;
+                                              statearr_17627_17674[1] = 10;
                                             }
                                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                           } else {
-                                            if (state_val_8879 === 28) {
-                                              var inst_8845 = it.takeTx.call(null, message);
-                                              var inst_8846 = intercom.tostate.call(null, inst_8845);
-                                              var state_8878__$1 = state_8878;
-                                              var statearr_8903_8950 = state_8878__$1;
-                                              statearr_8903_8950[2] = inst_8846;
-                                              statearr_8903_8950[1] = 30;
+                                            if (state_val_17604 === 28) {
+                                              var inst_17570 = it.takeTx.call(null, message);
+                                              var inst_17571 = intercom.tostate.call(null, inst_17570);
+                                              var state_17603__$1 = state_17603;
+                                              var statearr_17628_17675 = state_17603__$1;
+                                              statearr_17628_17675[2] = inst_17571;
+                                              statearr_17628_17675[1] = 30;
                                               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                             } else {
-                                              if (state_val_8879 === 25) {
-                                                var inst_8840 = it.takeGetTx.call(null, message);
-                                                var inst_8841 = intercom.tostate.call(null, inst_8840);
-                                                var state_8878__$1 = state_8878;
-                                                var statearr_8904_8951 = state_8878__$1;
-                                                statearr_8904_8951[2] = inst_8841;
-                                                statearr_8904_8951[1] = 27;
+                                              if (state_val_17604 === 25) {
+                                                var inst_17565 = it.takeGetTx.call(null, message);
+                                                var inst_17566 = intercom.tostate.call(null, inst_17565);
+                                                var state_17603__$1 = state_17603;
+                                                var statearr_17629_17676 = state_17603__$1;
+                                                statearr_17629_17676[2] = inst_17566;
+                                                statearr_17629_17676[1] = 27;
                                                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                               } else {
-                                                if (state_val_8879 === 34) {
-                                                  var inst_8854 = intercom.tostate.call(null, "grind");
-                                                  var state_8878__$1 = state_8878;
-                                                  var statearr_8905_8952 = state_8878__$1;
-                                                  statearr_8905_8952[2] = inst_8854;
-                                                  statearr_8905_8952[1] = 36;
+                                                if (state_val_17604 === 34) {
+                                                  var inst_17579 = intercom.tostate.call(null, "grind");
+                                                  var state_17603__$1 = state_17603;
+                                                  var statearr_17630_17677 = state_17603__$1;
+                                                  statearr_17630_17677[2] = inst_17579;
+                                                  statearr_17630_17677[1] = 36;
                                                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                                 } else {
-                                                  if (state_val_8879 === 17) {
-                                                    var inst_8828 = intercom.typeof_QMARK_.call(null, message, "inv");
-                                                    var state_8878__$1 = state_8878;
-                                                    if (inst_8828) {
-                                                      var statearr_8906_8953 = state_8878__$1;
-                                                      statearr_8906_8953[1] = 19;
+                                                  if (state_val_17604 === 17) {
+                                                    var inst_17553 = intercom.typeof_QMARK_.call(null, message, "inv");
+                                                    var state_17603__$1 = state_17603;
+                                                    if (inst_17553) {
+                                                      var statearr_17631_17678 = state_17603__$1;
+                                                      statearr_17631_17678[1] = 19;
                                                     } else {
-                                                      var statearr_8907_8954 = state_8878__$1;
-                                                      statearr_8907_8954[1] = 20;
+                                                      var statearr_17632_17679 = state_17603__$1;
+                                                      statearr_17632_17679[1] = 20;
                                                     }
                                                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                                   } else {
-                                                    if (state_val_8879 === 3) {
-                                                      var inst_8809 = intercom.is_QMARK_.call(null, intercom.state, "version");
-                                                      var state_8878__$1 = state_8878;
-                                                      if (inst_8809) {
-                                                        var statearr_8908_8955 = state_8878__$1;
-                                                        statearr_8908_8955[1] = 6;
+                                                    if (state_val_17604 === 3) {
+                                                      var inst_17534 = intercom.is_QMARK_.call(null, intercom.state, "version");
+                                                      var state_17603__$1 = state_17603;
+                                                      if (inst_17534) {
+                                                        var statearr_17633_17680 = state_17603__$1;
+                                                        statearr_17633_17680[1] = 6;
                                                       } else {
-                                                        var statearr_8909_8956 = state_8878__$1;
-                                                        statearr_8909_8956[1] = 7;
+                                                        var statearr_17634_17681 = state_17603__$1;
+                                                        statearr_17634_17681[1] = 7;
                                                       }
                                                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                                     } else {
-                                                      if (state_val_8879 === 12) {
-                                                        var inst_8815 = state_8878[2];
-                                                        var inst_8816 = intercom.tostate.call(null, inst_8815);
-                                                        var state_8878__$1 = state_8878;
-                                                        var statearr_8910_8957 = state_8878__$1;
-                                                        statearr_8910_8957[2] = inst_8816;
-                                                        statearr_8910_8957[1] = 11;
+                                                      if (state_val_17604 === 12) {
+                                                        var inst_17540 = state_17603[2];
+                                                        var inst_17541 = intercom.tostate.call(null, inst_17540);
+                                                        var state_17603__$1 = state_17603;
+                                                        var statearr_17635_17682 = state_17603__$1;
+                                                        statearr_17635_17682[2] = inst_17541;
+                                                        statearr_17635_17682[1] = 11;
                                                         return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                                       } else {
-                                                        if (state_val_8879 === 2) {
-                                                          var inst_8802 = it.takeConn.call(null, message);
-                                                          var state_8878__$1 = state_8878;
-                                                          return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_8878__$1, 5, inst_8802);
+                                                        if (state_val_17604 === 2) {
+                                                          var inst_17527 = it.takeConn.call(null, message);
+                                                          var state_17603__$1 = state_17603;
+                                                          return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_17603__$1, 5, inst_17527);
                                                         } else {
-                                                          if (state_val_8879 === 23) {
-                                                            var inst_8838 = intercom.typeof_QMARK_.call(null, message, "gettx");
-                                                            var state_8878__$1 = state_8878;
-                                                            if (inst_8838) {
-                                                              var statearr_8911_8958 = state_8878__$1;
-                                                              statearr_8911_8958[1] = 25;
+                                                          if (state_val_17604 === 23) {
+                                                            var inst_17563 = intercom.typeof_QMARK_.call(null, message, "gettx");
+                                                            var state_17603__$1 = state_17603;
+                                                            if (inst_17563) {
+                                                              var statearr_17636_17683 = state_17603__$1;
+                                                              statearr_17636_17683[1] = 25;
                                                             } else {
-                                                              var statearr_8912_8959 = state_8878__$1;
-                                                              statearr_8912_8959[1] = 26;
+                                                              var statearr_17637_17684 = state_17603__$1;
+                                                              statearr_17637_17684[1] = 26;
                                                             }
                                                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                                           } else {
-                                                            if (state_val_8879 === 35) {
-                                                              var state_8878__$1 = state_8878;
-                                                              var statearr_8913_8960 = state_8878__$1;
-                                                              statearr_8913_8960[2] = null;
-                                                              statearr_8913_8960[1] = 36;
+                                                            if (state_val_17604 === 35) {
+                                                              var state_17603__$1 = state_17603;
+                                                              var statearr_17638_17685 = state_17603__$1;
+                                                              statearr_17638_17685[2] = null;
+                                                              statearr_17638_17685[1] = 36;
                                                               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                                             } else {
-                                                              if (state_val_8879 === 19) {
-                                                                var inst_8830 = it.takeInv.call(null, message);
-                                                                var inst_8831 = intercom.tostate.call(null, inst_8830);
-                                                                var state_8878__$1 = state_8878;
-                                                                var statearr_8914_8961 = state_8878__$1;
-                                                                statearr_8914_8961[2] = inst_8831;
-                                                                statearr_8914_8961[1] = 21;
+                                                              if (state_val_17604 === 19) {
+                                                                var inst_17555 = it.takeInv.call(null, message);
+                                                                var inst_17556 = intercom.tostate.call(null, inst_17555);
+                                                                var state_17603__$1 = state_17603;
+                                                                var statearr_17639_17686 = state_17603__$1;
+                                                                statearr_17639_17686[2] = inst_17556;
+                                                                statearr_17639_17686[1] = 21;
                                                                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                                               } else {
-                                                                if (state_val_8879 === 11) {
-                                                                  var inst_8819 = state_8878[2];
-                                                                  var state_8878__$1 = state_8878;
-                                                                  var statearr_8915_8962 = state_8878__$1;
-                                                                  statearr_8915_8962[2] = inst_8819;
-                                                                  statearr_8915_8962[1] = 8;
+                                                                if (state_val_17604 === 11) {
+                                                                  var inst_17544 = state_17603[2];
+                                                                  var state_17603__$1 = state_17603;
+                                                                  var statearr_17640_17687 = state_17603__$1;
+                                                                  statearr_17640_17687[2] = inst_17544;
+                                                                  statearr_17640_17687[1] = 8;
                                                                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                                                 } else {
-                                                                  if (state_val_8879 === 9) {
-                                                                    var inst_8813 = it.takeVersion.call(null, message);
-                                                                    var state_8878__$1 = state_8878;
-                                                                    return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_8878__$1, 12, inst_8813);
+                                                                  if (state_val_17604 === 9) {
+                                                                    var inst_17538 = it.takeVersion.call(null, message);
+                                                                    var state_17603__$1 = state_17603;
+                                                                    return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_17603__$1, 12, inst_17538);
                                                                   } else {
-                                                                    if (state_val_8879 === 5) {
-                                                                      var inst_8804 = state_8878[2];
-                                                                      var inst_8805 = intercom.newstate = inst_8804;
-                                                                      var inst_8806 = logger.og.call(null, new cljs.core.Keyword(null, "intercom", "intercom", -1489804996), "start -\x3e ", intercom.newstate);
-                                                                      var inst_8807 = intercom.tostate.call(null, intercom.newstate);
-                                                                      var state_8878__$1 = function() {
-                                                                        var statearr_8916 = state_8878;
-                                                                        statearr_8916[13] = inst_8806;
-                                                                        statearr_8916[14] = inst_8805;
-                                                                        return statearr_8916;
+                                                                    if (state_val_17604 === 5) {
+                                                                      var inst_17529 = state_17603[2];
+                                                                      var inst_17530 = intercom.newstate = inst_17529;
+                                                                      var inst_17531 = logger.og.call(null, new cljs.core.Keyword(null, "intercom", "intercom", -1489804996), "start -\x3e ", intercom.newstate);
+                                                                      var inst_17532 = intercom.tostate.call(null, intercom.newstate);
+                                                                      var state_17603__$1 = function() {
+                                                                        var statearr_17641 = state_17603;
+                                                                        statearr_17641[13] = inst_17531;
+                                                                        statearr_17641[14] = inst_17530;
+                                                                        return statearr_17641;
                                                                       }();
-                                                                      var statearr_8917_8963 = state_8878__$1;
-                                                                      statearr_8917_8963[2] = inst_8807;
-                                                                      statearr_8917_8963[1] = 4;
+                                                                      var statearr_17642_17688 = state_17603__$1;
+                                                                      statearr_17642_17688[2] = inst_17532;
+                                                                      statearr_17642_17688[1] = 4;
                                                                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                                                     } else {
-                                                                      if (state_val_8879 === 14) {
-                                                                        var state_8878__$1 = state_8878;
-                                                                        var statearr_8918_8964 = state_8878__$1;
-                                                                        statearr_8918_8964[2] = null;
-                                                                        statearr_8918_8964[1] = 15;
+                                                                      if (state_val_17604 === 14) {
+                                                                        var state_17603__$1 = state_17603;
+                                                                        var statearr_17643_17689 = state_17603__$1;
+                                                                        statearr_17643_17689[2] = null;
+                                                                        statearr_17643_17689[1] = 15;
                                                                         return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                                                       } else {
-                                                                        if (state_val_8879 === 26) {
-                                                                          var inst_8843 = intercom.typeof_QMARK_.call(null, message, "tx");
-                                                                          var state_8878__$1 = state_8878;
-                                                                          if (inst_8843) {
-                                                                            var statearr_8919_8965 = state_8878__$1;
-                                                                            statearr_8919_8965[1] = 28;
+                                                                        if (state_val_17604 === 26) {
+                                                                          var inst_17568 = intercom.typeof_QMARK_.call(null, message, "tx");
+                                                                          var state_17603__$1 = state_17603;
+                                                                          if (inst_17568) {
+                                                                            var statearr_17644_17690 = state_17603__$1;
+                                                                            statearr_17644_17690[1] = 28;
                                                                           } else {
-                                                                            var statearr_8920_8966 = state_8878__$1;
-                                                                            statearr_8920_8966[1] = 29;
+                                                                            var statearr_17645_17691 = state_17603__$1;
+                                                                            statearr_17645_17691[1] = 29;
                                                                           }
                                                                           return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                                                         } else {
-                                                                          if (state_val_8879 === 16) {
-                                                                            var inst_8825 = it.takeConn.call(null, message);
-                                                                            var inst_8826 = intercom.tostate.call(null, inst_8825);
-                                                                            var state_8878__$1 = state_8878;
-                                                                            var statearr_8921_8967 = state_8878__$1;
-                                                                            statearr_8921_8967[2] = inst_8826;
-                                                                            statearr_8921_8967[1] = 18;
+                                                                          if (state_val_17604 === 16) {
+                                                                            var inst_17550 = it.takeConn.call(null, message);
+                                                                            var inst_17551 = intercom.tostate.call(null, inst_17550);
+                                                                            var state_17603__$1 = state_17603;
+                                                                            var statearr_17646_17692 = state_17603__$1;
+                                                                            statearr_17646_17692[2] = inst_17551;
+                                                                            statearr_17646_17692[1] = 18;
                                                                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                                                           } else {
-                                                                            if (state_val_8879 === 30) {
-                                                                              var inst_8861 = state_8878[2];
-                                                                              var state_8878__$1 = state_8878;
-                                                                              var statearr_8922_8968 = state_8878__$1;
-                                                                              statearr_8922_8968[2] = inst_8861;
-                                                                              statearr_8922_8968[1] = 27;
+                                                                            if (state_val_17604 === 30) {
+                                                                              var inst_17586 = state_17603[2];
+                                                                              var state_17603__$1 = state_17603;
+                                                                              var statearr_17647_17693 = state_17603__$1;
+                                                                              statearr_17647_17693[2] = inst_17586;
+                                                                              statearr_17647_17693[1] = 27;
                                                                               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                                                             } else {
-                                                                              if (state_val_8879 === 10) {
-                                                                                var state_8878__$1 = state_8878;
-                                                                                var statearr_8923_8969 = state_8878__$1;
-                                                                                statearr_8923_8969[2] = null;
-                                                                                statearr_8923_8969[1] = 11;
+                                                                              if (state_val_17604 === 10) {
+                                                                                var state_17603__$1 = state_17603;
+                                                                                var statearr_17648_17694 = state_17603__$1;
+                                                                                statearr_17648_17694[2] = null;
+                                                                                statearr_17648_17694[1] = 11;
                                                                                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                                                               } else {
-                                                                                if (state_val_8879 === 18) {
-                                                                                  var inst_8869 = state_8878[2];
-                                                                                  var state_8878__$1 = state_8878;
-                                                                                  var statearr_8924_8970 = state_8878__$1;
-                                                                                  statearr_8924_8970[2] = inst_8869;
-                                                                                  statearr_8924_8970[1] = 15;
+                                                                                if (state_val_17604 === 18) {
+                                                                                  var inst_17594 = state_17603[2];
+                                                                                  var state_17603__$1 = state_17603;
+                                                                                  var statearr_17649_17695 = state_17603__$1;
+                                                                                  statearr_17649_17695[2] = inst_17594;
+                                                                                  statearr_17649_17695[1] = 15;
                                                                                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                                                                 } else {
-                                                                                  if (state_val_8879 === 8) {
-                                                                                    var inst_8874 = state_8878[2];
-                                                                                    var state_8878__$1 = state_8878;
-                                                                                    var statearr_8925_8971 = state_8878__$1;
-                                                                                    statearr_8925_8971[2] = inst_8874;
-                                                                                    statearr_8925_8971[1] = 4;
+                                                                                  if (state_val_17604 === 8) {
+                                                                                    var inst_17599 = state_17603[2];
+                                                                                    var state_17603__$1 = state_17603;
+                                                                                    var statearr_17650_17696 = state_17603__$1;
+                                                                                    statearr_17650_17696[2] = inst_17599;
+                                                                                    statearr_17650_17696[1] = 4;
                                                                                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                                                                   } else {
                                                                                     return null;
@@ -35096,14 +35096,14 @@ intercom.intercomstatemachine = function intercomstatemachine(conn, message) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_8927 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
-              statearr_8927[0] = state_machine__6220__auto__;
-              statearr_8927[1] = 1;
-              return statearr_8927;
+              var statearr_17652 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+              statearr_17652[0] = state_machine__6220__auto__;
+              statearr_17652[1] = 1;
+              return statearr_17652;
             };
-            var state_machine__6220__auto____1 = function(state_8878) {
+            var state_machine__6220__auto____1 = function(state_17603) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_8878);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_17603);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -35112,12 +35112,12 @@ intercom.intercomstatemachine = function intercomstatemachine(conn, message) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_8878) {
+            state_machine__6220__auto__ = function(state_17603) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_8878);
+                  return state_machine__6220__auto____1.call(this, state_17603);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -35128,9 +35128,9 @@ intercom.intercomstatemachine = function intercomstatemachine(conn, message) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_8928 = f__6233__auto__.call(null);
-        statearr_8928[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_8928;
+        var statearr_17653 = f__6233__auto__.call(null);
+        statearr_17653[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_17653;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -35158,16 +35158,16 @@ crypt0.resultToCh = function resultToCh(chan, digest) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_10527) {
-            var state_val_10528 = state_10527[1];
-            if (state_val_10528 === 2) {
-              var inst_10525 = state_10527[2];
-              var state_10527__$1 = state_10527;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_10527__$1, inst_10525);
+          return function(state_19252) {
+            var state_val_19253 = state_19252[1];
+            if (state_val_19253 === 2) {
+              var inst_19250 = state_19252[2];
+              var state_19252__$1 = state_19252;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_19252__$1, inst_19250);
             } else {
-              if (state_val_10528 === 1) {
-                var state_10527__$1 = state_10527;
-                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_10527__$1, 2, chan, crypt0.m);
+              if (state_val_19253 === 1) {
+                var state_19252__$1 = state_19252;
+                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_19252__$1, 2, chan, crypt0.m);
               } else {
                 return null;
               }
@@ -35178,14 +35178,14 @@ crypt0.resultToCh = function resultToCh(chan, digest) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_10530 = [null, null, null, null, null];
-              statearr_10530[0] = state_machine__6220__auto__;
-              statearr_10530[1] = 1;
-              return statearr_10530;
+              var statearr_19255 = [null, null, null, null, null];
+              statearr_19255[0] = state_machine__6220__auto__;
+              statearr_19255[1] = 1;
+              return statearr_19255;
             };
-            var state_machine__6220__auto____1 = function(state_10527) {
+            var state_machine__6220__auto____1 = function(state_19252) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_10527);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_19252);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -35194,12 +35194,12 @@ crypt0.resultToCh = function resultToCh(chan, digest) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_10527) {
+            state_machine__6220__auto__ = function(state_19252) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_10527);
+                  return state_machine__6220__auto____1.call(this, state_19252);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -35210,9 +35210,9 @@ crypt0.resultToCh = function resultToCh(chan, digest) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_10531 = f__6233__auto__.call(null);
-        statearr_10531[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_10531;
+        var statearr_19256 = f__6233__auto__.call(null);
+        statearr_19256[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_19256;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -35228,14 +35228,14 @@ crypt0.shaCallb = function shaCallb(digest) {
 crypt0.sha256 = function sha256(x) {
   logger.og.call(null, new cljs.core.Keyword(null, "sha256", "sha256", 1890611800), "sha256 %s", x);
   return crypto.subtle.digest(function() {
-    var obj10535 = {"name":"SHA-256"};
-    return obj10535;
+    var obj19260 = {"name":"SHA-256"};
+    return obj19260;
   }(), crypt0.encode.call(null, x)).then(crypt0.shaCallb);
 };
 crypt0.sha256c = function sha256c(c, x) {
   return crypto.subtle.digest(function() {
-    var obj10539 = {"name":"SHA-256"};
-    return obj10539;
+    var obj19264 = {"name":"SHA-256"};
+    return obj19264;
   }(), crypt0.encode.call(null, x)).then(c);
 };
 crypt0.s256 = function s256(k) {
@@ -35245,42 +35245,42 @@ crypt0.s256 = function s256(k) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_10578) {
-            var state_val_10579 = state_10578[1];
-            if (state_val_10579 === 2) {
-              var inst_10572 = state_10578[2];
-              var inst_10573 = crypt0.arraybtostring.call(null, inst_10572);
-              var inst_10574 = crypt0.r = inst_10573;
-              var inst_10575 = "got from sha256 " + k;
-              var inst_10576 = logger.og.call(null, new cljs.core.Keyword(null, "s256", "s256", -1445609188), inst_10575, crypt0.r);
-              var state_10578__$1 = function() {
-                var statearr_10580 = state_10578;
-                statearr_10580[5] = inst_10574;
-                statearr_10580[6] = inst_10576;
-                return statearr_10580;
+          return function(state_19303) {
+            var state_val_19304 = state_19303[1];
+            if (state_val_19304 === 2) {
+              var inst_19297 = state_19303[2];
+              var inst_19298 = crypt0.arraybtostring.call(null, inst_19297);
+              var inst_19299 = crypt0.r = inst_19298;
+              var inst_19300 = "got from sha256 " + k;
+              var inst_19301 = logger.og.call(null, new cljs.core.Keyword(null, "s256", "s256", -1445609188), inst_19300, crypt0.r);
+              var state_19303__$1 = function() {
+                var statearr_19305 = state_19303;
+                statearr_19305[5] = inst_19301;
+                statearr_19305[6] = inst_19299;
+                return statearr_19305;
               }();
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_10578__$1, crypt0.r);
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_19303__$1, crypt0.r);
             } else {
-              if (state_val_10579 === 1) {
-                var inst_10563 = cljs.core.async.chan.call(null);
-                var inst_10566 = {"name":"SHA-256"};
-                var inst_10567 = crypt0.encode.call(null, k);
-                var inst_10568 = crypto.subtle.digest(inst_10566, inst_10567);
-                var inst_10569 = function() {
-                  var c = inst_10563;
-                  return function(c, inst_10563, inst_10566, inst_10567, inst_10568, state_val_10579, c__6232__auto__) {
-                    return function(p1__10540_SHARP_) {
-                      return cljs.core.async.put_BANG_.call(null, c, p1__10540_SHARP_);
+              if (state_val_19304 === 1) {
+                var inst_19288 = cljs.core.async.chan.call(null);
+                var inst_19291 = {"name":"SHA-256"};
+                var inst_19292 = crypt0.encode.call(null, k);
+                var inst_19293 = crypto.subtle.digest(inst_19291, inst_19292);
+                var inst_19294 = function() {
+                  var c = inst_19288;
+                  return function(c, inst_19288, inst_19291, inst_19292, inst_19293, state_val_19304, c__6232__auto__) {
+                    return function(p1__19265_SHARP_) {
+                      return cljs.core.async.put_BANG_.call(null, c, p1__19265_SHARP_);
                     };
-                  }(c, inst_10563, inst_10566, inst_10567, inst_10568, state_val_10579, c__6232__auto__);
+                  }(c, inst_19288, inst_19291, inst_19292, inst_19293, state_val_19304, c__6232__auto__);
                 }();
-                var inst_10570 = inst_10568.then(inst_10569);
-                var state_10578__$1 = function() {
-                  var statearr_10581 = state_10578;
-                  statearr_10581[7] = inst_10570;
-                  return statearr_10581;
+                var inst_19295 = inst_19293.then(inst_19294);
+                var state_19303__$1 = function() {
+                  var statearr_19306 = state_19303;
+                  statearr_19306[7] = inst_19295;
+                  return statearr_19306;
                 }();
-                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_10578__$1, 2, inst_10563);
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_19303__$1, 2, inst_19288);
               } else {
                 return null;
               }
@@ -35291,14 +35291,14 @@ crypt0.s256 = function s256(k) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_10583 = [null, null, null, null, null, null, null, null];
-              statearr_10583[0] = state_machine__6220__auto__;
-              statearr_10583[1] = 1;
-              return statearr_10583;
+              var statearr_19308 = [null, null, null, null, null, null, null, null];
+              statearr_19308[0] = state_machine__6220__auto__;
+              statearr_19308[1] = 1;
+              return statearr_19308;
             };
-            var state_machine__6220__auto____1 = function(state_10578) {
+            var state_machine__6220__auto____1 = function(state_19303) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_10578);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_19303);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -35307,12 +35307,12 @@ crypt0.s256 = function s256(k) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_10578) {
+            state_machine__6220__auto__ = function(state_19303) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_10578);
+                  return state_machine__6220__auto____1.call(this, state_19303);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -35323,9 +35323,9 @@ crypt0.s256 = function s256(k) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_10584 = f__6233__auto__.call(null);
-        statearr_10584[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_10584;
+        var statearr_19309 = f__6233__auto__.call(null);
+        statearr_19309[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_19309;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -35338,30 +35338,30 @@ crypt0.bHash = function bHash(blockHeader) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_10608) {
-            var state_val_10609 = state_10608[1];
-            if (state_val_10609 === 2) {
-              var inst_10605 = state_10608[2];
-              var inst_10606 = crypt0.blockHash = inst_10605;
-              var state_10608__$1 = function() {
-                var statearr_10610 = state_10608;
-                statearr_10610[5] = inst_10606;
-                return statearr_10610;
+          return function(state_19333) {
+            var state_val_19334 = state_19333[1];
+            if (state_val_19334 === 2) {
+              var inst_19330 = state_19333[2];
+              var inst_19331 = crypt0.blockHash = inst_19330;
+              var state_19333__$1 = function() {
+                var statearr_19335 = state_19333;
+                statearr_19335[5] = inst_19331;
+                return statearr_19335;
               }();
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_10608__$1, crypt0.blockHash);
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_19333__$1, crypt0.blockHash);
             } else {
-              if (state_val_10609 === 1) {
-                var inst_10600 = JSON.stringify(blockHeader);
-                var inst_10601 = crypt0.stringified = inst_10600;
-                var inst_10602 = logger.og.call(null, new cljs.core.Keyword(null, "blockchain", "blockchain", -1030570049), "stringified", crypt0.stringified);
-                var inst_10603 = crypt0.s256.call(null, crypt0.stringified);
-                var state_10608__$1 = function() {
-                  var statearr_10611 = state_10608;
-                  statearr_10611[6] = inst_10601;
-                  statearr_10611[7] = inst_10602;
-                  return statearr_10611;
+              if (state_val_19334 === 1) {
+                var inst_19325 = JSON.stringify(blockHeader);
+                var inst_19326 = crypt0.stringified = inst_19325;
+                var inst_19327 = logger.og.call(null, new cljs.core.Keyword(null, "blockchain", "blockchain", -1030570049), "stringified", crypt0.stringified);
+                var inst_19328 = crypt0.s256.call(null, crypt0.stringified);
+                var state_19333__$1 = function() {
+                  var statearr_19336 = state_19333;
+                  statearr_19336[6] = inst_19326;
+                  statearr_19336[7] = inst_19327;
+                  return statearr_19336;
                 }();
-                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_10608__$1, 2, inst_10603);
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_19333__$1, 2, inst_19328);
               } else {
                 return null;
               }
@@ -35372,14 +35372,14 @@ crypt0.bHash = function bHash(blockHeader) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_10613 = [null, null, null, null, null, null, null, null];
-              statearr_10613[0] = state_machine__6220__auto__;
-              statearr_10613[1] = 1;
-              return statearr_10613;
+              var statearr_19338 = [null, null, null, null, null, null, null, null];
+              statearr_19338[0] = state_machine__6220__auto__;
+              statearr_19338[1] = 1;
+              return statearr_19338;
             };
-            var state_machine__6220__auto____1 = function(state_10608) {
+            var state_machine__6220__auto____1 = function(state_19333) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_10608);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_19333);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -35388,12 +35388,12 @@ crypt0.bHash = function bHash(blockHeader) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_10608) {
+            state_machine__6220__auto__ = function(state_19333) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_10608);
+                  return state_machine__6220__auto____1.call(this, state_19333);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -35404,9 +35404,9 @@ crypt0.bHash = function bHash(blockHeader) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_10614 = f__6233__auto__.call(null);
-        statearr_10614[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_10614;
+        var statearr_19339 = f__6233__auto__.call(null);
+        statearr_19339[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_19339;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -35420,87 +35420,87 @@ crypt0.merkleRoot = function merkleRoot(transactions) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_10756) {
-            var state_val_10757 = state_10756[1];
-            if (state_val_10757 === 9) {
-              var inst_10748 = state_10756[2];
-              var inst_10749 = crypt0.fromC = inst_10748;
-              var inst_10750 = logger.og.call(null, new cljs.core.Keyword(null, "merkleRoot", "merkleRoot", -1567310602), "from ch ", crypt0.fromC);
-              var inst_10751 = crypt0.fromC.type = "fmr";
-              var inst_10754 = {"value":crypt0.fromC, "type":"fmr"};
-              var state_10756__$1 = function() {
-                var statearr_10759 = state_10756;
-                statearr_10759[5] = inst_10749;
-                statearr_10759[6] = inst_10751;
-                statearr_10759[7] = inst_10750;
-                return statearr_10759;
+          return function(state_19481) {
+            var state_val_19482 = state_19481[1];
+            if (state_val_19482 === 9) {
+              var inst_19473 = state_19481[2];
+              var inst_19474 = crypt0.fromC = inst_19473;
+              var inst_19475 = logger.og.call(null, new cljs.core.Keyword(null, "merkleRoot", "merkleRoot", -1567310602), "from ch ", crypt0.fromC);
+              var inst_19476 = crypt0.fromC.type = "fmr";
+              var inst_19479 = {"value":crypt0.fromC, "type":"fmr"};
+              var state_19481__$1 = function() {
+                var statearr_19484 = state_19481;
+                statearr_19484[5] = inst_19476;
+                statearr_19484[6] = inst_19474;
+                statearr_19484[7] = inst_19475;
+                return statearr_19484;
               }();
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_10756__$1, inst_10754);
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_19481__$1, inst_19479);
             } else {
-              if (state_val_10757 === 8) {
-                var inst_10744 = state_10756[2];
-                var state_10756__$1 = state_10756;
-                var statearr_10760_10779 = state_10756__$1;
-                statearr_10760_10779[2] = inst_10744;
-                statearr_10760_10779[1] = 4;
+              if (state_val_19482 === 8) {
+                var inst_19469 = state_19481[2];
+                var state_19481__$1 = state_19481;
+                var statearr_19485_19504 = state_19481__$1;
+                statearr_19485_19504[2] = inst_19469;
+                statearr_19485_19504[1] = 4;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               } else {
-                if (state_val_10757 === 7) {
-                  var inst_10722 = state_10756[8];
-                  var inst_10740 = inst_10722.shift();
-                  var inst_10741 = inst_10722.length;
-                  var tmp10758 = inst_10722;
-                  var inst_10720 = inst_10740;
-                  var inst_10721 = inst_10741;
-                  var inst_10722__$1 = tmp10758;
-                  var state_10756__$1 = function() {
-                    var statearr_10761 = state_10756;
-                    statearr_10761[9] = inst_10720;
-                    statearr_10761[10] = inst_10721;
-                    statearr_10761[8] = inst_10722__$1;
-                    return statearr_10761;
+                if (state_val_19482 === 7) {
+                  var inst_19447 = state_19481[8];
+                  var inst_19465 = inst_19447.shift();
+                  var inst_19466 = inst_19447.length;
+                  var tmp19483 = inst_19447;
+                  var inst_19445 = inst_19465;
+                  var inst_19446 = inst_19466;
+                  var inst_19447__$1 = tmp19483;
+                  var state_19481__$1 = function() {
+                    var statearr_19486 = state_19481;
+                    statearr_19486[9] = inst_19446;
+                    statearr_19486[8] = inst_19447__$1;
+                    statearr_19486[10] = inst_19445;
+                    return statearr_19486;
                   }();
-                  var statearr_10762_10780 = state_10756__$1;
-                  statearr_10762_10780[2] = null;
-                  statearr_10762_10780[1] = 3;
+                  var statearr_19487_19505 = state_19481__$1;
+                  statearr_19487_19505[2] = null;
+                  statearr_19487_19505[1] = 3;
                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                 } else {
-                  if (state_val_10757 === 6) {
-                    var inst_10720 = state_10756[9];
-                    var inst_10721 = state_10756[10];
-                    var inst_10722 = state_10756[8];
-                    var inst_10736 = cljs.core.async.chan.call(null, 1);
-                    var inst_10737 = function() {
-                      var c__6232__auto____$1 = inst_10736;
-                      var next = inst_10720;
-                      var cnt = inst_10721;
-                      var txs = inst_10722;
-                      return function(c__6232__auto____$1, next, cnt, txs, inst_10720, inst_10721, inst_10722, inst_10736, state_val_10757, c__6232__auto__) {
+                  if (state_val_19482 === 6) {
+                    var inst_19446 = state_19481[9];
+                    var inst_19447 = state_19481[8];
+                    var inst_19445 = state_19481[10];
+                    var inst_19461 = cljs.core.async.chan.call(null, 1);
+                    var inst_19462 = function() {
+                      var c__6232__auto____$1 = inst_19461;
+                      var next = inst_19445;
+                      var cnt = inst_19446;
+                      var txs = inst_19447;
+                      return function(c__6232__auto____$1, next, cnt, txs, inst_19446, inst_19447, inst_19445, inst_19461, state_val_19482, c__6232__auto__) {
                         return function() {
                           var f__6233__auto__ = function() {
-                            var switch__6219__auto__ = function(c__6232__auto____$1, next, cnt, txs, inst_10720, inst_10721, inst_10722, inst_10736, state_val_10757, c__6232__auto__) {
-                              return function(state_10734) {
-                                var state_val_10735 = state_10734[1];
-                                if (state_val_10735 === 1) {
-                                  var state_10734__$1 = state_10734;
-                                  return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_10734__$1, null);
+                            var switch__6219__auto__ = function(c__6232__auto____$1, next, cnt, txs, inst_19446, inst_19447, inst_19445, inst_19461, state_val_19482, c__6232__auto__) {
+                              return function(state_19459) {
+                                var state_val_19460 = state_19459[1];
+                                if (state_val_19460 === 1) {
+                                  var state_19459__$1 = state_19459;
+                                  return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_19459__$1, null);
                                 } else {
                                   return null;
                                 }
                               };
-                            }(c__6232__auto____$1, next, cnt, txs, inst_10720, inst_10721, inst_10722, inst_10736, state_val_10757, c__6232__auto__);
-                            return function(switch__6219__auto__, c__6232__auto____$1, next, cnt, txs, inst_10720, inst_10721, inst_10722, inst_10736, state_val_10757, c__6232__auto__) {
+                            }(c__6232__auto____$1, next, cnt, txs, inst_19446, inst_19447, inst_19445, inst_19461, state_val_19482, c__6232__auto__);
+                            return function(switch__6219__auto__, c__6232__auto____$1, next, cnt, txs, inst_19446, inst_19447, inst_19445, inst_19461, state_val_19482, c__6232__auto__) {
                               return function() {
                                 var state_machine__6220__auto__ = null;
                                 var state_machine__6220__auto____0 = function() {
-                                  var statearr_10764 = [null, null, null, null, null];
-                                  statearr_10764[0] = state_machine__6220__auto__;
-                                  statearr_10764[1] = 1;
-                                  return statearr_10764;
+                                  var statearr_19489 = [null, null, null, null, null];
+                                  statearr_19489[0] = state_machine__6220__auto__;
+                                  statearr_19489[1] = 1;
+                                  return statearr_19489;
                                 };
-                                var state_machine__6220__auto____1 = function(state_10734) {
+                                var state_machine__6220__auto____1 = function(state_19459) {
                                   while (true) {
-                                    var result__6221__auto__ = switch__6219__auto__.call(null, state_10734);
+                                    var result__6221__auto__ = switch__6219__auto__.call(null, state_19459);
                                     if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                                       continue;
                                     } else {
@@ -35509,12 +35509,12 @@ crypt0.merkleRoot = function merkleRoot(transactions) {
                                     break;
                                   }
                                 };
-                                state_machine__6220__auto__ = function(state_10734) {
+                                state_machine__6220__auto__ = function(state_19459) {
                                   switch(arguments.length) {
                                     case 0:
                                       return state_machine__6220__auto____0.call(this);
                                     case 1:
-                                      return state_machine__6220__auto____1.call(this, state_10734);
+                                      return state_machine__6220__auto____1.call(this, state_19459);
                                   }
                                   throw new Error("Invalid arity: " + arguments.length);
                                 };
@@ -35522,140 +35522,140 @@ crypt0.merkleRoot = function merkleRoot(transactions) {
                                 state_machine__6220__auto__.cljs$core$IFn$_invoke$arity$1 = state_machine__6220__auto____1;
                                 return state_machine__6220__auto__;
                               }();
-                            }(switch__6219__auto__, c__6232__auto____$1, next, cnt, txs, inst_10720, inst_10721, inst_10722, inst_10736, state_val_10757, c__6232__auto__);
+                            }(switch__6219__auto__, c__6232__auto____$1, next, cnt, txs, inst_19446, inst_19447, inst_19445, inst_19461, state_val_19482, c__6232__auto__);
                           }();
                           var state__6234__auto__ = function() {
-                            var statearr_10765 = f__6233__auto__.call(null);
-                            statearr_10765[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto____$1;
-                            return statearr_10765;
+                            var statearr_19490 = f__6233__auto__.call(null);
+                            statearr_19490[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto____$1;
+                            return statearr_19490;
                           }();
                           return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
                         };
-                      }(c__6232__auto____$1, next, cnt, txs, inst_10720, inst_10721, inst_10722, inst_10736, state_val_10757, c__6232__auto__);
+                      }(c__6232__auto____$1, next, cnt, txs, inst_19446, inst_19447, inst_19445, inst_19461, state_val_19482, c__6232__auto__);
                     }();
-                    var inst_10738 = cljs.core.async.impl.dispatch.run.call(null, inst_10737);
-                    var state_10756__$1 = function() {
-                      var statearr_10766 = state_10756;
-                      statearr_10766[11] = inst_10738;
-                      return statearr_10766;
+                    var inst_19463 = cljs.core.async.impl.dispatch.run.call(null, inst_19462);
+                    var state_19481__$1 = function() {
+                      var statearr_19491 = state_19481;
+                      statearr_19491[11] = inst_19463;
+                      return statearr_19491;
                     }();
-                    var statearr_10767_10781 = state_10756__$1;
-                    statearr_10767_10781[2] = inst_10736;
-                    statearr_10767_10781[1] = 8;
+                    var statearr_19492_19506 = state_19481__$1;
+                    statearr_19492_19506[2] = inst_19461;
+                    statearr_19492_19506[1] = 8;
                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                   } else {
-                    if (state_val_10757 === 5) {
-                      var inst_10720 = state_10756[9];
-                      var inst_10721 = state_10756[10];
-                      var inst_10726 = state_10756[2];
-                      var inst_10727 = crypt0.tx = inst_10726;
-                      var inst_10728 = cljs.core.partial.call(null, crypt0.resultToCh, crypt0.shaC);
-                      var inst_10729 = crypt0.tx + inst_10720;
-                      var inst_10730 = crypt0.sha256c.call(null, inst_10728, inst_10729);
-                      var inst_10731 = 0 === inst_10721;
-                      var state_10756__$1 = function() {
-                        var statearr_10768 = state_10756;
-                        statearr_10768[12] = inst_10727;
-                        statearr_10768[13] = inst_10730;
-                        return statearr_10768;
+                    if (state_val_19482 === 5) {
+                      var inst_19446 = state_19481[9];
+                      var inst_19445 = state_19481[10];
+                      var inst_19451 = state_19481[2];
+                      var inst_19452 = crypt0.tx = inst_19451;
+                      var inst_19453 = cljs.core.partial.call(null, crypt0.resultToCh, crypt0.shaC);
+                      var inst_19454 = crypt0.tx + inst_19445;
+                      var inst_19455 = crypt0.sha256c.call(null, inst_19453, inst_19454);
+                      var inst_19456 = 0 === inst_19446;
+                      var state_19481__$1 = function() {
+                        var statearr_19493 = state_19481;
+                        statearr_19493[12] = inst_19452;
+                        statearr_19493[13] = inst_19455;
+                        return statearr_19493;
                       }();
-                      if (cljs.core.truth_(inst_10731)) {
-                        var statearr_10769_10782 = state_10756__$1;
-                        statearr_10769_10782[1] = 6;
+                      if (cljs.core.truth_(inst_19456)) {
+                        var statearr_19494_19507 = state_19481__$1;
+                        statearr_19494_19507[1] = 6;
                       } else {
-                        var statearr_10770_10783 = state_10756__$1;
-                        statearr_10770_10783[1] = 7;
+                        var statearr_19495_19508 = state_19481__$1;
+                        statearr_19495_19508[1] = 7;
                       }
                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                     } else {
-                      if (state_val_10757 === 4) {
-                        var inst_10746 = state_10756[2];
-                        var state_10756__$1 = function() {
-                          var statearr_10771 = state_10756;
-                          statearr_10771[14] = inst_10746;
-                          return statearr_10771;
+                      if (state_val_19482 === 4) {
+                        var inst_19471 = state_19481[2];
+                        var state_19481__$1 = function() {
+                          var statearr_19496 = state_19481;
+                          statearr_19496[14] = inst_19471;
+                          return statearr_19496;
                         }();
-                        return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_10756__$1, 9, crypt0.shaC);
+                        return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_19481__$1, 9, crypt0.shaC);
                       } else {
-                        if (state_val_10757 === 3) {
-                          var inst_10721 = state_10756[10];
-                          var inst_10724 = logger.og.call(null, new cljs.core.Keyword(null, "merkleRoot", "merkleRoot", -1567310602), "count  %s", inst_10721);
-                          var state_10756__$1 = function() {
-                            var statearr_10772 = state_10756;
-                            statearr_10772[15] = inst_10724;
-                            return statearr_10772;
+                        if (state_val_19482 === 3) {
+                          var inst_19446 = state_19481[9];
+                          var inst_19449 = logger.og.call(null, new cljs.core.Keyword(null, "merkleRoot", "merkleRoot", -1567310602), "count  %s", inst_19446);
+                          var state_19481__$1 = function() {
+                            var statearr_19497 = state_19481;
+                            statearr_19497[15] = inst_19449;
+                            return statearr_19497;
                           }();
-                          return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_10756__$1, 5, crypt0.shaC);
+                          return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_19481__$1, 5, crypt0.shaC);
                         } else {
-                          if (state_val_10757 === 2) {
-                            var inst_10705 = state_10756[2];
-                            var inst_10706 = cljs.core.async.chan.call(null);
-                            var inst_10707 = crypt0.shaC = inst_10706;
-                            var inst_10708 = transactions.length;
-                            var inst_10709 = crypt0.originl = inst_10708;
-                            var inst_10710 = logger.og.call(null, new cljs.core.Keyword(null, "merkleRoot", "merkleRoot", -1567310602), "transactions length ", crypt0.originl);
-                            var inst_10711 = transactions.shift();
-                            var inst_10712 = crypt0.tx = inst_10711;
-                            var inst_10713 = transactions.shift();
-                            var inst_10714 = crypt0.next = inst_10713;
-                            var inst_10715 = cljs.core.partial.call(null, crypt0.resultToCh, crypt0.shaC);
-                            var inst_10716 = crypt0.tx + cljs.core.next;
-                            var inst_10717 = crypt0.sha256c.call(null, inst_10715, inst_10716);
-                            var inst_10718 = transactions.shift();
-                            var inst_10719 = transactions.length;
-                            var inst_10720 = inst_10718;
-                            var inst_10721 = inst_10719;
-                            var inst_10722 = transactions;
-                            var state_10756__$1 = function() {
-                              var statearr_10773 = state_10756;
-                              statearr_10773[16] = inst_10710;
-                              statearr_10773[9] = inst_10720;
-                              statearr_10773[17] = inst_10707;
-                              statearr_10773[18] = inst_10717;
-                              statearr_10773[19] = inst_10705;
-                              statearr_10773[20] = inst_10709;
-                              statearr_10773[10] = inst_10721;
-                              statearr_10773[8] = inst_10722;
-                              statearr_10773[21] = inst_10712;
-                              statearr_10773[22] = inst_10714;
-                              return statearr_10773;
+                          if (state_val_19482 === 2) {
+                            var inst_19430 = state_19481[2];
+                            var inst_19431 = cljs.core.async.chan.call(null);
+                            var inst_19432 = crypt0.shaC = inst_19431;
+                            var inst_19433 = transactions.length;
+                            var inst_19434 = crypt0.originl = inst_19433;
+                            var inst_19435 = logger.og.call(null, new cljs.core.Keyword(null, "merkleRoot", "merkleRoot", -1567310602), "transactions length ", crypt0.originl);
+                            var inst_19436 = transactions.shift();
+                            var inst_19437 = crypt0.tx = inst_19436;
+                            var inst_19438 = transactions.shift();
+                            var inst_19439 = crypt0.next = inst_19438;
+                            var inst_19440 = cljs.core.partial.call(null, crypt0.resultToCh, crypt0.shaC);
+                            var inst_19441 = crypt0.tx + cljs.core.next;
+                            var inst_19442 = crypt0.sha256c.call(null, inst_19440, inst_19441);
+                            var inst_19443 = transactions.shift();
+                            var inst_19444 = transactions.length;
+                            var inst_19445 = inst_19443;
+                            var inst_19446 = inst_19444;
+                            var inst_19447 = transactions;
+                            var state_19481__$1 = function() {
+                              var statearr_19498 = state_19481;
+                              statearr_19498[16] = inst_19442;
+                              statearr_19498[17] = inst_19430;
+                              statearr_19498[18] = inst_19432;
+                              statearr_19498[9] = inst_19446;
+                              statearr_19498[19] = inst_19439;
+                              statearr_19498[8] = inst_19447;
+                              statearr_19498[20] = inst_19437;
+                              statearr_19498[10] = inst_19445;
+                              statearr_19498[21] = inst_19435;
+                              statearr_19498[22] = inst_19434;
+                              return statearr_19498;
                             }();
-                            var statearr_10774_10784 = state_10756__$1;
-                            statearr_10774_10784[2] = null;
-                            statearr_10774_10784[1] = 3;
+                            var statearr_19499_19509 = state_19481__$1;
+                            statearr_19499_19509[2] = null;
+                            statearr_19499_19509[1] = 3;
                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                           } else {
-                            if (state_val_10757 === 1) {
-                              var inst_10697 = logger.og.call(null, new cljs.core.Keyword(null, "merkleRoot", "merkleRoot", -1567310602), "transactions2 ", transactions);
-                              var inst_10698 = crypt0.tr = transactions;
-                              var inst_10699 = function() {
-                                return function(inst_10697, inst_10698, state_val_10757, c__6232__auto__) {
+                            if (state_val_19482 === 1) {
+                              var inst_19422 = logger.og.call(null, new cljs.core.Keyword(null, "merkleRoot", "merkleRoot", -1567310602), "transactions2 ", transactions);
+                              var inst_19423 = crypt0.tr = transactions;
+                              var inst_19424 = function() {
+                                return function(inst_19422, inst_19423, state_val_19482, c__6232__auto__) {
                                   return function(x) {
                                     console.log("OLD : ", x);
                                     console.log("NEW : ", crypt0.tr);
                                     return crypt0.tr;
                                   };
-                                }(inst_10697, inst_10698, state_val_10757, c__6232__auto__);
+                                }(inst_19422, inst_19423, state_val_19482, c__6232__auto__);
                               }();
-                              var inst_10700 = crypt0.a = inst_10699;
-                              var inst_10701 = function() {
-                                return function(inst_10697, inst_10698, inst_10699, inst_10700, state_val_10757, c__6232__auto__) {
+                              var inst_19425 = crypt0.a = inst_19424;
+                              var inst_19426 = function() {
+                                return function(inst_19422, inst_19423, inst_19424, inst_19425, state_val_19482, c__6232__auto__) {
                                   return function() {
                                     return db.update.call(null, "txs", crypt0.a);
                                   };
-                                }(inst_10697, inst_10698, inst_10699, inst_10700, state_val_10757, c__6232__auto__);
+                                }(inst_19422, inst_19423, inst_19424, inst_19425, state_val_19482, c__6232__auto__);
                               }();
-                              var inst_10702 = crypt0.utx = inst_10701;
-                              var inst_10703 = db.update.call(null, "txs", crypt0.a);
-                              var state_10756__$1 = function() {
-                                var statearr_10775 = state_10756;
-                                statearr_10775[23] = inst_10698;
-                                statearr_10775[24] = inst_10697;
-                                statearr_10775[25] = inst_10702;
-                                statearr_10775[26] = inst_10700;
-                                return statearr_10775;
+                              var inst_19427 = crypt0.utx = inst_19426;
+                              var inst_19428 = db.update.call(null, "txs", crypt0.a);
+                              var state_19481__$1 = function() {
+                                var statearr_19500 = state_19481;
+                                statearr_19500[23] = inst_19425;
+                                statearr_19500[24] = inst_19422;
+                                statearr_19500[25] = inst_19427;
+                                statearr_19500[26] = inst_19423;
+                                return statearr_19500;
                               }();
-                              return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_10756__$1, 2, inst_10703);
+                              return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_19481__$1, 2, inst_19428);
                             } else {
                               return null;
                             }
@@ -35673,14 +35673,14 @@ crypt0.merkleRoot = function merkleRoot(transactions) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_10777 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
-              statearr_10777[0] = state_machine__6220__auto__;
-              statearr_10777[1] = 1;
-              return statearr_10777;
+              var statearr_19502 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+              statearr_19502[0] = state_machine__6220__auto__;
+              statearr_19502[1] = 1;
+              return statearr_19502;
             };
-            var state_machine__6220__auto____1 = function(state_10756) {
+            var state_machine__6220__auto____1 = function(state_19481) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_10756);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_19481);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -35689,12 +35689,12 @@ crypt0.merkleRoot = function merkleRoot(transactions) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_10756) {
+            state_machine__6220__auto__ = function(state_19481) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_10756);
+                  return state_machine__6220__auto____1.call(this, state_19481);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -35705,9 +35705,9 @@ crypt0.merkleRoot = function merkleRoot(transactions) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_10778 = f__6233__auto__.call(null);
-        statearr_10778[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_10778;
+        var statearr_19503 = f__6233__auto__.call(null);
+        statearr_19503[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_19503;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -35719,8 +35719,8 @@ goog.require("cljs.core");
 goog.require("cljs.core.async");
 goog.require("cljs.core.async");
 mockdatabase.mdbase = function() {
-  var obj8018 = {};
-  return obj8018;
+  var obj17014 = {};
+  return obj17014;
 }();
 mockdatabase.g = function g(kie) {
   return mockdatabase.mdbase[kie];
@@ -35749,8 +35749,8 @@ goog.require("logger");
 mockdatabasew.cleandb = function cleandb() {
   logger.og.call(null, new cljs.core.Keyword(null, "cleandb", "cleandb", -510162900), "cleandb ", mockdatabase.mdbase);
   return mockdatabase.mdbase = function() {
-    var obj12107 = {};
-    return obj12107;
+    var obj20485 = {};
+    return obj20485;
   }();
 };
 mockdatabasew.dumpdb = function dumpdb() {
@@ -35762,12 +35762,12 @@ mockdatabasew.g = function g(k) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_12117) {
-            var state_val_12118 = state_12117[1];
-            if (state_val_12118 === 1) {
-              var inst_12115 = mockdatabase.g.call(null, k);
-              var state_12117__$1 = state_12117;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_12117__$1, inst_12115);
+          return function(state_20495) {
+            var state_val_20496 = state_20495[1];
+            if (state_val_20496 === 1) {
+              var inst_20493 = mockdatabase.g.call(null, k);
+              var state_20495__$1 = state_20495;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_20495__$1, inst_20493);
             } else {
               return null;
             }
@@ -35777,14 +35777,14 @@ mockdatabasew.g = function g(k) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_12120 = [null, null, null, null, null];
-              statearr_12120[0] = state_machine__6220__auto__;
-              statearr_12120[1] = 1;
-              return statearr_12120;
+              var statearr_20498 = [null, null, null, null, null];
+              statearr_20498[0] = state_machine__6220__auto__;
+              statearr_20498[1] = 1;
+              return statearr_20498;
             };
-            var state_machine__6220__auto____1 = function(state_12117) {
+            var state_machine__6220__auto____1 = function(state_20495) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_12117);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_20495);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -35793,12 +35793,12 @@ mockdatabasew.g = function g(k) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_12117) {
+            state_machine__6220__auto__ = function(state_20495) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_12117);
+                  return state_machine__6220__auto____1.call(this, state_20495);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -35809,9 +35809,9 @@ mockdatabasew.g = function g(k) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_12121 = f__6233__auto__.call(null);
-        statearr_12121[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_12121;
+        var statearr_20499 = f__6233__auto__.call(null);
+        statearr_20499[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_20499;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -35824,12 +35824,12 @@ mockdatabasew.update = function update(k, v) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_12131) {
-            var state_val_12132 = state_12131[1];
-            if (state_val_12132 === 1) {
-              var inst_12129 = mockdatabase.update.call(null, k, v);
-              var state_12131__$1 = state_12131;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_12131__$1, inst_12129);
+          return function(state_20509) {
+            var state_val_20510 = state_20509[1];
+            if (state_val_20510 === 1) {
+              var inst_20507 = mockdatabase.update.call(null, k, v);
+              var state_20509__$1 = state_20509;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_20509__$1, inst_20507);
             } else {
               return null;
             }
@@ -35839,14 +35839,14 @@ mockdatabasew.update = function update(k, v) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_12134 = [null, null, null, null, null];
-              statearr_12134[0] = state_machine__6220__auto__;
-              statearr_12134[1] = 1;
-              return statearr_12134;
+              var statearr_20512 = [null, null, null, null, null];
+              statearr_20512[0] = state_machine__6220__auto__;
+              statearr_20512[1] = 1;
+              return statearr_20512;
             };
-            var state_machine__6220__auto____1 = function(state_12131) {
+            var state_machine__6220__auto____1 = function(state_20509) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_12131);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_20509);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -35855,12 +35855,12 @@ mockdatabasew.update = function update(k, v) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_12131) {
+            state_machine__6220__auto__ = function(state_20509) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_12131);
+                  return state_machine__6220__auto____1.call(this, state_20509);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -35871,9 +35871,9 @@ mockdatabasew.update = function update(k, v) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_12135 = f__6233__auto__.call(null);
-        statearr_12135[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_12135;
+        var statearr_20513 = f__6233__auto__.call(null);
+        statearr_20513[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_20513;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -35886,12 +35886,12 @@ mockdatabasew.p = function p(k, v) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_12145) {
-            var state_val_12146 = state_12145[1];
-            if (state_val_12146 === 1) {
-              var inst_12143 = mockdatabase.p.call(null, k, v);
-              var state_12145__$1 = state_12145;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_12145__$1, inst_12143);
+          return function(state_20523) {
+            var state_val_20524 = state_20523[1];
+            if (state_val_20524 === 1) {
+              var inst_20521 = mockdatabase.p.call(null, k, v);
+              var state_20523__$1 = state_20523;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_20523__$1, inst_20521);
             } else {
               return null;
             }
@@ -35901,14 +35901,14 @@ mockdatabasew.p = function p(k, v) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_12148 = [null, null, null, null, null];
-              statearr_12148[0] = state_machine__6220__auto__;
-              statearr_12148[1] = 1;
-              return statearr_12148;
+              var statearr_20526 = [null, null, null, null, null];
+              statearr_20526[0] = state_machine__6220__auto__;
+              statearr_20526[1] = 1;
+              return statearr_20526;
             };
-            var state_machine__6220__auto____1 = function(state_12145) {
+            var state_machine__6220__auto____1 = function(state_20523) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_12145);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_20523);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -35917,12 +35917,12 @@ mockdatabasew.p = function p(k, v) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_12145) {
+            state_machine__6220__auto__ = function(state_20523) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_12145);
+                  return state_machine__6220__auto____1.call(this, state_20523);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -35933,9 +35933,9 @@ mockdatabasew.p = function p(k, v) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_12149 = f__6233__auto__.call(null);
-        statearr_12149[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_12149;
+        var statearr_20527 = f__6233__auto__.call(null);
+        statearr_20527[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_20527;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -35948,12 +35948,12 @@ mockdatabasew.ps = function ps(k, v) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_12159) {
-            var state_val_12160 = state_12159[1];
-            if (state_val_12160 === 1) {
-              var inst_12157 = mockdatabase.ps.call(null, k, v);
-              var state_12159__$1 = state_12159;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_12159__$1, inst_12157);
+          return function(state_20537) {
+            var state_val_20538 = state_20537[1];
+            if (state_val_20538 === 1) {
+              var inst_20535 = mockdatabase.ps.call(null, k, v);
+              var state_20537__$1 = state_20537;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_20537__$1, inst_20535);
             } else {
               return null;
             }
@@ -35963,14 +35963,14 @@ mockdatabasew.ps = function ps(k, v) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_12162 = [null, null, null, null, null];
-              statearr_12162[0] = state_machine__6220__auto__;
-              statearr_12162[1] = 1;
-              return statearr_12162;
+              var statearr_20540 = [null, null, null, null, null];
+              statearr_20540[0] = state_machine__6220__auto__;
+              statearr_20540[1] = 1;
+              return statearr_20540;
             };
-            var state_machine__6220__auto____1 = function(state_12159) {
+            var state_machine__6220__auto____1 = function(state_20537) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_12159);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_20537);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -35979,12 +35979,12 @@ mockdatabasew.ps = function ps(k, v) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_12159) {
+            state_machine__6220__auto__ = function(state_20537) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_12159);
+                  return state_machine__6220__auto____1.call(this, state_20537);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -35995,9 +35995,9 @@ mockdatabasew.ps = function ps(k, v) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_12163 = f__6233__auto__.call(null);
-        statearr_12163[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_12163;
+        var statearr_20541 = f__6233__auto__.call(null);
+        statearr_20541[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_20541;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -36008,119 +36008,119 @@ mockdatabasew.initDBase = function initDBase(x) {
   logger.og.call(null, new cljs.core.Keyword(null, "initdbwraper2", "initdbwraper2", 161886543), "wrapper", x);
   mockdatabasew.dbase = mockdatabase.mdbase;
   var c = cljs.core.async.chan.call(null);
-  var c__6232__auto___12270 = cljs.core.async.chan.call(null, 1);
-  cljs.core.async.impl.dispatch.run.call(null, function(c__6232__auto___12270, c) {
+  var c__6232__auto___20648 = cljs.core.async.chan.call(null, 1);
+  cljs.core.async.impl.dispatch.run.call(null, function(c__6232__auto___20648, c) {
     return function() {
       var f__6233__auto__ = function() {
-        var switch__6219__auto__ = function(c__6232__auto___12270, c) {
-          return function(state_12255) {
-            var state_val_12256 = state_12255[1];
-            if (state_val_12256 === 7) {
-              var inst_12234 = state_12255[2];
-              var inst_12235 = cljs.core.PersistentVector.EMPTY;
-              var inst_12236 = {"header":0, "hash":inst_12234, "transactions":inst_12235};
-              var inst_12237 = mockdatabasew.blck = inst_12236;
-              var inst_12238 = logger.og.call(null, new cljs.core.Keyword(null, "initDBase", "initDBase", -1070074220), "saving ", mockdatabasew.blck);
-              var inst_12239 = mockdatabasew.blck.header;
-              var inst_12240 = inst_12239.heightFromRoot = 0;
-              var inst_12241 = mockdatabasew.ps.call(null, "last", mockdatabasew.blck);
-              var state_12255__$1 = function() {
-                var statearr_12257 = state_12255;
-                statearr_12257[5] = inst_12240;
-                statearr_12257[6] = inst_12238;
-                statearr_12257[7] = inst_12237;
-                return statearr_12257;
+        var switch__6219__auto__ = function(c__6232__auto___20648, c) {
+          return function(state_20633) {
+            var state_val_20634 = state_20633[1];
+            if (state_val_20634 === 7) {
+              var inst_20612 = state_20633[2];
+              var inst_20613 = cljs.core.PersistentVector.EMPTY;
+              var inst_20614 = {"header":0, "hash":inst_20612, "transactions":inst_20613};
+              var inst_20615 = mockdatabasew.blck = inst_20614;
+              var inst_20616 = logger.og.call(null, new cljs.core.Keyword(null, "initDBase", "initDBase", -1070074220), "saving ", mockdatabasew.blck);
+              var inst_20617 = mockdatabasew.blck.header;
+              var inst_20618 = inst_20617.heightFromRoot = 0;
+              var inst_20619 = mockdatabasew.ps.call(null, "last", mockdatabasew.blck);
+              var state_20633__$1 = function() {
+                var statearr_20635 = state_20633;
+                statearr_20635[5] = inst_20616;
+                statearr_20635[6] = inst_20615;
+                statearr_20635[7] = inst_20618;
+                return statearr_20635;
               }();
-              return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_12255__$1, 8, inst_12241);
+              return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20633__$1, 8, inst_20619);
             } else {
-              if (state_val_12256 === 1) {
-                var inst_12217 = mockdatabasew.g.call(null, "last");
-                var state_12255__$1 = state_12255;
-                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_12255__$1, 2, inst_12217);
+              if (state_val_20634 === 1) {
+                var inst_20595 = mockdatabasew.g.call(null, "last");
+                var state_20633__$1 = state_20633;
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20633__$1, 2, inst_20595);
               } else {
-                if (state_val_12256 === 4) {
-                  var inst_12226 = logger.og.call(null, new cljs.core.Keyword(null, "initDBase", "initDBase", -1070074220), "nothing in database");
-                  var inst_12227 = mockdatabase.ps.call(null, "height", 0);
-                  var state_12255__$1 = function() {
-                    var statearr_12258 = state_12255;
-                    statearr_12258[8] = inst_12226;
-                    return statearr_12258;
+                if (state_val_20634 === 4) {
+                  var inst_20604 = logger.og.call(null, new cljs.core.Keyword(null, "initDBase", "initDBase", -1070074220), "nothing in database");
+                  var inst_20605 = mockdatabase.ps.call(null, "height", 0);
+                  var state_20633__$1 = function() {
+                    var statearr_20636 = state_20633;
+                    statearr_20636[8] = inst_20604;
+                    return statearr_20636;
                   }();
-                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_12255__$1, 6, inst_12227);
+                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20633__$1, 6, inst_20605);
                 } else {
-                  if (state_val_12256 === 6) {
-                    var inst_12229 = state_12255[2];
-                    var inst_12232 = crypt0.bHash.call(null, 0);
-                    var state_12255__$1 = function() {
-                      var statearr_12259 = state_12255;
-                      statearr_12259[9] = inst_12229;
-                      return statearr_12259;
+                  if (state_val_20634 === 6) {
+                    var inst_20607 = state_20633[2];
+                    var inst_20610 = crypt0.bHash.call(null, 0);
+                    var state_20633__$1 = function() {
+                      var statearr_20637 = state_20633;
+                      statearr_20637[9] = inst_20607;
+                      return statearr_20637;
                     }();
-                    return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_12255__$1, 7, inst_12232);
+                    return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20633__$1, 7, inst_20610);
                   } else {
-                    if (state_val_12256 === 3) {
-                      var inst_12224 = logger.og.call(null, new cljs.core.Keyword(null, "initDBase", "initDBase", -1070074220), "last one from database is ", mockdatabasew.lastone);
-                      var state_12255__$1 = state_12255;
-                      var statearr_12260_12271 = state_12255__$1;
-                      statearr_12260_12271[2] = inst_12224;
-                      statearr_12260_12271[1] = 5;
+                    if (state_val_20634 === 3) {
+                      var inst_20602 = logger.og.call(null, new cljs.core.Keyword(null, "initDBase", "initDBase", -1070074220), "last one from database is ", mockdatabasew.lastone);
+                      var state_20633__$1 = state_20633;
+                      var statearr_20638_20649 = state_20633__$1;
+                      statearr_20638_20649[2] = inst_20602;
+                      statearr_20638_20649[1] = 5;
                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                     } else {
-                      if (state_val_12256 === 2) {
-                        var inst_12219 = state_12255[2];
-                        var inst_12220 = mockdatabasew.lastone = inst_12219;
-                        var inst_12221 = logger.og.call(null, new cljs.core.Keyword(null, "initDBase", "initDBase", -1070074220), "about to init");
-                        var inst_12222 = logger.og.call(null, new cljs.core.Keyword(null, "initDBase", "initDBase", -1070074220), "last one from database ", mockdatabasew.lastone);
-                        var state_12255__$1 = function() {
-                          var statearr_12261 = state_12255;
-                          statearr_12261[10] = inst_12220;
-                          statearr_12261[11] = inst_12222;
-                          statearr_12261[12] = inst_12221;
-                          return statearr_12261;
+                      if (state_val_20634 === 2) {
+                        var inst_20597 = state_20633[2];
+                        var inst_20598 = mockdatabasew.lastone = inst_20597;
+                        var inst_20599 = logger.og.call(null, new cljs.core.Keyword(null, "initDBase", "initDBase", -1070074220), "about to init");
+                        var inst_20600 = logger.og.call(null, new cljs.core.Keyword(null, "initDBase", "initDBase", -1070074220), "last one from database ", mockdatabasew.lastone);
+                        var state_20633__$1 = function() {
+                          var statearr_20639 = state_20633;
+                          statearr_20639[10] = inst_20599;
+                          statearr_20639[11] = inst_20600;
+                          statearr_20639[12] = inst_20598;
+                          return statearr_20639;
                         }();
                         if (cljs.core.truth_(mockdatabasew.lastone)) {
-                          var statearr_12262_12272 = state_12255__$1;
-                          statearr_12262_12272[1] = 3;
+                          var statearr_20640_20650 = state_20633__$1;
+                          statearr_20640_20650[1] = 3;
                         } else {
-                          var statearr_12263_12273 = state_12255__$1;
-                          statearr_12263_12273[1] = 4;
+                          var statearr_20641_20651 = state_20633__$1;
+                          statearr_20641_20651[1] = 4;
                         }
                         return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                       } else {
-                        if (state_val_12256 === 9) {
-                          var inst_12247 = state_12255[2];
-                          var inst_12248 = "b" + 0;
-                          var inst_12249 = mockdatabase.ps.call(null, inst_12248, mockdatabasew.blck);
-                          var state_12255__$1 = function() {
-                            var statearr_12264 = state_12255;
-                            statearr_12264[13] = inst_12247;
-                            return statearr_12264;
+                        if (state_val_20634 === 9) {
+                          var inst_20625 = state_20633[2];
+                          var inst_20626 = "b" + 0;
+                          var inst_20627 = mockdatabase.ps.call(null, inst_20626, mockdatabasew.blck);
+                          var state_20633__$1 = function() {
+                            var statearr_20642 = state_20633;
+                            statearr_20642[13] = inst_20625;
+                            return statearr_20642;
                           }();
-                          return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_12255__$1, 10, inst_12249);
+                          return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20633__$1, 10, inst_20627);
                         } else {
-                          if (state_val_12256 === 5) {
-                            var inst_12253 = state_12255[2];
-                            var state_12255__$1 = state_12255;
-                            return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_12255__$1, inst_12253);
+                          if (state_val_20634 === 5) {
+                            var inst_20631 = state_20633[2];
+                            var state_20633__$1 = state_20633;
+                            return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_20633__$1, inst_20631);
                           } else {
-                            if (state_val_12256 === 10) {
-                              var inst_12251 = state_12255[2];
-                              var state_12255__$1 = state_12255;
-                              var statearr_12265_12274 = state_12255__$1;
-                              statearr_12265_12274[2] = inst_12251;
-                              statearr_12265_12274[1] = 5;
+                            if (state_val_20634 === 10) {
+                              var inst_20629 = state_20633[2];
+                              var state_20633__$1 = state_20633;
+                              var statearr_20643_20652 = state_20633__$1;
+                              statearr_20643_20652[2] = inst_20629;
+                              statearr_20643_20652[1] = 5;
                               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                             } else {
-                              if (state_val_12256 === 8) {
-                                var inst_12243 = state_12255[2];
-                                var inst_12244 = mockdatabasew.blck.hash;
-                                var inst_12245 = mockdatabase.ps.call(null, inst_12244, mockdatabasew.blck);
-                                var state_12255__$1 = function() {
-                                  var statearr_12266 = state_12255;
-                                  statearr_12266[14] = inst_12243;
-                                  return statearr_12266;
+                              if (state_val_20634 === 8) {
+                                var inst_20621 = state_20633[2];
+                                var inst_20622 = mockdatabasew.blck.hash;
+                                var inst_20623 = mockdatabase.ps.call(null, inst_20622, mockdatabasew.blck);
+                                var state_20633__$1 = function() {
+                                  var statearr_20644 = state_20633;
+                                  statearr_20644[14] = inst_20621;
+                                  return statearr_20644;
                                 }();
-                                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_12255__$1, 9, inst_12245);
+                                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20633__$1, 9, inst_20623);
                               } else {
                                 return null;
                               }
@@ -36134,19 +36134,19 @@ mockdatabasew.initDBase = function initDBase(x) {
               }
             }
           };
-        }(c__6232__auto___12270, c);
-        return function(switch__6219__auto__, c__6232__auto___12270, c) {
+        }(c__6232__auto___20648, c);
+        return function(switch__6219__auto__, c__6232__auto___20648, c) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_12268 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
-              statearr_12268[0] = state_machine__6220__auto__;
-              statearr_12268[1] = 1;
-              return statearr_12268;
+              var statearr_20646 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+              statearr_20646[0] = state_machine__6220__auto__;
+              statearr_20646[1] = 1;
+              return statearr_20646;
             };
-            var state_machine__6220__auto____1 = function(state_12255) {
+            var state_machine__6220__auto____1 = function(state_20633) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_12255);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_20633);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -36155,12 +36155,12 @@ mockdatabasew.initDBase = function initDBase(x) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_12255) {
+            state_machine__6220__auto__ = function(state_20633) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_12255);
+                  return state_machine__6220__auto____1.call(this, state_20633);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -36168,16 +36168,16 @@ mockdatabasew.initDBase = function initDBase(x) {
             state_machine__6220__auto__.cljs$core$IFn$_invoke$arity$1 = state_machine__6220__auto____1;
             return state_machine__6220__auto__;
           }();
-        }(switch__6219__auto__, c__6232__auto___12270, c);
+        }(switch__6219__auto__, c__6232__auto___20648, c);
       }();
       var state__6234__auto__ = function() {
-        var statearr_12269 = f__6233__auto__.call(null);
-        statearr_12269[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto___12270;
-        return statearr_12269;
+        var statearr_20647 = f__6233__auto__.call(null);
+        statearr_20647[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto___20648;
+        return statearr_20647;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
-  }(c__6232__auto___12270, c));
+  }(c__6232__auto___20648, c));
   return 1;
 };
 goog.provide("database");
@@ -36238,8 +36238,8 @@ goog.require("logger");
 cljs.core.enable_console_print_BANG_.call(null);
 blockchain.memPool = [];
 blockchain.blockhainInfo = function() {
-  var obj11494 = {};
-  return obj11494;
+  var obj19872 = {};
+  return obj19872;
 }();
 blockchain.blockhainInfo.dificulty = 5;
 blockchain.addTransactionToMemPool = function addTransactionToMemPool(x) {
@@ -36251,16 +36251,16 @@ blockchain.removeTransactionFromMemPool = function removeTransactionFromMemPool(
   return logger.og.call(null, new cljs.core.Keyword(null, "blockchain", "blockchain", -1030570049), "new memPool after remove ", blockchain.memPool);
 };
 blockchain.makeBlockHeader = function makeBlockHeader(version, previous, fmroot, timestamp, bits, nonce, txcount) {
-  var obj11498 = {"version":1, "heightFromRoot":0, "previous":previous, "merkleRoot":fmroot, "timestamp":timestamp, "bits":bits, "nonce":nonce, "txcount":txcount};
-  return obj11498;
+  var obj19876 = {"version":1, "heightFromRoot":0, "previous":previous, "merkleRoot":fmroot, "timestamp":timestamp, "bits":bits, "nonce":nonce, "txcount":txcount};
+  return obj19876;
 };
 blockchain.makeTransaction = function makeTransaction() {
-  var obj11502 = {"":1};
-  return obj11502;
+  var obj19880 = {"":1};
+  return obj19880;
 };
 blockchain.addTransactionToBlock = function addTransactionToBlock() {
-  var obj11506 = {"":1};
-  return obj11506;
+  var obj19884 = {"":1};
+  return obj19884;
 };
 blockchain.prevblk = function prevblk(blockk) {
   logger.og.call(null, new cljs.core.Keyword(null, "prevblk", "prevblk", 1731240431), "about to get prev blk ", blockk);
@@ -36272,137 +36272,137 @@ blockchain.blockKnown_QMARK_ = function blockKnown_QMARK_(blockk) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_11584) {
-            var state_val_11585 = state_11584[1];
-            if (state_val_11585 === 7) {
-              var inst_11578 = state_11584[2];
-              var inst_11579 = blockchain.res = inst_11578;
-              var state_11584__$1 = function() {
-                var statearr_11586 = state_11584;
-                statearr_11586[5] = inst_11579;
-                return statearr_11586;
+          return function(state_19962) {
+            var state_val_19963 = state_19962[1];
+            if (state_val_19963 === 7) {
+              var inst_19956 = state_19962[2];
+              var inst_19957 = blockchain.res = inst_19956;
+              var state_19962__$1 = function() {
+                var statearr_19964 = state_19962;
+                statearr_19964[5] = inst_19957;
+                return statearr_19964;
               }();
-              var statearr_11587_11607 = state_11584__$1;
-              statearr_11587_11607[2] = blockchain.res;
-              statearr_11587_11607[1] = 4;
+              var statearr_19965_19985 = state_19962__$1;
+              statearr_19965_19985[2] = blockchain.res;
+              statearr_19965_19985[1] = 4;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             } else {
-              if (state_val_11585 === 1) {
-                var state_11584__$1 = state_11584;
+              if (state_val_19963 === 1) {
+                var state_19962__$1 = state_19962;
                 if (cljs.core.truth_(blockk)) {
-                  var statearr_11588_11608 = state_11584__$1;
-                  statearr_11588_11608[1] = 2;
+                  var statearr_19966_19986 = state_19962__$1;
+                  statearr_19966_19986[1] = 2;
                 } else {
-                  var statearr_11589_11609 = state_11584__$1;
-                  statearr_11589_11609[1] = 3;
+                  var statearr_19967_19987 = state_19962__$1;
+                  statearr_19967_19987[1] = 3;
                 }
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               } else {
-                if (state_val_11585 === 4) {
-                  var inst_11582 = state_11584[2];
-                  var state_11584__$1 = state_11584;
-                  return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_11584__$1, inst_11582);
+                if (state_val_19963 === 4) {
+                  var inst_19960 = state_19962[2];
+                  var state_19962__$1 = state_19962;
+                  return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_19962__$1, inst_19960);
                 } else {
-                  if (state_val_11585 === 15) {
-                    var inst_11576 = state_11584[2];
-                    var state_11584__$1 = state_11584;
-                    var statearr_11590_11610 = state_11584__$1;
-                    statearr_11590_11610[2] = inst_11576;
-                    statearr_11590_11610[1] = 7;
+                  if (state_val_19963 === 15) {
+                    var inst_19954 = state_19962[2];
+                    var state_19962__$1 = state_19962;
+                    var statearr_19968_19988 = state_19962__$1;
+                    statearr_19968_19988[2] = inst_19954;
+                    statearr_19968_19988[1] = 7;
                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                   } else {
-                    if (state_val_11585 === 13) {
-                      var state_11584__$1 = state_11584;
-                      var statearr_11591_11611 = state_11584__$1;
-                      statearr_11591_11611[2] = true;
-                      statearr_11591_11611[1] = 15;
+                    if (state_val_19963 === 13) {
+                      var state_19962__$1 = state_19962;
+                      var statearr_19969_19989 = state_19962__$1;
+                      statearr_19969_19989[2] = true;
+                      statearr_19969_19989[1] = 15;
                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                     } else {
-                      if (state_val_11585 === 6) {
-                        var inst_11570 = database.g.call(null, blockk);
-                        var state_11584__$1 = state_11584;
-                        return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_11584__$1, 12, inst_11570);
+                      if (state_val_19963 === 6) {
+                        var inst_19948 = database.g.call(null, blockk);
+                        var state_19962__$1 = state_19962;
+                        return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_19962__$1, 12, inst_19948);
                       } else {
-                        if (state_val_11585 === 3) {
-                          var state_11584__$1 = state_11584;
-                          var statearr_11592_11612 = state_11584__$1;
-                          statearr_11592_11612[2] = false;
-                          statearr_11592_11612[1] = 4;
+                        if (state_val_19963 === 3) {
+                          var state_19962__$1 = state_19962;
+                          var statearr_19970_19990 = state_19962__$1;
+                          statearr_19970_19990[2] = false;
+                          statearr_19970_19990[1] = 4;
                           return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                         } else {
-                          if (state_val_11585 === 12) {
-                            var inst_11572 = state_11584[2];
-                            var state_11584__$1 = state_11584;
-                            if (cljs.core.truth_(inst_11572)) {
-                              var statearr_11593_11613 = state_11584__$1;
-                              statearr_11593_11613[1] = 13;
+                          if (state_val_19963 === 12) {
+                            var inst_19950 = state_19962[2];
+                            var state_19962__$1 = state_19962;
+                            if (cljs.core.truth_(inst_19950)) {
+                              var statearr_19971_19991 = state_19962__$1;
+                              statearr_19971_19991[1] = 13;
                             } else {
-                              var statearr_11594_11614 = state_11584__$1;
-                              statearr_11594_11614[1] = 14;
+                              var statearr_19972_19992 = state_19962__$1;
+                              statearr_19972_19992[1] = 14;
                             }
                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                           } else {
-                            if (state_val_11585 === 2) {
-                              var inst_11558 = logger.og.call(null, new cljs.core.Keyword(null, "blockknown", "blockknown", -1662820144), "block known? ", blockk);
-                              var inst_11559 = blockk.hash;
-                              var state_11584__$1 = function() {
-                                var statearr_11595 = state_11584;
-                                statearr_11595[6] = inst_11558;
-                                return statearr_11595;
+                            if (state_val_19963 === 2) {
+                              var inst_19936 = logger.og.call(null, new cljs.core.Keyword(null, "blockknown", "blockknown", -1662820144), "block known? ", blockk);
+                              var inst_19937 = blockk.hash;
+                              var state_19962__$1 = function() {
+                                var statearr_19973 = state_19962;
+                                statearr_19973[6] = inst_19936;
+                                return statearr_19973;
                               }();
-                              if (cljs.core.truth_(inst_11559)) {
-                                var statearr_11596_11615 = state_11584__$1;
-                                statearr_11596_11615[1] = 5;
+                              if (cljs.core.truth_(inst_19937)) {
+                                var statearr_19974_19993 = state_19962__$1;
+                                statearr_19974_19993[1] = 5;
                               } else {
-                                var statearr_11597_11616 = state_11584__$1;
-                                statearr_11597_11616[1] = 6;
+                                var statearr_19975_19994 = state_19962__$1;
+                                statearr_19975_19994[1] = 6;
                               }
                               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                             } else {
-                              if (state_val_11585 === 11) {
-                                var inst_11568 = state_11584[2];
-                                var state_11584__$1 = state_11584;
-                                var statearr_11598_11617 = state_11584__$1;
-                                statearr_11598_11617[2] = inst_11568;
-                                statearr_11598_11617[1] = 7;
+                              if (state_val_19963 === 11) {
+                                var inst_19946 = state_19962[2];
+                                var state_19962__$1 = state_19962;
+                                var statearr_19976_19995 = state_19962__$1;
+                                statearr_19976_19995[2] = inst_19946;
+                                statearr_19976_19995[1] = 7;
                                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                               } else {
-                                if (state_val_11585 === 9) {
-                                  var state_11584__$1 = state_11584;
-                                  var statearr_11599_11618 = state_11584__$1;
-                                  statearr_11599_11618[2] = true;
-                                  statearr_11599_11618[1] = 11;
+                                if (state_val_19963 === 9) {
+                                  var state_19962__$1 = state_19962;
+                                  var statearr_19977_19996 = state_19962__$1;
+                                  statearr_19977_19996[2] = true;
+                                  statearr_19977_19996[1] = 11;
                                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                 } else {
-                                  if (state_val_11585 === 5) {
-                                    var inst_11561 = blockk.hash;
-                                    var inst_11562 = database.g.call(null, inst_11561);
-                                    var state_11584__$1 = state_11584;
-                                    return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_11584__$1, 8, inst_11562);
+                                  if (state_val_19963 === 5) {
+                                    var inst_19939 = blockk.hash;
+                                    var inst_19940 = database.g.call(null, inst_19939);
+                                    var state_19962__$1 = state_19962;
+                                    return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_19962__$1, 8, inst_19940);
                                   } else {
-                                    if (state_val_11585 === 14) {
-                                      var state_11584__$1 = state_11584;
-                                      var statearr_11600_11619 = state_11584__$1;
-                                      statearr_11600_11619[2] = false;
-                                      statearr_11600_11619[1] = 15;
+                                    if (state_val_19963 === 14) {
+                                      var state_19962__$1 = state_19962;
+                                      var statearr_19978_19997 = state_19962__$1;
+                                      statearr_19978_19997[2] = false;
+                                      statearr_19978_19997[1] = 15;
                                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                     } else {
-                                      if (state_val_11585 === 10) {
-                                        var state_11584__$1 = state_11584;
-                                        var statearr_11601_11620 = state_11584__$1;
-                                        statearr_11601_11620[2] = false;
-                                        statearr_11601_11620[1] = 11;
+                                      if (state_val_19963 === 10) {
+                                        var state_19962__$1 = state_19962;
+                                        var statearr_19979_19998 = state_19962__$1;
+                                        statearr_19979_19998[2] = false;
+                                        statearr_19979_19998[1] = 11;
                                         return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                       } else {
-                                        if (state_val_11585 === 8) {
-                                          var inst_11564 = state_11584[2];
-                                          var state_11584__$1 = state_11584;
-                                          if (cljs.core.truth_(inst_11564)) {
-                                            var statearr_11602_11621 = state_11584__$1;
-                                            statearr_11602_11621[1] = 9;
+                                        if (state_val_19963 === 8) {
+                                          var inst_19942 = state_19962[2];
+                                          var state_19962__$1 = state_19962;
+                                          if (cljs.core.truth_(inst_19942)) {
+                                            var statearr_19980_19999 = state_19962__$1;
+                                            statearr_19980_19999[1] = 9;
                                           } else {
-                                            var statearr_11603_11622 = state_11584__$1;
-                                            statearr_11603_11622[1] = 10;
+                                            var statearr_19981_20000 = state_19962__$1;
+                                            statearr_19981_20000[1] = 10;
                                           }
                                           return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                         } else {
@@ -36428,14 +36428,14 @@ blockchain.blockKnown_QMARK_ = function blockKnown_QMARK_(blockk) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_11605 = [null, null, null, null, null, null, null];
-              statearr_11605[0] = state_machine__6220__auto__;
-              statearr_11605[1] = 1;
-              return statearr_11605;
+              var statearr_19983 = [null, null, null, null, null, null, null];
+              statearr_19983[0] = state_machine__6220__auto__;
+              statearr_19983[1] = 1;
+              return statearr_19983;
             };
-            var state_machine__6220__auto____1 = function(state_11584) {
+            var state_machine__6220__auto____1 = function(state_19962) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_11584);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_19962);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -36444,12 +36444,12 @@ blockchain.blockKnown_QMARK_ = function blockKnown_QMARK_(blockk) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_11584) {
+            state_machine__6220__auto__ = function(state_19962) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_11584);
+                  return state_machine__6220__auto____1.call(this, state_19962);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -36460,9 +36460,9 @@ blockchain.blockKnown_QMARK_ = function blockKnown_QMARK_(blockk) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_11606 = f__6233__auto__.call(null);
-        statearr_11606[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_11606;
+        var statearr_19984 = f__6233__auto__.call(null);
+        statearr_19984[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_19984;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -36475,129 +36475,129 @@ blockchain.last_QMARK_ = function last_QMARK_(blockk) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_11709) {
-            var state_val_11710 = state_11709[1];
-            if (state_val_11710 === 7) {
-              var state_11709__$1 = state_11709;
-              var statearr_11711_11729 = state_11709__$1;
-              statearr_11711_11729[2] = true;
-              statearr_11711_11729[1] = 9;
+          return function(state_20087) {
+            var state_val_20088 = state_20087[1];
+            if (state_val_20088 === 7) {
+              var state_20087__$1 = state_20087;
+              var statearr_20089_20107 = state_20087__$1;
+              statearr_20089_20107[2] = true;
+              statearr_20089_20107[1] = 9;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             } else {
-              if (state_val_11710 === 1) {
-                var inst_11676 = logger.og.call(null, new cljs.core.Keyword(null, "blockchain", "blockchain", -1030570049), "block known? ", blockk);
-                var inst_11677 = database.g.call(null, "last");
-                var state_11709__$1 = function() {
-                  var statearr_11712 = state_11709;
-                  statearr_11712[5] = inst_11676;
-                  return statearr_11712;
+              if (state_val_20088 === 1) {
+                var inst_20054 = logger.og.call(null, new cljs.core.Keyword(null, "blockchain", "blockchain", -1030570049), "block known? ", blockk);
+                var inst_20055 = database.g.call(null, "last");
+                var state_20087__$1 = function() {
+                  var statearr_20090 = state_20087;
+                  statearr_20090[5] = inst_20054;
+                  return statearr_20090;
                 }();
-                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_11709__$1, 2, inst_11677);
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20087__$1, 2, inst_20055);
               } else {
-                if (state_val_11710 === 4) {
-                  var inst_11695 = database.g.call(null, blockk);
-                  var state_11709__$1 = state_11709;
-                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_11709__$1, 10, inst_11695);
+                if (state_val_20088 === 4) {
+                  var inst_20073 = database.g.call(null, blockk);
+                  var state_20087__$1 = state_20087;
+                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20087__$1, 10, inst_20073);
                 } else {
-                  if (state_val_11710 === 13) {
-                    var inst_11704 = state_11709[2];
-                    var state_11709__$1 = state_11709;
-                    var statearr_11713_11730 = state_11709__$1;
-                    statearr_11713_11730[2] = inst_11704;
-                    statearr_11713_11730[1] = 5;
+                  if (state_val_20088 === 13) {
+                    var inst_20082 = state_20087[2];
+                    var state_20087__$1 = state_20087;
+                    var statearr_20091_20108 = state_20087__$1;
+                    statearr_20091_20108[2] = inst_20082;
+                    statearr_20091_20108[1] = 5;
                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                   } else {
-                    if (state_val_11710 === 6) {
-                      var inst_11686 = state_11709[2];
-                      var inst_11687 = inst_11686.hash;
-                      var inst_11688 = blockk.hash;
-                      var inst_11689 = inst_11687 === inst_11688;
-                      var state_11709__$1 = state_11709;
-                      if (cljs.core.truth_(inst_11689)) {
-                        var statearr_11714_11731 = state_11709__$1;
-                        statearr_11714_11731[1] = 7;
+                    if (state_val_20088 === 6) {
+                      var inst_20064 = state_20087[2];
+                      var inst_20065 = inst_20064.hash;
+                      var inst_20066 = blockk.hash;
+                      var inst_20067 = inst_20065 === inst_20066;
+                      var state_20087__$1 = state_20087;
+                      if (cljs.core.truth_(inst_20067)) {
+                        var statearr_20092_20109 = state_20087__$1;
+                        statearr_20092_20109[1] = 7;
                       } else {
-                        var statearr_11715_11732 = state_11709__$1;
-                        statearr_11715_11732[1] = 8;
+                        var statearr_20093_20110 = state_20087__$1;
+                        statearr_20093_20110[1] = 8;
                       }
                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                     } else {
-                      if (state_val_11710 === 3) {
-                        var inst_11683 = blockk.hash;
-                        var inst_11684 = database.g.call(null, inst_11683);
-                        var state_11709__$1 = state_11709;
-                        return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_11709__$1, 6, inst_11684);
+                      if (state_val_20088 === 3) {
+                        var inst_20061 = blockk.hash;
+                        var inst_20062 = database.g.call(null, inst_20061);
+                        var state_20087__$1 = state_20087;
+                        return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20087__$1, 6, inst_20062);
                       } else {
-                        if (state_val_11710 === 12) {
-                          var state_11709__$1 = state_11709;
-                          var statearr_11716_11733 = state_11709__$1;
-                          statearr_11716_11733[2] = false;
-                          statearr_11716_11733[1] = 13;
+                        if (state_val_20088 === 12) {
+                          var state_20087__$1 = state_20087;
+                          var statearr_20094_20111 = state_20087__$1;
+                          statearr_20094_20111[2] = false;
+                          statearr_20094_20111[1] = 13;
                           return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                         } else {
-                          if (state_val_11710 === 2) {
-                            var inst_11679 = state_11709[2];
-                            var inst_11680 = blockchain.lastt = inst_11679;
-                            var inst_11681 = blockk.hash;
-                            var state_11709__$1 = function() {
-                              var statearr_11717 = state_11709;
-                              statearr_11717[6] = inst_11680;
-                              return statearr_11717;
+                          if (state_val_20088 === 2) {
+                            var inst_20057 = state_20087[2];
+                            var inst_20058 = blockchain.lastt = inst_20057;
+                            var inst_20059 = blockk.hash;
+                            var state_20087__$1 = function() {
+                              var statearr_20095 = state_20087;
+                              statearr_20095[6] = inst_20058;
+                              return statearr_20095;
                             }();
-                            if (cljs.core.truth_(inst_11681)) {
-                              var statearr_11718_11734 = state_11709__$1;
-                              statearr_11718_11734[1] = 3;
+                            if (cljs.core.truth_(inst_20059)) {
+                              var statearr_20096_20112 = state_20087__$1;
+                              statearr_20096_20112[1] = 3;
                             } else {
-                              var statearr_11719_11735 = state_11709__$1;
-                              statearr_11719_11735[1] = 4;
+                              var statearr_20097_20113 = state_20087__$1;
+                              statearr_20097_20113[1] = 4;
                             }
                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                           } else {
-                            if (state_val_11710 === 11) {
-                              var state_11709__$1 = state_11709;
-                              var statearr_11720_11736 = state_11709__$1;
-                              statearr_11720_11736[2] = true;
-                              statearr_11720_11736[1] = 13;
+                            if (state_val_20088 === 11) {
+                              var state_20087__$1 = state_20087;
+                              var statearr_20098_20114 = state_20087__$1;
+                              statearr_20098_20114[2] = true;
+                              statearr_20098_20114[1] = 13;
                               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                             } else {
-                              if (state_val_11710 === 9) {
-                                var inst_11693 = state_11709[2];
-                                var state_11709__$1 = state_11709;
-                                var statearr_11721_11737 = state_11709__$1;
-                                statearr_11721_11737[2] = inst_11693;
-                                statearr_11721_11737[1] = 5;
+                              if (state_val_20088 === 9) {
+                                var inst_20071 = state_20087[2];
+                                var state_20087__$1 = state_20087;
+                                var statearr_20099_20115 = state_20087__$1;
+                                statearr_20099_20115[2] = inst_20071;
+                                statearr_20099_20115[1] = 5;
                                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                               } else {
-                                if (state_val_11710 === 5) {
-                                  var inst_11706 = state_11709[2];
-                                  var inst_11707 = blockchain.res = inst_11706;
-                                  var state_11709__$1 = function() {
-                                    var statearr_11722 = state_11709;
-                                    statearr_11722[7] = inst_11707;
-                                    return statearr_11722;
+                                if (state_val_20088 === 5) {
+                                  var inst_20084 = state_20087[2];
+                                  var inst_20085 = blockchain.res = inst_20084;
+                                  var state_20087__$1 = function() {
+                                    var statearr_20100 = state_20087;
+                                    statearr_20100[7] = inst_20085;
+                                    return statearr_20100;
                                   }();
-                                  return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_11709__$1, blockchain.res);
+                                  return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_20087__$1, blockchain.res);
                                 } else {
-                                  if (state_val_11710 === 10) {
-                                    var inst_11697 = state_11709[2];
-                                    var inst_11698 = inst_11697.hash;
-                                    var inst_11699 = blockk.hash;
-                                    var inst_11700 = inst_11698 === inst_11699;
-                                    var state_11709__$1 = state_11709;
-                                    if (cljs.core.truth_(inst_11700)) {
-                                      var statearr_11723_11738 = state_11709__$1;
-                                      statearr_11723_11738[1] = 11;
+                                  if (state_val_20088 === 10) {
+                                    var inst_20075 = state_20087[2];
+                                    var inst_20076 = inst_20075.hash;
+                                    var inst_20077 = blockk.hash;
+                                    var inst_20078 = inst_20076 === inst_20077;
+                                    var state_20087__$1 = state_20087;
+                                    if (cljs.core.truth_(inst_20078)) {
+                                      var statearr_20101_20116 = state_20087__$1;
+                                      statearr_20101_20116[1] = 11;
                                     } else {
-                                      var statearr_11724_11739 = state_11709__$1;
-                                      statearr_11724_11739[1] = 12;
+                                      var statearr_20102_20117 = state_20087__$1;
+                                      statearr_20102_20117[1] = 12;
                                     }
                                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                   } else {
-                                    if (state_val_11710 === 8) {
-                                      var state_11709__$1 = state_11709;
-                                      var statearr_11725_11740 = state_11709__$1;
-                                      statearr_11725_11740[2] = false;
-                                      statearr_11725_11740[1] = 9;
+                                    if (state_val_20088 === 8) {
+                                      var state_20087__$1 = state_20087;
+                                      var statearr_20103_20118 = state_20087__$1;
+                                      statearr_20103_20118[2] = false;
+                                      statearr_20103_20118[1] = 9;
                                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                     } else {
                                       return null;
@@ -36620,14 +36620,14 @@ blockchain.last_QMARK_ = function last_QMARK_(blockk) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_11727 = [null, null, null, null, null, null, null, null];
-              statearr_11727[0] = state_machine__6220__auto__;
-              statearr_11727[1] = 1;
-              return statearr_11727;
+              var statearr_20105 = [null, null, null, null, null, null, null, null];
+              statearr_20105[0] = state_machine__6220__auto__;
+              statearr_20105[1] = 1;
+              return statearr_20105;
             };
-            var state_machine__6220__auto____1 = function(state_11709) {
+            var state_machine__6220__auto____1 = function(state_20087) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_11709);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_20087);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -36636,12 +36636,12 @@ blockchain.last_QMARK_ = function last_QMARK_(blockk) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_11709) {
+            state_machine__6220__auto__ = function(state_20087) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_11709);
+                  return state_machine__6220__auto____1.call(this, state_20087);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -36652,9 +36652,9 @@ blockchain.last_QMARK_ = function last_QMARK_(blockk) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_11728 = f__6233__auto__.call(null);
-        statearr_11728[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_11728;
+        var statearr_20106 = f__6233__auto__.call(null);
+        statearr_20106[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_20106;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -36672,67 +36672,67 @@ blockchain.makeBlock = function makeBlock(work) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_11811) {
-            var state_val_11812 = state_11811[1];
-            if (state_val_11812 === 4) {
-              var inst_11806 = state_11811[2];
-              var inst_11807 = {"header":blockchain.blockHeader, "hash":inst_11806, "transactions":blockchain.transactions};
-              var inst_11808 = blockchain.blockk = inst_11807;
-              var inst_11809 = logger.og.call(null, new cljs.core.Keyword(null, "makeBlock", "makeBlock", -1854081426), "newly made block ", blockchain.blockk);
-              var state_11811__$1 = function() {
-                var statearr_11813 = state_11811;
-                statearr_11813[5] = inst_11809;
-                statearr_11813[6] = inst_11808;
-                return statearr_11813;
+          return function(state_20189) {
+            var state_val_20190 = state_20189[1];
+            if (state_val_20190 === 4) {
+              var inst_20184 = state_20189[2];
+              var inst_20185 = {"header":blockchain.blockHeader, "hash":inst_20184, "transactions":blockchain.transactions};
+              var inst_20186 = blockchain.blockk = inst_20185;
+              var inst_20187 = logger.og.call(null, new cljs.core.Keyword(null, "makeBlock", "makeBlock", -1854081426), "newly made block ", blockchain.blockk);
+              var state_20189__$1 = function() {
+                var statearr_20191 = state_20189;
+                statearr_20191[5] = inst_20186;
+                statearr_20191[6] = inst_20187;
+                return statearr_20191;
               }();
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_11811__$1, blockchain.blockk);
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_20189__$1, blockchain.blockk);
             } else {
-              if (state_val_11812 === 3) {
-                var inst_11787 = state_11811[2];
-                var inst_11788 = blockchain.transactions = inst_11787;
-                var inst_11789 = blockchain.lastv = blockchain.lastt2;
-                var inst_11790 = logger.og.call(null, new cljs.core.Keyword(null, "makeBlock", "makeBlock", -1854081426), "last ", blockchain.lastv);
-                var inst_11791 = blockchain.lastv.hash;
-                var inst_11792 = work.root;
-                var inst_11793 = new Date;
-                var inst_11794 = inst_11793.getTime();
-                var inst_11795 = blockchain.blockhainInfo.dificulty;
-                var inst_11796 = work.nonce;
-                var inst_11797 = blockchain.transactions.lenght;
-                var inst_11798 = blockchain.makeBlockHeader.call(null, "0", inst_11791, inst_11792, inst_11794, inst_11795, inst_11796, inst_11797);
-                var inst_11799 = blockchain.blockHeader = inst_11798;
-                var inst_11800 = logger.og.call(null, new cljs.core.Keyword(null, "makeBlock", "makeBlock", -1854081426), "block header ", blockchain.blockHeader);
-                var inst_11801 = logger.og.call(null, new cljs.core.Keyword(null, "makeBlock", "makeBlock", -1854081426), "transactions when saving block ", blockchain.transactions);
-                var inst_11804 = crypto.bHash.call(null, blockchain.blockHeader);
-                var state_11811__$1 = function() {
-                  var statearr_11814 = state_11811;
-                  statearr_11814[7] = inst_11788;
-                  statearr_11814[8] = inst_11801;
-                  statearr_11814[9] = inst_11799;
-                  statearr_11814[10] = inst_11800;
-                  statearr_11814[11] = inst_11789;
-                  statearr_11814[12] = inst_11790;
-                  return statearr_11814;
+              if (state_val_20190 === 3) {
+                var inst_20165 = state_20189[2];
+                var inst_20166 = blockchain.transactions = inst_20165;
+                var inst_20167 = blockchain.lastv = blockchain.lastt2;
+                var inst_20168 = logger.og.call(null, new cljs.core.Keyword(null, "makeBlock", "makeBlock", -1854081426), "last ", blockchain.lastv);
+                var inst_20169 = blockchain.lastv.hash;
+                var inst_20170 = work.root;
+                var inst_20171 = new Date;
+                var inst_20172 = inst_20171.getTime();
+                var inst_20173 = blockchain.blockhainInfo.dificulty;
+                var inst_20174 = work.nonce;
+                var inst_20175 = blockchain.transactions.lenght;
+                var inst_20176 = blockchain.makeBlockHeader.call(null, "0", inst_20169, inst_20170, inst_20172, inst_20173, inst_20174, inst_20175);
+                var inst_20177 = blockchain.blockHeader = inst_20176;
+                var inst_20178 = logger.og.call(null, new cljs.core.Keyword(null, "makeBlock", "makeBlock", -1854081426), "block header ", blockchain.blockHeader);
+                var inst_20179 = logger.og.call(null, new cljs.core.Keyword(null, "makeBlock", "makeBlock", -1854081426), "transactions when saving block ", blockchain.transactions);
+                var inst_20182 = crypto.bHash.call(null, blockchain.blockHeader);
+                var state_20189__$1 = function() {
+                  var statearr_20192 = state_20189;
+                  statearr_20192[7] = inst_20168;
+                  statearr_20192[8] = inst_20177;
+                  statearr_20192[9] = inst_20178;
+                  statearr_20192[10] = inst_20179;
+                  statearr_20192[11] = inst_20167;
+                  statearr_20192[12] = inst_20166;
+                  return statearr_20192;
                 }();
-                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_11811__$1, 4, inst_11804);
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20189__$1, 4, inst_20182);
               } else {
-                if (state_val_11812 === 2) {
-                  var inst_11782 = state_11811[2];
-                  var inst_11783 = blockchain.lastt2 = inst_11782;
-                  var inst_11784 = logger.og.call(null, new cljs.core.Keyword(null, "makeBlock", "makeBlock", -1854081426), "last ", blockchain.lastt2);
-                  var inst_11785 = database.g.call(null, "txs");
-                  var state_11811__$1 = function() {
-                    var statearr_11815 = state_11811;
-                    statearr_11815[13] = inst_11784;
-                    statearr_11815[14] = inst_11783;
-                    return statearr_11815;
+                if (state_val_20190 === 2) {
+                  var inst_20160 = state_20189[2];
+                  var inst_20161 = blockchain.lastt2 = inst_20160;
+                  var inst_20162 = logger.og.call(null, new cljs.core.Keyword(null, "makeBlock", "makeBlock", -1854081426), "last ", blockchain.lastt2);
+                  var inst_20163 = database.g.call(null, "txs");
+                  var state_20189__$1 = function() {
+                    var statearr_20193 = state_20189;
+                    statearr_20193[13] = inst_20162;
+                    statearr_20193[14] = inst_20161;
+                    return statearr_20193;
                   }();
-                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_11811__$1, 3, inst_11785);
+                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20189__$1, 3, inst_20163);
                 } else {
-                  if (state_val_11812 === 1) {
-                    var inst_11780 = database.g.call(null, "last");
-                    var state_11811__$1 = state_11811;
-                    return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_11811__$1, 2, inst_11780);
+                  if (state_val_20190 === 1) {
+                    var inst_20158 = database.g.call(null, "last");
+                    var state_20189__$1 = state_20189;
+                    return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20189__$1, 2, inst_20158);
                   } else {
                     return null;
                   }
@@ -36745,14 +36745,14 @@ blockchain.makeBlock = function makeBlock(work) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_11817 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
-              statearr_11817[0] = state_machine__6220__auto__;
-              statearr_11817[1] = 1;
-              return statearr_11817;
+              var statearr_20195 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+              statearr_20195[0] = state_machine__6220__auto__;
+              statearr_20195[1] = 1;
+              return statearr_20195;
             };
-            var state_machine__6220__auto____1 = function(state_11811) {
+            var state_machine__6220__auto____1 = function(state_20189) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_11811);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_20189);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -36761,12 +36761,12 @@ blockchain.makeBlock = function makeBlock(work) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_11811) {
+            state_machine__6220__auto__ = function(state_20189) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_11811);
+                  return state_machine__6220__auto____1.call(this, state_20189);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -36777,9 +36777,9 @@ blockchain.makeBlock = function makeBlock(work) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_11818 = f__6233__auto__.call(null);
-        statearr_11818[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_11818;
+        var statearr_20196 = f__6233__auto__.call(null);
+        statearr_20196[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_20196;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -36792,59 +36792,59 @@ blockchain.saveBlock = function saveBlock(dbase, blockR) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_11865) {
-            var state_val_11866 = state_11865[1];
-            if (state_val_11866 === 4) {
-              var inst_11863 = state_11865[2];
-              var state_11865__$1 = state_11865;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_11865__$1, inst_11863);
+          return function(state_20243) {
+            var state_val_20244 = state_20243[1];
+            if (state_val_20244 === 4) {
+              var inst_20241 = state_20243[2];
+              var state_20243__$1 = state_20243;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_20243__$1, inst_20241);
             } else {
-              if (state_val_11866 === 3) {
-                var inst_11859 = state_11865[2];
-                var inst_11860 = "b" + blockchain.heightForBlock;
-                var inst_11861 = database.ps.call(null, inst_11860, blockR);
-                var state_11865__$1 = function() {
-                  var statearr_11867 = state_11865;
-                  statearr_11867[5] = inst_11859;
-                  return statearr_11867;
+              if (state_val_20244 === 3) {
+                var inst_20237 = state_20243[2];
+                var inst_20238 = "b" + blockchain.heightForBlock;
+                var inst_20239 = database.ps.call(null, inst_20238, blockR);
+                var state_20243__$1 = function() {
+                  var statearr_20245 = state_20243;
+                  statearr_20245[5] = inst_20237;
+                  return statearr_20245;
                 }();
-                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_11865__$1, 4, inst_11861);
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20243__$1, 4, inst_20239);
               } else {
-                if (state_val_11866 === 2) {
-                  var inst_11849 = state_11865[2];
-                  var inst_11850 = blockchain.heightForBlock = inst_11849;
-                  var inst_11851 = blockR.header;
-                  var inst_11852 = inst_11851.heightFromRoot = blockchain.heightForBlock;
-                  var inst_11853 = function() {
-                    return function(inst_11849, inst_11850, inst_11851, inst_11852, state_val_11866, c__6232__auto__) {
+                if (state_val_20244 === 2) {
+                  var inst_20227 = state_20243[2];
+                  var inst_20228 = blockchain.heightForBlock = inst_20227;
+                  var inst_20229 = blockR.header;
+                  var inst_20230 = inst_20229.heightFromRoot = blockchain.heightForBlock;
+                  var inst_20231 = function() {
+                    return function(inst_20227, inst_20228, inst_20229, inst_20230, state_val_20244, c__6232__auto__) {
                       return function() {
                         return blockR;
                       };
-                    }(inst_11849, inst_11850, inst_11851, inst_11852, state_val_11866, c__6232__auto__);
+                    }(inst_20227, inst_20228, inst_20229, inst_20230, state_val_20244, c__6232__auto__);
                   }();
-                  var inst_11854 = blockchain.a = inst_11853;
-                  var inst_11855 = database.update.call(null, "last", blockchain.a);
-                  var inst_11856 = blockR.hash;
-                  var inst_11857 = database.ps.call(null, inst_11856, blockR);
-                  var state_11865__$1 = function() {
-                    var statearr_11868 = state_11865;
-                    statearr_11868[6] = inst_11850;
-                    statearr_11868[7] = inst_11855;
-                    statearr_11868[8] = inst_11852;
-                    statearr_11868[9] = inst_11854;
-                    return statearr_11868;
+                  var inst_20232 = blockchain.a = inst_20231;
+                  var inst_20233 = database.update.call(null, "last", blockchain.a);
+                  var inst_20234 = blockR.hash;
+                  var inst_20235 = database.ps.call(null, inst_20234, blockR);
+                  var state_20243__$1 = function() {
+                    var statearr_20246 = state_20243;
+                    statearr_20246[6] = inst_20232;
+                    statearr_20246[7] = inst_20230;
+                    statearr_20246[8] = inst_20228;
+                    statearr_20246[9] = inst_20233;
+                    return statearr_20246;
                   }();
-                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_11865__$1, 3, inst_11857);
+                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20243__$1, 3, inst_20235);
                 } else {
-                  if (state_val_11866 === 1) {
-                    var inst_11846 = logger.og.call(null, new cljs.core.Keyword(null, "saveBlock", "saveBlock", 2070754850), "saving ", blockR);
-                    var inst_11847 = blockchain.blockchainHeight.call(null, 1);
-                    var state_11865__$1 = function() {
-                      var statearr_11869 = state_11865;
-                      statearr_11869[10] = inst_11846;
-                      return statearr_11869;
+                  if (state_val_20244 === 1) {
+                    var inst_20224 = logger.og.call(null, new cljs.core.Keyword(null, "saveBlock", "saveBlock", 2070754850), "saving ", blockR);
+                    var inst_20225 = blockchain.blockchainHeight.call(null, 1);
+                    var state_20243__$1 = function() {
+                      var statearr_20247 = state_20243;
+                      statearr_20247[10] = inst_20224;
+                      return statearr_20247;
                     }();
-                    return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_11865__$1, 2, inst_11847);
+                    return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20243__$1, 2, inst_20225);
                   } else {
                     return null;
                   }
@@ -36857,14 +36857,14 @@ blockchain.saveBlock = function saveBlock(dbase, blockR) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_11871 = [null, null, null, null, null, null, null, null, null, null, null];
-              statearr_11871[0] = state_machine__6220__auto__;
-              statearr_11871[1] = 1;
-              return statearr_11871;
+              var statearr_20249 = [null, null, null, null, null, null, null, null, null, null, null];
+              statearr_20249[0] = state_machine__6220__auto__;
+              statearr_20249[1] = 1;
+              return statearr_20249;
             };
-            var state_machine__6220__auto____1 = function(state_11865) {
+            var state_machine__6220__auto____1 = function(state_20243) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_11865);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_20243);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -36873,12 +36873,12 @@ blockchain.saveBlock = function saveBlock(dbase, blockR) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_11865) {
+            state_machine__6220__auto__ = function(state_20243) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_11865);
+                  return state_machine__6220__auto____1.call(this, state_20243);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -36889,9 +36889,9 @@ blockchain.saveBlock = function saveBlock(dbase, blockR) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_11872 = f__6233__auto__.call(null);
-        statearr_11872[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_11872;
+        var statearr_20250 = f__6233__auto__.call(null);
+        statearr_20250[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_20250;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -36904,127 +36904,127 @@ blockchain.addToChain = function addToChain(schain) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_11952) {
-            var state_val_11953 = state_11952[1];
-            if (state_val_11953 === 7) {
-              var inst_11924 = state_11952[5];
-              var inst_11938 = state_11952[2];
-              var inst_11939 = schain.length;
-              var inst_11940 = inst_11924 < inst_11939;
-              var state_11952__$1 = function() {
-                var statearr_11954 = state_11952;
-                statearr_11954[6] = inst_11938;
-                return statearr_11954;
+          return function(state_20330) {
+            var state_val_20331 = state_20330[1];
+            if (state_val_20331 === 7) {
+              var inst_20302 = state_20330[5];
+              var inst_20316 = state_20330[2];
+              var inst_20317 = schain.length;
+              var inst_20318 = inst_20302 < inst_20317;
+              var state_20330__$1 = function() {
+                var statearr_20332 = state_20330;
+                statearr_20332[6] = inst_20316;
+                return statearr_20332;
               }();
-              if (cljs.core.truth_(inst_11940)) {
-                var statearr_11955_11973 = state_11952__$1;
-                statearr_11955_11973[1] = 8;
+              if (cljs.core.truth_(inst_20318)) {
+                var statearr_20333_20351 = state_20330__$1;
+                statearr_20333_20351[1] = 8;
               } else {
-                var statearr_11956_11974 = state_11952__$1;
-                statearr_11956_11974[1] = 9;
+                var statearr_20334_20352 = state_20330__$1;
+                statearr_20334_20352[1] = 9;
               }
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             } else {
-              if (state_val_11953 === 1) {
-                var inst_11923 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "about to add to chain");
-                var inst_11924 = 0;
-                var state_11952__$1 = function() {
-                  var statearr_11957 = state_11952;
-                  statearr_11957[7] = inst_11923;
-                  statearr_11957[5] = inst_11924;
-                  return statearr_11957;
+              if (state_val_20331 === 1) {
+                var inst_20301 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "about to add to chain");
+                var inst_20302 = 0;
+                var state_20330__$1 = function() {
+                  var statearr_20335 = state_20330;
+                  statearr_20335[5] = inst_20302;
+                  statearr_20335[7] = inst_20301;
+                  return statearr_20335;
                 }();
-                var statearr_11958_11975 = state_11952__$1;
-                statearr_11958_11975[2] = null;
-                statearr_11958_11975[1] = 2;
+                var statearr_20336_20353 = state_20330__$1;
+                statearr_20336_20353[2] = null;
+                statearr_20336_20353[1] = 2;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               } else {
-                if (state_val_11953 === 4) {
-                  var inst_11931 = state_11952[2];
-                  var state_11952__$1 = state_11952;
-                  if (cljs.core.truth_(inst_11931)) {
-                    var statearr_11959_11976 = state_11952__$1;
-                    statearr_11959_11976[1] = 5;
+                if (state_val_20331 === 4) {
+                  var inst_20309 = state_20330[2];
+                  var state_20330__$1 = state_20330;
+                  if (cljs.core.truth_(inst_20309)) {
+                    var statearr_20337_20354 = state_20330__$1;
+                    statearr_20337_20354[1] = 5;
                   } else {
-                    var statearr_11960_11977 = state_11952__$1;
-                    statearr_11960_11977[1] = 6;
+                    var statearr_20338_20355 = state_20330__$1;
+                    statearr_20338_20355[1] = 6;
                   }
                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                 } else {
-                  if (state_val_11953 === 6) {
-                    var inst_11924 = state_11952[5];
-                    var inst_11935 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "block is not known ", inst_11924);
-                    var inst_11936 = blockchain.saveBlock.call(null, inst_11924);
-                    var state_11952__$1 = function() {
-                      var statearr_11961 = state_11952;
-                      statearr_11961[8] = inst_11935;
-                      return statearr_11961;
+                  if (state_val_20331 === 6) {
+                    var inst_20302 = state_20330[5];
+                    var inst_20313 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "block is not known ", inst_20302);
+                    var inst_20314 = blockchain.saveBlock.call(null, inst_20302);
+                    var state_20330__$1 = function() {
+                      var statearr_20339 = state_20330;
+                      statearr_20339[8] = inst_20313;
+                      return statearr_20339;
                     }();
-                    var statearr_11962_11978 = state_11952__$1;
-                    statearr_11962_11978[2] = inst_11936;
-                    statearr_11962_11978[1] = 7;
+                    var statearr_20340_20356 = state_20330__$1;
+                    statearr_20340_20356[2] = inst_20314;
+                    statearr_20340_20356[1] = 7;
                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                   } else {
-                    if (state_val_11953 === 3) {
-                      var inst_11948 = state_11952[2];
-                      var inst_11949 = cljs.core.last.call(null, schain);
-                      var inst_11950 = database.update.call(null, "last", inst_11949);
-                      var state_11952__$1 = function() {
-                        var statearr_11963 = state_11952;
-                        statearr_11963[9] = inst_11948;
-                        return statearr_11963;
+                    if (state_val_20331 === 3) {
+                      var inst_20326 = state_20330[2];
+                      var inst_20327 = cljs.core.last.call(null, schain);
+                      var inst_20328 = database.update.call(null, "last", inst_20327);
+                      var state_20330__$1 = function() {
+                        var statearr_20341 = state_20330;
+                        statearr_20341[9] = inst_20326;
+                        return statearr_20341;
                       }();
-                      return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_11952__$1, inst_11950);
+                      return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_20330__$1, inst_20328);
                     } else {
-                      if (state_val_11953 === 2) {
-                        var inst_11924 = state_11952[5];
-                        var inst_11926 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "itterating current step ", inst_11924);
-                        var inst_11927 = schain[inst_11924];
-                        var inst_11928 = blockchain.prevblk.call(null, inst_11927);
-                        var inst_11929 = blockchain.blockKnown_QMARK_.call(null, inst_11928);
-                        var state_11952__$1 = function() {
-                          var statearr_11964 = state_11952;
-                          statearr_11964[10] = inst_11926;
-                          return statearr_11964;
+                      if (state_val_20331 === 2) {
+                        var inst_20302 = state_20330[5];
+                        var inst_20304 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "itterating current step ", inst_20302);
+                        var inst_20305 = schain[inst_20302];
+                        var inst_20306 = blockchain.prevblk.call(null, inst_20305);
+                        var inst_20307 = blockchain.blockKnown_QMARK_.call(null, inst_20306);
+                        var state_20330__$1 = function() {
+                          var statearr_20342 = state_20330;
+                          statearr_20342[10] = inst_20304;
+                          return statearr_20342;
                         }();
-                        return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_11952__$1, 4, inst_11929);
+                        return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20330__$1, 4, inst_20307);
                       } else {
-                        if (state_val_11953 === 9) {
-                          var state_11952__$1 = state_11952;
-                          var statearr_11965_11979 = state_11952__$1;
-                          statearr_11965_11979[2] = null;
-                          statearr_11965_11979[1] = 10;
+                        if (state_val_20331 === 9) {
+                          var state_20330__$1 = state_20330;
+                          var statearr_20343_20357 = state_20330__$1;
+                          statearr_20343_20357[2] = null;
+                          statearr_20343_20357[1] = 10;
                           return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                         } else {
-                          if (state_val_11953 === 5) {
-                            var inst_11924 = state_11952[5];
-                            var inst_11933 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "block is known ", inst_11924);
-                            var state_11952__$1 = state_11952;
-                            var statearr_11966_11980 = state_11952__$1;
-                            statearr_11966_11980[2] = inst_11933;
-                            statearr_11966_11980[1] = 7;
+                          if (state_val_20331 === 5) {
+                            var inst_20302 = state_20330[5];
+                            var inst_20311 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "block is known ", inst_20302);
+                            var state_20330__$1 = state_20330;
+                            var statearr_20344_20358 = state_20330__$1;
+                            statearr_20344_20358[2] = inst_20311;
+                            statearr_20344_20358[1] = 7;
                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                           } else {
-                            if (state_val_11953 === 10) {
-                              var inst_11946 = state_11952[2];
-                              var state_11952__$1 = state_11952;
-                              var statearr_11967_11981 = state_11952__$1;
-                              statearr_11967_11981[2] = inst_11946;
-                              statearr_11967_11981[1] = 3;
+                            if (state_val_20331 === 10) {
+                              var inst_20324 = state_20330[2];
+                              var state_20330__$1 = state_20330;
+                              var statearr_20345_20359 = state_20330__$1;
+                              statearr_20345_20359[2] = inst_20324;
+                              statearr_20345_20359[1] = 3;
                               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                             } else {
-                              if (state_val_11953 === 8) {
-                                var inst_11924 = state_11952[5];
-                                var inst_11942 = inst_11924 + 1;
-                                var inst_11924__$1 = inst_11942;
-                                var state_11952__$1 = function() {
-                                  var statearr_11968 = state_11952;
-                                  statearr_11968[5] = inst_11924__$1;
-                                  return statearr_11968;
+                              if (state_val_20331 === 8) {
+                                var inst_20302 = state_20330[5];
+                                var inst_20320 = inst_20302 + 1;
+                                var inst_20302__$1 = inst_20320;
+                                var state_20330__$1 = function() {
+                                  var statearr_20346 = state_20330;
+                                  statearr_20346[5] = inst_20302__$1;
+                                  return statearr_20346;
                                 }();
-                                var statearr_11969_11982 = state_11952__$1;
-                                statearr_11969_11982[2] = null;
-                                statearr_11969_11982[1] = 2;
+                                var statearr_20347_20360 = state_20330__$1;
+                                statearr_20347_20360[2] = null;
+                                statearr_20347_20360[1] = 2;
                                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                               } else {
                                 return null;
@@ -37044,14 +37044,14 @@ blockchain.addToChain = function addToChain(schain) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_11971 = [null, null, null, null, null, null, null, null, null, null, null];
-              statearr_11971[0] = state_machine__6220__auto__;
-              statearr_11971[1] = 1;
-              return statearr_11971;
+              var statearr_20349 = [null, null, null, null, null, null, null, null, null, null, null];
+              statearr_20349[0] = state_machine__6220__auto__;
+              statearr_20349[1] = 1;
+              return statearr_20349;
             };
-            var state_machine__6220__auto____1 = function(state_11952) {
+            var state_machine__6220__auto____1 = function(state_20330) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_11952);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_20330);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -37060,12 +37060,12 @@ blockchain.addToChain = function addToChain(schain) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_11952) {
+            state_machine__6220__auto__ = function(state_20330) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_11952);
+                  return state_machine__6220__auto____1.call(this, state_20330);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -37076,9 +37076,9 @@ blockchain.addToChain = function addToChain(schain) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_11972 = f__6233__auto__.call(null);
-        statearr_11972[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_11972;
+        var statearr_20350 = f__6233__auto__.call(null);
+        statearr_20350[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_20350;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -37091,66 +37091,66 @@ blockchain.blockchainHeight = function blockchainHeight(x) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_12021) {
-            var state_val_12022 = state_12021[1];
-            if (state_val_12022 === 6) {
-              var inst_12016 = state_12021[2];
-              var state_12021__$1 = state_12021;
-              var statearr_12023_12031 = state_12021__$1;
-              statearr_12023_12031[2] = inst_12016;
-              statearr_12023_12031[1] = 5;
+          return function(state_20399) {
+            var state_val_20400 = state_20399[1];
+            if (state_val_20400 === 6) {
+              var inst_20394 = state_20399[2];
+              var state_20399__$1 = state_20399;
+              var statearr_20401_20409 = state_20399__$1;
+              statearr_20401_20409[2] = inst_20394;
+              statearr_20401_20409[1] = 5;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             } else {
-              if (state_val_12022 === 5) {
-                var inst_12019 = state_12021[2];
-                var state_12021__$1 = state_12021;
-                return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_12021__$1, inst_12019);
+              if (state_val_20400 === 5) {
+                var inst_20397 = state_20399[2];
+                var state_20399__$1 = state_20399;
+                return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_20399__$1, inst_20397);
               } else {
-                if (state_val_12022 === 4) {
-                  var state_12021__$1 = state_12021;
-                  var statearr_12024_12032 = state_12021__$1;
-                  statearr_12024_12032[2] = blockchain.hght;
-                  statearr_12024_12032[1] = 5;
+                if (state_val_20400 === 4) {
+                  var state_20399__$1 = state_20399;
+                  var statearr_20402_20410 = state_20399__$1;
+                  statearr_20402_20410[2] = blockchain.hght;
+                  statearr_20402_20410[1] = 5;
                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                 } else {
-                  if (state_val_12022 === 3) {
-                    var inst_12013 = function() {
-                      return function(state_val_12022, c__6232__auto__) {
+                  if (state_val_20400 === 3) {
+                    var inst_20391 = function() {
+                      return function(state_val_20400, c__6232__auto__) {
                         return function(v) {
                           logger.og.call(null, new cljs.core.Keyword(null, "height", "height", 1025178622), "prev height ", v);
                           logger.og.call(null, new cljs.core.Keyword(null, "height", "height", 1025178622), "to add  ", x);
                           logger.og.call(null, new cljs.core.Keyword(null, "height", "height", 1025178622), "after addition  ", v + x);
                           return v + x;
                         };
-                      }(state_val_12022, c__6232__auto__);
+                      }(state_val_20400, c__6232__auto__);
                     }();
-                    var inst_12014 = database.update.call(null, "height", inst_12013);
-                    var state_12021__$1 = state_12021;
-                    return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_12021__$1, 6, inst_12014);
+                    var inst_20392 = database.update.call(null, "height", inst_20391);
+                    var state_20399__$1 = state_20399;
+                    return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20399__$1, 6, inst_20392);
                   } else {
-                    if (state_val_12022 === 2) {
-                      var inst_12009 = state_12021[2];
-                      var inst_12010 = blockchain.hght = inst_12009;
-                      var inst_12011 = logger.og.call(null, new cljs.core.Keyword(null, "blockchainHeight", "blockchainHeight", -607390728), "blockchain height ", blockchain.hght);
-                      var state_12021__$1 = function() {
-                        var statearr_12025 = state_12021;
-                        statearr_12025[5] = inst_12011;
-                        statearr_12025[6] = inst_12010;
-                        return statearr_12025;
+                    if (state_val_20400 === 2) {
+                      var inst_20387 = state_20399[2];
+                      var inst_20388 = blockchain.hght = inst_20387;
+                      var inst_20389 = logger.og.call(null, new cljs.core.Keyword(null, "blockchainHeight", "blockchainHeight", -607390728), "blockchain height ", blockchain.hght);
+                      var state_20399__$1 = function() {
+                        var statearr_20403 = state_20399;
+                        statearr_20403[5] = inst_20389;
+                        statearr_20403[6] = inst_20388;
+                        return statearr_20403;
                       }();
                       if (cljs.core.truth_(x)) {
-                        var statearr_12026_12033 = state_12021__$1;
-                        statearr_12026_12033[1] = 3;
+                        var statearr_20404_20411 = state_20399__$1;
+                        statearr_20404_20411[1] = 3;
                       } else {
-                        var statearr_12027_12034 = state_12021__$1;
-                        statearr_12027_12034[1] = 4;
+                        var statearr_20405_20412 = state_20399__$1;
+                        statearr_20405_20412[1] = 4;
                       }
                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                     } else {
-                      if (state_val_12022 === 1) {
-                        var inst_12007 = database.g.call(null, "height");
-                        var state_12021__$1 = state_12021;
-                        return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_12021__$1, 2, inst_12007);
+                      if (state_val_20400 === 1) {
+                        var inst_20385 = database.g.call(null, "height");
+                        var state_20399__$1 = state_20399;
+                        return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20399__$1, 2, inst_20385);
                       } else {
                         return null;
                       }
@@ -37165,14 +37165,14 @@ blockchain.blockchainHeight = function blockchainHeight(x) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_12029 = [null, null, null, null, null, null, null];
-              statearr_12029[0] = state_machine__6220__auto__;
-              statearr_12029[1] = 1;
-              return statearr_12029;
+              var statearr_20407 = [null, null, null, null, null, null, null];
+              statearr_20407[0] = state_machine__6220__auto__;
+              statearr_20407[1] = 1;
+              return statearr_20407;
             };
-            var state_machine__6220__auto____1 = function(state_12021) {
+            var state_machine__6220__auto____1 = function(state_20399) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_12021);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_20399);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -37181,12 +37181,12 @@ blockchain.blockchainHeight = function blockchainHeight(x) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_12021) {
+            state_machine__6220__auto__ = function(state_20399) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_12021);
+                  return state_machine__6220__auto____1.call(this, state_20399);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -37197,9 +37197,9 @@ blockchain.blockchainHeight = function blockchainHeight(x) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_12030 = f__6233__auto__.call(null);
-        statearr_12030[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_12030;
+        var statearr_20408 = f__6233__auto__.call(null);
+        statearr_20408[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_20408;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -39980,8 +39980,8 @@ html.clock = function clock() {
 };
 html.color_input = function color_input() {
   return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.color-input", "div.color-input", -879914246), "Time color: ", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "input", "input", 556931961), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "type", "type", 1174270348), "text", new cljs.core.Keyword(null, "value", "value", 305978217), cljs.core.deref.call(null, 
-  html.time_color), new cljs.core.Keyword(null, "on-change", "on-change", -732046149), function(p1__11492_SHARP_) {
-    return cljs.core.reset_BANG_.call(null, html.time_color, p1__11492_SHARP_.target.value);
+  html.time_color), new cljs.core.Keyword(null, "on-change", "on-change", -732046149), function(p1__19870_SHARP_) {
+    return cljs.core.reset_BANG_.call(null, html.time_color, p1__19870_SHARP_.target.value);
   }], null)], null)], null);
 };
 html.simple_example = function simple_example(name, desc, pic, extra) {
@@ -39995,8 +39995,8 @@ html.run = function run(name, desc, pic, extra) {
 goog.provide("peerjs");
 goog.require("cljs.core");
 peerjs.peerParams = function() {
-  var obj8211 = {"host":"localhost", "port":8E3, "key":"peerjs", "debug":false};
-  return obj8211;
+  var obj17349 = {"host":"localhost", "port":8E3, "key":"peerjs", "debug":false};
+  return obj17349;
 }();
 goog.provide("intercomMake");
 goog.require("cljs.core");
@@ -40010,14 +40010,14 @@ goog.require("database");
 goog.require("logger");
 goog.require("logger");
 intercomMake.makeInv = function makeInv(typ, message) {
-  var obj8061 = {"type":"json", "data":JSON.stringify(function() {
-    var obj8063 = {"type":"inv", "data":function() {
-      var obj8065 = {"type":typ, "vector":message};
-      return obj8065;
+  var obj17199 = {"type":"json", "data":JSON.stringify(function() {
+    var obj17201 = {"type":"inv", "data":function() {
+      var obj17203 = {"type":typ, "vector":message};
+      return obj17203;
     }()};
-    return obj8063;
+    return obj17201;
   }())};
-  return obj8061;
+  return obj17199;
 };
 intercomMake.makeData = function makeData(typ, message) {
   return null;
@@ -40026,13 +40026,13 @@ intercomMake.makeGetVersion = function makeGetVersion(typ, message) {
   return null;
 };
 intercomMake.makeVersion = function makeVersion(message) {
-  var obj8069 = {"type":"version", "data":message};
-  return obj8069;
+  var obj17207 = {"type":"version", "data":message};
+  return obj17207;
 };
 intercomMake.makeConn = function makeConn(conn) {
   logger.og.call(null, new cljs.core.Keyword(null, "makeConn", "makeConn", 176409920), "make conn ", conn);
-  var obj8073 = {"type":"conn", "data":conn};
-  return obj8073;
+  var obj17211 = {"type":"conn", "data":conn};
+  return obj17211;
 };
 intercomMake.makeGetBlock = function makeGetBlock(hash) {
   logger.og.call(null, new cljs.core.Keyword(null, "makeGetBlock", "makeGetBlock", -1966015644), "about to make block ", hash);
@@ -40041,150 +40041,150 @@ intercomMake.makeGetBlock = function makeGetBlock(hash) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_8179) {
-            var state_val_8180 = state_8179[1];
-            if (state_val_8180 === 7) {
-              var state_8179__$1 = state_8179;
-              var statearr_8181_8200 = state_8179__$1;
-              statearr_8181_8200[2] = null;
-              statearr_8181_8200[1] = 8;
+          return function(state_17317) {
+            var state_val_17318 = state_17317[1];
+            if (state_val_17318 === 7) {
+              var state_17317__$1 = state_17317;
+              var statearr_17319_17338 = state_17317__$1;
+              statearr_17319_17338[2] = null;
+              statearr_17319_17338[1] = 8;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             } else {
-              if (state_val_8180 === 1) {
-                var inst_8139 = [];
-                var inst_8140 = {"count":0, "blocks":inst_8139};
-                var inst_8141 = inst_8140[intercomMake.hash_stop] = 0;
-                var inst_8142 = intercomMake.gtBlock = inst_8140;
-                var inst_8143 = app.blockchain.blockchainHeight.call(null, 1);
-                var state_8179__$1 = function() {
-                  var statearr_8182 = state_8179;
-                  statearr_8182[5] = inst_8141;
-                  statearr_8182[6] = inst_8142;
-                  return statearr_8182;
+              if (state_val_17318 === 1) {
+                var inst_17277 = [];
+                var inst_17278 = {"count":0, "blocks":inst_17277};
+                var inst_17279 = inst_17278[intercomMake.hash_stop] = 0;
+                var inst_17280 = intercomMake.gtBlock = inst_17278;
+                var inst_17281 = app.blockchain.blockchainHeight.call(null, 1);
+                var state_17317__$1 = function() {
+                  var statearr_17320 = state_17317;
+                  statearr_17320[5] = inst_17279;
+                  statearr_17320[6] = inst_17280;
+                  return statearr_17320;
                 }();
-                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_8179__$1, 2, inst_8143);
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_17317__$1, 2, inst_17281);
               } else {
-                if (state_val_8180 === 4) {
-                  var inst_8177 = state_8179[2];
-                  var state_8179__$1 = function() {
-                    var statearr_8183 = state_8179;
-                    statearr_8183[7] = inst_8177;
-                    return statearr_8183;
+                if (state_val_17318 === 4) {
+                  var inst_17315 = state_17317[2];
+                  var state_17317__$1 = function() {
+                    var statearr_17321 = state_17317;
+                    statearr_17321[7] = inst_17315;
+                    return statearr_17321;
                   }();
-                  return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_8179__$1, intercomMake.gtBlock);
+                  return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_17317__$1, intercomMake.gtBlock);
                 } else {
-                  if (state_val_8180 === 6) {
-                    var inst_8148 = state_8179[8];
-                    var inst_8164 = inst_8148 < 10;
-                    var state_8179__$1 = state_8179;
-                    if (cljs.core.truth_(inst_8164)) {
-                      var statearr_8184_8201 = state_8179__$1;
-                      statearr_8184_8201[1] = 9;
+                  if (state_val_17318 === 6) {
+                    var inst_17286 = state_17317[8];
+                    var inst_17302 = inst_17286 < 10;
+                    var state_17317__$1 = state_17317;
+                    if (cljs.core.truth_(inst_17302)) {
+                      var statearr_17322_17339 = state_17317__$1;
+                      statearr_17322_17339[1] = 9;
                     } else {
-                      var statearr_8185_8202 = state_8179__$1;
-                      statearr_8185_8202[1] = 10;
+                      var statearr_17323_17340 = state_17317__$1;
+                      statearr_17323_17340[1] = 10;
                     }
                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                   } else {
-                    if (state_val_8180 === 3) {
-                      var inst_8148 = state_8179[8];
-                      var inst_8147 = state_8179[9];
-                      var inst_8150 = "new loop " + inst_8147;
-                      var inst_8151 = inst_8150 + " ";
-                      var inst_8152 = logger.og.call(null, new cljs.core.Keyword(null, "makeGetBlock", "makeGetBlock", -1966015644), inst_8151, inst_8148);
-                      var inst_8153 = "b" + inst_8147;
-                      var inst_8154 = database.g.call(null, inst_8153);
-                      var state_8179__$1 = function() {
-                        var statearr_8186 = state_8179;
-                        statearr_8186[10] = inst_8152;
-                        return statearr_8186;
+                    if (state_val_17318 === 3) {
+                      var inst_17285 = state_17317[9];
+                      var inst_17286 = state_17317[8];
+                      var inst_17288 = "new loop " + inst_17285;
+                      var inst_17289 = inst_17288 + " ";
+                      var inst_17290 = logger.og.call(null, new cljs.core.Keyword(null, "makeGetBlock", "makeGetBlock", -1966015644), inst_17289, inst_17286);
+                      var inst_17291 = "b" + inst_17285;
+                      var inst_17292 = database.g.call(null, inst_17291);
+                      var state_17317__$1 = function() {
+                        var statearr_17324 = state_17317;
+                        statearr_17324[10] = inst_17290;
+                        return statearr_17324;
                       }();
-                      return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_8179__$1, 5, inst_8154);
+                      return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_17317__$1, 5, inst_17292);
                     } else {
-                      if (state_val_8180 === 2) {
-                        var inst_8145 = state_8179[2];
-                        var inst_8146 = intercomMake.heightForBlock = inst_8145;
-                        var inst_8147 = intercomMake.heightForBlock;
-                        var inst_8148 = 0;
-                        var state_8179__$1 = function() {
-                          var statearr_8187 = state_8179;
-                          statearr_8187[8] = inst_8148;
-                          statearr_8187[11] = inst_8146;
-                          statearr_8187[9] = inst_8147;
-                          return statearr_8187;
+                      if (state_val_17318 === 2) {
+                        var inst_17283 = state_17317[2];
+                        var inst_17284 = intercomMake.heightForBlock = inst_17283;
+                        var inst_17285 = intercomMake.heightForBlock;
+                        var inst_17286 = 0;
+                        var state_17317__$1 = function() {
+                          var statearr_17325 = state_17317;
+                          statearr_17325[9] = inst_17285;
+                          statearr_17325[11] = inst_17284;
+                          statearr_17325[8] = inst_17286;
+                          return statearr_17325;
                         }();
-                        var statearr_8188_8203 = state_8179__$1;
-                        statearr_8188_8203[2] = null;
-                        statearr_8188_8203[1] = 3;
+                        var statearr_17326_17341 = state_17317__$1;
+                        statearr_17326_17341[2] = null;
+                        statearr_17326_17341[1] = 3;
                         return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                       } else {
-                        if (state_val_8180 === 11) {
-                          var inst_8148 = state_8179[8];
-                          var inst_8170 = state_8179[2];
-                          var inst_8171 = inst_8148 + 1;
-                          var inst_8147 = inst_8170;
-                          var inst_8148__$1 = inst_8171;
-                          var state_8179__$1 = function() {
-                            var statearr_8189 = state_8179;
-                            statearr_8189[8] = inst_8148__$1;
-                            statearr_8189[9] = inst_8147;
-                            return statearr_8189;
+                        if (state_val_17318 === 11) {
+                          var inst_17286 = state_17317[8];
+                          var inst_17308 = state_17317[2];
+                          var inst_17309 = inst_17286 + 1;
+                          var inst_17285 = inst_17308;
+                          var inst_17286__$1 = inst_17309;
+                          var state_17317__$1 = function() {
+                            var statearr_17327 = state_17317;
+                            statearr_17327[9] = inst_17285;
+                            statearr_17327[8] = inst_17286__$1;
+                            return statearr_17327;
                           }();
-                          var statearr_8190_8204 = state_8179__$1;
-                          statearr_8190_8204[2] = null;
-                          statearr_8190_8204[1] = 3;
+                          var statearr_17328_17342 = state_17317__$1;
+                          statearr_17328_17342[2] = null;
+                          statearr_17328_17342[1] = 3;
                           return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                         } else {
-                          if (state_val_8180 === 9) {
-                            var inst_8147 = state_8179[9];
-                            var inst_8166 = inst_8147 - 1;
-                            var state_8179__$1 = state_8179;
-                            var statearr_8191_8205 = state_8179__$1;
-                            statearr_8191_8205[2] = inst_8166;
-                            statearr_8191_8205[1] = 11;
+                          if (state_val_17318 === 9) {
+                            var inst_17285 = state_17317[9];
+                            var inst_17304 = inst_17285 - 1;
+                            var state_17317__$1 = state_17317;
+                            var statearr_17329_17343 = state_17317__$1;
+                            statearr_17329_17343[2] = inst_17304;
+                            statearr_17329_17343[1] = 11;
                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                           } else {
-                            if (state_val_8180 === 5) {
-                              var inst_8147 = state_8179[9];
-                              var inst_8156 = state_8179[2];
-                              var inst_8157 = intercomMake.blockg = inst_8156;
-                              var inst_8158 = logger.og.call(null, new cljs.core.Keyword(null, "makeGetBlock", "makeGetBlock", -1966015644), "curr block ");
-                              var inst_8159 = intercomMake.gtBlock.count = inst_8147;
-                              var inst_8160 = intercomMake.gtBlock.blocks;
-                              var inst_8161 = inst_8160.push(intercomMake.blockg);
-                              var inst_8162 = 0 < inst_8147;
-                              var state_8179__$1 = function() {
-                                var statearr_8192 = state_8179;
-                                statearr_8192[12] = inst_8159;
-                                statearr_8192[13] = inst_8161;
-                                statearr_8192[14] = inst_8158;
-                                statearr_8192[15] = inst_8157;
-                                return statearr_8192;
+                            if (state_val_17318 === 5) {
+                              var inst_17285 = state_17317[9];
+                              var inst_17294 = state_17317[2];
+                              var inst_17295 = intercomMake.blockg = inst_17294;
+                              var inst_17296 = logger.og.call(null, new cljs.core.Keyword(null, "makeGetBlock", "makeGetBlock", -1966015644), "curr block ");
+                              var inst_17297 = intercomMake.gtBlock.count = inst_17285;
+                              var inst_17298 = intercomMake.gtBlock.blocks;
+                              var inst_17299 = inst_17298.push(intercomMake.blockg);
+                              var inst_17300 = 0 < inst_17285;
+                              var state_17317__$1 = function() {
+                                var statearr_17330 = state_17317;
+                                statearr_17330[12] = inst_17295;
+                                statearr_17330[13] = inst_17296;
+                                statearr_17330[14] = inst_17297;
+                                statearr_17330[15] = inst_17299;
+                                return statearr_17330;
                               }();
-                              if (cljs.core.truth_(inst_8162)) {
-                                var statearr_8193_8206 = state_8179__$1;
-                                statearr_8193_8206[1] = 6;
+                              if (cljs.core.truth_(inst_17300)) {
+                                var statearr_17331_17344 = state_17317__$1;
+                                statearr_17331_17344[1] = 6;
                               } else {
-                                var statearr_8194_8207 = state_8179__$1;
-                                statearr_8194_8207[1] = 7;
+                                var statearr_17332_17345 = state_17317__$1;
+                                statearr_17332_17345[1] = 7;
                               }
                               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                             } else {
-                              if (state_val_8180 === 10) {
-                                var inst_8147 = state_8179[9];
-                                var inst_8168 = cljs.core.quot.call(null, inst_8147, 2);
-                                var state_8179__$1 = state_8179;
-                                var statearr_8195_8208 = state_8179__$1;
-                                statearr_8195_8208[2] = inst_8168;
-                                statearr_8195_8208[1] = 11;
+                              if (state_val_17318 === 10) {
+                                var inst_17285 = state_17317[9];
+                                var inst_17306 = cljs.core.quot.call(null, inst_17285, 2);
+                                var state_17317__$1 = state_17317;
+                                var statearr_17333_17346 = state_17317__$1;
+                                statearr_17333_17346[2] = inst_17306;
+                                statearr_17333_17346[1] = 11;
                                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                               } else {
-                                if (state_val_8180 === 8) {
-                                  var inst_8175 = state_8179[2];
-                                  var state_8179__$1 = state_8179;
-                                  var statearr_8196_8209 = state_8179__$1;
-                                  statearr_8196_8209[2] = inst_8175;
-                                  statearr_8196_8209[1] = 4;
+                                if (state_val_17318 === 8) {
+                                  var inst_17313 = state_17317[2];
+                                  var state_17317__$1 = state_17317;
+                                  var statearr_17334_17347 = state_17317__$1;
+                                  statearr_17334_17347[2] = inst_17313;
+                                  statearr_17334_17347[1] = 4;
                                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                 } else {
                                   return null;
@@ -40205,14 +40205,14 @@ intercomMake.makeGetBlock = function makeGetBlock(hash) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_8198 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
-              statearr_8198[0] = state_machine__6220__auto__;
-              statearr_8198[1] = 1;
-              return statearr_8198;
+              var statearr_17336 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+              statearr_17336[0] = state_machine__6220__auto__;
+              statearr_17336[1] = 1;
+              return statearr_17336;
             };
-            var state_machine__6220__auto____1 = function(state_8179) {
+            var state_machine__6220__auto____1 = function(state_17317) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_8179);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_17317);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -40221,12 +40221,12 @@ intercomMake.makeGetBlock = function makeGetBlock(hash) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_8179) {
+            state_machine__6220__auto__ = function(state_17317) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_8179);
+                  return state_machine__6220__auto____1.call(this, state_17317);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -40237,9 +40237,9 @@ intercomMake.makeGetBlock = function makeGetBlock(hash) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_8199 = f__6233__auto__.call(null);
-        statearr_8199[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_8199;
+        var statearr_17337 = f__6233__auto__.call(null);
+        statearr_17337[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_17337;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -42195,30 +42195,30 @@ mining.mine = function mine(rootHash) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_12097) {
-            var state_val_12098 = state_12097[1];
-            if (state_val_12098 === 2) {
-              var inst_12091 = state_12097[2];
-              var inst_12092 = mining.v = inst_12091;
-              var inst_12093 = logger.og.call(null, new cljs.core.Keyword(null, "mine", "mine", -130428525), "recieved from mining", mining.v);
-              var inst_12094 = JSON.parse(mining.v);
-              var inst_12095 = pubsub.pub.call(null, "blockMined", inst_12094);
-              var state_12097__$1 = function() {
-                var statearr_12099 = state_12097;
-                statearr_12099[5] = inst_12093;
-                statearr_12099[6] = inst_12092;
-                return statearr_12099;
+          return function(state_20475) {
+            var state_val_20476 = state_20475[1];
+            if (state_val_20476 === 2) {
+              var inst_20469 = state_20475[2];
+              var inst_20470 = mining.v = inst_20469;
+              var inst_20471 = logger.og.call(null, new cljs.core.Keyword(null, "mine", "mine", -130428525), "recieved from mining", mining.v);
+              var inst_20472 = JSON.parse(mining.v);
+              var inst_20473 = pubsub.pub.call(null, "blockMined", inst_20472);
+              var state_20475__$1 = function() {
+                var statearr_20477 = state_20475;
+                statearr_20477[5] = inst_20471;
+                statearr_20477[6] = inst_20470;
+                return statearr_20477;
               }();
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_12097__$1, inst_12095);
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_20475__$1, inst_20473);
             } else {
-              if (state_val_12098 === 1) {
-                var inst_12089 = logger.og.call(null, new cljs.core.Keyword(null, "mine", "mine", -130428525), "about to wait for mining to end ");
-                var state_12097__$1 = function() {
-                  var statearr_12100 = state_12097;
-                  statearr_12100[7] = inst_12089;
-                  return statearr_12100;
+              if (state_val_20476 === 1) {
+                var inst_20467 = logger.og.call(null, new cljs.core.Keyword(null, "mine", "mine", -130428525), "about to wait for mining to end ");
+                var state_20475__$1 = function() {
+                  var statearr_20478 = state_20475;
+                  statearr_20478[7] = inst_20467;
+                  return statearr_20478;
                 }();
-                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_12097__$1, 2, mining.chann);
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20475__$1, 2, mining.chann);
               } else {
                 return null;
               }
@@ -42229,14 +42229,14 @@ mining.mine = function mine(rootHash) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_12102 = [null, null, null, null, null, null, null, null];
-              statearr_12102[0] = state_machine__6220__auto__;
-              statearr_12102[1] = 1;
-              return statearr_12102;
+              var statearr_20480 = [null, null, null, null, null, null, null, null];
+              statearr_20480[0] = state_machine__6220__auto__;
+              statearr_20480[1] = 1;
+              return statearr_20480;
             };
-            var state_machine__6220__auto____1 = function(state_12097) {
+            var state_machine__6220__auto____1 = function(state_20475) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_12097);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_20475);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -42245,12 +42245,12 @@ mining.mine = function mine(rootHash) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_12097) {
+            state_machine__6220__auto__ = function(state_20475) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_12097);
+                  return state_machine__6220__auto____1.call(this, state_20475);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -42261,9 +42261,9 @@ mining.mine = function mine(rootHash) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_12103 = f__6233__auto__.call(null);
-        statearr_12103[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_12103;
+        var statearr_20481 = f__6233__auto__.call(null);
+        statearr_20481[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_20481;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -42293,8 +42293,8 @@ goog.require("blockchain");
 goog.require("database");
 goog.require("crypto");
 communications.intercomMeta = function() {
-  var obj9862 = {"id":1, "knownPeers":cljs.core.PersistentVector.EMPTY, "knownPeersChannels":cljs.core.PersistentVector.EMPTY, "p2pchans":cljs.core.PersistentVector.EMPTY};
-  return obj9862;
+  var obj18587 = {"id":1, "knownPeers":cljs.core.PersistentVector.EMPTY, "knownPeersChannels":cljs.core.PersistentVector.EMPTY, "p2pchans":cljs.core.PersistentVector.EMPTY};
+  return obj18587;
 }();
 communications.peers = cljs.core.PersistentVector.EMPTY;
 communications.transactionch = cljs.core.async.chan.call(null);
@@ -42308,33 +42308,33 @@ communications.setID = function setID(ev, id) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_9890) {
-            var state_val_9891 = state_9890[1];
-            if (state_val_9891 === 2) {
-              var inst_9883 = state_9890[2];
-              var inst_9884 = console.log(inst_9883);
-              var inst_9885 = new Peer(id, peerjs.peerParams);
-              var inst_9886 = peerjs.peerjs = inst_9885;
-              var inst_9887 = communications.init.call(null, peerjs.peerjs);
-              var inst_9888 = peerjs.peerjs.on("connection", comm.onConnection);
-              var state_9890__$1 = function() {
-                var statearr_9892 = state_9890;
-                statearr_9892[5] = inst_9884;
-                statearr_9892[6] = inst_9887;
-                statearr_9892[7] = inst_9886;
-                return statearr_9892;
+          return function(state_18615) {
+            var state_val_18616 = state_18615[1];
+            if (state_val_18616 === 2) {
+              var inst_18608 = state_18615[2];
+              var inst_18609 = console.log(inst_18608);
+              var inst_18610 = new Peer(id, peerjs.peerParams);
+              var inst_18611 = peerjs.peerjs = inst_18610;
+              var inst_18612 = communications.init.call(null, peerjs.peerjs);
+              var inst_18613 = peerjs.peerjs.on("connection", comm.onConnection);
+              var state_18615__$1 = function() {
+                var statearr_18617 = state_18615;
+                statearr_18617[5] = inst_18612;
+                statearr_18617[6] = inst_18611;
+                statearr_18617[7] = inst_18609;
+                return statearr_18617;
               }();
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_9890__$1, inst_9888);
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_18615__$1, inst_18613);
             } else {
-              if (state_val_9891 === 1) {
-                var inst_9880 = communications.p.call(null, "lid", id);
-                var inst_9881 = communications.g.call(null, "lid");
-                var state_9890__$1 = function() {
-                  var statearr_9893 = state_9890;
-                  statearr_9893[8] = inst_9880;
-                  return statearr_9893;
+              if (state_val_18616 === 1) {
+                var inst_18605 = communications.p.call(null, "lid", id);
+                var inst_18606 = communications.g.call(null, "lid");
+                var state_18615__$1 = function() {
+                  var statearr_18618 = state_18615;
+                  statearr_18618[8] = inst_18605;
+                  return statearr_18618;
                 }();
-                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_9890__$1, 2, inst_9881);
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_18615__$1, 2, inst_18606);
               } else {
                 return null;
               }
@@ -42345,14 +42345,14 @@ communications.setID = function setID(ev, id) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_9895 = [null, null, null, null, null, null, null, null, null];
-              statearr_9895[0] = state_machine__6220__auto__;
-              statearr_9895[1] = 1;
-              return statearr_9895;
+              var statearr_18620 = [null, null, null, null, null, null, null, null, null];
+              statearr_18620[0] = state_machine__6220__auto__;
+              statearr_18620[1] = 1;
+              return statearr_18620;
             };
-            var state_machine__6220__auto____1 = function(state_9890) {
+            var state_machine__6220__auto____1 = function(state_18615) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_9890);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_18615);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -42361,12 +42361,12 @@ communications.setID = function setID(ev, id) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_9890) {
+            state_machine__6220__auto__ = function(state_18615) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_9890);
+                  return state_machine__6220__auto____1.call(this, state_18615);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -42377,9 +42377,9 @@ communications.setID = function setID(ev, id) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_9896 = f__6233__auto__.call(null);
-        statearr_9896[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_9896;
+        var statearr_18621 = f__6233__auto__.call(null);
+        statearr_18621[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_18621;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -42393,81 +42393,81 @@ communications.initial = function initial() {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_9957) {
-            var state_val_9958 = state_9957[1];
-            if (state_val_9958 === 6) {
-              var inst_9949 = state_9957[2];
-              var state_9957__$1 = state_9957;
-              var statearr_9959_9969 = state_9957__$1;
-              statearr_9959_9969[2] = inst_9949;
-              statearr_9959_9969[1] = 5;
+          return function(state_18682) {
+            var state_val_18683 = state_18682[1];
+            if (state_val_18683 === 6) {
+              var inst_18674 = state_18682[2];
+              var state_18682__$1 = state_18682;
+              var statearr_18684_18694 = state_18682__$1;
+              statearr_18684_18694[2] = inst_18674;
+              statearr_18684_18694[1] = 5;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             } else {
-              if (state_val_9958 === 5) {
-                var inst_9951 = state_9957[2];
-                var inst_9952 = pubsub.initpubsub.call(null);
-                var inst_9953 = comm.setupComm.call(null);
-                var inst_9954 = comm.startP2PCommLoop.call(null);
-                var inst_9955 = ht.run.call(null, "Taras Bulba", "zaparozie r0x", "i4c32d4308e1fe.jpg", "- zaparozie");
-                var state_9957__$1 = function() {
-                  var statearr_9960 = state_9957;
-                  statearr_9960[5] = inst_9953;
-                  statearr_9960[6] = inst_9954;
-                  statearr_9960[7] = inst_9952;
-                  statearr_9960[8] = inst_9951;
-                  return statearr_9960;
+              if (state_val_18683 === 5) {
+                var inst_18676 = state_18682[2];
+                var inst_18677 = pubsub.initpubsub.call(null);
+                var inst_18678 = comm.setupComm.call(null);
+                var inst_18679 = comm.startP2PCommLoop.call(null);
+                var inst_18680 = ht.run.call(null, "Taras Bulba", "zaparozie r0x", "i4c32d4308e1fe.jpg", "- zaparozie");
+                var state_18682__$1 = function() {
+                  var statearr_18685 = state_18682;
+                  statearr_18685[5] = inst_18678;
+                  statearr_18685[6] = inst_18677;
+                  statearr_18685[7] = inst_18676;
+                  statearr_18685[8] = inst_18679;
+                  return statearr_18685;
                 }();
-                return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_9957__$1, inst_9955);
+                return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_18682__$1, inst_18680);
               } else {
-                if (state_val_9958 === 4) {
-                  var inst_9947 = communications.initDBase.call(null);
-                  var state_9957__$1 = state_9957;
-                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_9957__$1, 6, inst_9947);
+                if (state_val_18683 === 4) {
+                  var inst_18672 = communications.initDBase.call(null);
+                  var state_18682__$1 = state_18682;
+                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_18682__$1, 6, inst_18672);
                 } else {
-                  if (state_val_9958 === 3) {
-                    var inst_9939 = console.log(communications.id);
-                    var inst_9940 = $("#id");
-                    var inst_9941 = inst_9940.val(communications.id);
-                    var inst_9942 = new Peer(communications.id, peerjs.peerParams);
-                    var inst_9943 = peerjs.peerjs = inst_9942;
-                    var inst_9944 = communications.init.call(null, peerjs.peerjs);
-                    var inst_9945 = peerjs.peerjs.on("connection", comm.onConnection);
-                    var state_9957__$1 = function() {
-                      var statearr_9961 = state_9957;
-                      statearr_9961[9] = inst_9944;
-                      statearr_9961[10] = inst_9941;
-                      statearr_9961[11] = inst_9943;
-                      statearr_9961[12] = inst_9939;
-                      return statearr_9961;
+                  if (state_val_18683 === 3) {
+                    var inst_18664 = console.log(communications.id);
+                    var inst_18665 = $("#id");
+                    var inst_18666 = inst_18665.val(communications.id);
+                    var inst_18667 = new Peer(communications.id, peerjs.peerParams);
+                    var inst_18668 = peerjs.peerjs = inst_18667;
+                    var inst_18669 = communications.init.call(null, peerjs.peerjs);
+                    var inst_18670 = peerjs.peerjs.on("connection", comm.onConnection);
+                    var state_18682__$1 = function() {
+                      var statearr_18686 = state_18682;
+                      statearr_18686[9] = inst_18666;
+                      statearr_18686[10] = inst_18664;
+                      statearr_18686[11] = inst_18669;
+                      statearr_18686[12] = inst_18668;
+                      return statearr_18686;
                     }();
-                    var statearr_9962_9970 = state_9957__$1;
-                    statearr_9962_9970[2] = inst_9945;
-                    statearr_9962_9970[1] = 5;
+                    var statearr_18687_18695 = state_18682__$1;
+                    statearr_18687_18695[2] = inst_18670;
+                    statearr_18687_18695[1] = 5;
                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                   } else {
-                    if (state_val_9958 === 2) {
-                      var inst_9935 = state_9957[2];
-                      var inst_9936 = communications.id = inst_9935;
-                      var inst_9937 = logger.og.call(null, new cljs.core.Keyword(null, "entryy", "entryy", -1997262549), "got id %s ", communications.id);
-                      var state_9957__$1 = function() {
-                        var statearr_9963 = state_9957;
-                        statearr_9963[13] = inst_9937;
-                        statearr_9963[14] = inst_9936;
-                        return statearr_9963;
+                    if (state_val_18683 === 2) {
+                      var inst_18660 = state_18682[2];
+                      var inst_18661 = communications.id = inst_18660;
+                      var inst_18662 = logger.og.call(null, new cljs.core.Keyword(null, "entryy", "entryy", -1997262549), "got id %s ", communications.id);
+                      var state_18682__$1 = function() {
+                        var statearr_18688 = state_18682;
+                        statearr_18688[13] = inst_18662;
+                        statearr_18688[14] = inst_18661;
+                        return statearr_18688;
                       }();
                       if (cljs.core.truth_(communications.id)) {
-                        var statearr_9964_9971 = state_9957__$1;
-                        statearr_9964_9971[1] = 3;
+                        var statearr_18689_18696 = state_18682__$1;
+                        statearr_18689_18696[1] = 3;
                       } else {
-                        var statearr_9965_9972 = state_9957__$1;
-                        statearr_9965_9972[1] = 4;
+                        var statearr_18690_18697 = state_18682__$1;
+                        statearr_18690_18697[1] = 4;
                       }
                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                     } else {
-                      if (state_val_9958 === 1) {
-                        var inst_9933 = communications.g.call(null, "lid");
-                        var state_9957__$1 = state_9957;
-                        return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_9957__$1, 2, inst_9933);
+                      if (state_val_18683 === 1) {
+                        var inst_18658 = communications.g.call(null, "lid");
+                        var state_18682__$1 = state_18682;
+                        return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_18682__$1, 2, inst_18658);
                       } else {
                         return null;
                       }
@@ -42482,14 +42482,14 @@ communications.initial = function initial() {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_9967 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
-              statearr_9967[0] = state_machine__6220__auto__;
-              statearr_9967[1] = 1;
-              return statearr_9967;
+              var statearr_18692 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+              statearr_18692[0] = state_machine__6220__auto__;
+              statearr_18692[1] = 1;
+              return statearr_18692;
             };
-            var state_machine__6220__auto____1 = function(state_9957) {
+            var state_machine__6220__auto____1 = function(state_18682) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_9957);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_18682);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -42498,12 +42498,12 @@ communications.initial = function initial() {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_9957) {
+            state_machine__6220__auto__ = function(state_18682) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_9957);
+                  return state_machine__6220__auto____1.call(this, state_18682);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -42514,9 +42514,9 @@ communications.initial = function initial() {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_9968 = f__6233__auto__.call(null);
-        statearr_9968[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_9968;
+        var statearr_18693 = f__6233__auto__.call(null);
+        statearr_18693[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_18693;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -42532,218 +42532,218 @@ communications.broadcastNewBlock = function broadcastNewBlock(blockk) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_10118) {
-            var state_val_10119 = state_10118[1];
-            if (state_val_10119 === 7) {
-              var inst_10069 = state_10118[5];
-              var inst_10068 = state_10118[6];
-              var inst_10066 = state_10118[7];
-              var inst_10067 = state_10118[8];
-              var inst_10083 = state_10118[2];
-              var inst_10084 = inst_10069 + 1;
-              var tmp10120 = inst_10068;
-              var tmp10121 = inst_10066;
-              var tmp10122 = inst_10067;
-              var inst_10066__$1 = tmp10121;
-              var inst_10067__$1 = tmp10122;
-              var inst_10068__$1 = tmp10120;
-              var inst_10069__$1 = inst_10084;
-              var state_10118__$1 = function() {
-                var statearr_10123 = state_10118;
-                statearr_10123[5] = inst_10069__$1;
-                statearr_10123[9] = inst_10083;
-                statearr_10123[6] = inst_10068__$1;
-                statearr_10123[7] = inst_10066__$1;
-                statearr_10123[8] = inst_10067__$1;
-                return statearr_10123;
+          return function(state_18843) {
+            var state_val_18844 = state_18843[1];
+            if (state_val_18844 === 7) {
+              var inst_18794 = state_18843[5];
+              var inst_18793 = state_18843[6];
+              var inst_18792 = state_18843[7];
+              var inst_18791 = state_18843[8];
+              var inst_18808 = state_18843[2];
+              var inst_18809 = inst_18794 + 1;
+              var tmp18845 = inst_18793;
+              var tmp18846 = inst_18792;
+              var tmp18847 = inst_18791;
+              var inst_18791__$1 = tmp18847;
+              var inst_18792__$1 = tmp18846;
+              var inst_18793__$1 = tmp18845;
+              var inst_18794__$1 = inst_18809;
+              var state_18843__$1 = function() {
+                var statearr_18848 = state_18843;
+                statearr_18848[5] = inst_18794__$1;
+                statearr_18848[6] = inst_18793__$1;
+                statearr_18848[7] = inst_18792__$1;
+                statearr_18848[8] = inst_18791__$1;
+                statearr_18848[9] = inst_18808;
+                return statearr_18848;
               }();
-              var statearr_10124_10147 = state_10118__$1;
-              statearr_10124_10147[2] = null;
-              statearr_10124_10147[1] = 2;
+              var statearr_18849_18872 = state_18843__$1;
+              statearr_18849_18872[2] = null;
+              statearr_18849_18872[1] = 2;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             } else {
-              if (state_val_10119 === 1) {
-                var inst_10064 = communications.intercomMeta.knownPeersChannels;
-                var inst_10065 = cljs.core.seq.call(null, inst_10064);
-                var inst_10066 = inst_10065;
-                var inst_10067 = null;
-                var inst_10068 = 0;
-                var inst_10069 = 0;
-                var state_10118__$1 = function() {
-                  var statearr_10125 = state_10118;
-                  statearr_10125[5] = inst_10069;
-                  statearr_10125[6] = inst_10068;
-                  statearr_10125[7] = inst_10066;
-                  statearr_10125[8] = inst_10067;
-                  return statearr_10125;
+              if (state_val_18844 === 1) {
+                var inst_18789 = communications.intercomMeta.knownPeersChannels;
+                var inst_18790 = cljs.core.seq.call(null, inst_18789);
+                var inst_18791 = inst_18790;
+                var inst_18792 = null;
+                var inst_18793 = 0;
+                var inst_18794 = 0;
+                var state_18843__$1 = function() {
+                  var statearr_18850 = state_18843;
+                  statearr_18850[5] = inst_18794;
+                  statearr_18850[6] = inst_18793;
+                  statearr_18850[7] = inst_18792;
+                  statearr_18850[8] = inst_18791;
+                  return statearr_18850;
                 }();
-                var statearr_10126_10148 = state_10118__$1;
-                statearr_10126_10148[2] = null;
-                statearr_10126_10148[1] = 2;
+                var statearr_18851_18873 = state_18843__$1;
+                statearr_18851_18873[2] = null;
+                statearr_18851_18873[1] = 2;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               } else {
-                if (state_val_10119 === 4) {
-                  var inst_10069 = state_10118[5];
-                  var inst_10067 = state_10118[8];
-                  var inst_10074 = cljs.core._nth.call(null, inst_10067, inst_10069);
-                  var inst_10075 = "broadsacting new block to peer " + inst_10074;
-                  var inst_10076 = inst_10075 + " ";
-                  var inst_10077 = logger.og.call(null, new cljs.core.Keyword(null, "intercom", "intercom", -1489804996), inst_10076, blockk);
-                  var inst_10078 = [];
-                  var inst_10079 = communications.vectoR = inst_10078;
-                  var inst_10080 = communications.vectoR.push(blockk);
-                  var inst_10081 = intercomMake.makeInv.call(null, "block", communications.vectoR);
-                  var state_10118__$1 = function() {
-                    var statearr_10127 = state_10118;
-                    statearr_10127[10] = inst_10077;
-                    statearr_10127[11] = inst_10080;
-                    statearr_10127[12] = inst_10079;
-                    return statearr_10127;
+                if (state_val_18844 === 4) {
+                  var inst_18794 = state_18843[5];
+                  var inst_18792 = state_18843[7];
+                  var inst_18799 = cljs.core._nth.call(null, inst_18792, inst_18794);
+                  var inst_18800 = "broadsacting new block to peer " + inst_18799;
+                  var inst_18801 = inst_18800 + " ";
+                  var inst_18802 = logger.og.call(null, new cljs.core.Keyword(null, "intercom", "intercom", -1489804996), inst_18801, blockk);
+                  var inst_18803 = [];
+                  var inst_18804 = communications.vectoR = inst_18803;
+                  var inst_18805 = communications.vectoR.push(blockk);
+                  var inst_18806 = intercomMake.makeInv.call(null, "block", communications.vectoR);
+                  var state_18843__$1 = function() {
+                    var statearr_18852 = state_18843;
+                    statearr_18852[10] = inst_18805;
+                    statearr_18852[11] = inst_18802;
+                    statearr_18852[12] = inst_18804;
+                    return statearr_18852;
                   }();
-                  return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_10118__$1, 7, inst_10074, inst_10081);
+                  return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_18843__$1, 7, inst_18799, inst_18806);
                 } else {
-                  if (state_val_10119 === 13) {
-                    var inst_10109 = state_10118[2];
-                    var state_10118__$1 = state_10118;
-                    var statearr_10128_10149 = state_10118__$1;
-                    statearr_10128_10149[2] = inst_10109;
-                    statearr_10128_10149[1] = 10;
+                  if (state_val_18844 === 13) {
+                    var inst_18834 = state_18843[2];
+                    var state_18843__$1 = state_18843;
+                    var statearr_18853_18874 = state_18843__$1;
+                    statearr_18853_18874[2] = inst_18834;
+                    statearr_18853_18874[1] = 10;
                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                   } else {
-                    if (state_val_10119 === 6) {
-                      var inst_10114 = state_10118[2];
-                      var state_10118__$1 = state_10118;
-                      var statearr_10129_10150 = state_10118__$1;
-                      statearr_10129_10150[2] = inst_10114;
-                      statearr_10129_10150[1] = 3;
+                    if (state_val_18844 === 6) {
+                      var inst_18839 = state_18843[2];
+                      var state_18843__$1 = state_18843;
+                      var statearr_18854_18875 = state_18843__$1;
+                      statearr_18854_18875[2] = inst_18839;
+                      statearr_18854_18875[1] = 3;
                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                     } else {
-                      if (state_val_10119 === 3) {
-                        var inst_10116 = state_10118[2];
-                        var state_10118__$1 = state_10118;
-                        return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_10118__$1, inst_10116);
+                      if (state_val_18844 === 3) {
+                        var inst_18841 = state_18843[2];
+                        var state_18843__$1 = state_18843;
+                        return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_18843__$1, inst_18841);
                       } else {
-                        if (state_val_10119 === 12) {
-                          var inst_10087 = state_10118[13];
-                          var inst_10096 = cljs.core.first.call(null, inst_10087);
-                          var inst_10097 = "broadsacting new block to peer " + inst_10096;
-                          var inst_10098 = inst_10097 + " ";
-                          var inst_10099 = logger.og.call(null, new cljs.core.Keyword(null, "intercom", "intercom", -1489804996), inst_10098, blockk);
-                          var inst_10100 = [];
-                          var inst_10101 = communications.vectoR = inst_10100;
-                          var inst_10102 = communications.vectoR.push(blockk);
-                          var inst_10103 = intercomMake.makeInv.call(null, "block", communications.vectoR);
-                          var state_10118__$1 = function() {
-                            var statearr_10130 = state_10118;
-                            statearr_10130[14] = inst_10102;
-                            statearr_10130[15] = inst_10099;
-                            statearr_10130[16] = inst_10101;
-                            return statearr_10130;
+                        if (state_val_18844 === 12) {
+                          var inst_18812 = state_18843[13];
+                          var inst_18821 = cljs.core.first.call(null, inst_18812);
+                          var inst_18822 = "broadsacting new block to peer " + inst_18821;
+                          var inst_18823 = inst_18822 + " ";
+                          var inst_18824 = logger.og.call(null, new cljs.core.Keyword(null, "intercom", "intercom", -1489804996), inst_18823, blockk);
+                          var inst_18825 = [];
+                          var inst_18826 = communications.vectoR = inst_18825;
+                          var inst_18827 = communications.vectoR.push(blockk);
+                          var inst_18828 = intercomMake.makeInv.call(null, "block", communications.vectoR);
+                          var state_18843__$1 = function() {
+                            var statearr_18855 = state_18843;
+                            statearr_18855[14] = inst_18824;
+                            statearr_18855[15] = inst_18827;
+                            statearr_18855[16] = inst_18826;
+                            return statearr_18855;
                           }();
-                          return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_10118__$1, 14, inst_10096, inst_10103);
+                          return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_18843__$1, 14, inst_18821, inst_18828);
                         } else {
-                          if (state_val_10119 === 2) {
-                            var inst_10069 = state_10118[5];
-                            var inst_10068 = state_10118[6];
-                            var inst_10071 = inst_10069 < inst_10068;
-                            var inst_10072 = inst_10071;
-                            var state_10118__$1 = state_10118;
-                            if (cljs.core.truth_(inst_10072)) {
-                              var statearr_10131_10151 = state_10118__$1;
-                              statearr_10131_10151[1] = 4;
+                          if (state_val_18844 === 2) {
+                            var inst_18794 = state_18843[5];
+                            var inst_18793 = state_18843[6];
+                            var inst_18796 = inst_18794 < inst_18793;
+                            var inst_18797 = inst_18796;
+                            var state_18843__$1 = state_18843;
+                            if (cljs.core.truth_(inst_18797)) {
+                              var statearr_18856_18876 = state_18843__$1;
+                              statearr_18856_18876[1] = 4;
                             } else {
-                              var statearr_10132_10152 = state_10118__$1;
-                              statearr_10132_10152[1] = 5;
+                              var statearr_18857_18877 = state_18843__$1;
+                              statearr_18857_18877[1] = 5;
                             }
                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                           } else {
-                            if (state_val_10119 === 11) {
-                              var inst_10087 = state_10118[13];
-                              var inst_10091 = cljs.core.chunk_first.call(null, inst_10087);
-                              var inst_10092 = cljs.core.chunk_rest.call(null, inst_10087);
-                              var inst_10093 = cljs.core.count.call(null, inst_10091);
-                              var inst_10066 = inst_10092;
-                              var inst_10067 = inst_10091;
-                              var inst_10068 = inst_10093;
-                              var inst_10069 = 0;
-                              var state_10118__$1 = function() {
-                                var statearr_10133 = state_10118;
-                                statearr_10133[5] = inst_10069;
-                                statearr_10133[6] = inst_10068;
-                                statearr_10133[7] = inst_10066;
-                                statearr_10133[8] = inst_10067;
-                                return statearr_10133;
+                            if (state_val_18844 === 11) {
+                              var inst_18812 = state_18843[13];
+                              var inst_18816 = cljs.core.chunk_first.call(null, inst_18812);
+                              var inst_18817 = cljs.core.chunk_rest.call(null, inst_18812);
+                              var inst_18818 = cljs.core.count.call(null, inst_18816);
+                              var inst_18791 = inst_18817;
+                              var inst_18792 = inst_18816;
+                              var inst_18793 = inst_18818;
+                              var inst_18794 = 0;
+                              var state_18843__$1 = function() {
+                                var statearr_18858 = state_18843;
+                                statearr_18858[5] = inst_18794;
+                                statearr_18858[6] = inst_18793;
+                                statearr_18858[7] = inst_18792;
+                                statearr_18858[8] = inst_18791;
+                                return statearr_18858;
                               }();
-                              var statearr_10134_10153 = state_10118__$1;
-                              statearr_10134_10153[2] = null;
-                              statearr_10134_10153[1] = 2;
+                              var statearr_18859_18878 = state_18843__$1;
+                              statearr_18859_18878[2] = null;
+                              statearr_18859_18878[1] = 2;
                               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                             } else {
-                              if (state_val_10119 === 9) {
-                                var state_10118__$1 = state_10118;
-                                var statearr_10135_10154 = state_10118__$1;
-                                statearr_10135_10154[2] = null;
-                                statearr_10135_10154[1] = 10;
+                              if (state_val_18844 === 9) {
+                                var state_18843__$1 = state_18843;
+                                var statearr_18860_18879 = state_18843__$1;
+                                statearr_18860_18879[2] = null;
+                                statearr_18860_18879[1] = 10;
                                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                               } else {
-                                if (state_val_10119 === 5) {
-                                  var inst_10066 = state_10118[7];
-                                  var inst_10087 = state_10118[13];
-                                  var inst_10087__$1 = cljs.core.seq.call(null, inst_10066);
-                                  var state_10118__$1 = function() {
-                                    var statearr_10136 = state_10118;
-                                    statearr_10136[13] = inst_10087__$1;
-                                    return statearr_10136;
+                                if (state_val_18844 === 5) {
+                                  var inst_18791 = state_18843[8];
+                                  var inst_18812 = state_18843[13];
+                                  var inst_18812__$1 = cljs.core.seq.call(null, inst_18791);
+                                  var state_18843__$1 = function() {
+                                    var statearr_18861 = state_18843;
+                                    statearr_18861[13] = inst_18812__$1;
+                                    return statearr_18861;
                                   }();
-                                  if (inst_10087__$1) {
-                                    var statearr_10137_10155 = state_10118__$1;
-                                    statearr_10137_10155[1] = 8;
+                                  if (inst_18812__$1) {
+                                    var statearr_18862_18880 = state_18843__$1;
+                                    statearr_18862_18880[1] = 8;
                                   } else {
-                                    var statearr_10138_10156 = state_10118__$1;
-                                    statearr_10138_10156[1] = 9;
+                                    var statearr_18863_18881 = state_18843__$1;
+                                    statearr_18863_18881[1] = 9;
                                   }
                                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                 } else {
-                                  if (state_val_10119 === 14) {
-                                    var inst_10087 = state_10118[13];
-                                    var inst_10105 = state_10118[2];
-                                    var inst_10106 = cljs.core.next.call(null, inst_10087);
-                                    var inst_10066 = inst_10106;
-                                    var inst_10067 = null;
-                                    var inst_10068 = 0;
-                                    var inst_10069 = 0;
-                                    var state_10118__$1 = function() {
-                                      var statearr_10139 = state_10118;
-                                      statearr_10139[5] = inst_10069;
-                                      statearr_10139[17] = inst_10105;
-                                      statearr_10139[6] = inst_10068;
-                                      statearr_10139[7] = inst_10066;
-                                      statearr_10139[8] = inst_10067;
-                                      return statearr_10139;
+                                  if (state_val_18844 === 14) {
+                                    var inst_18812 = state_18843[13];
+                                    var inst_18830 = state_18843[2];
+                                    var inst_18831 = cljs.core.next.call(null, inst_18812);
+                                    var inst_18791 = inst_18831;
+                                    var inst_18792 = null;
+                                    var inst_18793 = 0;
+                                    var inst_18794 = 0;
+                                    var state_18843__$1 = function() {
+                                      var statearr_18864 = state_18843;
+                                      statearr_18864[5] = inst_18794;
+                                      statearr_18864[6] = inst_18793;
+                                      statearr_18864[17] = inst_18830;
+                                      statearr_18864[7] = inst_18792;
+                                      statearr_18864[8] = inst_18791;
+                                      return statearr_18864;
                                     }();
-                                    var statearr_10140_10157 = state_10118__$1;
-                                    statearr_10140_10157[2] = null;
-                                    statearr_10140_10157[1] = 2;
+                                    var statearr_18865_18882 = state_18843__$1;
+                                    statearr_18865_18882[2] = null;
+                                    statearr_18865_18882[1] = 2;
                                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                   } else {
-                                    if (state_val_10119 === 10) {
-                                      var inst_10112 = state_10118[2];
-                                      var state_10118__$1 = state_10118;
-                                      var statearr_10141_10158 = state_10118__$1;
-                                      statearr_10141_10158[2] = inst_10112;
-                                      statearr_10141_10158[1] = 6;
+                                    if (state_val_18844 === 10) {
+                                      var inst_18837 = state_18843[2];
+                                      var state_18843__$1 = state_18843;
+                                      var statearr_18866_18883 = state_18843__$1;
+                                      statearr_18866_18883[2] = inst_18837;
+                                      statearr_18866_18883[1] = 6;
                                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                     } else {
-                                      if (state_val_10119 === 8) {
-                                        var inst_10087 = state_10118[13];
-                                        var inst_10089 = cljs.core.chunked_seq_QMARK_.call(null, inst_10087);
-                                        var state_10118__$1 = state_10118;
-                                        if (inst_10089) {
-                                          var statearr_10142_10159 = state_10118__$1;
-                                          statearr_10142_10159[1] = 11;
+                                      if (state_val_18844 === 8) {
+                                        var inst_18812 = state_18843[13];
+                                        var inst_18814 = cljs.core.chunked_seq_QMARK_.call(null, inst_18812);
+                                        var state_18843__$1 = state_18843;
+                                        if (inst_18814) {
+                                          var statearr_18867_18884 = state_18843__$1;
+                                          statearr_18867_18884[1] = 11;
                                         } else {
-                                          var statearr_10143_10160 = state_10118__$1;
-                                          statearr_10143_10160[1] = 12;
+                                          var statearr_18868_18885 = state_18843__$1;
+                                          statearr_18868_18885[1] = 12;
                                         }
                                         return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                       } else {
@@ -42768,14 +42768,14 @@ communications.broadcastNewBlock = function broadcastNewBlock(blockk) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_10145 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
-              statearr_10145[0] = state_machine__6220__auto__;
-              statearr_10145[1] = 1;
-              return statearr_10145;
+              var statearr_18870 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+              statearr_18870[0] = state_machine__6220__auto__;
+              statearr_18870[1] = 1;
+              return statearr_18870;
             };
-            var state_machine__6220__auto____1 = function(state_10118) {
+            var state_machine__6220__auto____1 = function(state_18843) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_10118);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_18843);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -42784,12 +42784,12 @@ communications.broadcastNewBlock = function broadcastNewBlock(blockk) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_10118) {
+            state_machine__6220__auto__ = function(state_18843) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_10118);
+                  return state_machine__6220__auto____1.call(this, state_18843);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -42800,9 +42800,9 @@ communications.broadcastNewBlock = function broadcastNewBlock(blockk) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_10146 = f__6233__auto__.call(null);
-        statearr_10146[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_10146;
+        var statearr_18871 = f__6233__auto__.call(null);
+        statearr_18871[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_18871;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -42817,17 +42817,17 @@ communications.sendmsg = function sendmsg(peer, type, msg) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_10178) {
-            var state_val_10179 = state_10178[1];
-            if (state_val_10179 === 2) {
-              var inst_10176 = state_10178[2];
-              var state_10178__$1 = state_10178;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_10178__$1, inst_10176);
+          return function(state_18903) {
+            var state_val_18904 = state_18903[1];
+            if (state_val_18904 === 2) {
+              var inst_18901 = state_18903[2];
+              var state_18903__$1 = state_18903;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_18903__$1, inst_18901);
             } else {
-              if (state_val_10179 === 1) {
-                var inst_10174 = {"type":type, "msg":msg};
-                var state_10178__$1 = state_10178;
-                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_10178__$1, 2, peer, inst_10174);
+              if (state_val_18904 === 1) {
+                var inst_18899 = {"type":type, "msg":msg};
+                var state_18903__$1 = state_18903;
+                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_18903__$1, 2, peer, inst_18899);
               } else {
                 return null;
               }
@@ -42838,14 +42838,14 @@ communications.sendmsg = function sendmsg(peer, type, msg) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_10181 = [null, null, null, null, null];
-              statearr_10181[0] = state_machine__6220__auto__;
-              statearr_10181[1] = 1;
-              return statearr_10181;
+              var statearr_18906 = [null, null, null, null, null];
+              statearr_18906[0] = state_machine__6220__auto__;
+              statearr_18906[1] = 1;
+              return statearr_18906;
             };
-            var state_machine__6220__auto____1 = function(state_10178) {
+            var state_machine__6220__auto____1 = function(state_18903) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_10178);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_18903);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -42854,12 +42854,12 @@ communications.sendmsg = function sendmsg(peer, type, msg) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_10178) {
+            state_machine__6220__auto__ = function(state_18903) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_10178);
+                  return state_machine__6220__auto____1.call(this, state_18903);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -42870,9 +42870,9 @@ communications.sendmsg = function sendmsg(peer, type, msg) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_10182 = f__6233__auto__.call(null);
-        statearr_10182[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_10182;
+        var statearr_18907 = f__6233__auto__.call(null);
+        statearr_18907[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_18907;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -42883,39 +42883,39 @@ communications.onOpen = function onOpen(conn) {
   logger.og.call(null, new cljs.core.Keyword(null, "conn", "conn", 278309663), "connection opened trying to send data trough");
   logger.og.call(null, new cljs.core.Keyword(null, "conn", "conn", 278309663), conn);
   conn.connType = "saltan";
-  var c__6232__auto___10199 = cljs.core.async.chan.call(null, 1);
-  cljs.core.async.impl.dispatch.run.call(null, function(c__6232__auto___10199) {
+  var c__6232__auto___18924 = cljs.core.async.chan.call(null, 1);
+  cljs.core.async.impl.dispatch.run.call(null, function(c__6232__auto___18924) {
     return function() {
       var f__6233__auto__ = function() {
-        var switch__6219__auto__ = function(c__6232__auto___10199) {
-          return function(state_10194) {
-            var state_val_10195 = state_10194[1];
-            if (state_val_10195 === 2) {
-              var inst_10192 = state_10194[2];
-              var state_10194__$1 = state_10194;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_10194__$1, inst_10192);
+        var switch__6219__auto__ = function(c__6232__auto___18924) {
+          return function(state_18919) {
+            var state_val_18920 = state_18919[1];
+            if (state_val_18920 === 2) {
+              var inst_18917 = state_18919[2];
+              var state_18919__$1 = state_18919;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_18919__$1, inst_18917);
             } else {
-              if (state_val_10195 === 1) {
-                var state_10194__$1 = state_10194;
-                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_10194__$1, 2, communications.connectionch, conn);
+              if (state_val_18920 === 1) {
+                var state_18919__$1 = state_18919;
+                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_18919__$1, 2, communications.connectionch, conn);
               } else {
                 return null;
               }
             }
           };
-        }(c__6232__auto___10199);
-        return function(switch__6219__auto__, c__6232__auto___10199) {
+        }(c__6232__auto___18924);
+        return function(switch__6219__auto__, c__6232__auto___18924) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_10197 = [null, null, null, null, null];
-              statearr_10197[0] = state_machine__6220__auto__;
-              statearr_10197[1] = 1;
-              return statearr_10197;
+              var statearr_18922 = [null, null, null, null, null];
+              statearr_18922[0] = state_machine__6220__auto__;
+              statearr_18922[1] = 1;
+              return statearr_18922;
             };
-            var state_machine__6220__auto____1 = function(state_10194) {
+            var state_machine__6220__auto____1 = function(state_18919) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_10194);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_18919);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -42924,12 +42924,12 @@ communications.onOpen = function onOpen(conn) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_10194) {
+            state_machine__6220__auto__ = function(state_18919) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_10194);
+                  return state_machine__6220__auto____1.call(this, state_18919);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -42937,16 +42937,16 @@ communications.onOpen = function onOpen(conn) {
             state_machine__6220__auto__.cljs$core$IFn$_invoke$arity$1 = state_machine__6220__auto____1;
             return state_machine__6220__auto__;
           }();
-        }(switch__6219__auto__, c__6232__auto___10199);
+        }(switch__6219__auto__, c__6232__auto___18924);
       }();
       var state__6234__auto__ = function() {
-        var statearr_10198 = f__6233__auto__.call(null);
-        statearr_10198[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto___10199;
-        return statearr_10198;
+        var statearr_18923 = f__6233__auto__.call(null);
+        statearr_18923[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto___18924;
+        return statearr_18923;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
-  }(c__6232__auto___10199));
+  }(c__6232__auto___18924));
   return logger.og.call(null, new cljs.core.Keyword(null, "conn", "conn", 278309663), "conn: ", conn);
 };
 communications.onConnection = function onConnection(conn) {
@@ -42957,16 +42957,16 @@ communications.onConnection = function onConnection(conn) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_10211) {
-            var state_val_10212 = state_10211[1];
-            if (state_val_10212 === 2) {
-              var inst_10209 = state_10211[2];
-              var state_10211__$1 = state_10211;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_10211__$1, inst_10209);
+          return function(state_18936) {
+            var state_val_18937 = state_18936[1];
+            if (state_val_18937 === 2) {
+              var inst_18934 = state_18936[2];
+              var state_18936__$1 = state_18936;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_18936__$1, inst_18934);
             } else {
-              if (state_val_10212 === 1) {
-                var state_10211__$1 = state_10211;
-                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_10211__$1, 2, communications.connectionch, conn);
+              if (state_val_18937 === 1) {
+                var state_18936__$1 = state_18936;
+                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_18936__$1, 2, communications.connectionch, conn);
               } else {
                 return null;
               }
@@ -42977,14 +42977,14 @@ communications.onConnection = function onConnection(conn) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_10214 = [null, null, null, null, null];
-              statearr_10214[0] = state_machine__6220__auto__;
-              statearr_10214[1] = 1;
-              return statearr_10214;
+              var statearr_18939 = [null, null, null, null, null];
+              statearr_18939[0] = state_machine__6220__auto__;
+              statearr_18939[1] = 1;
+              return statearr_18939;
             };
-            var state_machine__6220__auto____1 = function(state_10211) {
+            var state_machine__6220__auto____1 = function(state_18936) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_10211);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_18936);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -42993,12 +42993,12 @@ communications.onConnection = function onConnection(conn) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_10211) {
+            state_machine__6220__auto__ = function(state_18936) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_10211);
+                  return state_machine__6220__auto____1.call(this, state_18936);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -43009,9 +43009,9 @@ communications.onConnection = function onConnection(conn) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_10215 = f__6233__auto__.call(null);
-        statearr_10215[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_10215;
+        var statearr_18940 = f__6233__auto__.call(null);
+        statearr_18940[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_18940;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -43025,16 +43025,16 @@ communications.onData = function onData(read, data) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_10227) {
-            var state_val_10228 = state_10227[1];
-            if (state_val_10228 === 2) {
-              var inst_10225 = state_10227[2];
-              var state_10227__$1 = state_10227;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_10227__$1, inst_10225);
+          return function(state_18952) {
+            var state_val_18953 = state_18952[1];
+            if (state_val_18953 === 2) {
+              var inst_18950 = state_18952[2];
+              var state_18952__$1 = state_18952;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_18952__$1, inst_18950);
             } else {
-              if (state_val_10228 === 1) {
-                var state_10227__$1 = state_10227;
-                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_10227__$1, 2, read, data);
+              if (state_val_18953 === 1) {
+                var state_18952__$1 = state_18952;
+                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_18952__$1, 2, read, data);
               } else {
                 return null;
               }
@@ -43045,14 +43045,14 @@ communications.onData = function onData(read, data) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_10230 = [null, null, null, null, null];
-              statearr_10230[0] = state_machine__6220__auto__;
-              statearr_10230[1] = 1;
-              return statearr_10230;
+              var statearr_18955 = [null, null, null, null, null];
+              statearr_18955[0] = state_machine__6220__auto__;
+              statearr_18955[1] = 1;
+              return statearr_18955;
             };
-            var state_machine__6220__auto____1 = function(state_10227) {
+            var state_machine__6220__auto____1 = function(state_18952) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_10227);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_18952);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -43061,12 +43061,12 @@ communications.onData = function onData(read, data) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_10227) {
+            state_machine__6220__auto__ = function(state_18952) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_10227);
+                  return state_machine__6220__auto____1.call(this, state_18952);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -43077,9 +43077,9 @@ communications.onData = function onData(read, data) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_10231 = f__6233__auto__.call(null);
-        statearr_10231[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_10231;
+        var statearr_18956 = f__6233__auto__.call(null);
+        statearr_18956[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_18956;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -43106,208 +43106,208 @@ communications.startP2PCommLoop = function startP2PCommLoop() {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_10386) {
-            var state_val_10387 = state_10386[1];
-            if (state_val_10387 === 7) {
-              var inst_10381 = state_10386[2];
-              var state_10386__$1 = function() {
-                var statearr_10388 = state_10386;
-                statearr_10388[5] = inst_10381;
-                return statearr_10388;
+          return function(state_19111) {
+            var state_val_19112 = state_19111[1];
+            if (state_val_19112 === 7) {
+              var inst_19106 = state_19111[2];
+              var state_19111__$1 = function() {
+                var statearr_19113 = state_19111;
+                statearr_19113[5] = inst_19106;
+                return statearr_19113;
               }();
-              var statearr_10389_10416 = state_10386__$1;
-              statearr_10389_10416[2] = null;
-              statearr_10389_10416[1] = 2;
+              var statearr_19114_19141 = state_19111__$1;
+              statearr_19114_19141[2] = null;
+              statearr_19114_19141[1] = 2;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             } else {
-              if (state_val_10387 === 1) {
-                var state_10386__$1 = state_10386;
-                var statearr_10390_10417 = state_10386__$1;
-                statearr_10390_10417[2] = null;
-                statearr_10390_10417[1] = 2;
+              if (state_val_19112 === 1) {
+                var state_19111__$1 = state_19111;
+                var statearr_19115_19142 = state_19111__$1;
+                statearr_19115_19142[2] = null;
+                statearr_19115_19142[1] = 2;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               } else {
-                if (state_val_10387 === 4) {
-                  var inst_10328 = state_10386[2];
-                  var inst_10329 = communications.v = inst_10328;
-                  var inst_10330 = logger.og.call(null, new cljs.core.Keyword(null, "p2ploop", "p2ploop", -674348610), "got from state", communications.v);
-                  var inst_10331 = cljs.core.nth.call(null, communications.v, 0);
-                  var inst_10332 = communications.vrecieved = inst_10331;
-                  var inst_10333 = cljs.core.nth.call(null, communications.v, 1);
-                  var inst_10334 = communications.ch2 = inst_10333;
-                  var inst_10335 = cljs.core.nth.call(null, communications.v, 1);
-                  var inst_10336 = inst_10335 === communications.connectionch;
-                  var state_10386__$1 = function() {
-                    var statearr_10391 = state_10386;
-                    statearr_10391[6] = inst_10329;
-                    statearr_10391[7] = inst_10332;
-                    statearr_10391[8] = inst_10334;
-                    statearr_10391[9] = inst_10330;
-                    return statearr_10391;
+                if (state_val_19112 === 4) {
+                  var inst_19053 = state_19111[2];
+                  var inst_19054 = communications.v = inst_19053;
+                  var inst_19055 = logger.og.call(null, new cljs.core.Keyword(null, "p2ploop", "p2ploop", -674348610), "got from state", communications.v);
+                  var inst_19056 = cljs.core.nth.call(null, communications.v, 0);
+                  var inst_19057 = communications.vrecieved = inst_19056;
+                  var inst_19058 = cljs.core.nth.call(null, communications.v, 1);
+                  var inst_19059 = communications.ch2 = inst_19058;
+                  var inst_19060 = cljs.core.nth.call(null, communications.v, 1);
+                  var inst_19061 = inst_19060 === communications.connectionch;
+                  var state_19111__$1 = function() {
+                    var statearr_19116 = state_19111;
+                    statearr_19116[6] = inst_19057;
+                    statearr_19116[7] = inst_19054;
+                    statearr_19116[8] = inst_19059;
+                    statearr_19116[9] = inst_19055;
+                    return statearr_19116;
                   }();
-                  if (cljs.core.truth_(inst_10336)) {
-                    var statearr_10392_10418 = state_10386__$1;
-                    statearr_10392_10418[1] = 5;
+                  if (cljs.core.truth_(inst_19061)) {
+                    var statearr_19117_19143 = state_19111__$1;
+                    statearr_19117_19143[1] = 5;
                   } else {
-                    var statearr_10393_10419 = state_10386__$1;
-                    statearr_10393_10419[1] = 6;
+                    var statearr_19118_19144 = state_19111__$1;
+                    statearr_19118_19144[1] = 6;
                   }
                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                 } else {
-                  if (state_val_10387 === 15) {
-                    var state_10386__$1 = state_10386;
-                    var statearr_10394_10420 = state_10386__$1;
-                    statearr_10394_10420[2] = null;
-                    statearr_10394_10420[1] = 16;
+                  if (state_val_19112 === 15) {
+                    var state_19111__$1 = state_19111;
+                    var statearr_19119_19145 = state_19111__$1;
+                    statearr_19119_19145[2] = null;
+                    statearr_19119_19145[1] = 16;
                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                   } else {
-                    if (state_val_10387 === 13) {
-                      var inst_10361 = state_10386[2];
-                      var inst_10362 = communications.ch2.writec;
-                      var inst_10363 = communications.vrecieved.peer = inst_10362;
-                      var inst_10364 = communications.ch2.conn;
-                      var inst_10365 = intercom.intercomstatemachine.call(null, inst_10364, communications.vrecieved);
-                      var state_10386__$1 = function() {
-                        var statearr_10395 = state_10386;
-                        statearr_10395[10] = inst_10361;
-                        statearr_10395[11] = inst_10363;
-                        return statearr_10395;
+                    if (state_val_19112 === 13) {
+                      var inst_19086 = state_19111[2];
+                      var inst_19087 = communications.ch2.writec;
+                      var inst_19088 = communications.vrecieved.peer = inst_19087;
+                      var inst_19089 = communications.ch2.conn;
+                      var inst_19090 = intercom.intercomstatemachine.call(null, inst_19089, communications.vrecieved);
+                      var state_19111__$1 = function() {
+                        var statearr_19120 = state_19111;
+                        statearr_19120[10] = inst_19086;
+                        statearr_19120[11] = inst_19088;
+                        return statearr_19120;
                       }();
-                      var statearr_10396_10421 = state_10386__$1;
-                      statearr_10396_10421[2] = inst_10365;
-                      statearr_10396_10421[1] = 10;
+                      var statearr_19121_19146 = state_19111__$1;
+                      statearr_19121_19146[2] = inst_19090;
+                      statearr_19121_19146[1] = 10;
                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                     } else {
-                      if (state_val_10387 === 6) {
-                        var inst_10349 = communications.ch2.type;
-                        var inst_10350 = inst_10349 === "readch";
-                        var state_10386__$1 = state_10386;
-                        if (cljs.core.truth_(inst_10350)) {
-                          var statearr_10397_10422 = state_10386__$1;
-                          statearr_10397_10422[1] = 8;
+                      if (state_val_19112 === 6) {
+                        var inst_19074 = communications.ch2.type;
+                        var inst_19075 = inst_19074 === "readch";
+                        var state_19111__$1 = state_19111;
+                        if (cljs.core.truth_(inst_19075)) {
+                          var statearr_19122_19147 = state_19111__$1;
+                          statearr_19122_19147[1] = 8;
                         } else {
-                          var statearr_10398_10423 = state_10386__$1;
-                          statearr_10398_10423[1] = 9;
+                          var statearr_19123_19148 = state_19111__$1;
+                          statearr_19123_19148[1] = 9;
                         }
                         return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                       } else {
-                        if (state_val_10387 === 3) {
-                          var inst_10384 = state_10386[2];
-                          var state_10386__$1 = state_10386;
-                          return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_10386__$1, inst_10384);
+                        if (state_val_19112 === 3) {
+                          var inst_19109 = state_19111[2];
+                          var state_19111__$1 = state_19111;
+                          return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_19111__$1, inst_19109);
                         } else {
-                          if (state_val_10387 === 12) {
-                            var state_10386__$1 = state_10386;
-                            var statearr_10399_10424 = state_10386__$1;
-                            statearr_10399_10424[2] = null;
-                            statearr_10399_10424[1] = 13;
+                          if (state_val_19112 === 12) {
+                            var state_19111__$1 = state_19111;
+                            var statearr_19124_19149 = state_19111__$1;
+                            statearr_19124_19149[2] = null;
+                            statearr_19124_19149[1] = 13;
                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                           } else {
-                            if (state_val_10387 === 2) {
-                              var inst_10325 = logger.og.call(null, new cljs.core.Keyword(null, "p2pCommLoop", "p2pCommLoop", -1999314115), "new iteration with state");
-                              var inst_10326 = logger.og.call(null, new cljs.core.Keyword(null, "p2pCommLoop", "p2pCommLoop", -1999314115), "state ", communications.stated);
-                              var state_10386__$1 = function() {
-                                var statearr_10400 = state_10386;
-                                statearr_10400[12] = inst_10326;
-                                statearr_10400[13] = inst_10325;
-                                return statearr_10400;
+                            if (state_val_19112 === 2) {
+                              var inst_19050 = logger.og.call(null, new cljs.core.Keyword(null, "p2pCommLoop", "p2pCommLoop", -1999314115), "new iteration with state");
+                              var inst_19051 = logger.og.call(null, new cljs.core.Keyword(null, "p2pCommLoop", "p2pCommLoop", -1999314115), "state ", communications.stated);
+                              var state_19111__$1 = function() {
+                                var statearr_19125 = state_19111;
+                                statearr_19125[12] = inst_19050;
+                                statearr_19125[13] = inst_19051;
+                                return statearr_19125;
                               }();
-                              return cljs.core.async.impl.ioc_helpers.ioc_alts_BANG_.call(null, state_10386__$1, 4, communications.stated);
+                              return cljs.core.async.impl.ioc_helpers.ioc_alts_BANG_.call(null, state_19111__$1, 4, communications.stated);
                             } else {
-                              if (state_val_10387 === 11) {
-                                var inst_10356 = communications.vrecieved.data;
-                                var inst_10357 = JSON.parse(inst_10356);
-                                var inst_10358 = communications.vrecieved = inst_10357;
-                                var state_10386__$1 = state_10386;
-                                var statearr_10401_10425 = state_10386__$1;
-                                statearr_10401_10425[2] = inst_10358;
-                                statearr_10401_10425[1] = 13;
+                              if (state_val_19112 === 11) {
+                                var inst_19081 = communications.vrecieved.data;
+                                var inst_19082 = JSON.parse(inst_19081);
+                                var inst_19083 = communications.vrecieved = inst_19082;
+                                var state_19111__$1 = state_19111;
+                                var statearr_19126_19150 = state_19111__$1;
+                                statearr_19126_19150[2] = inst_19083;
+                                statearr_19126_19150[1] = 13;
                                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                               } else {
-                                if (state_val_10387 === 9) {
-                                  var inst_10367 = communications.ch2.type;
-                                  var inst_10368 = inst_10367 === "writech";
-                                  var state_10386__$1 = state_10386;
-                                  if (cljs.core.truth_(inst_10368)) {
-                                    var statearr_10402_10426 = state_10386__$1;
-                                    statearr_10402_10426[1] = 14;
+                                if (state_val_19112 === 9) {
+                                  var inst_19092 = communications.ch2.type;
+                                  var inst_19093 = inst_19092 === "writech";
+                                  var state_19111__$1 = state_19111;
+                                  if (cljs.core.truth_(inst_19093)) {
+                                    var statearr_19127_19151 = state_19111__$1;
+                                    statearr_19127_19151[1] = 14;
                                   } else {
-                                    var statearr_10403_10427 = state_10386__$1;
-                                    statearr_10403_10427[1] = 15;
+                                    var statearr_19128_19152 = state_19111__$1;
+                                    statearr_19128_19152[1] = 15;
                                   }
                                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                 } else {
-                                  if (state_val_10387 === 5) {
-                                    var inst_10338 = cljs.core.PersistentVector.EMPTY;
-                                    var inst_10339 = communications.onNewConnection.call(null, communications.vrecieved);
-                                    var inst_10340 = cljs.core.concat.call(null, communications.stated, inst_10339);
-                                    var inst_10341 = cljs.core.into.call(null, inst_10338, inst_10340);
-                                    var inst_10342 = communications.stated = inst_10341;
-                                    var inst_10343 = intercom.getIntercomState.call(null, communications.vrecieved);
-                                    var inst_10344 = communications.stat = inst_10343;
-                                    var inst_10345 = logger.og.call(null, new cljs.core.Keyword(null, "p2ploop", "p2ploop", -674348610), "intercom state", communications.stat);
-                                    var inst_10346 = intercomMake.makeConn.call(null, communications.vrecieved);
-                                    var inst_10347 = intercom.intercomstatemachine.call(null, communications.vrecieved, inst_10346);
-                                    var state_10386__$1 = function() {
-                                      var statearr_10404 = state_10386;
-                                      statearr_10404[14] = inst_10345;
-                                      statearr_10404[15] = inst_10342;
-                                      statearr_10404[16] = inst_10344;
-                                      return statearr_10404;
+                                  if (state_val_19112 === 5) {
+                                    var inst_19063 = cljs.core.PersistentVector.EMPTY;
+                                    var inst_19064 = communications.onNewConnection.call(null, communications.vrecieved);
+                                    var inst_19065 = cljs.core.concat.call(null, communications.stated, inst_19064);
+                                    var inst_19066 = cljs.core.into.call(null, inst_19063, inst_19065);
+                                    var inst_19067 = communications.stated = inst_19066;
+                                    var inst_19068 = intercom.getIntercomState.call(null, communications.vrecieved);
+                                    var inst_19069 = communications.stat = inst_19068;
+                                    var inst_19070 = logger.og.call(null, new cljs.core.Keyword(null, "p2ploop", "p2ploop", -674348610), "intercom state", communications.stat);
+                                    var inst_19071 = intercomMake.makeConn.call(null, communications.vrecieved);
+                                    var inst_19072 = intercom.intercomstatemachine.call(null, communications.vrecieved, inst_19071);
+                                    var state_19111__$1 = function() {
+                                      var statearr_19129 = state_19111;
+                                      statearr_19129[14] = inst_19069;
+                                      statearr_19129[15] = inst_19070;
+                                      statearr_19129[16] = inst_19067;
+                                      return statearr_19129;
                                     }();
-                                    var statearr_10405_10428 = state_10386__$1;
-                                    statearr_10405_10428[2] = inst_10347;
-                                    statearr_10405_10428[1] = 7;
+                                    var statearr_19130_19153 = state_19111__$1;
+                                    statearr_19130_19153[2] = inst_19072;
+                                    statearr_19130_19153[1] = 7;
                                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                   } else {
-                                    if (state_val_10387 === 14) {
-                                      var inst_10370 = logger.og.call(null, new cljs.core.Keyword(null, "p2ploop", "p2ploop", -674348610), "sending to peer ", communications.vrecieved);
-                                      var inst_10371 = communications.ch2.conn;
-                                      var inst_10372 = logger.og.call(null, new cljs.core.Keyword(null, "p2ploop", "p2ploop", -674348610), "connection being sent to ", inst_10371);
-                                      var inst_10373 = communications.ch2.conn;
-                                      var inst_10374 = inst_10373.send(communications.vrecieved);
-                                      var state_10386__$1 = function() {
-                                        var statearr_10406 = state_10386;
-                                        statearr_10406[17] = inst_10370;
-                                        statearr_10406[18] = inst_10372;
-                                        return statearr_10406;
+                                    if (state_val_19112 === 14) {
+                                      var inst_19095 = logger.og.call(null, new cljs.core.Keyword(null, "p2ploop", "p2ploop", -674348610), "sending to peer ", communications.vrecieved);
+                                      var inst_19096 = communications.ch2.conn;
+                                      var inst_19097 = logger.og.call(null, new cljs.core.Keyword(null, "p2ploop", "p2ploop", -674348610), "connection being sent to ", inst_19096);
+                                      var inst_19098 = communications.ch2.conn;
+                                      var inst_19099 = inst_19098.send(communications.vrecieved);
+                                      var state_19111__$1 = function() {
+                                        var statearr_19131 = state_19111;
+                                        statearr_19131[17] = inst_19097;
+                                        statearr_19131[18] = inst_19095;
+                                        return statearr_19131;
                                       }();
-                                      var statearr_10407_10429 = state_10386__$1;
-                                      statearr_10407_10429[2] = inst_10374;
-                                      statearr_10407_10429[1] = 16;
+                                      var statearr_19132_19154 = state_19111__$1;
+                                      statearr_19132_19154[2] = inst_19099;
+                                      statearr_19132_19154[1] = 16;
                                       return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                     } else {
-                                      if (state_val_10387 === 16) {
-                                        var inst_10377 = state_10386[2];
-                                        var state_10386__$1 = state_10386;
-                                        var statearr_10408_10430 = state_10386__$1;
-                                        statearr_10408_10430[2] = inst_10377;
-                                        statearr_10408_10430[1] = 10;
+                                      if (state_val_19112 === 16) {
+                                        var inst_19102 = state_19111[2];
+                                        var state_19111__$1 = state_19111;
+                                        var statearr_19133_19155 = state_19111__$1;
+                                        statearr_19133_19155[2] = inst_19102;
+                                        statearr_19133_19155[1] = 10;
                                         return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                       } else {
-                                        if (state_val_10387 === 10) {
-                                          var inst_10379 = state_10386[2];
-                                          var state_10386__$1 = state_10386;
-                                          var statearr_10409_10431 = state_10386__$1;
-                                          statearr_10409_10431[2] = inst_10379;
-                                          statearr_10409_10431[1] = 7;
+                                        if (state_val_19112 === 10) {
+                                          var inst_19104 = state_19111[2];
+                                          var state_19111__$1 = state_19111;
+                                          var statearr_19134_19156 = state_19111__$1;
+                                          statearr_19134_19156[2] = inst_19104;
+                                          statearr_19134_19156[1] = 7;
                                           return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                         } else {
-                                          if (state_val_10387 === 8) {
-                                            var inst_10352 = logger.og.call(null, new cljs.core.Keyword(null, "p2ploop", "p2ploop", -674348610), "recieved from peer ", communications.vrecieved);
-                                            var inst_10353 = communications.vrecieved.type;
-                                            var inst_10354 = inst_10353 === "json";
-                                            var state_10386__$1 = function() {
-                                              var statearr_10410 = state_10386;
-                                              statearr_10410[19] = inst_10352;
-                                              return statearr_10410;
+                                          if (state_val_19112 === 8) {
+                                            var inst_19077 = logger.og.call(null, new cljs.core.Keyword(null, "p2ploop", "p2ploop", -674348610), "recieved from peer ", communications.vrecieved);
+                                            var inst_19078 = communications.vrecieved.type;
+                                            var inst_19079 = inst_19078 === "json";
+                                            var state_19111__$1 = function() {
+                                              var statearr_19135 = state_19111;
+                                              statearr_19135[19] = inst_19077;
+                                              return statearr_19135;
                                             }();
-                                            if (cljs.core.truth_(inst_10354)) {
-                                              var statearr_10411_10432 = state_10386__$1;
-                                              statearr_10411_10432[1] = 11;
+                                            if (cljs.core.truth_(inst_19079)) {
+                                              var statearr_19136_19157 = state_19111__$1;
+                                              statearr_19136_19157[1] = 11;
                                             } else {
-                                              var statearr_10412_10433 = state_10386__$1;
-                                              statearr_10412_10433[1] = 12;
+                                              var statearr_19137_19158 = state_19111__$1;
+                                              statearr_19137_19158[1] = 12;
                                             }
                                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                           } else {
@@ -43334,14 +43334,14 @@ communications.startP2PCommLoop = function startP2PCommLoop() {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_10414 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
-              statearr_10414[0] = state_machine__6220__auto__;
-              statearr_10414[1] = 1;
-              return statearr_10414;
+              var statearr_19139 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+              statearr_19139[0] = state_machine__6220__auto__;
+              statearr_19139[1] = 1;
+              return statearr_19139;
             };
-            var state_machine__6220__auto____1 = function(state_10386) {
+            var state_machine__6220__auto____1 = function(state_19111) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_10386);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_19111);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -43350,12 +43350,12 @@ communications.startP2PCommLoop = function startP2PCommLoop() {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_10386) {
+            state_machine__6220__auto__ = function(state_19111) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_10386);
+                  return state_machine__6220__auto____1.call(this, state_19111);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -43366,9 +43366,9 @@ communications.startP2PCommLoop = function startP2PCommLoop() {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_10415 = f__6233__auto__.call(null);
-        statearr_10415[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_10415;
+        var statearr_19140 = f__6233__auto__.call(null);
+        statearr_19140[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_19140;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -43393,57 +43393,57 @@ communications.onBlockMined = function onBlockMined(message) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_10481) {
-            var state_val_10482 = state_10481[1];
-            if (state_val_10482 === 4) {
-              var inst_10476 = state_10481[2];
-              var inst_10477 = communications.gotFromHash = inst_10476;
-              var inst_10478 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "got from hash ", communications.gotFromHash);
-              var inst_10479 = communications.broadcastNewBlock.call(null, communications.gotFromHash);
-              var state_10481__$1 = function() {
-                var statearr_10483 = state_10481;
-                statearr_10483[5] = inst_10477;
-                statearr_10483[6] = inst_10478;
-                return statearr_10483;
+          return function(state_19206) {
+            var state_val_19207 = state_19206[1];
+            if (state_val_19207 === 4) {
+              var inst_19201 = state_19206[2];
+              var inst_19202 = communications.gotFromHash = inst_19201;
+              var inst_19203 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "got from hash ", communications.gotFromHash);
+              var inst_19204 = communications.broadcastNewBlock.call(null, communications.gotFromHash);
+              var state_19206__$1 = function() {
+                var statearr_19208 = state_19206;
+                statearr_19208[5] = inst_19203;
+                statearr_19208[6] = inst_19202;
+                return statearr_19208;
               }();
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_10481__$1, inst_10479);
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_19206__$1, inst_19204);
             } else {
-              if (state_val_10482 === 3) {
-                var inst_10472 = state_10481[2];
-                var inst_10473 = communications.blockk.hash;
-                var inst_10474 = database.g.call(null, inst_10473);
-                var state_10481__$1 = function() {
-                  var statearr_10484 = state_10481;
-                  statearr_10484[7] = inst_10472;
-                  return statearr_10484;
+              if (state_val_19207 === 3) {
+                var inst_19197 = state_19206[2];
+                var inst_19198 = communications.blockk.hash;
+                var inst_19199 = database.g.call(null, inst_19198);
+                var state_19206__$1 = function() {
+                  var statearr_19209 = state_19206;
+                  statearr_19209[7] = inst_19197;
+                  return statearr_19209;
                 }();
-                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_10481__$1, 4, inst_10474);
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_19206__$1, 4, inst_19199);
               } else {
-                if (state_val_10482 === 2) {
-                  var inst_10465 = state_10481[2];
-                  var inst_10466 = communications.blockk = inst_10465;
-                  var inst_10467 = logger.og.call(null, new cljs.core.Keyword(null, "onBlockMined", "onBlockMined", -993463133), "just made new block ", communications.blockk);
-                  var inst_10468 = communications.blockk.hash;
-                  var inst_10469 = logger.og.call(null, new cljs.core.Keyword(null, "message", "message", -406056002), "hash to get ", inst_10468);
-                  var inst_10470 = blockchain.saveBlock.call(null, app.pouchDB.dbase, communications.blockk);
-                  var state_10481__$1 = function() {
-                    var statearr_10485 = state_10481;
-                    statearr_10485[8] = inst_10469;
-                    statearr_10485[9] = inst_10466;
-                    statearr_10485[10] = inst_10467;
-                    return statearr_10485;
+                if (state_val_19207 === 2) {
+                  var inst_19190 = state_19206[2];
+                  var inst_19191 = communications.blockk = inst_19190;
+                  var inst_19192 = logger.og.call(null, new cljs.core.Keyword(null, "onBlockMined", "onBlockMined", -993463133), "just made new block ", communications.blockk);
+                  var inst_19193 = communications.blockk.hash;
+                  var inst_19194 = logger.og.call(null, new cljs.core.Keyword(null, "message", "message", -406056002), "hash to get ", inst_19193);
+                  var inst_19195 = blockchain.saveBlock.call(null, app.pouchDB.dbase, communications.blockk);
+                  var state_19206__$1 = function() {
+                    var statearr_19210 = state_19206;
+                    statearr_19210[8] = inst_19191;
+                    statearr_19210[9] = inst_19194;
+                    statearr_19210[10] = inst_19192;
+                    return statearr_19210;
                   }();
-                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_10481__$1, 3, inst_10470);
+                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_19206__$1, 3, inst_19195);
                 } else {
-                  if (state_val_10482 === 1) {
-                    var inst_10462 = logger.og.call(null, new cljs.core.Keyword(null, "onBlockMined", "onBlockMined", -993463133), "recieved from worker ", message);
-                    var inst_10463 = blockchain.makeBlock.call(null, message);
-                    var state_10481__$1 = function() {
-                      var statearr_10486 = state_10481;
-                      statearr_10486[11] = inst_10462;
-                      return statearr_10486;
+                  if (state_val_19207 === 1) {
+                    var inst_19187 = logger.og.call(null, new cljs.core.Keyword(null, "onBlockMined", "onBlockMined", -993463133), "recieved from worker ", message);
+                    var inst_19188 = blockchain.makeBlock.call(null, message);
+                    var state_19206__$1 = function() {
+                      var statearr_19211 = state_19206;
+                      statearr_19211[11] = inst_19187;
+                      return statearr_19211;
                     }();
-                    return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_10481__$1, 2, inst_10463);
+                    return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_19206__$1, 2, inst_19188);
                   } else {
                     return null;
                   }
@@ -43456,14 +43456,14 @@ communications.onBlockMined = function onBlockMined(message) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_10488 = [null, null, null, null, null, null, null, null, null, null, null, null];
-              statearr_10488[0] = state_machine__6220__auto__;
-              statearr_10488[1] = 1;
-              return statearr_10488;
+              var statearr_19213 = [null, null, null, null, null, null, null, null, null, null, null, null];
+              statearr_19213[0] = state_machine__6220__auto__;
+              statearr_19213[1] = 1;
+              return statearr_19213;
             };
-            var state_machine__6220__auto____1 = function(state_10481) {
+            var state_machine__6220__auto____1 = function(state_19206) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_10481);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_19206);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -43472,12 +43472,12 @@ communications.onBlockMined = function onBlockMined(message) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_10481) {
+            state_machine__6220__auto__ = function(state_19206) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_10481);
+                  return state_machine__6220__auto____1.call(this, state_19206);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -43488,9 +43488,9 @@ communications.onBlockMined = function onBlockMined(message) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_10489 = f__6233__auto__.call(null);
-        statearr_10489[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_10489;
+        var statearr_19214 = f__6233__auto__.call(null);
+        statearr_19214[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_19214;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -43517,25 +43517,25 @@ communications.onCrypto = function onCrypto(message) {
       return function() {
         var f__6233__auto__ = function() {
           var switch__6219__auto__ = function(c__6232__auto__) {
-            return function(state_10510) {
-              var state_val_10511 = state_10510[1];
-              if (state_val_10511 === 2) {
-                var inst_10505 = state_10510[2];
-                var inst_10506 = communications.fmroot = inst_10505;
-                var inst_10507 = logger.og.call(null, new cljs.core.Keyword(null, "onCrypto", "onCrypto", -1930465906), "calculating hash of transactions %s", communications.fmroot);
-                var inst_10508 = mining.mine.call(null, communications.fmroot);
-                var state_10510__$1 = function() {
-                  var statearr_10512 = state_10510;
-                  statearr_10512[5] = inst_10506;
-                  statearr_10512[6] = inst_10507;
-                  return statearr_10512;
+            return function(state_19235) {
+              var state_val_19236 = state_19235[1];
+              if (state_val_19236 === 2) {
+                var inst_19230 = state_19235[2];
+                var inst_19231 = communications.fmroot = inst_19230;
+                var inst_19232 = logger.og.call(null, new cljs.core.Keyword(null, "onCrypto", "onCrypto", -1930465906), "calculating hash of transactions %s", communications.fmroot);
+                var inst_19233 = mining.mine.call(null, communications.fmroot);
+                var state_19235__$1 = function() {
+                  var statearr_19237 = state_19235;
+                  statearr_19237[5] = inst_19231;
+                  statearr_19237[6] = inst_19232;
+                  return statearr_19237;
                 }();
-                return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_10510__$1, inst_10508);
+                return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_19235__$1, inst_19233);
               } else {
-                if (state_val_10511 === 1) {
-                  var inst_10503 = crypto.merkleRoot.call(null, blockchain.memPool);
-                  var state_10510__$1 = state_10510;
-                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_10510__$1, 2, inst_10503);
+                if (state_val_19236 === 1) {
+                  var inst_19228 = crypto.merkleRoot.call(null, blockchain.memPool);
+                  var state_19235__$1 = state_19235;
+                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_19235__$1, 2, inst_19228);
                 } else {
                   return null;
                 }
@@ -43546,14 +43546,14 @@ communications.onCrypto = function onCrypto(message) {
             return function() {
               var state_machine__6220__auto__ = null;
               var state_machine__6220__auto____0 = function() {
-                var statearr_10514 = [null, null, null, null, null, null, null];
-                statearr_10514[0] = state_machine__6220__auto__;
-                statearr_10514[1] = 1;
-                return statearr_10514;
+                var statearr_19239 = [null, null, null, null, null, null, null];
+                statearr_19239[0] = state_machine__6220__auto__;
+                statearr_19239[1] = 1;
+                return statearr_19239;
               };
-              var state_machine__6220__auto____1 = function(state_10510) {
+              var state_machine__6220__auto____1 = function(state_19235) {
                 while (true) {
-                  var result__6221__auto__ = switch__6219__auto__.call(null, state_10510);
+                  var result__6221__auto__ = switch__6219__auto__.call(null, state_19235);
                   if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                     continue;
                   } else {
@@ -43562,12 +43562,12 @@ communications.onCrypto = function onCrypto(message) {
                   break;
                 }
               };
-              state_machine__6220__auto__ = function(state_10510) {
+              state_machine__6220__auto__ = function(state_19235) {
                 switch(arguments.length) {
                   case 0:
                     return state_machine__6220__auto____0.call(this);
                   case 1:
-                    return state_machine__6220__auto____1.call(this, state_10510);
+                    return state_machine__6220__auto____1.call(this, state_19235);
                 }
                 throw new Error("Invalid arity: " + arguments.length);
               };
@@ -43578,9 +43578,9 @@ communications.onCrypto = function onCrypto(message) {
           }(switch__6219__auto__, c__6232__auto__);
         }();
         var state__6234__auto__ = function() {
-          var statearr_10515 = f__6233__auto__.call(null);
-          statearr_10515[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-          return statearr_10515;
+          var statearr_19240 = f__6233__auto__.call(null);
+          statearr_19240[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+          return statearr_19240;
         }();
         return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
       };
@@ -44741,27 +44741,27 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", 212345235), 22, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function initdbase_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12379 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20655 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       database.cleandb.call(null);
       database.initDBase.call(null, 1);
       return database.dumpdb.call(null);
-    } catch (e12380) {
-      if (e12380 instanceof Error) {
-        var e__10804__auto__ = e12380;
+    } catch (e20656) {
+      if (e20656 instanceof Error) {
+        var e__10804__auto__ = e20656;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12380;
+        throw e20656;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12379;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20655;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "initdbase", "testt/initdbase", 991259270, null), testt.initdbase);
@@ -44773,25 +44773,25 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", "line", 212345235), 32, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function makeBlockHeader_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12383 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20659 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return null;
-    } catch (e12384) {
-      if (e12384 instanceof Error) {
-        var e__10804__auto__ = e12384;
+    } catch (e20660) {
+      if (e20660 instanceof Error) {
+        var e__10804__auto__ = e20660;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12384;
+        throw e20660;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12383;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20659;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "makeBlockHeader", "testt/makeBlockHeader", 312821479, null), testt.makeBlockHeader);
@@ -44803,25 +44803,25 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", "line", 212345235), 36, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function makeBlockBlock_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12387 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20663 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return null;
-    } catch (e12388) {
-      if (e12388 instanceof Error) {
-        var e__10804__auto__ = e12388;
+    } catch (e20664) {
+      if (e20664 instanceof Error) {
+        var e__10804__auto__ = e20664;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12388;
+        throw e20664;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12387;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20663;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "makeBlockBlock", "testt/makeBlockBlock", -2090853181, null), testt.makeBlockBlock);
@@ -44833,25 +44833,25 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", 212345235), 41, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function saveblock_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12391 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20667 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return database.cleandb.call(null);
-    } catch (e12392) {
-      if (e12392 instanceof Error) {
-        var e__10804__auto__ = e12392;
+    } catch (e20668) {
+      if (e20668 instanceof Error) {
+        var e__10804__auto__ = e20668;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12392;
+        throw e20668;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12391;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20667;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "saveblock", "testt/saveblock", 851231593, null), testt.saveblock);
@@ -44863,25 +44863,25 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", "line", 212345235), 52, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function blockheight_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12395 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20671 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return null;
-    } catch (e12396) {
-      if (e12396 instanceof Error) {
-        var e__10804__auto__ = e12396;
+    } catch (e20672) {
+      if (e20672 instanceof Error) {
+        var e__10804__auto__ = e20672;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12396;
+        throw e20672;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12395;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20671;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "blockheight", "testt/blockheight", -627848480, null), testt.blockheight);
@@ -44893,25 +44893,25 @@ new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "name", "
 56, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function sha256_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12399 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20675 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return null;
-    } catch (e12400) {
-      if (e12400 instanceof Error) {
-        var e__10804__auto__ = e12400;
+    } catch (e20676) {
+      if (e20676 instanceof Error) {
+        var e__10804__auto__ = e20676;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12400;
+        throw e20676;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12399;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20675;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "sha256", "testt/sha256", -339325251, null), testt.sha256);
@@ -44923,25 +44923,25 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", "line", 212345235), 60, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function transaction_making_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12403 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20679 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return null;
-    } catch (e12404) {
-      if (e12404 instanceof Error) {
-        var e__10804__auto__ = e12404;
+    } catch (e20680) {
+      if (e20680 instanceof Error) {
+        var e__10804__auto__ = e20680;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12404;
+        throw e20680;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12403;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20679;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "transaction-making", "testt/transaction-making", 1399216211, null), testt.transaction_making);
@@ -44953,25 +44953,25 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", 212345235), 64, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function merkleroot_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12407 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20683 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return null;
-    } catch (e12408) {
-      if (e12408 instanceof Error) {
-        var e__10804__auto__ = e12408;
+    } catch (e20684) {
+      if (e20684 instanceof Error) {
+        var e__10804__auto__ = e20684;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12408;
+        throw e20684;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12407;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20683;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "merkleroot", "testt/merkleroot", 1515943603, null), testt.merkleroot);
@@ -44983,25 +44983,25 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", "line", 212345235), 69, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function transaction_in_block_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12411 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20687 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return null;
-    } catch (e12412) {
-      if (e12412 instanceof Error) {
-        var e__10804__auto__ = e12412;
+    } catch (e20688) {
+      if (e20688 instanceof Error) {
+        var e__10804__auto__ = e20688;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12412;
+        throw e20688;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12411;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20687;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "transaction-in-block", "testt/transaction-in-block", -1858485192, null), testt.transaction_in_block);
@@ -45013,25 +45013,25 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", 212345235), 74, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function mineblock_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12415 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20691 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return null;
-    } catch (e12416) {
-      if (e12416 instanceof Error) {
-        var e__10804__auto__ = e12416;
+    } catch (e20692) {
+      if (e20692 instanceof Error) {
+        var e__10804__auto__ = e20692;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12416;
+        throw e20692;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12415;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20691;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "mineblock", "testt/mineblock", -1652160405, null), testt.mineblock);
@@ -45043,25 +45043,25 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", "line", 212345235), 78, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function broadcastblock_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12419 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20695 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return null;
-    } catch (e12420) {
-      if (e12420 instanceof Error) {
-        var e__10804__auto__ = e12420;
+    } catch (e20696) {
+      if (e20696 instanceof Error) {
+        var e__10804__auto__ = e20696;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12420;
+        throw e20696;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12419;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20695;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "broadcastblock", "testt/broadcastblock", 832288060, null), testt.broadcastblock);
@@ -45073,25 +45073,25 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", "line", 212345235), 82, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function blocksyncEmptyBase_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12423 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20699 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return null;
-    } catch (e12424) {
-      if (e12424 instanceof Error) {
-        var e__10804__auto__ = e12424;
+    } catch (e20700) {
+      if (e20700 instanceof Error) {
+        var e__10804__auto__ = e20700;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12424;
+        throw e20700;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12423;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20699;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "blocksyncEmptyBase", "testt/blocksyncEmptyBase", -1921112901, null), testt.blocksyncEmptyBase);
@@ -45103,25 +45103,25 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", 212345235), 87, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function getblocks_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12427 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20703 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return null;
-    } catch (e12428) {
-      if (e12428 instanceof Error) {
-        var e__10804__auto__ = e12428;
+    } catch (e20704) {
+      if (e20704 instanceof Error) {
+        var e__10804__auto__ = e20704;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12428;
+        throw e20704;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12427;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20703;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "getblocks", "testt/getblocks", -381015714, null), testt.getblocks);
@@ -45133,25 +45133,25 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", "line", 212345235), 90, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function blocksyncLowerBase_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12431 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20707 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return null;
-    } catch (e12432) {
-      if (e12432 instanceof Error) {
-        var e__10804__auto__ = e12432;
+    } catch (e20708) {
+      if (e20708 instanceof Error) {
+        var e__10804__auto__ = e20708;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12432;
+        throw e20708;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12431;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20707;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "blocksyncLowerBase", "testt/blocksyncLowerBase", 738512228, null), testt.blocksyncLowerBase);
@@ -45163,25 +45163,25 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", 212345235), 95, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function sendblocks_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12435 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20711 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return null;
-    } catch (e12436) {
-      if (e12436 instanceof Error) {
-        var e__10804__auto__ = e12436;
+    } catch (e20712) {
+      if (e20712 instanceof Error) {
+        var e__10804__auto__ = e20712;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12436;
+        throw e20712;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12435;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20711;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "sendblocks", "testt/sendblocks", 1505981122, null), testt.sendblocks);
@@ -45193,25 +45193,25 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", "line", 212345235), 98, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function dumpDatabase_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12439 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20715 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return database.dumpdb.call(null);
-    } catch (e12440) {
-      if (e12440 instanceof Error) {
-        var e__10804__auto__ = e12440;
+    } catch (e20716) {
+      if (e20716 instanceof Error) {
+        var e__10804__auto__ = e20716;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12440;
+        throw e20716;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12439;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20715;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "dumpDatabase", "testt/dumpDatabase", -599414213, null), testt.dumpDatabase);
@@ -45223,25 +45223,25 @@ testt.blocksyncHigherBaseHasBlockInDB = cljs.core.with_meta.call(null, testt.blo
 "column", "column", 2078222095), 10, new cljs.core.Keyword(null, "line", "line", 212345235), 102, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function blocksyncHigherBaseHasBlockInDB_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12443 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20719 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return null;
-    } catch (e12444) {
-      if (e12444 instanceof Error) {
-        var e__10804__auto__ = e12444;
+    } catch (e20720) {
+      if (e20720 instanceof Error) {
+        var e__10804__auto__ = e20720;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12444;
+        throw e20720;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12443;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20719;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "blocksyncHigherBaseHasBlockInDB", "testt/blocksyncHigherBaseHasBlockInDB", -194653638, null), testt.blocksyncHigherBaseHasBlockInDB);
@@ -45253,25 +45253,25 @@ testt.blocksyncHigherBaseDoesNotHaveBlockInDB = cljs.core.with_meta.call(null, t
 1837326455), 105, new cljs.core.Keyword(null, "column", "column", 2078222095), 10, new cljs.core.Keyword(null, "line", "line", 212345235), 105, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function blocksyncHigherBaseDoesNotHaveBlockInDB_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12447 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20723 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return null;
-    } catch (e12448) {
-      if (e12448 instanceof Error) {
-        var e__10804__auto__ = e12448;
+    } catch (e20724) {
+      if (e20724 instanceof Error) {
+        var e__10804__auto__ = e20724;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12448;
+        throw e20724;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12447;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20723;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "blocksyncHigherBaseDoesNotHaveBlockInDB", "testt/blocksyncHigherBaseDoesNotHaveBlockInDB", -511054535, null), testt.blocksyncHigherBaseDoesNotHaveBlockInDB);
@@ -45283,25 +45283,25 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", "line", 212345235), 108, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function blocksyncForkBase_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12451 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20727 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       return null;
-    } catch (e12452) {
-      if (e12452 instanceof Error) {
-        var e__10804__auto__ = e12452;
+    } catch (e20728) {
+      if (e20728 instanceof Error) {
+        var e__10804__auto__ = e20728;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12452;
+        throw e20728;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12451;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20727;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "blocksyncForkBase", "testt/blocksyncForkBase", -156235619, null), testt.blocksyncForkBase);
@@ -45313,13 +45313,13 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", "line", 212345235), 111, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function somewhat_less_wat_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12458 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20734 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       var _test_ctx__$1 = _test_ctx;
       var async_QMARK___10803__auto____$1 = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx__$1)));
-      var _STAR_test_ctx_STAR_12460 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+      var _STAR_test_ctx_STAR_20736 = cemerick.cljs.test._STAR_test_ctx_STAR_;
       try {
         cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto____$1) ? null : _test_ctx__$1;
         try {
@@ -45338,44 +45338,44 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
               new cljs.core.Keyword(null, "actual", "actual", 107306363), cljs.core._conj.call(null, cljs.core._conj.call(null, cljs.core.List.EMPTY, cljs.core.cons.call(null, new cljs.core.Symbol(null, "\x3d", "\x3d", -1501502141, null), values__10823__auto__)), new cljs.core.Symbol(null, "not", "not", 1044554643, null)), new cljs.core.Keyword(null, "message", "message", -406056002), null], null));
             }
             return result__10824__auto__;
-          } catch (e12462) {
-            if (e12462 instanceof Error) {
-              var t__10860__auto__ = e12462;
+          } catch (e20738) {
+            if (e20738 instanceof Error) {
+              var t__10860__auto__ = e20738;
               return cemerick.cljs.test.do_report.call(null, _test_ctx__$1, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "type", "type", 1174270348), new cljs.core.Keyword(null, "error", "error", -978969032), new cljs.core.Keyword(null, "expected", "expected", 1583670997), cljs.core.list(new cljs.core.Symbol(null, "\x3d", "\x3d", -1501502141, null), "{}[]", cljs.core.list(new cljs.core.Symbol(null, "+", "+", -740910886, null), cljs.core.PersistentArrayMap.EMPTY, cljs.core.PersistentVector.EMPTY)), 
               new cljs.core.Keyword(null, "actual", "actual", 107306363), t__10860__auto__, new cljs.core.Keyword(null, "message", "message", -406056002), null], null));
             } else {
-              throw e12462;
+              throw e20738;
             }
           }
-        } catch (e12461) {
-          if (e12461 instanceof Error) {
-            var e__10804__auto__ = e12461;
+        } catch (e20737) {
+          if (e20737 instanceof Error) {
+            var e__10804__auto__ = e20737;
             if (cljs.core.truth_(async_QMARK___10803__auto____$1)) {
               return cemerick.cljs.test.done_STAR_.call(null, _test_ctx__$1, e__10804__auto__);
             } else {
               throw e__10804__auto__;
             }
           } else {
-            throw e12461;
+            throw e20737;
           }
         }
       } finally {
-        cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12460;
+        cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20736;
       }
-    } catch (e12459) {
-      if (e12459 instanceof Error) {
-        var e__10804__auto__ = e12459;
+    } catch (e20735) {
+      if (e20735 instanceof Error) {
+        var e__10804__auto__ = e20735;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12459;
+        throw e20735;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12458;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20734;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "somewhat-less-wat", "testt/somewhat-less-wat", -231905664, null), testt.somewhat_less_wat);
@@ -45387,13 +45387,13 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 "line", "line", 212345235), 115, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function javascript_allows_div0_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12468 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20744 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
       var _test_ctx__$1 = _test_ctx;
       var async_QMARK___10803__auto____$1 = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx__$1)));
-      var _STAR_test_ctx_STAR_12470 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+      var _STAR_test_ctx_STAR_20746 = cemerick.cljs.test._STAR_test_ctx_STAR_;
       try {
         cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto____$1) ? null : _test_ctx__$1;
         try {
@@ -45413,44 +45413,44 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
               new cljs.core.Symbol(null, "not", "not", 1044554643, null)), new cljs.core.Keyword(null, "message", "message", -406056002), null], null));
             }
             return result__10824__auto__;
-          } catch (e12472) {
-            if (e12472 instanceof Error) {
-              var t__10860__auto__ = e12472;
+          } catch (e20748) {
+            if (e20748 instanceof Error) {
+              var t__10860__auto__ = e20748;
               return cemerick.cljs.test.do_report.call(null, _test_ctx__$1, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "type", "type", 1174270348), new cljs.core.Keyword(null, "error", "error", -978969032), new cljs.core.Keyword(null, "expected", "expected", 1583670997), cljs.core.list(new cljs.core.Symbol(null, "\x3d", "\x3d", -1501502141, null), new cljs.core.Symbol("js", "Infinity", "js/Infinity", 2039810812, null), cljs.core.list(new cljs.core.Symbol(null, "/", "/", 
               -1371932971, null), 1, 0), cljs.core.list(new cljs.core.Symbol(null, "/", "/", -1371932971, null), cljs.core.list(new cljs.core.Symbol(null, "int", "int", -100885395, null), 1), cljs.core.list(new cljs.core.Symbol(null, "int", "int", -100885395, null), 0))), new cljs.core.Keyword(null, "actual", "actual", 107306363), t__10860__auto__, new cljs.core.Keyword(null, "message", "message", -406056002), null], null));
             } else {
-              throw e12472;
+              throw e20748;
             }
           }
-        } catch (e12471) {
-          if (e12471 instanceof Error) {
-            var e__10804__auto__ = e12471;
+        } catch (e20747) {
+          if (e20747 instanceof Error) {
+            var e__10804__auto__ = e20747;
             if (cljs.core.truth_(async_QMARK___10803__auto____$1)) {
               return cemerick.cljs.test.done_STAR_.call(null, _test_ctx__$1, e__10804__auto__);
             } else {
               throw e__10804__auto__;
             }
           } else {
-            throw e12471;
+            throw e20747;
           }
         }
       } finally {
-        cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12470;
+        cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20746;
       }
-    } catch (e12469) {
-      if (e12469 instanceof Error) {
-        var e__10804__auto__ = e12469;
+    } catch (e20745) {
+      if (e20745 instanceof Error) {
+        var e__10804__auto__ = e20745;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12469;
+        throw e20745;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12468;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20744;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "javascript-allows-div0", "testt/javascript-allows-div0", 1346947229, null), testt.javascript_allows_div0);
@@ -45466,7 +45466,7 @@ null), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "n
 new cljs.core.Keyword(null, "line", "line", 212345235), 119, new cljs.core.Keyword(null, "file", "file", -1269645878), "/home/user/Buyan/app/test/test.cljs"], null)), new cljs.core.Keyword(null, "test", "test", 577538877), function pennies__GT_dollar_string_test(test_ctx__10888__auto__) {
   var _test_ctx = test_ctx__10888__auto__;
   var async_QMARK___10803__auto__ = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx)));
-  var _STAR_test_ctx_STAR_12479 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+  var _STAR_test_ctx_STAR_20755 = cemerick.cljs.test._STAR_test_ctx_STAR_;
   try {
     cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto__) ? null : _test_ctx;
     try {
@@ -45474,7 +45474,7 @@ new cljs.core.Keyword(null, "line", "line", 212345235), 119, new cljs.core.Keywo
         cljs.core.swap_BANG_.call(null, (new cljs.core.Keyword(null, "test-env", "test-env", -540228992)).cljs$core$IFn$_invoke$arity$1(_test_ctx), cljs.core.update_in, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("cemerick.cljs.test", "test-contexts", "cemerick.cljs.test/test-contexts", 1505935128)], null), cljs.core.conj, "assertions are nice");
         var _test_ctx__$1 = _test_ctx;
         var async_QMARK___10803__auto____$1 = (new cljs.core.Keyword(null, "async", "async", 1050769601)).cljs$core$IFn$_invoke$arity$1(cljs.core.meta.call(null, (new cljs.core.Keyword(null, "test-name", "test-name", -675595913)).cljs$core$IFn$_invoke$arity$1(_test_ctx__$1)));
-        var _STAR_test_ctx_STAR_12481 = cemerick.cljs.test._STAR_test_ctx_STAR_;
+        var _STAR_test_ctx_STAR_20757 = cemerick.cljs.test._STAR_test_ctx_STAR_;
         try {
           cemerick.cljs.test._STAR_test_ctx_STAR_ = cljs.core.truth_(async_QMARK___10803__auto____$1) ? null : _test_ctx__$1;
           try {
@@ -45483,11 +45483,11 @@ new cljs.core.Keyword(null, "line", "line", 212345235), 119, new cljs.core.Keywo
                 testt.pennies__GT_dollar_string.call(null, 564.2);
                 return cemerick.cljs.test.do_report.call(null, _test_ctx__$1, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "type", "type", 1174270348), new cljs.core.Keyword(null, "fail", "fail", 1706214930), new cljs.core.Keyword(null, "expected", "expected", 1583670997), cljs.core.list(new cljs.core.Symbol(null, "thrown-with-msg?", "thrown-with-msg?", 1169763203, null), new cljs.core.Symbol("js", "Error", "js/Error", -1692659266, null), /integer?/, cljs.core.list(new cljs.core.Symbol(null, 
                 "pennies-\x3edollar-string", "pennies-\x3edollar-string", 1142609118, null), 564.2)), new cljs.core.Keyword(null, "actual", "actual", 107306363), null, new cljs.core.Keyword(null, "message", "message", -406056002), null], null));
-              } catch (e12484) {
-                if (e12484 instanceof Error) {
-                  var e__10854__auto__ = e12484;
-                  var m__10855__auto___12485 = e__10854__auto__.message;
-                  if (cljs.core.truth_(cljs.core.re_find.call(null, /integer?/, m__10855__auto___12485))) {
+              } catch (e20760) {
+                if (e20760 instanceof Error) {
+                  var e__10854__auto__ = e20760;
+                  var m__10855__auto___20761 = e__10854__auto__.message;
+                  if (cljs.core.truth_(cljs.core.re_find.call(null, /integer?/, m__10855__auto___20761))) {
                     cemerick.cljs.test.do_report.call(null, _test_ctx__$1, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "type", "type", 1174270348), new cljs.core.Keyword(null, "pass", "pass", 1574159993), new cljs.core.Keyword(null, "expected", "expected", 1583670997), cljs.core.list(new cljs.core.Symbol(null, "thrown-with-msg?", "thrown-with-msg?", 1169763203, null), new cljs.core.Symbol("js", "Error", "js/Error", -1692659266, null), /integer?/, cljs.core.list(new cljs.core.Symbol(null, 
                     "pennies-\x3edollar-string", "pennies-\x3edollar-string", 1142609118, null), 564.2)), new cljs.core.Keyword(null, "actual", "actual", 107306363), e__10854__auto__, new cljs.core.Keyword(null, "message", "message", -406056002), null], null));
                   } else {
@@ -45496,50 +45496,50 @@ new cljs.core.Keyword(null, "line", "line", 212345235), 119, new cljs.core.Keywo
                   }
                   return e__10854__auto__;
                 } else {
-                  throw e12484;
+                  throw e20760;
                 }
               }
-            } catch (e12483) {
-              if (e12483 instanceof Error) {
-                var t__10860__auto__ = e12483;
+            } catch (e20759) {
+              if (e20759 instanceof Error) {
+                var t__10860__auto__ = e20759;
                 return cemerick.cljs.test.do_report.call(null, _test_ctx__$1, new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null, "type", "type", 1174270348), new cljs.core.Keyword(null, "error", "error", -978969032), new cljs.core.Keyword(null, "expected", "expected", 1583670997), cljs.core.list(new cljs.core.Symbol(null, "thrown-with-msg?", "thrown-with-msg?", 1169763203, null), new cljs.core.Symbol("js", "Error", "js/Error", -1692659266, null), /integer?/, cljs.core.list(new cljs.core.Symbol(null, 
                 "pennies-\x3edollar-string", "pennies-\x3edollar-string", 1142609118, null), 564.2)), new cljs.core.Keyword(null, "actual", "actual", 107306363), t__10860__auto__, new cljs.core.Keyword(null, "message", "message", -406056002), null], null));
               } else {
-                throw e12483;
+                throw e20759;
               }
             }
-          } catch (e12482) {
-            if (e12482 instanceof Error) {
-              var e__10804__auto__ = e12482;
+          } catch (e20758) {
+            if (e20758 instanceof Error) {
+              var e__10804__auto__ = e20758;
               if (cljs.core.truth_(async_QMARK___10803__auto____$1)) {
                 return cemerick.cljs.test.done_STAR_.call(null, _test_ctx__$1, e__10804__auto__);
               } else {
                 throw e__10804__auto__;
               }
             } else {
-              throw e12482;
+              throw e20758;
             }
           }
         } finally {
-          cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12481;
+          cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20757;
         }
       } finally {
         cljs.core.swap_BANG_.call(null, (new cljs.core.Keyword(null, "test-env", "test-env", -540228992)).cljs$core$IFn$_invoke$arity$1(_test_ctx), cljs.core.update_in, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword("cemerick.cljs.test", "test-contexts", "cemerick.cljs.test/test-contexts", 1505935128)], null), cljs.core.pop);
       }
-    } catch (e12480) {
-      if (e12480 instanceof Error) {
-        var e__10804__auto__ = e12480;
+    } catch (e20756) {
+      if (e20756 instanceof Error) {
+        var e__10804__auto__ = e20756;
         if (cljs.core.truth_(async_QMARK___10803__auto__)) {
           return cemerick.cljs.test.done_STAR_.call(null, _test_ctx, e__10804__auto__);
         } else {
           throw e__10804__auto__;
         }
       } else {
-        throw e12480;
+        throw e20756;
       }
     }
   } finally {
-    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_12479;
+    cemerick.cljs.test._STAR_test_ctx_STAR_ = _STAR_test_ctx_STAR_20755;
   }
 }], null)));
 cemerick.cljs.test.register_test_BANG_.call(null, new cljs.core.Symbol(null, "testt", "testt", -1437552360, null), new cljs.core.Symbol("testt", "pennies-\x3edollar-string", "testt/pennies-\x3edollar-string", 2113176316, null), testt.pennies__GT_dollar_string);
@@ -45554,8 +45554,8 @@ goog.require("cljs.core");
 pouchDB.flushdb = cljs.core.PersistentVector.EMPTY;
 pouchDB.dumpdb = cljs.core.PersistentVector.EMPTY;
 pouchDB.dbase = function() {
-  var obj8213 = {};
-  return obj8213;
+  var obj17351 = {};
+  return obj17351;
 }();
 goog.provide("plainText");
 goog.require("cljs.core");
@@ -45592,16 +45592,16 @@ intercomTake.sendm = function sendm(peer, payload) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_11006) {
-            var state_val_11007 = state_11006[1];
-            if (state_val_11007 === 2) {
-              var inst_11004 = state_11006[2];
-              var state_11006__$1 = state_11006;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_11006__$1, inst_11004);
+          return function(state_19569) {
+            var state_val_19570 = state_19569[1];
+            if (state_val_19570 === 2) {
+              var inst_19567 = state_19569[2];
+              var state_19569__$1 = state_19569;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_19569__$1, inst_19567);
             } else {
-              if (state_val_11007 === 1) {
-                var state_11006__$1 = state_11006;
-                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_11006__$1, 2, peer, payload);
+              if (state_val_19570 === 1) {
+                var state_19569__$1 = state_19569;
+                return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_19569__$1, 2, peer, payload);
               } else {
                 return null;
               }
@@ -45612,14 +45612,14 @@ intercomTake.sendm = function sendm(peer, payload) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_11009 = [null, null, null, null, null];
-              statearr_11009[0] = state_machine__6220__auto__;
-              statearr_11009[1] = 1;
-              return statearr_11009;
+              var statearr_19572 = [null, null, null, null, null];
+              statearr_19572[0] = state_machine__6220__auto__;
+              statearr_19572[1] = 1;
+              return statearr_19572;
             };
-            var state_machine__6220__auto____1 = function(state_11006) {
+            var state_machine__6220__auto____1 = function(state_19569) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_11006);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_19569);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -45628,12 +45628,12 @@ intercomTake.sendm = function sendm(peer, payload) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_11006) {
+            state_machine__6220__auto__ = function(state_19569) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_11006);
+                  return state_machine__6220__auto____1.call(this, state_19569);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -45644,9 +45644,9 @@ intercomTake.sendm = function sendm(peer, payload) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_11010 = f__6233__auto__.call(null);
-        statearr_11010[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_11010;
+        var statearr_19573 = f__6233__auto__.call(null);
+        statearr_19573[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_19573;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -45659,155 +45659,155 @@ intercomTake.takeInv = function takeInv(fullMessage) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_11135) {
-            var state_val_11136 = state_11135[1];
-            if (state_val_11136 === 7) {
-              var inst_11112 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "now adding to chain");
-              var inst_11113 = blockchain.addToChain.call(null, intercomTake.blocks);
-              var state_11135__$1 = function() {
-                var statearr_11137 = state_11135;
-                statearr_11137[5] = inst_11112;
-                return statearr_11137;
+          return function(state_19698) {
+            var state_val_19699 = state_19698[1];
+            if (state_val_19699 === 7) {
+              var inst_19675 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "now adding to chain");
+              var inst_19676 = blockchain.addToChain.call(null, intercomTake.blocks);
+              var state_19698__$1 = function() {
+                var statearr_19700 = state_19698;
+                statearr_19700[5] = inst_19675;
+                return statearr_19700;
               }();
-              var statearr_11138_11155 = state_11135__$1;
-              statearr_11138_11155[2] = inst_11113;
-              statearr_11138_11155[1] = 9;
+              var statearr_19701_19718 = state_19698__$1;
+              statearr_19701_19718[2] = inst_19676;
+              statearr_19701_19718[1] = 9;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             } else {
-              if (state_val_11136 === 1) {
-                var inst_11083 = fullMessage.data;
-                var inst_11084 = intercomTake.blocks = inst_11083;
-                var inst_11085 = logger.og.call(null, new cljs.core.Keyword(null, "takeInv", "takeInv", 1845315889), "now about to handle inv block message ", intercomTake.blocks);
-                var inst_11086 = intercomTake.blocks.vector;
-                var inst_11087 = inst_11086[0];
-                var inst_11088 = blockchain.prevblk.call(null, inst_11087);
-                var inst_11089 = blockchain.blockKnown_QMARK_.call(null, inst_11088);
-                var state_11135__$1 = function() {
-                  var statearr_11139 = state_11135;
-                  statearr_11139[6] = inst_11085;
-                  statearr_11139[7] = inst_11084;
-                  return statearr_11139;
+              if (state_val_19699 === 1) {
+                var inst_19646 = fullMessage.data;
+                var inst_19647 = intercomTake.blocks = inst_19646;
+                var inst_19648 = logger.og.call(null, new cljs.core.Keyword(null, "takeInv", "takeInv", 1845315889), "now about to handle inv block message ", intercomTake.blocks);
+                var inst_19649 = intercomTake.blocks.vector;
+                var inst_19650 = inst_19649[0];
+                var inst_19651 = blockchain.prevblk.call(null, inst_19650);
+                var inst_19652 = blockchain.blockKnown_QMARK_.call(null, inst_19651);
+                var state_19698__$1 = function() {
+                  var statearr_19702 = state_19698;
+                  statearr_19702[6] = inst_19648;
+                  statearr_19702[7] = inst_19647;
+                  return statearr_19702;
                 }();
-                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_11135__$1, 2, inst_11089);
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_19698__$1, 2, inst_19652);
               } else {
-                if (state_val_11136 === 4) {
-                  var inst_11119 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "request previous", intercomTake.blocks);
-                  var inst_11120 = database.g.call(null, "last");
-                  var state_11135__$1 = function() {
-                    var statearr_11140 = state_11135;
-                    statearr_11140[8] = inst_11119;
-                    return statearr_11140;
+                if (state_val_19699 === 4) {
+                  var inst_19682 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "request previous", intercomTake.blocks);
+                  var inst_19683 = database.g.call(null, "last");
+                  var state_19698__$1 = function() {
+                    var statearr_19703 = state_19698;
+                    statearr_19703[8] = inst_19682;
+                    return statearr_19703;
                   }();
-                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_11135__$1, 10, inst_11120);
+                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_19698__$1, 10, inst_19683);
                 } else {
-                  if (state_val_11136 === 6) {
-                    var inst_11102 = state_11135[2];
-                    var inst_11103 = intercomTake.heightFromBlock.call(null, inst_11102);
-                    var inst_11104 = intercomTake.blocks.vector;
-                    var inst_11105 = inst_11104.length;
-                    var inst_11106 = inst_11103 + inst_11105;
-                    var inst_11107 = inst_11106 + 1;
-                    var inst_11108 = intercomTake.newHeight = inst_11107;
-                    var inst_11109 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "newHeight ", intercomTake.newHeight);
-                    var inst_11110 = intercomTake.bchainHeight < intercomTake.newHeight;
-                    var state_11135__$1 = function() {
-                      var statearr_11141 = state_11135;
-                      statearr_11141[9] = inst_11109;
-                      statearr_11141[10] = inst_11108;
-                      return statearr_11141;
+                  if (state_val_19699 === 6) {
+                    var inst_19665 = state_19698[2];
+                    var inst_19666 = intercomTake.heightFromBlock.call(null, inst_19665);
+                    var inst_19667 = intercomTake.blocks.vector;
+                    var inst_19668 = inst_19667.length;
+                    var inst_19669 = inst_19666 + inst_19668;
+                    var inst_19670 = inst_19669 + 1;
+                    var inst_19671 = intercomTake.newHeight = inst_19670;
+                    var inst_19672 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "newHeight ", intercomTake.newHeight);
+                    var inst_19673 = intercomTake.bchainHeight < intercomTake.newHeight;
+                    var state_19698__$1 = function() {
+                      var statearr_19704 = state_19698;
+                      statearr_19704[9] = inst_19671;
+                      statearr_19704[10] = inst_19672;
+                      return statearr_19704;
                     }();
-                    if (cljs.core.truth_(inst_11110)) {
-                      var statearr_11142_11156 = state_11135__$1;
-                      statearr_11142_11156[1] = 7;
+                    if (cljs.core.truth_(inst_19673)) {
+                      var statearr_19705_19719 = state_19698__$1;
+                      statearr_19705_19719[1] = 7;
                     } else {
-                      var statearr_11143_11157 = state_11135__$1;
-                      statearr_11143_11157[1] = 8;
+                      var statearr_19706_19720 = state_19698__$1;
+                      statearr_19706_19720[1] = 8;
                     }
                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                   } else {
-                    if (state_val_11136 === 3) {
-                      var inst_11093 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "block is known ");
-                      var inst_11094 = intercomTake.sweet.call(null, "blockchainHeight");
-                      var inst_11095 = intercomTake.bchainHeight = inst_11094;
-                      var inst_11096 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "blockchainHeight ", intercomTake.bchainHeight);
-                      var inst_11097 = intercomTake.blocks.vector;
-                      var inst_11098 = inst_11097[0];
-                      var inst_11099 = blockchain.prevblk.call(null, inst_11098);
-                      var inst_11100 = database.g.call(null, inst_11099);
-                      var state_11135__$1 = function() {
-                        var statearr_11144 = state_11135;
-                        statearr_11144[11] = inst_11096;
-                        statearr_11144[12] = inst_11095;
-                        statearr_11144[13] = inst_11093;
-                        return statearr_11144;
+                    if (state_val_19699 === 3) {
+                      var inst_19656 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "block is known ");
+                      var inst_19657 = intercomTake.sweet.call(null, "blockchainHeight");
+                      var inst_19658 = intercomTake.bchainHeight = inst_19657;
+                      var inst_19659 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "blockchainHeight ", intercomTake.bchainHeight);
+                      var inst_19660 = intercomTake.blocks.vector;
+                      var inst_19661 = inst_19660[0];
+                      var inst_19662 = blockchain.prevblk.call(null, inst_19661);
+                      var inst_19663 = database.g.call(null, inst_19662);
+                      var state_19698__$1 = function() {
+                        var statearr_19707 = state_19698;
+                        statearr_19707[11] = inst_19656;
+                        statearr_19707[12] = inst_19659;
+                        statearr_19707[13] = inst_19658;
+                        return statearr_19707;
                       }();
-                      return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_11135__$1, 6, inst_11100);
+                      return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_19698__$1, 6, inst_19663);
                     } else {
-                      if (state_val_11136 === 12) {
-                        var inst_11126 = state_11135[14];
-                        var inst_11129 = state_11135[2];
-                        var state_11135__$1 = state_11135;
-                        return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_11135__$1, 11, inst_11126, inst_11129);
+                      if (state_val_19699 === 12) {
+                        var inst_19689 = state_19698[14];
+                        var inst_19692 = state_19698[2];
+                        var state_19698__$1 = state_19698;
+                        return cljs.core.async.impl.ioc_helpers.put_BANG_.call(null, state_19698__$1, 11, inst_19689, inst_19692);
                       } else {
-                        if (state_val_11136 === 2) {
-                          var inst_11091 = state_11135[2];
-                          var state_11135__$1 = state_11135;
-                          if (cljs.core.truth_(inst_11091)) {
-                            var statearr_11145_11158 = state_11135__$1;
-                            statearr_11145_11158[1] = 3;
+                        if (state_val_19699 === 2) {
+                          var inst_19654 = state_19698[2];
+                          var state_19698__$1 = state_19698;
+                          if (cljs.core.truth_(inst_19654)) {
+                            var statearr_19708_19721 = state_19698__$1;
+                            statearr_19708_19721[1] = 3;
                           } else {
-                            var statearr_11146_11159 = state_11135__$1;
-                            statearr_11146_11159[1] = 4;
+                            var statearr_19709_19722 = state_19698__$1;
+                            statearr_19709_19722[1] = 4;
                           }
                           return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                         } else {
-                          if (state_val_11136 === 11) {
-                            var inst_11131 = state_11135[2];
-                            var state_11135__$1 = state_11135;
-                            var statearr_11147_11160 = state_11135__$1;
-                            statearr_11147_11160[2] = inst_11131;
-                            statearr_11147_11160[1] = 5;
+                          if (state_val_19699 === 11) {
+                            var inst_19694 = state_19698[2];
+                            var state_19698__$1 = state_19698;
+                            var statearr_19710_19723 = state_19698__$1;
+                            statearr_19710_19723[2] = inst_19694;
+                            statearr_19710_19723[1] = 5;
                             return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                           } else {
-                            if (state_val_11136 === 9) {
-                              var inst_11117 = state_11135[2];
-                              var state_11135__$1 = state_11135;
-                              var statearr_11148_11161 = state_11135__$1;
-                              statearr_11148_11161[2] = inst_11117;
-                              statearr_11148_11161[1] = 5;
+                            if (state_val_19699 === 9) {
+                              var inst_19680 = state_19698[2];
+                              var state_19698__$1 = state_19698;
+                              var statearr_19711_19724 = state_19698__$1;
+                              statearr_19711_19724[2] = inst_19680;
+                              statearr_19711_19724[1] = 5;
                               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                             } else {
-                              if (state_val_11136 === 5) {
-                                var inst_11133 = state_11135[2];
-                                var state_11135__$1 = function() {
-                                  var statearr_11149 = state_11135;
-                                  statearr_11149[15] = inst_11133;
-                                  return statearr_11149;
+                              if (state_val_19699 === 5) {
+                                var inst_19696 = state_19698[2];
+                                var state_19698__$1 = function() {
+                                  var statearr_19712 = state_19698;
+                                  statearr_19712[15] = inst_19696;
+                                  return statearr_19712;
                                 }();
-                                return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_11135__$1, "grind");
+                                return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_19698__$1, "grind");
                               } else {
-                                if (state_val_11136 === 10) {
-                                  var inst_11122 = state_11135[2];
-                                  var inst_11123 = inst_11122.hash;
-                                  var inst_11124 = intercomTake.lblock = inst_11123;
-                                  var inst_11125 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "last block ", intercomTake.lblock);
-                                  var inst_11126 = fullMessage.peer;
-                                  var inst_11127 = intercomMake.makeGetBlock.call(null, intercomTake.lblock);
-                                  var state_11135__$1 = function() {
-                                    var statearr_11150 = state_11135;
-                                    statearr_11150[16] = inst_11125;
-                                    statearr_11150[17] = inst_11124;
-                                    statearr_11150[14] = inst_11126;
-                                    return statearr_11150;
+                                if (state_val_19699 === 10) {
+                                  var inst_19685 = state_19698[2];
+                                  var inst_19686 = inst_19685.hash;
+                                  var inst_19687 = intercomTake.lblock = inst_19686;
+                                  var inst_19688 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "last block ", intercomTake.lblock);
+                                  var inst_19689 = fullMessage.peer;
+                                  var inst_19690 = intercomMake.makeGetBlock.call(null, intercomTake.lblock);
+                                  var state_19698__$1 = function() {
+                                    var statearr_19713 = state_19698;
+                                    statearr_19713[16] = inst_19688;
+                                    statearr_19713[14] = inst_19689;
+                                    statearr_19713[17] = inst_19687;
+                                    return statearr_19713;
                                   }();
-                                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_11135__$1, 12, inst_11127);
+                                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_19698__$1, 12, inst_19690);
                                 } else {
-                                  if (state_val_11136 === 8) {
-                                    var inst_11115 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "about to drop inv");
-                                    var state_11135__$1 = state_11135;
-                                    var statearr_11151_11162 = state_11135__$1;
-                                    statearr_11151_11162[2] = inst_11115;
-                                    statearr_11151_11162[1] = 9;
+                                  if (state_val_19699 === 8) {
+                                    var inst_19678 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "about to drop inv");
+                                    var state_19698__$1 = state_19698;
+                                    var statearr_19714_19725 = state_19698__$1;
+                                    statearr_19714_19725[2] = inst_19678;
+                                    statearr_19714_19725[1] = 9;
                                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                                   } else {
                                     return null;
@@ -45829,14 +45829,14 @@ intercomTake.takeInv = function takeInv(fullMessage) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_11153 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
-              statearr_11153[0] = state_machine__6220__auto__;
-              statearr_11153[1] = 1;
-              return statearr_11153;
+              var statearr_19716 = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+              statearr_19716[0] = state_machine__6220__auto__;
+              statearr_19716[1] = 1;
+              return statearr_19716;
             };
-            var state_machine__6220__auto____1 = function(state_11135) {
+            var state_machine__6220__auto____1 = function(state_19698) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_11135);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_19698);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -45845,12 +45845,12 @@ intercomTake.takeInv = function takeInv(fullMessage) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_11135) {
+            state_machine__6220__auto__ = function(state_19698) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_11135);
+                  return state_machine__6220__auto____1.call(this, state_19698);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -45861,9 +45861,9 @@ intercomTake.takeInv = function takeInv(fullMessage) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_11154 = f__6233__auto__.call(null);
-        statearr_11154[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_11154;
+        var statearr_19717 = f__6233__auto__.call(null);
+        statearr_19717[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_19717;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -45876,24 +45876,24 @@ intercomTake.takeData = function takeData(message) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_11183) {
-            var state_val_11184 = state_11183[1];
-            if (state_val_11184 === 1) {
-              var inst_11176 = logger.og.call(null, new cljs.core.Keyword(null, "getBlocks", "getBlocks", 333767312), "take data ", message);
-              var inst_11177 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "got inv here ");
-              var inst_11178 = intercomTake.v.data;
-              var inst_11179 = it.handleInvBlock.call(null, inst_11178, intercomTake.v);
-              var inst_11180 = intercomTake.tostate.call(null, "grind");
-              var inst_11181 = intercomTake.tostate.call(null, "grind", intercomTake.handleInvBlock);
-              var state_11183__$1 = function() {
-                var statearr_11185 = state_11183;
-                statearr_11185[5] = inst_11176;
-                statearr_11185[6] = inst_11179;
-                statearr_11185[7] = inst_11177;
-                statearr_11185[8] = inst_11180;
-                return statearr_11185;
+          return function(state_19746) {
+            var state_val_19747 = state_19746[1];
+            if (state_val_19747 === 1) {
+              var inst_19739 = logger.og.call(null, new cljs.core.Keyword(null, "getBlocks", "getBlocks", 333767312), "take data ", message);
+              var inst_19740 = logger.og.call(null, new cljs.core.Keyword(null, "inv", "inv", 1526077438), "got inv here ");
+              var inst_19741 = intercomTake.v.data;
+              var inst_19742 = it.handleInvBlock.call(null, inst_19741, intercomTake.v);
+              var inst_19743 = intercomTake.tostate.call(null, "grind");
+              var inst_19744 = intercomTake.tostate.call(null, "grind", intercomTake.handleInvBlock);
+              var state_19746__$1 = function() {
+                var statearr_19748 = state_19746;
+                statearr_19748[5] = inst_19740;
+                statearr_19748[6] = inst_19739;
+                statearr_19748[7] = inst_19743;
+                statearr_19748[8] = inst_19742;
+                return statearr_19748;
               }();
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_11183__$1, inst_11181);
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_19746__$1, inst_19744);
             } else {
               return null;
             }
@@ -45903,14 +45903,14 @@ intercomTake.takeData = function takeData(message) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_11187 = [null, null, null, null, null, null, null, null, null];
-              statearr_11187[0] = state_machine__6220__auto__;
-              statearr_11187[1] = 1;
-              return statearr_11187;
+              var statearr_19750 = [null, null, null, null, null, null, null, null, null];
+              statearr_19750[0] = state_machine__6220__auto__;
+              statearr_19750[1] = 1;
+              return statearr_19750;
             };
-            var state_machine__6220__auto____1 = function(state_11183) {
+            var state_machine__6220__auto____1 = function(state_19746) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_11183);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_19746);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -45919,12 +45919,12 @@ intercomTake.takeData = function takeData(message) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_11183) {
+            state_machine__6220__auto__ = function(state_19746) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_11183);
+                  return state_machine__6220__auto____1.call(this, state_19746);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -45935,9 +45935,9 @@ intercomTake.takeData = function takeData(message) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_11188 = f__6233__auto__.call(null);
-        statearr_11188[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_11188;
+        var statearr_19751 = f__6233__auto__.call(null);
+        statearr_19751[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_19751;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -45950,20 +45950,20 @@ intercomTake.takeGetVersion = function takeGetVersion(message) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_11205) {
-            var state_val_11206 = state_11205[1];
-            if (state_val_11206 === 1) {
-              var inst_11200 = intercomTake.v.peer;
-              var inst_11201 = intercomTake.sendmsg.call(null, inst_11200, "version", "0");
-              var inst_11202 = intercomTake.tostate.call(null, "grind");
-              var inst_11203 = logger.og.call(null, new cljs.core.Keyword(null, "getBlocks", "getBlocks", 333767312), "take get version ", message);
-              var state_11205__$1 = function() {
-                var statearr_11207 = state_11205;
-                statearr_11207[5] = inst_11201;
-                statearr_11207[6] = inst_11202;
-                return statearr_11207;
+          return function(state_19768) {
+            var state_val_19769 = state_19768[1];
+            if (state_val_19769 === 1) {
+              var inst_19763 = intercomTake.v.peer;
+              var inst_19764 = intercomTake.sendmsg.call(null, inst_19763, "version", "0");
+              var inst_19765 = intercomTake.tostate.call(null, "grind");
+              var inst_19766 = logger.og.call(null, new cljs.core.Keyword(null, "getBlocks", "getBlocks", 333767312), "take get version ", message);
+              var state_19768__$1 = function() {
+                var statearr_19770 = state_19768;
+                statearr_19770[5] = inst_19764;
+                statearr_19770[6] = inst_19765;
+                return statearr_19770;
               }();
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_11205__$1, inst_11203);
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_19768__$1, inst_19766);
             } else {
               return null;
             }
@@ -45973,14 +45973,14 @@ intercomTake.takeGetVersion = function takeGetVersion(message) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_11209 = [null, null, null, null, null, null, null];
-              statearr_11209[0] = state_machine__6220__auto__;
-              statearr_11209[1] = 1;
-              return statearr_11209;
+              var statearr_19772 = [null, null, null, null, null, null, null];
+              statearr_19772[0] = state_machine__6220__auto__;
+              statearr_19772[1] = 1;
+              return statearr_19772;
             };
-            var state_machine__6220__auto____1 = function(state_11205) {
+            var state_machine__6220__auto____1 = function(state_19768) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_11205);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_19768);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -45989,12 +45989,12 @@ intercomTake.takeGetVersion = function takeGetVersion(message) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_11205) {
+            state_machine__6220__auto__ = function(state_19768) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_11205);
+                  return state_machine__6220__auto____1.call(this, state_19768);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -46005,9 +46005,9 @@ intercomTake.takeGetVersion = function takeGetVersion(message) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_11210 = f__6233__auto__.call(null);
-        statearr_11210[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_11210;
+        var statearr_19773 = f__6233__auto__.call(null);
+        statearr_19773[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_19773;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -46020,16 +46020,16 @@ intercomTake.takeVersion = function takeVersion(message) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_11221) {
-            var state_val_11222 = state_11221[1];
-            if (state_val_11222 === 1) {
-              var inst_11219 = logger.og.call(null, new cljs.core.Keyword(null, "getBlocks", "getBlocks", 333767312), "take version ", message);
-              var state_11221__$1 = function() {
-                var statearr_11223 = state_11221;
-                statearr_11223[5] = inst_11219;
-                return statearr_11223;
+          return function(state_19784) {
+            var state_val_19785 = state_19784[1];
+            if (state_val_19785 === 1) {
+              var inst_19782 = logger.og.call(null, new cljs.core.Keyword(null, "getBlocks", "getBlocks", 333767312), "take version ", message);
+              var state_19784__$1 = function() {
+                var statearr_19786 = state_19784;
+                statearr_19786[5] = inst_19782;
+                return statearr_19786;
               }();
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_11221__$1, "grind");
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_19784__$1, "grind");
             } else {
               return null;
             }
@@ -46039,14 +46039,14 @@ intercomTake.takeVersion = function takeVersion(message) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_11225 = [null, null, null, null, null, null];
-              statearr_11225[0] = state_machine__6220__auto__;
-              statearr_11225[1] = 1;
-              return statearr_11225;
+              var statearr_19788 = [null, null, null, null, null, null];
+              statearr_19788[0] = state_machine__6220__auto__;
+              statearr_19788[1] = 1;
+              return statearr_19788;
             };
-            var state_machine__6220__auto____1 = function(state_11221) {
+            var state_machine__6220__auto____1 = function(state_19784) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_11221);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_19784);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -46055,12 +46055,12 @@ intercomTake.takeVersion = function takeVersion(message) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_11221) {
+            state_machine__6220__auto__ = function(state_19784) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_11221);
+                  return state_machine__6220__auto____1.call(this, state_19784);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -46071,9 +46071,9 @@ intercomTake.takeVersion = function takeVersion(message) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_11226 = f__6233__auto__.call(null);
-        statearr_11226[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_11226;
+        var statearr_19789 = f__6233__auto__.call(null);
+        statearr_19789[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_19789;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -46086,51 +46086,51 @@ intercomTake.takeConn = function takeConn(conn) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_11267) {
-            var state_val_11268 = state_11267[1];
-            if (state_val_11268 === 4) {
-              var inst_11265 = state_11267[2];
-              var state_11267__$1 = state_11267;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_11267__$1, inst_11265);
+          return function(state_19830) {
+            var state_val_19831 = state_19830[1];
+            if (state_val_19831 === 4) {
+              var inst_19828 = state_19830[2];
+              var state_19830__$1 = state_19830;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_19830__$1, inst_19828);
             } else {
-              if (state_val_11268 === 3) {
-                var state_11267__$1 = state_11267;
-                var statearr_11269_11277 = state_11267__$1;
-                statearr_11269_11277[2] = "version";
-                statearr_11269_11277[1] = 4;
+              if (state_val_19831 === 3) {
+                var state_19830__$1 = state_19830;
+                var statearr_19832_19840 = state_19830__$1;
+                statearr_19832_19840[2] = "version";
+                statearr_19832_19840[1] = 4;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               } else {
-                if (state_val_11268 === 2) {
-                  var state_11267__$1 = state_11267;
-                  var statearr_11270_11278 = state_11267__$1;
-                  statearr_11270_11278[2] = "grind";
-                  statearr_11270_11278[1] = 4;
+                if (state_val_19831 === 2) {
+                  var state_19830__$1 = state_19830;
+                  var statearr_19833_19841 = state_19830__$1;
+                  statearr_19833_19841[2] = "grind";
+                  statearr_19833_19841[1] = 4;
                   return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                 } else {
-                  if (state_val_11268 === 1) {
-                    var inst_11252 = logger.og.call(null, new cljs.core.Keyword(null, "takeConn", "takeConn", -426297678), "take conn ", conn);
-                    var inst_11253 = conn.data;
-                    var inst_11254 = inst_11253.writec;
-                    var inst_11255 = intercomMake.makeVersion.call(null, "0");
-                    var inst_11256 = intercomTake.sendm.call(null, inst_11254, inst_11255);
-                    var inst_11257 = conn.connType;
-                    var inst_11258 = logger.og.call(null, new cljs.core.Keyword(null, "takeConn", "takeConn", -426297678), "conn type ", inst_11257);
-                    var inst_11259 = conn.data;
-                    var inst_11260 = inst_11259.connType;
-                    var inst_11261 = inst_11260 === "saltan";
-                    var state_11267__$1 = function() {
-                      var statearr_11271 = state_11267;
-                      statearr_11271[5] = inst_11252;
-                      statearr_11271[6] = inst_11258;
-                      statearr_11271[7] = inst_11256;
-                      return statearr_11271;
+                  if (state_val_19831 === 1) {
+                    var inst_19815 = logger.og.call(null, new cljs.core.Keyword(null, "takeConn", "takeConn", -426297678), "take conn ", conn);
+                    var inst_19816 = conn.data;
+                    var inst_19817 = inst_19816.writec;
+                    var inst_19818 = intercomMake.makeVersion.call(null, "0");
+                    var inst_19819 = intercomTake.sendm.call(null, inst_19817, inst_19818);
+                    var inst_19820 = conn.connType;
+                    var inst_19821 = logger.og.call(null, new cljs.core.Keyword(null, "takeConn", "takeConn", -426297678), "conn type ", inst_19820);
+                    var inst_19822 = conn.data;
+                    var inst_19823 = inst_19822.connType;
+                    var inst_19824 = inst_19823 === "saltan";
+                    var state_19830__$1 = function() {
+                      var statearr_19834 = state_19830;
+                      statearr_19834[5] = inst_19815;
+                      statearr_19834[6] = inst_19821;
+                      statearr_19834[7] = inst_19819;
+                      return statearr_19834;
                     }();
-                    if (cljs.core.truth_(inst_11261)) {
-                      var statearr_11272_11279 = state_11267__$1;
-                      statearr_11272_11279[1] = 2;
+                    if (cljs.core.truth_(inst_19824)) {
+                      var statearr_19835_19842 = state_19830__$1;
+                      statearr_19835_19842[1] = 2;
                     } else {
-                      var statearr_11273_11280 = state_11267__$1;
-                      statearr_11273_11280[1] = 3;
+                      var statearr_19836_19843 = state_19830__$1;
+                      statearr_19836_19843[1] = 3;
                     }
                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                   } else {
@@ -46145,14 +46145,14 @@ intercomTake.takeConn = function takeConn(conn) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_11275 = [null, null, null, null, null, null, null, null];
-              statearr_11275[0] = state_machine__6220__auto__;
-              statearr_11275[1] = 1;
-              return statearr_11275;
+              var statearr_19838 = [null, null, null, null, null, null, null, null];
+              statearr_19838[0] = state_machine__6220__auto__;
+              statearr_19838[1] = 1;
+              return statearr_19838;
             };
-            var state_machine__6220__auto____1 = function(state_11267) {
+            var state_machine__6220__auto____1 = function(state_19830) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_11267);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_19830);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -46161,12 +46161,12 @@ intercomTake.takeConn = function takeConn(conn) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_11267) {
+            state_machine__6220__auto__ = function(state_19830) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_11267);
+                  return state_machine__6220__auto____1.call(this, state_19830);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -46177,9 +46177,9 @@ intercomTake.takeConn = function takeConn(conn) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_11276 = f__6233__auto__.call(null);
-        statearr_11276[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_11276;
+        var statearr_19839 = f__6233__auto__.call(null);
+        statearr_19839[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_19839;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -46192,25 +46192,25 @@ intercomTake.takeGetBlocks = function takeGetBlocks(peer, hash) {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_11301) {
-            var state_val_11302 = state_11301[1];
-            if (state_val_11302 === 2) {
-              var inst_11298 = state_11301[2];
-              var inst_11299 = logger.og.call(null, new cljs.core.Keyword(null, "getBlocks", "getBlocks", 333767312), "make Get Blck", inst_11298);
-              var state_11301__$1 = state_11301;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_11301__$1, inst_11299);
+          return function(state_19864) {
+            var state_val_19865 = state_19864[1];
+            if (state_val_19865 === 2) {
+              var inst_19861 = state_19864[2];
+              var inst_19862 = logger.og.call(null, new cljs.core.Keyword(null, "getBlocks", "getBlocks", 333767312), "make Get Blck", inst_19861);
+              var state_19864__$1 = state_19864;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_19864__$1, inst_19862);
             } else {
-              if (state_val_11302 === 1) {
-                var inst_11294 = logger.og.call(null, new cljs.core.Keyword(null, "getBlocks", "getBlocks", 333767312), "getting data from peer ", peer);
-                var inst_11295 = logger.og.call(null, new cljs.core.Keyword(null, "getBlocks", "getBlocks", 333767312), "getting data from hash ", hash);
-                var inst_11296 = intercomTake.makeGetBlock.call(null, hash);
-                var state_11301__$1 = function() {
-                  var statearr_11303 = state_11301;
-                  statearr_11303[5] = inst_11294;
-                  statearr_11303[6] = inst_11295;
-                  return statearr_11303;
+              if (state_val_19865 === 1) {
+                var inst_19857 = logger.og.call(null, new cljs.core.Keyword(null, "getBlocks", "getBlocks", 333767312), "getting data from peer ", peer);
+                var inst_19858 = logger.og.call(null, new cljs.core.Keyword(null, "getBlocks", "getBlocks", 333767312), "getting data from hash ", hash);
+                var inst_19859 = intercomTake.makeGetBlock.call(null, hash);
+                var state_19864__$1 = function() {
+                  var statearr_19866 = state_19864;
+                  statearr_19866[5] = inst_19857;
+                  statearr_19866[6] = inst_19858;
+                  return statearr_19866;
                 }();
-                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_11301__$1, 2, inst_11296);
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_19864__$1, 2, inst_19859);
               } else {
                 return null;
               }
@@ -46221,14 +46221,14 @@ intercomTake.takeGetBlocks = function takeGetBlocks(peer, hash) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_11305 = [null, null, null, null, null, null, null];
-              statearr_11305[0] = state_machine__6220__auto__;
-              statearr_11305[1] = 1;
-              return statearr_11305;
+              var statearr_19868 = [null, null, null, null, null, null, null];
+              statearr_19868[0] = state_machine__6220__auto__;
+              statearr_19868[1] = 1;
+              return statearr_19868;
             };
-            var state_machine__6220__auto____1 = function(state_11301) {
+            var state_machine__6220__auto____1 = function(state_19864) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_11301);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_19864);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -46237,12 +46237,12 @@ intercomTake.takeGetBlocks = function takeGetBlocks(peer, hash) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_11301) {
+            state_machine__6220__auto__ = function(state_19864) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_11301);
+                  return state_machine__6220__auto____1.call(this, state_19864);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -46253,9 +46253,9 @@ intercomTake.takeGetBlocks = function takeGetBlocks(peer, hash) {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_11306 = f__6233__auto__.call(null);
-        statearr_11306[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_11306;
+        var statearr_19869 = f__6233__auto__.call(null);
+        statearr_19869[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_19869;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -46281,693 +46281,693 @@ goog.require("logger");
 goog.require("database");
 goog.require("crypt0");
 routing.routea = function routea(a) {
-  var c__6232__auto___13193 = cljs.core.async.chan.call(null, 1);
-  cljs.core.async.impl.dispatch.run.call(null, function(c__6232__auto___13193) {
+  var c__6232__auto___17191 = cljs.core.async.chan.call(null, 1);
+  cljs.core.async.impl.dispatch.run.call(null, function(c__6232__auto___17191) {
     return function() {
       var f__6233__auto__ = function() {
-        var switch__6219__auto__ = function(c__6232__auto___13193) {
-          return function(state_13188) {
-            var state_val_13189 = state_13188[1];
-            if (state_val_13189 === 1) {
-              var inst_13105 = function() {
-                return function(state_val_13189, c__6232__auto___13193) {
+        var switch__6219__auto__ = function(c__6232__auto___17191) {
+          return function(state_17186) {
+            var state_val_17187 = state_17186[1];
+            if (state_val_17187 === 1) {
+              var inst_17103 = function() {
+                return function(state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return database.cleandb.call(null);
                   };
-                }(state_val_13189, c__6232__auto___13193);
+                }(state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13106 = function() {
-                return function(inst_13105, state_val_13189, c__6232__auto___13193) {
+              var inst_17104 = function() {
+                return function(inst_17103, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return database.connectTo.call(null);
                   };
-                }(inst_13105, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13107 = function() {
-                return function(inst_13105, inst_13106, state_val_13189, c__6232__auto___13193) {
+              var inst_17105 = function() {
+                return function(inst_17103, inst_17104, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return database.dumpdb.call(null);
                   };
-                }(inst_13105, inst_13106, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13108 = function() {
-                return function(inst_13105, inst_13106, inst_13107, state_val_13189, c__6232__auto___13193) {
+              var inst_17106 = function() {
+                return function(inst_17103, inst_17104, inst_17105, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return database.g.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13109 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, state_val_13189, c__6232__auto___13193) {
+              var inst_17107 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return database.initDBase.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13110 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, state_val_13189, c__6232__auto___13193) {
+              var inst_17108 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return database.onDatabaseChange.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13111 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, state_val_13189, c__6232__auto___13193) {
+              var inst_17109 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return database.p.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13112 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, state_val_13189, c__6232__auto___13193) {
+              var inst_17110 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return database.ps.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13113 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, state_val_13189, c__6232__auto___13193) {
+              var inst_17111 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return database.update.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13114 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, state_val_13189, c__6232__auto___13193) {
+              var inst_17112 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return blockchain.addToChain.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13115 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, state_val_13189, c__6232__auto___13193) {
+              var inst_17113 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return blockchain.addTransactionToBlock.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13116 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, state_val_13189, c__6232__auto___13193) {
+              var inst_17114 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return blockchain.blockKnown_QMARK_.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13117 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, state_val_13189, c__6232__auto___13193) {
+              var inst_17115 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return blockchain.blockchainHeight.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13118 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, state_val_13189, c__6232__auto___13193) {
+              var inst_17116 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return blockchain.heightFromBlock.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13119 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, state_val_13189, c__6232__auto___13193) {
+              var inst_17117 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return blockchain.last_QMARK_.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13120 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, state_val_13189, c__6232__auto___13193) {
+              var inst_17118 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return blockchain.log2.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13121 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, state_val_13189, c__6232__auto___13193) {
+              var inst_17119 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return blockchain.makeBlock.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13122 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, state_val_13189, c__6232__auto___13193) {
+              var inst_17120 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return blockchain.makeBlockHeader.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13123 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, state_val_13189, c__6232__auto___13193) {
+              var inst_17121 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return blockchain.makeTransaction.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13124 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, state_val_13189, c__6232__auto___13193) {
+              var inst_17122 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return blockchain.popA.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13125 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, state_val_13189, c__6232__auto___13193) {
+              var inst_17123 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return blockchain.prevblk.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13126 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, state_val_13189, c__6232__auto___13193) {
+              var inst_17124 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return blockchain.removeTransactionFromMemPool.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13127 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, state_val_13189, c__6232__auto___13193) {
+              var inst_17125 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return blockchain.saveBlock.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13128 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, state_val_13189, c__6232__auto___13193) {
+              var inst_17126 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return communications.broadcastNewBlock.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13129 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, state_val_13189, c__6232__auto___13193) {
+              var inst_17127 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return communications.channelsFromConnection.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13130 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, state_val_13189, c__6232__auto___13193) {
+              var inst_17128 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return communications.cryptoCh.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13131 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, state_val_13189, c__6232__auto___13193) {
+              var inst_17129 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return communications.initial.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13132 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, state_val_13189, c__6232__auto___13193) {
+              var inst_17130 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return communications.intercomMeta.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13133 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, state_val_13189, c__6232__auto___13193) {
+              var inst_17131 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return communications.onBlockMined.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13134 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, state_val_13189, c__6232__auto___13193) {
+              var inst_17132 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return communications.onConnection.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13135 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, state_val_13189, c__6232__auto___13193) {
+              var inst_17133 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return communications.onCrypto.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13136 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, state_val_13189, c__6232__auto___13193) {
+              var inst_17134 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return communications.onData.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13137 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, state_val_13189, c__6232__auto___13193) {
+              var inst_17135 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return communications.onNewConnection.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13138 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, state_val_13189, c__6232__auto___13193) {
+              var inst_17136 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return communications.onOpen.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13139 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, state_val_13189, c__6232__auto___13193) {
+              var inst_17137 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return communications.onTransaction.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13140 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, state_val_13189, c__6232__auto___13193) {
+              var inst_17138 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return communications.sendmsg.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13141 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, state_val_13189, c__6232__auto___13193) {
+              var inst_17139 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return communications.setID.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13142 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, state_val_13189, c__6232__auto___13193) {
+              var inst_17140 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return communications.setupComm.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13143 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, state_val_13189, 
-                c__6232__auto___13193) {
+              var inst_17141 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, state_val_17187, 
+                c__6232__auto___17191) {
                   return function() {
                     return communications.startP2PCommLoop.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13144 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, state_val_13189, 
-                c__6232__auto___13193) {
+              var inst_17142 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, state_val_17187, 
+                c__6232__auto___17191) {
                   return function() {
                     return crypt0.arraybtostring.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, state_val_13189, 
-                c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, state_val_17187, 
+                c__6232__auto___17191);
               }();
-              var inst_13145 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                state_val_13189, c__6232__auto___13193) {
+              var inst_17143 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return crypt0.bHash.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, state_val_13189, 
-                c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, state_val_17187, 
+                c__6232__auto___17191);
               }();
-              var inst_13146 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, state_val_13189, c__6232__auto___13193) {
+              var inst_17144 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return crypt0.encode.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13147 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, state_val_13189, c__6232__auto___13193) {
+              var inst_17145 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return crypt0.s256.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13148 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, state_val_13189, c__6232__auto___13193) {
+              var inst_17146 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return crypt0.merkleRoot.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13149 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, state_val_13189, c__6232__auto___13193) {
+              var inst_17147 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return crypt0.resultToCh.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13150 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, state_val_13189, c__6232__auto___13193) {
+              var inst_17148 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return crypt0.s256.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13151 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, state_val_13189, c__6232__auto___13193) {
+              var inst_17149 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return crypt0.sha256.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13152 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, state_val_13189, c__6232__auto___13193) {
+              var inst_17150 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return crypt0.sha256c.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13153 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, state_val_13189, c__6232__auto___13193) {
+              var inst_17151 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return crypt0.shaCallb.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13154 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, state_val_13189, c__6232__auto___13193) {
+              var inst_17152 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercom.getIntercomState.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13155 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, state_val_13189, c__6232__auto___13193) {
+              var inst_17153 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercom.intercomstatemachine.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13156 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, state_val_13189, c__6232__auto___13193) {
+              var inst_17154 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercom.is_QMARK_.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13157 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, state_val_13189, c__6232__auto___13193) {
+              var inst_17155 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercom.onMessage.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13158 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, state_val_13189, c__6232__auto___13193) {
+              var inst_17156 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercom.setIntercomState.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13159 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, state_val_13189, c__6232__auto___13193) {
+              var inst_17157 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercom.tostateu.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13160 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, state_val_13189, c__6232__auto___13193) {
+              var inst_17158 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercom.typeof_QMARK_.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13161 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, state_val_13189, c__6232__auto___13193) {
+              var inst_17159 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercomMake.makeConn.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13162 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, state_val_13189, c__6232__auto___13193) {
+              var inst_17160 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercomMake.makeData.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13163 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, state_val_13189, c__6232__auto___13193) {
+              var inst_17161 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercomMake.makeGetBlock.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13164 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, state_val_13189, c__6232__auto___13193) {
+              var inst_17162 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercomMake.makeGetVersion.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13165 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, state_val_13189, c__6232__auto___13193) {
+              var inst_17163 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercomMake.makeInv.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13166 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, state_val_13189, c__6232__auto___13193) {
+              var inst_17164 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercomMake.makeVersion.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13167 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, state_val_13189, c__6232__auto___13193) {
+              var inst_17165 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercomTake.sendm.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13168 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, state_val_13189, c__6232__auto___13193) {
+              var inst_17166 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercomTake.takeConn.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13169 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, state_val_13189, c__6232__auto___13193) {
+              var inst_17167 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercomTake.takeData.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13170 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, state_val_13189, c__6232__auto___13193) {
+              var inst_17168 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercomTake.takeGetBlocks.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13171 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, state_val_13189, c__6232__auto___13193) {
+              var inst_17169 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercomTake.takeGetVersion.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13172 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, state_val_13189, c__6232__auto___13193) {
+              var inst_17170 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return intercomTake.takeInv.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13173 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, state_val_13189, c__6232__auto___13193) {
+              var inst_17171 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return logger.og.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13174 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, state_val_13189, c__6232__auto___13193) {
+              var inst_17172 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return mining.mine.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13175 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, state_val_13189, c__6232__auto___13193) {
+              var inst_17173 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return mockdatabase.g.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13176 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, state_val_13189, c__6232__auto___13193) {
+              var inst_17174 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return mockdatabase.p.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13177 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, state_val_13189, c__6232__auto___13193) {
+              var inst_17175 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return mockdatabase.ps.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13178 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, state_val_13189, c__6232__auto___13193) {
+              var inst_17176 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, inst_17175, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return mockdatabase.update.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, inst_17175, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13179 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, state_val_13189, c__6232__auto___13193) {
+              var inst_17177 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, inst_17175, inst_17176, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return mockdatabasew.cleandb.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, inst_17175, inst_17176, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13180 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, state_val_13189, c__6232__auto___13193) {
+              var inst_17178 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, inst_17175, inst_17176, inst_17177, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return mockdatabasew.dumpdb.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, inst_17175, inst_17176, inst_17177, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13181 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, state_val_13189, c__6232__auto___13193) {
+              var inst_17179 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, inst_17175, inst_17176, inst_17177, inst_17178, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return mockdatabasew.g.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, inst_17175, inst_17176, inst_17177, inst_17178, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13182 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, inst_13181, state_val_13189, c__6232__auto___13193) {
+              var inst_17180 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, inst_17175, inst_17176, inst_17177, inst_17178, inst_17179, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return mockdatabasew.initDBase.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, inst_13181, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, inst_17175, inst_17176, inst_17177, inst_17178, inst_17179, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13183 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, inst_13181, inst_13182, state_val_13189, c__6232__auto___13193) {
+              var inst_17181 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, inst_17175, inst_17176, inst_17177, inst_17178, inst_17179, inst_17180, state_val_17187, c__6232__auto___17191) {
                   return function() {
                     return mockdatabasew.p.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, inst_13181, inst_13182, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, inst_17175, inst_17176, inst_17177, inst_17178, inst_17179, inst_17180, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13184 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, inst_13181, inst_13182, inst_13183, state_val_13189, 
-                c__6232__auto___13193) {
+              var inst_17182 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, inst_17175, inst_17176, inst_17177, inst_17178, inst_17179, inst_17180, inst_17181, state_val_17187, 
+                c__6232__auto___17191) {
                   return function() {
                     return mockdatabasew.ps.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, inst_13181, inst_13182, inst_13183, state_val_13189, c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, inst_17175, inst_17176, inst_17177, inst_17178, inst_17179, inst_17180, inst_17181, state_val_17187, c__6232__auto___17191);
               }();
-              var inst_13185 = function() {
-                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
-                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, inst_13181, inst_13182, inst_13183, inst_13184, state_val_13189, 
-                c__6232__auto___13193) {
+              var inst_17183 = function() {
+                return function(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, 
+                inst_17143, inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, inst_17175, inst_17176, inst_17177, inst_17178, inst_17179, inst_17180, inst_17181, inst_17182, state_val_17187, 
+                c__6232__auto___17191) {
                   return function() {
                     return mockdatabasew.update.call(null);
                   };
-                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
-                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, inst_13181, inst_13182, inst_13183, inst_13184, state_val_13189, 
-                c__6232__auto___13193);
+                }(inst_17103, inst_17104, inst_17105, inst_17106, inst_17107, inst_17108, inst_17109, inst_17110, inst_17111, inst_17112, inst_17113, inst_17114, inst_17115, inst_17116, inst_17117, inst_17118, inst_17119, inst_17120, inst_17121, inst_17122, inst_17123, inst_17124, inst_17125, inst_17126, inst_17127, inst_17128, inst_17129, inst_17130, inst_17131, inst_17132, inst_17133, inst_17134, inst_17135, inst_17136, inst_17137, inst_17138, inst_17139, inst_17140, inst_17141, inst_17142, inst_17143, 
+                inst_17144, inst_17145, inst_17146, inst_17147, inst_17148, inst_17149, inst_17150, inst_17151, inst_17152, inst_17153, inst_17154, inst_17155, inst_17156, inst_17157, inst_17158, inst_17159, inst_17160, inst_17161, inst_17162, inst_17163, inst_17164, inst_17165, inst_17166, inst_17167, inst_17168, inst_17169, inst_17170, inst_17171, inst_17172, inst_17173, inst_17174, inst_17175, inst_17176, inst_17177, inst_17178, inst_17179, inst_17180, inst_17181, inst_17182, state_val_17187, 
+                c__6232__auto___17191);
               }();
-              var inst_13186 = pubsub.rrsa.call(null, a, "cleandb", inst_13105, "connectTo", inst_13106, "dumpdb", inst_13107, "g", inst_13108, "initDBase", inst_13109, "onDatabaseChange", inst_13110, "p", inst_13111, "ps", inst_13112, "update", inst_13113, "addToChain", inst_13114, "addTransactionToBlock", inst_13115, "blockKnown?", inst_13116, "blockchainHeight", inst_13117, "heightFromBlock", inst_13118, "last?", inst_13119, "log2", inst_13120, "makeBlock", inst_13121, "makeBlockHeader", inst_13122, 
-              "makeTransaction", inst_13123, "popA", inst_13124, "prevblk", inst_13125, "removeTransactionFromMemPool", inst_13126, "saveBlock", inst_13127, "broadcastNewBlock", inst_13128, "channelsFromConnection", inst_13129, "cryptoCh", inst_13130, "initial", inst_13131, "intercomMeta", inst_13132, "onBlockMined", inst_13133, "onConnection", inst_13134, "onCrypto", inst_13135, "onData", inst_13136, "onNewConnection", inst_13137, "onOpen", inst_13138, "onTransaction", inst_13139, "sendmsg", inst_13140, 
-              "setID", inst_13141, "setupComm", inst_13142, "startP2PCommLoop", inst_13143, "arraybtostring", inst_13144, "bHash", inst_13145, "encode", inst_13146, "hash", inst_13147, "merkleRoot", inst_13148, "resultToCh", inst_13149, "s256", inst_13150, "sha256", inst_13151, "sha256c", inst_13152, "shaCallb", inst_13153, "getIntercomState", inst_13154, "intercomstatemachine", inst_13155, "is?", inst_13156, "onMessage", inst_13157, "setIntercomState", inst_13158, "tostateu", inst_13159, "typeof?", 
-              inst_13160, "makeConn", inst_13161, "makeData", inst_13162, "makeGetBlock", inst_13163, "makeInv", inst_13164, "makeInv", inst_13165, "makeVersion", inst_13166, "sendm", inst_13167, "takeConn", inst_13168, "takeData", inst_13169, "takeGetBlocks", inst_13170, "takeGetVersion", inst_13171, "takeInv", inst_13172, "log", inst_13173, "mine", inst_13174, "mg", inst_13175, "mp", inst_13176, "mps", inst_13177, "mupdate", inst_13178, "mcleandb", inst_13179, "mdumpdb", inst_13180, "mg", inst_13181, 
-              "minitDBase", inst_13182, "mp", inst_13183, "mps", inst_13184, "mupdate", inst_13185);
-              var state_13188__$1 = state_13188;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_13188__$1, inst_13186);
+              var inst_17184 = pubsub.rrsa.call(null, a, "cleandb", inst_17103, "connectTo", inst_17104, "dumpdb", inst_17105, "g", inst_17106, "initDBase", inst_17107, "onDatabaseChange", inst_17108, "p", inst_17109, "ps", inst_17110, "update", inst_17111, "addToChain", inst_17112, "addTransactionToBlock", inst_17113, "blockKnown?", inst_17114, "blockchainHeight", inst_17115, "heightFromBlock", inst_17116, "last?", inst_17117, "log2", inst_17118, "makeBlock", inst_17119, "makeBlockHeader", inst_17120, 
+              "makeTransaction", inst_17121, "popA", inst_17122, "prevblk", inst_17123, "removeTransactionFromMemPool", inst_17124, "saveBlock", inst_17125, "broadcastNewBlock", inst_17126, "channelsFromConnection", inst_17127, "cryptoCh", inst_17128, "initial", inst_17129, "intercomMeta", inst_17130, "onBlockMined", inst_17131, "onConnection", inst_17132, "onCrypto", inst_17133, "onData", inst_17134, "onNewConnection", inst_17135, "onOpen", inst_17136, "onTransaction", inst_17137, "sendmsg", inst_17138, 
+              "setID", inst_17139, "setupComm", inst_17140, "startP2PCommLoop", inst_17141, "arraybtostring", inst_17142, "bHash", inst_17143, "encode", inst_17144, "hash", inst_17145, "merkleRoot", inst_17146, "resultToCh", inst_17147, "s256", inst_17148, "sha256", inst_17149, "sha256c", inst_17150, "shaCallb", inst_17151, "getIntercomState", inst_17152, "intercomstatemachine", inst_17153, "is?", inst_17154, "onMessage", inst_17155, "setIntercomState", inst_17156, "tostateu", inst_17157, "typeof?", 
+              inst_17158, "makeConn", inst_17159, "makeData", inst_17160, "makeGetBlock", inst_17161, "makeInv", inst_17162, "makeInv", inst_17163, "makeVersion", inst_17164, "sendm", inst_17165, "takeConn", inst_17166, "takeData", inst_17167, "takeGetBlocks", inst_17168, "takeGetVersion", inst_17169, "takeInv", inst_17170, "log", inst_17171, "mine", inst_17172, "mg", inst_17173, "mp", inst_17174, "mps", inst_17175, "mupdate", inst_17176, "mcleandb", inst_17177, "mdumpdb", inst_17178, "mg", inst_17179, 
+              "minitDBase", inst_17180, "mp", inst_17181, "mps", inst_17182, "mupdate", inst_17183);
+              var state_17186__$1 = state_17186;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_17186__$1, inst_17184);
             } else {
               return null;
             }
           };
-        }(c__6232__auto___13193);
-        return function(switch__6219__auto__, c__6232__auto___13193) {
+        }(c__6232__auto___17191);
+        return function(switch__6219__auto__, c__6232__auto___17191) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_13191 = [null, null, null, null, null];
-              statearr_13191[0] = state_machine__6220__auto__;
-              statearr_13191[1] = 1;
-              return statearr_13191;
+              var statearr_17189 = [null, null, null, null, null];
+              statearr_17189[0] = state_machine__6220__auto__;
+              statearr_17189[1] = 1;
+              return statearr_17189;
             };
-            var state_machine__6220__auto____1 = function(state_13188) {
+            var state_machine__6220__auto____1 = function(state_17186) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_13188);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_17186);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -46976,12 +46976,12 @@ routing.routea = function routea(a) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_13188) {
+            state_machine__6220__auto__ = function(state_17186) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_13188);
+                  return state_machine__6220__auto____1.call(this, state_17186);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -46989,16 +46989,16 @@ routing.routea = function routea(a) {
             state_machine__6220__auto__.cljs$core$IFn$_invoke$arity$1 = state_machine__6220__auto____1;
             return state_machine__6220__auto__;
           }();
-        }(switch__6219__auto__, c__6232__auto___13193);
+        }(switch__6219__auto__, c__6232__auto___17191);
       }();
       var state__6234__auto__ = function() {
-        var statearr_13192 = f__6233__auto__.call(null);
-        statearr_13192[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto___13193;
-        return statearr_13192;
+        var statearr_17190 = f__6233__auto__.call(null);
+        statearr_17190[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto___17191;
+        return statearr_17190;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
-  }(c__6232__auto___13193));
+  }(c__6232__auto___17191));
   return logger.og.call(null, new cljs.core.Keyword(null, "route", "route", 329891309), "received", a);
 };
 goog.provide("intercomMakeUtil");
@@ -47027,8 +47027,8 @@ goog.require("blockchain");
 goog.require("database");
 goog.require("crypt0");
 router.a = function a(x) {
-  var obj10950 = {"a":1};
-  return obj10950;
+  var obj19513 = {"a":1};
+  return obj19513;
 };
 router.route = function route() {
   var c__6232__auto__ = cljs.core.async.chan.call(null, 1);
@@ -47036,59 +47036,59 @@ router.route = function route() {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_10985) {
-            var state_val_10986 = state_10985[1];
-            if (state_val_10986 === 4) {
-              var inst_10978 = state_10985[2];
-              var inst_10979 = router.a = inst_10978;
-              var inst_10980 = logger.og.call(null, new cljs.core.Keyword(null, "route", "route", 329891309), "received", router.a);
-              var state_10985__$1 = function() {
-                var statearr_10987 = state_10985;
-                statearr_10987[5] = inst_10979;
-                statearr_10987[6] = inst_10980;
-                return statearr_10987;
+          return function(state_19548) {
+            var state_val_19549 = state_19548[1];
+            if (state_val_19549 === 4) {
+              var inst_19541 = state_19548[2];
+              var inst_19542 = router.a = inst_19541;
+              var inst_19543 = logger.og.call(null, new cljs.core.Keyword(null, "route", "route", 329891309), "received", router.a);
+              var state_19548__$1 = function() {
+                var statearr_19550 = state_19548;
+                statearr_19550[5] = inst_19542;
+                statearr_19550[6] = inst_19543;
+                return statearr_19550;
               }();
-              var statearr_10988_10993 = state_10985__$1;
-              statearr_10988_10993[2] = null;
-              statearr_10988_10993[1] = 2;
+              var statearr_19551_19556 = state_19548__$1;
+              statearr_19551_19556[2] = null;
+              statearr_19551_19556[1] = 2;
               return new cljs.core.Keyword(null, "recur", "recur", -437573268);
             } else {
-              if (state_val_10986 === 3) {
-                var inst_10983 = state_10985[2];
-                var state_10985__$1 = state_10985;
-                return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_10985__$1, inst_10983);
+              if (state_val_19549 === 3) {
+                var inst_19546 = state_19548[2];
+                var state_19548__$1 = state_19548;
+                return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_19548__$1, inst_19546);
               } else {
-                if (state_val_10986 === 2) {
-                  var inst_10973 = function() {
-                    return function(state_val_10986, c__6232__auto__) {
+                if (state_val_19549 === 2) {
+                  var inst_19536 = function() {
+                    return function(state_val_19549, c__6232__auto__) {
                       return function() {
                         return database.dumpdb.call(null);
                       };
-                    }(state_val_10986, c__6232__auto__);
+                    }(state_val_19549, c__6232__auto__);
                   }();
-                  var inst_10974 = function() {
-                    return function(inst_10973, state_val_10986, c__6232__auto__) {
+                  var inst_19537 = function() {
+                    return function(inst_19536, state_val_19549, c__6232__auto__) {
                       return function() {
                         return database.cleandb.call(null);
                       };
-                    }(inst_10973, state_val_10986, c__6232__auto__);
+                    }(inst_19536, state_val_19549, c__6232__auto__);
                   }();
-                  var inst_10975 = function() {
-                    return function(inst_10973, inst_10974, state_val_10986, c__6232__auto__) {
+                  var inst_19538 = function() {
+                    return function(inst_19536, inst_19537, state_val_19549, c__6232__auto__) {
                       return function() {
                         return crypt0.s256.call(null);
                       };
-                    }(inst_10973, inst_10974, state_val_10986, c__6232__auto__);
+                    }(inst_19536, inst_19537, state_val_19549, c__6232__auto__);
                   }();
-                  var inst_10976 = pubsub.rrs.call(null, "dumpdb", inst_10973, "cleandb", inst_10974, "hash", inst_10975);
-                  var state_10985__$1 = state_10985;
-                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_10985__$1, 4, inst_10976);
+                  var inst_19539 = pubsub.rrs.call(null, "dumpdb", inst_19536, "cleandb", inst_19537, "hash", inst_19538);
+                  var state_19548__$1 = state_19548;
+                  return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_19548__$1, 4, inst_19539);
                 } else {
-                  if (state_val_10986 === 1) {
-                    var state_10985__$1 = state_10985;
-                    var statearr_10989_10994 = state_10985__$1;
-                    statearr_10989_10994[2] = null;
-                    statearr_10989_10994[1] = 2;
+                  if (state_val_19549 === 1) {
+                    var state_19548__$1 = state_19548;
+                    var statearr_19552_19557 = state_19548__$1;
+                    statearr_19552_19557[2] = null;
+                    statearr_19552_19557[1] = 2;
                     return new cljs.core.Keyword(null, "recur", "recur", -437573268);
                   } else {
                     return null;
@@ -47102,14 +47102,14 @@ router.route = function route() {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_10991 = [null, null, null, null, null, null, null];
-              statearr_10991[0] = state_machine__6220__auto__;
-              statearr_10991[1] = 1;
-              return statearr_10991;
+              var statearr_19554 = [null, null, null, null, null, null, null];
+              statearr_19554[0] = state_machine__6220__auto__;
+              statearr_19554[1] = 1;
+              return statearr_19554;
             };
-            var state_machine__6220__auto____1 = function(state_10985) {
+            var state_machine__6220__auto____1 = function(state_19548) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_10985);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_19548);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -47118,12 +47118,12 @@ router.route = function route() {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_10985) {
+            state_machine__6220__auto__ = function(state_19548) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_10985);
+                  return state_machine__6220__auto____1.call(this, state_19548);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -47134,9 +47134,9 @@ router.route = function route() {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_10992 = f__6233__auto__.call(null);
-        statearr_10992[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_10992;
+        var statearr_19555 = f__6233__auto__.call(null);
+        statearr_19555[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_19555;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
@@ -47164,40 +47164,40 @@ app.main.cleandb = function cleandb() {
 $(document).on("cleandb", app.main.cleadb);
 app.main.replScratchFunction = function replScratchFunction() {
   pubsub.si.call(null, "dumpdb");
-  var c__6232__auto___12053 = cljs.core.async.chan.call(null, 1);
-  cljs.core.async.impl.dispatch.run.call(null, function(c__6232__auto___12053) {
+  var c__6232__auto___20431 = cljs.core.async.chan.call(null, 1);
+  cljs.core.async.impl.dispatch.run.call(null, function(c__6232__auto___20431) {
     return function() {
       var f__6233__auto__ = function() {
-        var switch__6219__auto__ = function(c__6232__auto___12053) {
-          return function(state_12048) {
-            var state_val_12049 = state_12048[1];
-            if (state_val_12049 === 2) {
-              var inst_12046 = state_12048[2];
-              var state_12048__$1 = state_12048;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_12048__$1, inst_12046);
+        var switch__6219__auto__ = function(c__6232__auto___20431) {
+          return function(state_20426) {
+            var state_val_20427 = state_20426[1];
+            if (state_val_20427 === 2) {
+              var inst_20424 = state_20426[2];
+              var state_20426__$1 = state_20426;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_20426__$1, inst_20424);
             } else {
-              if (state_val_12049 === 1) {
-                var inst_12044 = pubsub.sia.call(null, "hash", "s");
-                var state_12048__$1 = state_12048;
-                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_12048__$1, 2, inst_12044);
+              if (state_val_20427 === 1) {
+                var inst_20422 = pubsub.sia.call(null, "hash", "s");
+                var state_20426__$1 = state_20426;
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20426__$1, 2, inst_20422);
               } else {
                 return null;
               }
             }
           };
-        }(c__6232__auto___12053);
-        return function(switch__6219__auto__, c__6232__auto___12053) {
+        }(c__6232__auto___20431);
+        return function(switch__6219__auto__, c__6232__auto___20431) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_12051 = [null, null, null, null, null];
-              statearr_12051[0] = state_machine__6220__auto__;
-              statearr_12051[1] = 1;
-              return statearr_12051;
+              var statearr_20429 = [null, null, null, null, null];
+              statearr_20429[0] = state_machine__6220__auto__;
+              statearr_20429[1] = 1;
+              return statearr_20429;
             };
-            var state_machine__6220__auto____1 = function(state_12048) {
+            var state_machine__6220__auto____1 = function(state_20426) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_12048);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_20426);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -47206,12 +47206,12 @@ app.main.replScratchFunction = function replScratchFunction() {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_12048) {
+            state_machine__6220__auto__ = function(state_20426) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_12048);
+                  return state_machine__6220__auto____1.call(this, state_20426);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -47219,16 +47219,16 @@ app.main.replScratchFunction = function replScratchFunction() {
             state_machine__6220__auto__.cljs$core$IFn$_invoke$arity$1 = state_machine__6220__auto____1;
             return state_machine__6220__auto__;
           }();
-        }(switch__6219__auto__, c__6232__auto___12053);
+        }(switch__6219__auto__, c__6232__auto___20431);
       }();
       var state__6234__auto__ = function() {
-        var statearr_12052 = f__6233__auto__.call(null);
-        statearr_12052[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto___12053;
-        return statearr_12052;
+        var statearr_20430 = f__6233__auto__.call(null);
+        statearr_20430[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto___20431;
+        return statearr_20430;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
-  }(c__6232__auto___12053));
+  }(c__6232__auto___20431));
   app.main.dumpdb.call(null);
   return app.main.cleandb.call(null);
 };
@@ -47243,18 +47243,18 @@ app.main.entryy = function entryy() {
     return function() {
       var f__6233__auto__ = function() {
         var switch__6219__auto__ = function(c__6232__auto__) {
-          return function(state_12069) {
-            var state_val_12070 = state_12069[1];
-            if (state_val_12070 === 2) {
-              var inst_12066 = state_12069[2];
-              var inst_12067 = logger.og.call(null, new cljs.core.Keyword(null, "main", "main", -2117802661), "received", inst_12066);
-              var state_12069__$1 = state_12069;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_12069__$1, inst_12067);
+          return function(state_20447) {
+            var state_val_20448 = state_20447[1];
+            if (state_val_20448 === 2) {
+              var inst_20444 = state_20447[2];
+              var inst_20445 = logger.og.call(null, new cljs.core.Keyword(null, "main", "main", -2117802661), "received", inst_20444);
+              var state_20447__$1 = state_20447;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_20447__$1, inst_20445);
             } else {
-              if (state_val_12070 === 1) {
-                var inst_12064 = pubsub.sia.call(null, "hash", "s");
-                var state_12069__$1 = state_12069;
-                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_12069__$1, 2, inst_12064);
+              if (state_val_20448 === 1) {
+                var inst_20442 = pubsub.sia.call(null, "hash", "s");
+                var state_20447__$1 = state_20447;
+                return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, state_20447__$1, 2, inst_20442);
               } else {
                 return null;
               }
@@ -47265,14 +47265,14 @@ app.main.entryy = function entryy() {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_12072 = [null, null, null, null, null];
-              statearr_12072[0] = state_machine__6220__auto__;
-              statearr_12072[1] = 1;
-              return statearr_12072;
+              var statearr_20450 = [null, null, null, null, null];
+              statearr_20450[0] = state_machine__6220__auto__;
+              statearr_20450[1] = 1;
+              return statearr_20450;
             };
-            var state_machine__6220__auto____1 = function(state_12069) {
+            var state_machine__6220__auto____1 = function(state_20447) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_12069);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_20447);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -47281,12 +47281,12 @@ app.main.entryy = function entryy() {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_12069) {
+            state_machine__6220__auto__ = function(state_20447) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_12069);
+                  return state_machine__6220__auto____1.call(this, state_20447);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -47297,9 +47297,9 @@ app.main.entryy = function entryy() {
         }(switch__6219__auto__, c__6232__auto__);
       }();
       var state__6234__auto__ = function() {
-        var statearr_12073 = f__6233__auto__.call(null);
-        statearr_12073[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
-        return statearr_12073;
+        var statearr_20451 = f__6233__auto__.call(null);
+        statearr_20451[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto__;
+        return statearr_20451;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };

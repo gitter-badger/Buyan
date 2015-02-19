@@ -16,6 +16,18 @@
                         'ps/sia
                         where wat)))
   )
+(defmacro sweet [where wat]
+    (macroexpand (list '<!
+                       (list
+                        'ps/sia
+                        where wat)))
+  )
+(defmacro c [where wat]
+    (macroexpand (list '<!
+                       (list
+                        'ps/sia
+                        where wat)))
+  )
 (defmacro defn [nam arg & res]
      (list 'defn
                        arg
