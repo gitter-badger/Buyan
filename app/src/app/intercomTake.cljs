@@ -28,7 +28,7 @@
           ;block known
           (do
             (l/og :inv "block is known ")
-            (def bchainHeight (sweet "blockchainHeight" ))
+            (def bchainHeight (sweet "blockchainHeight"))
             (l/og :inv "blockchainHeight " bchainHeight)
             (def newHeight (+
                              (heightFromBlock (<! (db/g (blockchain/prevblk (aget (.-vector blocks) 0)))))

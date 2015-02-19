@@ -16,6 +16,15 @@
                         'ps/sia
                         where wat)))
   )
+(defmacro defn [nam arg & res]
+     (list 'defn
+                       arg
+                       (macroexpand
+                        (list
+                        'go
+                        res
+                        where wat)))
+  )
 ;
 ;(macroexpand (list 'go
 ;                   '(.log js/console "asdas")
