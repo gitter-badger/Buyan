@@ -46281,118 +46281,693 @@ goog.require("logger");
 goog.require("database");
 goog.require("crypt0");
 routing.routea = function routea(a) {
-  var c__6232__auto___12561 = cljs.core.async.chan.call(null, 1);
-  cljs.core.async.impl.dispatch.run.call(null, function(c__6232__auto___12561) {
+  var c__6232__auto___13193 = cljs.core.async.chan.call(null, 1);
+  cljs.core.async.impl.dispatch.run.call(null, function(c__6232__auto___13193) {
     return function() {
       var f__6233__auto__ = function() {
-        var switch__6219__auto__ = function(c__6232__auto___12561) {
-          return function(state_12556) {
-            var state_val_12557 = state_12556[1];
-            if (state_val_12557 === 1) {
-              var inst_12542 = function() {
-                return function(state_val_12557, c__6232__auto___12561) {
-                  return function() {
-                    return database.dumpdb.call(null);
-                  };
-                }(state_val_12557, c__6232__auto___12561);
-              }();
-              var inst_12543 = function() {
-                return function(inst_12542, state_val_12557, c__6232__auto___12561) {
+        var switch__6219__auto__ = function(c__6232__auto___13193) {
+          return function(state_13188) {
+            var state_val_13189 = state_13188[1];
+            if (state_val_13189 === 1) {
+              var inst_13105 = function() {
+                return function(state_val_13189, c__6232__auto___13193) {
                   return function() {
                     return database.cleandb.call(null);
                   };
-                }(inst_12542, state_val_12557, c__6232__auto___12561);
+                }(state_val_13189, c__6232__auto___13193);
               }();
-              var inst_12544 = function() {
-                return function(inst_12542, inst_12543, state_val_12557, c__6232__auto___12561) {
+              var inst_13106 = function() {
+                return function(inst_13105, state_val_13189, c__6232__auto___13193) {
                   return function() {
-                    return crypt0.s256.call(null);
+                    return database.connectTo.call(null);
                   };
-                }(inst_12542, inst_12543, state_val_12557, c__6232__auto___12561);
+                }(inst_13105, state_val_13189, c__6232__auto___13193);
               }();
-              var inst_12545 = function() {
-                return function(inst_12542, inst_12543, inst_12544, state_val_12557, c__6232__auto___12561) {
+              var inst_13107 = function() {
+                return function(inst_13105, inst_13106, state_val_13189, c__6232__auto___13193) {
                   return function() {
-                    return blockchain.blockchainHeight.call(null);
+                    return database.dumpdb.call(null);
                   };
-                }(inst_12542, inst_12543, inst_12544, state_val_12557, c__6232__auto___12561);
+                }(inst_13105, inst_13106, state_val_13189, c__6232__auto___13193);
               }();
-              var inst_12546 = function() {
-                return function(inst_12542, inst_12543, inst_12544, inst_12545, state_val_12557, c__6232__auto___12561) {
-                  return function() {
-                    return blockchain.prevblk.call(null);
-                  };
-                }(inst_12542, inst_12543, inst_12544, inst_12545, state_val_12557, c__6232__auto___12561);
-              }();
-              var inst_12547 = function() {
-                return function(inst_12542, inst_12543, inst_12544, inst_12545, inst_12546, state_val_12557, c__6232__auto___12561) {
-                  return function() {
-                    return intercomMake.makeGetBlock.call(null);
-                  };
-                }(inst_12542, inst_12543, inst_12544, inst_12545, inst_12546, state_val_12557, c__6232__auto___12561);
-              }();
-              var inst_12548 = function() {
-                return function(inst_12542, inst_12543, inst_12544, inst_12545, inst_12546, inst_12547, state_val_12557, c__6232__auto___12561) {
+              var inst_13108 = function() {
+                return function(inst_13105, inst_13106, inst_13107, state_val_13189, c__6232__auto___13193) {
                   return function() {
                     return database.g.call(null);
                   };
-                }(inst_12542, inst_12543, inst_12544, inst_12545, inst_12546, inst_12547, state_val_12557, c__6232__auto___12561);
+                }(inst_13105, inst_13106, inst_13107, state_val_13189, c__6232__auto___13193);
               }();
-              var inst_12549 = function() {
-                return function(inst_12542, inst_12543, inst_12544, inst_12545, inst_12546, inst_12547, inst_12548, state_val_12557, c__6232__auto___12561) {
+              var inst_13109 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return database.initDBase.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13110 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return database.onDatabaseChange.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13111 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, state_val_13189, c__6232__auto___13193) {
                   return function() {
                     return database.p.call(null);
                   };
-                }(inst_12542, inst_12543, inst_12544, inst_12545, inst_12546, inst_12547, inst_12548, state_val_12557, c__6232__auto___12561);
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, state_val_13189, c__6232__auto___13193);
               }();
-              var inst_12550 = function() {
-                return function(inst_12542, inst_12543, inst_12544, inst_12545, inst_12546, inst_12547, inst_12548, inst_12549, state_val_12557, c__6232__auto___12561) {
+              var inst_13112 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return database.ps.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13113 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return database.update.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13114 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, state_val_13189, c__6232__auto___13193) {
                   return function() {
                     return blockchain.addToChain.call(null);
                   };
-                }(inst_12542, inst_12543, inst_12544, inst_12545, inst_12546, inst_12547, inst_12548, inst_12549, state_val_12557, c__6232__auto___12561);
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, state_val_13189, c__6232__auto___13193);
               }();
-              var inst_12551 = function() {
-                return function(inst_12542, inst_12543, inst_12544, inst_12545, inst_12546, inst_12547, inst_12548, inst_12549, inst_12550, state_val_12557, c__6232__auto___12561) {
+              var inst_13115 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, state_val_13189, c__6232__auto___13193) {
                   return function() {
-                    return intercomTake.handleInvBlock.call(null);
+                    return blockchain.addTransactionToBlock.call(null);
                   };
-                }(inst_12542, inst_12543, inst_12544, inst_12545, inst_12546, inst_12547, inst_12548, inst_12549, inst_12550, state_val_12557, c__6232__auto___12561);
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, state_val_13189, c__6232__auto___13193);
               }();
-              var inst_12552 = function() {
-                return function(inst_12542, inst_12543, inst_12544, inst_12545, inst_12546, inst_12547, inst_12548, inst_12549, inst_12550, inst_12551, state_val_12557, c__6232__auto___12561) {
+              var inst_13116 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return blockchain.blockKnown_QMARK_.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13117 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return blockchain.blockchainHeight.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13118 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return blockchain.heightFromBlock.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13119 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return blockchain.last_QMARK_.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13120 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return blockchain.log2.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13121 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return blockchain.makeBlock.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13122 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return blockchain.makeBlockHeader.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13123 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return blockchain.makeTransaction.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13124 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return blockchain.popA.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13125 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return blockchain.prevblk.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13126 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return blockchain.removeTransactionFromMemPool.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13127 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return blockchain.saveBlock.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13128 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return communications.broadcastNewBlock.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13129 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return communications.channelsFromConnection.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13130 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return communications.cryptoCh.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13131 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return communications.initial.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13132 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return communications.intercomMeta.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13133 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return communications.onBlockMined.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13134 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return communications.onConnection.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13135 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return communications.onCrypto.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13136 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return communications.onData.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13137 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return communications.onNewConnection.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13138 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return communications.onOpen.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13139 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return communications.onTransaction.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13140 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return communications.sendmsg.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13141 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return communications.setID.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13142 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return communications.setupComm.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13143 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, state_val_13189, 
+                c__6232__auto___13193) {
+                  return function() {
+                    return communications.startP2PCommLoop.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13144 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, state_val_13189, 
+                c__6232__auto___13193) {
+                  return function() {
+                    return crypt0.arraybtostring.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, state_val_13189, 
+                c__6232__auto___13193);
+              }();
+              var inst_13145 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return crypt0.bHash.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, state_val_13189, 
+                c__6232__auto___13193);
+              }();
+              var inst_13146 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return crypt0.encode.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13147 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return crypt0.s256.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13148 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return crypt0.merkleRoot.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13149 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return crypt0.resultToCh.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13150 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return crypt0.s256.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13151 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return crypt0.sha256.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13152 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return crypt0.sha256c.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13153 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return crypt0.shaCallb.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13154 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercom.getIntercomState.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13155 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercom.intercomstatemachine.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13156 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercom.is_QMARK_.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13157 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercom.onMessage.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13158 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercom.setIntercomState.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13159 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercom.tostateu.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13160 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercom.typeof_QMARK_.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13161 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercomMake.makeConn.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13162 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercomMake.makeData.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13163 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercomMake.makeGetBlock.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13164 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercomMake.makeGetVersion.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13165 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercomMake.makeInv.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13166 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercomMake.makeVersion.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13167 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercomTake.sendm.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13168 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercomTake.takeConn.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13169 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercomTake.takeData.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13170 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercomTake.takeGetBlocks.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13171 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercomTake.takeGetVersion.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13172 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return intercomTake.takeInv.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13173 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, state_val_13189, c__6232__auto___13193) {
                   return function() {
                     return logger.og.call(null);
                   };
-                }(inst_12542, inst_12543, inst_12544, inst_12545, inst_12546, inst_12547, inst_12548, inst_12549, inst_12550, inst_12551, state_val_12557, c__6232__auto___12561);
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, state_val_13189, c__6232__auto___13193);
               }();
-              var inst_12553 = function() {
-                return function(inst_12542, inst_12543, inst_12544, inst_12545, inst_12546, inst_12547, inst_12548, inst_12549, inst_12550, inst_12551, inst_12552, state_val_12557, c__6232__auto___12561) {
+              var inst_13174 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, state_val_13189, c__6232__auto___13193) {
                   return function() {
                     return mining.mine.call(null);
                   };
-                }(inst_12542, inst_12543, inst_12544, inst_12545, inst_12546, inst_12547, inst_12548, inst_12549, inst_12550, inst_12551, inst_12552, state_val_12557, c__6232__auto___12561);
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, state_val_13189, c__6232__auto___13193);
               }();
-              var inst_12554 = pubsub.rrsa.call(null, a, "dumpdb", inst_12542, "cleandb", inst_12543, "hash", inst_12544, "blockchainHeight", inst_12545, "prevblk", inst_12546, "makeGetBlock", inst_12547, "g", inst_12548, "p", inst_12549, "addToChain", inst_12550, "handleInvBlock", inst_12551, "log", inst_12552, "mine", inst_12553);
-              var state_12556__$1 = state_12556;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_12556__$1, inst_12554);
+              var inst_13175 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return mockdatabase.g.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13176 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return mockdatabase.p.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13177 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return mockdatabase.ps.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13178 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return mockdatabase.update.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13179 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return mockdatabasew.cleandb.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13180 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return mockdatabasew.dumpdb.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13181 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return mockdatabasew.g.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13182 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, inst_13181, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return mockdatabasew.initDBase.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, inst_13181, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13183 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, inst_13181, inst_13182, state_val_13189, c__6232__auto___13193) {
+                  return function() {
+                    return mockdatabasew.p.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, inst_13181, inst_13182, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13184 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, inst_13181, inst_13182, inst_13183, state_val_13189, 
+                c__6232__auto___13193) {
+                  return function() {
+                    return mockdatabasew.ps.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, inst_13181, inst_13182, inst_13183, state_val_13189, c__6232__auto___13193);
+              }();
+              var inst_13185 = function() {
+                return function(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, 
+                inst_13145, inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, inst_13181, inst_13182, inst_13183, inst_13184, state_val_13189, 
+                c__6232__auto___13193) {
+                  return function() {
+                    return mockdatabasew.update.call(null);
+                  };
+                }(inst_13105, inst_13106, inst_13107, inst_13108, inst_13109, inst_13110, inst_13111, inst_13112, inst_13113, inst_13114, inst_13115, inst_13116, inst_13117, inst_13118, inst_13119, inst_13120, inst_13121, inst_13122, inst_13123, inst_13124, inst_13125, inst_13126, inst_13127, inst_13128, inst_13129, inst_13130, inst_13131, inst_13132, inst_13133, inst_13134, inst_13135, inst_13136, inst_13137, inst_13138, inst_13139, inst_13140, inst_13141, inst_13142, inst_13143, inst_13144, inst_13145, 
+                inst_13146, inst_13147, inst_13148, inst_13149, inst_13150, inst_13151, inst_13152, inst_13153, inst_13154, inst_13155, inst_13156, inst_13157, inst_13158, inst_13159, inst_13160, inst_13161, inst_13162, inst_13163, inst_13164, inst_13165, inst_13166, inst_13167, inst_13168, inst_13169, inst_13170, inst_13171, inst_13172, inst_13173, inst_13174, inst_13175, inst_13176, inst_13177, inst_13178, inst_13179, inst_13180, inst_13181, inst_13182, inst_13183, inst_13184, state_val_13189, 
+                c__6232__auto___13193);
+              }();
+              var inst_13186 = pubsub.rrsa.call(null, a, "cleandb", inst_13105, "connectTo", inst_13106, "dumpdb", inst_13107, "g", inst_13108, "initDBase", inst_13109, "onDatabaseChange", inst_13110, "p", inst_13111, "ps", inst_13112, "update", inst_13113, "addToChain", inst_13114, "addTransactionToBlock", inst_13115, "blockKnown?", inst_13116, "blockchainHeight", inst_13117, "heightFromBlock", inst_13118, "last?", inst_13119, "log2", inst_13120, "makeBlock", inst_13121, "makeBlockHeader", inst_13122, 
+              "makeTransaction", inst_13123, "popA", inst_13124, "prevblk", inst_13125, "removeTransactionFromMemPool", inst_13126, "saveBlock", inst_13127, "broadcastNewBlock", inst_13128, "channelsFromConnection", inst_13129, "cryptoCh", inst_13130, "initial", inst_13131, "intercomMeta", inst_13132, "onBlockMined", inst_13133, "onConnection", inst_13134, "onCrypto", inst_13135, "onData", inst_13136, "onNewConnection", inst_13137, "onOpen", inst_13138, "onTransaction", inst_13139, "sendmsg", inst_13140, 
+              "setID", inst_13141, "setupComm", inst_13142, "startP2PCommLoop", inst_13143, "arraybtostring", inst_13144, "bHash", inst_13145, "encode", inst_13146, "hash", inst_13147, "merkleRoot", inst_13148, "resultToCh", inst_13149, "s256", inst_13150, "sha256", inst_13151, "sha256c", inst_13152, "shaCallb", inst_13153, "getIntercomState", inst_13154, "intercomstatemachine", inst_13155, "is?", inst_13156, "onMessage", inst_13157, "setIntercomState", inst_13158, "tostateu", inst_13159, "typeof?", 
+              inst_13160, "makeConn", inst_13161, "makeData", inst_13162, "makeGetBlock", inst_13163, "makeInv", inst_13164, "makeInv", inst_13165, "makeVersion", inst_13166, "sendm", inst_13167, "takeConn", inst_13168, "takeData", inst_13169, "takeGetBlocks", inst_13170, "takeGetVersion", inst_13171, "takeInv", inst_13172, "log", inst_13173, "mine", inst_13174, "mg", inst_13175, "mp", inst_13176, "mps", inst_13177, "mupdate", inst_13178, "mcleandb", inst_13179, "mdumpdb", inst_13180, "mg", inst_13181, 
+              "minitDBase", inst_13182, "mp", inst_13183, "mps", inst_13184, "mupdate", inst_13185);
+              var state_13188__$1 = state_13188;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_13188__$1, inst_13186);
             } else {
               return null;
             }
           };
-        }(c__6232__auto___12561);
-        return function(switch__6219__auto__, c__6232__auto___12561) {
+        }(c__6232__auto___13193);
+        return function(switch__6219__auto__, c__6232__auto___13193) {
           return function() {
             var state_machine__6220__auto__ = null;
             var state_machine__6220__auto____0 = function() {
-              var statearr_12559 = [null, null, null, null, null];
-              statearr_12559[0] = state_machine__6220__auto__;
-              statearr_12559[1] = 1;
-              return statearr_12559;
+              var statearr_13191 = [null, null, null, null, null];
+              statearr_13191[0] = state_machine__6220__auto__;
+              statearr_13191[1] = 1;
+              return statearr_13191;
             };
-            var state_machine__6220__auto____1 = function(state_12556) {
+            var state_machine__6220__auto____1 = function(state_13188) {
               while (true) {
-                var result__6221__auto__ = switch__6219__auto__.call(null, state_12556);
+                var result__6221__auto__ = switch__6219__auto__.call(null, state_13188);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6221__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -46401,12 +46976,12 @@ routing.routea = function routea(a) {
                 break;
               }
             };
-            state_machine__6220__auto__ = function(state_12556) {
+            state_machine__6220__auto__ = function(state_13188) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6220__auto____0.call(this);
                 case 1:
-                  return state_machine__6220__auto____1.call(this, state_12556);
+                  return state_machine__6220__auto____1.call(this, state_13188);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -46414,16 +46989,16 @@ routing.routea = function routea(a) {
             state_machine__6220__auto__.cljs$core$IFn$_invoke$arity$1 = state_machine__6220__auto____1;
             return state_machine__6220__auto__;
           }();
-        }(switch__6219__auto__, c__6232__auto___12561);
+        }(switch__6219__auto__, c__6232__auto___13193);
       }();
       var state__6234__auto__ = function() {
-        var statearr_12560 = f__6233__auto__.call(null);
-        statearr_12560[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto___12561;
-        return statearr_12560;
+        var statearr_13192 = f__6233__auto__.call(null);
+        statearr_13192[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6232__auto___13193;
+        return statearr_13192;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6234__auto__);
     };
-  }(c__6232__auto___12561));
+  }(c__6232__auto___13193));
   return logger.og.call(null, new cljs.core.Keyword(null, "route", "route", 329891309), "received", a);
 };
 goog.provide("intercomMakeUtil");
