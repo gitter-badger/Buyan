@@ -1,10 +1,5 @@
 (ns intercom
   (:require
-    [logger :as l]
-
-   ; [intercomMake :as im]
-
-    ;[intercomTake :as it]
 
     [pubsub :refer [pub sub]]
 
@@ -12,7 +7,10 @@
     [cljs.core.async :refer [chan close! timeout put!]]
 
     )
-  (:require-macros [cljs.core.async.macros :as m :refer [go]]
+  (:require-macros
+   [app.util :as a :refer [await sweet]]
+
+   [cljs.core.async.macros :as m :refer [go]]
                    )
   )
 

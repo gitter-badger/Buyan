@@ -2,15 +2,13 @@
 
   (:require
 
-    ;[database :as db]
-    [logger :as l]
-   ; [pubsub :as ps]
+    [pubsub :as ps]
 
     [cljs.core.async :refer [chan close! timeout put!]])
 
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
-                   [app.util :as a :refer [await]]
-                   )
+                   [app.util :as a :refer [await sweet]]
+    )
   )
 
 (defn arraybtostring [buff]

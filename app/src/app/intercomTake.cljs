@@ -1,14 +1,13 @@
 (ns intercomTake
   (:require
-    [logger :as l]
-    [database :as db]
-    [intercomMake :as im]
-    [blockchain :as blockchain]
 
  [pubsub :as ps :refer [sia]]
     [cljs.core.async :refer [chan close! timeout put!]]
     )
-  (:require-macros [cljs.core.async.macros :as m :refer [go]]
+  (:require-macros
+   [app.util :as a :refer [await sweet]]
+
+   [cljs.core.async.macros :as m :refer [go]]
                    [servant.macros :refer [defservantfn]])
   )
 (defn sendm [peer payload]

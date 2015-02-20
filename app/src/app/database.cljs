@@ -2,13 +2,14 @@
   (:require
 
  [pubsub :as ps :refer [sia]]
-    [mockdatabasew :as m]
-    [logger :as l]
     [cljs.core.async :refer [chan close! timeout put!]]
 
              ;[pubsub :as pubsub]
 )
-     (:require-macros [cemerick.cljs.test
+     (:require-macros
+      [app.util :as a :refer [await sweet]]
+
+      [cemerick.cljs.test
                        :as tt
                        :refer (is deftest with-test run-tests testing test-var)] )
    )

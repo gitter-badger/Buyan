@@ -1,17 +1,6 @@
 (ns communications
 
   (:require
-    [intercom :as i]
-    [intercomMake :as im]
-    [database :as db]
-    [logger :as l]
-    [blockchain :as b]
-    [crypto :refer [sha256]]
-   ; [communications :as comm]
-
-    [peerjs :refer [peerjs peerParams]]
-    [mining :refer [mine]]
-
 
     [pubsub :refer [pub sub]]
     [cljs.core.async :refer [chan close! timeout put!]]

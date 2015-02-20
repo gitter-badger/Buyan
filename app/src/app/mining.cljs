@@ -2,14 +2,14 @@
 
 ( :require
 
-  [logger :as l]
-  [pubsub :refer [pub sub]]
   [cljs.core.async :refer [chan close! timeout put!]]
   [servant.core :as servant]
   [servant.worker :as worker]
  [pubsub :as ps :refer [sia]]
   )
   (:require-macros
+   [app.util :as a :refer [await sweet]]
+
                   [cljs.core.async.macros :as m :refer [go]]
                    [servant.macros :refer [defservantfn]])
 

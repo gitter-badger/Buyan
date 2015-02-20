@@ -1,9 +1,7 @@
 (ns app.main
   (:require
 
-    [logger :as l]
     [pubsub :as ps :refer [sia]]
-    [router ]
     [cljs.core.async :refer [chan close! timeout put!]]
 )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]

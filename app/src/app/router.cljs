@@ -1,14 +1,6 @@
 (ns router
 
    (:require
-    [intercom :as i]
-    [intercomMake :as im]
-    [database :as db]
-    [logger :as l]
-    [blockchain :as b]
-    [crypt0 :refer [sha256] :as crypto]
-    [peerjs :refer [peerjs peerParams]]
-    [mining :refer [mine]]
 
 
     [pubsub :refer [pub sub]]
@@ -21,18 +13,18 @@
 (defn a[x ]
   (js-obj "a" 1)
   )
-(defn route []
+;; (defn route []
 
-  (go
+;;   (go
 
-(loop []
-      (def a (<! (pubsub/rrs
-                  "dumpdb" #(db/dumpdb)
-                  "cleandb" #(db/cleandb)
-                  "hash" #(crypto/s256)
-                  )))
-      (l/og :route "received" a)
+;; (loop []
+;;       (def a (<! (pubsub/rrs
+;;                   "dumpdb" #(db/dumpdb)
+;;                   "cleandb" #(db/cleandb)
+;;                   "hash" #(crypto/s256)
+;;                   )))
+;;       (l/og :route "received" a)
 
-        (recur)))
+;;         (recur)))
 
-  )
+;;   )

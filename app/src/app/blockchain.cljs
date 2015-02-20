@@ -1,13 +1,14 @@
 (ns blockchain
   (:require
-    [logger :as l]
+    [pubsub :as ps :refer [sia]]
 
-     [database :as db]
     [cljs.core.async :refer [chan close! timeout put!]]
 
- [pubsub :as ps :refer [sia]]
     )
-  (:require-macros [cljs.core.async.macros :as m :refer [go]]
+  (:require-macros
+    [cljs.core.async.macros :as m :refer [go]]
+    [app.util :as a :refer [await sweet]]
+
                    )
   )
 (enable-console-print!)
@@ -39,7 +40,7 @@
 (defn addTransactionToBlock [] (js-obj "" 1))
 ;get previous block
 (defn prevblk [blockk]
-      (l/og :prevblk "about to get prev blk " blockk)
+      (c "log" :prevblk "about to get prev blk " blockk)
       (.-previous (.-header blockk))
       )
 ;blockk parameter can be either block with field hash

@@ -59,17 +59,51 @@
       (def mtemp (<! sendReceiveCh))
       (l/og :receive "now looking at " mtemp)
       (if (== (aget mtemp "typ") typ)
+        (do
+
         (aget mtemp "msg")
+          )
+        (do
+
 
         (if (== (aget mtemp "typ") 0)
           0
           (recur )
         )
+          )
       )
     )
    )
   )
+(defn swp [typ v]
 
+  (go
+    (l/og :receive "about to recieve %s" typ)
+    (>!  sendReceiveCh (js-obj "typ" 0))
+   ; (l/og :receive "returned message no for the loop " m)
+    (loop []
+      (l/og :receive "about to recieve in loop")
+      (def mtemp (<! sendReceiveCh))
+      (l/og :receive "now looking at " mtemp)
+      (if (== (aget mtemp "typ") typ)
+        (do
+
+        (aget mtemp "msg")
+          (>! sendReceiveCh v)
+          )
+        (do
+
+
+        (if (== (aget mtemp "typ") 0)
+          0
+          (do
+          (recur )
+        )
+          )
+      )
+    )
+   )
+  )
 
 (defn rr [& typ]
 

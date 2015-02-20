@@ -1,15 +1,12 @@
 (ns mockdatabasew
 
   (:require
-    [logger :as l]
-    [mockdatabase :as m ]
-   [crypt0 :as crypto]
     [pubsub :refer [pub sub]]
     [cljs.core.async :refer [chan close! timeout put!]]
 )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
-                   [app.util :as a :refer [await]]
-                   [servant.macros :refer [defservantfn]])
+[app.util :as a :refer [await sweet]]
+                       [servant.macros :refer [defservantfn]])
   )
 (defn cleandb[]
   (l/og :cleandb "cleandb " m/mdbase)
