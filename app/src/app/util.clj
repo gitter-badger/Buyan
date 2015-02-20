@@ -10,23 +10,31 @@
 
             ;`(<! (quote ~fja))
           )
-(defmacro sweet [where wat]
+;; (defmacro sweet [where wat]
+;;     (macroexpand (list '<!
+;;                        (list
+;;                         'ps/sia
+;;                         where wat)))
+;;   )
+(defmacro sweet [ & wat]
     (macroexpand (list '<!
                        (list
+                        'apply
                         'ps/sia
-                        where wat)))
-  )
-(defmacro sweet [where wat]
-    (macroexpand (list '<!
-                       (list
-                        'ps/sia
-                        where wat)))
+                         wat)))
   )
 (defmacro c [where wat]
     (macroexpand (list '<!
                        (list
                         'ps/sia
                         where wat)))
+  )
+(defmacro cc [where & wat]
+    (list '<!
+                       (list
+                        'apply
+                        where
+                        wat))
   )
 (defmacro defn [nam arg & res]
      (list 'defn

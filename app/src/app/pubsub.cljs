@@ -9,6 +9,8 @@
 (def proxychan (chan))
 (def proxychan2 (chan 1))
 (def sendReceiveCh (chan 1000))
+
+(def statesCh (chan 1000))
 (def receiveCH (chan 1000))
 (defn get [] (go
 
@@ -52,7 +54,7 @@
 
   (go
     (l/og :receive "about to recieve %s" typ)
-    (>!  sendReceiveCh (js-obj "typ" 0))
+    (>!  statesCh (js-obj "typ" 0))
    ; (l/og :receive "returned message no for the loop " m)
     (loop []
       (l/og :receive "about to recieve in loop")
@@ -61,6 +63,7 @@
       (if (== (aget mtemp "typ") typ)
         (do
 
+          (>! statesCh m)
         (aget mtemp "msg")
           )
         (do
@@ -72,6 +75,64 @@
         )
           )
       )
+    )
+   )
+  )
+(defn check[ typ v ret]
+  (go
+   (def m (js-obj "typ" typ "msg" v))
+      (def mtemp (<! statesCh))
+            (l/og :swp "checking  " mtemp)
+  (if (== (aget mtemp "typ") typ)
+
+          (if v
+            (do
+            (l/og :swp "found val  " mtemp)
+
+            (l/og :swp "putting back   " m)
+          (>! statesCh m)
+
+          (<! (check typ v v))
+            )
+            (do
+
+            (l/og :swp "found no val  " mtemp)
+              (aset mtemp "typ" typ)
+          (>! statesCh mtemp)
+
+          (<! (check typ v (aget mtemp "msg")))
+          )
+          )
+        ;;not found
+
+
+
+        (if (== (aget mtemp "typ") 0)
+          (if ret
+
+            (do
+
+            (l/og :swp "ending " v)
+            ret
+
+              )
+            (if v
+          (do
+            (l/og :swp "got nul val is " v)
+            (>! statesCh m)
+            v
+            )
+              )
+          )
+
+          (do
+            (>! statesCh mtemp)
+
+            (l/og :swp "itteration  " ret)
+          (<!(check typ v ret))
+          )
+        )
+
     )
    )
   )
@@ -79,31 +140,12 @@
 
   (go
     (l/og :receive "about to recieve %s" typ)
-    (>!  sendReceiveCh (js-obj "typ" 0))
+    (>!  statesCh (js-obj "typ" 0))
    ; (l/og :receive "returned message no for the loop " m)
-    (loop []
-      (l/og :receive "about to recieve in loop")
-      (def mtemp (<! sendReceiveCh))
-      (l/og :receive "now looking at " mtemp)
-      (if (== (aget mtemp "typ") typ)
-        (do
-
-        (aget mtemp "msg")
-          (>! sendReceiveCh v)
-          )
-        (do
-
-
-        (if (== (aget mtemp "typ") 0)
-          0
-          (do
-          (recur )
-        )
-          )
-      )
-    )
-   )
+   (def m (js-obj "typ" typ "msg" v))
+    (<! (check typ v undefined))
   )
+)
 
 (defn rr [& typ]
 
