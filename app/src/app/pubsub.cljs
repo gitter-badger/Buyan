@@ -2,7 +2,7 @@
   (:require
     [cljs.core.async :refer [chan close! timeout put!]]
 
-    [logger :as l]
+    [app.logger :as l]
     )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
                    [servant.macros :refer [defservantfn]]))

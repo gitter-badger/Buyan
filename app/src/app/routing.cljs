@@ -1,15 +1,15 @@
 (ns routing
 
    (:require
-    [database :as db]
+    [app.database :as db]
 
-    [intercomMake :as im]
-    [logger :as l]
+    [app.intercomMake :as intercomMake]
+    [app.logger :as l]
 
-    [mining :refer [mine]]
-    [intercomTake :as it]
-    [blockchain :as blockchain]
-    [crypt0 :refer [sha256] :as crypto]
+    [app.mining   ]
+    [app.intercomTake :as it]
+    [app.blockchain :as blockchain]
+    [app.crypt :as crypto]
     [cljs.core.async :refer [chan close! timeout put!]]
     )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
@@ -17,9 +17,6 @@
   )
 
 (defn routea [rch sch ]
-
-
-
 
        (pubsub/rrsa
                   rch
@@ -130,7 +127,3 @@
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
                   ))
-
-
-
-

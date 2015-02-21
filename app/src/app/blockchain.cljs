@@ -1,6 +1,6 @@
 (ns blockchain
   (:require
-    [pubsub :as ps :refer [sia]]
+    [app.pubsub :as ps ]
 
     [cljs.core.async :refer [chan close! timeout put!]]
 

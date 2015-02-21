@@ -1,8 +1,8 @@
 (ns database
   (:require
 
-    [logger :as l]
- [pubsub :as ps :refer [sia]]
+    [app.logger :as l]
+ [app.pubsub :as ps ]
     [cljs.core.async :refer [chan close! timeout put!]]
 
              ;[pubsub :as pubsub]

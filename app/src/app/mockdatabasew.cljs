@@ -1,11 +1,11 @@
 (ns mockdatabasew
 
   (:require
-    [pubsub :as ps :refer [pub sub]]
+    [app.pubsub :as ps ]
     [cljs.core.async :refer [chan close! timeout put!]]
 )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
-[app.util :as a :refer [await sweet c]]
+[app.util :as a :refer [await sweet c ]]
                        [servant.macros :refer [defservantfn]])
   )
 
