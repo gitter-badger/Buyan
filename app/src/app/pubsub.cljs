@@ -11,6 +11,7 @@
 (def sendReceiveCh (chan 1000))
 
 (def statesCh (chan 1000))
+(def states (js-obj))
 (def receiveCH (chan 1000))
 (defn get [] (go
 
@@ -138,14 +139,20 @@
   )
 (defn swp [typ v]
 
-  (go
-    (l/og :receive "about to recieve %s" typ)
-    (>!  statesCh (js-obj "typ" 0))
-   ; (l/og :receive "returned message no for the loop " m)
-   (def m (js-obj "typ" typ "msg" v))
-    (<! (check typ v undefined))
+
+;;   (go
+;;     (l/og :receive "about to recieve %s" typ)
+;;     (>!  statesCh (js-obj "typ" 0))
+;;    ; (l/og :receive "returned message no for the loop " m)
+;;    (def m (js-obj "typ" typ "msg" v))
+;;     (<! (check typ v undefined))
+;;   )
+
+  (if v
+    (aset states typ v)
+    (aget states typ)
+    )
   )
-)
 
 (defn rr [& typ]
 
@@ -259,7 +266,7 @@
 
 
 
-(defn rrsa [ch & typ]
+(defn rrsa [ch  & typ]
 
   (go
     (l/og :receive "about to recieve " typ)
@@ -298,8 +305,10 @@
                   (do
                     ;;yay we found one now execute the function associated with it
                     (l/og :receive "found " (nth typ cnt ))
+                    (l/og :receive "args " (aget  mtemp "msg"))
+                    ;(l/og :receive "function " (nth  typ (+ cnt 1)))
                     (def ret (<! (apply (nth  typ (+ cnt 1)) (aget  mtemp "msg"))))
-                    (l/og :receive "return " ret)
+                    (l/og :receive1 "return " ret)
                     (>! ch ret)
                   )
                   (do
@@ -333,11 +342,11 @@
    )
   )
 
-(defn sia [typ &m]
+(defn sia [typ & m]
   (go
-        (l/og :send typ m)
+        (l/og :send typ (.-arr m))
    (def pchannel (chan))
-        (>! sendReceiveCh (makeMsg typ m ) )
+        (>! sendReceiveCh (js-obj "typ" typ "msg"    (into [] (.-arr m))) )
    (routing.routea pchannel )
       (def n  (<! pchannel))
         (l/og :send "recieved" n)

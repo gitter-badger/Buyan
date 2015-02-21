@@ -1,23 +1,25 @@
 (ns database
   (:require
 
+    [logger :as l]
  [pubsub :as ps :refer [sia]]
     [cljs.core.async :refer [chan close! timeout put!]]
 
              ;[pubsub :as pubsub]
 )
      (:require-macros
-      [app.util :as a :refer [await sweet]]
-
+      [app.util :as a :refer [await sweet  c]]
+ [cljs.core.async.macros :as m :refer [go]]
       [cemerick.cljs.test
                        :as tt
                        :refer (is deftest with-test run-tests testing test-var)] )
    )
+(def states (js-obj))
 (defn cleandb[]
   (m/cleandb)
   )
 (defn dumpdb[]
-  (m/dumpdb)
+;  (c "mdumpdb" )
   )
 (def onDatabaseChange (chan))
 (set! (.-type onDatabaseChange) "databaseChange")
@@ -46,8 +48,31 @@
         (<! (m/p k v))
         )
       )
+(defn reg [typ v]
 
-;initial function for db
+(go
+;;   (go
+;;     (l/og :receive "about to recieve %s" typ)
+;;     (>!  statesCh (js-obj "typ" 0))
+;;    ; (l/og :receive "returned message no for the loop " m)
+;;    (def m (js-obj "typ" typ "msg" v))
+;;     (<! (check typ v undefined))
+;;   )
+;;(c "log" :reg typ v)
+  (l/og :reg typ v)
+  (if v
+    (aset states typ v)
+    (if
+    (aget states typ)
+
+    (aget states typ)
+      0
+      )
+    )
+   )
+   )
+
+  ;initial function for db
 
 ;
 ;promt user for id that will be used as his peer id

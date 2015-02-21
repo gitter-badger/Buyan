@@ -6,7 +6,7 @@
     [cljs.core.async :refer [chan close! timeout put!]]
 )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
-                   [app.util :as a :refer [await sweet cc]]
+                   [app.util :as a :refer [await sweet c]]
                    [servant.macros :refer [defservantfn]])
   )
 
@@ -67,11 +67,12 @@
   ;  (ps/s "msg1" "text")
   ;  (ps/s "msg2" "text")
    ;(def a (<! (ps/rr "asd" pri "msg1" pri)))
-    (l/og :main "0=" (<! (swp "s")))
-    (l/og :main "s1=" (<! (swp "s" 1)))
-    (l/og :main "1=" (<! (swp "s")))
-    (l/og :main "s2=" (<! (swp "s" 2)))
-    (l/og :main "2=" (<! (swp "s")))
+    (l/og :main "0=" (c "database" "s" 1 ))
+    ;(l/og :main "0=" (c "database" "s"))
+    (l/og :main "s1="  (swp "s" 1))
+    (l/og :main "1=" (swp "s"))
+    (l/og :main "s2="  (swp "s" 2))
+    (l/og :main "2=" (swp "s"))
   )
 )
 

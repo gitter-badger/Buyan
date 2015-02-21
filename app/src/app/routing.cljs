@@ -16,7 +16,7 @@
                    [servant.macros :refer [defservantfn]])
   )
 
-(defn routea [a]
+(defn routea [a ]
 
   (go
 
@@ -33,6 +33,8 @@
                   "p" #(db/p)
                   "ps" #(db/ps)
                   "update" #(db/update)
+                  "database" db/reg
+
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
                   "addToChain" #(blockchain/addToChain)
@@ -126,9 +128,7 @@
                   "mupdate" #(mockdatabasew/update)
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
                   ))
-      (l/og :route "received" a)
 
 
 

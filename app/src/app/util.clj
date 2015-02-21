@@ -23,27 +23,35 @@
                         'ps/sia
                          wat)))
   )
-(defmacro c [where wat]
-    (macroexpand (list '<!
-                       (list
-                        'ps/sia
-                        where wat)))
+(defmacro c [ & args]
+;;      (list '<!
+;;                        (list
+;;                         'apply
+;;                         'ps/sia
+;;                         (quote typ)
+;;                          ;'quote typ
+;;                         (quote wat)))
+
+  (list '<!  `( ps/sia   ~@args))
+  ;(def a (second (split-at 2 &form)))
+  ;`(l/og :asd ~@args)
+  ;`(<! (apply ps/sia unquote(typ) unquote(wat)))
   )
-(defmacro cc [where & wat]
-    (list '<!
-                       (list
-                        'apply
-                        where
-                        wat))
-  )
+;; (defmacro cc [where & wat]
+;;     (list '<!
+;;                        (list
+;;                         'apply
+;;                         where
+;;                         wat))
+;;   )
 (defmacro defn [nam arg & res]
-     (list 'defn
+     (list 'defn       nam
                        arg
                        (macroexpand
                         (list
                         'go
                         res
-                        where wat)))
+                        )))
   )
 ;
 ;(macroexpand (list 'go

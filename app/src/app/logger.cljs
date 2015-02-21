@@ -14,9 +14,12 @@
              :makeGetBlock
              :getBlocks
              ])
+(def tagsOFF [
+           ;  :receive
+             ])
 (def tags [:merkleRoot :dbupdate])
 (defn og [type format data]
-      (if (or (some #{type} tagsOn) (some #{:all} tagsOn))
+      (if (and (or (some #{type} tagsOn) (some #{:all} tagsOn)) (not (some #{type} tagsOFF)))
         (.log js/console (+ type " " format) data)
 
         )
