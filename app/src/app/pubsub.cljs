@@ -266,7 +266,7 @@
 
 
 
-(defn rrsa [ch  & typ]
+(defn rrsa [rch sch   & typ]
 
   (go
     (l/og :receive "about to recieve " typ)
@@ -278,7 +278,8 @@
    ;;similar to the way erlang process checks its mailbox
     (loop []
       (l/og :receive "about to recieve in loop")
-      (def mtemp (<! sendReceiveCh))
+      (def mtemp (<! sch))
+      (l/og :receive "about to recieve in loop" mtemp)
       (if (== (aget mtemp "typ") 0)
         (do
           ;;if we looked at all return 0
@@ -309,7 +310,7 @@
                     ;(l/og :receive "function " (nth  typ (+ cnt 1)))
                     (def ret (<! (apply (nth  typ (+ cnt 1)) (aget  mtemp "msg"))))
                     (l/og :receive1 "return " ret)
-                    (>! ch ret)
+                    (>! rch ret)
                   )
                   (do
 
@@ -344,12 +345,13 @@
 
 (defn sia [typ & m]
   (go
-        (l/og :send typ (.-arr m))
-   (def pchannel (chan))
-        (>! sendReceiveCh (js-obj "typ" typ "msg"    (into [] (.-arr m))) )
-   (routing.routea pchannel )
+        (def pchannel (chan 1))
+        (def sch (chan 1))
+        (>! sch (js-obj "typ" typ "msg" (if m  (into [] (.-arr m)) [])))
+        (routing.routea pchannel sch)
+        (l/og :send "function returned " typ)
       (def n  (<! pchannel))
         (l/og :send "recieved" n)
-
+n
    )
   )

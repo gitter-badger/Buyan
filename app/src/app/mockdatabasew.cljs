@@ -1,19 +1,37 @@
 (ns mockdatabasew
 
   (:require
-    [pubsub :refer [pub sub]]
+    [pubsub :as ps :refer [pub sub]]
     [cljs.core.async :refer [chan close! timeout put!]]
 )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
-[app.util :as a :refer [await sweet]]
+[app.util :as a :refer [await sweet c]]
                        [servant.macros :refer [defservantfn]])
   )
+
+(def mdbase (js-obj))
+;; (defn g[kie]
+;;   (aget mdbase kie)
+;;   )
+;; (defn p[kie v]
+;;   (aset mdbase kie v)
+;;   )
+;; (defn ps[kie v]
+;;   (aset mdbase kie v)
+;;   )
+;; (defn update[kie v]
+;;   (aset mdbase kie v)
+;;   )
+
 (defn cleandb[]
-  (l/og :cleandb "cleandb " m/mdbase)
+  (l/og :cleandb "cleandb " mdbase)
   (set! m/mdbase (js-obj))
   )
 (defn dumpdb[]
-  (l/og :dumpdb "dbase " m/mdbase)
+ (go
+  (c "log" :dumpdb "dbase " mdbase)
+  1
+)
   )
 (defn g[k]
   (go

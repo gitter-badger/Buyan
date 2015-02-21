@@ -16,17 +16,18 @@
                    [servant.macros :refer [defservantfn]])
   )
 
-(defn routea [a ]
+(defn routea [rch sch ]
 
-  (go
+
 
 
        (pubsub/rrsa
-                  a
+                  rch
+                  sch
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                   "cleandb" #(db/cleandb)
                   "connectTo" #(db/connectTo)
-                  "dumpdb" #(db/dumpdb)
+                  "dumpdb" db/dumpdb
                   "g" #(db/g)
                   "initDBase" #(db/initDBase)
                   "onDatabaseChange" #(db/onDatabaseChange)
@@ -109,7 +110,7 @@
                   "takeGetVersion" #(intercomTake/takeGetVersion)
                   "takeInv" #(intercomTake/takeInv)
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-                  "log" #(l/og)
+                  "log" l/og
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                   "mine" #(mining/mine)
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -132,4 +133,4 @@
 
 
 
-  )
+

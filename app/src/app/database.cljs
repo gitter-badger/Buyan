@@ -19,6 +19,9 @@
   (m/cleandb)
   )
 (defn dumpdb[]
+  (go
+  (c "mdumpdb")
+   )
 ;  (c "mdumpdb" )
   )
 (def onDatabaseChange (chan))
