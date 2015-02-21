@@ -48,7 +48,9 @@ protocol
 architecture of the project
 it mimics until certain point facebook's flux architecture
 decoupled modules pass messages via central point
+
 <pre>
+
                   +----------+
                   |          |
                   | utilitis |
