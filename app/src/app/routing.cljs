@@ -1,15 +1,15 @@
 (ns routing
 
    (:require
-    [app.database :as db]
+    [database :as db]
 
-    [app.intercomMake :as intercomMake]
-    [app.logger :as l]
+    [intercomMake :as intercomMake]
+    [logger :as l]
 
-    [app.mining   ]
-    [app.intercomTake :as it]
-    [app.blockchain :as blockchain]
-    [app.crypt :as crypto]
+    [mining   ]
+    [intercomTake :as it]
+    [blockchain :as blockchain]
+    [crypt :as crypto]
     [cljs.core.async :refer [chan close! timeout put!]]
     )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
