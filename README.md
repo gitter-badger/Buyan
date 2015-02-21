@@ -82,6 +82,7 @@ decoupled modules pass messages via central point
                   +----------+
 
 </pre>
+
 Buyan after
 https://www.youtube.com/watch?v=4QtkDMXA0u8
 with subtitles here https://www.youtube.com/watch?v=b3TQevs14CE
