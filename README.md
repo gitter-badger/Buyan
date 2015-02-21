@@ -49,6 +49,11 @@ architecture of the project
 it mimics until certain point facebook's flux architecture
 decoupled modules pass messages via central point
 
+Buyan after
+https://www.youtube.com/watch?v=4QtkDMXA0u8
+with subtitles here https://www.youtube.com/watch?v=b3TQevs14CE
+![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/media/Ivanbilibin.jpg)
+
 <pre>
 
                   +----------+
@@ -75,21 +80,14 @@ decoupled modules pass messages via central point
                      |    |
                      |    |
                      |    |
+                     |    |
                      v    +
-
                   +----------+
                   |          |
                   | internet |
                   |          |
                   +----------+
-
 </pre>
-
---------------
-
-Buyan after
-https://www.youtube.com/watch?v=4QtkDMXA0u8
-with subtitles here https://www.youtube.com/watch?v=b3TQevs14CE
-![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/media/Ivanbilibin.jpg)
+<br/>
 
 Copyright (c) 2014 Nikola Mandic
