@@ -55,7 +55,7 @@ with subtitles here https://www.youtube.com/watch?v=b3TQevs14CE
 <br/>
 
 Copyright (c) 2014 Nikola Mandic
-<code>
+<pre>
 
                   +----------+
                   |          |
@@ -88,4 +88,4 @@ Copyright (c) 2014 Nikola Mandic
                   | internet |
                   |          |
                   +----------+
-</code>
+</pre>
