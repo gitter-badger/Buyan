@@ -39,8 +39,7 @@ doc that will be up to date from time to time are here
 http://blog.nikola.link/buyan.html
 protocol
 
-![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/media/cdraw.png) ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/media/getblock.png)
-![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/media/syncChain.png) ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/media/broadcast.png)
+
 protocol
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/media/protocol.png)
 architecture of the project
