@@ -1,0 +1,15 @@
+title sync chain
+
+Saltan->Tsaritsa: data broadcast
+note right of Tsaritsa: Tsaritsa makes decision
+opt Tsaritsa's blockchain is higher
+    Tsaritsa->Saltan:  inv response
+end
+opt Tsaritsa's blockchain is shorter
+note right of Tsaritsa: Tsaritsa saves
+end
+opt Tsaritsa's has no idea about data
+note right of Tsaritsa: Tsaritsa initiates a sync
+    Tsaritsa->Saltan:  getblocks
+    Saltan->Tsaritsa: inv
+end

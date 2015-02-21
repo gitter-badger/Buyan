@@ -1,0 +1,59 @@
+; (let [v (alts!  peers )]
+;    (println "recieved some data" v)
+;    (.send (.-conn (nth v 1)) (nth v 0))
+; )
+
+;(println
+;"The value from the first call is "
+;(<! channel-1))             ;(conj state (<! connectionch))
+
+;(println "peers" )
+;(.log js/console
+;      peers)
+; (println (alts!  peers ))
+; (println "Killing webworkers")
+; (servant/kill-servants servant-channel worker-count)
+;
+;                                         (if (== (.-type vrecieved) "versionSaltan")
+;                                           (do
+;                                             (l/og :mloop  (.-data vrecieved))
+;                                             (l/og :mloop  "-------------------------")
+;                                             (l/og :mloop  (.-knownPeers intercomMeta))
+;                                             (def conn (.-peer (.-conn ch2)))
+;                                             (l/og :mloop  (.-conn ch2))
+;                                             ;filter out from knownPeers that user that is about to recieve knownPeers list
+;                                             (def filtrd (remove    #{conn}     (.-knownPeers intercomMeta)))
+;                                             (set! (.-knownPeers intercomMeta) filtrd)
+;                                             (l/og :mloop  (into-array filtrd))
+;                                             (l/og :mloop  (.-knownPeers intercomMeta))
+;                                             (>! (.-writec  ch2) (js-obj "type" "versionTsaritsa" "data" (.-id intercomMeta)))
+;                                             (>! (.-writec  ch2) (.stringify js/JSON (js-obj "type" "peerinfo" "data" (into-array (.-knownPeers intercomMeta) ))))
+;                                             )
+;                                           )
+;                                          (l/og :mloop  state)
+;                                          ;if this user initiated connection he will send version first
+;                                          (if (== (.-connType vrecieved) "saltan")
+;                                            (do
+;                                              (l/og :mloop  "saltan here")
+;                                              (>! (nth peerChannels 1) (js-obj "type" "versionSaltan" "data" (.-id intercomMeta)))
+;                                              )
+;                                            (do
+;
+;                                              (l/og :mloop  "tsaritsa here")
+;                                              )
+;                                            )
+; `(new PouchDB('dbname')).allDocs({include_docs:true,limit: 10},function(e,r){console.log(r)})`
+
+      ;(def myWorker (js/Worker. "hamiyoca/miner.js"))
+      ;(def ^:dynamic o (js-obj "foo" 1 "bar" 2))
+      ;(. myWorker (postMessage o))
+
+;(if (== id "2")
+; (println "id = 2"))
+; (go
+; (l/og :db "last entry with new func" (<! (gdb "last")) )
+; )
+
+
+;add channels for reading and writing to this new connection to the vector of channels we listen
+      ;(def state (into [] (concat state peerChannels)))

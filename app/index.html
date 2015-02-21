@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>My first Three.js app</title>
+<style> body { margin: 0; } canvas { width: 100%; height: 100% }
+    #input h2 {
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 400;
+    }
+    #input .inputs {
+    width: 80%;
+    }
+    #input .form-control-wrapper {
+    margin: 30px 0;
+    }
+    button {
+    .btn .btn-primary
+    }
+@font-face { font-family: Helvetiker; src: url('./helvetiker_font/helvetiker_regular.ttf'); }
+</style>
+    <link rel="stylesheet" type="text/css" href="../bower_components/leaf-css-framework/css/base.css">
+    <script type='text/javascript' id='lt_ws' src='http://localhost:57828/socket.io/lighttable/ws.js'></script>
+</head>
+    <body>
+    <script src="../three.min.js"></script>
+<script src="../helvetiker_regular.typeface.js"></script>
+<script src="../PointerLockControls.js"></script>
+<script src="../typeface.js">
+</script>
+<!--
+<script src="../Keypress/keypress.js">
+-->
+</script>
+
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/peerjs/peer.js"></script>
+    <script src="../bower_components/localforage/src/localforage.js"></script>
+    <script src="../bower_components/pouchdb/dist/pouchdb.js"></script>
+    <script src="../bower_components/react/react.js"></script>
+    <script src="../bower_components/leaf-css-framework/js/libs/waves/dist/waves.js"></script>
+    <script src="../bower_components/eventEmitter/EventEmitter.js"></script>
+    <script src="../bower_components/leaf-css-framework/js/libs/hammer.js"></script>
+    <script src="../bower_components/leaf-css-framework/js/libs/imagesloaded/imagesloaded.js"></script>
+    <script src="../bower_components/leaf-css-framework/js/script.js"></script>
+
+
+
+
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js scripts/plugins.js -->
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+        <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js scripts/main.js -->
+        <!--<script src="scripts/cjs.js"></script>-->
+
+        <!-- endbuild -->
+<script src="./scripts/cjs.js"></script>
+        <!--<script src="out/goog/base.js" type="text/javascript"></script>-->
+        <script src="app.js" type="text/javascript"></script>
+
+        <!--<script type="text/javascript">//goog.require("app.main");</script>-->
+
+
+        <div id="overlay" style="margin:50px">
+            <!--<div class="list-group">-->
+                <!--<div class="list-group-item">-->
+                    <!--<div class="row-picture">-->
+                        <!--<img class="circle" src="http://lorempixel.com/56/56/people/1" alt="icon">-->
+                    <!--</div>-->
+                    <!--<div class="row-content">-->
+                        <!--<h4 class="list-group-item-heading">Tile with avatar</h4>-->
+                        <!--<p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus</p>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+
+            <div class="inputs">
+            <input class="form-control" placeholder="label" type="text">
+            <button  onclick="$(document).trigger('cleandb')" class="btn btn-primary"> cleand </button><br/>
+            <input id="id"   type="text"  size="30"/>
+            <button  onclick="$(document).trigger('setid',$('#id').val())"> setid </button>
+            <br/>
+            <input id="idt"   type="text"  size="30"/>
+            <button  onclick="$(document).trigger('connectTo',$('#idt').val())"> connect </button>
+
+            <button  onclick="$(document).trigger('flushdb',0); "> flushDB </button>
+            <button  onclick="$(document).trigger('dumpdb',0);"> dumpDB </button>
+</div>
+            <br/>
+<button  onclick="$(document).trigger('transaction',new Date().getTime())"> transact </button>
+</div>
+    </body>
+</html>
