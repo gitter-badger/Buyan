@@ -66,8 +66,8 @@ decoupled modules pass messages via central point
 |  ui   |          | router |          | store |
 |       | <------+ |        | <------+ |       |
 +-------+          +--------+          +-------+
-
                      +    ^
+                     |    |
                      |    |
                      |    |
                      |    |
@@ -85,8 +85,6 @@ decoupled modules pass messages via central point
 
 </pre>
 
-<pre>
-</pre>
 --------------
 
 Buyan after
