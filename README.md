@@ -72,6 +72,8 @@ Copyright (c) 2014 Nikola Mandic
 |  ui   |          | router |          | store |
 |       | <------+ |        | <------+ |       |
 +-------+          +--------+          +-------+
+</pre>
+<pre>
                      +    ^
                      |    |
                      |    |
