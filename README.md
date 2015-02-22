@@ -25,6 +25,7 @@ hopefuly pouchdb backed blockchain mining in browser over webrtc should seal the
 artwork
 ==========
 Buyan will feature artwork in public domain from prominent artists like <a href="https://en.wikipedia.org/wiki/Ivan_Bilibin">Ива́н Я́ковлевич Били́бин(Ivan Bilibin)</a> and <a href="https://en.wikipedia.org/wiki/Ilya_Repin">Илья́ Ефи́мович Ре́пин(Ilya Repin)</a>
+currently there is also screenshot from https://en.wikipedia.org/wiki/Soyuzmultfilm cartoon
 <br/>
 
 workflow for this is
