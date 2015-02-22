@@ -22,6 +22,8 @@ gh-pages will be the production branch
 this repo speciffically will be try to make an app from another angle and is meant to maybe merge with other repo later on
 hopefuly pouchdb backed blockchain mining in browser over webrtc should seal the deal with this repo
 <br/>
+artwork
+==========
 Buyan will feature artwork in public domain from prominent artists like <a href="https://en.wikipedia.org/wiki/Ivan_Bilibin">Ива́н Я́ковлевич Били́бин(Ivan Bilibin)</a> and <a href="https://en.wikipedia.org/wiki/Ilya_Repin">Илья́ Ефи́мович Ре́пин(Ilya Repin)</a>
 <br/>
 
