@@ -23,9 +23,8 @@
                         :source-paths ["src" "test"]
                         :compiler {
                                    :output-to "app.js"
-                                   :output-dir "out"
-                                   ; :optimizations :none
-                                   :source-maps true
+                                   :optimizations :none
+                                   ;:source-maps true
                                    }}]
               :test-commands {"unit-tests" ["phantomjs" :runner
                                             "this.literal_js_was_evaluated=true"
