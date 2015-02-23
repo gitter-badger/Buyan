@@ -8,7 +8,7 @@
              ;[pubsub :as pubsub]
 )
      (:require-macros
-      [app.util :as a :refer [await sweet  c]]
+      [util :as a :refer [await sweet  c]]
  [cljs.core.async.macros :as m :refer [go]]
       [cemerick.cljs.test
                        :as tt

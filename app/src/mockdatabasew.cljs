@@ -5,7 +5,7 @@
     [cljs.core.async :refer [chan close! timeout put!]]
 )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
-[app.util :as a :refer [await sweet c ]]
+[util :as a :refer [await sweet c ]]
                        [servant.macros :refer [defservantfn]])
   )
 

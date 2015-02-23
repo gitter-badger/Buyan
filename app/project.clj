@@ -12,7 +12,7 @@
 
   :plugins [
             [lein-marginalia "0.8.0"]
-            [lein-cljsbuild "1.0.4-SNAPSHOT"]
+            [lein-cljsbuild "1.0.5"]
             [com.cemerick/clojurescript.test "0.3.1"]
             ]
 
@@ -23,8 +23,8 @@
                         :source-paths ["src" "test"]
                         :compiler {
                                    :output-to "app.js"
-                                   :optimizations :none
-                                   ;:source-maps true
+                                   ;:optimizations :none
+                                   :source-maps true
                                    }}]
               :test-commands {"unit-tests" ["phantomjs" :runner
                                             "this.literal_js_was_evaluated=true"
