@@ -53,7 +53,10 @@
                         res
                         )))
   )
+(defmacro debug [typ & args]
 
+  `(.log js/console (.toString ~typ) ~@args)
+  )
 
 ;
 ;(macroexpand (list 'go

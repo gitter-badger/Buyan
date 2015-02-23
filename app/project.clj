@@ -16,11 +16,13 @@
             [com.cemerick/clojurescript.test "0.3.1"]
             ]
 
-  :source-paths ["src" "test"]
+ ; :source-paths ["src" "test"]
+  :source-paths ["src" ]
 
   :cljsbuild {
               :builds [{:id "app"
-                        :source-paths ["src" "test"]
+                        :source-paths ["src" ]
+                        ;:source-paths ["src" "test"]
                         :compiler {
                                    :output-to "app.js"
                                    ;:optimizations :none

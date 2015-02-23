@@ -7,7 +7,7 @@
     )
   (:require-macros
     [cljs.core.async.macros :as m :refer [go]]
-    [util :as a :refer [await sweet]]
+    [util :as a :refer [await sweet c debug]]
 
                    )
   )
@@ -24,7 +24,7 @@
       (l/og :blockchain "new memPool after remove " memPool)
       )
 
-(defn makeBlockHeader [version previous fmroot timestamp bits nonce txcount]
+(defn makeBlockHeader1 [version previous fmroot timestamp bits nonce txcount]
       (js-obj
         "version" 1
         "heightFromRoot" 0
@@ -52,12 +52,12 @@
         (l/og :blockknown "block known? " blockk)
         (def res (if (.-hash blockk)
                    (do
-                     (if (<! (db/g (.-hash blockk)))
+                     (if (c "g" (.-hash blockk))
                        true
                        false
                        ))
                    (do
-                     (if (<! (db/g blockk))
+                     (if (c "g"  blockk)
                        true
                        false
                        )
@@ -73,16 +73,16 @@
 
       (go
         (l/og :blockchain "block known? " blockk)
-        (def lastt (<! (db/g "last")))
+        (def lastt (c "g" "last"))
 
         (def res (if (.-hash blockk)
                    (do
-                     (if (== (.-hash (<! (db/g (.-hash blockk)))) (.-hash blockk))
+                     (if (== (.-hash (c "g"  (.-hash blockk))) (.-hash blockk))
                        true
                        false
                        ))
                    (do
-                     (if (== (.-hash (<! (db/g blockk))) (.-hash blockk))
+                     (if (== (.-hash (c "g"  blockk)) (.-hash blockk))
                        true
                        false
                        )
@@ -98,13 +98,13 @@
       )
 
 (defn makeBlock [work]
-      (l/og :makeBlock "about to make block " work)
+      (debug :makeBlock "about to make block " work)
       (go
         ;(def txs (<! (db/g "txs")))
-        (def lastt2 (<! (db/g "last")))
+        (def lastt2 (c "g" "last"))
 
-        (l/og :makeBlock "last " lastt2)
-        (def transactions (<! (db/g "txs")))
+        (debug :makeBlock "last " lastt2)
+        (def transactions (c "g" "txs"))
         (def lastv  lastt2)
         ;(if  lastt2 (do
         ;             (def lastv (.-val lastt2))
@@ -114,13 +114,13 @@
         ;                 (def transactions (array))
         ;
         ;                 ))
-        (l/og :makeBlock "last " lastv)
+        (debug  :makeBlock "last " lastv)
         ;version previous fmroot timestamp bits nonce txcount
-        (def blockHeader (makeBlockHeader "0" (.-hash lastv) (.-root work) (.getTime (js/Date.)) (.-dificulty blockhainInfo) (.-nonce work) (.-lenght transactions)))
-        (l/og :makeBlock "block header " blockHeader)
-        (l/og :makeBlock "transactions when saving block " transactions)
-        (def blockk (js-obj "header" blockHeader "hash" (<! (crypto/bHash blockHeader)) "transactions" transactions))
-        (l/og :makeBlock "newly made block " blockk)
+        (def blockHeader (makeBlockHeader1 "0" (.-hash lastv) (.-root work) (.getTime (js/Date.)) (.-dificulty blockhainInfo) (.-nonce work) (.-lenght transactions)))
+        (debug :makeBlock "block header " blockHeader)
+        (debug :makeBlock "transactions when saving block " transactions)
+        (def blockk (js-obj "header" blockHeader "hash" (c "hash" blockHeader) "transactions" transactions))
+        (debug :makeBlock "newly made block " blockk)
         blockk
         )
       )

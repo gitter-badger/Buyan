@@ -60,7 +60,7 @@
            (go
              ;(.then (.get dbase "last") #(put! c %) #(put! c %))
 
-             (def lastone (<! (g "last")))
+             (def lastone (c "g" "last"))
 
              (l/og :initDBase "about to init")
              (l/og :initDBase "last one from database " lastone)
@@ -71,7 +71,7 @@
                  )
                (do
                  (l/og :initDBase "nothing in database")
-                 (<! (m/ps "height" 0))
+                 (c "s" "height" 0)
                  ; (makeBlockHeader 0 0 0 0 0 0 0)
                  (def blck (js-obj "header"
                                   0

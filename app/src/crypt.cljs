@@ -7,7 +7,7 @@
     [cljs.core.async :refer [chan close! timeout put!]])
 
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
-                   [util :as a :refer [ sweet]]
+                   [util :as a :refer [ sweet c debug]]
     )
   )
 
@@ -49,14 +49,14 @@
              )
       )
 (defn s256 [k]
-      (l/og :blockchain "about to sha256 " k)
+      (debug :blockchain "about to sha256 " k)
       (go
         (let [c (chan)]
              (.then (js/crypto.subtle.digest (js-obj "name" "SHA-256") (encode k)) #(put! c %))
 
 
              (def r (arraybtostring (<! c)))
-             (l/og :s256 (+ "got from sha256 " k) r)
+             (debug :s256 (+ "got from sha256 " k) r)
              r
              )
         )

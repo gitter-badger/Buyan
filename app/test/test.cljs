@@ -7,7 +7,7 @@
     [crypt :as cr]
     [html :as ht]
     [peerjs :refer [ peerParams]]
-    [blockchain :refer [makeBlockHeader]]
+    [blockchain :refer]
     [database :refer [g p ps ] :as db]
     [pubsub :refer [pub sub get set init]]
      [reagent.core :as reagent :refer [atom]]
@@ -22,10 +22,10 @@
 (deftest initdbase
   ;check for root in database
   ;;clean db
-  (db/cleandb)
+ ; (db/cleandb)
   ;;initdb
-  (db/initDBase 1 )
-  (db/dumpdb)
+;  (db/initDBase 1 )
+;  (db/dumpdb)
   ;;get root
   ;;check if root
   )
