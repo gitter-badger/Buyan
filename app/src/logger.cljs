@@ -26,12 +26,12 @@
              :invoke
              ])
 (def tagsOFF [
-           ;:receive
+           :receive
              ])
 (def tags [:merkleRoot :dbupdate])
 (defn og [type format data]
   (go
-      (if (and (or (some #{type} tagsO1) (some #{:all} tagsO1)) (not (some #{type} tagsOFF)))
+      (if (and (or (some #{type} tagsOn) (some #{:all} tagsOn)) (not (some #{type} tagsOFF)))
         (.log js/console (+ type " " format) data)
 
         )

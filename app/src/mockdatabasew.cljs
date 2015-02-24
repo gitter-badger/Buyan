@@ -30,7 +30,7 @@
   )
 (defn dumpdb[]
  (go
-  (c "log" :dumpdb "dbase " mdbase)
+  (l/og :dumpdb "dbase " states)
   1
 )
   )

@@ -347,13 +347,13 @@
         (l/og :invoke  typ m)
         (def pchannel (chan 1))
         (def sch (chan 1))
-   (.push order pchannel)
+
    (aset pchannel "typ" typ)
    (>! sch (js-obj "typ" typ "msg" (if m  (into [] (.-arr m)) [])))
         (l/og :send "about to route" )
         (routing.routea pchannel sch)
        (l/og :send "done routing" order)
-   (l/og :send "done routing2" (<! pchannel))
+   (<! (l/og :send "done routing2" (<! pchannel)))
 
 
 

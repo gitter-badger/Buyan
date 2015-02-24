@@ -20,8 +20,8 @@
   )
 (defn dumpdb[]
   (go
-  (c "mdumpdb")
-   )
+  (l/og states)
+   1)
 ;  (c "mdumpdb" )
   )
 (def onDatabaseChange (chan))

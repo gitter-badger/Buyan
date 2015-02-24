@@ -70,9 +70,8 @@
    (def fwork (js-obj "root" "somehash"   "nonce" "somenonce"  "newhash" "found"))
     (l/og :main "0="
   (c "initdb" ))
-   (def fwork (js-obj "root" "somehash"   "nonce" "somenonce"  "newhash" "found"))
     (l/og :main "0="
- (c "dumpbd" ))
+ (c "dumpdb" ))
 
     ;(l/og :main "0=" (c "database" "s"))
   ;  (l/og :main "s1="  (c "database" "s" 1))
