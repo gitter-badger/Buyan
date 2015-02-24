@@ -1,7 +1,7 @@
 (ns routing
 
    (:require
-    [database :as db]
+    [mockdatabasew :as db]
 
     [intercomMake :as intercomMake]
     [logger :as l]
@@ -27,11 +27,12 @@
                   "dumpdb" db/dumpdb
                   ;"g" db/g
                   "g" db/reg
-                  "initDBase" db/initDBase
+                  "db" db/reg
+                  "initdb" db/initDBase
                   "onDatabaseChange" db/onDatabaseChange
                   "p" db/reg
                   ;"p" db/p
-                  "ps" db/ps
+                  "s" db/s
                   "update" db/update
                   "database" db/reg
 

@@ -1,10 +1,9 @@
 (ns pubsub
   (:require
     [cljs.core.async :refer [chan close! timeout put!]]
-
     [logger :as l]
     )
-  (:require-macros [cljs.core.async.macros :as m :refer [go]]
+  (:require-macros [cljs.core.async.macros :as m :refer [go  ]]
                    [servant.macros :refer [defservantfn]]))
 (def proxychan (chan))
 (def proxychan2 (chan 1))
@@ -342,16 +341,25 @@
 
    )
   )
-
+(def order (array))
 (defn sia [typ & m]
   (go
+        (l/og :invoke  typ m)
         (def pchannel (chan 1))
         (def sch (chan 1))
-        (>! sch (js-obj "typ" typ "msg" (if m  (into [] (.-arr m)) [])))
+   (.push order pchannel)
+   (aset pchannel "typ" typ)
+   (>! sch (js-obj "typ" typ "msg" (if m  (into [] (.-arr m)) [])))
+        (l/og :send "about to route" )
         (routing.routea pchannel sch)
-        (l/og :send "function returned " typ)
-      (def n  (<! pchannel))
-        (l/og :send "recieved" n)
-n
+       (l/og :send "done routing" order)
+   (l/og :send "done routing2" (<! pchannel))
+
+
+
+        ;(l/og :send "function returned " typ)
+    ;  (def n  (<! pchannel))
+      ;  (l/og :send "recieved" n)
+
    )
   )

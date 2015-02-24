@@ -2,6 +2,7 @@
 
   (:require
     [pubsub :as ps ]
+    [logger :as l]
     [cljs.core.async :refer [chan close! timeout put!]]
 )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
@@ -9,7 +10,7 @@
                        [servant.macros :refer [defservantfn]])
   )
 
-(def mdbase (js-obj))
+(def states (js-obj))
 ;; (defn g[kie]
 ;;   (aget mdbase kie)
 ;;   )
@@ -53,31 +54,54 @@
      (m/ps k v)
     )
   )
+(defn reg [typ v]
+
+
+;;   (go
+;;     (l/og :receive "about to recieve %s" typ)
+;;     (>!  statesCh (js-obj "typ" 0))
+;;    ; (l/og :receive "returned message no for the loop " m)
+;;    (def m (js-obj "typ" typ "msg" v))
+;;     (<! (check typ v undefined))
+;;   )
+(go
+  (if v
+    (do
+      (aset states typ v)
+    v)
+    (if
+      (aget states typ)
+    (aget states typ)
+
+      0
+      ))
+)  )
 (defn initDBase [x]
+  (go
   (l/og :initdbwraper2 "wrapper"  x)
-      (def dbase  m/mdbase)
-      (let [c (chan)]
-           (go
+     ; (def dbase  m/mdbase)
+      (let [cc (chan)]
+
              ;(.then (.get dbase "last") #(put! c %) #(put! c %))
 
-             (def lastone (c "g" "last"))
+             (def lastone (c "db" "last"))
 
              (l/og :initDBase "about to init")
              (l/og :initDBase "last one from database " lastone)
-             (if lastone
+             (if false
                (do
                  (l/og :initDBase "last one from database is " lastone)
 
                  )
                (do
                  (l/og :initDBase "nothing in database")
-                 (c "s" "height" 0)
+                 (c "db" "height" 0)
                  ; (makeBlockHeader 0 0 0 0 0 0 0)
                  (def blck (js-obj "header"
                                   0
 
 
-                                   "hash" (<! (crypto/bHash 0)) "transactions" []))
+                                   "hash" (c "hash" 0) "transactions" []))
                  ;args to make blockheader version previous fmroot timestamp bits nonce txcount
                  ;(def blockR (app.blockchain.makeBlockHeader "0" "0" "0" (.getTime ( js/Date.)) 0 "0" 0))
                  ;(def stringified (.stringify js/JSON blockR))
@@ -91,12 +115,12 @@
 
                  (set! (.-heightFromRoot (.-header blck)) 0)
                  ;(p "last" #(blck))
-                 (<! (ps "last" blck))
+                 (c "db" "last" blck)
                  ;todo save other info also
                  ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
                  ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
-                 (<! (m/ps (.-hash blck) blck))
-                 (<! (m/ps (+ "b" 0) blck))
+                 (c "db" (.-hash blck) blck)
+                 (c "db" (+ "b" 0) blck)
                  )
 
 
