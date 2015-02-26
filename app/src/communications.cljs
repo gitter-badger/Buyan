@@ -6,6 +6,7 @@
     [cljs.core.async :refer [chan close! timeout put!]]
     )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
+                   [util :as a :refer [await sweet c debug]]
                    [servant.macros :refer [defservantfn]])
   )
 (def intercomMeta (js-obj
@@ -81,6 +82,35 @@
 
         )
   )
+
+
+
+(defn bootstrapInternetDriverLayer []
+        (go
+        (def id (c  "lid"))
+        (l/og :entryy "got id %s " id)
+        (if id (do
+
+                 (.log js/console id)
+                 (.val  (js/$ "#id") id)
+                 (def peerjs (js/Peer. id   peerParams))
+                 (init peerjs)
+                 (.on peerjs "connection" comm/onConnection)
+                 )
+               (do
+                 (<! ( initDBase))
+                 ))
+
+
+        ;start submodules
+       ; (pubsub/initpubsub)
+        ;register all pubsub subscriptions
+        ;(comm/setupComm)
+        (comm/startP2PCommLoop)
+
+        )
+  )
+
 ; channel to anounce new connectinos
 (def connectionch (chan))
 (defn broadcastNewBlock [blockk]

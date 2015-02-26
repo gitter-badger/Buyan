@@ -1,9 +1,14 @@
- (ns html
+ (ns display.html
    (:require
 
      [reagent.core :as reagent :refer [atom]]
-     )
-   )
+
+    [cljs.core.async :refer [chan close! timeout put!]]
+)
+  (:require-macros [cljs.core.async.macros :as m :refer [go]]
+                   [util :as a :refer [await sweet c ]]
+                   [servant.macros :refer [defservantfn]])
+  )
 
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -87,3 +92,8 @@
  (defn  run [name desc pic extra ]
        (reagent/render-component (fn [] [proFile name desc pic extra])
                                  (.-body js/document)))
+ (defn ui[]
+   (go
+        (run "Taras Bulba" "zaparozie r0x" "i4c32d4308e1fe.jpg" "- zaparozie")
+   )
+   )

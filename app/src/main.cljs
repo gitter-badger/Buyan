@@ -67,12 +67,8 @@
   ;  (ps/s "msg1" "text")
   ;  (ps/s "msg2" "text")
    ;(def a (<! (ps/rr "asd" pri "msg1" pri)))
-   (def fwork (js-obj "root" "somehash"   "nonce" "somenonce"  "newhash" "found"))
-    (l/og :main "0="
-  (c "initdb" ))
-    (l/og :main "0="
- (c "dumpdb" ))
 
+   (c "ui" "html")
     ;(l/og :main "0=" (c "database" "s"))
   ;  (l/og :main "s1="  (c "database" "s" 1))
   ;  (l/og :main "1=" (c "database"  "s"))

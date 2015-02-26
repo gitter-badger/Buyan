@@ -76,6 +76,27 @@
       0
       ))
 )  )
+(defn fixture1[]
+  (go
+   (def fwork (js-obj "root" "somehash"   "nonce" "somenonce"  "newhash" "found"))
+    (l/og :main "0="
+  (c "initdb" ))
+
+    (l/og :main "0="
+ (c "dumpdb" ))
+
+    (def blck1 (js-obj "header" 0 "hash" (c "hash" 1) "transactions" []))
+    (c "saveBlock" blck1 )
+    (l/og :main "0="
+               (c "dumpdb" ))
+                 (def blck2 (js-obj "header" 0 "hash" (c "hash" 2) "transactions" []))
+                 (def blck3 (js-obj "header" 0 "hash" (c "hash" 3) "transactions" []))
+    (c "saveBlock" blck2 )
+    (c "saveBlock" blck3 )
+    (l/og :main "0="
+               (c "dumpdb" ))
+   )
+ )
 (defn initDBase [x]
   (go
   (l/og :initdbwraper2 "wrapper"  x)
@@ -121,6 +142,7 @@
                  ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
                  (c "db" (.-hash blck) blck)
                  (c "db" (+ "b" 0) blck)
+
                  )
 
 

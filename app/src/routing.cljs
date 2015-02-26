@@ -9,6 +9,8 @@
     [mining   ]
     [intercomTake :as it]
     [blockchain :as blockchain]
+
+    [renderStrategy ]
     [crypt :as crypto]
     [cljs.core.async :refer [chan close! timeout put!]]
     )
@@ -35,6 +37,10 @@
                   "s" db/s
                   "update" db/update
                   "database" db/reg
+
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                  "ui" renderStrategy/run
+
 
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

@@ -28,12 +28,14 @@
 
                      ))
 
-(defn set [what] (go (<! proxychan2)
-                          (>! proxychan2 what)
-
-                          )
+(defn set [what]
+  (go
+    (<! proxychan2)
+    (>! proxychan2 what)
 
   )
+
+)
 
 (def subs (js-obj))
 (defn sub [typ fun] (aset subs typ fun))

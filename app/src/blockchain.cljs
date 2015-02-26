@@ -2,6 +2,7 @@
   (:require
     [pubsub :as ps ]
 
+    [logger :as l]
     [cljs.core.async :refer [chan close! timeout put!]]
 
     )
@@ -124,20 +125,20 @@
         blockk
         )
       )
-(defn saveBlock [dbase blockR]
+(defn saveBlock [ blockR]
       (go
         (l/og :saveBlock "saving " blockR)
-        (def heightForBlock (<! (blockchainHeight 1)))
+        (def heightForBlock (c "blockchainHeight" 1))
         (set! (.-heightFromRoot (.-header blockR)) heightForBlock)
         ;(db/update "last" #(js-obj "_id" "last" "val" blockR))
         (defn a [] blockR)
-        (db/update "last" a )
+        (c "db" "last" (.-hash blockR) blockR )
 
         ;todo save other info also
         ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
         ;(.put dbase (js-obj "_id" (.-hash blockR) "val" blockR))
-        (<! (db/ps (.-hash blockR) blockR))
-        (<! (db/ps (+ "b" heightForBlock) blockR))
+        (c "db" (.-hash blockR) blockR)
+        (c "db" (+ "b" heightForBlock) blockR)
         ))
 
 ;this is the pseudo code
@@ -173,17 +174,11 @@
 
 (defn blockchainHeight [x]
       (go
-        (def hght (<! (db/g "height")))
+        (def hght (c "db" "height"))
         (l/og :blockchainHeight "blockchain height " hght)
         (if x
 
-          (<! (db/update "height" (fn [v]
-                                      (l/og :height "prev height " v)
-                                      (l/og :height "to add  " x)
-                                      (l/og :height "after addition  " (+ v x))
-                                      (+ v x)
-
-                                      )))
+          (c "db" "height" (+ hght 1))
 
           hght
           )
