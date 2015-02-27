@@ -2,7 +2,8 @@
 
   (:require
 
-    [pubsub :refer [pub sub]]
+    [logger :as l]
+    [pubsub :as ps :refer [pub sub]]
     [cljs.core.async :refer [chan close! timeout put!]]
     )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
@@ -31,13 +32,13 @@
 (defn setID [ev id ]
       (println id)
       (go
-        (p "lid" id)
-        (.log js/console  (<! (g "lid")))
+        (c "db" "lid" id)
+        (.log js/console  (c "db" "lid"))
 
 
           (def peerjs (js/Peer. id   peerParams))
-          (init peerjs)
-          (.on peerjs "connection" comm/onConnection)
+          ;(init peerjs)
+          (.on peerjs "connection" #(ac "onConnection"))
 
         )
 
@@ -94,11 +95,11 @@
                  (.log js/console id)
                  (.val  (js/$ "#id") id)
                  (def peerjs (js/Peer. id   peerParams))
-                 (init peerjs)
+                ; (init peerjs)
                  (.on peerjs "connection" comm/onConnection)
                  )
                (do
-                 (<! ( initDBase))
+                 (c "initdb" initDBase)
                  ))
 
 
@@ -181,21 +182,6 @@
         )
 
       )
-(defn channelsFromConnection [conn]
-      (def readc (chan 10))
-      (def writec (chan 10))
-      (set! (.-writec readc) writec)
-      (set! (.-type readc) "readch")
-      (set! (.-type writec) "writech")
-      (set! (.-writec conn) writec)
-      (set! (.-readc conn) readc)
-
-      (set! (.-conn readc) conn)
-
-      (set! (.-conn writec) conn)
-      (.on conn "data" (partial onData readc))
-      [readc writec]
-      )
 
 
 
@@ -220,10 +206,11 @@
                 (cond
 
                   (== (nth v 1) connectionch) (do (def stated (into [] (concat stated (onNewConnection vrecieved))))
-                                                  (def stat (i/getIntercomState vrecieved))
+                                                  ;(def stat (i/getIntercomState vrecieved))
 
-                                                  (l/og :p2ploop "intercom state" stat)
-                                                  (i/intercomstatemachine vrecieved (im/makeConn vrecieved)))
+                                                  ;(l/og :p2ploop "intercom state" stat)
+                                                  (c "intercomstatemachine" vrecieved  (js-obj "type" "conn" "data" vrecieved))
+                                                )
                   ;channel from some peer that recieves data from peer
                   (== (.-type ch2) "readch") (do
                                                (l/og :p2ploop "recieved from peer " vrecieved)
@@ -231,7 +218,7 @@
                                                  (def vrecieved (.parse js/JSON (.-data vrecieved)))
                                                  )
                                                (set! (.-peer vrecieved) (.-writec ch2))
-                                               (i/intercomstatemachine  (.-conn ch2) vrecieved)
+                                               (c "intercomstatemachine"  (.-conn ch2) vrecieved)
                                                ;;(i/onMessage (.-writec ch2) (.-type vrecieved) (.-data vrecieved))
 
                                                )
@@ -249,10 +236,26 @@
                   ; recieves transactions)
                   )
                 (recur))))
+(defn channelsFromConnection [conn]
+      (def readc (chan 10))
+      (def writec (chan 10))
+      (set! (.-writec readc) writec)
+      (set! (.-type readc) "readch")
+      (set! (.-type writec) "writech")
+      (set! (.-writec conn) writec)
+      (set! (.-readc conn) readc)
+
+      (set! (.-conn readc) conn)
+
+      (set! (.-conn writec) conn)
+      (.on conn "data" (partial onData readc))
+      [readc writec]
+      )
+
 (defn onNewConnection [message]
       (def gconn message)
 
-      (intercom/setIntercomState message "start")
+      (c "setIntercomState" message "start")
       (l/og :mloop "got new connection" message)
       ;make async channels that we can use for reading and writing to send data to peers
       ;instead of using peerjs functions just send to async channel and p2p loop will read and send

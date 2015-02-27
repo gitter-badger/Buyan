@@ -37,6 +37,11 @@
   ;`(l/og :asd ~@args)
   ;`(<! (apply ps/sia unquote(typ) unquote(wat)))
   )
+
+(defmacro ac [ & args]
+
+   `( ps/sia   ~@args)
+  )
 ;; (defmacro cc [where & wat]
 ;;     (list '<!
 ;;                        (list

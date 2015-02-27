@@ -18,9 +18,9 @@
                    [servant.macros :refer [defservantfn]])
   )
 
-(defn routea [rch sch ]
+(defn routea [f rch sch ]
 
-       (pubsub/rrsa
+       (f
                   rch
                   sch
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

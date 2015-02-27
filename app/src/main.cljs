@@ -1,12 +1,12 @@
 (ns app.main
   (:require
-
+    [communications]
     [logger :as l]
     [pubsub :as ps :refer [sia swp]]
     [cljs.core.async :refer [chan close! timeout put!]]
 )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
-                   [util :as a :refer [await sweet c ]]
+                   [util :as a :refer [await sweet c ac]]
                    [servant.macros :refer [defservantfn]])
   )
 
@@ -49,7 +49,7 @@
 (def empty-string "")
 
 
-;(.on (js/$ js/document) "setid"  setID)
+(.on (js/$ js/document) "setid"  #(ac "setID"))
 (defn pri [x]
   (println x)
   3
@@ -63,12 +63,12 @@
  ; (router/route)
   (go
 
-
+  (communications/startP2PCommLoop)
   ;  (ps/s "msg1" "text")
   ;  (ps/s "msg2" "text")
    ;(def a (<! (ps/rr "asd" pri "msg1" pri)))
 
-   (c "ui" "html")
+   ;(c "ui" "html")
     ;(l/og :main "0=" (c "database" "s"))
   ;  (l/og :main "s1="  (c "database" "s" 1))
   ;  (l/og :main "1=" (c "database"  "s"))

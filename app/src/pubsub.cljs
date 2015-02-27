@@ -325,6 +325,64 @@
       )
    (recur)))
     )
+(defn arrsa [ sch   & typ]
+
+  (go
+    (l/og :receive "about to recieve " typ)
+
+    (l/og :receive "about to recieve " (/ (count typ) 2))
+
+    ;;(>!  sendReceiveCh (js-obj "typ" 0))
+   ;;loop until all messages have been checked
+   ;;similar to the way erlang process checks its mailbox
+    (loop []
+      (l/og :receive "about to recieve in loop")
+      (def mtemp (<! sch))
+      (l/og :receive "about to recieve in loop" mtemp)
+      (if (== (aget mtemp "typ") 0)
+        (do
+          ;;if we looked at all return 0
+          (l/og :receive "got null")
+          0
+        )
+
+
+        (do
+          (l/og :receive "now looking at " mtemp)
+          ;; out of all messages we are waitin for
+          ;; check if the one extracted from "mailbox" is among them
+          ;;
+          (def result (loop [cnt 0]
+
+            (if (< cnt  (count typ) )
+              (do
+                (l/og :receive "checking " cnt)
+                (l/og :receive "got " mtemp)
+
+                (l/og :receive "looking for " (nth typ cnt ))
+
+                (if (== (aget mtemp "typ") (nth typ cnt ))
+                  (do
+                    ;;yay we found one now execute the function associated with it
+                    (l/og :receive "found " (nth typ cnt ))
+                    (l/og :receive "args " (aget  mtemp "msg"))
+                    ;(l/og :receive "function " (nth  typ (+ cnt 1)))
+                    (def ret  (apply (nth  typ (+ cnt 1)) (aget  mtemp "msg")))
+                    (l/og :receive1 "return " ret)
+                    ;(>! rch ret)
+                  )
+                  (do
+
+                  ;(>!  sendReceiveCh mtemp)
+                  (recur (+ cnt 2)))
+                )
+              )
+            )
+          ))
+        )
+      )
+   (recur)))
+    )
 
 (defn s [typ m]
   (go
@@ -353,9 +411,30 @@
    (aset pchannel "typ" typ)
    (>! sch (js-obj "typ" typ "msg" (if m  (into [] (.-arr m)) [])))
         (l/og :send "about to route" )
-        (routing.routea pchannel sch)
+        (routing.routea pubsub/rrsa pchannel sch)
        (l/og :send "done routing" order)
    (<! (l/og :send "done routing2" (<! pchannel)))
+
+
+
+        ;(l/og :send "function returned " typ)
+    ;  (def n  (<! pchannel))
+      ;  (l/og :send "recieved" n)
+
+   )
+  )
+(defn asia [typ & m]
+  (go
+        (l/og :invoke  typ m)
+        (def pchannel (chan 1))
+        (def sch (chan 1))
+
+   (aset pchannel "typ" typ)
+   (>! sch (js-obj "typ" typ "msg" (if m  (into [] (.-arr m)) [])))
+        (l/og :send "about to route" )
+        (routing.routea pubsub/arrsa pchannel sch)
+       (l/og :send "done routing" order)
+
 
 
 
