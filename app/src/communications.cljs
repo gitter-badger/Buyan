@@ -30,7 +30,7 @@
 (set! (.-type cryptoCh) "cryptoch")
 
 (defn setID [ev id ]
-      (println id)
+      (debug :setID ev id)
       (go
         (c "db" "lid" id)
         (.log js/console  (c "db" "lid"))

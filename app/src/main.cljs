@@ -25,7 +25,9 @@
 
 ;(.on (js/$ js/document) "connectTo"  connectTo)
 (defn dumpdb []
-  (ps/s "dumpdb" "")
+  (go
+  (c "dumpdb" )
+ )
   )
 (.on (js/$ js/document) "dumpdb"  dumpdb)
 (defn cleandb []
@@ -49,7 +51,7 @@
 (def empty-string "")
 
 
-(.on (js/$ js/document) "setid"  #(ac "setID"))
+(.on (js/$ js/document) "setid"  (fn [x y](go (ac "setID" x y)) ))
 (defn pri [x]
   (println x)
   3
