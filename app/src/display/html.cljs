@@ -47,6 +47,20 @@
  ]]
        ]
       )
+
+ (defn clock []
+       (update-time timer)
+       (let [time-str (-> @timer .toTimeString (clojure.string/split " ") first)]
+            [:div.example-clock
+             {:style {:color @time-color}}
+             time-str]))
+
+ (defn color-input []
+       [:div.color-input
+        "Time color: "
+        [:input {:type "text"
+                 :value @time-color
+                 :on-change #(reset! time-color (-> % .-target .-value))}]])
  ;
  ;[:div.inputs
  ; {:style {:margin "50px"}}
@@ -68,19 +82,32 @@
  ;    ]
  ;   ]
  ;  ]]
- (defn clock []
-       (update-time timer)
-       (let [time-str (-> @timer .toTimeString (clojure.string/split " ") first)]
-            [:div.example-clock
-             {:style {:color @time-color}}
-             time-str]))
 
- (defn color-input []
-       [:div.color-input
-        "Time color: "
-        [:input {:type "text"
-                 :value @time-color
-                 :on-change #(reset! time-color (-> % .-target .-value))}]])
+
+(defn connetorForm []
+  [:div
+   {:id "overlay"
+    :style {:margin "50px"}
+   }
+   [:div
+    {:class "inputs"}
+    [:input.form-control {:placeholder "label" :type "text"}]
+    [:button {:on-click #(.trigger (js/$ js/document) "cleandb")} "cleand"]
+    [:input.form-control {:placeholder "label" :type "text"}]
+    [:button {:on-click #(.trigger (js/$ js/document) "setid" (.val (js/$ "#id")))} "setid"]
+    [:br]
+
+    [:input.form-control {:placeholder "label" :type "text"}]
+    [:button {:on-click #(.trigger (js/$ js/document) "connectTo" (.val (js/$ "#idt")))} "connect"]
+    [:button {:on-click #(.trigger (js/$ js/document) "flushdb" 0)} "flushdb"]
+    [:button {:on-click #(.trigger (js/$ js/document) "dumpdb" 0)} "dumpdb"]
+    [:br]
+    [:button {:on-click #(.trigger (js/$ js/document) "transaction" (.getTime (js/Date.)))} "transact"]
+    ]
+  ]
+
+
+  )
 (defn timer-component []
   (let [seconds-elapsed (atom 0)]
     (fn []
@@ -106,13 +133,16 @@
 
  (defn  run [name desc pic extra ]
        (reagent/render-component (fn []
+
                                    [:div
-                                   [:div
-                                   [proFile name desc pic extra]
-                                   ]
-                                   [:div
-                                    [timer-component]
-                                   ]
+                                     [connetorForm]
+                                     [:div
+                                       [proFile name desc pic extra]
+                                     ]
+                                     [:div
+                                     [timer-component]
+
+                                     ]
                                     ]
                                     )
                                  (.-body js/document)))

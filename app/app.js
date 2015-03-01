@@ -61747,9 +61747,28 @@ display.html.clock = function clock() {
 };
 display.html.color_input = function color_input() {
   return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div.color-input", "div.color-input", -879914246), "Time color: ", new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "input", "input", 556931961), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "type", "type", 1174270348), "text", new cljs.core.Keyword(null, "value", "value", 305978217), cljs.core.deref.call(null, 
-  display.html.time_color), new cljs.core.Keyword(null, "on-change", "on-change", -732046149), function(p1__15799_SHARP_) {
-    return cljs.core.reset_BANG_.call(null, display.html.time_color, p1__15799_SHARP_.target.value);
+  display.html.time_color), new cljs.core.Keyword(null, "on-change", "on-change", -732046149), function(p1__16366_SHARP_) {
+    return cljs.core.reset_BANG_.call(null, display.html.time_color, p1__16366_SHARP_.target.value);
   }], null)], null)], null);
+};
+display.html.connetorForm = function connetorForm() {
+  return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "id", "id", -1388402092), "overlay", new cljs.core.Keyword(null, "style", "style", -496642736), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "margin", "margin", -995903681), "50px"], null)], null), new cljs.core.PersistentVector(null, 13, 5, cljs.core.PersistentVector.EMPTY_NODE, 
+  [new cljs.core.Keyword(null, "div", "div", 1057191632), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "class", "class", -2030961996), "inputs"], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "input.form-control", "input.form-control", -1123419636), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "placeholder", "placeholder", -104873083), "label", new cljs.core.Keyword(null, "type", 
+  "type", 1174270348), "text"], null)], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "button", "button", 1456579943), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "on-click", "on-click", 1632826543), function() {
+    return $(document).trigger("cleandb");
+  }], null), "cleand"], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "input.form-control", "input.form-control", -1123419636), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "placeholder", "placeholder", -104873083), "label", new cljs.core.Keyword(null, "type", "type", 1174270348), "text"], null)], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, 
+  "button", "button", 1456579943), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "on-click", "on-click", 1632826543), function() {
+    return $(document).trigger("setid", $("#id").val());
+  }], null), "setid"], null), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "br", "br", 934104792)], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "input.form-control", "input.form-control", -1123419636), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "placeholder", "placeholder", -104873083), "label", new cljs.core.Keyword(null, "type", 
+  "type", 1174270348), "text"], null)], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "button", "button", 1456579943), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "on-click", "on-click", 1632826543), function() {
+    return $(document).trigger("connectTo", $("#idt").val());
+  }], null), "connect"], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "button", "button", 1456579943), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "on-click", "on-click", 1632826543), function() {
+    return $(document).trigger("flushdb", 0);
+  }], null), "flushdb"], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "button", "button", 1456579943), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "on-click", "on-click", 1632826543), function() {
+    return $(document).trigger("dumpdb", 0);
+  }], null), "dumpdb"], null), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "br", "br", 934104792)], null), new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "button", "button", 1456579943), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "on-click", "on-click", 1632826543), function() {
+    return $(document).trigger("transaction", (new Date).getTime());
+  }], null), "transact"], null)], null)], null);
 };
 display.html.timer_component = function timer_component() {
   var seconds_elapsed = reagent.core.atom.call(null, 0);
@@ -61777,8 +61796,8 @@ display.html.simple_example = function simple_example(name, desc, pic, extra) {
 };
 display.html.run = function run(name, desc, pic, extra) {
   return reagent.core.render_component.call(null, function() {
-    return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632), new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [display.html.proFile, name, desc, pic, extra], null)], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, 
-    [new cljs.core.Keyword(null, "div", "div", 1057191632), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [display.html.timer_component], null)], null)], null);
+    return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [display.html.connetorForm], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632), new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [display.html.proFile, 
+    name, desc, pic, extra], null)], null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [display.html.timer_component], null)], null)], null);
   }, document.body);
 };
 display.html.ui = function ui() {
@@ -61787,12 +61806,12 @@ display.html.ui = function ui() {
     return function() {
       var f__6621__auto__ = function() {
         var switch__6576__auto__ = function(c__6620__auto__) {
-          return function(state_15809) {
-            var state_val_15810 = state_15809[1];
-            if (state_val_15810 === 1) {
-              var inst_15807 = display.html.run.call(null, "Taras Bulba", "zaparozie r0x", "i4c32d4308e1fe.jpg", "- zaparozie");
-              var state_15809__$1 = state_15809;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_15809__$1, inst_15807);
+          return function(state_16376) {
+            var state_val_16377 = state_16376[1];
+            if (state_val_16377 === 1) {
+              var inst_16374 = display.html.run.call(null, "Taras Bulba", "zaparozie r0x", "i4c32d4308e1fe.jpg", "- zaparozie");
+              var state_16376__$1 = state_16376;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_16376__$1, inst_16374);
             } else {
               return null;
             }
@@ -61802,14 +61821,14 @@ display.html.ui = function ui() {
           return function() {
             var state_machine__6577__auto__ = null;
             var state_machine__6577__auto____0 = function() {
-              var statearr_15812 = [null, null, null, null, null];
-              statearr_15812[0] = state_machine__6577__auto__;
-              statearr_15812[1] = 1;
-              return statearr_15812;
+              var statearr_16379 = [null, null, null, null, null];
+              statearr_16379[0] = state_machine__6577__auto__;
+              statearr_16379[1] = 1;
+              return statearr_16379;
             };
-            var state_machine__6577__auto____1 = function(state_15809) {
+            var state_machine__6577__auto____1 = function(state_16376) {
               while (true) {
-                var result__6578__auto__ = switch__6576__auto__.call(null, state_15809);
+                var result__6578__auto__ = switch__6576__auto__.call(null, state_16376);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6578__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -61818,12 +61837,12 @@ display.html.ui = function ui() {
                 break;
               }
             };
-            state_machine__6577__auto__ = function(state_15809) {
+            state_machine__6577__auto__ = function(state_16376) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6577__auto____0.call(this);
                 case 1:
-                  return state_machine__6577__auto____1.call(this, state_15809);
+                  return state_machine__6577__auto____1.call(this, state_16376);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -61834,9 +61853,9 @@ display.html.ui = function ui() {
         }(switch__6576__auto__, c__6620__auto__);
       }();
       var state__6622__auto__ = function() {
-        var statearr_15813 = f__6621__auto__.call(null);
-        statearr_15813[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6620__auto__;
-        return statearr_15813;
+        var statearr_16380 = f__6621__auto__.call(null);
+        statearr_16380[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6620__auto__;
+        return statearr_16380;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6622__auto__);
     };
@@ -61853,12 +61872,12 @@ display.renderStrategy.run = function run(renderer) {
     return function() {
       var f__6621__auto__ = function() {
         var switch__6576__auto__ = function(c__6620__auto__) {
-          return function(state_15825) {
-            var state_val_15826 = state_15825[1];
-            if (state_val_15826 === 1) {
-              var inst_15823 = display.html.ui.call(null);
-              var state_15825__$1 = state_15825;
-              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_15825__$1, inst_15823);
+          return function(state_16392) {
+            var state_val_16393 = state_16392[1];
+            if (state_val_16393 === 1) {
+              var inst_16390 = display.html.ui.call(null);
+              var state_16392__$1 = state_16392;
+              return cljs.core.async.impl.ioc_helpers.return_chan.call(null, state_16392__$1, inst_16390);
             } else {
               return null;
             }
@@ -61868,14 +61887,14 @@ display.renderStrategy.run = function run(renderer) {
           return function() {
             var state_machine__6577__auto__ = null;
             var state_machine__6577__auto____0 = function() {
-              var statearr_15828 = [null, null, null, null, null];
-              statearr_15828[0] = state_machine__6577__auto__;
-              statearr_15828[1] = 1;
-              return statearr_15828;
+              var statearr_16395 = [null, null, null, null, null];
+              statearr_16395[0] = state_machine__6577__auto__;
+              statearr_16395[1] = 1;
+              return statearr_16395;
             };
-            var state_machine__6577__auto____1 = function(state_15825) {
+            var state_machine__6577__auto____1 = function(state_16392) {
               while (true) {
-                var result__6578__auto__ = switch__6576__auto__.call(null, state_15825);
+                var result__6578__auto__ = switch__6576__auto__.call(null, state_16392);
                 if (cljs.core.keyword_identical_QMARK_.call(null, result__6578__auto__, new cljs.core.Keyword(null, "recur", "recur", -437573268))) {
                   continue;
                 } else {
@@ -61884,12 +61903,12 @@ display.renderStrategy.run = function run(renderer) {
                 break;
               }
             };
-            state_machine__6577__auto__ = function(state_15825) {
+            state_machine__6577__auto__ = function(state_16392) {
               switch(arguments.length) {
                 case 0:
                   return state_machine__6577__auto____0.call(this);
                 case 1:
-                  return state_machine__6577__auto____1.call(this, state_15825);
+                  return state_machine__6577__auto____1.call(this, state_16392);
               }
               throw new Error("Invalid arity: " + arguments.length);
             };
@@ -61900,9 +61919,9 @@ display.renderStrategy.run = function run(renderer) {
         }(switch__6576__auto__, c__6620__auto__);
       }();
       var state__6622__auto__ = function() {
-        var statearr_15829 = f__6621__auto__.call(null);
-        statearr_15829[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6620__auto__;
-        return statearr_15829;
+        var statearr_16396 = f__6621__auto__.call(null);
+        statearr_16396[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__6620__auto__;
+        return statearr_16396;
       }();
       return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null, state__6622__auto__);
     };
