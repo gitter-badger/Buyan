@@ -7,6 +7,7 @@
                  [servant "0.1.3"]
                  [com.cemerick/clojurescript.test "0.3.1"]
                  [reagent "0.5.0-alpha"]
+                 [cljs-ajax "0.3.10"]
                  ]
   :preamble ["reagent/react.js"]
 

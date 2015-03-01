@@ -9,8 +9,8 @@
     [mining   ]
     [intercomTake :as it]
     [blockchain :as blockchain]
-
-    [renderStrategy ]
+    [communications]
+    [display.renderStrategy ]
     [crypt :as crypto]
     [cljs.core.async :refer [chan close! timeout put!]]
     )
@@ -25,7 +25,7 @@
                   sch
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                   "cleandb" db/cleandb
-                  "connectTo" db/connectTo
+                  "connectTo" communications/connectTo
                   "dumpdb" db/dumpdb
                   ;"g" db/g
                   "g" db/reg
@@ -39,7 +39,7 @@
                   "database" db/reg
 
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-                  "ui" renderStrategy/run
+                  "ui" display.renderStrategy/run
 
 
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

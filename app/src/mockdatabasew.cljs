@@ -25,9 +25,10 @@
 ;;   )
 
 (defn cleandb[]
+
   (l/og :cleandb "cleandb " mdbase)
-  (set! m/mdbase (js-obj))
-  )
+  (set! states (js-obj))
+  (go 1))
 (defn dumpdb[]
  (go
 

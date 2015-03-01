@@ -1,4 +1,4 @@
-(ns renderStrategy
+(ns display.renderStrategy
   ( :require
 
     [display.html :as html]

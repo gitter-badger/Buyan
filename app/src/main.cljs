@@ -19,21 +19,23 @@
 
 
 ;listen on global document for transactions and publish them to channel transactionch
-;(.on (js/$ js/document) "transaction" ( fn [a1 a2 ]
-                                        ;(pub "transaction" a2)
-   ;                                     ) )
+(.on (js/$ js/document) "transaction" ( fn [a1 a2 ]
+                                       (pub "transaction" a2)
+                                      ) )
+(defn connectTo [ev id]
+(go
+    (c "connectTo" ev id)
+           ))
+(.on (js/$ js/document) "connectTo"  connectTo)
 
-;(.on (js/$ js/document) "connectTo"  connectTo)
-(defn dumpdb []
-  (go
-  (c "dumpdb" )
- )
-  )
+(defn dumpdb [](go (c "dumpdb" )))
 (.on (js/$ js/document) "dumpdb"  dumpdb)
-(defn cleandb []
-  (ps/s "cleandb" "")
-  )
-(.on (js/$ js/document) "cleandb"  cleadb)
+
+(defn cleandb [x y](go (c "cleandb" )))
+(.on (js/$ js/document) "flushdb"  cleandb)
+
+(.on (js/$ js/document) "setid"  (fn [x y](go (ac "setID" x y)) ))
+
 ;when someone connects to this user send that new connection to channel
 
 (defn replScratchFunction[]
@@ -51,7 +53,6 @@
 (def empty-string "")
 
 
-(.on (js/$ js/document) "setid"  (fn [x y](go (ac "setID" x y)) ))
 (defn pri [x]
   (println x)
   3
@@ -70,7 +71,7 @@
   ;  (ps/s "msg2" "text")
    ;(def a (<! (ps/rr "asd" pri "msg1" pri)))
 
-   ;(c "ui" "html")
+   (c "ui" "html")
     ;(l/og :main "0=" (c "database" "s"))
   ;  (l/og :main "s1="  (c "database" "s" 1))
   ;  (l/og :main "1=" (c "database"  "s"))

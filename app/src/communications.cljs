@@ -7,7 +7,7 @@
     [cljs.core.async :refer [chan close! timeout put!]]
     )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
-                   [util :as a :refer [await sweet c debug]]
+                   [util :as a :refer [await sweet c debug ac]]
                    [servant.macros :refer [defservantfn]])
   )
 (def intercomMeta (js-obj
@@ -28,7 +28,20 @@
 ;channel to recieve results from crypto functions
 (def cryptoCh (chan))
 (set! (.-type cryptoCh) "cryptoch")
+(defn connectTo [ev id]
+(go
+      ;(l/og :connectTo "" (first id))
+     ; (l/og :connectTo "" (<! ( get)) )
 
+      ;(l/og :connectTo "" (<! ( get)) )
+      (let [conn (.connect (c "db" "peerjs") id)]
+           (.on conn "open" (partial onOpen conn))
+
+           ;(channelsFromConnection conn)
+           )
+           ))
+
+(def ^:dynamic peerParams (js-obj "host" "localhost" "port" 8000 "key" "peerjs" "debug" true))
 (defn setID [ev id ]
       (debug :setID ev id)
       (go
@@ -36,9 +49,10 @@
         (.log js/console  (c "db" "lid"))
 
 
-          (def peerjs (js/Peer. id   peerParams))
+          (def peerjs (js/Peer. id peerParams))
+          (c "db" "peerjs" peerjs)
           ;(init peerjs)
-          (.on peerjs "connection" #(ac "onConnection"))
+          (.on peerjs "connection" #(ac "onConnection" %1))
 
         )
 
@@ -69,9 +83,10 @@
                  (init peerjs)
                  (.on peerjs "connection" comm/onConnection)
                  )
-               (do
-                 (<! ( initDBase))
-                 ))
+             ;  (do
+              ;;   (<! ( initDBase))
+                ;)
+         )
 
 
         ;start submodules
@@ -157,7 +172,7 @@
       ;
       ;
       (go
-        (>! connectionch conn)
+        ;;(>! connectionch conn)
         )
 
       (l/og :conn "conn: " conn)

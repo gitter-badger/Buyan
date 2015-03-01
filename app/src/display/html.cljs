@@ -1,8 +1,9 @@
  (ns display.html
    (:require
 
+    [logger :as l]
      [reagent.core :as reagent :refer [atom]]
-
+ [ajax.core :refer [GET POST]]
     [cljs.core.async :refer [chan close! timeout put!]]
 )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
@@ -80,7 +81,21 @@
         [:input {:type "text"
                  :value @time-color
                  :on-change #(reset! time-color (-> % .-target .-value))}]])
+(defn timer-component []
+  (let [seconds-elapsed (atom 0)]
+    (fn []
 
+      (js/setTimeout fn[](do
+                           (defn handler [response]
+                             (swap! seconds-elapsed #(str response))
+                            (.log js/console (str response)))
+                          (GET "http://localhost:8000/peerjs/peers"
+                                     {:handler handler
+                                      :response-format :json})
+                      ;(.log js/console r)
+                       ) 1000)
+      [:div
+       "Seconds Elapsed: " @seconds-elapsed])))
  ;
  ;[:div
  ; [greeting "Hello world, it is now"]
@@ -90,7 +105,16 @@
        [proFile name desc pic extra])
 
  (defn  run [name desc pic extra ]
-       (reagent/render-component (fn [] [proFile name desc pic extra])
+       (reagent/render-component (fn []
+                                   [:div
+                                   [:div
+                                   [proFile name desc pic extra]
+                                   ]
+                                   [:div
+                                    [timer-component]
+                                   ]
+                                    ]
+                                    )
                                  (.-body js/document)))
  (defn ui[]
    (go

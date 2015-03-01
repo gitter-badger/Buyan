@@ -85,17 +85,6 @@
   (l/og :initdbwraper "wrapper"  x)
   (m/initDBase x)
   )
-(defn connectTo [ev id]
-(go
-      (l/og :connectTo "" (first id))
-      (l/og :connectTo "" (<! ( get)) )
 
-      (l/og :connectTo "" (<! ( get)) )
-      (let [conn (.connect (<! ( get)) id)]
-           (.on conn "open" (partial comm/onOpen conn))
-
-           ;(channelsFromConnection conn)
-           )
-           ))
 
 
