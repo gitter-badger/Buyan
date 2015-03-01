@@ -1,7 +1,8 @@
  (ns display.html
    (:require
-
+ ;[clojure.data.json :as json]
     [logger :as l]
+    [pubsub :as ps ]
      [reagent.core :as reagent :refer [atom]]
  [ajax.core :refer [GET POST]]
     [cljs.core.async :refer [chan close! timeout put!]]
@@ -85,10 +86,7 @@
 
 
 (defn connetorForm []
-  [:div
-   {:id "overlay"
-    :style {:margin "50px"}
-   }
+
    [:div
     {:class "inputs"}
     [:input.form-control {:placeholder "label" :type "text"}]
@@ -104,25 +102,47 @@
     [:br]
     [:button {:on-click #(.trigger (js/$ js/document) "transaction" (.getTime (js/Date.)))} "transact"]
     ]
-  ]
+
 
 
   )
+(defn peer[peer]
+  [:li
+  [:a.list-item
+  [:div.text
+   {:on-click #(go
+
+                 (c "connectTo" 0 peer)
+                )}
+   [:span
+   peer
+    ]
+   [:br]
+   [:span.text-grey.small
+
+    ]
+   ]
+  ]
+   ]
+   )
 (defn timer-component []
-  (let [seconds-elapsed (atom 0)]
+  (let [seconds-elapsed (atom ["none r now"])]
     (fn []
 
-      (js/setTimeout fn[](do
+      (js/setTimeout (fn[](do
                            (defn handler [response]
-                             (swap! seconds-elapsed #(str response))
-                            (.log js/console (str response)))
+                             (swap! seconds-elapsed #(do response))
+                            ;(.log js/console (str response))
+
+                             )
                           (GET "http://localhost:8000/peerjs/peers"
                                      {:handler handler
                                       :response-format :json})
                       ;(.log js/console r)
-                       ) 1000)
-      [:div
-       "Seconds Elapsed: " @seconds-elapsed])))
+                       )) 10000)
+
+      [:ul.unstyled
+        (map peer @seconds-elapsed )])))
  ;
  ;[:div
  ; [greeting "Hello world, it is now"]
@@ -134,12 +154,17 @@
  (defn  run [name desc pic extra ]
        (reagent/render-component (fn []
 
-                                   [:div
+                                   [:div.crow
+                                      [:div.ws-6
+                                       {:id "overlay"
+                                        :style {:margin "50px"}
+                                       }
                                      [connetorForm]
-                                     [:div
+                                       ]
+                                     [:div.ws-3
                                        [proFile name desc pic extra]
                                      ]
-                                     [:div
+                                     [:div.ws-3
                                      [timer-component]
 
                                      ]
