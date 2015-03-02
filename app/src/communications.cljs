@@ -3,7 +3,7 @@
   (:require
 
     [logger :as l]
-    [pubsub :as ps :refer [pub sub]]
+    [pubsub :as ps ]
     [cljs.core.async :refer [chan close! timeout put!]]
     )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
@@ -37,7 +37,7 @@
       (let [conn (.connect (c "db" "peerjs") id)]
            (.on conn "open" (partial onOpen conn))
 
-           ;(channelsFromConnection conn)
+           (channelsFromConnection conn)
            )
            ))
 
@@ -172,7 +172,7 @@
       ;
       ;
       (go
-        ;;(>! connectionch conn)
+        (>! connectionch conn)
         )
 
       (l/og :conn "conn: " conn)
@@ -220,11 +220,11 @@
 
                 (cond
 
-                  (== (nth v 1) connectionch) (do (def stated (into [] (concat stated (onNewConnection vrecieved))))
+                  (== (nth v 1) connectionch) (do (def stated (into [] (concat stated (<! (onNewConnection vrecieved)))))
                                                   ;(def stat (i/getIntercomState vrecieved))
 
-                                                  ;(l/og :p2ploop "intercom state" stat)
-                                                  (c "intercomstatemachine" vrecieved  (js-obj "type" "conn" "data" vrecieved))
+                                                  (l/og :p2ploop "got connection in p2ploop" vrecieved)
+                                                  (c "intercomstatemachine" vrecieved  (js-obj "type" "conn" "data"  vrecieved ))
                                                 )
                   ;channel from some peer that recieves data from peer
                   (== (.-type ch2) "readch") (do
@@ -268,6 +268,7 @@
       )
 
 (defn onNewConnection [message]
+(go
       (def gconn message)
 
       (c "setIntercomState" message "start")
@@ -298,7 +299,8 @@
 
       ; (i/startIntercomLoop)
       peerChannels
-      )
+ )
+ )
 (defn onBlockMined [message]
       ; println vrecieved
       (go

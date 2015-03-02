@@ -85,13 +85,16 @@
  ;  ]]
 
 
+
+
+
 (defn connetorForm []
 
    [:div
     {:class "inputs"}
     [:input.form-control {:placeholder "label" :type "text"}]
     [:button {:on-click #(.trigger (js/$ js/document) "cleandb")} "cleand"]
-    [:input.form-control {:placeholder "label" :type "text"}]
+    [:input.form-control {:placeholder "label" :type "text" :id "id"}]
     [:button {:on-click #(.trigger (js/$ js/document) "setid" (.val (js/$ "#id")))} "setid"]
     [:br]
 
@@ -104,6 +107,22 @@
     ]
 
 
+
+  )
+
+(defn transactions[]
+    (let [seconds-elapsed (atom ["none r now"])]
+    (fn []
+
+     (defn handler [response]
+                             (swap! seconds-elapsed #(do [response])))
+      (ps/sub "transaction" handler)
+
+
+
+
+      [:ul.unstyled
+        (map peer @seconds-elapsed )]))
 
   )
 (defn peer[peer]
@@ -140,9 +159,10 @@
                                       :response-format :json})
                       ;(.log js/console r)
                        )) 10000)
-
+      [:div
+       [:div "peers"]
       [:ul.unstyled
-        (map peer @seconds-elapsed )])))
+        (map peer @seconds-elapsed )]])))
  ;
  ;[:div
  ; [greeting "Hello world, it is now"]
@@ -155,10 +175,10 @@
        (reagent/render-component (fn []
 
                                    [:div.crow
-                                      [:div.ws-6
-                                       {:id "overlay"
-                                        :style {:margin "50px"}
-                                       }
+                                      [:div.ws-3
+                                       ;{:id "overlay"
+                                        ;:style {:margin "50px"}
+                                       ;}
                                      [connetorForm]
                                        ]
                                      [:div.ws-3
@@ -168,6 +188,9 @@
                                      [timer-component]
 
                                      ]
+                                     [:div.ws-3
+                                      [transactions]
+                                      ]
                                     ]
                                     )
                                  (.-body js/document)))

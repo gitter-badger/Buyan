@@ -43,15 +43,25 @@
       (l/og :pub "pubing " (+ typ " " msg))
       (go (>! proxychan (js-obj "typ" typ "msg" msg)))
       )
+(defn initpubsub []
+(go
+(loop []
+(l/og :initpubsub "started loop" )
 
+(def m (<! proxychan))
+(l/og :initpubsub "about to deliver subbed %s" m)
+((aget subs (aget m "typ"))
+(aget m "msg"))
+(recur )))
+)
 (defn makeMsg [typ m pchannel]
   (js-obj "typ" typ "msg" m)
   )
-(defn initpubsub []
-      (go
+;(defn initpubsub []
+ ;     (go
         ;(>!  sendReceiveCh (makeMsg "maker" 0))
-     )
-      )
+;     )
+;      )
 (defn r [typ]
 
   (go

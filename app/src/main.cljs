@@ -20,7 +20,7 @@
 
 ;listen on global document for transactions and publish them to channel transactionch
 (.on (js/$ js/document) "transaction" ( fn [a1 a2 ]
-                                       (pub "transaction" a2)
+                                       (ps/pub "transaction" a2)
                                       ) )
 (defn connectTo [ev id]
 (go
@@ -66,6 +66,7 @@
  ; (router/route)
   (go
 
+   (pubsub.initpubsub)
   (communications/startP2PCommLoop)
   ;  (ps/s "msg1" "text")
   ;  (ps/s "msg2" "text")
