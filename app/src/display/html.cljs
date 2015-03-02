@@ -144,6 +144,30 @@
   ]
    ]
    )
+(defn tbox[]
+
+  (let [seconds-elapsed (atom "text")]
+    (fn []
+
+
+                           (defn save [ev]
+
+                             (swap! seconds-elapsed #(.val (js/$. "#inputbx")))
+                             (.log js/console (str @seconds-elapsed))
+
+                             )
+
+      [:div
+       [:div "entr messag"]
+      [:input {
+               :id "inputbx"
+               :on-key-up  #(case (.-which %)
+                                      13 (save)
+                                      27 (stop)
+                                      nil)
+               }
+
+        ]])))
 (defn timer-component []
   (let [seconds-elapsed (atom ["none r now"])]
     (fn []
@@ -191,6 +215,9 @@
                                      [:div.ws-3
                                       [transactions]
                                       ]
+                                    [:div.down
+                                    [tbox]
+                                     ]
                                     ]
                                     )
                                  (.-body js/document)))
