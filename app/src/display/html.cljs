@@ -109,7 +109,51 @@
 
 
   )
+(defn connection[peer]
+  [:li
+  [:a.list-item
+  [:div.text
+   {:on-click #(go
 
+                ; (c "connectTo" 0 peer)
+                )}
+   [:span
+   (.-peer peer)
+    ]
+   [:br]
+   [:span.text-grey.small
+     (->
+     peer
+     .-peerConnection
+     .-remoteDescription
+     .-sdp
+     (.split  " ")
+
+     (aget 5)
+      (.split "\n")
+      (aget 0)
+     )
+  ;(.-sdp (.-remoteDescription (.-peerConnection peer)))
+    ]
+   ]
+  ]
+   ]
+   )
+(defn connected[]
+    (let [state (atom [])]
+    (fn []
+
+     (defn handler [response]
+                             (swap! state #(conj @state  response)))
+      (ps/sub "peer" handler)
+
+
+
+
+      [:ul.unstyled
+        (map connection @state )]))
+
+  )
 (defn transactions[]
     (let [seconds-elapsed (atom ["none r now"])]
     (fn []
@@ -203,22 +247,27 @@
                                        ;{:id "overlay"
                                         ;:style {:margin "50px"}
                                        ;}
-                                     [connetorForm]
+                                       [connetorForm]
                                        ]
                                      [:div.ws-3
                                        [proFile name desc pic extra]
                                      ]
                                      [:div.ws-3
-                                     [timer-component]
-
+                                       [timer-component]
                                      ]
                                      [:div.ws-3
                                       [transactions]
                                       ]
                                     [:div.down
-                                    [tbox]
+                                      [tbox]
+                                     ]
+
+                                    [:div.down
+                                      [connected]
                                      ]
                                     ]
+
+
                                     )
                                  (.-body js/document)))
  (defn ui[]

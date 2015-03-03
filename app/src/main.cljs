@@ -65,7 +65,7 @@
       ;now that channels are setup
  ; (router/route)
   (go
-
+    (c "db" "connections" (array))
    (pubsub.initpubsub)
   (communications/startP2PCommLoop)
   ;  (ps/s "msg1" "text")

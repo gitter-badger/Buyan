@@ -224,6 +224,9 @@
                                                   ;(def stat (i/getIntercomState vrecieved))
 
                                                   (l/og :p2ploop "got connection in p2ploop" vrecieved)
+                                                  (ps/pub "peer" vrecieved)
+                                                  (def a (c "db" "connections"))
+                                                (.push a vrecieved)
                                                   (c "intercomstatemachine" vrecieved  (js-obj "type" "conn" "data"  vrecieved ))
                                                 )
                   ;channel from some peer that recieves data from peer
