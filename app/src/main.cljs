@@ -65,6 +65,10 @@
       ;now that channels are setup
  ; (router/route)
   (go
+   (-> js/document
+       js/$
+       (.trigger "setid")
+       )
     (c "db" "connections" (array))
    (pubsub.initpubsub)
   (communications/startP2PCommLoop)

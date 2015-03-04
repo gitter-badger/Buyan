@@ -70,7 +70,23 @@
 ;this here is for debugging
 ;(.enable (.-debug js/PouchDB) "*")
 (def start (chan))
+(defn broadcast[message]
+(go
+ (l/og :broadcast "message " message)
+       (l/og :broadcast "broadsacting new block" blockk)
 
+      (l/og :broadcast "broadsacting new block to " (.-knownPeersChannels intercomMeta))
+      (go
+
+        (doseq [peer (.-knownPeersChannels intercomMeta)]
+               (l/og :broadcast (+ "broadsacting new block to peer " peer " ") blockk)
+               (def vectoR (array))
+               (.push vectoR blockk)
+               (>! peer (js-obj "type" "peerdata" "data" message)))
+        )
+
+ )
+  )
 (defn initial []
         (go
         (def id (<! (g "lid")))

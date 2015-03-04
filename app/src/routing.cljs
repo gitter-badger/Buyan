@@ -63,6 +63,7 @@
 
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+                  "broadcast" communications/broadcast
 
                   "broadcastNewBlock" communications/broadcastNewBlock
                   "channelsFromConnection" communications/channelsFromConnection

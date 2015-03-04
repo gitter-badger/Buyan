@@ -192,11 +192,12 @@
 
 
                            (defn save [ev]
-
+                             (go
                              (swap! seconds-elapsed #(.val (js/$. "#inputbx")))
                              (.log js/console (str @seconds-elapsed))
                              (c "broadcast" (str @seconds-elapsed))
                              )
+                           )
 
       [:div
        [:div "entr messag"]

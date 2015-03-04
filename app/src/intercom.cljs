@@ -1,7 +1,7 @@
 (ns intercom
   (:require
 
-    [pubsub :refer [pub sub]]
+    [pubsub :as ps :refer [pub sub]]
 
 
     [logger :as l]
@@ -9,7 +9,7 @@
 
     )
   (:require-macros
-   [util :as a :refer [await sweet]]
+   [util :as a :refer [await sweet c ac]]
 
    [cljs.core.async.macros :as m :refer [go]]
                    )
@@ -106,6 +106,7 @@
               (typeof? message "gettx") (tostate (takeGetTx message))
               (typeof? message "tx") (tostate (takeTx message))
               (typeof? message "data") (tostate (takeData message))
+              (typeof? message "peerdata") (ac "peermessage" message)
               true (tostate "grind")
               )
             )
