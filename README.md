@@ -90,17 +90,7 @@ decoupled modules pass messages via central point
                   +----------+
 </pre>
 
-    <script src="bower_components/modernizr/modernizr.js"></script>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/peerjs/peer.js"></script>
-    <script src="bower_components/localforage/src/localforage.js"></script>
-    <script src="bower_components/pouchdb/dist/pouchdb.js"></script>
-    <script src="bower_components/react/react.js"></script>
-    <script src="bower_components/leaf-css-framework/js/libs/waves/dist/waves.js"></script>
-    <script src="bower_components/eventEmitter/EventEmitter.js"></script>
-    <script src="bower_components/leaf-css-framework/js/libs/hammer.js"></script>
-    <script src="bower_components/leaf-css-framework/js/libs/imagesloaded/imagesloaded.js"></script>
-    <script src="bower_components/leaf-css-framework/js/script.js"></script>
+
 <pre>
                                                                      
                                                                   
