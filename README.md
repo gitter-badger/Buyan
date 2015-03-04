@@ -105,7 +105,7 @@ decoupled modules pass messages via central point
       |                                                   |       
       |                       ui                          |       
       |                                                   |       
-      |     clojurescript        css                      |       
+      |     clojurescript        css/js                   |       
       |                                                   |       
       |     +-----------+      +--------------------+     |       
       |     |           |      |                    |     |       
