@@ -185,7 +185,13 @@
              )
         )
       )
+(defn broadcast [message]
+  (go
+   (def connections (c "db" "connections"))
 
+
+   )
+  )
 (defn takeGetVersion [message]
       (go
         (do

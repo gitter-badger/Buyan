@@ -38,10 +38,17 @@
 )
 
 (def subs (js-obj))
-(defn sub [typ fun] (aset subs typ fun))
+(defn sub [typ fun]
+  (if (aget subs typ)
+  (aset subs typ (conj  (aget subs typ) fun))
+
+  (aset subs typ  [fun])
+
+    )
+  )
 (defn pub [typ msg]
-      (l/og :pub "pubing " (+ typ " " msg))
-      (go (>! proxychan (js-obj "typ" typ "msg" msg)))
+    (go   (l/og :pub "pubing " (+ typ " " msg))
+      (>! proxychan (js-obj "typ" typ "msg" msg)))
       )
 (defn initpubsub []
 (go
@@ -50,8 +57,19 @@
 
 (def m (<! proxychan))
 (l/og :initpubsub "about to deliver subbed %s" m)
-((aget subs (aget m "typ"))
-(aget m "msg"))
+;  (l/og :initpubsub (aget subs (aget m "typ")))
+
+  (loop [col (aget subs (aget m "typ"))]
+    ;(l/og :initpubsub "trying to invoke" (first col))
+    ((first col) (aget m "msg"))
+
+    (def remainingsubs (rest col))
+
+    (if (> (count remainingsubs) 0)
+      (recur remainingsubs)
+      )
+    )
+
 (recur )))
 )
 (defn makeMsg [typ m pchannel]

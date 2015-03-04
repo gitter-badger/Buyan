@@ -123,15 +123,15 @@
    [:br]
    [:span.text-grey.small
      (->
-     peer
-     .-peerConnection
-     .-remoteDescription
-     .-sdp
-     (.split  " ")
+       peer
+       .-peerConnection
+       .-remoteDescription
+       .-sdp
+       (.split  " ")
 
-     (aget 5)
-      (.split "\n")
-      (aget 0)
+       (aget 5)
+        (.split "\n")
+        (aget 0)
      )
   ;(.-sdp (.-remoteDescription (.-peerConnection peer)))
     ]
@@ -146,9 +146,6 @@
      (defn handler [response]
                              (swap! state #(conj @state  response)))
       (ps/sub "peer" handler)
-
-
-
 
       [:ul.unstyled
         (map connection @state )]))
@@ -198,7 +195,7 @@
 
                              (swap! seconds-elapsed #(.val (js/$. "#inputbx")))
                              (.log js/console (str @seconds-elapsed))
-
+                             (c "broadcast" (str @seconds-elapsed))
                              )
 
       [:div
@@ -226,7 +223,7 @@
                                      {:handler handler
                                       :response-format :json})
                       ;(.log js/console r)
-                       )) 10000)
+                       )) 1000)
       [:div
        [:div "peers"]
       [:ul.unstyled
