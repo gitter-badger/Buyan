@@ -39,6 +39,7 @@
 
 (def subs (js-obj))
 (defn sub [typ fun]
+
   (if (aget subs typ)
   (aset subs typ (conj  (aget subs typ) fun))
 
@@ -60,7 +61,7 @@
 ;  (l/og :initpubsub (aget subs (aget m "typ")))
 
   (loop [col (aget subs (aget m "typ"))]
-    ;(l/og :initpubsub "trying to invoke" (first col))
+    (l/og :initpubsub "trying to invoke" (first col))
     ((first col) (aget m "msg"))
 
     (def remainingsubs (rest col))

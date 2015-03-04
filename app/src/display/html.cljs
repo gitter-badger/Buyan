@@ -87,7 +87,6 @@
 
 
 
-
 (defn connetorForm []
 
    [:div
@@ -139,8 +138,49 @@
   ]
    ]
    )
+(defn messag[m]
+
+
+
+  [:li
+  [:a.list-item
+  [:div.text
+   {:on-click #(go
+
+                ; (c "connectTo" 0 peer)
+                )}
+   [:span
+   (.-data m)
+    ]
+   [:br]
+   [:span.text-grey.small
+
+
+  ;(.-sdp (.-remoteDescription (.-peerConnection peer)))
+    ]
+   ]
+  ]
+   ]
+   )
+(defn messages[]
+    (let [state (atom []) ]
+    (fn []
+
+     (defn handler [response]
+       (.log js/console "message " response)
+                             (swap! state #(conj @state  response)))
+      (ps/sub "peermessage" handler)
+
+      [:span
+       [:div "messages"]
+      [:ul.unstyled
+        (map messag @state )]
+       ]
+      ;[messag]
+      ))
+)
 (defn connected[]
-    (let [state (atom [])]
+    (let [state (atom []) ]
     (fn []
 
      (defn handler [response]
@@ -148,7 +188,9 @@
       (ps/sub "peer" handler)
 
       [:ul.unstyled
-        (map connection @state )]))
+        (map connection @state )]
+      ;[messag]
+      ))
 
   )
 (defn transactions[]
@@ -262,6 +304,9 @@
 
                                     [:div.down
                                       [connected]
+                                     ]
+                                        [:div.down
+                                      [messages]
                                      ]
                                     ]
 
