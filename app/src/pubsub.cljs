@@ -47,8 +47,16 @@
 
     )
   )
+(defn trig [typ msg]
+  (-> js/document
+      (js/$)
+      (.trigger typ msg)
+
+   )
+  )
 (defn pub [typ msg]
     (go   (l/og :pub "pubing " (+ typ " " msg))
+      (trig typ msg)
       (>! proxychan (js-obj "typ" typ "msg" msg)))
       )
 (defn initpubsub []

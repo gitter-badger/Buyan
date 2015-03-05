@@ -1,7 +1,7 @@
 (ns intercom
   (:require
 
-    [pubsub :as ps :refer [pub sub]]
+    [pubsub :as ps ]
 
 
     [logger :as l]
@@ -106,7 +106,7 @@
               (typeof? message "gettx") (tostate (takeGetTx message))
               (typeof? message "tx") (tostate (takeTx message))
               (typeof? message "data") (tostate (takeData message))
-              (typeof? message "peerdata") (pub "peermessage" message)
+              (typeof? message "peerdata") (do (ps/pub "peermessage" message))
               true (tostate "grind")
               )
             )

@@ -112,10 +112,10 @@
   [:li
   [:a.list-item
   [:div.text
-   {:on-click #(go
+   ;{:on-click #(go
 
                 ; (c "connectTo" 0 peer)
-                )}
+    ;            )}
    [:span
    (.-peer peer)
     ]
@@ -145,7 +145,7 @@
   [:li
   [:a.list-item
   [:div.text
-   {:on-click #(go
+   {:on-click #(do
 
                 ; (c "connectTo" 0 peer)
                 )}
