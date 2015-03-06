@@ -64,6 +64,8 @@
 
       ;now that channels are setup
  ; (router/route)
+
+   (aset  js/window "messages" (js-obj))
   (go
    (-> js/document
        js/$
