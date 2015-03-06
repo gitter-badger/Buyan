@@ -7,6 +7,7 @@ official mascot in higher quality
 http://i.imgur.com/G8XSYgF.webm
 official song so that mascot has something to dance to
 http://www.infinitelooper.com/?v=AIkO9E_Wyc0&p=n
+warning!!! software in early stage
 # background
 project started after comments censored my tweet regarding Nazi( Stepinac) that is celebrated as a saint by latin heretic cartel in which I reflected on reports of his hands being red from orthodox blood that he litterally killed with a knife with his own two hands. Blog post introducing Buyan http://blog.nikola.link/#buyan
 recently twitter can be perceived as a truth unfriendly place they censored me 3 times as far as I noticed
@@ -55,6 +56,12 @@ protocol
 architecture of the project
 it mimics until certain point facebook's flux architecture
 decoupled modules pass messages via central point
+
+Buyan will hopefully be user extensible ->>
+by intercepting messages you
+could hopefully do bunch of stuff from javascript
+so without learing architecture and modifying contributing ....
+hopefully you could use it as black box or modify it if you want :-)
 <pre>
 
                   +----------+

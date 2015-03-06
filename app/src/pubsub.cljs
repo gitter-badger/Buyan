@@ -75,6 +75,14 @@
                      (>! proxychan m)
                      ))
   )
+
+  (-> js/document
+     (js/$)
+     (.on "call" (fn [ev m]
+                     ;(js-obj "typ" typ "msg" msg)
+                     (c (aget "type" m) (aget "msg" m))
+                     ))
+  )
 (loop []
 (l/og :initpubsub "started loop" )
 
@@ -321,6 +329,12 @@
 (defn rrsa [rch sch   & typ]
 
   (go
+         (if  (aget (aget  js/window "hook") typ )
+           (do
+        ((aget (aget  js/window "hook") typ ) msg)
+             )
+
+        (do
     (l/og :receive "about to recieve " typ)
 
     (l/og :receive "about to recieve " (/ (count typ) 2))
@@ -375,7 +389,7 @@
         )
       )
    (recur)))
-    )
+    )))
 (defn arrsa [ sch   & typ]
 
   (go
