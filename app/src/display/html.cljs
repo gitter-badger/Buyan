@@ -266,7 +266,7 @@
                                      {:handler handler
                                       :response-format :json})
                       ;(.log js/console r)
-                       )) 1000)
+                       )) 60000)
       [:div
        [:div "peers"]
       [:ul.unstyled
