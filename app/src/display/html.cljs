@@ -262,7 +262,7 @@
                             ;(.log js/console (str response))
 
                              )
-                          (GET "http://localhost:8000/peerjs/peers"
+                          (GET "http://buyan-nikolamandic.rhcloud.com/peerjs/peers"
                                      {:handler handler
                                       :response-format :json})
                       ;(.log js/console r)
