@@ -262,7 +262,7 @@
                             ;(.log js/console (str response))
 
                              )
-                          (GET "http://buyan-nikolamandic.rhcloud.com/peerjs/peers"
+                          (GET "http://buyan-nikolamandic.rhcloud.com/prokletdajepapa/peers"
                                      {:handler handler
                                       :response-format :json})
                       ;(.log js/console r)
