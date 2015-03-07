@@ -51,6 +51,8 @@ protocol
 protocol
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/media/protocol.png)
 
+signaling server:
+to use my free openshift account here is openshift server app        https://github.com/NikolaMandic/openshiftpeerjssignalingserver
 
 
 architecture of the project

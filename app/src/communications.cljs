@@ -41,7 +41,7 @@
            )
            ))
 
-(def ^:dynamic peerParams (js-obj "host" "buyan-nikolamandic.rhcloud.com" "port" 80 "key" "peerjs" "debug" true))
+(def ^:dynamic peerParams (js-obj "host" "buyan-nikolamandic.rhcloud.com" "port" 80 "key" "prokletdajepapa" "debug" true))
 (defn setID [ev id ]
       (debug :setID ev id)
       (go
