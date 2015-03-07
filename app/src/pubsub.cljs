@@ -81,7 +81,7 @@
      (js/$)
      (.on "call" (fn [ev m]
                      ;(js-obj "typ" typ "msg" msg)
-                     (c (aget "type" m) (aget "msg" m))
+                     (c (aget "typ" m) (aget "msg" m))
                      ))
   )
 (loop []
@@ -397,7 +397,12 @@
     (l/og :receive "about to recieve " typ)
 
     (l/og :receive "about to recieve " (/ (count typ) 2))
+       (if  (aget (aget  js/window "hook") typ )
+           (do
+        ((aget (aget  js/window "hook") typ ) msg)
+             )
 
+        (do
     ;;(>!  sendReceiveCh (js-obj "typ" 0))
    ;;loop until all messages have been checked
    ;;similar to the way erlang process checks its mailbox
@@ -447,8 +452,8 @@
           ))
         )
       )
-   (recur)))
-    )
+   (recur))))
+    ))
 
 (defn s [typ m]
   (go
@@ -468,8 +473,17 @@
    )
   )
 (def order (array))
-(defn sia [typ & m]
+(defn sia [typ & mo]
   (go
+          (if  (aget (aget  js/window "preroutinghook") typ )
+           (do
+       (l/og :prehook mo)
+       (def m (js-obj "arr" (apply (aget (aget  js/window "preroutinghook") typ ) mo)))
+       (l/og :afterhook m)
+             )
+            (def m mo)
+)
+
         (l/og :invoke  typ m)
         (def pchannel (chan 1))
         (def sch (chan 1))
@@ -479,7 +493,16 @@
         (l/og :send "about to route" )
         (routing.routea pubsub/rrsa pchannel sch)
        (l/og :send "done routing" order)
+             (if  (aget (aget  js/window "postroutinghook") typ )
+           (do
+               (<! (l/og :send "done routing2" ((aget (aget  js/window "postroutinghook") typ )
+                                                (<! pchannel))))
+
+             ;(def m ( msg))
+             )
+
    (<! (l/og :send "done routing2" (<! pchannel)))
+               )
 
 
 

@@ -67,6 +67,8 @@
 
    (aset  js/window "messages" (js-obj))
   (aset  js/window "hook" (js-obj))
+  (aset  js/window "preroutinghook" (js-obj))
+  (aset  js/window "postroutinghook" (js-obj))
   (go
    (-> js/document
        js/$

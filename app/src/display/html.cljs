@@ -9,7 +9,7 @@
     [cljs.core.async :refer [chan close! timeout put!]]
 )
   (:require-macros [cljs.core.async.macros :as m :refer [go]]
-                   [util :as a :refer [await sweet c ]]
+                   [util :as a :refer [await sweet c ac]]
                    [servant.macros :refer [defservantfn]])
   )
 
@@ -158,12 +158,13 @@
    )
 (defn messages[]
     (let [state (atom []) ]
-    (fn []
-
-     (defn handler [response]
+           (defn handler [response]
        (.log js/console "message " response)
                              (swap! state #(conj @state  response)))
       (ps/sub "peermessage" handler)
+    (fn []
+
+
 
       [:span
        [:div "messages"]
@@ -180,9 +181,11 @@
      (defn handler [response]
                              (swap! state #(conj @state  response)))
       (ps/sub "peer" handler)
-
+      [:span
+       [:div "connections made"]
       [:ul.unstyled
         (map connection @state )]
+       ]
       ;[messag]
       ))
 
@@ -231,7 +234,7 @@
                              (go
                              (swap! seconds-elapsed #(.val (js/$. "#inputbx")))
                              (.log js/console (str @seconds-elapsed))
-                             (c "broadcast" (str @seconds-elapsed))
+                             (ac "broadcast" (str @seconds-elapsed))
                              )
                            )
 
