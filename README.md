@@ -145,7 +145,7 @@ hopefully you could use it as black box or modify it if you want :-)
                                                                                                            
 +--------------+     +-----------------+     +--------+
 |              |     |                 |     |        |
-| c "type" msg | +-> |  preroutinghook | +-> | router |
+| c "type" msg | +-⇒ |  preroutinghook | +-⇒ | router |
 |              |     |                 |     |        |
 +--------------+     +-----------------+     +--------+
 
@@ -154,7 +154,7 @@ hopefully you could use it as black box or modify it if you want :-)
 
                     +-----------------+      +--------+
                     |                 |      |        |
-                    | postroutinghook | <--+ | return |
+                    | postroutinghook | ⇐--+ | return |
                     |                 |      |        |
                     +-----------------+      +--------+
 
@@ -164,7 +164,7 @@ hopefully you could use it as black box or modify it if you want :-)
 
 +---------------+     +-----------------+     +--------+
 |               |     |                 |     |        |
-| ac "type" msg | +-> |  preroutinghook | +-> | router |
+| ac "type" msg | +-⇒ |  preroutinghook | +-⇒ | router |
 |               |     |                 |     |        |
 +---------------+     +-----------------+     +--------+
 
