@@ -170,7 +170,7 @@ hopefully you could use it as black box or modify it if you want :-)
 
                                +--------+      +-----------------+
                                |        |      |                 |
-                               | return | <--+ | postroutinghook |
+                               | return | ⇐--+ | postroutinghook |
                                |        |      |                 |
                                +--------+      +-----------------+
 
@@ -180,7 +180,7 @@ hopefully you could use it as black box or modify it if you want :-)
 
 +--------------------------+     +-----------------+     +--------+
 |                          |     |                 |     |        |
-| ac "fname" arg1 arg2 ... | +-> |  preroutinghook | +-> | router |
+| ac "fname" arg1 arg2 ... | +-⇒ |  preroutinghook | +-⇒ | router |
 |                          |     |                 |     |        |
 +--------------------------+     +-----------------+     +--------+
 
