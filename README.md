@@ -15,6 +15,7 @@ because of tweets regarding latin heresy and various acts by nation stats coming
 since jesuits and entire latin heretic cartel were/are criminals and they felt need possibly to word their behaviour in evil tricky way in order to shove it down people's throats
 you can not have sex to be a virgin :-DD
 but some people find it an attractive idea if jesuits tell them it can be done
+DAMNED BE THE POPE!
 now on freenode also #buyan
 
 github pages will host the project here
