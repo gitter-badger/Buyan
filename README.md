@@ -99,7 +99,59 @@ hopefully you could use it as black box or modify it if you want :-)
                   |          |
                   +----------+
 </pre>
+<pre>
+        +-------------------+           +-------------------+
+        |                   |           |                   |
+        | pubsub            |           | pubsub            |
+        |                   |           |                   |
+        | util //for macros |           | util //for macros |
+        |                   |           |                   |
+        +-------------------+           +-------------------+
 
+                 ^                              ^
+                 |                              |
+                 +                              +
+
+       +-----------------------+     +-----------------------+
+       |                       |     |                       |
+       | module 1              |     | module 2              |
+       |                       |     |                       |
+       | references routing f  |     | references routing f  |
+       |                       |     |                       |
+       +-----------------------+     +-----------------------+
+
+                ^                              ^
+                |                              |
+                |                              |
+                |                              |
+                |                              |
+                +                              +
+
+       +----------------------------------------------------+
+       |                                                    |
+       |                                                    |
+       |                   router                           |
+       |                                                    |
+       |            it references all functions             |
+       |                                                    |
+       +----------------------------------------------------+
+
+
+                               ^
+                               | it references 1 routing f
+                               +
+
+                    +-------------------+
+                    |                   |
+                    | pubsub            |
+                    |                   |
+                    | util //for macros |
+                    |                   |
+                    +-------------------+
+
+module1.f -> pubsub.send -> router.route -> module2.x -> return
+
+</pre>
 
 <pre>
                                                                      
@@ -282,6 +334,8 @@ hopefully you could use it as black box or modify it if you want :-)
 
 
 </pre>
+
+
 <br/>
 Buyan after
 https://www.youtube.com/watch?v=4QtkDMXA0u8
