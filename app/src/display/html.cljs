@@ -3,6 +3,7 @@
  ;[clojure.data.json :as json]
     [logger :as l]
     [pubsub :as ps ]
+   [conf]
      [reagent.core :as reagent :refer [atom]]
  [ajax.core :refer [GET POST]]
     [cljs.core.async :refer [chan close! timeout put!]]
@@ -140,27 +141,20 @@
    )
 (defn messag[m]
 
+(def ip (-> m
+       .-peer
+            .-conn
+       .-peerConnection
+       .-remoteDescription
+       .-sdp
+       (.split  " ")
 
-
-  [:li
-  [:a.list-item
-  [:div.text
-   {:on-click #(do
-
-                ; (c "connectTo" 0 peer)
-                )}
-   [:span
-   (.-data m)
-    ]
-   [:br]
-   [:span.text-grey.small
-
-
-  ;(.-sdp (.-remoteDescription (.-peerConnection peer)))
-    ]
-   ]
-  ]
-   ]
+       (aget 5)
+        (.split "\n")
+        (aget 0)
+     )
+)
+  (proFile ip (.-data m) )
    )
 (defn messages[]
     (let [state (atom []) ]
@@ -254,19 +248,30 @@
         ]])))
 (defn timer-component []
   (let [seconds-elapsed (atom ["none r now"])]
-    (fn []
+          (js/setTimeout (fn[](do
+                           (defn handler [response]
+                             (swap! seconds-elapsed #(do response))
+                            ;(.log js/console (str response))
 
+                             )
+                          (GET (str "http://" conf.signalingd "/prokletdajepapa/peers")
+                                     {:handler handler
+                                      :response-format :json})
+                      ;(.log js/console r)
+                       )) 1000)
+    (fn []
       (js/setTimeout (fn[](do
                            (defn handler [response]
                              (swap! seconds-elapsed #(do response))
                             ;(.log js/console (str response))
 
                              )
-                          (GET "http://buyan-nikolamandic.rhcloud.com/prokletdajepapa/peers"
+                          (GET (str "http://" conf.signalingd "/prokletdajepapa/peers")
                                      {:handler handler
                                       :response-format :json})
                       ;(.log js/console r)
-                       )) 60000)
+                       )) conf.interval)
+
       [:div
        [:div "peers"]
       [:ul.unstyled

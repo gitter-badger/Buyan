@@ -3,6 +3,7 @@
   (:require
 
     [logger :as l]
+   [conf]
     [pubsub :as ps ]
     [cljs.core.async :refer [chan close! timeout put!]]
     )
@@ -19,7 +20,6 @@
 
 
 (def peers [])
-
 
 ;channel to recieve new transaction
 (def transactionch (chan))
@@ -41,7 +41,7 @@
            )
            ))
 
-(def ^:dynamic peerParams (js-obj "host" "buyan-nikolamandic.rhcloud.com" "port" 8000 "key" "prokletdajepapa" "debug" true))
+(def ^:dynamic peerParams (js-obj "host" conf.signaling "port" 8000 "key" "prokletdajepapa" "debug" true))
 (defn setID [ev id ]
       (debug :setID ev id)
       (go
