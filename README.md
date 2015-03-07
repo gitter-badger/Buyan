@@ -148,8 +148,10 @@ hopefully you could use it as black box or modify it if you want :-)
                     | util //for macros |
                     |                   |
                     +-------------------+
+(c "x" arg1 argx ...) =
 
 module1.f -> pubsub.send -> router.route -> module2.x -> return
+
 
 </pre>
 
