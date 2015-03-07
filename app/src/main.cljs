@@ -66,6 +66,7 @@
  ; (router/route)
 
    (aset  js/window "messages" (js-obj))
+  (aset  js/window "hook" (js-obj))
   (go
    (-> js/document
        js/$
