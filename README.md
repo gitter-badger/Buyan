@@ -102,6 +102,10 @@ plan is also to make ui extensible and to add rich text messaging via some rich 
                   |          |
                   +----------+
 </pre>
+this is how modules are made
+each module references few things
+and router references all
+and there is one module that makes the connection between router and individual modules
 <pre>
         +-------------------+           +-------------------+
         |                   |           |                   |
@@ -151,13 +155,14 @@ plan is also to make ui extensible and to add rich text messaging via some rich 
                     | util //for macros |
                     |                   |
                     +-------------------+
+;this is how we call functions referenced in router
 (c "x" arg1 argx ...) =
-
+;and this is call flow internally from f we call fnc in pubsub it invokes router etc.
 module1.f -> pubsub.send -> router.route -> module2.x -> return
 
 
 </pre>
-
+component diagram
 <pre>
                                                                      
                                                                   
@@ -198,6 +203,8 @@ module1.f -> pubsub.send -> router.route -> module2.x -> return
                           
 
 </pre>
+this gives overview of how users will extend the buyan engine
+
 <pre>
 
                                                                                                            
@@ -252,6 +259,8 @@ module1.f -> pubsub.send -> router.route -> module2.x -> return
 
 
 </pre>
+and how too use it as a black box with message passing
+you pass messages by triggering event on document
 <pre>
 
 +------------------------------------------------------------+
