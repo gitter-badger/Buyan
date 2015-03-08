@@ -106,7 +106,24 @@
               (typeof? message "gettx") (tostate (takeGetTx message))
               (typeof? message "tx") (tostate (takeTx message))
               (typeof? message "data") (tostate (takeData message))
-              (typeof? message "peerdata") (do (ps/pub "peermessage" message))
+              (typeof? message "peerdata") (do (ps/pub "peermessage" (js-obj "data" (.-data message) "id"
+
+                                                                              (-> message
+       .-peer
+            .-conn
+       .-peerConnection
+       .-remoteDescription
+       .-sdp
+       (.split  " ")
+
+       (aget 5)
+        (.split "\n")
+        (aget 0)
+     )
+
+
+
+                                                                             )))
               true (tostate "grind")
               )
             )

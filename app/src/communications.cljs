@@ -83,7 +83,8 @@
                (def vectoR (array))
                (.push vectoR blockk)
                (>! peer (js-obj "type" "peerdata" "data" message)))
-        )
+
+       )
 
  )
   )

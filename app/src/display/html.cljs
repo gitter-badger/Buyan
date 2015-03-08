@@ -141,20 +141,8 @@
    )
 (defn messag[m]
 
-(def ip (-> m
-       .-peer
-            .-conn
-       .-peerConnection
-       .-remoteDescription
-       .-sdp
-       (.split  " ")
 
-       (aget 5)
-        (.split "\n")
-        (aget 0)
-     )
-)
-  (proFile ip (.-data m) )
+  (proFile (.-id m) (.-data m) )
    )
 (defn messages[]
     (let [state (atom []) ]
@@ -234,6 +222,7 @@
                              (go
                              (swap! seconds-elapsed #(.val (js/$. "#inputbx")))
                              (.log js/console (str @seconds-elapsed))
+                              (ps/pub "peermessage" (js-obj "id" "me" "data" @seconds-elapsed))
                              (ac "broadcast" (str @seconds-elapsed))
                              )
                            )
