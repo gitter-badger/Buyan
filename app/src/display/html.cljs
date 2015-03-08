@@ -249,7 +249,7 @@
                }
 
         ]])))
-(defn timer-component []
+(defn peers []
   (let [seconds-elapsed (atom ["none r now"])]
           (js/setTimeout (fn[](do
                            (defn handler [response]
@@ -284,39 +284,60 @@
  ; [greeting "Hello world, it is now"]
  ; [clock]
  ; [color-input]]
+;[:div.ws-3
+;[proFile name desc pic extra]
+;]
  (defn simple-example [name desc pic extra]
        [proFile name desc pic extra])
 
  (defn  run [name desc pic extra ]
        (reagent/render-component (fn []
+                                   [:div.container.fluid
+                                    [:div.ws-2
+                                       [:div.crow
 
-                                   [:div.crow
-                                      [:div.ws-3
+                                        [:div.ws-12
+                                          [connected]
+                                        ]
+                                        [:div.ws-12
+                                         [peers]
+                                       ]
+
+                                       ]
+                                     ]
+                                   [:div.col-md-8.container.fluid
+
+
+                                    [:div.col-md-8
+                                     [:div.container
+                                     [:div.col-md-6
                                        ;{:id "overlay"
                                         ;:style {:margin "50px"}
                                        ;}
-                                       [connetorForm]
-                                       ]
-                                     [:div.ws-3
-                                       [proFile name desc pic extra]
-                                     ]
-                                     [:div.ws-3
-                                       [timer-component]
-                                     ]
-                                     [:div.ws-3
-                                      [transactions]
-                                      ]
-                                    [:div.down
-                                      [tbox]
+                                     ;  [connetorForm]
                                      ]
 
-                                    [:div.down
-                                      [connected]
-                                     ]
-                                        [:div.down
-                                      [messages]
-                                     ]
+                                        [:div.col-md-6
+                                          [messages]
+                                        ]
+                                 ]
+
                                     ]
+
+                                 ;          [:div.ws-12
+
+                                   ;       [:div
+                                ;      [transactions]
+                                ;     ]
+                               ;
+
+                                ;     ]
+
+                                    ]
+                                      [:div.emitter
+                                     [tbox]
+                                    ]
+                                  ]
 
 
                                     )
