@@ -221,6 +221,10 @@
 (defn startP2PCommLoop []
       ;listen on messages and send them where they need to be sent
       (def stated [connectionch])
+      (ps/sub "output" #(do
+
+
+                         ))
       (go (loop []
                 ;(>! (nth peer 1) "sending some data trough channel")
                 (l/og :p2pCommLoop "new iteration with state")

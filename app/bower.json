@@ -12,6 +12,8 @@
     "bootstrap-material-design": "~0.2.2",
     "leaf-css-framework": "kkortes/leaf",
     "eventEmitter": "4.x",
-    "eventie": ">=1.0.4 <2"
+    "eventie": ">=1.0.4 <2",
+    "jsplumb": "https://github.com/sporritt/jsplumb/",
+    "jsPlumb": "git://github.com/sporritt/jsplumb.git#~1.7.4"
   }
 }
