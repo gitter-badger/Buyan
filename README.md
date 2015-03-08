@@ -65,6 +65,9 @@ by intercepting messages you
 could hopefully do bunch of stuff from javascript
 so without learing architecture and modifying contributing ....
 hopefully you could use it as black box or modify it if you want :-)
+
+plan is also to make ui extensible and to add rich text messaging via some rich text editor
+
 <pre>
 
                   +----------+
