@@ -241,7 +241,7 @@ this gives overview of how users will extend the buyan engine
 
 
 
-
+this is async call it does not return something
 +--------------------------+     +-----------------+     +--------+
 |                          |     |                 |     |        |
 | ac "fname" arg1 arg2 ... | +-⇒ |  preroutinghook | +-⇒ | router |
