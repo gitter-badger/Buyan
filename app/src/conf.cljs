@@ -4,10 +4,9 @@
 
 
 
-
-(def signaling signaling2)
+(def signaling signaling1)
 (def sport1 "8000")
 (def sport2 "80")
-(def sport sport2)
+(def sport sport1)
 (def signalingd (str signaling ":" sport))
 (def interval 1000)

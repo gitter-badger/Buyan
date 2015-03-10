@@ -28,7 +28,7 @@ function compare(buf1, difficulty) {
   return true;
 }
 
-(function () {
+window.fja=(function () {
 
     var listDiv = document.getElementById("list"),
 
@@ -64,9 +64,9 @@ function compare(buf1, difficulty) {
 
     jsPlumb.ready(function () {
 
-        var instance = jsPlumb.getInstance({
+        var instance = window.instance = jsPlumb.getInstance({
             DragOptions: { cursor: 'pointer', zIndex: 2000 },
-            PaintStyle: { strokeStyle: '#666' },
+            PaintStyle: { strokeStyle: '#777' },
             EndpointHoverStyle: { fillStyle: "orange" },
             HoverPaintStyle: { strokeStyle: "orange" },
             EndpointStyle: { width: 20, height: 16, strokeStyle: '#666' },
@@ -190,7 +190,7 @@ function compare(buf1, difficulty) {
 
             // setup some empty endpoints.  again note the use of the three-arg method to reuse all the parameters except the location
             // of the anchor (purely because we want to move the anchor around here; you could set it one time and forget about it though.)
-            var e1 = instance.addEndpoint('dragDropWindow1', { anchor: [0.5, 1, 0, 1] }, exampleEndpoint2);
+            var e1 = instance.addEndpoint('1', { anchor: [0.5, 1, 0, 1] }, exampleEndpoint2);
 
             // setup some DynamicAnchors for use with the blue endpoints
             // and a function to set as the maxConnections callback.
@@ -204,10 +204,10 @@ function compare(buf1, difficulty) {
                     alert("Cannot drop connection " + info.connection.id + " : maxConnections has been reached on Endpoint " + info.endpoint.id);
                 };
 
-            var e1 = instance.addEndpoint("dragDropWindow1", { anchor: anchors }, exampleEndpoint);
+            var e1 = instance.addEndpoint("1", { anchor: anchors }, exampleEndpoint);
             // you can bind for a maxConnections callback using a standard bind call, but you can also supply 'onMaxConnections' in an Endpoint definition - see exampleEndpoint3 above.
             e1.bind("maxConnections", maxConnectionsCallback);
-
+/*
             var e2 = instance.addEndpoint('dragDropWindow2', { anchor: [0.5, 1, 0, 1] }, exampleEndpoint);
             // again we bind manually. it's starting to get tedious.  but now that i've done one of the blue endpoints this way, i have to do them all...
             e2.bind("maxConnections", maxConnectionsCallback);
@@ -220,7 +220,7 @@ function compare(buf1, difficulty) {
             var e4 = instance.addEndpoint("dragDropWindow4", { anchor: [1, 0.5, 1, 0] }, exampleEndpoint);
             e4.bind("maxConnections", maxConnectionsCallback);
             instance.addEndpoint("dragDropWindow4", { anchor: [0.25, 0, 0, -1] }, exampleEndpoint2);
-
+*/
             // make .window divs draggable
             instance.draggable(jsPlumb.getSelector(".drag-drop-demo .window"));
 
@@ -256,4 +256,5 @@ function compare(buf1, difficulty) {
         jsPlumb.fire("jsPlumbDemoLoaded", instance);
 
     });
-})();
+
+});

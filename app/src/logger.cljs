@@ -23,7 +23,7 @@
              :getBlocks
              ])
 (def tagsO1 [
-             :invoke
+           ;  :invoke
              ])
 (def tagsOFF [
            :receive

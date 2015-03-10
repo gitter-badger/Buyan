@@ -72,9 +72,10 @@
  (-> js/document
      (js/$)
      (.on "pubsub" (fn [ev m]
+                     (go
                      ;(js-obj "typ" typ "msg" msg)
                      (>! proxychan m)
-                     ))
+                     )))
   )
 
   (-> js/document
