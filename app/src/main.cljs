@@ -69,7 +69,9 @@
   (aset  js/window "hook" (js-obj))
   (aset  js/window "preroutinghook" (js-obj))
   (aset  js/window "postroutinghook" (js-obj))
+
   (go
+   (c "db" "fpeers" (js-obj))
    (-> js/document
        js/$
        (.trigger "setid")
@@ -88,6 +90,7 @@
   ;  (l/og :main "s2="  (c "database"  "s" 2))
   ;  (l/og :main "2=" (c "database"  "s"))
   ; (c "dumpdb")
+   (.trigger (js/$ js/document) "buyanLoaded")
   )
 )
 

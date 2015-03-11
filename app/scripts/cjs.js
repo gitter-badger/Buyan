@@ -76,24 +76,97 @@ window.fja=(function () {
         });
 
         // suspend drawing and initialise.
-        instance.batch(function () {
+-
+
+        jsPlumb.fire("jsPlumbDemoLoaded", instance);
+
+    });
+
+});
+
+
+
+
+
+
+
+window.a = new (function(){
+var self;
+   self=this;
+var
+        showConnectionInfo = function (s) {
+           var listDiv = document.getElementById("list");
+            listDiv.innerHTML = s;
+            listDiv.style.display = "block";
+        },
+        hideConnectionInfo = function () {
+           var listDiv = document.getElementById("list");
+            listDiv.style.display = "none";
+        },
+        connections = [],
+        updateConnections = function (conn, remove) {
+           var listDiv = document.getElementById("list");
+            if (!remove) connections.push(conn);
+            else {
+                var idx = -1;
+                for (var i = 0; i < connections.length; i++) {
+                    if (connections[i] == conn) {
+                        idx = i;
+                        break;
+                    }
+                }
+                if (idx != -1) connections.splice(idx, 1);
+            }
+            if (connections.length > 0) {
+                var s = "<span><strong>Connections</strong></span><br/><br/><table><tr><th>Scope</th><th>Source</th><th>Target</th></tr>";
+                for (var j = 0; j < connections.length; j++) {
+                    s = s + "<tr><td>" + connections[j].scope + "</td>" + "<td>" + connections[j].sourceId + "</td><td>" + connections[j].targetId + "</td></tr>";
+                }
+                showConnectionInfo(s);
+            } else
+                hideConnectionInfo();
+        },
+          maxConnectionsCallback = function (info) {
+                    alert("Cannot drop connection " + info.connection.id + " : maxConnections has been reached on Endpoint " + info.endpoint.id);
+                };
+  this.init=function(){
+if(!self.inited){
+
+self.instance=jsPlumb.getInstance({
+            DragOptions: { cursor: 'pointer', zIndex: 2000 },
+            PaintStyle: { strokeStyle: '#777' },
+            EndpointHoverStyle: { fillStyle: "orange" },
+            HoverPaintStyle: { strokeStyle: "orange" },
+            EndpointStyle: { width: 20, height: 16, strokeStyle: '#666' },
+            Endpoint: "Rectangle",
+            Anchors: ["TopCenter", "TopCenter"],
+            Container: "drag-drop-demo"
+        });
+
+    $("<div/>", {
+      id: "main"
+    }).appendTo($("body"));
+    $("<div/>", { id: "drag-drop-demo", class: "demo drag-drop-demo"}).appendTo("#main");
+
+
+       self.instance.batch(function () {
 
             // bind to connection/connectionDetached events, and update the list of connections on screen.
-            instance.bind("connection", function (info, originalEvent) {
+            self.instance.bind("connection", function (info, originalEvent) {
                 updateConnections(info.connection);
             });
-            instance.bind("connectionDetached", function (info, originalEvent) {
+            self.instance.bind("connectionDetached", function (info, originalEvent) {
                 updateConnections(info.connection, true);
             });
 
-            instance.bind("connectionMoved", function (info, originalEvent) {
+            self.instance.bind("connectionMoved", function (info, originalEvent) {
                 //  only remove here, because a 'connection' event is also fired.
                 // in a future release of jsplumb this extra connection event will not
                 // be fired.
                 updateConnections(info.connection, true);
             });
 
-            instance.bind("click", function (component, originalEvent) {
+            self.instance.bind("click", function (component, originalEvent) {
                 alert("click!")
             });
 
@@ -118,7 +191,7 @@ window.fja=(function () {
             // or not to allow a particular connection to be established.
             //
             var exampleColor = "#00f";
-            var exampleEndpoint = {
+           self.exampleEndpoint = {
                 endpoint: "Rectangle",
                 paintStyle: { width: 25, height: 21, fillStyle: exampleColor },
                 isSource: true,
@@ -146,7 +219,7 @@ window.fja=(function () {
             // and has scope 'exampleConnection2'.
             //
             var color2 = "#316b31";
-            var exampleEndpoint2 = {
+           self.exampleEndpoint2 = {
                 endpoint: ["Dot", { radius: 11 }],
                 paintStyle: { fillStyle: color2 },
                 isSource: true,
@@ -167,7 +240,7 @@ window.fja=(function () {
             // a connection detach and decide whether or not you wish to allow it to proceed.
             //
             var example3Color = "rgba(229,219,61,0.5)";
-            var exampleEndpoint3 = {
+            self.exampleEndpoint3 ={
                 endpoint: ["Dot", {radius: 17} ],
                 anchor: "BottomLeft",
                 paintStyle: { fillStyle: example3Color, opacity: 0.5 },
@@ -190,7 +263,7 @@ window.fja=(function () {
 
             // setup some empty endpoints.  again note the use of the three-arg method to reuse all the parameters except the location
             // of the anchor (purely because we want to move the anchor around here; you could set it one time and forget about it though.)
-            var e1 = instance.addEndpoint('1', { anchor: [0.5, 1, 0, 1] }, exampleEndpoint2);
+            //var e1 = this.instance.addEndpoint('1', { anchor: [0.5, 1, 0, 1] }, this.exampleEndpoint2);
 
             // setup some DynamicAnchors for use with the blue endpoints
             // and a function to set as the maxConnections callback.
@@ -199,62 +272,186 @@ window.fja=(function () {
                     [0.8, 1, 0, 1],
                     [0, 0.8, -1, 0],
                     [0.2, 0, 0, -1]
-                ],
-                maxConnectionsCallback = function (info) {
-                    alert("Cannot drop connection " + info.connection.id + " : maxConnections has been reached on Endpoint " + info.endpoint.id);
-                };
+                ];
 
-            var e1 = instance.addEndpoint("1", { anchor: anchors }, exampleEndpoint);
+
+//            var e1 = this.instance.addEndpoint("#"+d, { anchor: anchors }, this.exampleEndpoint);
             // you can bind for a maxConnections callback using a standard bind call, but you can also supply 'onMaxConnections' in an Endpoint definition - see exampleEndpoint3 above.
-            e1.bind("maxConnections", maxConnectionsCallback);
+  //          e1.bind("maxConnections", maxConnectionsCallback);
+
+
 /*
-            var e2 = instance.addEndpoint('dragDropWindow2', { anchor: [0.5, 1, 0, 1] }, exampleEndpoint);
-            // again we bind manually. it's starting to get tedious.  but now that i've done one of the blue endpoints this way, i have to do them all...
-            e2.bind("maxConnections", maxConnectionsCallback);
-            instance.addEndpoint('dragDropWindow2', { anchor: "RightMiddle" }, exampleEndpoint2);
-
-            var e3 = instance.addEndpoint("dragDropWindow3", { anchor: [0.25, 0, 0, -1] }, exampleEndpoint);
+            var e3 = this.instance.addEndpoint("dragDropWindow3", { anchor: [0.25, 0, 0, -1] }, this.exampleEndpoint);
             e3.bind("maxConnections", maxConnectionsCallback);
-            instance.addEndpoint("dragDropWindow3", { anchor: [0.75, 0, 0, -1] }, exampleEndpoint2);
+            this.instance.addEndpoint("dragDropWindow3", { anchor: [0.75, 0, 0, -1] }, this.exampleEndpoint2);
 
-            var e4 = instance.addEndpoint("dragDropWindow4", { anchor: [1, 0.5, 1, 0] }, exampleEndpoint);
+            var e4 = this.instance.addEndpoint("dragDropWindow4", { anchor: [1, 0.5, 1, 0] }, this.exampleEndpoint);
             e4.bind("maxConnections", maxConnectionsCallback);
-            instance.addEndpoint("dragDropWindow4", { anchor: [0.25, 0, 0, -1] }, exampleEndpoint2);
+            this.instance.addEndpoint("dragDropWindow4", { anchor: [0.25, 0, 0, -1] }, this.exampleEndpoint2);
 */
             // make .window divs draggable
-            instance.draggable(jsPlumb.getSelector(".drag-drop-demo .window"));
+            self.instance.draggable(jsPlumb.getSelector(".drag-drop-demo .window"));
 
             // add endpoint of type 3 using a selector.
-            instance.addEndpoint(jsPlumb.getSelector(".drag-drop-demo .window"), exampleEndpoint3);
+           // this.instance.addEndpoint(jsPlumb.getSelector(".drag-drop-demo .window"), this.exampleEndpoint3);
 
             var hideLinks = jsPlumb.getSelector(".drag-drop-demo .hide");
-            instance.on(hideLinks, "click", function (e) {
-                instance.toggleVisible(this.getAttribute("rel"));
+            self.instance.on(hideLinks, "click", function (e) {
+                self.instance.toggleVisible(this.getAttribute("rel"));
                 jsPlumbUtil.consume(e);
             });
 
             var dragLinks = jsPlumb.getSelector(".drag-drop-demo .drag");
-            instance.on(dragLinks, "click", function (e) {
-                var s = instance.toggleDraggable(this.getAttribute("rel"));
+            self.instance.on(dragLinks, "click", function (e) {
+                var s = self.instance.toggleDraggable(this.getAttribute("rel"));
                 this.innerHTML = (s ? 'disable dragging' : 'enable dragging');
                 jsPlumbUtil.consume(e);
             });
 
             var detachLinks = jsPlumb.getSelector(".drag-drop-demo .detach");
-            instance.on(detachLinks, "click", function (e) {
-                instance.detachAllConnections(this.getAttribute("rel"));
+           // var self=this;
+            this.instance.on(detachLinks, "click", function (e) {
+                self.instance.detachAllConnections(this.getAttribute("rel"));
                 jsPlumbUtil.consume(e);
             });
 
-            instance.on(document.getElementById("clear"), "click", function (e) {
-                instance.detachEveryConnection();
+            self.instance.on(document.getElementById("clear"), "click", function (e) {
+                self.instance.detachEveryConnection();
                 showConnectionInfo("");
                 jsPlumbUtil.consume(e);
             });
         });
 
-        jsPlumb.fire("jsPlumbDemoLoaded", instance);
+    self.inited=true;
+  }
+ }
+  this.addPeer = function(d){
+debugger;
+jQuery('<div/>', {
+    class: 'window',
+    id: d
+}).appendTo('#drag-drop-demo');
+$("<br/>").appendTo("#"+d);
+    $("<div/>",{html: d}).appendTo("#"+d);
+  $("<a/>",{ href:"#", class: "cmdLink hide", rel: "dragDropWindow"+d,
+                        html: "toggle connections"
+            }).appendTo("#"+d);
 
-    });
+$("<br/>").appendTo("#"+d);
+
+  $("<a/>",{ href:"#", class: "cmdLink drag", rel: "dragDropWindow"+d,
+                        html: "disable dragging"
+            }).appendTo("#"+d);
+$("<br/>").appendTo("#"+d);
+  $("<a/>",{ href:"#", class: "cmdLink detach", rel: "dragDropWindow"+d,
+                        html: "detach all"
+            }).appendTo("#"+d);
+$("<br/>").appendTo("#"+d);
+
+            // make .window divs draggable
+           // window.instance.draggable(jsPlumb.getSelector(".drag-drop-demo .window"));
+
+            // add endpoint of type 3 using a selector.
+           // window.instance.addEndpoint(jsPlumb.getSelector(".drag-drop-demo .window"), exampleEndpoint3);
+
+            // make .window divs draggable
+
+
+     //  var e3= self.instance.addEndpoint(jsPlumb.getSelector("#"+d), { anchor: [0.25, 0, 0, -1] }, self.exampleEndpoint);
+        //    e3.bind("maxConnections", maxConnectionsCallback);
+        //   self.instance.addEndpoint(jsPlumb.getSelector("#"+d), { anchor: [0.75, 0, 0, -1] }, self.exampleEndpoint3);
+                //var e3 = self.instance.addEndpoint(jsPlumb.getSelector("#"+d), { anchor: [0.5, 1, 0, 1] }, self.exampleEndpoint);
+            // again we bind manually. it's starting to get tedious.  but now that i've done one of the blue endpoints this way, i have to do them all...
+            //e2.bind("maxConnections", maxConnectionsCallback);
+  //          self.instance.addEndpoint(jsPlumb.getSelector("#"+d), { anchor: "RightMiddle" }, self.exampleEndpoint2);
+
+    //debugger;
+
+            self.instance.draggable(jsPlumb.getSelector(".drag-drop-demo .window"));
+
+var anchors = [
+[1, 0.2, 1, 0],
+[0.8, 1, 0, 1],
+[0, 0.8, -1, 0],
+[0.2, 0, 0, -1]
+];
+            // add endpoint of type 3 using a selector.
+    self.instance.addEndpoint(d, { anchor: [0.5, 1, 0, 1] }, self.exampleEndpoint2);
+    self.instance.addEndpoint(d, { anchor: anchors }, self.exampleEndpoint);
+
+            var hideLinks = jsPlumb.getSelector(".drag-drop-demo .hide");
+            self.instance.on(hideLinks, "click", function (e) {
+                this.instance.toggleVisible(this.getAttribute("rel"));
+                jsPlumbUtil.consume(e);
+            });
+
+            var dragLinks = jsPlumb.getSelector(".drag-drop-demo .drag");
+            self.instance.on(dragLinks, "click", function (e) {
+                var s = self.instance.toggleDraggable(this.getAttribute("rel"));
+                this.innerHTML = (s ? 'disable dragging' : 'enable dragging');
+                jsPlumbUtil.consume(e);
+            });
+
+            var detachLinks = jsPlumb.getSelector(".drag-drop-demo .detach");
+            self.instance.on(detachLinks, "click", function (e) {
+                self.instance.detachAllConnections(this.getAttribute("rel"));
+                jsPlumbUtil.consume(e);
+            });
+
+            self.instance.on(document.getElementById("clear"), "click", function (e) {
+                self.instance.detachEveryConnection();
+                showConnectionInfo("");
+                jsPlumbUtil.consume(e);
+            });
+
+ self.instance.bind("connection", function (info, originalEvent) {
+   //debugger;
+   $(document).trigger("call" {typ: "connectTo", msg: info.targetId});
+updateConnections(info.connection);
+});
+self.instance.bind("connectionDetached", function (info, originalEvent) {
+updateConnections(info.connection, true);
+});
+self.instance.bind("connectionMoved", function (info, originalEvent) {
+// only remove here, because a 'connection' event is also fired.
+// in a future release of jsplumb this extra connection event will not
+// be fired.
+updateConnections(info.connection, true);
+});
+self.instance.bind("click", function (component, originalEvent) {
+alert("click!")
+});
+
+
+
+  }
 
 });
+$(document).on("buyanLoaded",function(){
+window.messages.peer=true;
+window.messages.npeer=true;
+window.a.init()
+$(document).on("npeer",function(ev,d)
+{
+console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",d);
+window.messages.peer=false;
+
+window.a.addPeer(d)
+//window.fja();
+//$('#drag-drop-demo').
+
+$(document).trigger( "pubsub",{"typ": "peer", "msg": d});
+window.messages.peer=true;
+//window.messages.npeer=false;
+});
+
+
+
+
+
+
+});
+
+
+
+

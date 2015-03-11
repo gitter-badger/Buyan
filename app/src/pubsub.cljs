@@ -93,7 +93,8 @@
 ;  (l/og :initpubsub (aget subs (aget m "typ")))
 
   (loop [col (aget subs (aget m "typ"))]
-    (l/og :initpubsub "trying to invoke" (first col))
+    (if col
+    ;(l/og :initpubsub "trying to invoke" (first col))
     ((first col) (aget m "msg"))
 
     (def remainingsubs (rest col))
@@ -102,7 +103,7 @@
       (recur remainingsubs)
       )
     )
-
+)
 (recur )))
 )
 (defn makeMsg [typ m pchannel]

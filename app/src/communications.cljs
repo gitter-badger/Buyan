@@ -28,7 +28,7 @@
 ;channel to recieve results from crypto functions
 (def cryptoCh (chan))
 (set! (.-type cryptoCh) "cryptoch")
-(defn connectTo [ev id]
+(defn connectTo [ id]
 (go
       ;(l/og :connectTo "" (first id))
      ; (l/og :connectTo "" (<! ( get)) )
@@ -225,6 +225,17 @@
 
 
                          ))
+      (ps/sub "newpeer" #(do
+                           (go
+                           (def p (c "db" "fpeers"))
+                              (l/og :newpeer p %1)
+                            (if   (not (aget  p %1))
+                              (do (ps/pub "npeer" %1)
+                                (aset p %1 1)
+                              (c "db" "fpeers" p)
+                              ))
+                           )
+                           ))
       (go (loop []
                 ;(>! (nth peer 1) "sending some data trough channel")
                 (l/og :p2pCommLoop "new iteration with state")
@@ -275,6 +286,7 @@
                   ; recieves transactions)
                   )
                 (recur))))
+
 (defn channelsFromConnection [conn]
       (def readc (chan 10))
       (def writec (chan 10))

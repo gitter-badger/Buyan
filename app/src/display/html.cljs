@@ -193,13 +193,17 @@
         (map peer @seconds-elapsed )]))
 
   )
-(defn peer[peer]
-  [:li
+(defn peerr[peer]
+
+
+
+  (ps/pub "newpeer" peer)
+   [:li
   [:a.list-item
   [:div.text
    {:on-click #(go
 
-                 (c "connectTo" 0 peer)
+                 (c "connectTo"  peer)
                 )}
    [:span
    peer
@@ -211,7 +215,7 @@
    ]
   ]
    ]
-   )
+  )
 (defn tbox[]
 
   (let [seconds-elapsed (atom "text")]
@@ -242,6 +246,7 @@
   (let [seconds-elapsed (atom ["none r now"])]
           (js/setTimeout (fn[](do
                            (defn handler [response]
+
                              (swap! seconds-elapsed #(do response))
                             ;(.log js/console (str response))
 
@@ -267,7 +272,7 @@
       [:div
        [:div "peers"]
       [:ul.unstyled
-        (map peer @seconds-elapsed )]])))
+        (map peerr @seconds-elapsed )]])))
  ;
  ;[:div
  ; [greeting "Hello world, it is now"]
