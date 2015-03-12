@@ -4,6 +4,7 @@
     [logger :as l]
     )
   (:require-macros [cljs.core.async.macros :as m :refer [go  ]]
+                     [util :as a :refer [await sweet c debug ac]]
                    [servant.macros :refer [defservantfn]]))
 (def proxychan (chan))
 (def proxychan2 (chan 1))
@@ -80,10 +81,11 @@
 
   (-> js/document
      (js/$)
-     (.on "call" (fn [ev m]
+     (.on "call" (fn [ev m](go
                      ;(js-obj "typ" typ "msg" msg)
-                     (c (aget "typ" m) (aget "msg" m))
-                     ))
+                    (l/og :callfromevent ev  m)
+                     (<! (sia  (aget m "typ" ) (aget m "msg" )))
+                     )))
   )
 (loop []
 (l/og :initpubsub "started loop" )

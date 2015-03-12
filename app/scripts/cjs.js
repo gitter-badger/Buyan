@@ -405,8 +405,8 @@ var anchors = [
             });
 
  self.instance.bind("connection", function (info, originalEvent) {
-   //debugger;
-   $(document).trigger("call" {typ: "connectTo", msg: info.targetId});
+   debugger;
+   $(document).trigger("call", {typ: "connectTo", msg: info.targetId});
 updateConnections(info.connection);
 });
 self.instance.bind("connectionDetached", function (info, originalEvent) {
@@ -428,20 +428,20 @@ alert("click!")
 
 });
 $(document).on("buyanLoaded",function(){
-window.messages.peer=true;
+//window.messages.peer=true;
 window.messages.npeer=true;
 window.a.init()
 $(document).on("npeer",function(ev,d)
 {
 console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",d);
-window.messages.peer=false;
+//window.messages.peer=false;
 
 window.a.addPeer(d)
 //window.fja();
 //$('#drag-drop-demo').
 
-$(document).trigger( "pubsub",{"typ": "peer", "msg": d});
-window.messages.peer=true;
+//$(document).trigger( "pubsub",{"typ": "peer", "msg": d});
+//window.messages.peer=true;
 //window.messages.npeer=false;
 });
 
