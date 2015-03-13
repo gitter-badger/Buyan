@@ -179,7 +179,7 @@
 
   )
 (defn transactions[]
-    (let [seconds-elapsed (atom ["none r now"])]
+    (let [seconds-elapsed (atom [])]
     (fn []
 
      (defn handler [response]
@@ -243,7 +243,7 @@
 
         ]])))
 (defn peers []
-  (let [seconds-elapsed (atom ["none r now"])]
+  (let [seconds-elapsed (atom [])]
           (js/setTimeout (fn[](do
                            (defn handler [response]
 

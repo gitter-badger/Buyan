@@ -76,7 +76,7 @@ window.fja=(function () {
         });
 
         // suspend drawing and initialise.
--
+
 
         jsPlumb.fire("jsPlumbDemoLoaded", instance);
 
@@ -154,6 +154,7 @@ self.instance=jsPlumb.getInstance({
             // bind to connection/connectionDetached events, and update the list of connections on screen.
             self.instance.bind("connection", function (info, originalEvent) {
                 updateConnections(info.connection);
+                 //$(document).trigger("call", {typ: "connectTo", msg: info.targetId});
             });
             self.instance.bind("connectionDetached", function (info, originalEvent) {
                 updateConnections(info.connection, true);
@@ -209,7 +210,12 @@ self.instance=jsPlumb.getInstance({
                 },
                 isTarget: true,
                 beforeDrop: function (params) {
-                    return confirm("Connect " + params.sourceId + " to " + params.targetId + "?");
+                  if( confirm("Connect " + params.sourceId + " to " + params.targetId + "?")){
+                     $(document).trigger("call", {typ: "connectTo", msg: params.targetId});
+                  return true;
+                  }
+                  return false;
+
                 },
                 dropOptions: exampleDropOptions
             };
@@ -228,6 +234,14 @@ self.instance=jsPlumb.getInstance({
                 connector: ["Bezier", { curviness: 63 } ],
                 maxConnections: 3,
                 isTarget: true,
+                beforeDrop: function (params) {
+                  if( confirm("Connect " + params.sourceId + " to " + params.targetId + "?")){
+                     $(document).trigger("call", {typ: "connectTo", msg: params.targetId});
+                  return true;
+                  }
+                  return false;
+
+                },
                 dropOptions: exampleDropOptions
             };
 
@@ -320,6 +334,24 @@ self.instance=jsPlumb.getInstance({
                 showConnectionInfo("");
                 jsPlumbUtil.consume(e);
             });
+//          self.instance.bind("connection", function (info, originalEvent) {
+  // debugger;
+
+//updateConnections(info.connection);
+//});
+self.instance.bind("connectionDetached", function (info, originalEvent) {
+updateConnections(info.connection, true);
+});
+self.instance.bind("connectionMoved", function (info, originalEvent) {
+// only remove here, because a 'connection' event is also fired.
+// in a future release of jsplumb this extra connection event will not
+// be fired.
+updateConnections(info.connection, true);
+});
+self.instance.bind("click", function (component, originalEvent) {
+alert("click!")
+});
+
         });
 
     self.inited=true;
@@ -404,23 +436,6 @@ var anchors = [
                 jsPlumbUtil.consume(e);
             });
 
- self.instance.bind("connection", function (info, originalEvent) {
-   debugger;
-   $(document).trigger("call", {typ: "connectTo", msg: info.targetId});
-updateConnections(info.connection);
-});
-self.instance.bind("connectionDetached", function (info, originalEvent) {
-updateConnections(info.connection, true);
-});
-self.instance.bind("connectionMoved", function (info, originalEvent) {
-// only remove here, because a 'connection' event is also fired.
-// in a future release of jsplumb this extra connection event will not
-// be fired.
-updateConnections(info.connection, true);
-});
-self.instance.bind("click", function (component, originalEvent) {
-alert("click!")
-});
 
 
 
