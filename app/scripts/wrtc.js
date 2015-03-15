@@ -1,4 +1,4 @@
-function Konnection(){
+function K(){
   var self=this;
   var cfg = {"iceServers":[{"url":"stun:23.21.150.121"}]},
       con = { 'optional': [{'DtlsSrtpKeyAgreement': true}] };
@@ -54,6 +54,9 @@ function Konnection(){
     }
   }
   self.makeOffer=function(){
+    if(self.pc1==undefined){
+      self.newConnection();
+    }
     if(self.dc1==undefined){
       self.makeDataChannel();
     }
@@ -65,14 +68,27 @@ function Konnection(){
   self.onCandidate=function (e) {
       console.log("ICE candidate (pc1)", e);
       if (e.candidate == null) {
-        debugger;
+          //$?$(document).trigger("icedesc",JSON.stringify(self.pc1.localDescription)):1;
           console.log("local offer ",JSON.stringify(self.pc1.localDescription));
       }
   }
+  self.handlePeer = function(answer){
+    if(self.pc1==undefined){
+      self.newConnection();
+    }
+    var parsed=(typeof(answer) === "string")?JSON.parse(answer):answer;
+    if(parsed.type==="offer"){
+      self.answerFromOffer(parsed);
+    }else if(parsed.type==="answer"){
+      self.onAnswerFromPeer(parsed);
+    }else{
+      console.log("peer sent invalid request");
+    }
+  }
   self.onAnswerFromPeer=function(answer){
     var answerDesc=
-     (typeof(offer) === "string")?
-      new RTCSessionDescription(JSON.parse(offer)):new RTCSessionDescription(offer);
+     (typeof(answer) === "string")?
+      new RTCSessionDescription(JSON.parse(answer)):new RTCSessionDescription(answer);
     console.log("Received remote answer: ", answerDesc);
     self.pc1.setRemoteDescription(answerDesc);
   }
