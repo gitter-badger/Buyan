@@ -3,10 +3,11 @@ function Konnection(){
   var cfg = {"iceServers":[{"url":"stun:23.21.150.121"}]},
       con = { 'optional': [{'DtlsSrtpKeyAgreement': true}] };
   self.dataChannelSetup=function(dc1){
-    dc1.onopen = function (e) {
+    self.dc1=dc1;
+    self.dc1.onopen = function (e) {
         console.log('data channel connect');
     }
-    dc1.onmessage = function (e) {
+    self.dc1.onmessage = function (e) {
       if (e.data.size) {
         self.onMessage(e.data);
       }
@@ -25,12 +26,10 @@ function Konnection(){
   }
   self.makeDataChannel=function(){
     self.dc1 = self.pc1.createDataChannel('test', {reliable:true});
-
     self.dataChannelSetup(self.dc1);
   }
   self.newConnection=function newConnection(){
     self.pc1 = new webkitRTCPeerConnection(cfg, con);
-
     self.pc1.onicecandidate = self.onCandidate;
     self.pc1.onconnection = self.onOpen;
     function onsignalingstatechange(state) {
@@ -55,6 +54,9 @@ function Konnection(){
     }
   }
   self.makeOffer=function(){
+    if(self.dc1==undefined){
+      self.makeDataChannel();
+    }
     self.pc1.createOffer(function (desc) {
     self.pc1.setLocalDescription(desc, function () {});
       console.log("created local offer", desc);
@@ -68,32 +70,33 @@ function Konnection(){
       }
   }
   self.onAnswerFromPeer=function(answer){
-    var answerDesc = new RTCSessionDescription(JSON.parse(answer));
+    var answerDesc=
+     (typeof(offer) === "string")?
+      new RTCSessionDescription(JSON.parse(offer)):new RTCSessionDescription(offer);
     console.log("Received remote answer: ", answerDesc);
     self.pc1.setRemoteDescription(answerDesc);
   }
 
   self.answerFromOffer=function(offer){
-    self.pc1.setRemoteDescription(offer);
-    self.pc1.createAnswer(function (answerDesc) {
-        //writeToChatLog("Created local answer", "text-success");
-        console.log("Created local answer: ", answerDesc);
-        self.pc2.setLocalDescription(answerDesc);
-    }, function () { console.warn("No create answer"); });
+    var sdesc=
+     (typeof(offer) === "string")?
+      new RTCSessionDescription(JSON.parse(offer)):new RTCSessionDescription(offer);
 
+    self.pc1.setRemoteDescription(sdesc);
+    self.pc1.createAnswer(function (answerDesc) {
+        console.log("Created local answer: ", answerDesc);
+        self.pc1.setLocalDescription(answerDesc);
+    }, function () { console.warn("No create answer"); });
 
   }
   self.sendAnswer=function(){
     var answerDesc = new RTCSessionDescription(JSON.parse(answer));
     handleAnswerFromPC2(answerDesc);
-
   }
   self.onOpen=function(){
     console.log("Datachannel connected");
-
   }
   self.onMessage=function(message){
 
   }
-
 }
