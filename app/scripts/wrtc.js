@@ -29,7 +29,7 @@ function Konnection(){
     self.dataChannelSetup(self.dc1);
   }
   self.newConnection=function newConnection(){
-    self.pc1 = new webkitRTCPeerConnection(cfg, con);
+    self.pc1 = new RTCPeerConnection(cfg, con);
     self.pc1.onicecandidate = self.onCandidate;
     self.pc1.onconnection = self.onOpen;
     function onsignalingstatechange(state) {
