@@ -25,7 +25,7 @@
                         :source-paths ["src" ]
                         ;:source-paths ["src" "test"]
                         :compiler {
-                                   :output-to "app.js"
+                                   :output-to "../bapp/public/assets/javascripts/app.js"
                                    ;:optimizations :none
                                    :source-maps true
                                    }}]
