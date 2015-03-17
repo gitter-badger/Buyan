@@ -24,5 +24,41 @@
     <script src="assets/javascripts/wrtc.js"></script>
     <script src="assets/javascripts/app.js"></script>
     {{content-for 'body-footer'}}
+
+
+    <script>
+    /**
+     * This example shows how to use the dragNodes plugin.
+
+    var i,
+        s,
+        N = 100,
+        E = 500,
+        g = {
+          nodes: [],
+          edges: []
+        };
+
+    // Generate a random graph:
+    for (i = 0; i < N; i++)
+      g.nodes.push({
+        id: 'n' + i,
+        label: 'Node ' + i,
+        x: Math.random(),
+        y: Math.random(),
+        size: Math.random(),
+        color: '#a1a'
+      });
+
+    for (i = 0; i < E; i++)
+      g.edges.push({
+        id: 'e' + i,
+        source: 'n' + (Math.random() * N | 0),
+        target: 'n' + (Math.random() * N | 0),
+        size: Math.random(),
+        color: '#ccc'
+      });
+      */
+    </script>
   </body>
 </html>

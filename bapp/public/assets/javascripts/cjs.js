@@ -445,7 +445,7 @@ var anchors = [
 $(document).on("buyanLoaded",function(){
 //window.messages.peer=true;
 window.messages.npeer=true;
-window.a.init()
+//window.a.init()
 $(document).on("npeer",function(ev,d)
 {
 console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",d);
@@ -466,7 +466,3 @@ window.a.addPeer(d)
 
 
 });
-
-
-
-

@@ -16,5 +16,7 @@ var app = new EmberApp();
 // modules that you would like to import into your application
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
-
+app.import('bower_components/peerjs/peer.js');
+app.import('bower_components/sigma.js/build/sigma.min.js');
+app.import('bower_components/sigma.js/build/plugins/sigma.plugins.dragNodes.min.js');
 module.exports = app.toTree();
