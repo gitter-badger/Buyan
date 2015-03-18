@@ -7,6 +7,7 @@ export default Ember.Component.extend({
     sigma.renderers.def = sigma.renderers.canvas;
     // Instantiate sigma:
     var g={nodes:[],edges:[]};
+    /*
     var i,
         s,
         N = 100,
@@ -37,15 +38,27 @@ export default Ember.Component.extend({
         color: '#ccc'
       });
     }
+    */
     var s = new sigma({
       graph:g ,
       container: 'graph-container'
     });
-
+    window.s=s;
     // Initialize the dragNodes plugin:
     sigma.plugins.dragNodes(s, s.renderers[0]);
+    function f(){
 
+      window.s.graph.addNode({
+        id: 'n4' + 18988+(++i),
+        label: 'Node 1i' + 1+(++i),
+        x: Math.random(),
+        y: Math.random(),
+        size: Math.random()*100,
+        color: '#676'
+      });
+      window.s.refresh();
+    }
 
-
+    //$(document).on("npeer",f)
   }.on( 'didInsertElement' )
 });

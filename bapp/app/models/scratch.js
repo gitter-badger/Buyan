@@ -4,5 +4,5 @@ export default DS.Model.extend({
   handle: attr(),
   ip: attr(),
   source: attr(),
-  peers: attr()
+  peers1: attr()
 });
