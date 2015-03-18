@@ -72,10 +72,10 @@
 
   (go
    (c "db" "fpeers" (js-obj))
-   (-> js/document
-       js/$
-       (.trigger "setid")
-       )
+;   (-> js/document
+;       js/$
+  ;     (.trigger "setid")
+  ;s     )
     (c "db" "connections" (array))
    (pubsub.initpubsub)
    (communications/startP2PCommLoop)

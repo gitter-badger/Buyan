@@ -65,16 +65,30 @@ export default Ember.Component.extend({
        var d=data.content;
        for(var i =0;i<d.length;i++){
 
-
-
-
          window.s.graph.addNode(mknode(d[i].get("handle")));
        }
 
       window.s.refresh();
     }
     a.then(f);
-    //$(document).on("newpeer",f)
+    function connectToAllInitial(){
+      for (var i = 0; i <  window.s.graph.nodes().length-1; i++){
+        window.s.graph.addEdge({
+          id: 'e' + i,
+          source: window.s.graph.nodes()[window.s.graph.nodes().length-1].id,
+          target: window.s.graph.nodes()[i].id,
+          size: Math.random(),
+          color: '#ccc'
+        });
+      }
+    }
+    function addMef(ev,myId){
+      debugger;
+      window.s.graph.addNode(mknode(myId));
+      connectToAllInitial();
+      window.s.refresh();
+    }
+    $(document).on("setid",addMef)
   }.on( 'didInsertElement' ),
   computedProp: function () {
     debugger;

@@ -1,5 +1,8 @@
 
-{{#each person in model.peers}}
-  <li>Hello, {{person.handle}}!</li>
-{{/each}}
+
+{{#view "connector"}}
+  <label for="buyanid">buyanid</label>
+  {{input id="buyanid" value=view.randomId}}
+  <button id="enterbuyan">enter buyan</button>
+{{/view}}
 {{buyan-graph  peerl=model.peers}}
