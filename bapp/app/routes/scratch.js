@@ -3,12 +3,9 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
     model: function() {
-debugger;
-      return this.store.findAll('scratch');
-return [{
-  handle: 1
 
-}]
+      return {peers:this.store.findAll('scratch')};
+
 
     },
     setupController: function(controller, song) {

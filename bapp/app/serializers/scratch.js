@@ -17,10 +17,10 @@ export default DS.RESTSerializer.extend({
     var p= payload.map(function(v,i,a){
 
     //  debugger;
-      return {id:1,handle: v,ip:'',peers1:1}
+      return {id:i,handle: v,ip:'',peers1:1}
     });
 
 
-    return {'scratch':[{id:1,handle: payload[0],ip:'a',peers1:1}]};
+    return {'scratch':p};
   }
 });

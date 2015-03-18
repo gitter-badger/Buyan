@@ -4,8 +4,10 @@ import layout from '../templates/components/buyan-graph';
 export default Ember.Component.extend({
   layout: layout,
   setupTooltip: function () {
+
     sigma.renderers.def = sigma.renderers.canvas;
     // Instantiate sigma:
+    var a =this.get('peerl');
     var g={nodes:[],edges:[]};
     /*
     var i,
@@ -46,19 +48,36 @@ export default Ember.Component.extend({
     window.s=s;
     // Initialize the dragNodes plugin:
     sigma.plugins.dragNodes(s, s.renderers[0]);
-    function f(){
+    function mknode(labl){
 
-      window.s.graph.addNode({
-        id: 'n4' + 18988+(++i),
-        label: 'Node 1i' + 1+(++i),
+      var i = i || 0;
+      var label = labl ;
+      return {
+        id: label,
+        label: label,
         x: Math.random(),
         y: Math.random(),
-        size: Math.random()*100,
+        size: 100,
         color: '#676'
-      });
+      }
+    }
+    function f(data){
+       var d=data.content;
+       for(var i =0;i<d.length;i++){
+
+
+
+
+         window.s.graph.addNode(mknode(d[i].get("handle")));
+       }
+
       window.s.refresh();
     }
-
-    //$(document).on("npeer",f)
-  }.on( 'didInsertElement' )
+    a.then(f);
+    //$(document).on("newpeer",f)
+  }.on( 'didInsertElement' ),
+  computedProp: function () {
+    debugger;
+    return 'width' + this.get('peerl');
+  }.observes('peerl')
 });
