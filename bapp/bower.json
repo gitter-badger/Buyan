@@ -12,6 +12,7 @@
     "ember-qunit": "0.2.8",
     "ember-qunit-notifications": "0.0.7",
     "qunit": "~1.17.1",
-    "peerjs": "~0.3.14"
+    "peerjs": "~0.3.14",
+    "es6-shim": "~0.27.1"
   }
 }

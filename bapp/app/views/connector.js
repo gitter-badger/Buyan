@@ -1,6 +1,5 @@
 import Ember from 'ember';
-function makeid()
-{
+function makeid(){
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
@@ -12,9 +11,12 @@ function makeid()
 
 export default Ember.View.extend({
   randomId: makeid(),
+  idSet:false,
+
   click: function(e){
     if(arguments[0].target.id==="enterbuyan"){
-      $(document).trigger("setid",this.randomId);  
+      $(document).trigger("setid",this.randomId);
+      this.idSet=true;
     }
 
   }

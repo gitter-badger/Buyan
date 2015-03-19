@@ -2,6 +2,7 @@ function K(){
   var self=this;
   var cfg = {"iceServers":[{"url":"stun:23.21.150.121"}]},
       con = { 'optional': [{'DtlsSrtpKeyAgreement': true}] };
+  var icePromise = new Promise();
   self.dataChannelSetup=function(dc1){
     self.dc1=dc1;
     self.dc1.onopen = function (e) {
@@ -64,12 +65,17 @@ function K(){
     self.pc1.setLocalDescription(desc, function () {});
       console.log("created local offer", desc);
     }, function () {console.warn("Couldn't create offer");});
+    return icePromise;
   }
   self.onCandidate=function (e) {
       console.log("ICE candidate (pc1)", e);
       if (e.candidate == null) {
           //$?$(document).trigger("icedesc",JSON.stringify(self.pc1.localDescription)):1;
+
           console.log("local offer ",JSON.stringify(self.pc1.localDescription));
+          icePromise.resolve(self.pc1.localDescription);
+      }else{
+          icePromise.reject(new Error("no kandidat"));
       }
   }
   self.handlePeer = function(answer){
@@ -84,6 +90,7 @@ function K(){
     }else{
       console.log("peer sent invalid request");
     }
+    return icePromise;
   }
   self.onAnswerFromPeer=function(answer){
     var answerDesc=
