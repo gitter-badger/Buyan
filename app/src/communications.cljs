@@ -51,9 +51,10 @@
 
           (def peerjs (js/Peer. id peerParams))
           (c "db" "peerjs" peerjs)
+          (c "dumpdb")
           ;(init peerjs)
           (.on peerjs "connection" #(ac "onConnection" %1))
-
+          (.trigger (js/$ js/document) "setID" id)
         )
 
       ;(.on peerjs "connection" onConnection)

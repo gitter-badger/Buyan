@@ -84,9 +84,16 @@
      (.on "call" (fn [ev m](go
                      ;(js-obj "typ" typ "msg" msg)
                     (l/og :callfromevent ev  m)
-                     (<! (sia  (aget m "typ" ) (aget m "msg" )))
+                    (def argx (into [(aget m "typ" ) ]
+                    (into [] (aget m "msg" ))))
+                   (l/og :callfromevent argx)
+                     (<! (apply sia
+                       argx
+                       )
+                     )
                      )))
   )
+
 (loop []
 (l/og :initpubsub "started loop" )
 

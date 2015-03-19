@@ -9,7 +9,7 @@ official song so that mascot has something to dance to
 http://www.infinitelooper.com/?v=AIkO9E_Wyc0&p=n
 warning!!! software in early stage
 # background
-project started after comments censored my tweet regarding Nazi( Stepinac) that is celebrated as a saint by latin heretic cartel in which I reflected on reports of his hands being red from orthodox blood that he litterally killed with a knife with his own two hands. Blog post introducing motivation behind Buyan http://blog.nikola.link/#buyan
+project started after comments censored my tweet regarding Nazi( Stepinac) that is celebrated as a saint by latin heretic cartel in which I reflected on reports of his hands being red from orthodox blood that he literally killed with a knife with his own two hands. Blog post introducing motivation behind Buyan http://blog.nikola.link/#buyan
 so just like there was Armenian genocide there was genocide in balkans
 in wwII against Jews,Roma and Serbs organized by organization people
 refer to as "Catholic church".

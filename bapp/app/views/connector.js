@@ -15,7 +15,9 @@ export default Ember.View.extend({
 
   click: function(e){
     if(arguments[0].target.id==="enterbuyan"){
-      $(document).trigger("setid",this.randomId);
+      $(document).trigger("call",{typ: "setID",msg: [this.randomId]});
+      
+
       this.idSet=true;
     }
 

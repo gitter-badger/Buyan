@@ -73,6 +73,9 @@ export default Ember.Component.extend({
     a.then(f);
     function connectToAllInitial(){
       for (var i = 0; i <  window.s.graph.nodes().length-1; i++){
+        $(document).trigger("call",{
+          typ: "connectTo",
+          "msg": [window.s.graph.nodes()[i].id]});
         window.s.graph.addEdge({
           id: 'e' + i,
           source: window.s.graph.nodes()[window.s.graph.nodes().length-1].id,
@@ -83,12 +86,11 @@ export default Ember.Component.extend({
       }
     }
     function addMef(ev,myId){
-      debugger;
       window.s.graph.addNode(mknode(myId));
       connectToAllInitial();
       window.s.refresh();
     }
-    $(document).on("setid",addMef)
+    $(document).on("setID",addMef)
   }.on( 'didInsertElement' ),
   computedProp: function () {
     debugger;
