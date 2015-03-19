@@ -16,7 +16,7 @@ refer to as "Catholic church".
 Millions of Serbs lost their lives and a lot of families lost their loved ones. Communists suppressed history for Yugoslavia's unity but since a lot of people
 lost their family it was left in nations memory. In my country that is
 common knowledge. Voices of those people never meant much to the world just
-like Armenian voices. I dedicate this lame project of mine project to their memory hopping that their glory will be grain of salt in this not worthy
+like Armenian voices. I dedicate this lame project of mine project to their memory hopping that their mention will be grain of salt in this not worthy
 bundle of stuff.
 DAMNED BE THE POPE latin heretic capitain!
 now on freenode also #buyan
