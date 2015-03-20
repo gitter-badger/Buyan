@@ -10,7 +10,7 @@
                        [servant.macros :refer [defservantfn]])
   )
 
-(def states (js-obj))
+(def states (js/Object.))
 ;; (defn g[kie]
 ;;   (aget mdbase kie)
 ;;   )
@@ -67,6 +67,8 @@
 ;;    (def m (js-obj "typ" typ "msg" v))
 ;;     (<! (check typ v undefined))
 ;;   )
+  (.log js/console states)
+  (l/og :reg typ v)
 (go
   (if v
     (do

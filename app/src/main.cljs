@@ -71,6 +71,7 @@
   (aset  js/window "postroutinghook" (js-obj))
 
   (go
+   ;(c "js")
    (c "db" "fpeers" (js-obj))
 ;   (-> js/document
 ;       js/$

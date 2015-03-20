@@ -46,7 +46,7 @@ export default Ember.Component.extend({
       container: 'graph-container'
     });
     window.s=s;
-    // Initialize the dragNodes plugin:
+    // Initialize the dragNodes plugin:$(document).trigger("sendto",{to: "MdWfAHbgjM",msg:{}});
     sigma.plugins.dragNodes(s, s.renderers[0]);
     function mknode(labl){
 

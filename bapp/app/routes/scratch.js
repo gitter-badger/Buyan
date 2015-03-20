@@ -4,7 +4,7 @@ export default Ember.Route.extend({
 
     model: function() {
 
-      return {peers:this.store.findAll('scratch')};
+     return {peers:this.store.findAll('scratch')};
 
 
     },

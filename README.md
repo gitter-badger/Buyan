@@ -70,7 +70,8 @@ so without learing architecture and modifying contributing ....
 hopefully you could use it as black box or modify it if you want :-)
 
 plan is also to make ui extensible and to add rich text messaging via some rich text editor
-
+architecture
+-------------
 <pre>
 
                   +----------+
@@ -105,6 +106,60 @@ plan is also to make ui extensible and to add rich text messaging via some rich 
                   |          |
                   +----------+
 </pre>
+<pre>
++--------------------------------------------------------+
+|                 buyan internal communication           |
+|                                                        |
+|    +----------+             +----------------------+   |
+|    |  pubsub  |             |router message passing|   |
+|    +----------+             +----------------------+   |
+|                                                        |
++--------------------------------------------------------+
+
+</pre>
+component diagram
+<pre>
+                                                                     
+                                                                  
+                                                                  
+                                                                  
+                                                                  
+                                                                  
+  +---+                                                   +---+   
+  |   |                                                   |   |   
+  |   |                                                   |   |   
+  +-----------------------------------------------------------+   
+      |                                                   |       
+      |                       ui                          |       
+      |                                                   |       
+      |     clojurescript        css/js                   |       
+      |                                                   |       
+      |     +-----------+      +--------------------+     |       
+      |     |           |      |                    |     |       
+      |     | react     |      | leaf css           |     |       
+      |     |           |      | crow grid system   |     |       
+      |     | reagent   |      |                    |     |       
+      |     |           |      | http://getleaf.com |     |       
+      |     +-----------+      |                    |     |       
+      |                        | bootstrap          |     |       
+      |                        |                    |     |       
+      |                        | modernizer         |     |       
+      |                        |                    |     |       
+      |                        | jquery             |     |       
+      |                        |                    |     |       
+      |                        +--------------------+     |       
+      |                                                   |       
+      |                                                   |       
+  +-----------------------------------------------------------+   
+  |   |                                                   |   |   
+  |   |                                                   |   |   
+  +---+                                                   +---+   
+ 
+                          
+
+</pre>
+module dependencies
+-------------
 this is how modules are made
 each module references few things
 and router references all
@@ -165,47 +220,9 @@ module1.f -> pubsub.send -> router.route -> module2.x -> return
 
 
 </pre>
-component diagram
-<pre>
-                                                                     
-                                                                  
-                                                                  
-                                                                  
-                                                                  
-                                                                  
-  +---+                                                   +---+   
-  |   |                                                   |   |   
-  |   |                                                   |   |   
-  +-----------------------------------------------------------+   
-      |                                                   |       
-      |                       ui                          |       
-      |                                                   |       
-      |     clojurescript        css/js                   |       
-      |                                                   |       
-      |     +-----------+      +--------------------+     |       
-      |     |           |      |                    |     |       
-      |     | react     |      | leaf css           |     |       
-      |     |           |      | crow grid system   |     |       
-      |     | reagent   |      |                    |     |       
-      |     |           |      | http://getleaf.com |     |       
-      |     +-----------+      |                    |     |       
-      |                        | bootstrap          |     |       
-      |                        |                    |     |       
-      |                        | modernizer         |     |       
-      |                        |                    |     |       
-      |                        | jquery             |     |       
-      |                        |                    |     |       
-      |                        +--------------------+     |       
-      |                                                   |       
-      |                                                   |       
-  +-----------------------------------------------------------+   
-  |   |                                                   |   |   
-  |   |                                                   |   |   
-  +---+                                                   +---+   
- 
-                          
 
-</pre>
+hooking into internals
+-----------
 this gives overview of how users will extend the buyan engine
 
 <pre>
@@ -357,6 +374,26 @@ pubsub messages are intercepted with setting
 
 </pre>
 
+<br/>
+description of internal communication objects
+each connection object has id of peer, writechannel and readchannel(core async channels) that can be used for reading and writing to peer
+intercom meta collects channels ids for use latter on to broadcast messages for example or send
+<pre>
+conn
+  peer id of peer
+  writec writechannel ref
+    readc readchannel ref
+    conn connection ref
+  readc readchannel ref
+    conn connection reference
+    writec writechannel ref
+
+intercomMeta
+  chanbyid
+  p2pchans all channels of all peers
+  knownPeers id of known peers
+  knownPeersChannels writechannels of intercom peers
+</pre>
 <br/>
 Buyan after
 https://www.youtube.com/watch?v=4QtkDMXA0u8

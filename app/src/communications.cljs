@@ -16,6 +16,7 @@
                     "knownPeers" []
                     "knownPeersChannels" []
                     "p2pchans" []
+                    "chanbyid" (array)
                     ))
 
 
@@ -30,11 +31,13 @@
 (set! (.-type cryptoCh) "cryptoch")
 (defn connectTo [ id]
 (go
-      ;(l/og :connectTo "" (first id))
+      (l/og :connectTo "" id)
      ; (l/og :connectTo "" (<! ( get)) )
 
       ;(l/og :connectTo "" (<! ( get)) )
-      (let [conn (.connect (c "db" "peerjs") id)]
+      (let [conn (.connect
+
+       (aget js/window "peerjs" ) id)]
            (.on conn "open" (partial onOpen conn))
 
            (channelsFromConnection conn)
@@ -42,18 +45,23 @@
            ))
 
 (def ^:dynamic peerParams (js-obj "host" conf.signaling "port" 8000 "key" "prokletdajepapa" "debug" true))
-(defn setID [ev id ]
+(defn setID [ id ]
       (debug :setID ev id)
       (go
         (c "db" "lid" id)
         (.log js/console  (c "db" "lid"))
 
 
+         (l/og :setID id peerParams)
           (def peerjs (js/Peer. id peerParams))
+       (aset js/window "peerjs" peerjs)
           (c "db" "peerjs" peerjs)
+         (l/og :setID peerjs (c "db" "peerjs"))
           (c "dumpdb")
           ;(init peerjs)
+         (l/og :setID "about to set h ")
           (.on peerjs "connection" #(ac "onConnection" %1))
+         (l/og :setID "about to trigger ")
           (.trigger (js/$ js/document) "setID" id)
         )
 
@@ -222,6 +230,18 @@
 (defn startP2PCommLoop []
       ;listen on messages and send them where they need to be sent
       (def stated [connectionch])
+      (.on (js/$ js/document) "sendto" (fn [ev m]
+                                         (go
+        (l/og :sendto ev m)
+        (l/og  (.-chanbyid intercomMeta))
+        (let [cc (aget (.-chanbyid intercomMeta) (aget m "to"))]
+          (if cc
+            (>! cc  (aget m "msg"))
+            (l/og :sendto "nosuchpeer " (aget m "to"))
+            )
+        )
+
+        )))
       (ps/sub "output" #(do
 
 
@@ -326,6 +346,8 @@
       ;(nth peerChannels 0) is read chan
       ;we put them in p2p2chans array of intercom meta to enable p2p loop with channels
       (set! (.-p2pchans intercomMeta) (concat (.-p2pchans intercomMeta) peerChannels))
+       (l/og :onNewConnection (.-peer message) (nth peerChannels 1))
+      (aset (.-chanbyid intercomMeta) (.-peer message) (nth peerChannels 1))
 
       ;this array to enable easier broadcast
       ;so we put write channels here to send stuff to those channels once we want to broadcast stuff

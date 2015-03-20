@@ -85,14 +85,14 @@
                      ;(js-obj "typ" typ "msg" msg)
                     (l/og :callfromevent ev  m)
                     (def argx (into [(aget m "typ" ) ]
-                    (into [] (aget m "msg" ))))
-                   (l/og :callfromevent argx)
-                     (<! (apply sia
+                     (aget m "msg" )))
+                   (l/og :callfromevent "argx=" argx)
+                     (<! (apply pubsub.sia
                        argx
                        )
                      )
-                     )))
-  )
+                     ))))
+
 
 (loop []
 (l/og :initpubsub "started loop" )
@@ -484,23 +484,29 @@
    )
   )
 (def order (array))
-(defn sia [typ & mo]
+(defn sia [ & otherargs1]
   (go
+   (def otherargs (into [] otherargs1))
+     (l/og :sia otherargs)
+
+   (def typ (first otherargs))
+   (def mo (rest otherargs))
           (if  (aget (aget  js/window "preroutinghook") typ )
            (do
        (l/og :prehook mo)
-       (def m (js-obj "arr" (apply (aget (aget  js/window "preroutinghook") typ ) mo)))
+     ;  (def m (js-obj "arr" (apply (aget (aget  js/window "preroutinghook") typ ) mo)))
        (l/og :afterhook m)
              )
             (def m mo)
 )
 
+        (l/og :invoke "mo= " mo)
         (l/og :invoke  typ m)
         (def pchannel (chan 1))
         (def sch (chan 1))
 
    (aset pchannel "typ" typ)
-   (>! sch (js-obj "typ" typ "msg" (if m  (into [] (.-arr m)) [])))
+   (>! sch (js-obj "typ" typ "msg" m))
         (l/og :send "about to route" )
         (routing.routea pubsub/rrsa pchannel sch)
        (l/og :send "done routing" order)
