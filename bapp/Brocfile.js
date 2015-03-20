@@ -20,5 +20,5 @@ app.import('bower_components/peerjs/peer.js');
 app.import('bower_components/sigma.js/build/sigma.min.js');
 app.import('bower_components/sigma.js/build/plugins/sigma.plugins.dragNodes.min.js');
 app.import('bower_components/custom/wrtc.js');
-
+app.import('bower_components/custom/crypto.js');
 module.exports = app.toTree();

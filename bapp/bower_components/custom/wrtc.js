@@ -3,6 +3,7 @@ function K(){
   var cfg = {"iceServers":[{"url":"stun:23.21.150.121"}]},
       con = { 'optional': [{'DtlsSrtpKeyAgreement': true}] };
   var icePromise = new Promise(function(resolve,reject){
+    debugger;
     $(document).on("iceCandidate",function(x){
       if(x){
         resolve(JSON.stringify(self.pc1.localDescription));
@@ -89,10 +90,12 @@ function K(){
       }
   }
   self.handlePeer = function(answer){
+    debugger;
     if(self.pc1==undefined){
       self.newConnection();
     }
     var parsed=(typeof(answer) === "string")?JSON.parse(answer):answer;
+    console.log("parsed",parsed);
     if(parsed.type==="offer"){
       self.answerFromOffer(parsed);
     }else if(parsed.type==="answer"){

@@ -80,7 +80,7 @@ export default Ember.Component.extend({
           id: 'e' + i,
           source: window.s.graph.nodes()[window.s.graph.nodes().length-1].id,
           target: window.s.graph.nodes()[i].id,
-          size: Math.random(),
+          size: 1,
           color: '#ccc'
         });
       }

@@ -10,6 +10,7 @@
     [intercomTake :as it]
     [blockchain :as blockchain]
     [communications]
+    [interop]
     [display.renderStrategy ]
     [crypt :as crypto]
     [cljs.core.async :refer [chan close! timeout put!]]
@@ -138,4 +139,5 @@
                   "mupdate" mockdatabasew/update
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+                  "js" interop/jsinterop
                   ))
