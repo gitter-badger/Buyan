@@ -264,6 +264,11 @@ this is async call it does not return something
 </pre>
 and how too use it as a black box with message passing
 you pass messages by triggering event on document
+
+<br/>
+pubsub messages are intercepted with setting
+`window.messages.messagename`
+<br/>
 <pre>
 
 +------------------------------------------------------------+
@@ -351,7 +356,6 @@ you pass messages by triggering event on document
 
 
 </pre>
-
 
 <br/>
 Buyan after

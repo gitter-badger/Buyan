@@ -107,7 +107,7 @@
               (typeof? message "tx") (tostate (takeTx message))
               (typeof? message "data") (tostate (takeData message))
               (typeof? message "peerdata") (do (ps/pub "peermessage" message))
-              (typeof? message "peersNeeded") (do (ps/pub "peermessage" message))
+              (typeof? message "peersNeeded") (do (ps/pub "peersNeeded" message))
 
               true (tostate "grind")
               )
