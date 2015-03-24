@@ -20,6 +20,11 @@ export default Ember.View.extend({
 
       this.idSet=true;
     }
+    if(arguments[0].target.id==="pullpeersfromserver"){
+      //$(document).trigger("call",{typ: "setID",msg: [ this.randomId]});
 
+
+      //this.idSet=true;
+    }
   }
 });
