@@ -7,12 +7,14 @@ function addHook(name,f){
 function L1(){
  var self=this;
  self.demultiplex=function(src,m){
+    console.log("demultiplex ",src," ", m);
     var typ=m.type;
     var msg=m.msg;
     self.demultiplex[typ](src,msg);
  }
 
  self.multiplex=function(src,dst,type,msg){
+    console.log("multiplex src: ",src," dst: ",dst," ", m);
     var m={};
     m.type=type;
     m.msg=msg;
@@ -20,8 +22,11 @@ function L1(){
  }
 
  self.multiplex["transitoffer"]=function(src,dst,msg){
+       console.log("multiplex transitoffer ");
        //var transit={type:"transitoffer",previus: src,msg: msg};
-       {origin:src,msg:msg,prevhopsealed:[prevhopsealed]}
+       var prevhopsealed=seal(src);
+       msg.prevhopsealed.push(prevhopsealed);
+
        window.buyanjs.send(dst,msg);
  }
  self.multiplex["answer"]=function(src,dst,msg){
@@ -29,7 +34,14 @@ function L1(){
  }
 
  self.multiplex["offer"]=function(src,dst,msg){
-      window.buyanjs.send(dst,msg);
+     var nonce = Date.now() ;
+     var id = 1;
+     var token = signtoken(id);
+     var prevhopsealed=seal(src);
+     var o = {nonce:nonce,id:id,type:"transitoffer",msg: msg,prevhopsealed:[prevhopsealed]};
+     //msg.prevhopsealed.push(prevhopsealed);
+
+     window.buyanjs.send(dst,o);
  }
  function seal(src){
    var prev=src;
@@ -43,8 +55,6 @@ function L1(){
        //pass not to the guy we recieved it from and to the peer that wants conn
        if(peer !== src && peer!= msg.origin){
          //seal the hop
-         var prevhopsealed=seal(src);
-         msg.prevhopsealed.push(prevhopsealed);
          self.multiplex(src,peer,"transitoffer",msg);
          break;
        }
@@ -65,7 +75,7 @@ function L1(){
 
   }else if(msg.dst==window.buyan.myid){
     //if we are destination connect
-    window.
+    window.offers[msg.nonce].handlePeer(msg.answer);
   }
 
  }
@@ -86,6 +96,8 @@ function L1(){
 function BuyanJS(){
   var self=this;
   self.peers=[];
+  self.l1=new L1(); //tbd. strategy
+  self.myid=1;
 
   self.newPeer=function(peerr){
     console.log("newPeer ",peerr);
@@ -93,7 +105,6 @@ function BuyanJS(){
     self.peersd[peerr]=true;
   }
 
-  self.myid=1;
   self.onPeerRequest=function(src,message){
 
   }
@@ -107,10 +118,11 @@ function BuyanJS(){
     var konnection=new K();
     konnection.makeOffer().then(function(a){
       var peer = "H9gBOZ3rl9";
-      var nonce = Date.now() ;
-      var id=1;
-      var token=signtoken(id);
-      window.L1.multiplex("H9gBOZ3rl9","H9gBOZ3rl9", {nonce:nonce,id:id,type:"offer",msg: a});
+      var x={origin:self.myID,msg:msg,prevhopsealed:[]};
+      console.log("making offer ",x);
+
+      self.l1.multiplex(myid,"H9gBOZ3rl9",a);
+
       window.offers=window.offers||{};
       window.offers[nonce]=a;
     });
