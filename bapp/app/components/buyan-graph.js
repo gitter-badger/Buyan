@@ -84,12 +84,15 @@ export default Ember.Component.extend({
   networkId: ''+(Math.floor(Math.random() * (10000000 - 0)) + 0),
   networkName: '',
   renderR: null ,
-
+  newId: "",
   setupTooltip: function () {
     //this.set("")
+    var self=this;
     $('.search-select')
-      .dropdown()
-    ;
+      .dropdown({
+        onChange: function(value, text, $selectedItem) {
+          self.set("myId",text.replace(" ",""));
+        }});
     var networkId=this.get('networkId');
     var renderR = new Network(networkId);
     this.set("renderR",renderR);
@@ -103,10 +106,11 @@ export default Ember.Component.extend({
 */
   }.on( 'didInsertElement' ),
   actions:{
-    setMyIdForThisNetwork: function(id){
+    setMyIdForThisNetwork: function(){
         debugger;
-        this.get('renderR').addMe(id);
-        console.log(id);
+        this.get('renderR').addMe(this.get('myId'));
+        thi
+        //console.log(id);
     }
       
   },
@@ -114,4 +118,5 @@ export default Ember.Component.extend({
     debugger;
     return 'width' + this.get('peerl');
   }.observes('peerl')
+    
 });

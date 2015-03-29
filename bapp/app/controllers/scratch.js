@@ -23,5 +23,9 @@ export default Ember.Controller.extend({
       });
       post.save();
     }
+    ,
+    makenewid: function(){
+      debugger;
+    }
   }
 });

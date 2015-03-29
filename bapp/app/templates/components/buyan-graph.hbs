@@ -24,7 +24,7 @@
   <!-- network controll -->
   
   <div class="ui fluid search selection dropdown search-select">
-      <input name="country" type="hidden">
+      <input name="country" {{bind-attr value=myId}} type="hidden">
       <i class="dropdown icon"></i>
       <div class="default text">Select Your Handle</div>
       <div class="menu">
@@ -32,7 +32,7 @@
             <div class="item" {{bind-attr data-value=id.id}}>{{id.name}} {{id.desc}}</div>
           {{/each}}
         <div class="ui input">
-        {{input placeholder="new..." class="ui input search_box myId" value=myId}}
+        {{input placeholder="new..." class="ui input search_box myId" value=newId insert-newline='makenewid' }}
         </div>
         
       </div>

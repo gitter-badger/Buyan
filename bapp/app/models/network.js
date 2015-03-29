@@ -1,10 +1,9 @@
 import DS from 'ember-data';
 let Network = DS.Model.extend({
   
-  id: attr(),
-  name: attr(),
-  myIdentity: attr(),
-  peers:attr()
+  name: DS.attr(),
+  myIdentity: DS.attr(),
+  peers:DS.attr()
 });
 Network.reopenClass({
   FIXTURES: [
