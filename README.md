@@ -21,7 +21,7 @@ What latin heretics do not like is that this thing happened under their blessing
 "Catholic church" organized this holocaust. From their monastaries those criminals emerged they were told by catholic priests go kill Serbs then come to church to be purified.
 They were in it the whole way forcing locals into becoming "catholic" or face death. And the guy who was in charge of it all is now a saint in their book. 
 "At that time fresh women and children arrived daily at the Camp in Stara Gradiška. About fourteen days later, Vrban [the Commandant of the Camp] ordered all children to be separated from their mothers and put into one room. Ten of us were told to carry them there in blankets. The children crawled about the room, and one child put an arm and leg through the doorway, so that the door could not be closed. Vrban shouted: 'Push it!' When I did not do that, he banged the door and crushed the child's leg. Then he took the child by its whole-leg, and banged it on the wall until it was dead. After that we continued carrying the children in. When the room was full, Vrban brought poison gas and killed them all."[127]
-
+You have to be avare that this Jasenovac place is only one concentration camp. There were more and equally important they went from village to village town to town and killed people that is besides camps.
 
 Millions of Serbs lost their lives and a lot of families lost their loved ones. Communists suppressed history for Yugoslavia's unity but since a lot of people
 lost their family it was left in nations memory. In my country that is
