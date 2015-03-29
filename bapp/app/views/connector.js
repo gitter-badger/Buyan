@@ -12,7 +12,12 @@ function makeid(){
 export default Ember.View.extend({
   randomId: makeid(),
   idSet:false,
+  actions:{
 
+  },
+   getpeers:function(){
+      debugger;
+    },
   click: function(e){
     if(arguments[0].target.id==="enterbuyan"){
       $(document).trigger("call",{typ: "setID",msg: [ this.randomId]});

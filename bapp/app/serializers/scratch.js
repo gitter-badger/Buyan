@@ -15,10 +15,23 @@ export default DS.RESTSerializer.extend({
   },
     */
   normalizePayload: function(payload) {
+  var i=0;
+  function isJson(str){
+        try {
+            JSON.parse(str);
+        } catch (e) {
+            return false;
+        }
+        return true;
+      }
+    payload=_.uniq(payload);
+    payload=payload.filter(function(v,i,a){return v!=="" && isJson(v)})
     var p= payload.map(function(v,i,a){
 
-      debugger;
-      return {id:i,handle: v,ip:'',peers1:1}
+      //debugger;
+      var parsed = JSON.parse(v);
+      parsed.id=i;
+      return parsed;
     });
 
 

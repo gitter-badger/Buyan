@@ -1,10 +1,15 @@
 
 
 {{#view "connector"}}
-  <label for="buyanid">buyanid</label>
-  {{input id="buyanid" value=view.randomId}}
-  <button id="enterbuyan">enter buyan</button>
-  <button id="pullpeersfromserver"> pull peers from server</button>
+
+
+
 {{/view}}
+{{#each peer in peers}}
+    <div {{action "edit" person}}>
+        click me
+        {{peer.pper}}
+    </div>
+{{/each}}
 
 {{buyan-graph  peerl=model.peers}}

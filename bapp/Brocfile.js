@@ -22,4 +22,7 @@ app.import('bower_components/sigma.js/build/plugins/sigma.plugins.dragNodes.min.
 app.import('bower_components/custom/wrtc.js');
 app.import('bower_components/custom/crypto.js');
 app.import('bower_components/custom/buyanEngine.js');
+
+app.import('bower_components/lodash/lodash.js');
+
 module.exports = app.toTree();

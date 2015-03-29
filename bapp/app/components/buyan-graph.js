@@ -1,62 +1,27 @@
 import Ember from 'ember';
 import layout from '../templates/components/buyan-graph';
 
-export default Ember.Component.extend({
-  layout: layout,
-  setupTooltip: function () {
-
-    sigma.renderers.def = sigma.renderers.canvas;
-    // Instantiate sigma:
-    var a =this.get('peerl');
+function Network(id){
     var g={nodes:[],edges:[]};
-    /*
-    var i,
-        s,
-        N = 100,
-        E = 500,
-        g = {
-          nodes: [],
-          edges: []
-        };
-
-    // Generate a random graph:
-    for (i = 0; i < N; i++){
-            g.nodes.push({
-        id: 'n' + i,
-        label: 'Node ' + i,
-        x: Math.random(),
-        y: Math.random(),
-        size: Math.random(),
-        color: '#666'
-      });
-    }
-
-    for (i = 0; i < E; i++){
-      g.edges.push({
-        id: 'e' + i,
-        source: 'n' + (Math.random() * N | 0),
-        target: 'n' + (Math.random() * N | 0),
-        size: Math.random(),
-        color: '#ccc'
-      });
-    }
-    */
+    var self=this;
     var s = new sigma({
       graph:g ,
-      container: 'graph-container'
+      container: id
     });
-    window.s=s;
-    // Initialize the dragNodes plugin:$(document).trigger("sendto",{to: "MdWfAHbgjM",msg:{}});
+    sigma.renderers.def = sigma.renderers.canvas;
+
     sigma.plugins.dragNodes(s, s.renderers[0]);
-    function mknode(labl){
+    function mknode(labl,x,y){
+      x=x || Math.random();
+      y=y || Math.random();
 
       var i = i || 0;
       var label = labl ;
       return {
         id: label,
         label: label,
-        x: Math.random(),
-        y: Math.random(),
+        x: x,
+        y: y,
         size: 100,
         color: '#676'
       }
@@ -70,7 +35,7 @@ export default Ember.Component.extend({
 
       window.s.refresh();
     }
-    a.then(f);
+
     function connectToAllInitial(){
       for (var i = 0; i <  window.s.graph.nodes().length-1; i++){
         $(document).trigger("call",{
@@ -86,11 +51,37 @@ export default Ember.Component.extend({
       }
     }
     function addMef(ev,myId){
-      window.s.graph.addNode(mknode(myId));
       connectToAllInitial();
-      window.s.refresh();
+      s.refresh();
     }
-    $(document).on("setID",addMef)
+    self.addMe=function(myId){
+      self.me=myId;
+      self.s.graph.addNode(mknode(myId),0,0);
+
+      self.s.refresh();
+    }
+    self.addNode=function(name){
+      var x = Math.random();
+      var y = sqrt(1-x*x)*(Math.random()>0.5?-1:1);
+      self.s.graph.addNode(mknode(name,x,y));
+      self.s.graph.addEdge({
+              id: 'e-'+self.me + "-"+name,
+              source: self.me,
+              target: name,
+              size: 1,
+              color: '#ccc'
+            });
+      self.s.refresh();
+    }
+    $(document).on("setID",addMef);
+}
+export default Ember.Component.extend({
+  layout: layout,
+
+  networkId: ''+(Math.floor(Math.random() * (10000000 - 0)) + 0),
+  setupTooltip: function () {
+    var a = new Network('graph-container');
+
   }.on( 'didInsertElement' ),
   computedProp: function () {
     debugger;

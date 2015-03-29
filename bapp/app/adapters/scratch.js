@@ -1,8 +1,8 @@
 import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
-    namespace: 'prokletdajepapa/peers',
-    host: 'http://localhost:8000',
+    namespace: 'get',
+    host: 'http://localhost:8001',
     keyForRelationship: function(key, relationship) {
        return "";
     },

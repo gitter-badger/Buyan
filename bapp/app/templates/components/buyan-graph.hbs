@@ -1,5 +1,10 @@
 
-<div id="container">
+<div class="container">
+    <div>
+        networkId: 
+        <div>{{networkId}}
+            </div>
+    </div>
   <style>
     #graph-container {
       top: 0;
@@ -10,7 +15,21 @@
       z-index:-5;
     }
   </style>
-  <div id="graph-container"></div>
+  <!-- network controll -->
+  <label for="buyanid">buyanid</label>
+  {{input id=networkId value=myId}}
+  <button class="enterbuyan">enter network</button>
+
+  <button class="pullpeersfromserver" {{ action 'getpeers'}}>
+      pull peers from server
+  </button>
+  <button class="getsomepeer" {{ action 'getsetpeers'}}>
+      tell server I want some peers
+  </button>
+    
+  <!-- network controll -->
+    
+  <div {{bind-attr id="{{networkId}}"}}></div>
 </div>
 
 

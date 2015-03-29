@@ -4,13 +4,13 @@ export default Ember.Route.extend({
 
     model: function() {
 
-     return {peers:this.store.findAll('scratch')};
+     return {model: this.store.findAll('scratch')};
 
 
-    },
-    setupController: function(controller, song) {
-      // Set the IndexController's `title`
-      controller.set('title', 'My App');
-        controller.set('model', song);
     }
+ //   setupController: function(controller, song) {
+      // Set the IndexController's `title`
+   //   controller.set('title', 'My App');
+ //       controller.set('model', song);
+ //   }
 });
