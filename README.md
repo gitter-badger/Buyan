@@ -17,6 +17,12 @@ Here is one of concentration camps where it happened https://en.wikipedia.org/wi
 I've provided that link since many people will most probably not believe that it happened.
 Like you have holocaust deniers and people who change history that is how there are people who do not believe this is true.
 Latin heretic cartel colloquially known as "Catholic church" is one of the major history falsifiers in entire worlds history. 
+What latin heretics do not like is that this thing happened under their blessings and that they celebrate the guy who was among organisers as a saint
+"Catholic church" organized this holocaust. From their monastaries those criminals emerged they were told by catholic priests go kill Serbs then come to church to be purified.
+They were in it the whole way forcing locals into becoming "catholic" or face death. And the guy who was in charge of it all is now a saint in their book. 
+"At that time fresh women and children arrived daily at the Camp in Stara Gradiška. About fourteen days later, Vrban [the Commandant of the Camp] ordered all children to be separated from their mothers and put into one room. Ten of us were told to carry them there in blankets. The children crawled about the room, and one child put an arm and leg through the doorway, so that the door could not be closed. Vrban shouted: 'Push it!' When I did not do that, he banged the door and crushed the child's leg. Then he took the child by its whole-leg, and banged it on the wall until it was dead. After that we continued carrying the children in. When the room was full, Vrban brought poison gas and killed them all."[127]
+
+
 Millions of Serbs lost their lives and a lot of families lost their loved ones. Communists suppressed history for Yugoslavia's unity but since a lot of people
 lost their family it was left in nations memory. In my country that is
 common knowledge. Voices of those people never meant much to the world just
