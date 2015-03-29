@@ -4,7 +4,10 @@ export default Ember.Route.extend({
 
     model: function() {
 
-     return {model: this.store.findAll('scratch')};
+     return {
+     		model: this.store.findAll('scratch'),
+			ids: this.store.findAll('id')
+ 			};
 
 
     }

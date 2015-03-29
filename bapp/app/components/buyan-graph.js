@@ -1,15 +1,17 @@
 import Ember from 'ember';
 import layout from '../templates/components/buyan-graph';
+ 
 
+  
 function Network(id){
     var g={nodes:[],edges:[]};
     var self=this;
+    sigma.renderers.def = sigma.renderers.canvas;
     var s = new sigma({
       graph:g ,
       container: id
     });
-    sigma.renderers.def = sigma.renderers.canvas;
-
+    self.s=s;
     sigma.plugins.dragNodes(s, s.renderers[0]);
     function mknode(labl,x,y){
       x=x || Math.random();
@@ -55,12 +57,13 @@ function Network(id){
       s.refresh();
     }
     self.addMe=function(myId){
+        debugger;
       self.me=myId;
-      self.s.graph.addNode(mknode(myId),0,0);
+      self.s.graph.addNode(mknode(myId));
 
       self.s.refresh();
     }
-    self.addNode=function(name){
+    self.addNode=function(name,x,y){
       var x = Math.random();
       var y = sqrt(1-x*x)*(Math.random()>0.5?-1:1);
       self.s.graph.addNode(mknode(name,x,y));
@@ -79,10 +82,34 @@ export default Ember.Component.extend({
   layout: layout,
 
   networkId: ''+(Math.floor(Math.random() * (10000000 - 0)) + 0),
-  setupTooltip: function () {
-    var a = new Network('graph-container');
+  networkName: '',
+  renderR: null ,
 
+  setupTooltip: function () {
+    //this.set("")
+    $('.search-select')
+      .dropdown()
+    ;
+    var networkId=this.get('networkId');
+    var renderR = new Network(networkId);
+    this.set("renderR",renderR);
+    this.set("networkName",networkId);
+    debugger;
+    /*
+    var Ids=this.get('targetObject.store').findAll('ids').then(function(){
+    
+      this.set('ids',Ids);
+    });
+*/
   }.on( 'didInsertElement' ),
+  actions:{
+    setMyIdForThisNetwork: function(id){
+        debugger;
+        this.get('renderR').addMe(id);
+        console.log(id);
+    }
+      
+  },
   computedProp: function () {
     debugger;
     return 'width' + this.get('peerl');

@@ -25,4 +25,11 @@ app.import('bower_components/custom/buyanEngine.js');
 
 app.import('bower_components/lodash/lodash.js');
 
+app.import('bower_components/semantic-ui/dist/semantic.min.js');
+
+app.import('bower_components/semantic-ui/dist/components/dropdown.min.js');
+
+app.import('bower_components/semantic-ui/dist/components/dropdown.css');
+
+app.import('bower_components/semantic-ui/dist/semantic.min.css');
 module.exports = app.toTree();
