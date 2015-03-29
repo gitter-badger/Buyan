@@ -13,7 +13,10 @@ project started after comments censored my tweet regarding Nazi( Stepinac) that 
 so just like there was Armenian genocide there was genocide in balkans
 in wwII against Jews,Roma and Serbs organized by organization people
 refer to as "Catholic church".
-Here is one of concentration camps where it happened https://en.wikipedia.org/wiki/Jasenovac_concentration_camp         
+Here is one of concentration camps where it happened https://en.wikipedia.org/wiki/Jasenovac_concentration_camp        
+I've provided that link since many people will most probably not believe that it happened.
+Like you have holocaust deniers and people who change history that is how there are people who do not believe this is true.
+Latin heretic cartel colloquially known as "Catholic church" is one of the major history falsifiers in entire worlds history. 
 Millions of Serbs lost their lives and a lot of families lost their loved ones. Communists suppressed history for Yugoslavia's unity but since a lot of people
 lost their family it was left in nations memory. In my country that is
 common knowledge. Voices of those people never meant much to the world just
