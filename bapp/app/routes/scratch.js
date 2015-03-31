@@ -6,9 +6,17 @@ export default Ember.Route.extend({
 
      return {
      		model: this.store.findAll('scratch'),
-			ids: this.store.findAll('id')
+			ids: this.store.findAll('id'),
+			networks: this.store.findAll('network')
  			};
 
+
+    }
+    ,
+    actions:{
+		makenewid: function(a){
+		      debugger;
+		    }
 
     }
  //   setupController: function(controller, song) {

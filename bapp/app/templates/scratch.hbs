@@ -4,13 +4,21 @@
 
 
 
-{{/view}}
-{{#each peer in peers}}
-    <div {{action "edit" person}}>
-        click me
-        {{peer.pper}}
+
+{{#each network in model.networks}}
+    <div {{action "toggleNetwork" network}}>
+        
+        {{network.name}}
+
+		{{#each peer in network.peers}}
+		    <div {{action "edit" person}}>
+		        
+		        {{peer.name}}
+		    </div>
+		{{/each}}
     </div>
 {{/each}}
 
+{{/view}}
 
-{{buyan-graph  peerl=model.peers ids=model.ids}}
+{{buyan-graph  peerl=model.peers ids=model.ids getpeers="getpeers" newid="newid"}}

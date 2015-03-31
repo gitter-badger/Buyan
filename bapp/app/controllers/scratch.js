@@ -1,7 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
+  playMedia: function(){
+    debugger
+}.on("newid"),
   actions:{
+    newid: function(name,desc){
+      //debugger;
+      this.store.createRecord('id',{name:name,desc:desc,dta:''});
+    },
     getpeers: function(){
     function m(){
                 return {model:this.store.findAll('scratch')};
@@ -22,10 +30,11 @@ export default Ember.Controller.extend({
         pper: 'Rails is Omakase'
       });
       post.save();
-    }
-    ,
-    makenewid: function(){
-      debugger;
-    }
+    },
+        makenewid: function(a){
+          debugger;
+        }
+
+    
   }
 });

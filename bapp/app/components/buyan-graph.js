@@ -65,7 +65,7 @@ function Network(id){
     }
     self.addNode=function(name,x,y){
       var x = Math.random();
-      var y = sqrt(1-x*x)*(Math.random()>0.5?-1:1);
+      var y = Math.sqrt(1-x*x)*(Math.random()>0.5?-1:1);
       self.s.graph.addNode(mknode(name,x,y));
       self.s.graph.addEdge({
               id: 'e-'+self.me + "-"+name,
@@ -85,6 +85,7 @@ export default Ember.Component.extend({
   networkName: '',
   renderR: null ,
   newId: "",
+  newIdDesc: "",
   setupTooltip: function () {
     //this.set("")
     var self=this;
@@ -97,7 +98,7 @@ export default Ember.Component.extend({
     var renderR = new Network(networkId);
     this.set("renderR",renderR);
     this.set("networkName",networkId);
-    debugger;
+    
     /*
     var Ids=this.get('targetObject.store').findAll('ids').then(function(){
     
@@ -106,13 +107,17 @@ export default Ember.Component.extend({
 */
   }.on( 'didInsertElement' ),
   actions:{
+ 
+  makenewid: function(name,desc) {
+     this.sendAction("newid",name,desc);
+     return true;
+  },
     setMyIdForThisNetwork: function(){
         debugger;
         this.get('renderR').addMe(this.get('myId'));
-        thi
+        
         //console.log(id);
-    }
-      
+    } 
   },
   computedProp: function () {
     debugger;

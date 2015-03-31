@@ -13,7 +13,9 @@ export default Ember.View.extend({
   randomId: makeid(),
   idSet:false,
   actions:{
-
+    toggleNetwork: function(net){
+      this.set(net,!this.get(net));
+    }
   },
    getpeers:function(){
       debugger;
