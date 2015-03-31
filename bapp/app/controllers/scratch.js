@@ -2,10 +2,15 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
+  networkOn:false,
   playMedia: function(){
     debugger
 }.on("newid"),
   actions:{
+    networkToggle:function(){
+      debugger;
+      this.set("networkOn",!this.get("networkOn"));
+    },
     newid: function(name,desc){
       //debugger;
       this.store.createRecord('id',{name:name,desc:desc,dta:''});
