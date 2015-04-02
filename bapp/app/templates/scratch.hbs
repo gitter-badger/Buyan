@@ -1,8 +1,14 @@
 
-<div class="six wide column " {{action "networkToggle" on="click"}}>
+
+ 
+
+
+<div class="one wide column" {{action "networkToggle" on="click"}}>
 	network
 
 </div>
+
+
 {{#if networkOn}}
 <div class="six wide column ">
 	{{#view "connector"}}
@@ -38,7 +44,5 @@
 	</div>
 </div>
 {{/if}}
-<div class="nine  wide column ui grid  ">
 
-{{buyan-graph  peerl=model.peers ids=model.ids getpeers="getpeers" newid="newid"}}
-</div>
+{{buyan-graph  peerl=model.peers ids=model.ids getpeers="getpeers" newid="newid" class="six wide column"}}

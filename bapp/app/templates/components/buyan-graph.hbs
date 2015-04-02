@@ -1,35 +1,38 @@
 
-<div class="ui grid">
    
-        
+<div class="row">
   <div class="ui right labeled left icon input">
-  <i class="tags icon"></i>
-  {{input class="networkName" placeholder="network name  " value=networkName}}
-  <div class="ui tag label">
-    network name
+    <i class="tags icon"></i>
+    {{input class="networkName" placeholder="network name  " value=networkName}}
+    <div class="ui tag label">
+      network name
+    </div>
   </div>
-</div>
       
-  
+</div>
+<div class="row">
 
-  <!-- network controll -->
-  
-  <div class="ui fluid search selection dropdown search-select">
+    <div class="ui fluid search selection dropdown search-select">
       <input name="country" {{bind-attr value=myId}} type="hidden">
       <i class="dropdown icon"></i>
       <div class="default text">Select Your Handle</div>
       <div class="menu">
-          {{#each id in ids}}
-            <div class="item" {{bind-attr data-value=id.id}}>{{id.name}} {{id.desc}}</div>
-          {{/each}}
+        {{#each id in ids}}
+          <div class="item" {{bind-attr data-value=id.id}}>{{id.name}} {{id.desc}}</div>
+        {{/each}}
         <div class="ui input">
-        {{input placeholder="new id name" class="ui input search_box myId " value=newId }}
-        {{input placeholder="description" class="ui input search_box myId " value=newIdDesc }}
-        <button class="button" {{action 'makenewid' newId newIdDesc}}>make</button>
+          {{input placeholder="new id name" class="ui input search_box myId " value=newId }}
+          {{input placeholder="description" class="ui input search_box myId " value=newIdDesc }}
+          <button class="button" {{action 'makenewid' newId newIdDesc}}>make</button>
         </div>
         
       </div>
-  </div>
+    </div>
+</div>
+<div class="row ">
+  <!-- network controll -->
+
+ 
   <button class="ui button enterbuyan" {{action "setMyIdForThisNetwork" myId}}>enter network</button>
 
   <button class="ui button pullpeersfromserver" {{ action 'getpeers' target="controller.scratch"}}>
@@ -41,10 +44,10 @@
   <button class="ui button getmeonemorepeer" {{ action 'getmeonemorepeer'}}>
       get me one more peer
   </button>
-  <!-- network controll -->
-    
-  <div {{bind-attr id=networkId}} class="networkView"></div>
 </div>
+<!-- network controll -->
+  
+<div  class="row" {{bind-attr id=networkId}} class="networkView"></div>
 
 
 {{yield}}
