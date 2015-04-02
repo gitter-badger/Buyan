@@ -95,7 +95,7 @@ export default Ember.Component.extend({
           self.set("myId",text.replace(" ",""));
         }});
     var networkId=this.get('networkId');
-    var renderR = new Network(networkId);
+    var renderR = new Network('networkView');
     this.set("renderR",renderR);
     this.set("networkName",networkId);
     

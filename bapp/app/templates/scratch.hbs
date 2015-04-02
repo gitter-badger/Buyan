@@ -3,8 +3,11 @@
  
 
 
-<div class="one wide column" {{action "networkToggle" on="click"}}>
-	network
+<div class="one wide column " {{action "networkToggle" on="click"}}>
+	
+	<div> {{material-design-icon name='menu'}} networks</div>
+	
+	<div> {{material-design-icon name='add-circle'}} add network</div>
 
 </div>
 
@@ -18,7 +21,7 @@
 	{{/view}}
 	<div class="ui list"> 
 		{{#each network in model.networks}}
-		    <div class="item" {{action "toggleNetwork" network}}>
+		    <div class="item" {{action "selectNetwork" network}}>
 		        <div class="content">
 
 		   		   	<div class="header">{{network.name}}</div>
@@ -26,15 +29,15 @@
 			       
 					{{#each peer in network.peers}}
 				    <div {{action "edit" person}}>
-				    <div class="list">
-				        <div class="item">
-					        <i class="right triangle icon"></i>
-				        	<div class="content">
-				            	<a class="header">{{peer.name}}</a>
-				            	<div class="description">{{peer.desc}}</div>
-				          	</div>
-				        </div>
-					</div>     
+					    <div class="list">
+					        <div class="item">
+						        <i class="right triangle icon"></i>
+					        	<div class="content">
+					            	<a class="header">{{peer.name}}</a>
+					            	<div class="description">{{peer.desc}}</div>
+					          	</div>
+					        </div>
+						</div>     
 				        
 				    </div>
 					{{/each}}
@@ -45,4 +48,10 @@
 </div>
 {{/if}}
 
-{{buyan-graph  peerl=model.peers ids=model.ids getpeers="getpeers" newid="newid" class="six wide column"}}
+{{#if networkSelected}}
+{{buyan-graph  network=networkSelected peerl=model.peers ids=model.ids getpeers="getpeers" newid="newid" class="six wide column"}}
+<div id="networkView"  style="
+    width: 100%;
+    height: 100%;
+    position: fixed;"></div>
+{{/if}}

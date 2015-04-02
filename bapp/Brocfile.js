@@ -32,4 +32,6 @@ app.import('bower_components/semantic-ui/dist/components/dropdown.min.js');
 app.import('bower_components/semantic-ui/dist/components/dropdown.css');
 
 app.import('bower_components/semantic-ui/dist/semantic.min.css');
+
+app.import('bower_components/semantic-ui/dist/themes/basic/assets/fonts/icons.woff');
 module.exports = app.toTree();
