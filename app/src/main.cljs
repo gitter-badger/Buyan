@@ -24,7 +24,7 @@
                                       ) )
 (defn connectTo [ev id]
 (go
-    (c "connectTo" ev id)
+    (c "connectTo" id)
            ))
 (.on (js/$ js/document) "connectTo"  connectTo)
 
@@ -34,7 +34,7 @@
 (defn cleandb [x y](go (c "cleandb" )))
 (.on (js/$ js/document) "flushdb"  cleandb)
 
-(.on (js/$ js/document) "setid"  (fn [x y](go (c "setID" x y)) ))
+(.on (js/$ js/document) "setid"  (fn [x y](go (c "setID"  y)) ))
 
 ;when someone connects to this user send that new connection to channel
 

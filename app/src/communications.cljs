@@ -62,7 +62,7 @@
          (l/og :setID "about to set h ")
           (.on peerjs "connection" #(ac "onConnection" %1))
          (l/og :setID "about to trigger ")
-          (.trigger (js/$ js/document) "setID" id)
+          (.trigger (js/$ js/document) "setIDtriggered" id)
         )
 
       ;(.on peerjs "connection" onConnection)

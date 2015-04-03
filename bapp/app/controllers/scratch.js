@@ -3,7 +3,10 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 
   init: function(){
-    this.set("peers", this.store.findAll('peer'));
+
+    var peer=this.store.findAll('peer');
+    this.set("peers", peer);
+
   },
   networkOn:false,
   playMedia: function(){
@@ -18,16 +21,27 @@ export default Ember.Controller.extend({
       //debugger;
       this.store.createRecord('id',{name:name,desc:desc,dta:''});
     },
-    getpeers: function(){
+    menuToggle:function(){
+      $('.left.sidebar').sidebar('setting', 'dimPage', false)
+        .sidebar('toggle')
+      ;
+    },
+    getpeersc: function(){
     function m(){
                 return {model:this.store.findAll('scratch')};
               };
       //this.set("model", this.store.findAll('scratch'));
       var accountObj = this.store.findAll('peer');
-      var self=this;
+
+      this.set('peers', accountObj);
+      /*
       accountObj.then( function (r) {
-          self.set('model', r);
+
+          debugger;
+          self.set('peers', r);
       });
+      */
+
       //this.transitionToRoute('scratch',this.store.findAll('scratch'));
        //this.get('target.router').refresh();
     },
@@ -48,9 +62,9 @@ export default Ember.Controller.extend({
       });
       post.save();
     },
-        makenewid: function(a){
-          debugger;
-        }
+    makenewid: function(a){
+      debugger;
+    }
 
     
   }

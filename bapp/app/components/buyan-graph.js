@@ -76,6 +76,9 @@ function Network(id){
             });
       self.s.refresh();
     }
+    $(document).on("UINewPeer",function(ev,id){
+      self.addNode(id);
+    });
     $(document).on("setID",addMef);
 }
 export default Ember.Component.extend({
@@ -92,13 +95,16 @@ export default Ember.Component.extend({
     $('.search-select')
       .dropdown({
         onChange: function(value, text, $selectedItem) {
+        debugger;
           self.set("myId",text.replace(" ",""));
         }});
     var networkId=this.get('networkId');
     var renderR = new Network('networkView');
     this.set("renderR",renderR);
     this.set("networkName",networkId);
-    
+    $(document).on("UINewPeer",function(ev,id){
+
+    });
     /*
     var Ids=this.get('targetObject.store').findAll('ids').then(function(){
     
@@ -107,15 +113,17 @@ export default Ember.Component.extend({
 */
   }.on( 'didInsertElement' ),
   actions:{
- 
+  getpeers: function(){
+     this.sendAction("getpeersc");
+     return true;
+  },
   makenewid: function(name,desc) {
      this.sendAction("newid",name,desc);
      return true;
   },
     setMyIdForThisNetwork: function(){
-        debugger;
         this.get('renderR').addMe(this.get('myId'));
-        
+        $(document).trigger("setid",this.get('myId'));
         //console.log(id);
     } 
   },

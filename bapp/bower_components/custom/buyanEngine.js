@@ -95,6 +95,7 @@ function L1(){
 
 function BuyanJS(){
   var self=this;
+  this.self=self;
   self.peers=[];
   self.l1=new L1(); //tbd. strategy
   self.myid=1;
@@ -103,6 +104,8 @@ function BuyanJS(){
     console.log("newPeer ",peerr);
     self.peers.push(peerr);
     self.peersd[peerr]=true;
+    debugger;
+    $(document).trigger("UINewPeer",peerr);
   }
 
   self.onPeerRequest=function(src,message){
@@ -153,5 +156,6 @@ function BuyanJS(){
     addHook("peer",self.newPeer);
 }
 $(document).on("buyanLoaded",function(){
+
 window.buyanjs=new BuyanJS();
 });
