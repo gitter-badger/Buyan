@@ -430,7 +430,7 @@ define('bapp/models/peer', ['exports', 'ember-data'], function (exports, DS) {
     dta: DS['default'].attr()
   });
   Peer.reopenClass({
-    FIXTURES: [{ id: 1, name: "James", desc: "Glowacki", dta: "" }, { id: 2, name: "John1", desc: "Dale", dta: "" }, { id: 3, name: "John2", desc: "Dale", dta: "" }, { id: 4, name: "John3", desc: "Dale", dta: "" }, { id: 5, name: "John4", desc: "Dale", dta: "" }, { id: 6, name: "John5", desc: "Dale", dta: "" }]
+    FIXTURES: [{ id: 1, name: "Mane", desc: "Glowacki", dta: "" }, { id: 2, name: "Cane", desc: "Dale", dta: "" }, { id: 3, name: "Mane", desc: "Dale", dta: "" }, { id: 4, name: "Cane", desc: "Dale", dta: "" }, { id: 5, name: "Mane", desc: "Dale", dta: "" }, { id: 6, name: "Cane", desc: "Dale", dta: "" }]
   });
   exports['default'] = Peer;
 
@@ -2689,7 +2689,7 @@ catch(err) {
 if (runningTests) {
   require("bapp/tests/test-helper");
 } else {
-  require("bapp/app")["default"].create({"name":"bapp","version":"0.0.0.3cf325bd"});
+  require("bapp/app")["default"].create({"name":"bapp","version":"0.0.0.f02883a9"});
 }
 
 /* jshint ignore:end */
