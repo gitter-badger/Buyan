@@ -4,7 +4,6 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'bapp',
     environment: environment,
-    baseURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -25,6 +24,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV.baseURL = '/';  
   }
 
   if (environment === 'test') {
@@ -41,7 +42,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
 
-    ENV.baseURL= undefined;
+    ENV.baseURL= '/Buyan/bapp/dist/';
   }
 ENV.contentSecurityPolicy = {
   'default-src': "'none'",
