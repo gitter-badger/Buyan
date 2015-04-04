@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route("scratch");
+  this.route("scratch",{path: '/'});
   this.resource("peers");
 
 
