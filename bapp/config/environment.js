@@ -41,6 +41,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
 
+    ENV.baseURL= undefined;
   }
 ENV.contentSecurityPolicy = {
   'default-src': "'none'",
