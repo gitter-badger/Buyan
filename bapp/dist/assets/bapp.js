@@ -2689,7 +2689,7 @@ catch(err) {
 if (runningTests) {
   require("bapp/tests/test-helper");
 } else {
-  require("bapp/app")["default"].create({"name":"bapp","version":"0.0.0.f02883a9"});
+  require("bapp/app")["default"].create({"name":"bapp","version":"0.0.0.302a0ee2"});
 }
 
 /* jshint ignore:end */
