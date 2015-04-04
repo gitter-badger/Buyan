@@ -8,7 +8,7 @@ export default Ember.View.extend({
     	   $('.accordion')
 	      .accordion({
 	        selector: {
-	          trigger: '.title .icon'
+	          trigger: '.title'
 	        }
 	      })
 	    ;

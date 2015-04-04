@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
+    newN:"",
   init: function(){
 
     var peer=this.store.findAll('peer');
@@ -64,6 +65,21 @@ export default Ember.Controller.extend({
     },
     makenewid: function(a){
       debugger;
+    },
+    newNetwork: function(newNetworkName){
+
+      this.store.createRecord('network',{ name: newNetworkName, myIdentity: null ,peers:[]  });
+      
+    },
+    deleteNetwork: function(name){
+      
+      debugger;
+      this.store.find('network', name).then(function (post) {
+        post.deleteRecord();
+        post.get('isDeleted'); // => true
+        post.save(); // => DELETE to /posts/1
+      });
+
     }
 
     

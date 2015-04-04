@@ -1,48 +1,51 @@
+
+	
+
 {{#view "sidemenu"}}
-<div class="ui left vertical inverted labeled icon sidebar menu">
+<div class="ui wide left vertical inverted labeled icon sidebar menu">
 	<a class="item">
 		<i class="home icon"></i>
 		Home
 	</a>
 	<div class="item">
 		<div class="ui  fluid accordion">
-			<div class="active title">
+			<div class="ui active title">
 				<i class="dropdown icon"></i>
 				Networks
 			</div>
-			<div class=" content">
-				<div class="ui small  inverted header">
-					<div class="header">Networks</div>
+			<div class="active content ">
+				<div class="ui small   header">
 					
 					
 					<div class="mini ui action left icon input ">
 						<input type="text" placeholder="Search...">
 					</div>
 				</div>
-				<div class="menu">
+				<div class="menu ">
 					{{#each network in model.networks}}
 					<div class="item" {{action "selectNetwork" network}}>
-						<div class="content">
-							<div class="header">{{network.name}}</div>
+						<div class="content ui right icon">
+							{{network.name}}
+							<i class="right remove icon"
+							{{action "deleteNetwork" network.id}}
+							></i> 
 							
-							
-							{{#each peer in network.peers}}
-							<div {{action "edit" person}}>
-								<div class="list">
-									<div class="item">
-										<i class="right triangle icon"></i>
-										<div class="content">
-											<a class="header">{{peer.name}}</a>
-											<div class="description">{{peer.desc}}</div>
-										</div>
-									</div>
-								</div>
-								
-							</div>
-							{{/each}}
+
 						</div>
 					</div>
 					{{/each}}
+					<div class="item" {{action "selectNetwork" network}}>
+						<div class="content">
+							<div class="mini ui action right icon input ">
+								
+					          {{input placeholder="new network" type="text" value=newN }}
+							<i class="right add icon" {{action "newNetwork" newN}}>
+								
+
+							</i> </div>
+
+						</div>
+					</div>
 					
 					
 					
@@ -52,13 +55,12 @@
 	</div>
 	<div class="item">
 		<div class="ui  fluid accordion">
-			<div class="active title">
+			<div class="ui active title">
 				<i class="dropdown icon"></i>
-				What is a dog?
+				Peers
 			</div>
 			<div class=" content">
 				<div class="ui small  inverted header">
-					<div class="header">Peers</div>
 					
 					
 					<div class="mini ui action left icon input ">
@@ -117,11 +119,18 @@
 	</a>
 </div>
 {{/view}}
+
+<div class="ui grid padded ">
+	<div class="row ">
+	{{#link-to 'scratch'}} scratch {{/link-to}}
+	</div>
+	<div class="row ui grid padded">
+				
+
 <div class="one wide column " {{action "menuToggle" on="click"}}>
 	<div> {{material-design-icon name='menu'}} menu</div>
 	
-	<div> {{material-design-icon name='add-circle'}} add network</div>
-	<div> {{material-design-icon name='list'}} peers</div>
+
 	{{#each peer in serverPeers}}
 	<div {{action "edit" person}}>
 		<div class="list">
@@ -152,7 +161,7 @@
 				<div {{action "edit" person}}>
 					<div class="list">
 						<div class="item">
-							<i class="right triangle icon"></i>
+							<i class="right triangle icon" ></i>
 							<div class="content">
 								<a class="header">{{peer.name}}</a>
 								<div class="description">{{peer.desc}}</div>
@@ -175,3 +184,5 @@
 	height: 100%;
 position: fixed;"></div>
 {{/if}}
+</div>
+</div>
