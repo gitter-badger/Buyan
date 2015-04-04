@@ -42,7 +42,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
 
-    ENV.baseURL= '/Buyan/bapp/dist/';
+    ENV.baseURL= '/Buyan/';
     ENV.fingerprint= {
       enabled: false
     }
