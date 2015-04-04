@@ -42,7 +42,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
 
-    ENV.baseURL= undefined;
+    ENV.baseURL= '/Buyan/bapp/dist/';
   }
 ENV.contentSecurityPolicy = {
   'default-src': "'none'",
