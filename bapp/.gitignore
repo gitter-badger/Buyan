@@ -5,7 +5,7 @@
 
 # dependencies
 /node_modules
-
+/dist
 # misc
 /.sass-cache
 /connect.lock
