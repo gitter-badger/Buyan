@@ -1,4 +1,6 @@
 # Buyan - CensorshipFreeCommentingPlatform
+
+[![Join the chat at https://gitter.im/NikolaMandic/Buyan](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/NikolaMandic/Buyan?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ![](https://github.com/NikolaMandic/brandNameFrontendPrototype/blob/master/media/gr7dex10.gif)
 ![](https://github.com/NikolaMandic/Buyan/blob/master/media/a8d3d362bb2a50296a5d813f3c686e50.gif)
 official mascot
